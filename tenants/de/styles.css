@@ -29,6 +29,7 @@ h1{
     padding: 0px 10px;
     background: #005437;
     white-space: nowrap;
+    margin: 0;
 }
 
 h1::KILLbefore {
@@ -58,6 +59,8 @@ h1::KILLbefore {
     text-align: center;
     font-size: 1.4em;
     rotate: -9deg;
+    margin: 0;
+    padding: 0.2em;
 }
 
 .draggable{

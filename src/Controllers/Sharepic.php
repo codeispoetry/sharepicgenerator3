@@ -1,6 +1,7 @@
 <?php
 namespace Sharepicgenerator\Controllers;
 
+use Sharepicgenerator\Controllers\User;
 /**
  * Sharepic controller.
  */
@@ -11,14 +12,14 @@ class Sharepic {
 	 *
 	 * @var string
 	 */
-	private $file = 'user/tom/workspace/sharepic.html';
+	private $file = 'users/tom/workspace/sharepic.html';
 
 	/**
 	 * The template to be loaded
 	 *
 	 * @var string
 	 */
-	private $template = 'user/tom/workspace/sharepic.html';
+	private $template = 'users/tom/workspace/sharepic.html';
 
 	/**
 	 * The size of the sharepic.
@@ -31,9 +32,24 @@ class Sharepic {
 	);
 
 	/**
+	 * The user object.
+	 *
+	 * @var User
+	 */
+	private $user;
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
+		$user       = new User();
+		$this->user = $user->get_user_by_token();
+
+		if ( empty( $this->user ) ) {
+			$this->no_access();
+			die();
+		}
+
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
 		if ( empty( $data ) ) {
@@ -53,8 +69,11 @@ class Sharepic {
 	 * Creates a sharepic.
 	 */
 	public function create() {
+		$path = 'users/tom/tmp/output.png';
+
 		$cmd = sprintf(
-			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=output.png --hide-scrollbars --window-size=%d,%d http://localhost/%s',
+			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d http://localhost/%s',
+			$path,
 			$this->size['width'],
 			$this->size['height'],
 			$this->file
@@ -62,7 +81,7 @@ class Sharepic {
 
 		$output = shell_exec( $cmd );
 
-		echo json_encode( array( 'a' => 'done' ) );
+		echo json_encode( array( 'path' => $path ) );
 	}
 
 	/**
@@ -70,5 +89,13 @@ class Sharepic {
 	 */
 	public function load() {
 		echo file_get_contents( $this->template );
+	}
+
+	/**
+	 * Fail gracefully.
+	 */
+	private function no_access() {
+		header( 'HTTP/1.0 403 Forbidden' );
+		die();
 	}
 }

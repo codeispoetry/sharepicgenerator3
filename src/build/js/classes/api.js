@@ -23,7 +23,6 @@ class API{
                 document.getElementById('canvas').innerHTML = data;
                 drag_items[1] = new Drag('text1', 1);
                 drag_items[2] = new Drag('eyecatcher', 2);
-
             })
             .catch(error => console.error('Error:', error));
     }
@@ -47,15 +46,18 @@ class API{
         };
     
         fetch(this.api + 'create', options)
-            .then(response => response.json())
-            .then(data => {
-                // append img element with id output
-                
-                var img = document.getElementById('output');
-                img.src = 'output.png?rand=' + Math.random();
-        
-                console.log("Data", data)
+            .then(response => {
+                if(response.status === 403) {
+                    throw new Error('Access is not allowed');
+                }
+                return response.json();
             })
-           // .catch(error => console.error('Error:', error));
+            .then(data => {      
+                console.log(data);         
+                var img = document.getElementById('output');
+                img.src = '/' + data.path + '?rand=' + Math.random();
+        
+            })
+           .catch(error => console.error('Error:', error));
     }
 }

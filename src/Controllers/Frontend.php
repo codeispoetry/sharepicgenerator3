@@ -7,9 +7,26 @@ namespace Sharepicgenerator\Controllers;
 class Frontend {
 
 	/**
+	 * The user object.
+	 *
+	 * @var User
+	 */
+	private $user;
+
+	/**
+	 * Enables the user-object.
+	 */
+	public function __construct() {
+		$this->user = new User();
+	}
+
+	/**
 	 * The frontend controller.
 	 */
-	public static function create() {
+	public function create() {
+		if ( ! $this->user->login() ) {
+			header( 'Location: /' );
+		}
 		include_once './src/Views/Header.php';
 		include_once './src/Views/Creator.php';
 		include_once './src/Views/Footer.php';
@@ -18,7 +35,9 @@ class Frontend {
 	/**
 	 * The home page.
 	 */
-	public static function index() {
-		self::create();
+	public function index() {
+		include_once './src/Views/Header.php';
+		include_once './src/Views/Home.php';
+		include_once './src/Views/Footer.php';
 	}
 }

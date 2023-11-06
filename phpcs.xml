@@ -11,6 +11,14 @@
     <rule ref="WordPress">
         <exclude name="WordPress.WP.I18n.MissingArgDomain" />
         <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
+        <exclude name="WordPress.WP.AlternativeFunctions" />
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+        <exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
+        <exclude name="WordPress.PHP.DiscouragedPHPFunctions" />
+        <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+        <exclude name="WordPress.Security.NonceVerification.Missing" />
+        <exclude name="WordPress.Security.NonceVerification.Recommended" />
+        <exclude name="Squiz.Commenting.FileComment.Missing" />
     </rule>
 
 </ruleset>

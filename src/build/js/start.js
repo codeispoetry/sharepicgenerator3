@@ -11,7 +11,7 @@ window.onload = function() {
     });
 
     document.getElementById('load_latest').addEventListener('click', function() {
-        api.load('user/tom/workspace/sharepic.html');
+        api.load('users/tom/workspace/sharepic.html');
     });
 
 };
