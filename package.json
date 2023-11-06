@@ -1,0 +1,19 @@
+{
+  "name": "sharepicgenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o assets/ build/scss/styles.scss",
+    "watch:scss": "node-sass --watch build/scss/styles.scss --output-style compressed -o assets",
+    "js": "concat -o assets/script.js build/js/*.js",
+    "watch:js": "chokidar 'build/js/*.js' -c 'npm run js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concat": "^1.0.3",
+    "node-sass": "^9.0.0"
+  }
+}
