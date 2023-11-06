@@ -21,7 +21,9 @@ class API{
             .then(response => response.text())
             .then(data => {
                 document.getElementById('canvas').innerHTML = data;
-                drag_start();
+                drag_items[1] = new Drag('text1', 1);
+                drag_items[2] = new Drag('eyecatcher', 2);
+
             })
             .catch(error => console.error('Error:', error));
     }
