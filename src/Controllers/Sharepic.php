@@ -14,6 +14,13 @@ class Sharepic {
 	private $file = 'user/tom/workspace/sharepic.html';
 
 	/**
+	 * The template to be loaded
+	 *
+	 * @var string
+	 */
+	private $template = 'user/tom/workspace/sharepic.html';
+
+	/**
 	 * The size of the sharepic.
 	 *
 	 * @var array
@@ -29,11 +36,18 @@ class Sharepic {
 	public function __construct() {
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
+		if ( empty( $data ) ) {
+			return;
+		}
+
 		$this->size['width']  = $data['size']['width'] ?? 100;
 		$this->size['height'] = $data['size']['height'] ?? 100;
-		file_put_contents( $this->file, $data['data'] );
-	}
+		$this->template       = $data['template'] ?? $this->file;
 
+		if ( ! empty( $data['data'] ) ) {
+			file_put_contents( $this->file, $data['data'] );
+		}
+	}
 
 	/**
 	 * Creates a sharepic.
@@ -49,5 +63,12 @@ class Sharepic {
 		$output = shell_exec( $cmd );
 
 		echo json_encode( array( 'a' => 'done' ) );
+	}
+
+	/**
+	 * Loads the sharepic.
+	 */
+	public function load() {
+		echo file_get_contents( $this->template );
 	}
 }

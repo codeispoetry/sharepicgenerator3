@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --output-style compressed -o assets/ build/scss/styles.scss",
-    "watch:scss": "node-sass --watch build/scss/styles.scss --output-style compressed -o assets",
-    "js": "concat -o assets/script.js build/js/*.js",
-    "watch:js": "chokidar 'build/js/*.js' -c 'npm run js'"
+    "scss": "node-sass --output-style compressed -o assets/ src/build/scss/styles.scss",
+    "watch:scss": "node-sass --watch src/build/scss/styles.scss --output-style compressed -o assets",
+    "js": "concat -o  assets/script.js src/build/js/**/*.js assets/script.js src/build/js/*.js",
+    "watch:js": "chokidar 'src/build/js/**/*.js' -c 'npm run js'",
+    "watch": "npm-run-all --parallel watch:scss watch:js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
     "concat": "^1.0.3",
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "npm-run-all": "^4.1.5"
   }
 }

@@ -10,8 +10,9 @@
     
     <header>
         <nav>
-            <a href="#">Menu 1</a>
-            <a href="#">Menu 2</a>
-            <a href="#">Menu 3</a>
+            <button id="create">Create</button>
+            <button id="reset">Reset</button>
+            <button id="load_latest">Load latest</button>
+        
         </nav>
     </header>

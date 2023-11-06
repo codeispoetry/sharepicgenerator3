@@ -10,9 +10,9 @@ class Frontend {
 	 * The frontend controller.
 	 */
 	public static function create() {
-		include_once './src/Views/Header.html';
-		include_once './src/Views/Creator.html';
-		include_once './src/Views/Footer.html';
+		include_once './src/Views/Header.php';
+		include_once './src/Views/Creator.php';
+		include_once './src/Views/Footer.php';
 	}
 
 	/**

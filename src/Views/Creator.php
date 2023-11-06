@@ -2,20 +2,17 @@
 
 <main class="main">
 	<div class="row">
-		<div class="column">
+		<div class="workbench">
 			<div id="canvas" contenteditable="true">
 				<div id="sharepic">
-					<link rel="stylesheet" href="/tenants/de.css">
-					<h1 id="text1" class="draggable selectable" onClick="set_active(event)">Hallo Welt</h1>
+					<h1 id="text1" class="draggable selectable">Void</h1>
 				</div>
 			</div>
-			<button id="create">Create</button>
-
 		</div>
-		<div class="column">
-			<input type="number" name="width" id="width" value="800" step="1">
-			<input type="number" name="height" id="height" value="600" step="1">
-
+		<div class="cockpit">
+			<?php
+				include 'src/Views/Cockpit/Sharepic.php';
+			?>
 			<input type="range" min="0" max="100" value="50" class="slider" id="fontsize" oninput="font_size(event)">
 		</div>
 	</div>
@@ -23,8 +20,6 @@
 	<div class="row">
 		<img src="" id="output" style="border: 1px solid blue">
 	</div>
-	
-
 </main>
 
 
