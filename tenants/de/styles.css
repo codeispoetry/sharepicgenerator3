@@ -1,6 +1,6 @@
 @font-face {
     font-family: "GrueneType";
-    src: url("/assets/fonts/GrueneType.woff2") format("woff2");
+    src: url("../../assets/fonts/GrueneType.woff2") format("woff2");
 }
 
 body{
@@ -22,47 +22,59 @@ body{
     position: relative;
 }
 
-h1{
+.text{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.text p{
+    display: inline;
     color: white;
     font-family: "GrueneType";
     font-size: 50px;
-    padding: 0px 10px;
-    background: #005437;
     white-space: nowrap;
     margin: 0;
+    position: relative;
 }
 
-h1::KILLbefore {
+.text p::before{
     content: "";
     position: absolute;
     top: 0;
     left: -20px;
-    width: calc( 100% + 40px );
+    background-color: #005437;
+    transform: skew(-9deg, 0);
+    width: calc( 100% + 40px);
     height: 100%;
-    background: #005437;
-    transform: skewX(-9deg);
     z-index: -1;
 }
 
+
 .eyecatcher{
-    width: auto;
-    aspect-ratio: 1;
     border-radius: 50%;
     background-color: #0ba1dd;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
     color: white;
+    aspect-ratio: 1;
+    rotate: -9deg;
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.eyecatcher p{
+    margin: 0;
+    padding: 0;
     font-family: GrueneType;
     line-height: 1em;
     text-align: center;
     font-size: 1.4em;
-    rotate: -9deg;
-    margin: 0;
-    padding: 1em;
-    transform-origin: center;
 }
+
 .logo{
     background-image: url("/tenants/de/logo.svg");
     background-size: contain;

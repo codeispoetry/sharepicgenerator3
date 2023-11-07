@@ -1,5 +1,6 @@
 <script src="/assets/script.js" defer></script>
 
+
 <main class="main">
 	<div class="row">
 		<div id="workbench" class="workbench">
@@ -25,9 +26,3 @@
 		<img src="" id="output" style="border: 1px solid blue">
 	</div>
 </main>
-
-
-
-
-
-

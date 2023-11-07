@@ -24,9 +24,7 @@
     "standard": "^17.1.0",
     "stylelint": "^15.11.0",
     "stylelint-config-recommended": "^13.0.0",
-    "stylelint-scss": "^5.3.1"
-  },
-  "dependencies": {
+    "stylelint-scss": "^5.3.1",
     "uglify-js": "^3.17.4"
   }
 }

@@ -5,7 +5,7 @@
         <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
     </label>
 
-    <button class="to-front" data-target="text1">nach vorne</button>
+    <button class="to-front" data-target="text">nach vorne</button>
 
 </section>
 
@@ -13,7 +13,7 @@
     document.getElementById('text_size').addEventListener('input', function(e) {
         var element = event.target;
 
-        const target = document.getElementById('text1');
+        const target = document.getElementById('text');
 
         target.style.fontSize = element.value + "px";
     });
