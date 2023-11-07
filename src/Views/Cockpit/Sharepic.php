@@ -13,6 +13,7 @@
 
 <script>
 document.getElementById('width').addEventListener('change', function() {
+    console.log("HI")
     document.getElementById('canvas').style.width = this.value + 'px';
     document.getElementById('sharepic').style.width = this.value + 'px';
 

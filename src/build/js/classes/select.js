@@ -3,15 +3,14 @@ class Select {
         this.clear_all();
         let elements = document.querySelectorAll('.selectable');
         elements.forEach(element => {
-            element.addEventListener('click', (event) => {
+            element.addEventListener('mousedown', (event) => {
                 event.stopPropagation();
                 this.set_active(event.target);
 
             });
         });
 
-        let element = document.getElementById('canvas');
-        element.addEventListener('click', (event) => {
+        document.getElementById('canvas').addEventListener('click', (event) => {
            this.set_active(event.target);
         });
     }

@@ -1,15 +1,4 @@
 class Cockpit{
-    // setup(){
-    //     let elements = document.querySelectorAll('.selectable');
-    //     elements.forEach(element => {
-            
-    //         let cockpit_element = 'setup_' + element.dataset.cockpit;
-    //         if (typeof this[cockpit_element] === 'function') {
-    //             this[cockpit_element]();
-    //         }
-    //     });
-    // }
-
     clear_all(){
         let elements = document.querySelectorAll('#cockpit .show');
         elements.forEach(element => {
@@ -31,7 +20,13 @@ class Cockpit{
 
         const id = "cockpit_" + element.dataset.cockpit;
         document.getElementById(id)?.classList.add("show");
+    }
 
+    setup_sharepic(){
+        const width = document.getElementById('width');
+        const height = document.getElementById('height');
+        width.value = document.getElementById('sharepic').offsetWidth;
+        height.value = document.getElementById('sharepic').offsetHeight;
     }
 
     setup_text(element){

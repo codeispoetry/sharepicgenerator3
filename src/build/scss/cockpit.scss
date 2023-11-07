@@ -1,12 +1,29 @@
-label{
-    color: white;
-}
+#cockpit{
+    width: 200px;
+    padding: 2px 20px;
+    margin: 0;
+    border: 1px solid $light;
 
-section{
-    border: 1px solid #dbdbdb;
-    display: none;
+    label{
+        color: white;
+    }
 
-    &.show{
-        display: block;
+    section{
+        border: 0px solid #dbdbdb;
+        display: none;
+
+        &.show{
+            display: block;
+        }
+    }
+
+    h2{
+        margin: 0;
+    }
+
+    input[type="text"],
+    input[type="number"]{
+        padding: 10px;
+        border: 0;
     }
 }

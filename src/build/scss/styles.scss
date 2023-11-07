@@ -1,5 +1,23 @@
 @import 'variables.scss';
 @import 'menu.scss';
-@import 'main.scss';
+@import 'workbench.scss';
 @import 'sharepic.scss';
 @import 'cockpit.scss';
+@import 'header.scss';
+
+html{
+    margin: 0;
+    padding: 0;
+    font-family: GrueneType;
+    color: #FFFFFF;
+
+}
+body{
+    background-color: $dark;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

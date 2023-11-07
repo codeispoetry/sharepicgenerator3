@@ -2,7 +2,7 @@
 
 <main class="main">
 	<div class="row">
-		<div class="workbench">
+		<div id="workbench" class="workbench">
 			<div id="canvas" contenteditable="true">
 				<div id="sharepic">
 					

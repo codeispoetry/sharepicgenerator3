@@ -30,6 +30,7 @@ class API{
                 drag_items[2] = new Drag('eyecatcher', 2);
 
                 select.setup();
+                cockpit.setup_sharepic();
             })
             .catch(error => console.error('Error:', error));
     }
@@ -38,7 +39,7 @@ class API{
         select.clear_all();
         const canvas = document.getElementById('canvas');
         const data = { 
-            data: canvas.outerHTML,
+            data: canvas.innerHTML,
             size: {
                 width:  document.getElementById('width').value,
                 height:  document.getElementById('height').value
