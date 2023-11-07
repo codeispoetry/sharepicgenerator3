@@ -30,8 +30,8 @@ class Select {
     }
     const elements = document.querySelectorAll('.selectable')
     elements.forEach(element => {
-      element.classList.remove('active')
-    }
+        element.classList.remove('active')
+      }
     )
 
     element.classList.add('active')

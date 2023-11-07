@@ -34,6 +34,14 @@ class Cockpit {
   setup_text (element) {
     const slider = document.getElementById('text_size')
     slider.value = element.style.fontSize.replace('px', '')
+
+    const allP = document.querySelectorAll('#text p');
+
+    allP.forEach( (line, index) => {
+      const slider = document.getElementById('text_indent_' + index)
+      slider.classList.toggle('show', (index < allP.length))
+      slider.firstElementChild.value = line.style.marginLeft.replace('px', '')
+    })
   }
 
   setup_eyecatcher (element) {

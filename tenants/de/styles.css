@@ -32,7 +32,6 @@ body{
     display: inline;
     color: white;
     font-family: "GrueneType";
-    font-size: 50px;
     white-space: nowrap;
     margin: 0;
     position: relative;
@@ -76,7 +75,6 @@ body{
 }
 
 .logo{
-    background-image: url("/tenants/de/logo.svg");
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px;
