@@ -1,59 +1,70 @@
-var api, cockpit, select, undo, pixabay;
+/* eslint-disable no-undef, no-unused-vars */
 
-window.onload = function() {
-    api = new API();
-    api.load();
+let api, cockpit, select, undo, pixabay
 
-    cockpit = new Cockpit();
-    select = new Select();
-    undo = new Undo();
-    pixabay = new Pixabay();
+window.onload = function () {
+  api = new API()
+  api.load()
 
-    document.getElementById('create').addEventListener('click', function() {
-        api.create();
-    });
+  cockpit = new Cockpit()
+  select = new Select()
+  undo = new Undo()
+  pixabay = new Pixabay()
 
-    document.getElementById('reset').addEventListener('click', function() {
-        api.load();
-    });
+  document.getElementById('create').addEventListener('click', function () {
+    const output = document.getElementById('output')
+    output.src = ''
+    api.create()
+  })
 
-    document.getElementById('load_latest').addEventListener('click', function() {
-        api.load('users/tom/workspace/sharepic.html');
-    });
+  document.getElementById('reset').addEventListener('click', function () {
+    api.load()
+  })
 
-    document.getElementById('canvas').addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-        }
-    });
+  document.getElementById('load_latest').addEventListener('click', function () {
+    api.load('users/tom/workspace/sharepic.html')
+  })
 
-    document.querySelectorAll('.to-front').forEach(element => {
-        element.addEventListener('click', (event) => {
+  document.getElementById('upload').addEventListener('change', function () {
+    api.upload()
+  })
 
-            let highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
-                let zIndex = parseInt(getComputedStyle(element).zIndex, 10);
-                return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex);
-            }, 0);
+  document.getElementById('width').addEventListener('change', function () {
+    document.getElementById('sharepic').style.width = this.value + 'px'
+  })
+  document.getElementById('height').addEventListener('change', function () {
+    document.getElementById('sharepic').style.height = this.value + 'px'
+  })
 
-            const target = element.dataset.target;
-            document.getElementById(target).style.zIndex = (highestZIndex + 1).toString();
-        });
-    });
+  document.getElementById('canvas').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+    }
+  })
 
-    document.querySelectorAll('.delete').forEach(element => {
-        element.addEventListener('click', (event) => {
+  document.querySelectorAll('.to-front').forEach(element => {
+    element.addEventListener('click', (event) => {
+      const highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
+        const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
+        return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)
+      }, 0)
 
-            const target = element.dataset.target;
-            document.getElementById(target).remove();
-        });
-    });
+      const target = element.dataset.target
+      document.getElementById(target).style.zIndex = (highestZIndex + 1).toString()
+    })
+  })
 
-    document.querySelectorAll('.closer').forEach(element => {
-        element.addEventListener('click', (event) => {
+  document.querySelectorAll('.delete').forEach(element => {
+    element.addEventListener('click', (event) => {
+      const target = element.dataset.target
+      document.getElementById(target).remove()
+    })
+  })
 
-            const target = element.dataset.target;
-            document.getElementById(target).classList.remove('show');
-        });
-    });
-
-};
+  document.querySelectorAll('.closer').forEach(element => {
+    element.addEventListener('click', (event) => {
+      const target = element.dataset.target
+      document.getElementById(target).classList.remove('show')
+    })
+  })
+}

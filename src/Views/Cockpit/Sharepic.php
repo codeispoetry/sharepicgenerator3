@@ -13,16 +13,12 @@
         Hintergrundbild suchen:
         <input type="text" name="pixabay_q" id="pixabay_q" placeholder="Suchbegriff">
     </label>
+
+    <label style="display:block;margin-top:20px" class="file-upload">
+        Eigene Datei hochladen
+        <input type="file" name="upload" id="upload">
+    </label>
 </section>
 
-<script>
-document.getElementById('width').addEventListener('change', function() {
-    document.getElementById('sharepic').style.width = this.value + 'px';
-
-});
-document.getElementById('height').addEventListener('change', function() {
-    document.getElementById('sharepic').style.height = this.value + 'px';
-});
-</script>
 
 

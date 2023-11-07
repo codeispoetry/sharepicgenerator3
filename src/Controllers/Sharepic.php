@@ -69,33 +69,40 @@ class Sharepic {
 	/**
 	 * Downloads the images and rewrites html.
 	 *
-	 * @param string $html The html to be rewritten.
+	 * @param string $inhtml The html to be rewritten.
 	 * @return string
 	 */
-	private function download_images( $html ) {
-		$html = html_entity_decode( $html );
+	private function download_images( $inhtml ) {
+		$html = html_entity_decode( $inhtml );
 		preg_match_all( '/url\((.*?)\);/', $html, $matches );
 
 		if ( empty( $matches[0] ) || empty( $matches[1][0] ) ) {
-			return $html;
+			return $inhtml;
 		}
 
 		$url = substr( $matches[1][0], 1, -1 );
 
 		if ( ! str_starts_with( $url, 'http' ) ) {
-			return $html;
+			return $inhtml;
 		}
 
 		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			return $html;
+			return $inhtml;
 		}
 
 		$filename = 'background.' . $extension;
 		$filepath = 'users/' . $this->user . '/workspace/' . $filename;
+		$files    = glob( 'users/' . $this->user . '/workspace/background.*' );
+
+		foreach ( $files as $file ) {
+			if ( is_file( $file ) ) {
+				unlink( $file );
+			}
+		}
 		file_put_contents( $filepath, file_get_contents( $url ) );
 
-		$html = preg_replace( "#.$url.#", "'" . $filename . "'", $html );
+		$html = preg_replace( "#.$url.#", sprintf( "'/%s?r=%s'", $filepath, rand() ), $html );
 
 		return $html;
 	}
@@ -126,11 +133,55 @@ class Sharepic {
 		echo file_get_contents( $this->template );
 	}
 
+
+	/**
+	 * Uploads an images
+	 */
+	public function upload() {
+		if ( ! isset( $_FILES['file'] ) ) {
+			return;
+		}
+
+		$file = $_FILES['file'];
+
+		$extension = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
+		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
+			$this->no_access();
+		}
+
+		$files = glob( 'users/' . $this->user . '/workspace/background.*' );
+
+		foreach ( $files as $sfile ) {
+			if ( is_file( $sfile ) ) {
+				unlink( $sfile );
+			}
+		}
+
+		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
+
+		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
+			$this->no_access();
+		}
+
+		echo json_encode( array( 'path' => $upload_file ) );
+	}
+
 	/**
 	 * Fail gracefully.
 	 */
 	private function no_access() {
 		header( 'HTTP/1.0 403 Forbidden' );
 		die();
+	}
+
+	/**
+	 * Fail gracefully
+	 *
+	 * @param mixed $name Method.
+	 * @param mixed $arguments Arguments.
+	 * @return void
+	 */
+	public function __call( $name, $arguments ) {
+		$this->no_access();
 	}
 }

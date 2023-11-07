@@ -1,31 +1,32 @@
-var dragging = false;
-var drag_items = new Array();
+/* eslint-disable no-undef, no-unused-vars */
 
-function register_draggable_items(){
-    let draggableElements = document.querySelectorAll('.draggable');
-    draggableElements.forEach((element, index) => {
-        drag_items[index] = new Drag(element.id, index);
-    });
+let dragging = false
+const dragItems = []
+
+function registerDraggableItems () {
+  const draggableElements = document.querySelectorAll('.draggable')
+  draggableElements.forEach((element, index) => {
+    dragItems[index] = new Drag(element.id, index)
+  })
 }
 
 // Add the mousemove event listener
-document.addEventListener('mousemove', function(e) {
-    if( dragging === false ){
-        return;
-    }
+document.addEventListener('mousemove', function (e) {
+  if (dragging === false) {
+    return
+  }
 
-    e.preventDefault();
+  e.preventDefault()
 
-    const x = e.clientX;
-    const y = e.clientY;
+  const x = e.clientX
+  const y = e.clientY
 
-    // access object by variable name
-    drag_items[dragging].move(x, y);
-    
-});
+  // access object by variable name
+  dragItems[dragging].move(x, y)
+})
 
 // Add the mouseup event listener
-document.addEventListener('mouseup', function(e) {
-    dragging = false;
-    undo.commit();
-});
+document.addEventListener('mouseup', function (e) {
+  dragging = false
+  undo.commit()
+})
