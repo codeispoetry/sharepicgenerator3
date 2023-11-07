@@ -25,4 +25,25 @@ window.onload = function() {
         }
     });
 
+    document.querySelectorAll('.to-front').forEach(element => {
+        element.addEventListener('click', (event) => {
+
+            let highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
+                let zIndex = parseInt(getComputedStyle(element).zIndex, 10);
+                return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex);
+            }, 0);
+
+            const target = element.dataset.target;
+            document.getElementById(target).style.zIndex = (highestZIndex + 1).toString();
+        });
+    });
+
+    document.querySelectorAll('.delete').forEach(element => {
+        element.addEventListener('click', (event) => {
+
+            const target = element.dataset.target;
+            document.getElementById(target).remove();
+        });
+    });
+
 };

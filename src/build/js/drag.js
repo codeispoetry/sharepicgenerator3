@@ -1,6 +1,13 @@
 var dragging = false;
 var drag_items = new Array();
 
+function register_draggable_items(){
+    let draggableElements = document.querySelectorAll('.draggable');
+    draggableElements.forEach((element, index) => {
+        drag_items[index] = new Drag(element.id, index);
+    });
+}
+
 // Add the mousemove event listener
 document.addEventListener('mousemove', function(e) {
     if( dragging === false ){

@@ -4,6 +4,9 @@
         Größe:
         <input type="range" min="10" max="300" value="40" class="slider" id="logo_size">
     </label>
+
+    <button class="to-front" data-target="logo">nach vorne</button>
+    
 </section>
 
 <script>

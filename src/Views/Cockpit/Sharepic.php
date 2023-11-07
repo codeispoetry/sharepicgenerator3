@@ -13,12 +13,10 @@
 
 <script>
 document.getElementById('width').addEventListener('change', function() {
-   // document.getElementById('canvas').style.width = this.value + 'px';
     document.getElementById('sharepic').style.width = this.value + 'px';
 
 });
 document.getElementById('height').addEventListener('change', function() {
-    //document.getElementById('canvas').style.height = this.value + 'px';
     document.getElementById('sharepic').style.height = this.value + 'px';
 });
 </script>

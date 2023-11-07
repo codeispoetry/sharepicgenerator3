@@ -4,6 +4,10 @@
         Größe:
         <input type="range" min="10" max="80" value="20" class="slider" id="eyecatcher_size">
     </label>
+
+    <button class="to-front" data-target="eyecatcher">nach vorne</button>
+    <button class="delete" data-target="eyecatcher">löschen</button>
+
 </section>
 
 <script>

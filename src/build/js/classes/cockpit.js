@@ -23,7 +23,6 @@ class Cockpit{
     }
 
     setup_sharepic(){
-        console.log("setup_sharepic")
         const width = document.getElementById('width');
         const height = document.getElementById('height');
         width.value = document.getElementById('sharepic').style.width.replace("px","");

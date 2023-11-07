@@ -26,10 +26,7 @@ class API{
             })
             .then(data => {
                 document.getElementById('canvas').innerHTML = data;
-                drag_items[1] = new Drag('text1', 1);
-                drag_items[2] = new Drag('eyecatcher', 2);
-                drag_items[3] = new Drag('logo', 3);
-
+                register_draggable_items();
                 select.setup();
                 cockpit.setup_sharepic();
             })
