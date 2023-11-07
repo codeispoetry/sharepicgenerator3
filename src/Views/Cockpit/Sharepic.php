@@ -1,12 +1,15 @@
-<label>
-    Breite:
-    <input type="number" name="width" id="width" value="500" step="1">
-</label>
-<label>
-    Höhe:
-    <input type="number" name="height" id="height" value="400" step="1">
+<section id="cockpit_sharepic">
+    <h2>Sharepic</h2>
+    <label>
+        Breite:
+        <input type="number" name="width" id="width" value="500" step="1">
+    </label>
+    <label>
+        Höhe:
+        <input type="number" name="height" id="height" value="400" step="1">
 
-</label>
+    </label>
+</section>
 
 <script>
 document.getElementById('width').addEventListener('change', function() {

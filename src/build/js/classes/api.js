@@ -5,7 +5,7 @@ class API{
     }
 
     load(path = 'tenants/de/start.html'){
-        var data = { 
+         var data = { 
             template: path
          };
     
@@ -28,13 +28,16 @@ class API{
                 document.getElementById('canvas').innerHTML = data;
                 drag_items[1] = new Drag('text1', 1);
                 drag_items[2] = new Drag('eyecatcher', 2);
+
+                select.setup();
             })
             .catch(error => console.error('Error:', error));
     }
 
     create(){
-        var canvas = document.getElementById('canvas');
-        var data = { 
+        select.clear_all();
+        const canvas = document.getElementById('canvas');
+        const data = { 
             data: canvas.outerHTML,
             size: {
                 width:  document.getElementById('width').value,
@@ -42,7 +45,7 @@ class API{
             }
          };
     
-        var options = {
+        const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

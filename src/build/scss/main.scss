@@ -1,5 +1,5 @@
 body{
-    background-color: #242424;
+    background-color: $dark;
 }
 
 .main {
@@ -15,7 +15,7 @@ body{
 .cockpit {
     margin: 10px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid $light;
 }
 
 .workbench{

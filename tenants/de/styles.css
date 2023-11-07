@@ -45,8 +45,8 @@ h1::KILLbefore {
 }
 
 .eyecatcher{
-    width: 100px;
-    height: 100px;
+    width: auto;
+    aspect-ratio: 1;
     border-radius: 50%;
     background-color: #0ba1dd;
     display: flex;
@@ -60,7 +60,9 @@ h1::KILLbefore {
     font-size: 1.4em;
     rotate: -9deg;
     margin: 0;
-    padding: 0.2em;
+    padding: 1em;
+    transform-origin: center;
+
 }
 
 .draggable{

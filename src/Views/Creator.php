@@ -5,15 +5,16 @@
 		<div class="workbench">
 			<div id="canvas" contenteditable="true">
 				<div id="sharepic">
-					<h1 id="text1" class="draggable selectable">Void</h1>
+					
 				</div>
 			</div>
 		</div>
-		<div class="cockpit">
+		<div id="cockpit" class="cockpit">
 			<?php
-				include 'src/Views/Cockpit/Sharepic.php';
+			foreach (glob("src/Views/Cockpit/*.php") as $filename) {
+				include $filename;
+			}
 			?>
-			<input type="range" min="0" max="100" value="50" class="slider" id="fontsize" oninput="font_size(event)">
 		</div>
 	</div>
 	
