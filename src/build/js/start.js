@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, no-unused-vars */
 
-let api, cockpit, select, undo, pixabay
+let api, cockpit, select, undo, pixabay, uploader
 
 window.onload = function () {
   api = new API()
@@ -10,6 +10,7 @@ window.onload = function () {
   select = new Select()
   undo = new Undo()
   pixabay = new Pixabay()
+  uploader = new Uploader()
 
   document.getElementById('create').addEventListener('click', function () {
     const output = document.getElementById('output')
@@ -26,7 +27,13 @@ window.onload = function () {
   })
 
   document.getElementById('upload').addEventListener('change', function () {
-    api.upload()
+    const input = document.getElementById('upload')
+
+    if (!input.files.length) {
+      return
+    }
+
+    api.upload(input.files[0])
   })
 
   document.getElementById('width').addEventListener('change', function () {

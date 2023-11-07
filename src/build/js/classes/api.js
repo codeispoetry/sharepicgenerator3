@@ -68,14 +68,7 @@ class API {
       .catch(error => console.error('Error:', error))
   }
 
-  upload () {
-    const input = document.getElementById('upload')
-
-    if (!input.files.length) {
-      return
-    }
-
-    const file = input.files[0]
+  upload (file) {
     const formData = new FormData()
     formData.append('file', file)
 

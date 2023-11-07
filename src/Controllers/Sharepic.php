@@ -93,13 +93,7 @@ class Sharepic {
 
 		$filename = 'background.' . $extension;
 		$filepath = 'users/' . $this->user . '/workspace/' . $filename;
-		$files    = glob( 'users/' . $this->user . '/workspace/background.*' );
-
-		foreach ( $files as $file ) {
-			if ( is_file( $file ) ) {
-				unlink( $file );
-			}
-		}
+		$this->delete_old_files();
 		file_put_contents( $filepath, file_get_contents( $url ) );
 
 		$html = preg_replace( "#.$url.#", sprintf( "'/%s?r=%s'", $filepath, rand() ), $html );
@@ -149,13 +143,7 @@ class Sharepic {
 			$this->no_access();
 		}
 
-		$files = glob( 'users/' . $this->user . '/workspace/background.*' );
-
-		foreach ( $files as $sfile ) {
-			if ( is_file( $sfile ) ) {
-				unlink( $sfile );
-			}
-		}
+		$this->delete_old_files();
 
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 
@@ -164,6 +152,19 @@ class Sharepic {
 		}
 
 		echo json_encode( array( 'path' => $upload_file ) );
+	}
+
+	/**
+	 * Deletes old files.
+	 */
+	private function delete_old_files() {
+		$files = glob( 'users/' . $this->user . '/workspace/background.*' );
+
+		foreach ( $files as $file ) {
+			if ( is_file( $file ) ) {
+				unlink( $file );
+			}
+		}
 	}
 
 	/**
