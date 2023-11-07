@@ -1,4 +1,4 @@
-var api, cockpit, select;
+var api, cockpit, select, undo;
 
 window.onload = function() {
     api = new API();
@@ -6,6 +6,7 @@ window.onload = function() {
 
     cockpit = new Cockpit();
     select = new Select();
+    undo = new Undo();
 
     document.getElementById('create').addEventListener('click', function() {
         api.create();

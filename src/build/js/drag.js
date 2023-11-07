@@ -27,4 +27,5 @@ document.addEventListener('mousemove', function(e) {
 // Add the mouseup event listener
 document.addEventListener('mouseup', function(e) {
     dragging = false;
+    undo.commit();
 });
