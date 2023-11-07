@@ -62,8 +62,22 @@ class Sharepic {
 
 		if ( ! empty( $data['data'] ) ) {
 			$html = $this->download_images( $data['data'] );
+			$html = $this->replace_paths( $html );
+
 			file_put_contents( $this->file, $html );
 		}
+	}
+
+	/**
+	 * Replace the paths in the html.
+	 *
+	 * @param string $inhtml The html to be rewritten.
+	 * @return string
+	 */
+	private function replace_paths( $inhtml ) {
+		$html = preg_replace( '#/users/' . $this->user . '/workspace/#', '', $inhtml );
+		$html = preg_replace( '#/tenants/#', '../../../tenants/', $html );
+		return $html;
 	}
 
 	/**
@@ -108,7 +122,7 @@ class Sharepic {
 		$path = 'users/' . $this->user . '/output.png';
 
 		$cmd = sprintf(
-			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d http://localhost/%s',
+			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s',
 			$path,
 			$this->size['width'],
 			$this->size['height'],

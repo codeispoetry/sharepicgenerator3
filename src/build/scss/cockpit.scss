@@ -26,6 +26,23 @@
         padding: 10px;
         border: 0;
     }
+    .file-upload {
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: $grashalm;
+        color: $white;
+        cursor: pointer;
+
+        input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 0;
+        }
+    }
 
     button{
         cursor: pointer;
@@ -72,24 +89,6 @@
             &.delete{
                 background-image: url(/assets/icons/delete.png);
             }
-        }
-    }
-
-    .file-upload {
-        position: relative;
-        display: inline-block;
-        padding: 10px 15px;
-        background-color: $grashalm;
-        color: $white;
-        cursor: pointer;
-
-     
-        input[type="file"] {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
         }
     }
 }
