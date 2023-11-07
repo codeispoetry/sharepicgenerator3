@@ -4,6 +4,7 @@
 @import 'sharepic.scss';
 @import 'cockpit.scss';
 @import 'header.scss';
+@import 'pixabay.scss';
 
 html{
     margin: 0;
@@ -16,8 +17,18 @@ body{
     background-color: $dark;
 }
 
+a, a:visited{
+    color: #FFFFFF;
+
+}
+
 .row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.closer{
+    color: rgb(255, 0, 81);
+    cursor: pointer;
 }

@@ -7,7 +7,11 @@
     <label>
         Höhe:
         <input type="number" name="height" id="height" value="400" step="1">
+    </label>
 
+    <label style="display:block;margin-top:20px">
+        Hintergrundbild suchen:
+        <input type="text" name="pixabay_q" id="pixabay_q" placeholder="Suchbegriff">
     </label>
 </section>
 

@@ -1,4 +1,4 @@
-var api, cockpit, select, undo;
+var api, cockpit, select, undo, pixabay;
 
 window.onload = function() {
     api = new API();
@@ -7,6 +7,7 @@ window.onload = function() {
     cockpit = new Cockpit();
     select = new Select();
     undo = new Undo();
+    pixabay = new Pixabay();
 
     document.getElementById('create').addEventListener('click', function() {
         api.create();
@@ -44,6 +45,14 @@ window.onload = function() {
 
             const target = element.dataset.target;
             document.getElementById(target).remove();
+        });
+    });
+
+    document.querySelectorAll('.closer').forEach(element => {
+        element.addEventListener('click', (event) => {
+
+            const target = element.dataset.target;
+            document.getElementById(target).classList.remove('show');
         });
     });
 

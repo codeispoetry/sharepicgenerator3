@@ -14,10 +14,18 @@ class Frontend {
 	private $user;
 
 	/**
+	 * The config object.
+	 *
+	 * @var Config
+	 */
+	private $config;
+
+	/**
 	 * Enables the user-object.
 	 */
 	public function __construct() {
-		$this->user = new User();
+		$this->user   = new User();
+		$this->config = new Config();
 	}
 
 	/**
@@ -27,6 +35,7 @@ class Frontend {
 		if ( ! $this->user->login() ) {
 			header( 'Location: /' );
 		}
+
 		include_once './src/Views/Header.php';
 		include_once './src/Views/Creator.php';
 		include_once './src/Views/Footer.php';

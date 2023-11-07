@@ -61,8 +61,43 @@ class Sharepic {
 		$this->template       = $data['template'] ?? $this->file;
 
 		if ( ! empty( $data['data'] ) ) {
-			file_put_contents( $this->file, $data['data'] );
+			$html = $this->download_images( $data['data'] );
+			file_put_contents( $this->file, $html );
 		}
+	}
+
+	/**
+	 * Downloads the images and rewrites html.
+	 *
+	 * @param string $html The html to be rewritten.
+	 * @return string
+	 */
+	private function download_images( $html ) {
+		$html = html_entity_decode( $html );
+		preg_match_all( '/url\((.*?)\);/', $html, $matches );
+
+		if ( empty( $matches[0] ) || empty( $matches[1][0] ) ) {
+			return $html;
+		}
+
+		$url = substr( $matches[1][0], 1, -1 );
+
+		if ( ! str_starts_with( $url, 'http' ) ) {
+			return $html;
+		}
+
+		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
+		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
+			return $html;
+		}
+
+		$filename = 'background.' . $extension;
+		$filepath = 'users/' . $this->user . '/workspace/' . $filename;
+		file_put_contents( $filepath, file_get_contents( $url ) );
+
+		$html = preg_replace( "#.$url.#", "'" . $filename . "'", $html );
+
+		return $html;
 	}
 
 	/**

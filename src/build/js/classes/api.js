@@ -30,7 +30,7 @@ class API{
                 select.setup();
                 cockpit.setup_sharepic();
             })
-            .catch(error => console.error('Error:', error));
+           .catch(error => console.error('Error:', error));
     }
 
     create(){
@@ -57,9 +57,11 @@ class API{
                 if(response.status === 403) {
                     throw new Error('Access is not allowed');
                 }
-                return response.json();
+                return response.text();
             })
-            .then(data => {            
+            .then(data => {       
+                console.log(data); 
+                data = JSON.parse(data);    
                 var img = document.getElementById('output');
                 img.src = '/' + data.path + '?rand=' + Math.random();
         

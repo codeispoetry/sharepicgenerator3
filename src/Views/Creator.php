@@ -16,6 +16,9 @@
 			}
 			?>
 		</div>
+		<?php
+			include 'src/Views/Pixabay.php';
+		?>
 	</div>
 	
 	<div class="row">
