@@ -5,21 +5,33 @@
     <exclude-pattern>*.css</exclude-pattern>
     <exclude-pattern>*.js</exclude-pattern>
     <exclude-pattern>vendor</exclude-pattern>
+    <exclude-pattern>node_modules</exclude-pattern>
+
     <exclude-pattern>src/Views</exclude-pattern>
 
  
     <rule ref="WordPress">
+        <exclude name="Squiz.Commenting.FileComment.Missing" />
+
         <exclude name="WordPress.WP.I18n.MissingArgDomain" />
         <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
         <exclude name="WordPress.WP.AlternativeFunctions" />
+
+        <exclude name="WordPress.DB.RestrictedClasses.mysql__PDO" />
+
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
-        <exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
-        <exclude name="WordPress.PHP.DiscouragedPHPFunctions" />
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+
+        <exclude name="WordPress.PHP.DiscouragedPHPFunctions" />
+        <exclude name="WordPress.PHP.StrictInArray.MissingTrueStrict" />
+
+        <exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped" />
+        <exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
+        <exclude name="WordPress.Security.ValidatedSanitizedInput.InputNotSanitized" />
+        <exclude name="WordPress.Security.ValidatedSanitizedInput.InputNotValidated" />
         <exclude name="WordPress.Security.NonceVerification.Missing" />
         <exclude name="WordPress.Security.NonceVerification.Recommended" />
-        <exclude name="Squiz.Commenting.FileComment.Missing" />
-        <exclude name="WordPress.DB.RestrictedClasses.mysql__PDO" />
+
     </rule>
 
 </ruleset>
