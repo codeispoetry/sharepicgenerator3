@@ -18,7 +18,12 @@ class API{
         };
     
         fetch(this.api + 'load', options)
-            .then(response => response.text())
+            .then(response => {
+                if(response.status === 403) {
+                    throw new Error('Access is not allowed');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('canvas').innerHTML = data;
                 drag_items[1] = new Drag('text1', 1);
@@ -52,8 +57,7 @@ class API{
                 }
                 return response.json();
             })
-            .then(data => {      
-                console.log(data);         
+            .then(data => {            
                 var img = document.getElementById('output');
                 img.src = '/' + data.path + '?rand=' + Math.random();
         

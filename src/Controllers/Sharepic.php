@@ -69,7 +69,7 @@ class Sharepic {
 	 * Creates a sharepic.
 	 */
 	public function create() {
-		$path = 'users/tom/tmp/output.png';
+		$path = 'users/' . $this->user . '/output.png';
 
 		$cmd = sprintf(
 			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d http://localhost/%s',

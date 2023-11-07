@@ -19,6 +19,7 @@
         <exclude name="WordPress.Security.NonceVerification.Missing" />
         <exclude name="WordPress.Security.NonceVerification.Recommended" />
         <exclude name="Squiz.Commenting.FileComment.Missing" />
+        <exclude name="WordPress.DB.RestrictedClasses.mysql__PDO" />
     </rule>
 
 </ruleset>
