@@ -62,7 +62,13 @@ h1::KILLbefore {
     margin: 0;
     padding: 1em;
     transform-origin: center;
-
+}
+.logo{
+    background-image: url("/tenants/de/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    aspect-ratio: 1;
 }
 
 .draggable{

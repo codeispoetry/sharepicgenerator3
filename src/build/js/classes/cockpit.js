@@ -23,10 +23,11 @@ class Cockpit{
     }
 
     setup_sharepic(){
+        console.log("setup_sharepic")
         const width = document.getElementById('width');
         const height = document.getElementById('height');
-        width.value = document.getElementById('sharepic').offsetWidth;
-        height.value = document.getElementById('sharepic').offsetHeight;
+        width.value = document.getElementById('sharepic').style.width.replace("px","");
+        height.value = document.getElementById('sharepic').style.height.replace("px","");;
     }
 
     setup_text(element){
@@ -37,6 +38,11 @@ class Cockpit{
     setup_eyecatcher(element){
         const slider = document.getElementById('eyecatcher_size');
         slider.value = element.style.fontSize.replace("px","");
+    }
+
+    setup_logo(element){
+        const slider = document.getElementById('logo_size');
+        slider.value = element.style.width.replace("px","");
     }
 
 }
