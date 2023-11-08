@@ -52,5 +52,12 @@ class Cockpit {
   setup_logo (element) {
     const slider = document.getElementById('logo_size')
     slider.value = element.style.width.replace('px', '')
+
+    const file = document.getElementById('logo_file')
+    let url = element.style.backgroundImage.replace(/url\("(\.\.\/)*/, '').replace('")', '')
+    if (!url.startsWith('/')) {
+      url = '/' + url;
+    }
+    file.value = url
   }
 }

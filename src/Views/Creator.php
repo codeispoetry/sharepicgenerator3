@@ -4,7 +4,7 @@
 <main class="main">
 	<div class="row">
 		<div id="workbench" class="workbench">
-			<div id="canvas" contenteditable="true">
+			<div id="canvas">
 				<div id="sharepic">
 					
 				</div>
@@ -23,6 +23,6 @@
 	</div>
 	
 	<div class="row">
-		<img src="" id="output" style="border: 1px solid blue">
+		<img src="" id="output">
 	</div>
 </main>

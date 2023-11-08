@@ -10,7 +10,7 @@ class Undo {
 
     localStorage.setItem('commits', JSON.stringify([]))
 
-    document.querySelector('[contenteditable]').addEventListener('blur', () => {
+    document.querySelector('[contenteditable]')?.addEventListener('blur', () => {
       this.commit()
     })
 

@@ -55,6 +55,13 @@ class User {
 		$stmt->bindParam( ':username', $this->username );
 		$stmt->execute();
 
+		if ( $stmt->rowCount() === 0 ) {
+			$stmt = $this->db->prepare( 'INSERT INTO users (username, token) VALUES (:username, :token)' );
+			$stmt->bindParam( ':token', $bearer_token );
+			$stmt->bindParam( ':username', $this->username );
+			$stmt->execute();
+		}
+
 		$user_dir = 'users/' . $this->username . '/workspace';
 		if ( ! file_exists( $user_dir ) ) {
 			mkdir( $user_dir, 0777, true );

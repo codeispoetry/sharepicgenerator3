@@ -10,7 +10,6 @@ function registerDraggableItems () {
   })
 }
 
-// Add the mousemove event listener
 document.addEventListener('mousemove', function (e) {
   if (dragging === false) {
     return
@@ -21,12 +20,18 @@ document.addEventListener('mousemove', function (e) {
   const x = e.clientX
   const y = e.clientY
 
-  // access object by variable name
   dragItems[dragging].move(x, y)
+
+  // stop dragging when mouse leaves the sharepic
+  const rect = document.getElementById('sharepic').getBoundingClientRect();
+  if (x < rect.left || x > rect.left + rect.width || y < rect.top || y > rect.top + rect.height) {
+    dragging = false;
+  }
+ 
 })
 
-// Add the mouseup event listener
 document.addEventListener('mouseup', function (e) {
   dragging = false
   undo.commit()
 })
+

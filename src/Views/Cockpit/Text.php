@@ -1,24 +1,27 @@
-<section id="cockpit_text">
+<section class="mainsection" id="cockpit_text">
     <h2>Text</h2>
-    <label>
-        Größe:
-        <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
-    </label>
+    <section>
+        <h3>Größe</h3>
+        <label>
+            <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
+        </label>
+    </section>
+    <section>
+        <h3>Einrückungen:</h3>
+        <div style="display: flex;flex-direction: column;align-items: flex-start;">
+            <?php
+            for($i = 0; $i < 10; $i++) {
 
-    
-    Einrückungen:
-    <div style="display: flex;flex-direction: column;align-items: flex-start;">
-        <?php
-        for($i = 0; $i < 10; $i++) {
-
-            printf('<label class="text_indent show" id="text_indent_%d">Zeile %d:', $i, $i + 1);
-            printf( '<input type="range" value="0" class="slider" min="-100" max="200" data-i="%d">', $i);
-            echo '</label>';
-        }
-        ?>
-    </div>
-
-    <button class="to-front" data-target="text">nach vorne</button>
+                printf('<label class="text_indent show" id="text_indent_%d">Zeile %d:', $i, $i + 1);
+                printf( '<input type="range" value="0" class="slider" min="-100" max="200" data-i="%d">', $i);
+                echo '</label>';
+            }
+            ?>
+        </div>
+    </section>
+    <section>
+        <button class="to-front" data-target="text">nach vorne</button>
+    </section>
 
 </section>
 

@@ -1,6 +1,9 @@
 #canvas{
     width: auto;
-    outline: none;
+}
+
+#sharepic{
+    overflow: hidden;
 }
 
 .draggable{
@@ -13,4 +16,8 @@
 
 .active{
     border-color: black;
+}
+
+[contenteditable]{
+    outline: none;
 }
