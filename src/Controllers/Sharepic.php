@@ -15,6 +15,13 @@ class Sharepic {
 	private $file = 'users/tom/workspace/sharepic.html';
 
 	/**
+	 * The HTML for the sharepic.
+	 *
+	 * @var string
+	 */
+	private $html;
+
+	/**
 	 * The template to be loaded
 	 *
 	 * @var string
@@ -61,32 +68,42 @@ class Sharepic {
 		$this->template       = $data['template'] ?? $this->file;
 
 		if ( ! empty( $data['data'] ) ) {
-			$html = $this->download_images( $data['data'] );
-			$html = $this->replace_paths( $html );
+			$this->html = $data['data'];
+			//$this->download_images( );
+			$this->replace_paths( );
 
-			file_put_contents( $this->file, $html );
+			$html = $this->resize_output( 2 );
+
+			file_put_contents( $this->file, $this->html );
 		}
+	}
+
+	/**
+	 * Resizes the output.
+	 *
+	 * @param float $factor The HTML to be rewritten.
+	 */
+	private function resize_output( $factor ) {
+		$this->html = '<style>#sharepic{ zoom: ' . $factor . '; }</style>' . $this->html;
+		$this->size['width']  = $this->size['width'] * $factor;
+		$this->size['height'] = $this->size['height'] * $factor;
 	}
 
 	/**
 	 * Replace the paths in the html.
 	 *
 	 * @param string $inhtml The html to be rewritten.
-	 * @return string
 	 */
-	private function replace_paths( $inhtml ) {
-		$html = preg_replace( '#/users/' . $this->user . '/workspace/#', '', $inhtml );
-		$html = preg_replace( '#/tenants/#', '../../../tenants/', $html );
-		return $html;
+	private function replace_paths(  ) {
+		$this->html = preg_replace( '#/users/' . $this->user . '/workspace/#', '', $this->html );
+		$this->html = preg_replace( '#/tenants/#', '../../../tenants/', $this->html );
 	}
 
 	/**
 	 * Downloads the images and rewrites html.
-	 *
-	 * @param string $inhtml The html to be rewritten.
-	 * @return string
 	 */
-	private function download_images( $inhtml ) {
+	private function download_images( ) {
+		$inhtml = $this->html;
 		$html = html_entity_decode( $inhtml );
 		preg_match_all( '/url\((.*?)\);/', $html, $matches );
 
@@ -112,7 +129,6 @@ class Sharepic {
 
 		$html = preg_replace( "#.$url.#", sprintf( "'/%s?r=%s'", $filepath, rand() ), $html );
 
-		return $html;
 	}
 
 	/**
