@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, no-unused-vars */
 
-let api, cockpit, select, undo, pixabay, uploader
+let api, cockpit, select, undo, pixabay, uploader, component
 
 window.onload = function () {
   api = new API()
@@ -11,6 +11,7 @@ window.onload = function () {
   undo = new Undo()
   pixabay = new Pixabay()
   uploader = new Uploader()
+  component = new Component()
 
   document.getElementById('create').addEventListener('click', function () {
     const output = document.getElementById('output')
@@ -85,12 +86,7 @@ window.onload = function () {
     })
   })
 
-  document.querySelectorAll('.delete').forEach(element => {
-    element.addEventListener('click', (event) => {
-      const target = element.dataset.target
-      document.getElementById(target).remove()
-    })
-  })
+  
 
   document.querySelectorAll('.closer').forEach(element => {
     element.addEventListener('click', (event) => {
@@ -98,4 +94,6 @@ window.onload = function () {
       document.getElementById(target).classList.remove('show')
     })
   })
+
+ 
 }

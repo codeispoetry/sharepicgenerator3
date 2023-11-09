@@ -35,7 +35,7 @@ class API {
   }
 
   create () {
-    select.clear_all()
+    select.unselect_all()
     const canvas = document.getElementById('canvas')
     const data = {
       data: canvas.innerHTML,

@@ -21,7 +21,6 @@
 
         target.style.fontSize = element.value + "px";
     });
-
 </script>
 
 

@@ -1,7 +1,10 @@
 /* eslint-disable no-undef, no-unused-vars */
 
 class Cockpit {
-  clear_all () {
+  /*
+   * Clear all cockpit elements and show the sharepic cockpit
+   */
+  show_standard () {
     const elements = document.querySelectorAll('#cockpit .show')
     elements.forEach(element => {
       element.classList.remove('show')
@@ -9,6 +12,9 @@ class Cockpit {
     document.getElementById('cockpit_sharepic')?.classList.add('show')
   }
 
+  /*
+    * Show the cockpit element for the given element
+    */
   show (element) {
     const elements = document.querySelectorAll('#cockpit .show')
     elements.forEach(element => {
@@ -24,6 +30,9 @@ class Cockpit {
     document.getElementById(id)?.classList.add('show')
   }
 
+  /*
+    * Setup the cockpit for the given element
+    */
   setup_sharepic () {
     const width = document.getElementById('width')
     const height = document.getElementById('height')

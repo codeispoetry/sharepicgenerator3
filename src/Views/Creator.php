@@ -4,6 +4,12 @@
 <main class="main">
 	<div class="row">
 		<div id="workbench" class="workbench">
+			<div id="adder">
+				<div class="add_sign"><img src="/assets/icons/add.png"></div>
+				<ul class="add_elements">
+					<li data-item="eyecatcher">Störer</li>
+				</ul>
+			</div>
 			<div id="canvas">
 				<div id="sharepic">
 					

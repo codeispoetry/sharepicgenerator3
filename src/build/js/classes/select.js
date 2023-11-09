@@ -2,7 +2,7 @@
 
 class Select {
   setup () {
-    this.clear_all()
+    this.unselect_all()
     const elements = document.querySelectorAll('.selectable')
     elements.forEach(element => {
       element.addEventListener('mousedown', (event) => {
@@ -16,12 +16,13 @@ class Select {
     })
   }
 
-  clear_all () {
+  
+  unselect_all () {
     const elements = document.querySelectorAll('.selectable.active')
     elements.forEach(element => {
       element.classList.remove('active')
     })
-    cockpit.clear_all()
+    cockpit.show_standard()
   }
 
   set_active (element) {
