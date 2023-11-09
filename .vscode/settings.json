@@ -10,6 +10,5 @@
     "phpcbf.executablePath": "/home/tom/.config/composer/vendor/bin/phpcbf",
     "[php]": {
         "editor.defaultFormatter": "persoderlind.vscode-phpcbf"
-    }
-
+    }   
 }

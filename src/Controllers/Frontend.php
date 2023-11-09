@@ -49,4 +49,23 @@ class Frontend {
 		include_once './src/Views/Home.php';
 		include_once './src/Views/Footer.php';
 	}
+
+	/**
+	 * Fail gracefully
+	 *
+	 * @param mixed $name Method.
+	 * @param mixed $arguments Arguments.
+	 * @return void
+	 */
+	public function __call( $name, $arguments ) {
+		$this->no_access();
+	}
+
+	/**
+	 * Fail gracefully.
+	 */
+	private function no_access() {
+		header( 'HTTP/1.0 404 Not Found.' );
+		die();
+	}
 }

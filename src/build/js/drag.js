@@ -20,13 +20,14 @@ document.addEventListener('mousemove', function (e) {
   const x = e.clientX
   const y = e.clientY
 
-  dragItems[dragging].move(x, y)
-
   // stop dragging when mouse leaves the sharepic
   const rect = document.getElementById('sharepic').getBoundingClientRect();
   if (x < rect.left || x > rect.left + rect.width || y < rect.top || y > rect.top + rect.height) {
     dragging = false;
+    return;
   }
+
+  dragItems[dragging].move(x, y)
  
 })
 

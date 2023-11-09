@@ -69,10 +69,10 @@ class Sharepic {
 
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
-			//$this->download_images( );
-			$this->replace_paths( );
+			$this->download_images();
+			$this->replace_paths();
 
-			$html = $this->resize_output( 2 );
+			$this->resize_output( 1 );
 
 			file_put_contents( $this->file, $this->html );
 		}
@@ -81,20 +81,22 @@ class Sharepic {
 	/**
 	 * Resizes the output.
 	 *
-	 * @param float $factor The HTML to be rewritten.
+	 * @param float $zoom The HTML to be rewritten.
 	 */
-	private function resize_output( $factor ) {
-		$this->html = '<style>#sharepic{ zoom: ' . $factor . '; }</style>' . $this->html;
-		$this->size['width']  = $this->size['width'] * $factor;
-		$this->size['height'] = $this->size['height'] * $factor;
+	private function resize_output( $zoom ) {
+		if ( 1 === $zoom ) {
+			return;
+		}
+
+		$this->html           = '<style>#sharepic{ zoom: ' . $zoom . '; }</style>' . $this->html;
+		$this->size['width']  = $this->size['width'] * $zoom;
+		$this->size['height'] = $this->size['height'] * $zoom;
 	}
 
 	/**
 	 * Replace the paths in the html.
-	 *
-	 * @param string $inhtml The html to be rewritten.
 	 */
-	private function replace_paths(  ) {
+	private function replace_paths() {
 		$this->html = preg_replace( '#/users/' . $this->user . '/workspace/#', '', $this->html );
 		$this->html = preg_replace( '#/tenants/#', '../../../tenants/', $this->html );
 	}
@@ -102,24 +104,24 @@ class Sharepic {
 	/**
 	 * Downloads the images and rewrites html.
 	 */
-	private function download_images( ) {
-		$inhtml = $this->html;
-		$html = html_entity_decode( $inhtml );
-		preg_match_all( '/url\((.*?)\);/', $html, $matches );
+	private function download_images() {
+
+		$input_html   = html_entity_decode( $this->html );
+		preg_match_all( '/url\((.*?)\);/', $this->html, $matches );
 
 		if ( empty( $matches[0] ) || empty( $matches[1][0] ) ) {
-			return $inhtml;
+			return $input_html;
 		}
 
 		$url = substr( $matches[1][0], 1, -1 );
 
 		if ( ! str_starts_with( $url, 'http' ) ) {
-			return $inhtml;
+			return $input_html;
 		}
 
 		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			return $inhtml;
+			return $input_html;
 		}
 
 		$filename = 'background.' . $extension;
@@ -127,7 +129,7 @@ class Sharepic {
 		$this->delete_old_files();
 		file_put_contents( $filepath, file_get_contents( $url ) );
 
-		$html = preg_replace( "#.$url.#", sprintf( "'/%s?r=%s'", $filepath, rand() ), $html );
+		$this->html = preg_replace( "#.$url.#", sprintf( "'/%s?r=%s'", $filepath, rand() ), $this->html );
 
 	}
 

@@ -2,7 +2,7 @@
 
 class Uploader {
   constructor () {
-    const dropArea = document.getElementById('canvas')
+    const dropArea = document.getElementById('workbench')
     dropArea.addEventListener('drop', this.handle, false)
   }
 
