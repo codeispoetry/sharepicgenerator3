@@ -122,6 +122,7 @@ class User {
 			return false;
 		}
 
-		return $result['username'];
+		$this->username = $result['username'];
+		return $this->username;
 	}
 }

@@ -21,18 +21,16 @@ document.addEventListener('mousemove', function (e) {
   const y = e.clientY
 
   // stop dragging when mouse leaves the sharepic
-  const rect = document.getElementById('sharepic').getBoundingClientRect();
+  const rect = document.getElementById('sharepic').getBoundingClientRect()
   if (x < rect.left || x > rect.left + rect.width || y < rect.top || y > rect.top + rect.height) {
-    dragging = false;
-    return;
+    dragging = false
+    return
   }
 
   dragItems[dragging].move(x, y)
- 
 })
 
 document.addEventListener('mouseup', function (e) {
   dragging = false
   undo.commit()
 })
-

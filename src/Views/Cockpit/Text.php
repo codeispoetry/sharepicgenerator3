@@ -11,10 +11,21 @@
         <div style="display: flex;flex-direction: column;align-items: flex-start;">
             <?php
             for($i = 0; $i < 10; $i++) {
+            ?>
+                <label class="line_indent show" id="line_indent_<?php echo $i;?>">Zeile <?php echo $i+1;?>:
+                    <input type="range" value="0" class="slider" min="-100" max="200" data-i="<?php echo $i;?>">
+                </label>
+               <select id="line_layout_<?php echo $i;?>" data-i="<?php echo $i;?>" class="line_layout show">
+                   <option value="sandtanne">sand/tanne</option>
+                   <option value="tannesand">tanne/sand</option>
 
-                printf('<label class="text_indent show" id="text_indent_%d">Zeile %d:', $i, $i + 1);
-                printf( '<input type="range" value="0" class="slider" min="-100" max="200" data-i="%d">', $i);
-                echo '</label>';
+                   <option value="sandklee">sand/klee</option>
+                   <option value="kleesand">klee/sand</option>
+
+                   <option value="grastanne">gras/tanne</option>
+                   <option value="tannegras">tanne/gras</option>
+                </select>
+            <?php
             }
             ?>
         </div>
@@ -32,12 +43,22 @@
         target.style.fontSize = element.value + "px";
     });
 
-    const sliders = document.querySelectorAll('.text_indent input');
+    const sliders = document.querySelectorAll('.line_indent input');
     sliders.forEach(slider => {
         slider.addEventListener('input', function(e) {
             const allP = document.querySelectorAll('#text p');
             const i = e.target.dataset.i;
             allP[i].style.marginLeft = e.target.value + 'px';
+        });
+    });
+
+    const layouts = document.querySelectorAll('.line_layout');
+    layouts.forEach(layout => {
+        layout.addEventListener('change', function(e) {
+            const allP = document.querySelectorAll('#text p');
+            const i = e.target.dataset.i;
+            allP[i].classList.remove('sandtanne', 'tannesand','sandklee', 'kleetand', 'grastanne', 'tannegras');
+            allP[i].classList.add(e.target.value)
         });
     });
 </script>

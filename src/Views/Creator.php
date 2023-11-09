@@ -21,7 +21,7 @@
 			include 'src/Views/Pixabay.php';
 		?>
 	</div>
-	
+
 	<div class="row">
 		<img src="" id="output">
 	</div>

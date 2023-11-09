@@ -48,7 +48,8 @@
         }
     }
 
-    .text_indent{
+    .line_indent,
+    .line_layout{
         display: none;
         
         &.show{

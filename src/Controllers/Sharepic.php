@@ -2,6 +2,8 @@
 namespace Sharepicgenerator\Controllers;
 
 use Sharepicgenerator\Controllers\User;
+use Sharepicgenerator\Controllers\Logger;
+
 /**
  * Sharepic controller.
  */
@@ -46,11 +48,20 @@ class Sharepic {
 	private $user;
 
 	/**
+	 * The logger object.
+	 *
+	 * @var Logger
+	 */
+	private $logger;
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
 		$user       = new User();
 		$this->user = $user->get_user_by_token();
+
+		$this->logger = new Logger( $user );
 
 		if ( empty( $this->user ) ) {
 			$this->no_access();
@@ -106,7 +117,7 @@ class Sharepic {
 	 */
 	private function download_images() {
 
-		$input_html   = html_entity_decode( $this->html );
+		$input_html = html_entity_decode( $this->html );
 		preg_match_all( '/url\((.*?)\);/', $this->html, $matches );
 
 		if ( empty( $matches[0] ) || empty( $matches[1][0] ) ) {
@@ -140,23 +151,41 @@ class Sharepic {
 		$path = 'users/' . $this->user . '/output.png';
 
 		$cmd = sprintf(
-			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s',
+			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
 			$path,
-			$this->size['width'],
-			$this->size['height'],
-			$this->file
+			(int) $this->size['width'],
+			(int) $this->size['height'],
+			escapeshellarg( $this->file )
 		);
 
-		$output = shell_exec( $cmd );
+		exec( $cmd, $output, $return_code );
+
+		if ( 0 !== $return_code ) {
+			$this->logger->error( implode( "\n", $output ) );
+			$this->http_error( 'Could not create file' );
+		}
 
 		echo json_encode( array( 'path' => $path ) );
 	}
 
 	/**
 	 * Loads the sharepic.
+	 *
+	 * @throws \Exception If the file does not exist.
 	 */
 	public function load() {
-		echo file_get_contents( $this->template );
+		$file = '';
+		try {
+			if ( ! file_exists( $this->template ) ) {
+				throw new \Exception( 'File does not exist' );
+			}
+			$file = file_get_contents( $this->template );
+		} catch ( \Exception $e ) {
+			$this->logger->error( $this->template . ' ' . $e->getMessage() );
+			$this->http_error( 'Could not load file ' . $this->template );
+		}
+
+		echo $file;
 	}
 
 
@@ -180,7 +209,7 @@ class Sharepic {
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
-			$this->no_access();
+			$this->http_error( 'Could not upload file' );
 		}
 
 		echo json_encode( array( 'path' => $upload_file ) );
@@ -204,6 +233,16 @@ class Sharepic {
 	 */
 	private function no_access() {
 		header( 'HTTP/1.0 403 Forbidden' );
+		die();
+	}
+
+	/**
+	 * Fail gracefully.
+	 *
+	 * @param string $message The error message.
+	 */
+	private function http_error( $message ) {
+		header( 'HTTP/1.0 500 ' . $message );
 		die();
 	}
 

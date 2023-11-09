@@ -11,5 +11,8 @@ build:
 shell:
 	docker-compose run webserver bash
 
+log-empty:
+	rm logs/*.log
+
 png:
 	chromium-browser --headless --disable-gpu --screenshot=output.png --window-size=800,600 input.svg

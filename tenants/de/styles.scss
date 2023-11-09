@@ -3,16 +3,21 @@
     src: url("../../assets/fonts/GrueneType.woff2") format("woff2");
 }
 
-body{
-    padding:0;
-    margin:0;
+$tanne:#005437;
+$klee: #008939;
+$gras: #8abd24;
+$sand: #f5f1e9;
+
+body {
+    padding: 0;
+    margin: 0;
 }
 
-#canvas{
+#canvas {
     zoom: 1;
 }
 
-#sharepic{
+#sharepic {
     background-size: cover;
     width: 500px;
     height: 400px;
@@ -22,35 +27,71 @@ body{
     position: relative;
 }
 
-.text{
+.text {
     display: inline-flex;
     flex-direction: column;
     align-items: flex-start;
+
+    p {
+        display: inline;
+        color: white;
+        font-family: "GrueneType", sans-serif;
+        white-space: nowrap;
+        margin: 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            background-color: #005437;
+            transform: skew(-9deg, 0);
+            width: calc(100% + 40px);
+            height: 100%;
+            z-index: -1;
+        }
+
+        &.sandtanne{
+            color: $sand;
+            &::before {
+                background-color: $tanne;
+            }
+        }
+        &.tannesand{
+            color: $tanne;
+            &::before {
+                background-color: $sand;
+            }
+        }
+        &.sandklee{
+            color: $sand;
+            &::before {
+                background-color: $klee;
+            }
+        }
+        &.kleesand{
+            color: $klee;
+            &::before {
+                background-color: $sand;
+            }
+        }
+        &.grastanne{
+            color: $gras;
+            &::before {
+                background-color: $tanne;
+            }
+        }
+        &.tannegras{
+            color: $tanne;
+            &::before {
+                background-color: $gras;
+            }
+        }
+    }
 }
 
-.text p{
-    display: inline;
-    color: white;
-    font-family: "GrueneType";
-    white-space: nowrap;
-    margin: 0;
-    position: relative;
-}
-
-.text p::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -20px;
-    background-color: #005437;
-    transform: skew(-9deg, 0);
-    width: calc( 100% + 40px);
-    height: 100%;
-    z-index: -1;
-}
-
-
-.eyecatcher{
+.eyecatcher {
     border-radius: 50%;
     background-color: #0ba1dd;
     color: white;
@@ -62,28 +103,26 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-family: "GrueneType", sans-serif;
+        line-height: 1em;
+        text-align: center;
+        font-size: 1.4em;
+    }
 }
 
-.eyecatcher p{
-    margin: 0;
-    padding: 0;
-    font-family: GrueneType;
-    line-height: 1em;
-    text-align: center;
-    font-size: 1.4em;
-}
-
-.logo{
+.logo {
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px;
     aspect-ratio: 1;
 }
 
-.draggable{
+.draggable {
     position: absolute;
     top: 0;
     left: 0;
 }
-

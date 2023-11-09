@@ -20,8 +20,8 @@ class API {
 
     fetch(this.api + 'load', options)
       .then(response => {
-        if (response.status === 403) {
-          throw new Error('Access is not allowed')
+        if (response.status !== 200) {
+          throw new Error(response.status + ' ' + response.statusText)
         }
         return response.text()
       })
@@ -55,8 +55,8 @@ class API {
 
     fetch(this.api + 'create', options)
       .then(response => {
-        if (response.status === 403) {
-          throw new Error('Access is not allowed')
+        if (response.status !== 200) {
+          throw new Error(response.status + ' ' + response.statusText)
         }
         return response.text()
       })
@@ -77,8 +77,8 @@ class API {
       body: formData
     })
       .then(response => {
-        if (response.status === 403) {
-          throw new Error('Access is not allowed')
+        if (response.status !== 200) {
+          throw new Error(response.status + ' ' + response.statusText)
         }
         return response.json()
       })

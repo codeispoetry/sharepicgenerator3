@@ -47,28 +47,28 @@ window.onload = function () {
     if (e.key === 'Enter') {
       e.preventDefault()
 
-      const sel = window.getSelection();
+      const sel = window.getSelection()
       if (sel.rangeCount) {
-        const range = sel.getRangeAt(0);
-        const caretPos = range.endOffset;
-        const currentPara = sel.anchorNode.parentNode;
-        const text = currentPara.textContent;
-        const beforeText = text.slice(0, caretPos);
-        const afterText = text.slice(caretPos);
-  
+        const range = sel.getRangeAt(0)
+        const caretPos = range.endOffset
+        const currentPara = sel.anchorNode.parentNode
+        const text = currentPara.textContent
+        const beforeText = text.slice(0, caretPos)
+        const afterText = text.slice(caretPos)
+
         // Modify the text of the current paragraph
-        currentPara.textContent = beforeText;
-  
+        currentPara.textContent = beforeText
+
         // Create a new paragraph with the remaining text
-        const newPara = document.createElement('p');
-        newPara.textContent = afterText;
-        currentPara.parentNode.insertBefore(newPara, currentPara.nextSibling);
-  
+        const newPara = document.createElement('p')
+        newPara.textContent = afterText
+        currentPara.parentNode.insertBefore(newPara, currentPara.nextSibling)
+
         // Move caret to the start of the new paragraph
-        range.setStart(newPara.firstChild, 0);
-        range.setEnd(newPara.firstChild, 0);
-        sel.removeAllRanges();
-        sel.addRange(range);
+        range.setStart(newPara.firstChild, 0)
+        range.setEnd(newPara.firstChild, 0)
+        sel.removeAllRanges()
+        sel.addRange(range)
       }
     }
   })
@@ -98,5 +98,4 @@ window.onload = function () {
       document.getElementById(target).classList.remove('show')
     })
   })
-
 }

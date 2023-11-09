@@ -35,12 +35,21 @@ class Cockpit {
     const slider = document.getElementById('text_size')
     slider.value = element.style.fontSize.replace('px', '')
 
-    const allP = document.querySelectorAll('#text p');
+    const allP = document.querySelectorAll('#text p')
 
-    allP.forEach( (line, index) => {
-      const slider = document.getElementById('text_indent_' + index)
+    allP.forEach((line, index) => {
+      const slider = document.getElementById('line_indent_' + index)
       slider.classList.toggle('show', (index < allP.length))
       slider.firstElementChild.value = line.style.marginLeft.replace('px', '')
+
+      const layout = document.getElementById('line_layout_' + index)
+      layout.classList.toggle('show', (index < allP.length))
+
+      const classes = Array.from(line.classList)
+      const allowedClasses = ['sandtanne', 'tannesand', 'sandklee', 'kleesand', 'grastanne', 'tannegras']
+      const colorset = classes.filter(c => allowedClasses.includes(c)).join('')
+
+      layout.value = colorset
     })
   }
 
@@ -56,7 +65,7 @@ class Cockpit {
     const file = document.getElementById('logo_file')
     let url = element.style.backgroundImage.replace(/url\("(\.\.\/)*/, '').replace('")', '')
     if (!url.startsWith('/')) {
-      url = '/' + url;
+      url = '/' + url
     }
     file.value = url
   }
