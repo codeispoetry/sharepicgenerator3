@@ -3,7 +3,7 @@
     <section>
         <h3>Größe</h3>
         <label>
-            <input type="range" min="10" max="500" value="40" class="slider" id="logo_size">
+            <input type="range" min="10" max="2000" value="400" class="slider" id="logo_size">
         </label>
     </section>
 
