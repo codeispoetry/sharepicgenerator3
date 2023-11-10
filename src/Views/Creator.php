@@ -1,4 +1,4 @@
-<script src="/assets/script.js" defer></script>
+<script src="/assets/script.js?r=<?php echo rand(); ?>" defer></script>
 
 
 <main class="main">

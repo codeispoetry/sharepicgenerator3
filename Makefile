@@ -1,6 +1,7 @@
 up:
 	docker-compose up -d
 	@echo "Port: 9500"
+	google-chrome http://localhost:9500
 
 stop:
 	docker-compose stop

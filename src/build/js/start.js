@@ -14,9 +14,6 @@ window.onload = function () {
   component = new Component()
   new UI()
 
-
-
-
   /*
     * Handles the enter key in the editables
     */
