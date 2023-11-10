@@ -64,7 +64,7 @@ class Sharepic {
 		$this->logger = new Logger( $user );
 
 		if ( empty( $this->user ) ) {
-			$this->no_access();
+			$this->http_error( 'no user' );
 			die();
 		}
 
@@ -201,7 +201,7 @@ class Sharepic {
 
 		$extension = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			$this->no_access();
+			$this->http_error('Invalid file type');
 		}
 
 		$this->delete_old_files();
@@ -230,14 +230,6 @@ class Sharepic {
 
 	/**
 	 * Fail gracefully.
-	 */
-	private function no_access() {
-		header( 'HTTP/1.0 403 Forbidden' );
-		die();
-	}
-
-	/**
-	 * Fail gracefully.
 	 *
 	 * @param string $message The error message.
 	 */
@@ -254,6 +246,7 @@ class Sharepic {
 	 * @return void
 	 */
 	public function __call( $name, $arguments ) {
-		$this->no_access();
+		header( 'HTTP/1.0 404 No route.' );
+		die();
 	}
 }
