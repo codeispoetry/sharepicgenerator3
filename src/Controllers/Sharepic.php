@@ -233,7 +233,7 @@ class Sharepic {
 	 *
 	 * @param string $message The error message.
 	 */
-	private function http_error( $message ) {
+	private function http_error( $message = 'Something went wrong' ) {
 		header( 'HTTP/1.0 500 ' . $message );
 		die();
 	}
