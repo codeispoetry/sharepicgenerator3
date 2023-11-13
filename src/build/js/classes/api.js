@@ -46,8 +46,9 @@ class API {
     clonedCanvas.querySelector('.ql-clipboard')?.remove();
     clonedCanvas.querySelector('#patterns')?.remove();
 
-    const link = `<link rel="stylesheet" href="../../../assets/styles.css">\n<link rel="stylesheet" href="../../../node_modules/quill/dist/quill.bubble.css">\n\n`;
-    clonedCanvas.insertAdjacentHTML('afterbegin',link);
+    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../assets/styles.css">\n`);
+    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../node_modules/quill/dist/quill.bubble.css">\n`);
+    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../tenants/free/styles.css?rand=250">\n`);
 
     const data = {
       data: clonedCanvas.innerHTML,

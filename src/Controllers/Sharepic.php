@@ -80,12 +80,38 @@ class Sharepic {
 
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
+
 			$this->download_images();
-			$this->replace_paths();
 
 			$this->resize_output( 1 );
 
 			file_put_contents( $this->file, $this->html );
+		}
+	}
+
+	/**
+	 * Downloads images and rewrites html
+	 */
+	private function download_images() {
+		$this->html = str_replace( '&quot;', "'", $this->html );
+
+		preg_match_all( '/url\(\'([^)]+)\'\)/', $this->html, $matches );
+		$urls = $matches[1];
+
+		foreach ( $urls as $url ) {
+
+			$masked_url = preg_quote( $url, '#' );
+			if ( ! str_starts_with( $url, 'http' ) ) {
+				$this->html  = preg_replace( "#$masked_url#", '../../..' . $url, $this->html );
+				$this->html .= $url;
+				continue;
+			}
+
+			$extension  = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
+			$local_file = 'users/' . $this->user . '/workspace/background.' . $extension;
+			copy( $url, $local_file );
+
+			$this->html = preg_replace( "#$masked_url   = preg_quote( $url, '#' );#", 'background.' . $extension, $this->html );
 		}
 	}
 
@@ -104,45 +130,6 @@ class Sharepic {
 		$this->size['height'] = $this->size['height'] * $zoom;
 	}
 
-	/**
-	 * Replace the paths in the html.
-	 */
-	private function replace_paths() {
-		$this->html = preg_replace( '#/users/' . $this->user . '/workspace/#', '', $this->html );
-		$this->html = preg_replace( '#/tenants/#', '../../../tenants/', $this->html );
-	}
-
-	/**
-	 * Downloads the images and rewrites html.
-	 */
-	private function download_images() {
-
-		$input_html = html_entity_decode( $this->html );
-		preg_match_all( '/url\((.*?)\);/', $this->html, $matches );
-
-		if ( empty( $matches[0] ) || empty( $matches[1][0] ) ) {
-			return $input_html;
-		}
-
-		$url = substr( $matches[1][0], 1, -1 );
-
-		if ( ! str_starts_with( $url, 'http' ) ) {
-			return $input_html;
-		}
-
-		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
-		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			return $input_html;
-		}
-
-		$filename = 'background.' . $extension;
-		$filepath = 'users/' . $this->user . '/workspace/' . $filename;
-		$this->delete_old_files();
-		file_put_contents( $filepath, file_get_contents( $url ) );
-
-		$this->html = preg_replace( "#.$url.#", sprintf( "'/%s?r=%s'", $filepath, rand() ), $this->html );
-
-	}
 
 	/**
 	 * Creates a sharepic.
