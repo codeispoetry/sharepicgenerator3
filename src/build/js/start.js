@@ -4,7 +4,7 @@ let api, cockpit, select, undo, pixabay, uploader, component
 
 window.onload = function () {
   api = new API()
-  api.load()
+  api.load('tenants/free/start.html')
 
   cockpit = new Cockpit()
   select = new Select()
@@ -13,6 +13,7 @@ window.onload = function () {
   uploader = new Uploader()
   component = new Component()
   new UI()
+  new RichTextEditor()
 
   /*
     * Handles the enter key in the editables
@@ -46,4 +47,5 @@ window.onload = function () {
       }
     }
   }) 
+
 }

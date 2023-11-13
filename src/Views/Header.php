@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharepicgenerator</title>
     <link rel="stylesheet" href="/assets/styles.css">
+    <link href="/node_modules/quill/dist/quill.bubble.css" rel="stylesheet">
+    <script src="/node_modules/quill/dist/quill.js"></script>
+
     <style>
         #canvas{
             zoom: 1 !important;
