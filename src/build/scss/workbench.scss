@@ -50,3 +50,9 @@
 #patterns{
     display: none;
 }
+
+.ql{
+    &-container{
+        height: auto !important;
+    }
+}

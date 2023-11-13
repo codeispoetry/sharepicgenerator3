@@ -15,9 +15,6 @@
         <div id="editor"></div>
 
 
-
-
-
     </section>
     <section>
         <button class="to-front" data-target="text">nach vorne</button>

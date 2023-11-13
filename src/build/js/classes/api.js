@@ -30,6 +30,7 @@ class API {
         registerDraggableItems()
         select.setup()
         cockpit.setup_sharepic()
+        rte.init()
       })
       .catch(error => console.error('Error:', error))
   }
@@ -37,8 +38,19 @@ class API {
   create () {
     select.unselect_all()
     const canvas = document.getElementById('canvas')
+
+    const clonedCanvas = canvas.cloneNode(true)
+    clonedCanvas.querySelector('.ql-hidden')?.remove();
+    clonedCanvas.querySelector('.ql-toolbar')?.remove();
+    clonedCanvas.querySelector('.ql-tooltip')?.remove();
+    clonedCanvas.querySelector('.ql-clipboard')?.remove();
+    clonedCanvas.querySelector('#patterns')?.remove();
+
+    const link = `<link rel="stylesheet" href="../../../assets/styles.css">\n<link rel="stylesheet" href="../../../node_modules/quill/dist/quill.bubble.css">\n\n`;
+    clonedCanvas.insertAdjacentHTML('afterbegin',link);
+
     const data = {
-      data: canvas.innerHTML,
+      data: clonedCanvas.innerHTML,
       size: {
         width: document.getElementById('width').value,
         height: document.getElementById('height').value

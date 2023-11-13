@@ -201,7 +201,7 @@ class Sharepic {
 
 		$extension = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			$this->http_error('Invalid file type');
+			$this->http_error( 'Invalid file type' );
 		}
 
 		$this->delete_old_files();

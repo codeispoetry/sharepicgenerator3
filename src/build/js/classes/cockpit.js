@@ -25,7 +25,6 @@ class Cockpit {
     if (typeof this[cockpitEelement] === 'function') {
       this[cockpitEelement](element)
     }
-
     const id = 'cockpit_' + element.dataset.cockpit
     document.getElementById(id)?.classList.add('show')
   }
@@ -60,6 +59,14 @@ class Cockpit {
 
       layout.value = colorset
     })
+  }
+
+  setup_freetext (element) {
+    const slider = document.getElementById('text_size')
+    slider.value = element.style.fontSize.replace('px', '')
+
+   // document.getElementById('editor').firstChild.innerHTML = document.getElementById('text').innerHTML
+    
   }
 
   setup_eyecatcher (element) {

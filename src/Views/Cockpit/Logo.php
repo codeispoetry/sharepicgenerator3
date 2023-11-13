@@ -36,8 +36,6 @@
         const target = document.getElementById('logo');
 
         target.style.backgroundImage = "url(" + element.value + ")"
-
-        console.log(element.value, "HI")
     });
 
 </script>

@@ -4,15 +4,31 @@ class Select {
   setup () {
     this.unselect_all()
     const elements = document.querySelectorAll('.selectable')
+    const sharepic = document.getElementById('sharepic');
+
     elements.forEach(element => {
       element.addEventListener('mousedown', (event) => {
+        // do nothing on right click
+        if(event.button !== 0) {
+          return
+        }
         event.stopPropagation()
-        this.set_active(event.target)
-      })
-    })
+        let target = event.target;
 
-    document.getElementById('canvas').addEventListener('click', (event) => {
-      this.set_active(event.target)
+        if(target.classList.contains('selectable')) {
+          this.set_active(target);
+          return;
+        }
+
+        while (target !== sharepic) {
+          if (target.classList.contains('selectable')) {
+            this.set_active(target);
+            break;
+          }
+          target = target.parentNode;
+        }
+       
+      })
     })
   }
 
@@ -29,14 +45,9 @@ class Select {
     if (dragging === true) {
       return
     }
-    const elements = document.querySelectorAll('.selectable')
-    elements.forEach(element => {
-      element.classList.remove('active')
-    }
-    )
+    this.unselect_all()
 
     element.classList.add('active')
-
     cockpit.show(element)
   }
 }

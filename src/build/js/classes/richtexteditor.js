@@ -1,7 +1,7 @@
 /* eslint-disable no-undef, no-unused-vars */
 
 class RichTextEditor {
-  constructor () {
+  init () {
     var toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
         ['blockquote', 'code-block'],
@@ -16,22 +16,20 @@ class RichTextEditor {
         [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
       
         [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-        [{ 'font': [] }],
+        [{ 'font': ['Schriftart A '] }],
         [{ 'align': [] }],
       
         ['clean']                                         // remove formatting button
       ];
-      var quill = new Quill('#editor', {
+      quill = new Quill('#text', {
         modules: {
           toolbar: toolbarOptions
         },
         theme: 'bubble'
       });
-    
-      quill.on('text-change', function(delta, oldDelta, source) {
-        document.getElementById('text').innerHTML = document.getElementById('editor').firstChild.innerHTML 
-      });
   }
 
-
+  destroy() { 
+    quill.disable();
+  }
 }
