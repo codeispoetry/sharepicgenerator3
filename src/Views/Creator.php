@@ -15,6 +15,9 @@
 					
 				</div>
 			</div>
+			<div id="inlinecockpit">
+				<button class="create">Create</button>
+			</div>
 		</div>
 		<div id="cockpit" class="cockpit">
 			<?php

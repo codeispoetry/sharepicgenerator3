@@ -21,7 +21,7 @@
 
     <div>
         <?php if( $this->user->is_logged_in() ): ?>
-            <button id="logout">Logout</button>
+            <button id="logout" class="link">Logout</button>
             Eingeloggt als <?php echo $this->user->get_username(); ?>
         <?php endif; ?>
     </div>

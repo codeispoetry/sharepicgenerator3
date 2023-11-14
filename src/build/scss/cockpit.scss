@@ -25,28 +25,7 @@
         margin: 0;
     }
 
-    input[type="text"],
-    input[type="number"]{
-        padding: 10px;
-        border: 0;
-    }
-    .file-upload {
-        position: relative;
-        display: inline-block;
-        padding: 10px 15px;
-        background-color: $grashalm;
-        color: $white;
-        cursor: pointer;
 
-        input[type="file"] {
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
-            width: 0;
-        }
-    }
 
     .line_indent,
     .line_layout{
@@ -57,72 +36,4 @@
         }
     }
 
-
-    button{
-        cursor: pointer;
-        transition-duration: 0.2s;
-
-        &.flat{
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 7px 16px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-           
-        }
-
-        &:hover {
-            background-color: #45a049;
-        }
-
-        &.to-front,
-        &.delete{
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-color: transparent;
-            background-origin: content-box;
-            padding: 8px;
-            width: 40px;
-            height: 40px;
-            display: block;
-            color: transparent;
-            border: 0;
-            border-radius: 50%;
-
-            &:hover{
-                background-color: #45a049;
-            }
-
-            &.to-front{
-                background-image: url(/assets/icons/bring-to-front.png);
-            }
-
-            &.delete{
-                background-image: url(/assets/icons/delete.png);
-            }
-        }
-    }
-
-
-    select {
-        display: block;
-        width: 100%;
-        height: 35px;
-        padding: 6px 12px;
-        font-size: 14px;
-        line-height: 1.42857143;
-        color: #555;
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    }
 }

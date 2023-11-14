@@ -3,10 +3,13 @@
 class UI {
 
   constructor () {
-    document.getElementById('create').addEventListener('click', function () {
-        const output = document.getElementById('output')
-        output.src = ''
-        api.create()
+    document.querySelectorAll('.create').forEach(element => {
+        
+        element.addEventListener('click', function () {
+            const output = document.getElementById('output')
+            output.src = ''
+            api.create()
+        })
       })
 
     document.getElementById('reset').addEventListener('click', function () {

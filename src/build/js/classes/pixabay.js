@@ -29,6 +29,13 @@ class Pixabay {
     const results = document.getElementById('pixabay_results')
     results.classList.add('show')
     results.innerHTML = ''
+
+    if ( data.hits === undefined || data.hits.length === 0 ) {
+      const q = document.getElementById('pixabay_q').value
+      results.innerHTML = `<div class="no_results">Für den Suchbegriff "${q}" wurden keine Bilder gefunden.</div>`
+      return
+    }
+
     data.hits.forEach(hit => {
       const img = document.createElement('div')
       img.style.backgroundImage = `url('${hit.previewURL}')`
