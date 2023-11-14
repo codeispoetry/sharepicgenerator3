@@ -74,6 +74,7 @@ class API {
         return response.text()
       })
       .then(data => {
+        console.log(data)
         data = JSON.parse(data)
         const img = document.getElementById('output')
         img.src = '/' + data.path + '?rand=' + Math.random()

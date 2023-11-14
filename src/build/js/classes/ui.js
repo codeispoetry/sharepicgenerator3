@@ -11,9 +11,7 @@ class UI {
         })
       })
 
-    document.getElementById('reset').addEventListener('click', function () {
-        api.load()
-    })
+
 
     document.getElementById('load_latest').addEventListener('click', function () {
         api.load('users/tom/workspace/sharepic.html')
@@ -56,8 +54,18 @@ class UI {
         document.getElementById('sharepic').style.height = this.value + 'px'
     })
 
-    document.querySelector('.reset_background').addEventListener('click', function () {
-        sharepic.reset_background()
+    document.querySelectorAll('[data-click]').forEach( element => {
+        element.addEventListener('click', function () {
+            let parts = this.dataset.click.split('.');
+            let obj = window[parts[0]];
+            let method = parts[1];
+
+            if (obj && typeof obj[method] === 'function') {
+                obj[method]();
+            } else {
+                console.log('Method ' + this.dataset.click + ' not found');
+            }
+        })  
     })
 
   }

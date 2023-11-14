@@ -1,5 +1,5 @@
 <nav>
     <a href="/">Home</a>
-    <button id="reset">Reset</button>
+    <button data-click="api.load">Reset</button>
     <button id="load_latest">Load latest</button>
 </nav>

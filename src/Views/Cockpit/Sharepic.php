@@ -22,7 +22,7 @@
             <input type="file" name="upload" id="upload">
         </label>
 
-        <button data-function="sharepic.reset_background" style="margin-top:20px">Hintergrundbild zurücksetzen</button>
+        <button data-click="sg.reset_background" style="margin-top:20px">Hintergrundbild zurücksetzen</button>
     </section>
     
 </section>
