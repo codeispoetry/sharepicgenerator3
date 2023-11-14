@@ -3,7 +3,72 @@
 class Sharepic {
 
   constructor () {
+    document.addEventListener('wheel', (event) => {
+        this.background_zoom(-event.deltaY/10);
+    });
+    this.start_drag();
+  }
 
+  background_zoom(step) {
+    const sg = document.getElementById('sharepic');
+
+    let backgroundSize = sg.style.backgroundSize;
+
+    if(backgroundSize === '' || backgroundSize === 'cover') {
+      sg.style.backgroundSize = '100%';
+      sg.style.backgroundPositionX = '0px'
+      sg.style.backgroundPositionY = '0px'
+      sg.style.backgroundRepeat = 'no-repeat'
+      sg.style.backgroundColor = 'white'
+      this.start_drag()
+    }    
+
+    const style = window.getComputedStyle(sg);
+    backgroundSize = style.getPropertyValue('background-size').replace('%', '');
+    backgroundSize = parseInt(backgroundSize, 10);
+
+    sg.style.backgroundSize = backgroundSize + step + '%';
+  }
+
+  start_drag() {
+    const sg = document.getElementById('sharepic');
+
+    const moveHandler = (event) => this.drag(event);
+
+    sg.addEventListener('mousedown', (event) => {
+      const sg = document.getElementById('sharepic');
+      this.startMouseX = event.clientX;
+      this.startMouseY = event.clientY;
+      this.startBackgroundX =  parseInt(sg.style.backgroundPositionX.replace('px', ''), 10);
+      this.startBackgroundY =  parseInt(sg.style.backgroundPositionY.replace('px', ''), 10);
+
+      sg.addEventListener('mousemove', moveHandler);
+    });
+
+    sg.addEventListener('mouseup', (event) => {
+      sg.removeEventListener('mousemove', moveHandler);
+    });
+  }
+
+  drag(event) {
+    const sg = document.getElementById('sharepic');
+
+    const dx = event.clientX - this.startMouseX + this.startBackgroundX;
+    const dy = event.clientY - this.startMouseY + this.startBackgroundY;
+
+    sg.style.backgroundPositionX = dx + 'px';
+    sg.style.backgroundPositionY = dy + 'px';
+  }
+
+  reset_background() {
+    const sg = document.getElementById('sharepic')
+    
+    sg.style.backgroundColor = 'unset'
+    sg.style.backgroundSize = 'cover'
+    sg.style.backgroundRepeat = 'no-repeat'
+    sg.style.backgroundPositionX = '0px'
+    sg.style.backgroundPositionY = '0px'
+   
 
   }
 }

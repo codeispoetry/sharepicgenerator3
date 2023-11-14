@@ -3,8 +3,7 @@
 class UI {
 
   constructor () {
-    document.querySelectorAll('.create').forEach(element => {
-        
+    document.querySelectorAll('.create').forEach(element => {  
         element.addEventListener('click', function () {
             const output = document.getElementById('output')
             output.src = ''
@@ -55,6 +54,10 @@ class UI {
 
     document.getElementById('height').addEventListener('change', function () {
         document.getElementById('sharepic').style.height = this.value + 'px'
+    })
+
+    document.querySelector('.reset_background').addEventListener('click', function () {
+        sharepic.reset_background()
     })
 
   }

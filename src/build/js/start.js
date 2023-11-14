@@ -1,11 +1,12 @@
 /* eslint-disable no-undef, no-unused-vars */
 
-let api, cockpit, select, undo, pixabay, uploader, component, rte, quill
+let api, sharepic, cockpit, select, undo, pixabay, uploader, component, rte, quill
 
 window.onload = function () {
   api = new API()
   api.load('tenants/free/start.html')
 
+  sharepic = new Sharepic()
   cockpit = new Cockpit()
   select = new Select()
   undo = new Undo()

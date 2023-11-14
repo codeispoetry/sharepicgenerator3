@@ -21,6 +21,8 @@
            hochladen
             <input type="file" name="upload" id="upload">
         </label>
+
+        <button data-function="sharepic.reset_background" style="margin-top:20px">Hintergrundbild zurücksetzen</button>
     </section>
     
 </section>
