@@ -17,3 +17,6 @@ log-empty:
 
 png:
 	chromium-browser --headless --disable-gpu --screenshot=output.png --window-size=800,600 input.svg
+
+woff:
+	woff2_compress Pacifico.ttf 

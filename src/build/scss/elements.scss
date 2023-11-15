@@ -5,19 +5,23 @@ button{
     transition-duration: 0.2s;
 
     &.flat{
-        background-color: #4CAF50;
+        background-color: $grashalm;
         border: none;
         color: white;
         padding: 7px 16px;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         font-size: 16px;
+       
        
     }
 
     &:hover {
-        background-color: #45a049;
+        background-color: $tanne;
     }
 
     &.to-front,
@@ -39,11 +43,11 @@ button{
         }
 
         &.to-front{
-            background-image: url(/assets/icons/bring-to-front.png);
+            background-image: url(/assets/icons/flip_to_front.svg);
         }
 
         &.delete{
-            background-image: url(/assets/icons/delete.png);
+            background-image: url(/assets/icons/delete.svg);
         }
     }
 }
