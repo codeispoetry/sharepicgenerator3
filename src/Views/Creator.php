@@ -24,12 +24,12 @@
 				</div>
 			</div>
 			<div id="inlinecockpit">
-				<button class="create flat"><img src="/assets/icons/download.svg"> Create</button>
+				<button class="create flat"><img src="/assets/icons/download.svg"> Download</button>
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">
 			<?php
-			foreach (glob("src/Views/Cockpit/*.php") as $filename) {
+			foreach ( glob( "src/Views/Cockpit/*.php" ) as $filename ) {
 				include $filename;
 			}
 			?>

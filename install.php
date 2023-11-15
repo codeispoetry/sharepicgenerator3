@@ -1,6 +1,6 @@
 <?php
 try {
-	$db = new PDO( 'sqlite:users.db' );
+	$db = new PDO( 'sqlite:data/users.db' );
 
 	$db->setAttribute(
 		PDO::ATTR_ERRMODE,

@@ -25,7 +25,7 @@ class User {
 	 */
 	public function __construct() {
 		try {
-			$this->db = new \PDO( 'sqlite:users.db' );
+			$this->db = new \PDO( 'sqlite:data/users.db' );
 
 			$this->db->setAttribute(
 				\PDO::ATTR_ERRMODE,
