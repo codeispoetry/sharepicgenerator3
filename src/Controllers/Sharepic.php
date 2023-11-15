@@ -55,6 +55,13 @@ class Sharepic {
 	private $logger;
 
 	/**
+	 * The config object.
+	 *
+	 * @var Config
+	 */
+	private $config;
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
@@ -62,6 +69,7 @@ class Sharepic {
 		$this->user = $user->get_user_by_token();
 
 		$this->logger = new Logger( $user );
+		$this->config = new Config();
 
 		if ( empty( $this->user ) ) {
 			$this->http_error( 'no user' );
@@ -136,8 +144,11 @@ class Sharepic {
 	public function create() {
 		$path = 'users/' . $this->user . '/output.png';
 
+		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
+
 		$cmd = sprintf(
-			'sudo google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
+			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
+			$cmd_preprend,
 			$path,
 			(int) $this->size['width'],
 			(int) $this->size['height'],
