@@ -31,6 +31,7 @@ class API {
         select.setup()
         cockpit.setup_sharepic()
         rte.init()
+        sg.init()
       })
       .catch(error => console.error('Error:', error))
   }

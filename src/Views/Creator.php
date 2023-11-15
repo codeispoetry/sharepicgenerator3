@@ -1,5 +1,7 @@
 <script src="/assets/script.js?r=<?php echo rand(); ?>" defer></script>
-
+<script>
+	var fonts = [ 'GrueneType']
+</script>
 
 <main class="main">
 	<div class="row">

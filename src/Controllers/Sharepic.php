@@ -103,7 +103,6 @@ class Sharepic {
 			$masked_url = preg_quote( $url, '#' );
 			if ( ! str_starts_with( $url, 'http' ) ) {
 				$this->html  = preg_replace( "#$masked_url#", '../../..' . $url, $this->html );
-				$this->html .= $url;
 				continue;
 			}
 

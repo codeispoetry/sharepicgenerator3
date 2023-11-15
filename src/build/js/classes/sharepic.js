@@ -4,9 +4,26 @@ class Sharepic {
 
   constructor () {
     document.addEventListener('wheel', (event) => {
+        if(this.draggable === false) {
+          return
+        }
         this.background_zoom(-event.deltaY/10);
     });
+
     this.start_drag();
+  }
+
+  init(){
+    const sg = document.getElementById('sharepic');
+
+    sg.addEventListener('mouseover', () => {
+      this.draggable = true
+    });
+
+    sg.addEventListener('mouseout', () => {
+      this.draggable = false
+    });
+
   }
 
   background_zoom(step) {
@@ -68,7 +85,5 @@ class Sharepic {
     sg.style.backgroundRepeat = 'no-repeat'
     sg.style.backgroundPositionX = '0px'
     sg.style.backgroundPositionY = '0px'
-   
-
   }
 }
