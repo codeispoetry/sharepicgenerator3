@@ -3,9 +3,9 @@
     <section>
         <h3>Abmessungen</h3>
             <div style="display: flex">
-                <input type="number" name="width" id="width" value="500" step="1" style="width: 25%">
+                <input type="number" name="width" id="width" value="500" step="1" style="width: 25%" data-change="sg.set_size">
                 <span style="margin: 0 0.5em">x</span>
-                <input type="number" name="height" id="height" value="400" step="1" style="width: 25%">
+                <input type="number" name="height" id="height" value="400" step="1" style="width: 25%" data-change="sg.set_size">
                 <span style="margin-left: 0.5em">Pixel</span>
             </div>
         </label>

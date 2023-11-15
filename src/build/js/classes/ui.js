@@ -46,13 +46,6 @@ class UI {
         })
     })
 
-    document.getElementById('width').addEventListener('change', function () {
-        document.getElementById('sharepic').style.width = this.value + 'px'
-    })
-
-    document.getElementById('height').addEventListener('change', function () {
-        document.getElementById('sharepic').style.height = this.value + 'px'
-    })
 
     document.querySelectorAll('[data-click]').forEach( element => {
         element.addEventListener('click', function () {
@@ -68,5 +61,18 @@ class UI {
         })  
     })
 
+    document.querySelectorAll('[data-change]').forEach( element => {
+        element.addEventListener('change', function () {
+            let parts = this.dataset.change.split('.');
+            let obj = window[parts[0]];
+            let method = parts[1];
+
+            if (obj && typeof obj[method] === 'function') {
+                obj[method]();
+            } else {
+                console.log('Method ' + this.dataset.change + ' not found');
+            }
+        })  
+    })
   }
 }

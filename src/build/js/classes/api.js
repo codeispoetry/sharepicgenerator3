@@ -27,6 +27,9 @@ class API {
       })
       .then(data => {
         document.getElementById('canvas').innerHTML = data
+        document.querySelectorAll('.server-only').forEach(element => {
+          element.remove()
+        })
         registerDraggableItems()
         select.setup()
         cockpit.setup_sharepic()
@@ -55,7 +58,8 @@ class API {
       data: clonedCanvas.innerHTML,
       size: {
         width: document.getElementById('width').value,
-        height: document.getElementById('height').value
+        height: document.getElementById('height').value,
+        zoom: document.getElementById('sharepic').dataset.zoom
       }
     }
 
@@ -75,7 +79,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
         const img = document.getElementById('output')
         img.src = '/' + data.path + '?rand=' + Math.random()

@@ -33,10 +33,8 @@ class Cockpit {
     * Setup the cockpit for the given element
     */
   setup_sharepic () {
-    const width = document.getElementById('width')
-    const height = document.getElementById('height')
-    width.value = document.getElementById('sharepic').style.width.replace('px', '')
-    height.value = document.getElementById('sharepic').style.height.replace('px', '')
+    document.getElementById('width').value = document.getElementById('sharepic').dataset.width
+    document.getElementById('height').value = document.getElementById('sharepic').dataset.height
   }
 
   setup_text (element) {

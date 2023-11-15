@@ -84,6 +84,7 @@ class Sharepic {
 
 		$this->size['width']  = $data['size']['width'] ?? 100;
 		$this->size['height'] = $data['size']['height'] ?? 100;
+		$this->size['zoom']   = $data['size']['zoom'] ?? 1;
 		$this->template       = $data['template'] ?? $this->file;
 
 		if ( ! empty( $data['data'] ) ) {
@@ -91,7 +92,7 @@ class Sharepic {
 
 			$this->download_images();
 
-			$this->resize_output( 1 );
+			$this->set_zoom( 1 / $this->size['zoom'] );
 
 			file_put_contents( $this->file, $this->html );
 		}
@@ -127,16 +128,9 @@ class Sharepic {
 	 *
 	 * @param float $zoom The HTML to be rewritten.
 	 */
-	private function resize_output( $zoom ) {
-		if ( 1 === $zoom ) {
-			return;
-		}
-
-		$this->html           = '<style>#sharepic{ zoom: ' . $zoom . '; }</style>' . $this->html;
-		$this->size['width']  = $this->size['width'] * $zoom;
-		$this->size['height'] = $this->size['height'] * $zoom;
+	private function set_zoom( $zoom ) {
+		$this->html = '<style class="server-only">body{ margin: 0; padding: 0;} #sharepic{ zoom: ' . $zoom . '; }</style>' . $this->html;
 	}
-
 
 	/**
 	 * Creates a sharepic.

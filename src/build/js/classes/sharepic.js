@@ -24,6 +24,7 @@ class Sharepic {
       this.draggable = false
     });
 
+    this.set_size();
   }
 
   background_zoom(step) {
@@ -85,5 +86,28 @@ class Sharepic {
     sg.style.backgroundRepeat = 'no-repeat'
     sg.style.backgroundPositionX = '0px'
     sg.style.backgroundPositionY = '0px'
+  }
+
+  set_size() {
+    const sg = document.getElementById('sharepic');
+    let width = parseInt(document.getElementById('width').value);
+    let height = parseInt(document.getElementById('height').value);
+   
+    const ratio = width / height;
+    const max_width = 400
+    const max_height = 400
+    
+    let zoom = Math.min(max_width / width, max_height / height);
+
+    const new_width = width * zoom;
+    const new_height = height * zoom;
+
+    sg.style.width = new_width + 'px';
+    sg.style.height = new_height + 'px';
+
+    sg.dataset.zoom = zoom
+    sg.dataset.width = width
+    sg.dataset.height = height
+
   }
 }
