@@ -94,8 +94,8 @@ class Sharepic {
     let height = parseInt(document.getElementById('height').value);
    
     const ratio = width / height;
-    const max_width = 400
-    const max_height = 400
+    const max_width = 800
+    const max_height = 600
     
     let zoom = Math.min(max_width / width, max_height / height);
 
