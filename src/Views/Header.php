@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharepicgenerator</title>
-    <link rel="stylesheet" href="/assets/styles.css?rand=1">
+    <link rel="stylesheet" href="/assets/styles.css?rand=3">
     <link href="/node_modules/quill/dist/quill.bubble.css" rel="stylesheet">
     <script src="/node_modules/quill/dist/quill.js"></script>
 

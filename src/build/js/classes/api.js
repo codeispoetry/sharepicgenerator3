@@ -40,6 +40,8 @@ class API {
   }
 
   create () {
+    document.querySelector('.create').disabled = true;
+
     select.unselect_all()
     const canvas = document.getElementById('canvas')
 
@@ -82,6 +84,8 @@ class API {
         data = JSON.parse(data)
         const img = document.getElementById('output')
         img.src = '/' + data.path + '?rand=' + Math.random()
+
+        document.querySelector('.create').disabled = false;
       })
       .catch(error => console.error('Error:', error))
   }
@@ -90,19 +94,32 @@ class API {
     const formData = new FormData()
     formData.append('file', file)
 
-    fetch(this.api + 'upload', {
-      method: 'POST',
-      body: formData
-    })
-      .then(response => {
-        if (response.status !== 200) {
-          throw new Error(response.status + ' ' + response.statusText)
-        }
-        return response.json()
-      })
-      .then(data => {
-        document.getElementById('sharepic').style.backgroundImage = `url('/${data.path}?rand=${Math.random()}')`
-      })
-      .catch(error => console.error('Error:', error))
+    const imageUrl = URL.createObjectURL(file);
+    document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`;
+
+    document.querySelector('.file-upload').disabled = true;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', this.api + 'upload', true);
+    xhr.upload.onprogress = function(e) {
+      if (e.lengthComputable) {
+        const percentComplete = Math.round( (e.loaded / e.total) * 100);
+        console.log(percentComplete + '% uploaded');
+      }
+    };
+    xhr.onload = function() {
+      if (this.status == 200) {
+        const resp = JSON.parse(this.response);
+        document.getElementById('sharepic').style.backgroundImage = `url('/${resp.path}?rand=${Math.random()}')`;
+      } else {
+        console.error('Error:', this.status, this.statusText);
+      }
+
+      document.querySelector('.file-upload').disabled = false;
+    };
+    xhr.onerror = function() {
+      console.error('Error:', this.status, this.statusText);
+    };
+    xhr.send(formData);
   }
 }

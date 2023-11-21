@@ -12,9 +12,11 @@ class UI {
       })
 
 
-
-    document.getElementById('load_latest').addEventListener('click', function () {
-        api.load('users/tom/workspace/sharepic.html')
+    document.querySelectorAll('[data-load]').forEach(element => {
+        element.addEventListener('click', (event) => {
+            const target = element.dataset.load
+            api.load(target)
+        })
     })
 
     document.getElementById('upload').addEventListener('change', function () {

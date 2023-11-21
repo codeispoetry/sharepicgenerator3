@@ -4,6 +4,11 @@ button{
     cursor: pointer;
     transition-duration: 0.2s;
 
+    :disabled{
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
     &.flat{
         background-color: $grashalm;
         border: none;
@@ -102,6 +107,11 @@ input[type="number"]{
     background-color: $grashalm;
     color: $white;
     cursor: pointer;
+
+    :disabled{
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
 
     input[type="file"] {
         position: absolute;
