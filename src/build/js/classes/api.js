@@ -93,6 +93,8 @@ class API {
 
         document.querySelector('.create').disabled = false;
         document.querySelector('.create').classList.remove('waiting');
+
+        logger.log('created sharepic')
       })
       .catch(error => console.error('Error:', error))
   }
@@ -118,6 +120,9 @@ class API {
       if (this.status == 200) {
         const resp = JSON.parse(this.response);
         document.getElementById('sharepic').style.backgroundImage = `url('/${resp.path}?rand=${Math.random()}')`;
+        logger.prepare_log_data({
+          imagesrc: 'upload',
+        })
       } else {
         console.error('Error:', this.status, this.statusText);
       }

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef, no-unused-vars */
 
-var api, sg, cockpit, select, undo, pixabay, uploader, component, rte, quill
+var api, sg, cockpit, select, undo, pixabay, uploader, component, rte, quill, logger
 
 window.onload = function () {
   api = new API()
@@ -15,6 +15,7 @@ window.onload = function () {
   component = new Component()
   new UI()
   rte = new RichTextEditor()
+  logger = new Logger()
   
   /*
     * Handles the enter key in the editables

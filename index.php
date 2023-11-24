@@ -11,6 +11,8 @@ require './vendor/autoload.php';
 
 use Sharepicgenerator\Controllers\Frontend;
 use Sharepicgenerator\Controllers\Sharepic;
+use Sharepicgenerator\Controllers\Felogger;
+
 
 $path = $_SERVER['REQUEST_URI'];
 
@@ -26,4 +28,9 @@ if ( 'frontend' === $controller ) {
 if ( 'sharepic' === $controller ) {
 	$sharepic = new Sharepic();
 	$sharepic->{$method}();
+}
+
+if ( 'felogger' === $controller ) {
+	$felogger = new Felogger();
+	$felogger->{$method}();
 }

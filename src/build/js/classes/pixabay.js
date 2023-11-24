@@ -18,7 +18,10 @@ class Pixabay {
 
     fetch(url)
       .then(response => response.json())
-      .then(data => { this.list(data) })
+      .then(data => { 
+        logger.log('searched for ' + q + ' got ' + data.hits.length + ' results')
+        this.list(data) 
+      })
       .catch(error => console.error('Error:', error))
   }
 
@@ -45,6 +48,14 @@ class Pixabay {
       img.setAttribute('data-pageUrl', hit.pageURL)
 
       img.onclick = () => {
+        const q = document.getElementById('pixabay_q').value
+  
+        logger.prepare_log_data({
+          imagesrc: 'pixabay',
+          q: q,
+        })
+        logger.log('clicked on image after search for ' + q )
+
         this.set_imge(img.dataset.url)
       }
       results.appendChild(img)
