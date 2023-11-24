@@ -9,6 +9,10 @@ button{
         opacity: 0.5;
     }
 
+    &.waiting{
+        cursor: wait !important;
+    }
+
     &.flat{
         background-color: $grashalm;
         border: none;

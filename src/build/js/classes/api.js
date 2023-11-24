@@ -41,6 +41,7 @@ class API {
 
   create () {
     document.querySelector('.create').disabled = true;
+    document.querySelector('.create').classList.add('waiting');
 
     select.unselect_all()
     const canvas = document.getElementById('canvas')
@@ -86,6 +87,7 @@ class API {
         img.src = '/' + data.path + '?rand=' + Math.random()
 
         document.querySelector('.create').disabled = false;
+        document.querySelector('.create').classList.remove('waiting');
       })
       .catch(error => console.error('Error:', error))
   }
