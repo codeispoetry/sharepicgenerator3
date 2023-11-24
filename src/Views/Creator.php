@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div id="inlinecockpit">
-				<button class="create flat"><img src="/assets/icons/download.svg"> Download</button>
+				<button class="create flat" data-click="api.create"><img src="/assets/icons/download.svg"> Download</button>
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">
@@ -37,9 +37,5 @@
 		<?php
 			include 'src/Views/Pixabay.php';
 		?>
-	</div>
-
-	<div class="row">
-		<img src="" id="output">
 	</div>
 </main>

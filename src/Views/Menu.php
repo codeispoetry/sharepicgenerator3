@@ -1,5 +1,5 @@
 <nav>
-    <a href="/">Home</a>n>
+    <a href="/">Home</a>
     <button data-load="users/tom/workspace/sharepic.html">Load latest</button>
     <button data-load="tenants/einigungshilfe/start.html">Load Einigungshilfe</button>
     

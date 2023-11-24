@@ -3,15 +3,6 @@
 class UI {
 
   constructor () {
-    document.querySelectorAll('.create').forEach(element => {  
-        element.addEventListener('click', function () {
-            const output = document.getElementById('output')
-            output.src = ''
-            api.create()
-        })
-      })
-
-
     document.querySelectorAll('[data-load]').forEach(element => {
         element.addEventListener('click', (event) => {
             const target = element.dataset.load

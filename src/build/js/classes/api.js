@@ -5,7 +5,7 @@ class API {
     this.api = '/index.php/sharepic/'
   }
 
-  load (path = 'tenants/de/start.html') {
+  load (path = 'tenants/free/start.html') {
     const data = {
       template: path
     }
@@ -83,8 +83,13 @@ class API {
       })
       .then(data => {
         data = JSON.parse(data)
-        const img = document.getElementById('output')
-        img.src = '/' + data.path + '?rand=' + Math.random()
+
+        const a = document.createElement('a')
+        a.href = '/' + data.path
+        a.download = 'sharepic.png'
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
 
         document.querySelector('.create').disabled = false;
         document.querySelector('.create').classList.remove('waiting');
