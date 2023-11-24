@@ -11,13 +11,15 @@
         </label>
     </section>
     
-    <section>
+    <section style="margin-top:4em">
         <h3>Hintergrundbild</h3>
-        <label style="display:block;margin-top:20px">
-            <input type="text" name="pixabay_q" id="pixabay_q" placeholder="Suchbegriff">
+        <label style="display:flex; margin-top:20px">
+            <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="Suchbegriff">
+            <button data-click="pixabay.search" style="padding:2px;"><img src="/assets/icons/search.svg"></button>
         </label>
+        
 
-        <label style="display:flex;margin-top:20px" class="file-upload">
+        <label style="display:flex;padding:3px;margin-top:2em" class="file-upload">
             <img src="/assets/icons/upload.svg"> hochladen
             <input type="file" name="upload" id="upload">
         </label>

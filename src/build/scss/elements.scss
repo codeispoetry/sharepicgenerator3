@@ -23,10 +23,7 @@ button{
         display: flex;
         justify-content: center;
         align-items: center;
-
         font-size: 16px;
-       
-       
     }
 
     &:hover {
@@ -111,8 +108,13 @@ input[type="number"]{
     background-color: $grashalm;
     color: $white;
     cursor: pointer;
+    transition-duration: 0.2s;
 
-    :disabled{
+    &:hover {
+        background-color: $tanne;
+    }
+
+    &:disabled{
         cursor: not-allowed;
         opacity: 0.5;
     }
