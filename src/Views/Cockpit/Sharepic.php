@@ -18,7 +18,7 @@
         </label>
 
         <label style="display:block;margin-top:20px" class="file-upload">
-           hochladen
+            <img src="/assets/icons/upload.svg"> hochladen
             <input type="file" name="upload" id="upload">
         </label>
 

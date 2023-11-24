@@ -119,7 +119,7 @@ class Sharepic {
 			$local_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 			copy( $url, $local_file );
 
-			$this->html = preg_replace( "#$masked_url#", 'background.' . $extension, $this->html );
+			$this->html = preg_replace( "#$masked_url#", '../../../' . $local_file, $this->html );
 		}
 	}
 
