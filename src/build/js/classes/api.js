@@ -35,6 +35,8 @@ class API {
         cockpit.setup_sharepic()
         rte.init()
         sg.init()
+        logger.prepare_log_data({})
+        logger.log('loads template ' + path)
       })
       .catch(error => console.error('Error:', error))
   }

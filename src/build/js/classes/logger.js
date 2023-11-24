@@ -29,7 +29,7 @@ class Logger {
                 }
                 return response.text()
             })
-            .then(data => console.log('Success:', data))
+            .then(data => {})
             .catch((error) => console.error('Error:', error));
 
     }

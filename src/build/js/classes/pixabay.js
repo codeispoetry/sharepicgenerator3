@@ -19,7 +19,7 @@ class Pixabay {
     fetch(url)
       .then(response => response.json())
       .then(data => { 
-        logger.log('searched for ' + q + ' got ' + data.hits.length + ' results')
+        logger.log('searches for ' + q + ' and gets ' + data.hits.length + ' results')
         this.list(data) 
       })
       .catch(error => console.error('Error:', error))
@@ -54,7 +54,7 @@ class Pixabay {
           imagesrc: 'pixabay',
           q: q,
         })
-        logger.log('clicked on image after search for ' + q )
+        logger.log('clicks on image after search for ' + q )
 
         this.set_imge(img.dataset.url)
       }
