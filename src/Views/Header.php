@@ -20,9 +20,12 @@
     <?php include 'src/Views/Menu.php'; ?>
 
     <div>
+        <img src="/assets/icons/de.svg" alt="<?php echo _('German');?>" data-lang="de" style="height: 15px;cursor:pointer;">
+        <img src="/assets/icons/en.svg" alt="<?php echo _('English');?>" data-lang="en" style="height: 15px;cursor:pointer;">
+
         <?php if( $this->user->is_logged_in() ): ?>
-            <button id="logout" class="link">Logout</button>
-            Eingeloggt als <?php echo $this->user->get_username(); ?>
+            <button id="logout" class="link"><?php  echo _('Logout');?></button>
+            <?php  echo _('Logged in as');?> <?php echo $this->user->get_username(); ?>
         <?php endif; ?>
     </div>
 </header>

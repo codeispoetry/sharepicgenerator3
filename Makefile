@@ -23,3 +23,12 @@ woff:
 
 deploy-develop:
 	rsync -avz --delete assets node_modules/quill/dist index.php src tenants vendor favicon.ico sharepic:/var/www/mint-develop.sharepicgenerator.de
+
+create-pot:
+	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot
+
+create-po:
+	msginit -i languages/messages.pot -o languages/de.po -l de_DE.utf8
+
+create-mo:
+	rm languages/de_DE/LC_MESSAGES/sg.mo && msgfmt languages/de.po -o languages/de_DE/LC_MESSAGES/sg.mo

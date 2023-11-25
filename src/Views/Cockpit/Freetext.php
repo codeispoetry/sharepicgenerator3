@@ -1,13 +1,13 @@
 <section class="mainsection" id="cockpit_freetext">
-    <h2>Freier Text</h2>
+    <h2><?php  echo _('Text');?></h2>
     <section>
-        <h3>Größe</h3>
+        <h3><?php  echo _('Size');?></h3>
         <label>
             <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
         </label>
     </section>
     <section>
-        <h3>Text:</h3>
+        <h3><?php  echo _('Text');?>:</h3>
       
 
 
@@ -17,7 +17,7 @@
 
     </section>
     <section>
-        <button class="to-front" data-target="text">nach vorne</button>
+        <button class="to-front" data-target="text"><?php  echo _('to front');?></button>
     </section>
 
 </section>

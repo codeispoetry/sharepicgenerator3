@@ -1,7 +1,7 @@
 <section class="mainsection" id="cockpit_logo">
-    <h2>Logo</h2>
+    <h2><?php  echo _('Logo');?></h2>
     <section>
-        <h3>Größe</h3>
+        <h3><?php  echo _('Size');?></h3>
         <label>
             <input type="range" min="10" max="2000" value="400" class="slider" id="logo_size">
         </label>

@@ -15,7 +15,7 @@
 			<div id="adder">
 				<div class="add_sign"><img src="/assets/icons/add_circle.svg"></div>
 				<ul class="add_elements">
-					<li data-item="eyecatcher">Störer</li>
+					<li data-item="eyecatcher"><?php  echo _('Eyecatcher');?></li>
 				</ul>
 			</div>
 			<div id="canvas">
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div id="inlinecockpit">
-				<button class="create flat" data-click="api.create"><img src="/assets/icons/download.svg"> Download</button>
+				<button class="create flat" data-click="api.create"><img src="/assets/icons/download.svg"> <?php  echo _('Download');?></button>
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">

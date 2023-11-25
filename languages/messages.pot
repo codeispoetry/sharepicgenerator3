@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-25 00:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Views/Home.php:6
+msgid "username"
+msgstr ""
+
+#: src/Views/Home.php:7
+msgid "login"
+msgstr ""
+
+#: src/Views/Header.php:24
+msgid "Logout"
+msgstr ""
+
+#: src/Views/Header.php:25
+msgid "Logged in as"
+msgstr ""
+
+#: src/Views/Cockpit/Sharepic.php:2
+msgid "Sharepic"
+msgstr ""
+
+#: src/Views/Cockpit/Sharepic.php:4
+msgid "Dimensions"
+msgstr ""
+
+#: src/Views/Cockpit/Sharepic.php:9
+msgid "pixel"
+msgstr ""
+
+#: src/Views/Cockpit/Sharepic.php:15
+msgid "Background image"
+msgstr ""
+
+#: src/Views/Cockpit/Sharepic.php:17
+msgid "search query"
+msgstr ""
+
+#: src/Views/Cockpit/Sharepic.php:23
+msgid "upload"
+msgstr ""
+
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:18
+msgid "Eyecatcher"
+msgstr ""
+
+#: src/Views/Cockpit/Eyecatcher.php:4 src/Views/Cockpit/Logo.php:4
+#: src/Views/Cockpit/Freetext.php:4
+msgid "Size"
+msgstr ""
+
+#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Freetext.php:20
+msgid "to front"
+msgstr ""
+
+#: src/Views/Cockpit/Eyecatcher.php:12
+msgid "delete"
+msgstr ""
+
+#: src/Views/Cockpit/Logo.php:2
+msgid "Logo"
+msgstr ""
+
+#: src/Views/Cockpit/Freetext.php:2 src/Views/Cockpit/Freetext.php:10
+msgid "Text"
+msgstr ""
+
+#: src/Views/Menu.php:2
+msgid "Home"
+msgstr ""
+
+#: src/Views/Menu.php:3
+msgid "Load latest"
+msgstr ""
+
+#: src/Views/Menu.php:4
+msgid "Load"
+msgstr ""
+
+#: src/Views/Menu.php:5
+msgid "Load free"
+msgstr ""
+
+#: src/Views/Creator.php:27
+msgid "Download"
+msgstr ""

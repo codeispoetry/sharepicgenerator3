@@ -67,5 +67,15 @@ class UI {
             }
         })  
     })
+
+    document.querySelectorAll('[data-lang]').forEach( element => {
+        element.addEventListener('click', function () {
+            document.cookie = "lang=" + this.dataset.lang + "; path=/";
+            window.document.location.reload();
+        })  
+    })
+
   }
+
+ 
 }

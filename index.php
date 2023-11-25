@@ -13,6 +13,11 @@ use Sharepicgenerator\Controllers\Frontend;
 use Sharepicgenerator\Controllers\Sharepic;
 use Sharepicgenerator\Controllers\Felogger;
 
+bindtextdomain( 'sg', './languages' );
+textdomain( 'sg' );
+if ( 'de' === get_lang() ) {
+	setlocale( LC_ALL, 'de_DE.utf8' );
+}
 
 $path = $_SERVER['REQUEST_URI'];
 
@@ -33,4 +38,21 @@ if ( 'sharepic' === $controller ) {
 if ( 'felogger' === $controller ) {
 	$felogger = new Felogger();
 	$felogger->{$method}();
+}
+
+/**
+ * Get the language.
+ *
+ * @return string
+ */
+function get_lang() {
+	if ( isset( $_COOKIE['lang'] ) ) {
+		return $_COOKIE['lang'];
+	}
+
+	if ( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ) {
+		return substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 );
+	}
+
+	return false;
 }
