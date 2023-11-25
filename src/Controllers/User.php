@@ -198,6 +198,14 @@ class User {
 		}
 
 		$this->logger->access( 'Account created for ' . $mail );
+
+		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
+		$server_address = $_SERVER['HTTP_HOST'];
+		$link           = $protocol . $server_address . '/index.php/frontend/reset_password?token=' . $token;
+		$message        = _( 'You have successfully registered. Please click on the following link to confirm your registration: ' ) . $link;
+
+		$mail = new Mailer( $mail );
+		$mail->send( _( 'Account created' ), $message );
 		return true;
 	}
 
