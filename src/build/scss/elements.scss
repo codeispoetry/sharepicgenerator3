@@ -97,7 +97,10 @@ button{
 }
 
 input[type="text"],
-input[type="number"]{
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
     padding: 10px;
     border: 0;
 }

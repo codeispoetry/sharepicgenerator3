@@ -252,5 +252,7 @@ class User {
 
 		$mail = new Mailer( $username );
 		$mail->send( _( 'Password Reset' ), $message );
+
+		return true;
 	}
 }

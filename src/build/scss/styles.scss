@@ -8,6 +8,8 @@
 @import 'pixabay.scss';
 @import 'elements.scss';
 @import 'fonts.scss';
+@import 'home.scss';
+
 
 html{
     margin: 0;
@@ -15,9 +17,14 @@ html{
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     color: #FFFFFF;
+    height: 100%;
 }
 body{
     background-color: $dark;
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 a, a:visited{
@@ -34,4 +41,8 @@ a, a:visited{
 .closer{
     color: rgb(255, 0, 81);
     cursor: pointer;
+}
+
+.main{
+    flex-grow: 1;
 }

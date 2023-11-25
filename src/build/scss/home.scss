@@ -1,0 +1,34 @@
+body.home{
+    .main{
+        background-image: url('images/startimage.jpg');
+        background-size: cover;
+        height: 400px;
+        position: relative;
+        font-size: 1.3em;
+
+        #title{
+            position: absolute;
+            left: 20px;
+            top: 20%;
+            width: 400px;
+        }
+
+
+
+        #loginboxes{
+            position: absolute;
+            right: 20px;
+            top: 20%;
+            border: 1px solid #ccc;
+            padding: 1em;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.7);
+
+            form{
+                input{
+                    margin-bottom: 1em;
+                } 
+            }
+        }
+    }
+}

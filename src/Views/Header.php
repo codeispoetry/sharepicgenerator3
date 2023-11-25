@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharepicgenerator</title>
+    <title><?php echo _( 'Sharepicgenerator'); ?></title>
     <link rel="stylesheet" href="/assets/styles.css?v=<?php echo filemtime('assets/styles.css');?>">
 </head>
-<body>
+
+<body class="<?php echo $body ?? ''; ?>">
     
 <header>
    <nav>
-         <ul>
-              <li><a href="/"><?php echo _('Home');?></a></li>
-              <li><a href="/index.php/frontend/register"><?php echo _('Register');?></a></li>
-              <li><a href="/index.php/frontend/request_password_reset"><?php echo _('Reset password');?></a></li>
-
-         </ul>
+         
    </nav>
 
     <div style="display: flex; align-items: center">
-        rechts oben
+        <a href="#"><?php echo _('Imprint');?></a> 
+            <span style="padding: 0 0.3em;">|</span>
+        <a href="#"><?php echo _('Privacy');?></a>
+
     </div>
 </header>

@@ -44,8 +44,7 @@ class Frontend {
 	 */
 	public function register() {
 		if ( ! isset( $_POST['register_mail'] ) ) {
-			include_once './src/Views/User/Register.php';
-			return;
+			$this->no_access();
 		}
 
 		if ( ! $this->user->register( $_POST['register_mail'] ) ) {
@@ -64,12 +63,10 @@ class Frontend {
 	 * Show form for request password reset and send email.
 	 */
 	public function request_password_reset() {
-		if ( empty( $_POST['username'] ) ) {
-			include_once './src/Views/User/RequestPasswordReset.php';
-			return;
+		if ( ! $this->user->send_password_link() ) {
+			$this->no_access();
 		}
 
-		$this->user->send_password_link();
 		$title   = _( 'Reset password' );
 		$message = _( 'Please check your email for the reset link.' );
 		include_once './src/Views/Hero.php';
@@ -99,7 +96,7 @@ class Frontend {
 			}
 
 			$title   = _( 'Password reset' );
-			$message = _( 'Your password has been reset. Please login.' );
+			$message = '<a href="/">' . _( 'Your password has been reset. Please login.' ) . '</a>';
 			include_once './src/Views/Hero.php';
 			return;
 		}
@@ -111,6 +108,7 @@ class Frontend {
 	 * The home page.
 	 */
 	public function index() {
+		$body = 'home';
 		include_once './src/Views/Home.php';
 	}
 
