@@ -9,4 +9,65 @@ nav{
             color: $theme-color;
         }
     }
+
+    *{
+        margin-right: 2em;
+    }
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    &::after{
+        content: url('/assets/icons/arrow_drop_down.svg');
+        width: 10px;
+        position: absolute;
+        margin-left: -2em;
+        top: -0.2em;
+    }
+
+    &:hover{
+        color: $theme-color;
+    }
+  
+  &-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0;
+    z-index: 1;
+
+    button{
+        background-color: unset;
+        color: #000;
+        text-align: left;
+        width: 100%;
+
+        &:hover{
+            background-color: $theme-color;
+            color: #ffffff;
+        }
+    }
+  }
+  
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+
+.flags{
+    img{
+        height: 1em;
+        opacity: 0.5;
+        cursor: pointer;
+        transform: all 0.2s ease-in-out;
+
+        &:hover{
+            opacity: 1;
+        }
+    }
 }

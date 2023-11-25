@@ -1,5 +1,5 @@
 #cockpit{
-    width: 200px;
+    width: 350px;
     padding: 2px 20px;
     margin: 0;
     border: 1px solid $light;
@@ -26,14 +26,31 @@
         margin: 0;
     }
 
-
-
     .line_indent,
     .line_layout{
         display: none;
         
         &.show{
            display: block;
+        }
+    }
+
+    .brands{
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+
+        button{
+            background-color: unset;
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 3px;
+            padding: 0;
+
+            &:hover{
+                background-color: $theme-color;
+            }
         }
     }
 

@@ -10,8 +10,20 @@ class Sharepic {
         this.background_zoom(-event.deltaY/10);
     });
 
+    document.querySelectorAll('[data-sizepreset]').forEach( element => {
+      element.addEventListener('click', function () {
+          let sizePreset = this.dataset.sizepreset.split(':');
+          document.getElementById('width').value = sizePreset[0]
+          document.getElementById('height').value = sizePreset[1]
+
+          const event = new Event('change');
+          document.getElementById('height').dispatchEvent(event);
+      })  
+   })
+
     this.start_drag();
   }
+  
 
   init(){
     const sg = document.getElementById('sharepic');
