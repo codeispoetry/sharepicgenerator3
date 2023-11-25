@@ -125,4 +125,32 @@ class User {
 		$this->username = $result['username'];
 		return $this->username;
 	}
+
+
+	/**
+	 * Register a user.
+	 *
+	 * @param string $mail The mail address.
+	 * @return bool True if the user is registered.
+	 */
+	public function register( $mail ) {
+		if ( empty( $mail ) || ! filter_var( $mail, FILTER_VALIDATE_EMAIL ) ) {
+			return false;
+		}
+
+		$password = password_hash( 'geheim', PASSWORD_BCRYPT );
+		$token    = bin2hex( random_bytes( 16 ) );
+
+		$stmt = $this->db->prepare( 'INSERT INTO users (username, password, token) VALUES (:username, :password, :token)' );
+		$stmt->bindParam( ':username', $mail );
+		$stmt->bindParam( ':password', $password );
+		$stmt->bindParam( ':token', $token );
+		try {
+			$stmt->execute();
+		} catch ( \PDOException $e ) {
+			return false;
+		}
+
+		return true;
+	}
 }

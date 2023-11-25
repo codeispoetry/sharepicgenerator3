@@ -29,15 +29,29 @@ class Frontend {
 	}
 
 	/**
-	 * The frontend controller.
+	 * The generator page.
 	 */
 	public function create() {
 		if ( ! $this->user->login() ) {
 			header( 'Location: /' );
 		}
-
-		include_once './src/Views/Header.php';
 		include_once './src/Views/Creator.php';
+	}
+
+	/**
+	 * The registration page.
+	 */
+	public function register() {
+		include_once './src/Views/Header.php';
+		if ( isset( $_POST['register_mail'] ) ) {
+			if ( $this->user->register( $_POST['register_mail'] ) ) {
+				include_once './src/Views/Register/Registered.php';
+			} else {
+				include_once './src/Views/Register/NotRegistered.php';
+			}
+		} else {
+			include_once './src/Views/Register/Register.php';
+		}
 		include_once './src/Views/Footer.php';
 	}
 
@@ -45,7 +59,9 @@ class Frontend {
 	 * The home page.
 	 */
 	public function index() {
+		include_once './src/Views/Header.php';
 		include_once './src/Views/Home.php';
+		include_once './src/Views/Footer.php';
 	}
 
 	/**
@@ -63,7 +79,7 @@ class Frontend {
 	 * Fail gracefully.
 	 */
 	private function no_access() {
-		header( 'HTTP/1.0 404 Not Found.' );
-		die();
+		header( 'HTTP / 1.0 404 Not Found . ' );
+			die();
 	}
 }

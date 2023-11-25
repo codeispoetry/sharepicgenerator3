@@ -10,8 +10,11 @@ try {
 	$db->exec(
 		'CREATE TABLE IF NOT EXISTS users (
         username TEXT NOT NULL UNIQUE,
+        password TEXT NOT NULL,
         token TEXT NOT NULL UNIQUE)'
 	);
+
+	exec( 'chmod 777 data/users.db' );
 } catch ( PDOException $e ) {
 	echo $e->getMessage();
 }
