@@ -13,25 +13,23 @@
     
     <section style="margin-top:4em">
         <h3><?php echo _("Background image"); ?></h3>
-        <label style="display:flex; margin-top:20px">
+        <label style="display:flex; margin-top:20px;">
             <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search query');?>">
             <button data-click="pixabay.search" style="padding:2px;"><img src="/assets/icons/search.svg"></button>
         </label>
         
 
-        <label style="display:flex;padding:3px;margin-top:2em" class="file-upload">
+        <label style="display:flex; align-items: center;padding:3px;margin-top:2em" class="file-upload">
             <img src="/assets/icons/upload.svg"> <?php  echo _('upload');?>
             <input type="file" name="upload" id="upload">
         </label>
 
-        <label>
-            <input style="margin-top:20px" type="radio" name="background" checked data-click="sg.reset_background">
-            Hintergrundbild einpassen
+        <label style="display:flex;margin-top: 1em">
+            <button class="link" data-click="sg.reset_background">
+                <?php echo _("Reset background"); ?>
+            </button>
         </label>
-        <label>
-            <input type="radio" name="background" data-click="sg.make_background_adjustable">
-            Hintergrundbild anpassen
-        </label>
+        
     </section>
     
 </section>

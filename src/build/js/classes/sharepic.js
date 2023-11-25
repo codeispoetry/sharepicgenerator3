@@ -25,6 +25,7 @@ class Sharepic {
     });
 
     this.set_size();
+    this.start_drag();
   }
 
   background_zoom(step) {
@@ -81,23 +82,10 @@ class Sharepic {
   reset_background() {
     const sg = document.getElementById('sharepic')
     
-    sg.style.backgroundColor = 'green'
     sg.style.backgroundSize = 'cover'
     sg.style.backgroundRepeat = 'no-repeat'
     sg.style.backgroundPositionX = '0px'
     sg.style.backgroundPositionY = '0px'
-  }
-
-  make_background_adjustable() {
-    const sg = document.getElementById('sharepic')
-    
-    sg.style.backgroundColor = 'red'
-    sg.style.backgroundSize = '100%'
-    sg.style.backgroundRepeat = 'no-repeat'
-    sg.style.backgroundPositionX = '0px'
-    sg.style.backgroundPositionY = '0px'
-
-    this.start_drag()
   }
 
   set_size() {
