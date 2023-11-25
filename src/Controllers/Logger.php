@@ -27,9 +27,13 @@ class Logger {
 	 * @throws \Exception If the log file is not writable.
 	 */
 	public function __construct( $user ) {
+		if ( $user instanceof User ) {
+			$user = $user->get_username();
+		}
+
 		$this->line = array(
 			'timestamp' => gmdate( 'Y-m-d H:i:s' ),
-			'user'      => $user->get_username(),
+			'user'      => $user,
 			'caller'    => '',
 			'message'   => '',
 		);

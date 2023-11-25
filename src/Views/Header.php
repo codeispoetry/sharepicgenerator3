@@ -13,6 +13,8 @@
          <ul>
               <li><a href="/"><?php echo _('Home');?></a></li>
               <li><a href="/index.php/frontend/register"><?php echo _('Register');?></a></li>
+              <li><a href="/index.php/frontend/request_password_reset"><?php echo _('Reset password');?></a></li>
+
          </ul>
    </nav>
 

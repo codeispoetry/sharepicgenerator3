@@ -21,6 +21,13 @@ class User {
 	private $db;
 
 	/**
+	 * The logger object.
+	 *
+	 * @var Logger
+	 */
+	private $logger;
+
+	/**
 	 * The constructor.
 	 */
 	public function __construct() {
@@ -31,6 +38,8 @@ class User {
 				\PDO::ATTR_ERRMODE,
 				\PDO::ERRMODE_EXCEPTION
 			);
+
+			$this->logger = new Logger( 'Login' );
 
 		} catch ( \PDOException $e ) {
 			echo $e->getMessage();
@@ -43,26 +52,42 @@ class User {
 	 * @return bool True if the user is logged in.
 	 */
 	public function login() {
-		if ( empty( $_POST['username'] ) ) {
+		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
 			return false;
 		}
 
-		$this->username = preg_replace( '/[^a-zA-Z0-9]/', '', $_POST['username'] );
-		$bearer_token   = uniqid( 'sg', true );
+		$username = $_POST['username'];
 
-		$stmt = $this->db->prepare( 'UPDATE users SET token = :token WHERE username = :username' );
+		// Check password.
+		$stmt = $this->db->prepare( 'SELECT password FROM users WHERE username = :username' );
+		$stmt->bindParam( ':username', $username );
+		$stmt->execute();
+		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
+
+		if ( ! $result ) {
+			$this->logger->error( "user $username not found" );
+			return false;
+		}
+
+		if ( ! password_verify( $_POST['password'], $result['password'] ) ) {
+			$this->logger->error( "user $username wrong password" );
+			return false;
+		}
+
+		// Set token.
+		$bearer_token = uniqid( 'sg', true );
+		$stmt         = $this->db->prepare( 'UPDATE users SET token = :token WHERE username = :username' );
 		$stmt->bindParam( ':token', $bearer_token );
-		$stmt->bindParam( ':username', $this->username );
+		$stmt->bindParam( ':username', $username );
 		$stmt->execute();
 
 		if ( $stmt->rowCount() === 0 ) {
-			$stmt = $this->db->prepare( 'INSERT INTO users (username, token) VALUES (:username, :token)' );
-			$stmt->bindParam( ':token', $bearer_token );
-			$stmt->bindParam( ':username', $this->username );
-			$stmt->execute();
+			$this->logger->error( "could not set bearer token for $username" );
+			return false;
 		}
 
-		$user_dir = 'users/' . $this->username . '/workspace';
+		$this->username = $username;
+		$user_dir       = 'users/' . $this->username . '/workspace';
 		if ( ! file_exists( $user_dir ) ) {
 			mkdir( $user_dir, 0777, true );
 		}
@@ -126,6 +151,27 @@ class User {
 		return $this->username;
 	}
 
+	/**
+	 * Get the token for a user.
+	 *
+	 * @param string $username The username.
+	 * @return string The token.
+	 */
+	public function get_token_for_user( $username ) {
+		$stmt = $this->db->prepare( 'SELECT token FROM users WHERE username = :username' );
+		$stmt->bindParam( ':username', $username );
+		$stmt->execute();
+
+		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
+
+		if ( false === $result ) {
+			$this->logger->error( 'No token for user ' . $username );
+			return false;
+		}
+
+		return $result['token'];
+	}
+
 
 	/**
 	 * Register a user.
@@ -138,7 +184,7 @@ class User {
 			return false;
 		}
 
-		$password = password_hash( 'geheim', PASSWORD_BCRYPT );
+		$password = bin2hex( random_bytes( 16 ) ); // no one will ever see this password.
 		$token    = bin2hex( random_bytes( 16 ) );
 
 		$stmt = $this->db->prepare( 'INSERT INTO users (username, password, token) VALUES (:username, :password, :token)' );
@@ -151,6 +197,34 @@ class User {
 			return false;
 		}
 
+		$this->logger->access( 'Account created for ' . $mail );
 		return true;
+	}
+
+	/**
+	 * Set the password for a user.
+	 *
+	 * @param string $token The token.
+	 * @param string $password The password.
+	 */
+	public function set_password( $token, $password ) {
+		$stmt = $this->db->prepare( 'SELECT username FROM users WHERE token = :token' );
+		$stmt->bindParam( ':token', $token );
+		$stmt->execute();
+		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
+
+		if ( ! $result ) {
+			return false;
+		}
+
+		$this->logger->access( 'Password resetted for ' . $result['username'] );
+
+		$stmt     = $this->db->prepare( 'UPDATE users SET password = :password WHERE token = :token' );
+		$password = password_hash( $password, PASSWORD_BCRYPT );
+		$stmt->bindParam( ':password', $password );
+		$stmt->bindParam( ':token', $token );
+		$result = $stmt->execute();
+
+		return $result;
 	}
 }
