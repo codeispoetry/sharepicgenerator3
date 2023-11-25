@@ -43,21 +43,21 @@ class Frontend {
 	 * The registration page.
 	 */
 	public function register() {
-		include_once './src/Views/Header.php';
 		if ( ! isset( $_POST['register_mail'] ) ) {
 			include_once './src/Views/User/Register.php';
-			include_once './src/Views/Footer.php';
 			return;
 		}
 
 		if ( ! $this->user->register( $_POST['register_mail'] ) ) {
-			include_once './src/Views/User/NotRegistered.php';
-			include_once './src/Views/Footer.php';
+			$title   = _( 'Register' );
+			$message = _( 'Registration failed. Are you already registered?' );
+			include_once './src/Views/Hero.php';
 			return;
 		}
 
-		include_once './src/Views/User/Registered.php';
-		include_once './src/Views/Footer.php';
+		$title   = _( 'Register' );
+		$message = _( 'You have successfully registered. Please check your mails to confirm your registration.' );
+		include_once './src/Views/Hero.php';
 	}
 
 	/**
@@ -65,17 +65,14 @@ class Frontend {
 	 */
 	public function request_password_reset() {
 		if ( empty( $_POST['username'] ) ) {
-			include_once './src/Views/Header.php';
 			include_once './src/Views/User/RequestPasswordReset.php';
-			include_once './src/Views/Footer.php';
 			return;
 		}
 
 		$this->user->send_password_link();
-
-		include_once './src/Views/Header.php';
-		echo 'Schau in Dein Postfach.';
-		include_once './src/Views/Footer.php';
+		$title   = _( 'Reset password' );
+		$message = _( 'Please check your email for the reset link.' );
+		include_once './src/Views/Hero.php';
 	}
 
 	/**
@@ -84,9 +81,7 @@ class Frontend {
 	public function reset_password() {
 		if ( empty( $_POST['password'] ) ) {
 			$token = $_GET['token'] ?? '';
-			include_once './src/Views/Header.php';
 			include_once './src/Views/User/ResetPassword.php';
-			include_once './src/Views/Footer.php';
 			return;
 		}
 
@@ -103,9 +98,9 @@ class Frontend {
 				$this->no_access();
 			}
 
-			include_once './src/Views/Header.php';
-			include_once './src/Views/User/PasswordResetted.php';
-			include_once './src/Views/Footer.php';
+			$title   = _( 'Password reset' );
+			$message = _( 'Your password has been reset. Please login.' );
+			include_once './src/Views/Hero.php';
 			return;
 		}
 
@@ -116,9 +111,7 @@ class Frontend {
 	 * The home page.
 	 */
 	public function index() {
-		include_once './src/Views/Header.php';
 		include_once './src/Views/Home.php';
-		include_once './src/Views/Footer.php';
 	}
 
 	/**
