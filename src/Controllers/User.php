@@ -227,4 +227,30 @@ class User {
 
 		return $result;
 	}
+
+	/**
+	 * Send the password reset mail.
+	 *
+	 * @return bool True if the mail was sent.
+	 */
+	public function send_password_link() {
+		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
+			return false;
+		}
+
+		$username = $_POST['username'];
+		$token    = $this->get_token_for_user( $username );
+
+		if ( empty( $token ) ) {
+			return false;
+		}
+
+		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
+		$server_address = $_SERVER['HTTP_HOST'];
+		$link           = $protocol . $server_address . '/index.php/frontend/reset_password?token=' . $token;
+		$message        = _( 'Click on the following link to reset your password: ' ) . $link;
+
+		$mail = new Mailer( $username );
+		$mail->send( _( 'Password Reset' ), $message );
+	}
 }

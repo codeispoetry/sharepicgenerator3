@@ -1,8 +1,6 @@
 <?php
 namespace Sharepicgenerator\Controllers;
 
-use PHPMailer\PHPMailer\PHPMailer;
-
 /**
  * Frontend controller.
  */
@@ -63,54 +61,20 @@ class Frontend {
 	}
 
 	/**
-	 * Sends the email with the reset token.
+	 * Show form for request password reset and send email.
 	 */
-	public function send_email_reset_password() {
-		// Show form to enter the passwords.
-		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
-			$this->no_access();
-		}
-		$username = $_POST['username'];
-		$token    = $this->user->get_token_for_user( $username );
-
-		if ( empty( $token ) ) {
-			$this->no_access();
+	public function request_password_reset() {
+		if ( empty( $_POST['username'] ) ) {
+			include_once './src/Views/Header.php';
+			include_once './src/Views/User/RequestPasswordReset.php';
+			include_once './src/Views/Footer.php';
+			return;
 		}
 
-		$mail = new PHPMailer( true );
-		//phpcs:disable
-		try {
-			$mail->isSMTP();
-			$mail->Host       = $this->config->get( 'Mail', 'host' );
-			$mail->SMTPAuth   = true;
-			$mail->Username   = $this->config->get( 'Mail', 'username' );
-			$mail->Password   = $this->config->get( 'Mail', 'password' );
-			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-			$mail->Port       = $this->config->get( 'Mail', 'port' );
-
-			// Recipients.
-			$mail->setFrom( 'mail@tom-rose.de', 'Sharepicgenerator' );
-			$mail->addAddress( $username );
-
-			// Content.
-			$mail->isHTML( true );
-			$mail->Subject = 'Password Reset';
-
-			$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-			$serverAddress = $_SERVER['HTTP_HOST'];
-			$link = $protocol . $serverAddress . '/index.php/frontend/reset_password?token=' . $token;
-			$mail->Body    = _('Click on the following link to reset your password: ') . $link;
-
-			$mail->send();
-		} catch ( \Exception $e ) {
-					echo $mail->ErrorInfo;
-					die();
-					error_log( "Message could not be sent. Mailer Error: {$mail->ErrorInfo}" );
-		}
-		//phpcs:enable
+		$this->user->send_password_link();
 
 		include_once './src/Views/Header.php';
-		echo "Schau in Dein Postfach.";
+		echo 'Schau in Dein Postfach.';
 		include_once './src/Views/Footer.php';
 	}
 
@@ -118,8 +82,21 @@ class Frontend {
 	 * Reset password page.
 	 */
 	public function reset_password() {
+		if ( empty( $_POST['password'] ) ) {
+			$token = $_GET['token'] ?? '';
+			include_once './src/Views/Header.php';
+			include_once './src/Views/User/ResetPassword.php';
+			include_once './src/Views/Footer.php';
+			return;
+		}
+
 		// Perform the password reset.
-		if ( isset( $_POST['token'] ) && isset( $_POST['password'] ) && isset( $_POST['password_repeat'] ) && $_POST['password'] === $_POST['password_repeat'] ) {
+		if (
+			isset( $_POST['token'] ) &&
+			isset( $_POST['password'] ) &&
+			isset( $_POST['password_repeat'] ) &&
+			$_POST['password'] === $_POST['password_repeat']
+		) {
 			$token    = $_POST['token'];
 			$password = $_POST['password'];
 			if ( ! $this->user->set_password( $token, $password ) ) {
@@ -132,20 +109,6 @@ class Frontend {
 			return;
 		}
 
-		$token = $_GET['token'] ?? '';
-		include_once './src/Views/Header.php';
-		include_once './src/Views/User/ResetPassword.php';
-		include_once './src/Views/Footer.php';
-
-	}
-
-	/**
-	 * Request password reset.
-	 */
-	public function request_password_reset() {
-		include_once './src/Views/Header.php';
-		include_once './src/Views/User/RequestPasswordReset.php';
-		include_once './src/Views/Footer.php';
 	}
 
 

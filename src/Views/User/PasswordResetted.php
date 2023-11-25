@@ -4,7 +4,7 @@
 		<div class="">
 			<h1><?php  echo _('Password resetted');?></h1>
 			<p>
-                <?php echo _('Your password has been resetted. Pleae login.');?>
+                <?php echo _('Your password has been resetted. Please login.');?>
             </p>
 		</div>
 		

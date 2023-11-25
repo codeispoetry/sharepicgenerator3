@@ -16,6 +16,8 @@
         <exclude name="WordPress.WP.I18n.MissingArgDomain" />
         <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
         <exclude name="WordPress.WP.AlternativeFunctions" />
+        <exclude name="WordPress.WP.CapitalPDangit.Misplaced" />
+        <exclude name="WordPress.WP.I18n.SingleUnderscoreGetTextFunction" />
 
         <exclude name="WordPress.DB.RestrictedClasses.mysql__PDO" />
 
