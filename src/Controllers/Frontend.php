@@ -45,9 +45,7 @@ class Frontend {
 	 * The home page.
 	 */
 	public function index() {
-		include_once './src/Views/Header.php';
 		include_once './src/Views/Home.php';
-		include_once './src/Views/Footer.php';
 	}
 
 	/**

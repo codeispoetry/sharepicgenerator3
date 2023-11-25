@@ -20,7 +20,7 @@ msgstr ""
 
 #: src/Views/Home.php:6
 msgid "username"
-msgstr "Benutzer*inenname"
+msgstr "Benutzer*innenname"
 
 #: src/Views/Home.php:7
 msgid "login"
