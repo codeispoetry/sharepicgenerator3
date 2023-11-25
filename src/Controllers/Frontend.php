@@ -63,28 +63,13 @@ class Frontend {
 	}
 
 	/**
-	 * Reset password page.
+	 * Sends the email with the reset token.
 	 */
-	public function reset_password() {
-		// Perform the password reset.
-		if ( isset( $_POST['token'] ) && isset( $_POST['password'] ) && isset( $_POST['password_repeat'] ) && $_POST['password'] === $_POST['password_repeat'] ) {
-			$token    = $_POST['token'];
-			$password = $_POST['password'];
-			if ( ! $this->user->set_password( $token, $password ) ) {
-				$this->no_access();
-			}
-
-			include_once './src/Views/Header.php';
-			include_once './src/Views/User/PasswordResetted.php';
-			include_once './src/Views/Footer.php';
-			return;
-		}
-
+	public function send_email_reset_password() {
 		// Show form to enter the passwords.
 		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
 			$this->no_access();
 		}
-
 		$username = $_POST['username'];
 		$token    = $this->user->get_token_for_user( $username );
 
@@ -105,24 +90,53 @@ class Frontend {
 
 			// Recipients.
 			$mail->setFrom( 'mail@tom-rose.de', 'Sharepicgenerator' );
-			$mail->addAddress( 'mail@tom-rose.de' );
+			$mail->addAddress( $username );
 
 			// Content.
 			$mail->isHTML( true );
 			$mail->Subject = 'Password Reset';
-			$mail->Body    = 'Your password reset token is: ' . $token;
+
+			$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+			$serverAddress = $_SERVER['HTTP_HOST'];
+			$link = $protocol . $serverAddress . '/index.php/frontend/reset_password?token=' . $token;
+			$mail->Body    = _('Click on the following link to reset your password: ') . $link;
 
 			$mail->send();
 		} catch ( \Exception $e ) {
-			echo $mail->ErrorInfo;
-			die();
-			error_log( "Message could not be sent. Mailer Error: {$mail->ErrorInfo}" );
+					echo $mail->ErrorInfo;
+					die();
+					error_log( "Message could not be sent. Mailer Error: {$mail->ErrorInfo}" );
 		}
 		//phpcs:enable
 
 		include_once './src/Views/Header.php';
+		echo "Schau in Dein Postfach.";
+		include_once './src/Views/Footer.php';
+	}
+
+	/**
+	 * Reset password page.
+	 */
+	public function reset_password() {
+		// Perform the password reset.
+		if ( isset( $_POST['token'] ) && isset( $_POST['password'] ) && isset( $_POST['password_repeat'] ) && $_POST['password'] === $_POST['password_repeat'] ) {
+			$token    = $_POST['token'];
+			$password = $_POST['password'];
+			if ( ! $this->user->set_password( $token, $password ) ) {
+				$this->no_access();
+			}
+
+			include_once './src/Views/Header.php';
+			include_once './src/Views/User/PasswordResetted.php';
+			include_once './src/Views/Footer.php';
+			return;
+		}
+
+		$token = $_GET['token'] ?? '';
+		include_once './src/Views/Header.php';
 		include_once './src/Views/User/ResetPassword.php';
 		include_once './src/Views/Footer.php';
+
 	}
 
 	/**

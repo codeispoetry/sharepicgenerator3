@@ -21,7 +21,9 @@ if ( 'de' === get_lang() ) {
 
 $path = $_SERVER['REQUEST_URI'];
 
-$segments   = explode( '/', $path );
+$parts = parse_url($path);
+
+$segments   = explode( '/', $parts['path'] );
 $controller = $segments[2] ?? 'frontend';
 $method     = $segments[3] ?? 'index';
 
