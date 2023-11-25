@@ -14,7 +14,7 @@ button{
     }
 
     &.flat{
-        background-color: $grashalm;
+        background-color: $theme-color;
         border: none;
         color: white;
         padding: 7px 16px;
@@ -27,7 +27,7 @@ button{
     }
 
     &:hover {
-        background-color: $tanne;
+        background-color: $theme-color-dark;
     }
 
     &.to-front,
@@ -80,7 +80,7 @@ select {
 
 button{
     padding: 10px 15px;
-    background-color: $grashalm;
+    background-color: $theme-color;
     color: $white;
     cursor: pointer;
     border: 0;
@@ -92,7 +92,7 @@ button{
         border: unset;
         font-size: unset;
         text-decoration: underline;
-        color: $grashalm;
+        color: $theme-color;
     }
 }
 
@@ -105,13 +105,13 @@ input[type="number"]{
     position: relative;
     display: inline-block;
     padding: 10px 15px;
-    background-color: $grashalm;
+    background-color: $theme-color;
     color: $white;
     cursor: pointer;
     transition-duration: 0.2s;
 
     &:hover {
-        background-color: $tanne;
+        background-color: $theme-color-dark;
     }
 
     &:disabled{

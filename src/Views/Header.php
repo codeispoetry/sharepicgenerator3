@@ -19,12 +19,13 @@
 <header>
     <?php include 'src/Views/Menu.php'; ?>
 
-    <div>
-        <img src="/assets/icons/de.svg" alt="<?php echo _('German');?>" data-lang="de" style="height: 15px;cursor:pointer;">
-        <img src="/assets/icons/en.svg" alt="<?php echo _('English');?>" data-lang="en" style="height: 15px;cursor:pointer;">
-
+    <div style="display: flex; align-items: center">
+        <div style="margin-right: 1em">
+            <img src="/assets/icons/de.svg" alt="<?php echo _('German');?>" title="<?php echo _('German');?>" data-lang="de" style="height: 15px;cursor:pointer;margin-right: 5px;">
+            <img src="/assets/icons/en.svg" alt="<?php echo _('English');?>" title="<?php echo _('English');?>" data-lang="en" style="height: 15px;cursor:pointer;">
+        </div>
         <?php if( $this->user->is_logged_in() ): ?>
-            <button id="logout" class="link"><?php  echo _('Logout');?></button>
+            <button id="logout" class="link" style="margin-right:1em"><?php  echo _('Logout');?></button>
             <?php  echo _('Logged in as');?> <?php echo $this->user->get_username(); ?>
         <?php endif; ?>
     </div>

@@ -8,15 +8,10 @@
     </section>
     <section>
         <h3><?php  echo _('Text');?>:</h3>
-      
-
-
-
         <div id="editor"></div>
 
-
     </section>
-    <section>
+    <section style="display: flex">
         <button class="to-front" data-target="text"><?php  echo _('to front');?></button>
     </section>
 

@@ -27,8 +27,11 @@ deploy-develop:
 create-pot:
 	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot
 
-create-po:
+create-po-init:
 	msginit -i languages/messages.pot -o languages/de.po -l de_DE.utf8
 
+update-po:
+	msgmerge -U languages/de.po languages/messages.pot
+
 create-mo:
-	rm languages/de_DE/LC_MESSAGES/sg.mo && msgfmt languages/de.po -o languages/de_DE/LC_MESSAGES/sg.mo
+	msgfmt languages/de.po -o languages/de_DE/LC_MESSAGES/sg.mo

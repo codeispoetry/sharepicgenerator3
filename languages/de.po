@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 00:10+0100\n"
+"POT-Creation-Date: 2023-11-25 11:55+0100\n"
 "PO-Revision-Date: 2023-11-25 00:10+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -24,13 +24,21 @@ msgstr "Benutzer*inenname"
 
 #: src/Views/Home.php:7
 msgid "login"
-msgstr "einlogge"
+msgstr "einloggen"
 
 #: src/Views/Header.php:24
+msgid "German"
+msgstr "Deutsch"
+
+#: src/Views/Header.php:25
+msgid "English"
+msgstr "Englisch"
+
+#: src/Views/Header.php:28
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: src/Views/Header.php:25
+#: src/Views/Header.php:29
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
@@ -58,6 +66,10 @@ msgstr "Suchbegriff"
 msgid "upload"
 msgstr "hochladen"
 
+#: src/Views/Cockpit/Sharepic.php:29
+msgid "Reset background"
+msgstr "Hintergrund zurücksetzen"
+
 #: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:18
 msgid "Eyecatcher"
 msgstr "Störer"
@@ -67,7 +79,7 @@ msgstr "Störer"
 msgid "Size"
 msgstr "Größe"
 
-#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Freetext.php:20
+#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Freetext.php:15
 msgid "to front"
 msgstr "nach vorne"
 
@@ -102,3 +114,7 @@ msgstr "Lade frei"
 #: src/Views/Creator.php:27
 msgid "Download"
 msgstr "Herunterladen"
+
+#: src/Views/Pixabay.php:4
+msgid "All images are from "
+msgstr "Die Bilder stammen von "

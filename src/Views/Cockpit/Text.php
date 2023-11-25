@@ -32,7 +32,7 @@
             ?>
         </div>
     </section>
-    <section>
+    <section style="display: flex">
         <button class="to-front" data-target="text">nach vorne</button>
     </section>
 

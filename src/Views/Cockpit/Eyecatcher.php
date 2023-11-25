@@ -7,7 +7,7 @@
         </label>
     </section>
     
-    <section>
+    <section style="display: flex">
         <button class="to-front" data-target="eyecatcher"><?php  echo _('to front');?></button>
         <button class="delete" data-target="eyecatcher"><?php  echo _('delete');?></button>
     </section>

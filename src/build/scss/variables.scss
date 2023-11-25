@@ -7,4 +7,7 @@ $blau: #0ba1dd;
 $dark: #333;
 $light: #ababab;
 $white: #ffffff;
-$highlight: $grashalm;
+
+$theme-color: $blau;
+$theme-color-dark: darken($theme-color, 20%);
+
