@@ -14,7 +14,7 @@ class Sharepic {
 	 *
 	 * @var string
 	 */
-	private $file = 'users/tom/workspace/sharepic.html';
+	private $file;
 
 	/**
 	 * The HTML for the sharepic.
@@ -28,7 +28,7 @@ class Sharepic {
 	 *
 	 * @var string
 	 */
-	private $template = 'users/tom/workspace/sharepic.html';
+	private $template;
 
 	/**
 	 * The size of the sharepic.
@@ -67,6 +67,7 @@ class Sharepic {
 	public function __construct() {
 		$user       = new User();
 		$this->user = $user->get_user_by_token();
+		$this->file = 'users/' . $this->user . '/workspace/sharepic.html';
 
 		$this->logger = new Logger( $user );
 		$this->config = new Config();
