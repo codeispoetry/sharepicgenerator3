@@ -176,6 +176,32 @@ class User {
 		return $this->role;
 	}
 
+	/**
+	 * Get the savings.
+	 *
+	 * @return array
+	 */
+	public function get_savings() {
+		$save_dir = 'users/' . $this->username . '/save/';
+
+		$savings_dir = glob( $save_dir . '/*', GLOB_ONLYDIR );
+
+		$savings = array();
+		foreach ( $savings_dir as $dir ) {
+			if ( ! file_exists( $dir . '/info.json' ) ) {
+				continue;
+			}
+
+			$info = file_get_contents( $dir . '/info.json' );
+			$data = json_decode( $info, true );
+
+			if ( isset( $data['name'] ) ) {
+				$savings[ $dir ] = $data['name'];
+			}
+		}
+
+		return $savings;
+	}
 
 	/**
 	 * Is the user admin

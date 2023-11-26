@@ -62,6 +62,13 @@ class Sharepic {
 	private $config;
 
 	/**
+	 * Infos about the sharepic, like name.
+	 *
+	 * @var string
+	 */
+	private $info;
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
@@ -87,6 +94,7 @@ class Sharepic {
 		$this->size['height'] = $data['size']['height'] ?? 100;
 		$this->size['zoom']   = $data['size']['zoom'] ?? 1;
 		$this->template       = $data['template'] ?? $this->file;
+		$this->info           = $data['name'] ?? 'no-name';
 
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
@@ -135,10 +143,8 @@ class Sharepic {
 
 	/**
 	 * Saves the sharepic.
-	 *
-	 * @param string $name The name of the sharepic.
 	 */
-	public function save( $name = 'no-name' ) {
+	public function save() {
 		$workspace = 'users/' . $this->user . '/workspace/';
 		$save_dir  = 'users/' . $this->user . '/save/';
 		$save      = $save_dir . rand( 1000000, 9999999 );
@@ -158,6 +164,9 @@ class Sharepic {
 			$this->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not save sharepic' );
 		}
+
+		$name = preg_replace( '/[^a-zA-Z0-9\säöüßÄÖÜ]/', '-', $this->info );
+		file_put_contents( $save . '/info.json', json_encode( array( 'name' => $name ) ) );
 
 		echo json_encode( array( 'save_count' => $save_count ) );
 		return true;

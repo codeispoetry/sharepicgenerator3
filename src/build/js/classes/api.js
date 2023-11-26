@@ -72,12 +72,15 @@ class API {
   }
 
   save () {
+    const name = prompt('Name des Sharepics', 'Sharepic')
+    let data = this.prepare()
+    data.name = name
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(this.prepare())
+      body: JSON.stringify(data)
     }
 
     fetch(this.api + 'save', options)
