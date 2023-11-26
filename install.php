@@ -1,4 +1,5 @@
 <?php
+unlink( 'data/users.db' );
 try {
 	$db = new PDO( 'sqlite:data/users.db' );
 
@@ -11,7 +12,10 @@ try {
 		'CREATE TABLE IF NOT EXISTS users (
         username TEXT NOT NULL UNIQUE,
         password TEXT NOT NULL,
-        token TEXT NOT NULL UNIQUE)'
+        token TEXT NOT NULL UNIQUE,
+		role TEXT ,
+		tenant TEXT
+	)'
 	);
 
 	exec( 'chmod 777 data/users.db' );

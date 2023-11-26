@@ -103,6 +103,41 @@ class Frontend {
 
 	}
 
+	/**
+	 * The Log view.
+	 */
+	public function log() {
+		$this->user->get_user_by_token();
+		if ( ! $this->user->is_admin() ) {
+			$this->no_access();
+		}
+		include_once './src/Views/Logs/Log.php';
+	}
+
+	/**
+	 * The Log view.
+	 */
+	public function sharepics() {
+		$this->user->get_user_by_token();
+		if ( ! $this->user->is_admin() ) {
+			$this->no_access();
+		}
+
+		$cmd = 'find /tmp -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.gif" \) -mtime +7 -exec rm -f {} \;';
+		exec( $cmd, $output, $return_var );
+
+		include_once './src/Views/Logs/Sharepics.php';
+	}
+
+	/**
+	 * Log the user out
+	 */
+	public function logout() {
+		$this->user->logout();
+		$title   = _( 'Logout' );
+		$message = _( 'You have been logged out.' );
+		include_once './src/Views/Hero.php';
+	}
 
 	/**
 	 * The home page.

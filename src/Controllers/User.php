@@ -14,6 +14,20 @@ class User {
 	private $username = false;
 
 	/**
+	 * The tenant.
+	 *
+	 * @var string
+	 */
+	private $tenant = false;
+
+	/**
+	 * The user's role.
+	 *
+	 * @var string
+	 */
+	private $role = false;
+
+	/**
 	 * The database connection.
 	 *
 	 * @var \PDO
@@ -52,6 +66,11 @@ class User {
 	 * @return bool True if the user is logged in.
 	 */
 	public function login() {
+		// See, if user is already logged in.
+		if ( $this->get_user_by_token() ) {
+			return true;
+		}
+
 		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
 			return false;
 		}
@@ -59,7 +78,7 @@ class User {
 		$username = $_POST['username'];
 
 		// Check password.
-		$stmt = $this->db->prepare( 'SELECT password FROM users WHERE username = :username' );
+		$stmt = $this->db->prepare( 'SELECT * FROM users WHERE username = :username' );
 		$stmt->bindParam( ':username', $username );
 		$stmt->execute();
 		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
@@ -73,6 +92,9 @@ class User {
 			$this->logger->error( "user $username wrong password" );
 			return false;
 		}
+
+		$this->tenant = $result['tenant'];
+		$this->role   = $result['role'];
 
 		// Set token.
 		$bearer_token = uniqid( 'sg', true );
@@ -108,6 +130,17 @@ class User {
 	}
 
 	/**
+	 * Logs the user out.
+	 */
+	public function logout() {
+		$cookie = 'bearer_token';
+
+		if ( isset( $_COOKIE[ $cookie ] ) ) {
+			unset( $_COOKIE[ $cookie ] );
+			setcookie( $cookie, '', time() - 3600, '/' );
+		}
+	}
+	/**
 	 * If the User is logged in or not.
 	 *
 	 * @return boolean
@@ -123,6 +156,34 @@ class User {
 	 */
 	public function get_username() {
 		return $this->username;
+	}
+
+	/**
+	 * Get the tenant.
+	 *
+	 * @return string
+	 */
+	public function get_tenant() {
+		return $this->tenant;
+	}
+
+	/**
+	 * Get the role.
+	 *
+	 * @return string
+	 */
+	public function get_role() {
+		return $this->role;
+	}
+
+
+	/**
+	 * Is the user admin
+	 *
+	 * @return bool
+	 */
+	public function is_admin() {
+		return ( 'admin' === $this->role );
 	}
 
 	/**
@@ -144,10 +205,14 @@ class User {
 		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
 
 		if ( false === $result ) {
+
 			return false;
 		}
 
 		$this->username = $result['username'];
+		$this->tenant   = $result['tenant'];
+		$this->role     = $result['role'];
+
 		return $this->username;
 	}
 

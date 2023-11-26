@@ -12,6 +12,8 @@
 <header>
    <nav>
         <a href="/"><?php echo _('Home');?></a>
+        <a href="/index.php/frontend/create">Create</a>
+
    </nav>
 
     <div style="display: flex; align-items: center">

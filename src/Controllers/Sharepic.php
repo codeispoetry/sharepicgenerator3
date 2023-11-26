@@ -157,7 +157,32 @@ class Sharepic {
 			$this->http_error( 'Could not create file' );
 		}
 
+		$this->create_thumbnail( $path );
+
 		echo json_encode( array( 'path' => $path ) );
+	}
+
+
+	/**
+	 * Creates a thumbnail and saves it to the tmp folder.
+	 *
+	 * @param string $path The path to the image.
+	 */
+	private function create_thumbnail( $path ) {
+		$thumbnail = bin2hex( random_bytes( 16 ) ) . '.png';
+		$cmd       = sprintf(
+			'convert %s -resize 400x400 ./tmp/%s 2>&1',
+			$path,
+			$thumbnail
+		);
+
+		exec( $cmd, $output, $return_code );
+
+		if ( 0 !== $return_code ) {
+			$this->logger->error( implode( "\n", $output ) );
+			$this->http_error( 'Could not create thumbnail' );
+		}
+
 	}
 
 	/**

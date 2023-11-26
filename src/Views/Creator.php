@@ -28,10 +28,10 @@
             <div style="margin-right: 1em">
                 <?php  echo _('Logged in as');?> <?php echo $this->user->get_username(); ?>
             </div>
-            <button id="logout" class="link" style="margin-right:1em">
+            <a href="/index.php/frontend/logout" class="link" style="margin-right:1em">
                 <?php  echo _('Logout');?>
                 <img src="/assets/icons/logout.svg" style="height: 1em;">
-            </button>
+			</a>
         <?php endif; ?>
     </div>
 </header>
