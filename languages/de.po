@@ -130,8 +130,8 @@ msgid "search query"
 msgstr "Suchbegriff"
 
 #: src/Views/Cockpit/Sharepic.php:34
-msgid "upload own image"
-msgstr "eigenes Bild hochladen"
+msgid "upload image"
+msgstr "Bild hochladen"
 
 #: src/Views/Cockpit/Sharepic.php:40
 msgid "Reset background"

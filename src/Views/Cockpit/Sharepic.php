@@ -31,7 +31,7 @@
         
 
         <label style="display:flex; align-items: center;padding:3px;margin-top:2em; width: 160px;" class="file-upload">
-            <img src="/assets/icons/upload.svg"> <?php  echo _('upload own image');?>
+            <img src="/assets/icons/upload.svg"> <?php  echo _('upload image');?>
             <input type="file" name="upload" id="upload">
         </label>
 
