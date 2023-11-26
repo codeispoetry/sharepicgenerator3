@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-26 08:28+0100\n"
+"POT-Creation-Date: 2023-11-26 18:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,21 +48,29 @@ msgstr ""
 msgid "Your password has been reset. Please login."
 msgstr ""
 
-#: src/Controllers/User.php:205
+#: src/Controllers/Frontend.php:137 src/Views/Creator.php:32
+msgid "Logout"
+msgstr ""
+
+#: src/Controllers/Frontend.php:138
+msgid "You have been logged out."
+msgstr ""
+
+#: src/Controllers/User.php:297
 msgid ""
 "You have successfully registered. Please click on the following link to "
 "confirm your registration: "
 msgstr ""
 
-#: src/Controllers/User.php:208
+#: src/Controllers/User.php:300
 msgid "Account created"
 msgstr ""
 
-#: src/Controllers/User.php:259
+#: src/Controllers/User.php:351
 msgid "Click on the following link to reset your password: "
 msgstr ""
 
-#: src/Controllers/User.php:262
+#: src/Controllers/User.php:354
 msgid "Password Reset"
 msgstr ""
 
@@ -98,11 +106,11 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: src/Views/Header.php:18
+#: src/Views/Header.php:20
 msgid "Imprint"
 msgstr ""
 
-#: src/Views/Header.php:20
+#: src/Views/Header.php:22
 msgid "Privacy"
 msgstr ""
 
@@ -127,7 +135,7 @@ msgid "search query"
 msgstr ""
 
 #: src/Views/Cockpit/Sharepic.php:34
-msgid "upload own image"
+msgid "upload image"
 msgstr ""
 
 #: src/Views/Cockpit/Sharepic.php:40
@@ -159,6 +167,14 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
+#: src/Views/Logs/Sharepics.php:5
+msgid "Latest sharepics"
+msgstr ""
+
+#: src/Views/Logs/Log.php:5
+msgid "Usage Log"
+msgstr ""
+
 #: src/Views/Menu.php:5
 msgid "Load template"
 msgstr ""
@@ -167,8 +183,20 @@ msgstr ""
 msgid "latest"
 msgstr ""
 
-#: src/Views/Menu.php:9
+#: src/Views/Menu.php:8
 msgid "Free"
+msgstr ""
+
+#: src/Views/Menu.php:19
+msgid "Load saved pics"
+msgstr ""
+
+#: src/Views/Menu.php:35
+msgid "Show logs"
+msgstr ""
+
+#: src/Views/Menu.php:36
+msgid "Show latest sharepics"
 msgstr ""
 
 #: src/Views/User/ResetPassword.php:6
@@ -221,12 +249,16 @@ msgstr ""
 msgid "Logged in as"
 msgstr ""
 
-#: src/Views/Creator.php:32
-msgid "Logout"
+#: src/Views/Creator.php:66
+msgid "Download"
 msgstr ""
 
-#: src/Views/Creator.php:65
-msgid "Download"
+#: src/Views/Creator.php:69
+msgid "Save"
+msgstr ""
+
+#: src/Views/Creator.php:95
+msgid "Are you sure?"
 msgstr ""
 
 #: src/Views/Pixabay.php:4

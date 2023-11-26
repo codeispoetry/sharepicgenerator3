@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-26 08:28+0100\n"
+"POT-Creation-Date: 2023-11-26 18:31+0100\n"
 "PO-Revision-Date: 2023-11-25 00:10+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -31,7 +31,9 @@ msgstr "Registrierung fehlgeschlagen. Bist du schon registriert?"
 msgid ""
 "You have successfully registered. Please check your mails to confirm your "
 "registration."
-msgstr "Du hast dich erfolgreich registriert. Bitte bestätige deine Registrierung in deinen Mails."
+msgstr ""
+"Du hast dich erfolgreich registriert. Bitte bestätige deine Registrierung in "
+"deinen Mails."
 
 #: src/Controllers/Frontend.php:70
 #, fuzzy
@@ -50,21 +52,31 @@ msgstr "Passwort zurücksetzen"
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/User.php:205
+#: src/Controllers/Frontend.php:137 src/Views/Creator.php:32
+msgid "Logout"
+msgstr "Ausloggen"
+
+#: src/Controllers/Frontend.php:138
+msgid "You have been logged out."
+msgstr "Du bist ausgeloggt"
+
+#: src/Controllers/User.php:297
 msgid ""
 "You have successfully registered. Please click on the following link to "
 "confirm your registration: "
-msgstr "Du hast dich erfolgreich registriert. Bitte klicke auf den folgenden Link, um deine Registrierung zu bestätigen:"
+msgstr ""
+"Du hast dich erfolgreich registriert. Bitte klicke auf den folgenden Link, "
+"um deine Registrierung zu bestätigen:"
 
-#: src/Controllers/User.php:208
+#: src/Controllers/User.php:300
 msgid "Account created"
 msgstr "Account erstellt"
 
-#: src/Controllers/User.php:259
+#: src/Controllers/User.php:351
 msgid "Click on the following link to reset your password: "
 msgstr "Klicke auf den folgenden Link, um dein Passwort zurückzusetzen:"
 
-#: src/Controllers/User.php:262
+#: src/Controllers/User.php:354
 msgid "Password Reset"
 msgstr "Passwort zurücksetzen"
 
@@ -78,7 +90,12 @@ msgid ""
 "text for social media. You can use it to create images for Facebook, X, "
 "Instagram, LinkedIn, and other social networks. You can also use it to "
 "create images for your blog posts, Facebook ads, and more."
-msgstr "Sharepicgenerator ist ein kostenloser Dienst, mit dem du Bilder mit Text für soziale Medien erstellen kannst. Du kannst ihn verwenden, um Bilder für Facebook, X, Instagram, LinkedIn und andere soziale Netzwerke zu erstellen. Du kannst ihn auch verwenden, um Bilder für deine Blog-Beiträge, Facebook-Anzeigen und mehr zu erstellen."
+msgstr ""
+"Sharepicgenerator ist ein kostenloser Dienst, mit dem du Bilder mit Text für "
+"soziale Medien erstellen kannst. Du kannst ihn verwenden, um Bilder für "
+"Facebook, X, Instagram, LinkedIn und andere soziale Netzwerke zu erstellen. "
+"Du kannst ihn auch verwenden, um Bilder für deine Blog-Beiträge, Facebook-"
+"Anzeigen und mehr zu erstellen."
 
 #: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
 #, fuzzy
@@ -101,11 +118,11 @@ msgstr "Bereits registriert?"
 msgid "Home"
 msgstr "Startseite"
 
-#: src/Views/Header.php:18
+#: src/Views/Header.php:20
 msgid "Imprint"
 msgstr "Impressum"
 
-#: src/Views/Header.php:20
+#: src/Views/Header.php:22
 msgid "Privacy"
 msgstr "Datenschutz"
 
@@ -162,6 +179,14 @@ msgstr "Logo"
 msgid "Text"
 msgstr "Text"
 
+#: src/Views/Logs/Sharepics.php:5
+msgid "Latest sharepics"
+msgstr "Neueste Sharepics"
+
+#: src/Views/Logs/Log.php:5
+msgid "Usage Log"
+msgstr "Nutzungs-Log"
+
 #: src/Views/Menu.php:5
 #, fuzzy
 msgid "Load template"
@@ -172,9 +197,21 @@ msgstr "Lade Vorlagen"
 msgid "latest"
 msgstr "letztes"
 
-#: src/Views/Menu.php:9
+#: src/Views/Menu.php:8
 msgid "Free"
 msgstr "Frei"
+
+#: src/Views/Menu.php:19
+msgid "Load saved pics"
+msgstr "Lade gespeicherte Sharepics"
+
+#: src/Views/Menu.php:35
+msgid "Show logs"
+msgstr "Zeige Logs"
+
+#: src/Views/Menu.php:36
+msgid "Show latest sharepics"
+msgstr "Zeige neueste Sharepics"
 
 #: src/Views/User/ResetPassword.php:6
 #, fuzzy
@@ -227,13 +264,17 @@ msgstr "Englisch"
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: src/Views/Creator.php:32
-msgid "Logout"
-msgstr "Ausloggen"
-
-#: src/Views/Creator.php:65
+#: src/Views/Creator.php:66
 msgid "Download"
 msgstr "Herunterladen"
+
+#: src/Views/Creator.php:69
+msgid "Save"
+msgstr "Speichern"
+
+#: src/Views/Creator.php:95
+msgid "Are you sure?"
+msgstr "Bist Du sicher?"
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "

@@ -13,7 +13,7 @@ class UI {
     document.querySelectorAll('[data-delete]').forEach(element => {
         element.addEventListener('click', (event) => {
 
-            if( ! window.confirm('Are you sure?') ) {
+            if( ! window.confirm(lang['Are you sure?']) ) {
                 return false;
             }
 

@@ -88,6 +88,11 @@
         'pixabay': {
             'apikey': '<?php echo $this->config->get( 'Pixabay', 'apikey' ); ?>'
         }
+	};
+
+	
+	const lang = {
+		'Are you sure?': '<?php echo _( 'Are you sure?') ?>'
     };
 </script>
 
