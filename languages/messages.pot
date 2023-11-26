@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-25 11:55+0100\n"
+"POT-Creation-Date: 2023-11-26 08:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,28 +17,93 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Views/Home.php:6
-msgid "username"
+#: src/Controllers/Frontend.php:51 src/Controllers/Frontend.php:57
+#: src/Views/Home.php:17 src/Views/Home.php:24
+msgid "Register"
+msgstr ""
+
+#: src/Controllers/Frontend.php:52
+msgid "Registration failed. Are you already registered?"
+msgstr ""
+
+#: src/Controllers/Frontend.php:58
+msgid ""
+"You have successfully registered. Please check your mails to confirm your "
+"registration."
+msgstr ""
+
+#: src/Controllers/Frontend.php:70
+msgid "Reset password"
+msgstr ""
+
+#: src/Controllers/Frontend.php:71
+msgid "Please check your email for the reset link."
+msgstr ""
+
+#: src/Controllers/Frontend.php:98 src/Views/Home.php:32
+msgid "Password reset"
+msgstr ""
+
+#: src/Controllers/Frontend.php:99
+msgid "Your password has been reset. Please login."
+msgstr ""
+
+#: src/Controllers/User.php:205
+msgid ""
+"You have successfully registered. Please click on the following link to "
+"confirm your registration: "
+msgstr ""
+
+#: src/Controllers/User.php:208
+msgid "Account created"
+msgstr ""
+
+#: src/Controllers/User.php:259
+msgid "Click on the following link to reset your password: "
+msgstr ""
+
+#: src/Controllers/User.php:262
+msgid "Password Reset"
+msgstr ""
+
+#: src/Views/Home.php:4 src/Views/Header.php:6
+msgid "Sharepicgenerator"
 msgstr ""
 
 #: src/Views/Home.php:7
-msgid "login"
+msgid ""
+"Sharepicgenerator is a free service that allows you to create images with "
+"text for social media. You can use it to create images for Facebook, X, "
+"Instagram, LinkedIn, and other social networks. You can also use it to "
+"create images for your blog posts, Facebook ads, and more."
 msgstr ""
 
-#: src/Views/Header.php:24
-msgid "German"
+#: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
+msgid "Login"
 msgstr ""
 
-#: src/Views/Header.php:25
-msgid "English"
+#: src/Views/Home.php:16
+msgid "Not registered yet?"
 msgstr ""
 
-#: src/Views/Header.php:28
-msgid "Logout"
+#: src/Views/Home.php:19
+msgid "Forgot password?"
 msgstr ""
 
-#: src/Views/Header.php:29
-msgid "Logged in as"
+#: src/Views/Home.php:26 src/Views/Home.php:34
+msgid "Already registered?"
+msgstr ""
+
+#: src/Views/Header.php:14 src/Views/Menu.php:2
+msgid "Home"
+msgstr ""
+
+#: src/Views/Header.php:18
+msgid "Imprint"
+msgstr ""
+
+#: src/Views/Header.php:20
+msgid "Privacy"
 msgstr ""
 
 #: src/Views/Cockpit/Sharepic.php:2
@@ -53,23 +118,23 @@ msgstr ""
 msgid "pixel"
 msgstr ""
 
-#: src/Views/Cockpit/Sharepic.php:15
+#: src/Views/Cockpit/Sharepic.php:26
 msgid "Background image"
 msgstr ""
 
-#: src/Views/Cockpit/Sharepic.php:17
+#: src/Views/Cockpit/Sharepic.php:28
 msgid "search query"
 msgstr ""
 
-#: src/Views/Cockpit/Sharepic.php:23
-msgid "upload"
+#: src/Views/Cockpit/Sharepic.php:34
+msgid "upload own image"
 msgstr ""
 
-#: src/Views/Cockpit/Sharepic.php:29
+#: src/Views/Cockpit/Sharepic.php:40
 msgid "Reset background"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:18
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:56
 msgid "Eyecatcher"
 msgstr ""
 
@@ -94,23 +159,73 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: src/Views/Menu.php:2
-msgid "Home"
-msgstr ""
-
-#: src/Views/Menu.php:3
-msgid "Load latest"
-msgstr ""
-
-#: src/Views/Menu.php:4
-msgid "Load"
-msgstr ""
-
 #: src/Views/Menu.php:5
-msgid "Load free"
+msgid "Load template"
 msgstr ""
 
-#: src/Views/Creator.php:27
+#: src/Views/Menu.php:7
+msgid "latest"
+msgstr ""
+
+#: src/Views/Menu.php:9
+msgid "Free"
+msgstr ""
+
+#: src/Views/User/ResetPassword.php:6
+msgid "Reset Password"
+msgstr ""
+
+#: src/Views/Components/Forms/Login.php:2
+#: src/Views/Components/Forms/RequestPassword.php:2
+msgid "username"
+msgstr ""
+
+#: src/Views/Components/Forms/Login.php:3
+#: src/Views/Components/Forms/ResetPassword.php:3
+msgid "password"
+msgstr ""
+
+#: src/Views/Components/Forms/Login.php:4
+msgid "login"
+msgstr ""
+
+#: src/Views/Components/Forms/ResetPassword.php:4
+msgid "password repeat"
+msgstr ""
+
+#: src/Views/Components/Forms/ResetPassword.php:5
+msgid "reset password"
+msgstr ""
+
+#: src/Views/Components/Forms/RequestPassword.php:3
+msgid "request reset link"
+msgstr ""
+
+#: src/Views/Components/Forms/Register.php:2
+msgid "email"
+msgstr ""
+
+#: src/Views/Components/Forms/Register.php:3
+msgid "register"
+msgstr ""
+
+#: src/Views/Creator.php:24
+msgid "German"
+msgstr ""
+
+#: src/Views/Creator.php:25
+msgid "English"
+msgstr ""
+
+#: src/Views/Creator.php:29
+msgid "Logged in as"
+msgstr ""
+
+#: src/Views/Creator.php:32
+msgid "Logout"
+msgstr ""
+
+#: src/Views/Creator.php:65
 msgid "Download"
 msgstr ""
 

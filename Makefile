@@ -35,3 +35,7 @@ update-po:
 
 create-mo:
 	msgfmt languages/de.po -o languages/de_DE/LC_MESSAGES/sg.mo
+
+prepare-translation:
+	make create-pot update-po
+

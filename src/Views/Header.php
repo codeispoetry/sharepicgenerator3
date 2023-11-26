@@ -11,7 +11,7 @@
     
 <header>
    <nav>
-         
+        <a href="/"><?php echo _('Home');?></a>
    </nav>
 
     <div style="display: flex; align-items: center">
