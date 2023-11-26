@@ -41,7 +41,7 @@ class API {
       .catch(error => console.error('Error:', error))
   }
 
-  create () {
+  prepare () {
     document.querySelector('.create').disabled = true;
     document.querySelector('.create').classList.add('waiting');
 
@@ -68,12 +68,40 @@ class API {
       }
     }
 
+    return data;
+  }
+
+  save () {
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(this.prepare())
+    }
+
+    fetch(this.api + 'save', options)
+      .then(response => {
+        if (response.status !== 200) {
+          throw new Error(response.status + ' ' + response.statusText)
+        }
+        return response.text()
+      })
+      .then(data => {
+        //data = JSON.parse(data)
+        console.log(data)
+        
+      })
+      .catch(error => console.error('Error:', error))
+  }
+
+  create () {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(this.prepare())
     }
 
     fetch(this.api + 'create', options)

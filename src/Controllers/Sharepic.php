@@ -134,6 +134,36 @@ class Sharepic {
 	}
 
 	/**
+	 * Saves the sharepic.
+	 *
+	 * @param string $name The name of the sharepic.
+	 */
+	public function save( $name = 'no-name' ) {
+		$workspace = 'users/' . $this->user . '/workspace/';
+		$save_dir  = 'users/' . $this->user . '/save/';
+		$save      = $save_dir . rand( 1000000, 9999999 );
+
+		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );
+		if ( $save_count > 10 ) {
+			$this->http_error( 'Too many files' );
+		}
+
+		if ( ! file_exists( $save_dir ) ) {
+			mkdir( $save_dir );
+		}
+
+		$cmd = "cp -R $workspace $save 2>&1";
+		exec( $cmd, $output, $return_code );
+		if ( 0 !== $return_code ) {
+			$this->logger->error( implode( "\n", $output ) );
+			$this->http_error( 'Could not save sharepic' );
+		}
+
+		echo json_encode( array( 'save_count' => $save_count ) );
+		return true;
+	}
+
+	/**
 	 * Creates a sharepic.
 	 */
 	public function create() {
