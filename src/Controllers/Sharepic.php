@@ -173,6 +173,34 @@ class Sharepic {
 	}
 
 	/**
+	 * Deletes a sharepic.
+	 */
+	public function delete() {
+		$data = json_decode( file_get_contents( 'php://input' ), true );
+
+		$sharepic = $data['saving'] ?? false;
+
+		if ( ! $sharepic ) {
+			$this->http_error( 'Could not delete sharepic' );
+		}
+
+		$save_dir = './users/' . $this->user . '/save/' . (int) $sharepic;
+
+		if ( ! file_exists( $save_dir ) ) {
+			$this->http_error( 'Could not find sharepic' );
+		}
+
+		$cmd = "rm -rf $save_dir 2>&1";
+		exec( $cmd, $output, $return_code );
+		if ( 0 !== $return_code ) {
+			$this->logger->error( implode( "\n", $output ) );
+			$this->http_error( 'Could not delete sharepic' );
+		}
+
+		echo json_encode( array( 'success' => true ) );
+	}
+
+	/**
 	 * Creates a sharepic.
 	 */
 	public function create() {

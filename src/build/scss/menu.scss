@@ -59,6 +59,28 @@ nav{
   }
 }
 
+.dropdown-item-double{
+    margin: 0;
+    display: flex;
+
+    *{
+        margin-right: 0;
+    }
+    
+    button{
+        width: auto;
+    }
+
+    .did-1{
+        flex-grow: 1;
+        
+    }
+
+    .did-2{
+        background-color: $red;
+    }
+}
+
 .flags{
     img{
         height: 1em;

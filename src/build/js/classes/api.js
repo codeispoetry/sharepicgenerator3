@@ -5,6 +5,28 @@ class API {
     this.api = '/index.php/sharepic/'
   }
 
+  delete ( saving ) {
+    const payload = {
+      saving: saving
+    };
+
+    fetch('/index.php/sharepic/delete/', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+  })
+      .then(response => {
+          if (response.status !== 200) {
+              throw new Error(response.status + ' ' + response.statusText)
+          }
+          return response.text()
+      })
+      .then(data => { console.log(data)})
+      .catch((error) => console.error('Error:', error));
+  }
+
   load (path = 'tenants/free/start.html') {
     const data = {
       template: path

@@ -10,6 +10,20 @@ class UI {
         })
     })
 
+    document.querySelectorAll('[data-delete]').forEach(element => {
+        element.addEventListener('click', (event) => {
+
+            if( ! window.confirm('Are you sure?') ) {
+                return false;
+            }
+
+            const target = element.dataset.delete
+            api.delete(target)
+
+            element.parentElement.remove();
+        })
+    })
+
     document.getElementById('upload').addEventListener('change', function () {
         const input = document.getElementById('upload')
 

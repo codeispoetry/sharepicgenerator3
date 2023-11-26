@@ -196,6 +196,7 @@ class User {
 			$data = json_decode( $info, true );
 
 			if ( isset( $data['name'] ) ) {
+				$dir             = basename( $dir );
 				$savings[ $dir ] = $data['name'];
 			}
 		}
