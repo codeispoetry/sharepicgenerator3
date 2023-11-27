@@ -27,7 +27,7 @@ class API {
       .catch((error) => console.error('Error:', error));
   }
 
-  load (path = 'tenants/free/start.html') {
+  load (path = 'tenants/mint/start.html') {
     const data = {
       template: path
     }
@@ -79,7 +79,7 @@ class API {
 
     clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../assets/styles.css">\n`);
     clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../node_modules/quill/dist/quill.bubble.css">\n`);
-    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../tenants/free/styles.css?rand=250">\n`);
+    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../tenants/mint/styles.css?rand=250">\n`);
 
     const data = {
       data: clonedCanvas.innerHTML,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-26 18:31+0100\n"
+"POT-Creation-Date: 2023-11-26 18:43+0100\n"
 "PO-Revision-Date: 2023-11-25 00:10+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -36,13 +36,13 @@ msgstr ""
 "deinen Mails."
 
 #: src/Controllers/Frontend.php:70
-#, fuzzy
 msgid "Reset password"
-msgstr "Hintergrund zurücksetzen"
+msgstr "Passwort zurücksetzen"
 
 #: src/Controllers/Frontend.php:71
 msgid "Please check your email for the reset link."
-msgstr "Bitte überprüfe deine Mails für den Link zum Zurücksetzen des Passworts."
+msgstr ""
+"Bitte überprüfe deine Mails für den Link zum Zurücksetzen des Passworts."
 
 #: src/Controllers/Frontend.php:98 src/Views/Home.php:32
 msgid "Password reset"
@@ -52,7 +52,7 @@ msgstr "Passwort zurücksetzen"
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/Frontend.php:137 src/Views/Creator.php:32
+#: src/Controllers/Frontend.php:137 src/Views/Creator.php:43
 msgid "Logout"
 msgstr "Ausloggen"
 
@@ -98,9 +98,8 @@ msgstr ""
 "Anzeigen und mehr zu erstellen."
 
 #: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
-#, fuzzy
 msgid "Login"
-msgstr "einloggen"
+msgstr "Einloggen"
 
 #: src/Views/Home.php:16
 msgid "Not registered yet?"
@@ -117,6 +116,10 @@ msgstr "Bereits registriert?"
 #: src/Views/Header.php:14 src/Views/Menu.php:2
 msgid "Home"
 msgstr "Startseite"
+
+#: src/Views/Header.php:15
+msgid "Create"
+msgstr "Gestalten"
 
 #: src/Views/Header.php:20
 msgid "Imprint"
@@ -154,7 +157,7 @@ msgstr "Bild hochladen"
 msgid "Reset background"
 msgstr "Hintergrund zurücksetzen"
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:56
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:67
 msgid "Eyecatcher"
 msgstr "Störer"
 
@@ -188,12 +191,10 @@ msgid "Usage Log"
 msgstr "Nutzungs-Log"
 
 #: src/Views/Menu.php:5
-#, fuzzy
-msgid "Load template"
-msgstr "Lade Vorlagen"
+msgid "Templates"
+msgstr "Vorlagen"
 
 #: src/Views/Menu.php:7
-#, fuzzy
 msgid "latest"
 msgstr "letztes"
 
@@ -202,21 +203,12 @@ msgid "Free"
 msgstr "Frei"
 
 #: src/Views/Menu.php:19
-msgid "Load saved pics"
-msgstr "Lade gespeicherte Sharepics"
-
-#: src/Views/Menu.php:35
-msgid "Show logs"
-msgstr "Zeige Logs"
-
-#: src/Views/Menu.php:36
-msgid "Show latest sharepics"
-msgstr "Zeige neueste Sharepics"
+msgid "My sharepics"
+msgstr "Meine Sharepics"
 
 #: src/Views/User/ResetPassword.php:6
-#, fuzzy
 msgid "Reset Password"
-msgstr "Hintergrund zurücksetzen"
+msgstr "Passwort zurücksetzen"
 
 #: src/Views/Components/Forms/Login.php:2
 #: src/Views/Components/Forms/RequestPassword.php:2
@@ -252,33 +244,53 @@ msgstr "E-Mail"
 msgid "register"
 msgstr "registrieren"
 
-#: src/Views/Creator.php:24
+#: src/Views/Creator.php:27
+msgid "Usage"
+msgstr "Nutzung"
+
+#: src/Views/Creator.php:28
+msgid "Sharepics"
+msgstr "Sharepics"
+
+#: src/Views/Creator.php:35
 msgid "German"
 msgstr "Deutsch"
 
-#: src/Views/Creator.php:25
+#: src/Views/Creator.php:36
 msgid "English"
 msgstr "Englisch"
 
-#: src/Views/Creator.php:29
+#: src/Views/Creator.php:40
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: src/Views/Creator.php:66
+#: src/Views/Creator.php:77
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/Views/Creator.php:69
+#: src/Views/Creator.php:80
 msgid "Save"
 msgstr "Speichern"
 
-#: src/Views/Creator.php:95
+#: src/Views/Creator.php:106
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
 msgstr "Die Bilder stammen von "
+
+#~ msgid "Load template"
+#~ msgstr "Lade Vorlagen"
+
+#~ msgid "Load saved pics"
+#~ msgstr "Lade gespeicherte Sharepics"
+
+#~ msgid "Show logs"
+#~ msgstr "Zeige Logs"
+
+#~ msgid "Show latest sharepics"
+#~ msgstr "Zeige neueste Sharepics"
 
 #~ msgid "upload"
 #~ msgstr "hochladen"

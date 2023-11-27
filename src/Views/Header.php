@@ -12,7 +12,7 @@
 <header>
    <nav>
         <a href="/"><?php echo _('Home');?></a>
-        <a href="/index.php/frontend/create">Create</a>
+        <a href="/index.php/frontend/create"><?php echo _('Create'); ?></a>
 
    </nav>
 

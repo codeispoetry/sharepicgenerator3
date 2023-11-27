@@ -20,6 +20,17 @@
     <?php include 'src/Views/Menu.php'; ?>
 
     <div style="display: flex; align-items: center">
+		<div style="margin-right: 2em">
+			<?php
+				if( $this->user->is_admin() ){
+					echo "<em>Admin:";
+					printf( ' <a href="/index.php/frontend/log" style="margin-right: 0">%s</a> | ', _( 'Usage' ) );
+					printf( ' <a href="/index.php/frontend/sharepics">%s</a>', _( 'Sharepics' ) );
+					echo "</em>";
+
+				}
+			?>
+		</div>
         <div style="margin-right: 1em" class="flags">
             <img src="/assets/icons/de.svg" alt="<?php echo _('German');?>" title="<?php echo _('German');?>" data-lang="de" style="margin-right: 5px;">
             <img src="/assets/icons/en.svg" alt="<?php echo _('English');?>" title="<?php echo _('English');?>" data-lang="en">
