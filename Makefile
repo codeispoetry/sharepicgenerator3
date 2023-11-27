@@ -22,7 +22,7 @@ woff:
 	woff2_compress Pacifico.ttf 
 
 deploy-develop:
-	rsync -avz --delete assets node_modules/quill/dist index.php src tenants vendor favicon.ico sharepic:/var/www/mint-develop.sharepicgenerator.de
+	rsync -avz --delete assets node_modules/quill/dist index.php languages src tenants vendor favicon.ico sharepic:/var/www/mint-develop.sharepicgenerator.de
 
 create-pot:
 	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot
