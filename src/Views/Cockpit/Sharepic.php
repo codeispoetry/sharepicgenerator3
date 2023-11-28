@@ -10,6 +10,9 @@
             </div>
         
             <div class="brands">
+                <button data-sizepreset="1280:1280" title="<?php echo _('square 1:1'); ?>">
+                    <img src="/assets/icons/square1to1.svg">
+                </button>
                 <button data-sizepreset="1200:630" title="Facebook">
                     <img src="/assets/icons/brands/facebook.svg">
                 </button>
@@ -18,6 +21,9 @@
                 </button>
                 <button data-sizepreset="1600:900" title="X">
                     <img src="/assets/icons/brands/x.svg">
+                </button>
+                <button data-sizepreset="1200:627" title="X">
+                    <img src="/assets/icons/brands/linkedin.svg">
                 </button>
             </div>
     </section>

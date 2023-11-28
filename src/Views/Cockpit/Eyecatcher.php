@@ -8,8 +8,8 @@
     </section>
     
     <section style="display: flex">
-        <button class="to-front" data-target="eyecatcher"><?php  echo _('to front');?></button>
-        <button class="delete" data-target="eyecatcher"><?php  echo _('delete');?></button>
+        <button class="to-front" data-target="eyecatcher" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+        <button class="delete" data-target="eyecatcher" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
     </section>
 </section>
 

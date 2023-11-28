@@ -6,13 +6,8 @@
             <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
         </label>
     </section>
-    <section>
-        <h3><?php  echo _('Text');?>:</h3>
-        <div id="editor"></div>
-
-    </section>
     <section style="display: flex">
-        <button class="to-front" data-target="text"><?php  echo _('to front');?></button>
+        <button class="to-front" data-target="text" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
     </section>
 
 </section>
