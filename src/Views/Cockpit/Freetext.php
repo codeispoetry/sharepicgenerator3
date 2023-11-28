@@ -1,7 +1,7 @@
 <section class="mainsection" id="cockpit_freetext">
     <h2><?php  echo _('Text');?></h2>
     <section>
-        <h3><?php  echo _('Size');?></h3>
+        <h3><?php  echo _('Total size');?></h3>
         <label>
             <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
         </label>
