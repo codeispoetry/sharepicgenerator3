@@ -5,13 +5,17 @@ class Drag {
     this.item = document.getElementById(id)
 
     this.item.addEventListener('mousedown', (e) => {
-      if( e.button !== 0) {
+      console.log('wanna drag?')
+      if( e.button !== 0 || e.target !== this.item) {
         return
       }
+      console.log('startdragging')
       dragging = index
 
       const canvas = document.getElementById('canvas').getBoundingClientRect()
       const dragItem = this.item.getBoundingClientRect()
+
+      this.item.classList.add('dragging')
 
       this.offsetX = canvas.left - (dragItem.left - e.clientX)
       this.offsetY = canvas.top - (dragItem.top - e.clientY)
@@ -21,6 +25,20 @@ class Drag {
   move (x, y) {
     x -= this.offsetX
     y -= this.offsetY
+
+    const do_not_leave_canvas = true
+
+    if( do_not_leave_canvas ) {
+      const sq = document.getElementById('sharepic').getBoundingClientRect()
+
+      const right = sq.width - this.item.clientWidth
+      const bottom = sq.height - this.item.clientHeight
+
+      x = Math.max(x, 10);
+      y = Math.max(y, 10);
+      x = Math.min(x, right);
+      y = Math.min(y, bottom);
+    }
 
     this.item.style.top = `${y}px`
     this.item.style.left = `${x}px`

@@ -67,6 +67,11 @@ class Sharepic {
     const moveHandler = (event) => this.drag(event);
 
     sg.addEventListener('mousedown', (event) => {
+
+      if ( event.button !== 0 ) {
+        return;
+      }
+      
       const sg = document.getElementById('sharepic');
       this.startMouseX = event.clientX;
       this.startMouseY = event.clientY;

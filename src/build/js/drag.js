@@ -14,7 +14,6 @@ document.addEventListener('mousemove', function (e) {
   if (dragging === false) {
     return
   }
-
   e.preventDefault()
 
   const x = e.clientX
@@ -23,7 +22,7 @@ document.addEventListener('mousemove', function (e) {
   // stop dragging when mouse leaves the sharepic
   const rect = document.getElementById('sharepic').getBoundingClientRect()
   if (x < rect.left || x > rect.left + rect.width || y < rect.top || y > rect.top + rect.height) {
-    dragging = false
+    stop_dragging()
     return
   }
 
@@ -31,6 +30,11 @@ document.addEventListener('mousemove', function (e) {
 })
 
 document.addEventListener('mouseup', function (e) {
-  dragging = false
+  stop_dragging()
   undo.commit()
 })
+
+function stop_dragging () {
+  document.getElementsByClassName('dragging')[0]?.classList.remove('dragging')
+  dragging = false
+}

@@ -20,12 +20,18 @@ nav{
     position: relative;
     display: inline-block;
     cursor: pointer;
+
+    span{
+        margin-right: 10px;
+    }
+
     &::after{
         content: url('/assets/icons/arrow_drop_down.svg');
         width: 10px;
         position: absolute;
         margin-left: -2em;
         top: -0.2em;
+        right: 0;
     }
 
     &:hover{

@@ -56,3 +56,12 @@
         height: auto !important;
     }
 }
+
+.dragging{
+    border-color: $red !important;
+    cursor: move !important;
+
+    .ql-tooltip{
+        display: none !important;
+    }
+}
