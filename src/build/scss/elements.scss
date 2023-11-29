@@ -1,8 +1,21 @@
 
 
 button{
+    padding: 10px 15px;
+    background-color: $theme-color;
+    color: $white;
     cursor: pointer;
+    border: 0;
     transition-duration: 0.2s;
+
+    &.link{
+        padding: unset;
+        background-color: unset;
+        border: unset;
+        font-size: unset;
+        text-decoration: underline;
+        color: $theme-color;
+    }
 
     :disabled{
         cursor: not-allowed;
@@ -76,24 +89,6 @@ select {
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
-button{
-    padding: 10px 15px;
-    background-color: $theme-color;
-    color: $white;
-    cursor: pointer;
-    border: 0;
-
-    &.link{
-        padding: unset;
-        background-color: unset;
-        color: unset;
-        border: unset;
-        font-size: unset;
-        text-decoration: underline;
-        color: $theme-color;
-    }
 }
 
 input[type="text"],

@@ -30,11 +30,11 @@ document.addEventListener('mousemove', function (e) {
 })
 
 document.addEventListener('mouseup', function (e) {
-  stop_dragging()
+  stopDragging()
   undo.commit()
 })
 
-function stop_dragging () {
+function stopDragging () {
   document.getElementsByClassName('dragging')[0]?.classList.remove('dragging')
   dragging = false
 }

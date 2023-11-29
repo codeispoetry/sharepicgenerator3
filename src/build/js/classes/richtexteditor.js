@@ -2,46 +2,45 @@
 
 class RichTextEditor {
   init () {
-    var FontAttributor = Quill.import('attributors/class/font');
+    const FontAttributor = Quill.import('attributors/class/font')
     FontAttributor.whitelist = fonts
-    Quill.register(FontAttributor, true);
+    Quill.register(FontAttributor, true)
 
-    var toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'],    
+    const toolbarOptions = [
+      ['bold', 'italic', 'underline', 'strike'],
 
-        [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-        [{ 'script': 'sub'}, { 'script': 'super' }],     
-        [{ 'indent': '-1'}, { 'indent': '+1' }],          
-      
-        [{ 'size': ['small', false, 'large', 'huge'] }], 
-      
-        [{ 'color': [] }, { 'background': [] }],     
-        [{ 'font': FontAttributor.whitelist }],
-        [{ 'align': [] }],                         
-    ];
+      [{ list: 'ordered' }, { list: 'bullet' }],
+      [{ script: 'sub' }, { script: 'super' }],
+      [{ indent: '-1' }, { indent: '+1' }],
+
+      [{ size: ['small', false, 'large', 'huge'] }],
+
+      [{ color: [] }, { background: [] }],
+      [{ font: FontAttributor.whitelist }],
+      [{ align: [] }]
+    ]
 
     quill = new Quill('#text', {
       modules: {
         toolbar: toolbarOptions
       },
       theme: 'bubble'
-    });
+    })
 
-    this.set_fonts();
-
+    this.set_fonts()
   }
 
-  destroy() { 
-    quill.disable();
+  destroy () {
+    quill.disable()
   }
 
-  set_fonts() {
-    let elements = document.querySelectorAll('.ql-font .ql-picker-item');
+  set_fonts () {
+    const elements = document.querySelectorAll('.ql-font .ql-picker-item')
 
-    let style = document.createElement('style');
+    const style = document.createElement('style')
     elements.forEach((element) => {
-      let fontName = element.dataset.value;
-      
+      const fontName = element.dataset.value
+
       style.innerHTML += `
         [data-value="${fontName}"] {
           font-family: '${fontName}', sans-serif;
@@ -58,9 +57,9 @@ class RichTextEditor {
           font-weight: 400;
           src: url('/assets/fonts/${fontName}.woff2') format('woff2');
         }
-      `;        
-    });
+      `
+    })
 
-    document.getElementById('sharepic').appendChild(style);
+    document.getElementById('sharepic').appendChild(style)
   }
 }

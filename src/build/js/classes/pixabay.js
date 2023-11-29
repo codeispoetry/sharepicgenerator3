@@ -18,9 +18,9 @@ class Pixabay {
 
     fetch(url)
       .then(response => response.json())
-      .then(data => { 
+      .then(data => {
         logger.log('searches for ' + q + ' and gets ' + data.hits.length + ' results')
-        this.list(data) 
+        this.list(data)
       })
       .catch(error => console.error('Error:', error))
   }
@@ -33,7 +33,7 @@ class Pixabay {
     results.classList.add('show')
     results.innerHTML = ''
 
-    if ( data.hits === undefined || data.hits.length === 0 ) {
+    if (data.hits === undefined || data.hits.length === 0) {
       const q = document.getElementById('pixabay_q').value
       results.innerHTML = `<div class="no_results">Für den Suchbegriff "${q}" wurden keine Bilder gefunden.</div>`
       return
@@ -49,12 +49,12 @@ class Pixabay {
 
       img.onclick = () => {
         const q = document.getElementById('pixabay_q').value
-  
+
         logger.prepare_log_data({
           imagesrc: 'pixabay',
-          q: q,
+          q
         })
-        logger.log('clicks on image after search for ' + q )
+        logger.log('clicks on image after search for ' + q)
 
         this.set_imge(img.dataset.url)
       }

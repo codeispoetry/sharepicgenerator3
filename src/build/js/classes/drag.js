@@ -5,7 +5,7 @@ class Drag {
     this.item = document.getElementById(id)
 
     this.item.addEventListener('mousedown', (e) => {
-      if( e.button !== 0 || e.target !== this.item) {
+      if (e.button !== 0 || e.target !== this.item) {
         return
       }
 
@@ -25,18 +25,18 @@ class Drag {
     x -= this.offsetX
     y -= this.offsetY
 
-    const do_not_leave_canvas = true
+    const doNotLeaveCanvas = true
 
-    if( do_not_leave_canvas ) {
+    if (doNotLeaveCanvas) {
       const sq = document.getElementById('sharepic').getBoundingClientRect()
 
       const right = sq.width - this.item.clientWidth
       const bottom = sq.height - this.item.clientHeight
 
-      x = Math.max(x, 10);
-      y = Math.max(y, 10);
-      x = Math.min(x, right);
-      y = Math.min(y, bottom);
+      x = Math.max(x, 10)
+      y = Math.max(y, 10)
+      x = Math.min(x, right)
+      y = Math.min(y, bottom)
     }
 
     this.item.style.top = `${y}px`

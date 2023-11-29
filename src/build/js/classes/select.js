@@ -4,35 +4,33 @@ class Select {
   setup () {
     this.unselect_all()
     const elements = document.querySelectorAll('.selectable')
-    const sharepic = document.getElementById('sharepic');
+    const sharepic = document.getElementById('sharepic')
 
     elements.forEach(element => {
       element.addEventListener('mousedown', (event) => {
         // do nothing on right click
-        if(event.button !== 0) {
+        if (event.button !== 0) {
           return
         }
         event.stopPropagation()
-        let target = event.target;
+        let target = event.target
 
-        if(target.classList.contains('selectable')) {
-          this.set_active(target);
-          return;
+        if (target.classList.contains('selectable')) {
+          this.set_active(target)
+          return
         }
 
         while (target !== sharepic) {
           if (target.classList.contains('selectable')) {
-            this.set_active(target);
-            break;
+            this.set_active(target)
+            break
           }
-          target = target.parentNode;
+          target = target.parentNode
         }
-       
       })
     })
   }
 
-  
   unselect_all () {
     const elements = document.querySelectorAll('.selectable.active')
     elements.forEach(element => {

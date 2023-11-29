@@ -1,7 +1,6 @@
 /* eslint-disable no-undef, no-unused-vars */
 
 class Component {
-
   constructor () {
     document.querySelectorAll('.add_elements li').forEach(element => {
       element.addEventListener('click', (event) => {
@@ -19,20 +18,19 @@ class Component {
   }
 
   add (item) {
-
     const sharepic = document.getElementById('sharepic')
     const element = sharepic.querySelector(`#${item}`)
 
-    if(element) {
-      console.log("Element already exists")
-      return;
+    if (element) {
+      console.log('Element already exists')
+      return
     }
 
     const pattern = document.querySelector(`[data-id=${item}]`)
-    const clonedElement = pattern.cloneNode(true);
+    const clonedElement = pattern.cloneNode(true)
 
     clonedElement.setAttribute('id', pattern.dataset.id)
-    clonedElement.setAttribute('class',  pattern.dataset.class);
+    clonedElement.setAttribute('class', pattern.dataset.class)
 
     sharepic.insertAdjacentHTML('beforeend', clonedElement.outerHTML)
 

@@ -5,26 +5,26 @@ class API {
     this.api = '/index.php/sharepic/'
   }
 
-  delete ( saving ) {
+  delete (saving) {
     const payload = {
-      saving: saving
-    };
+      saving
+    }
 
     fetch('/index.php/sharepic/delete/', {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(payload)
-  })
+    })
       .then(response => {
-          if (response.status !== 200) {
-              throw new Error(response.status + ' ' + response.statusText)
-          }
-          return response.text()
+        if (response.status !== 200) {
+          throw new Error(response.status + ' ' + response.statusText)
+        }
+        return response.text()
       })
-      .then(data => { console.log(data)})
-      .catch((error) => console.error('Error:', error));
+      .then(data => { console.log(data) })
+      .catch((error) => console.error('Error:', error))
   }
 
   load (path = 'tenants/mint/start.html') {
@@ -64,22 +64,22 @@ class API {
   }
 
   prepare () {
-    document.querySelector('.create').disabled = true;
-    document.querySelector('.create').classList.add('waiting');
+    document.querySelector('.create').disabled = true
+    document.querySelector('.create').classList.add('waiting')
 
     select.unselect_all()
     const canvas = document.getElementById('canvas')
 
     const clonedCanvas = canvas.cloneNode(true)
-    clonedCanvas.querySelector('.ql-hidden')?.remove();
-    clonedCanvas.querySelector('.ql-toolbar')?.remove();
-    clonedCanvas.querySelector('.ql-tooltip')?.remove();
-    clonedCanvas.querySelector('.ql-clipboard')?.remove();
-    clonedCanvas.querySelector('#patterns')?.remove();
+    clonedCanvas.querySelector('.ql-hidden')?.remove()
+    clonedCanvas.querySelector('.ql-toolbar')?.remove()
+    clonedCanvas.querySelector('.ql-tooltip')?.remove()
+    clonedCanvas.querySelector('.ql-clipboard')?.remove()
+    clonedCanvas.querySelector('#patterns')?.remove()
 
-    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../assets/styles.css">\n`);
-    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../node_modules/quill/dist/quill.bubble.css">\n`);
-    clonedCanvas.insertAdjacentHTML('afterbegin', `<link rel="stylesheet" href="../../../tenants/mint/styles.css?rand=250">\n`);
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="../../../assets/styles.css">\n')
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="../../../node_modules/quill/dist/quill.bubble.css">\n')
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="../../../tenants/mint/styles.css?rand=250">\n')
 
     const data = {
       data: clonedCanvas.innerHTML,
@@ -90,12 +90,12 @@ class API {
       }
     }
 
-    return data;
+    return data
   }
 
   save () {
     const name = prompt('Name des Sharepics', 'Sharepic')
-    let data = this.prepare()
+    const data = this.prepare()
     data.name = name
     const options = {
       method: 'POST',
@@ -113,9 +113,8 @@ class API {
         return response.text()
       })
       .then(data => {
-        //data = JSON.parse(data)
+        // data = JSON.parse(data)
         console.log(data)
-        
       })
       .catch(error => console.error('Error:', error))
   }
@@ -146,8 +145,8 @@ class API {
         a.click()
         document.body.removeChild(a)
 
-        document.querySelector('.create').disabled = false;
-        document.querySelector('.create').classList.remove('waiting');
+        document.querySelector('.create').disabled = false
+        document.querySelector('.create').classList.remove('waiting')
 
         logger.log('created sharepic')
       })
@@ -158,35 +157,35 @@ class API {
     const formData = new FormData()
     formData.append('file', file)
 
-    const imageUrl = URL.createObjectURL(file);
-    document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`;
+    const imageUrl = URL.createObjectURL(file)
+    document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`
 
-    document.querySelector('.file-upload').disabled = true;
+    document.querySelector('.file-upload').disabled = true
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', this.api + 'upload', true);
-    xhr.upload.onprogress = function(e) {
+    const xhr = new XMLHttpRequest()
+    xhr.open('POST', this.api + 'upload', true)
+    xhr.upload.onprogress = function (e) {
       if (e.lengthComputable) {
-        const percentComplete = Math.round( (e.loaded / e.total) * 100);
-        console.log(percentComplete + '% uploaded');
+        const percentComplete = Math.round((e.loaded / e.total) * 100)
+        console.log(percentComplete + '% uploaded')
       }
-    };
-    xhr.onload = function() {
-      if (this.status == 200) {
-        const resp = JSON.parse(this.response);
-        document.getElementById('sharepic').style.backgroundImage = `url('/${resp.path}?rand=${Math.random()}')`;
+    }
+    xhr.onload = function () {
+      if (this.status === 200) {
+        const resp = JSON.parse(this.response)
+        document.getElementById('sharepic').style.backgroundImage = `url('/${resp.path}?rand=${Math.random()}')`
         logger.prepare_log_data({
-          imagesrc: 'upload',
+          imagesrc: 'upload'
         })
       } else {
-        console.error('Error:', this.status, this.statusText);
+        console.error('Error:', this.status, this.statusText)
       }
 
-      document.querySelector('.file-upload').disabled = false;
-    };
-    xhr.onerror = function() {
-      console.error('Error:', this.status, this.statusText);
-    };
-    xhr.send(formData);
+      document.querySelector('.file-upload').disabled = false
+    }
+    xhr.onerror = function () {
+      console.error('Error:', this.status, this.statusText)
+    }
+    xhr.send(formData)
   }
 }
