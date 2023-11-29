@@ -18,13 +18,4 @@
         const target = document.getElementById('text');
         target.style.fontSize = element.value + "px";
     });
-
-    window.onload = function () {
-        var quill = new Quill('#editor', {
-            theme: 'snow'
-        });
-    }
-
 </script>
-
-

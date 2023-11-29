@@ -62,8 +62,6 @@ class Cockpit {
   setup_freetext (element) {
     const slider = document.getElementById('text_size')
     slider.value = element.style.fontSize.replace('px', '')
-
-    // document.getElementById('editor').firstChild.innerHTML = document.getElementById('text').innerHTML
   }
 
   setup_eyecatcher (element) {
