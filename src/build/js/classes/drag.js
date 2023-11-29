@@ -5,11 +5,10 @@ class Drag {
     this.item = document.getElementById(id)
 
     this.item.addEventListener('mousedown', (e) => {
-      console.log('wanna drag?')
       if( e.button !== 0 || e.target !== this.item) {
         return
       }
-      console.log('startdragging')
+
       dragging = index
 
       const canvas = document.getElementById('canvas').getBoundingClientRect()
