@@ -32,6 +32,7 @@ class Mailer {
         $this->phpmailer->Password   = $config->get( 'Mail', 'password' );
         $this->phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $this->phpmailer->Port       = $config->get( 'Mail', 'port' );
+		$this->phpmailer->CharSet    = 'UTF-8';
         $this->phpmailer->setFrom( 'mail@tom-rose.de', 'Sharepicgenerator' );
         $this->phpmailer->addAddress( $username );
 		$this->phpmailer->isHTML( true );

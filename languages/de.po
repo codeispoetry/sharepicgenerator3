@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-26 18:43+0100\n"
-"PO-Revision-Date: 2023-11-25 00:10+0100\n"
+"POT-Creation-Date: 2023-11-29 09:16+0100\n"
+"PO-Revision-Date: 2023-11-29 09:18+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #: src/Controllers/Frontend.php:51 src/Controllers/Frontend.php:57
 #: src/Views/Home.php:17 src/Views/Home.php:24
@@ -35,7 +36,8 @@ msgstr ""
 "Du hast dich erfolgreich registriert. Bitte bestätige deine Registrierung in "
 "deinen Mails."
 
-#: src/Controllers/Frontend.php:70
+#: src/Controllers/Frontend.php:70 src/Controllers/Frontend.php:85
+#: src/Controllers/Frontend.php:86
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
@@ -44,39 +46,45 @@ msgid "Please check your email for the reset link."
 msgstr ""
 "Bitte überprüfe deine Mails für den Link zum Zurücksetzen des Passworts."
 
-#: src/Controllers/Frontend.php:98 src/Views/Home.php:32
+#: src/Controllers/Frontend.php:82
+msgid "Create your password"
+msgstr "Erstelle Dein Passwort"
+
+#: src/Controllers/Frontend.php:83
+msgid "Set your new password"
+msgstr "Setze Dein Passwort"
+
+#: src/Controllers/Frontend.php:100
+msgid "An error occured"
+msgstr "Ein Fehler ist aufgetreten"
+
+#: src/Controllers/Frontend.php:101
+msgid "Your password could not be set. Did you repeat it correctly?"
+msgstr ""
+"Dein Passwort konnte nicht gesetzt werden. Hast Du es zwei Mal gleich "
+"eingegeben?"
+
+#: src/Controllers/Frontend.php:113 src/Views/Home.php:32
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: src/Controllers/Frontend.php:99
+#: src/Controllers/Frontend.php:114
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/Frontend.php:137 src/Views/Creator.php:43
+#: src/Controllers/Frontend.php:151 src/Views/Creator.php:43
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: src/Controllers/Frontend.php:138
+#: src/Controllers/Frontend.php:152
 msgid "You have been logged out."
 msgstr "Du bist ausgeloggt"
 
-#: src/Controllers/User.php:297
-msgid ""
-"You have successfully registered. Please click on the following link to "
-"confirm your registration: "
-msgstr ""
-"Du hast dich erfolgreich registriert. Bitte klicke auf den folgenden Link, "
-"um deine Registrierung zu bestätigen:"
-
-#: src/Controllers/User.php:300
+#: src/Controllers/User.php:303
 msgid "Account created"
 msgstr "Account erstellt"
 
-#: src/Controllers/User.php:351
-msgid "Click on the following link to reset your password: "
-msgstr "Klicke auf den folgenden Link, um dein Passwort zurückzusetzen:"
-
-#: src/Controllers/User.php:354
+#: src/Controllers/User.php:360
 msgid "Password Reset"
 msgstr "Passwort zurücksetzen"
 
@@ -141,19 +149,23 @@ msgstr "Abmessungen"
 msgid "pixel"
 msgstr "Pixel"
 
-#: src/Views/Cockpit/Sharepic.php:26
+#: src/Views/Cockpit/Sharepic.php:13
+msgid "square 1:1"
+msgstr "Quadratisch 1:1"
+
+#: src/Views/Cockpit/Sharepic.php:32
 msgid "Background image"
 msgstr "Hintergrundbild"
 
-#: src/Views/Cockpit/Sharepic.php:28
+#: src/Views/Cockpit/Sharepic.php:34
 msgid "search query"
 msgstr "Suchbegriff"
 
-#: src/Views/Cockpit/Sharepic.php:34
+#: src/Views/Cockpit/Sharepic.php:40
 msgid "upload image"
 msgstr "Bild hochladen"
 
-#: src/Views/Cockpit/Sharepic.php:40
+#: src/Views/Cockpit/Sharepic.php:46
 msgid "Reset background"
 msgstr "Hintergrund zurücksetzen"
 
@@ -162,11 +174,10 @@ msgid "Eyecatcher"
 msgstr "Störer"
 
 #: src/Views/Cockpit/Eyecatcher.php:4 src/Views/Cockpit/Logo.php:4
-#: src/Views/Cockpit/Freetext.php:4
 msgid "Size"
 msgstr "Größe"
 
-#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Freetext.php:15
+#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Freetext.php:10
 msgid "to front"
 msgstr "nach vorne"
 
@@ -178,9 +189,29 @@ msgstr "löschen"
 msgid "Logo"
 msgstr "Logo"
 
-#: src/Views/Cockpit/Freetext.php:2 src/Views/Cockpit/Freetext.php:10
+#: src/Views/Cockpit/Freetext.php:2
 msgid "Text"
 msgstr "Text"
+
+#: src/Views/Cockpit/Freetext.php:4
+msgid "Total size"
+msgstr "Gesamtgröße"
+
+#: src/Views/Mail/Account_Creation.php:3 src/Views/Mail/Password_Link.php:3
+msgid "Hello"
+msgstr "Hallo"
+
+#: src/Views/Mail/Account_Creation.php:5
+msgid ""
+"You have successfully registered. Please click on the following link to "
+"confirm your registration: "
+msgstr ""
+"Du hast dich erfolgreich registriert. Bitte klicke auf den folgenden Link, "
+"um deine Registrierung zu bestätigen:"
+
+#: src/Views/Mail/Password_Link.php:5
+msgid "Click on the following link to reset your password: "
+msgstr "Klicke auf den folgenden Link, um dein Passwort zurückzusetzen:"
 
 #: src/Views/Logs/Sharepics.php:5
 msgid "Latest sharepics"
@@ -199,16 +230,12 @@ msgid "latest"
 msgstr "letztes"
 
 #: src/Views/Menu.php:8
-msgid "Free"
-msgstr "Frei"
+msgid "Mint"
+msgstr "Mint"
 
 #: src/Views/Menu.php:19
 msgid "My sharepics"
 msgstr "Meine Sharepics"
-
-#: src/Views/User/ResetPassword.php:6
-msgid "Reset Password"
-msgstr "Passwort zurücksetzen"
 
 #: src/Views/Components/Forms/Login.php:2
 #: src/Views/Components/Forms/RequestPassword.php:2
@@ -216,7 +243,7 @@ msgid "username"
 msgstr "Benutzer*innenname"
 
 #: src/Views/Components/Forms/Login.php:3
-#: src/Views/Components/Forms/ResetPassword.php:3
+#: src/Views/Components/Forms/ResetPassword.php:17
 msgid "password"
 msgstr "Passwort"
 
@@ -224,13 +251,9 @@ msgstr "Passwort"
 msgid "login"
 msgstr "einloggen"
 
-#: src/Views/Components/Forms/ResetPassword.php:4
+#: src/Views/Components/Forms/ResetPassword.php:18
 msgid "password repeat"
 msgstr "Passwort wiederholen"
-
-#: src/Views/Components/Forms/ResetPassword.php:5
-msgid "reset password"
-msgstr "Passwort zurücksetzen"
 
 #: src/Views/Components/Forms/RequestPassword.php:3
 msgid "request reset link"
@@ -279,6 +302,12 @@ msgstr "Bist Du sicher?"
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
 msgstr "Die Bilder stammen von "
+
+#~ msgid "Free"
+#~ msgstr "Frei"
+
+#~ msgid "Reset Password"
+#~ msgstr "Passwort zurücksetzen"
 
 #~ msgid "Load template"
 #~ msgstr "Lade Vorlagen"

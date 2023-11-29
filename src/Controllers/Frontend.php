@@ -78,28 +78,42 @@ class Frontend {
 	public function reset_password() {
 		if ( empty( $_POST['password'] ) ) {
 			$token = $_GET['token'] ?? '';
+			if ( isset( $_GET['newpassword'] ) ) {
+				$title        = _( 'Create your password' );
+				$submit_value = _( 'Set your new password' );
+			} else {
+				$title        = _( 'Reset password' );
+				$submit_value = _( 'Reset password' );
+			}
+
 			include_once './src/Views/User/ResetPassword.php';
 			return;
 		}
 
-		// Perform the password reset.
 		if (
-			isset( $_POST['token'] ) &&
-			isset( $_POST['password'] ) &&
-			isset( $_POST['password_repeat'] ) &&
-			$_POST['password'] === $_POST['password_repeat']
+			! isset( $_POST['token'] ) ||
+			! isset( $_POST['password'] ) ||
+			! isset( $_POST['password_repeat'] ) ||
+			$_POST['password'] !== $_POST['password_repeat']
 		) {
-			$token    = $_POST['token'];
-			$password = $_POST['password'];
-			if ( ! $this->user->set_password( $token, $password ) ) {
-				$this->no_access();
-			}
+
+			$title   = _( 'An error occured' );
+			$message = '<a href="/">' . _( 'Your password could not be set. Did you repeat it correctly?' ) . '</a>';
+			include_once './src/Views/Hero.php';
+			return;
+		}
+
+		// Perform the password reset.
+		$token    = $_POST['token'];
+		$password = $_POST['password'];
+		if ( ! $this->user->set_password( $token, $password ) ) {
+			$this->no_access();
+		}
 
 			$title   = _( 'Password reset' );
 			$message = '<a href="/">' . _( 'Your password has been reset. Please login.' ) . '</a>';
 			include_once './src/Views/Hero.php';
 			return;
-		}
 
 	}
 

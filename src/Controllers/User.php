@@ -293,8 +293,11 @@ class User {
 
 		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
 		$server_address = $_SERVER['HTTP_HOST'];
-		$link           = $protocol . $server_address . '/index.php/frontend/reset_password?token=' . $token;
-		$message        = _( 'You have successfully registered. Please click on the following link to confirm your registration: ' ) . $link;
+		$link           = $protocol . $server_address . '/index.php/frontend/reset_password?newpassword=1&token=' . $token;
+
+		ob_start();
+		include 'src/Views/Mail/Account_Creation.php';
+		$message = ob_get_clean();
 
 		$mail = new Mailer( $mail );
 		$mail->send( _( 'Account created' ), $message );
@@ -348,7 +351,10 @@ class User {
 		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
 		$server_address = $_SERVER['HTTP_HOST'];
 		$link           = $protocol . $server_address . '/index.php/frontend/reset_password?token=' . $token;
-		$message        = _( 'Click on the following link to reset your password: ' ) . $link;
+
+		ob_start();
+		include 'src/Views/Mail/Password_Link.php';
+		$message = ob_get_clean();
 
 		$mail = new Mailer( $username );
 		$mail->send( _( 'Password Reset' ), $message );
