@@ -17,7 +17,7 @@
 
     <div class="dropdown">
         <span><?php echo _( 'My sharepics' ); ?></span>
-        <div class="dropdown-content">
+        <div class="dropdown-content" id="my-sharepics">
             <?php
                $savings = $this->user->get_savings();
                foreach( $savings as $dir => $name ){

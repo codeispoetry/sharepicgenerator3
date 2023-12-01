@@ -3,23 +3,11 @@
 class UI {
   constructor () {
     document.querySelectorAll('[data-load]').forEach(element => {
-      element.addEventListener('click', (event) => {
-        const target = element.dataset.load
-        api.load(target)
-      })
+      this.handleClickLoad(element)
     })
 
     document.querySelectorAll('[data-delete]').forEach(element => {
-      element.addEventListener('click', (event) => {
-        if (!window.confirm(lang['Are you sure?'])) {
-          return false
-        }
-
-        const target = element.dataset.delete
-        api.delete(target)
-
-        element.parentElement.remove()
-      })
+      this.handleClickDelete(element)
     })
 
     document.getElementById('upload').addEventListener('change', function () {
@@ -86,4 +74,26 @@ class UI {
       })
     })
   }
+
+  handleClickLoad (element) {
+    element.addEventListener('click', (event) => {
+      const target = element.dataset.load
+      api.load(target)
+    })
+  }
+
+  handleClickDelete (element ) {
+    element.addEventListener('click', (event) => {
+      if (!window.confirm(lang['Are you sure?'])) {
+        return false
+      }
+  
+      const target = element.dataset.delete
+      api.delete(target)
+  
+      element.parentElement.remove()
+    })
+  }
 }
+
+

@@ -113,8 +113,23 @@ class API {
         return response.text()
       })
       .then(data => {
-        // data = JSON.parse(data)
+        data = JSON.parse(data)
         console.log(data)
+        const mySharepics = document.querySelector('#my-sharepics');
+        const clonedEntry = mySharepics.lastElementChild.cloneNode(true);
+
+        const buttons = clonedEntry.querySelectorAll('button');
+        const firstButton = buttons[0];
+        const secondButton = buttons[1];
+
+        firstButton.innerHTML =  name;
+        firstButton.dataset.load = data.full_path;
+        secondButton.dataset.delete = data.id;
+
+        ui.handleClickLoad(firstButton)
+        ui.handleClickDelete(secondButton)
+        
+        mySharepics.appendChild(clonedEntry)
       })
       .catch(error => console.error('Error:', error))
   }

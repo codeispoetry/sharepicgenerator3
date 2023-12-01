@@ -147,7 +147,8 @@ class Sharepic {
 	public function save() {
 		$workspace = 'users/' . $this->user . '/workspace/';
 		$save_dir  = 'users/' . $this->user . '/save/';
-		$save      = $save_dir . rand( 1000000, 9999999 );
+		$id        = rand( 1000000, 9999999 );
+		$save      = $save_dir . $id;
 
 		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );
 		if ( $save_count > 10 ) {
@@ -168,7 +169,13 @@ class Sharepic {
 		$name = preg_replace( '/[^a-zA-Z0-9\säöüßÄÖÜ]/', '-', $this->info );
 		file_put_contents( $save . '/info.json', json_encode( array( 'name' => $name ) ) );
 
-		echo json_encode( array( 'save_count' => $save_count ) );
+		echo json_encode(
+			array(
+				'full_path'  => $save . '/sharepic.html',
+				'id'         => $id,
+				'save_count' => $save_count,
+			)
+		);
 		return true;
 	}
 
