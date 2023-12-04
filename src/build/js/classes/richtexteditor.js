@@ -20,6 +20,10 @@ class RichTextEditor {
       [{ align: [] }]
     ]
 
+    if (!document.querySelector('#text')) {
+      return;
+    }
+    
     quill = new Quill('#text', {
       modules: {
         toolbar: toolbarOptions

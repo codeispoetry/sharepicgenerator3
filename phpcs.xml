@@ -18,6 +18,7 @@
         <exclude name="WordPress.WP.AlternativeFunctions" />
         <exclude name="WordPress.WP.CapitalPDangit.Misplaced" />
         <exclude name="WordPress.WP.I18n.SingleUnderscoreGetTextFunction" />
+        <exclude name="WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet" />
 
         <exclude name="WordPress.DB.RestrictedClasses.mysql__PDO" />
 

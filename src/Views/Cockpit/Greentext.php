@@ -1,9 +1,9 @@
-<section class="mainsection" id="cockpit_text">
+<section class="mainsection" id="cockpit_greentext">
     <h2>Text</h2>
     <section>
-        <h3>Größe</h3>
+        <h3><?php echo _('Total size'); ?></h3>
         <label>
-            <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
+            <input type="range" min="0" max="100" value="50" class="slider" id="greentext_size">
         </label>
     </section>
     <section>
@@ -39,16 +39,16 @@
 </section>
 
 <script>
-    document.getElementById('text_size').addEventListener('input', function(e) {
+    document.getElementById('greentext_size').addEventListener('input', function(e) {
         var element = event.target;
-        const target = document.getElementById('text');
+        const target = document.getElementById('greentext');
         target.style.fontSize = element.value + "px";
     });
 
     const sliders = document.querySelectorAll('.line_indent input');
     sliders.forEach(slider => {
         slider.addEventListener('input', function(e) {
-            const allP = document.querySelectorAll('#text p');
+            const allP = document.querySelectorAll('#greentext p');
             const i = e.target.dataset.i;
             allP[i].style.marginLeft = e.target.value + 'px';
         });
@@ -57,7 +57,7 @@
     const layouts = document.querySelectorAll('.line_layout');
     layouts.forEach(layout => {
         layout.addEventListener('change', function(e) {
-            const allP = document.querySelectorAll('#text p');
+            const allP = document.querySelectorAll('#greentext p');
             const i = e.target.dataset.i;
             allP[i].classList.remove('sandtanne', 'tannesand','sandklee', 'kleetand', 'grastanne', 'tannegras');
             allP[i].classList.add(e.target.value)

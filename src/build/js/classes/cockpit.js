@@ -37,11 +37,11 @@ class Cockpit {
     document.getElementById('height').value = document.getElementById('sharepic').dataset.height
   }
 
-  setup_text (element) {
-    const slider = document.getElementById('text_size')
+  setup_greentext (element) {
+    const slider = document.getElementById('greentext_size')
     slider.value = element.style.fontSize.replace('px', '')
 
-    const allP = document.querySelectorAll('#text p')
+    const allP = document.querySelectorAll('#greentext p')
 
     allP.forEach((line, index) => {
       const slider = document.getElementById('line_indent_' + index)
