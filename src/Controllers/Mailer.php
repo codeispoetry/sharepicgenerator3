@@ -36,6 +36,7 @@ class Mailer {
         $this->phpmailer->setFrom( 'mail@tom-rose.de', 'Sharepicgenerator' );
         $this->phpmailer->addAddress( $username );
 		$this->phpmailer->isHTML( true );
+		$this->phpmailer->Timeout = 30;
 		//phpcs:enable
 	}
 
@@ -52,9 +53,8 @@ class Mailer {
 			$this->phpmailer->Body    = $message;
 			$this->phpmailer->send();
 		} catch ( \Exception $e ) {
-			echo $this->phpmailer->ErrorInfo;
-			die();
-			error_log( "Message could not be sent. phpMailerer Error: {$this->phpmailer->ErrorInfo}" );
+			\Sharepicgenerator\log( "Message could not be sent. phpMailer Error: {$this->phpmailer->ErrorInfo}" );
+			return false;
 		}
 	}
 

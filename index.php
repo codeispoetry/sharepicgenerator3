@@ -58,3 +58,16 @@ function get_lang() {
 
 	return false;
 }
+
+/**
+ * Logs to local file.
+ *
+ * @param string $message The Log-Message.
+ * @return void
+ */
+function log( $message ) {
+	$line  = gmdate( 'Y-m-d H:i:s' );
+	$line .= "\t" . $message;
+	$line .= "\n";
+	file_put_contents( 'logs/logger.log', $line );
+}

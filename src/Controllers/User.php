@@ -18,7 +18,7 @@ class User {
 	 *
 	 * @var string
 	 */
-	private $tenant = false;
+	private $tenants = array();
 
 	/**
 	 * The user's role.
@@ -93,8 +93,16 @@ class User {
 			return false;
 		}
 
-		$this->tenant = $result['tenant'];
-		$this->role   = $result['role'];
+		$this->role = $result['role'];
+
+		$stmt = $this->db->prepare( 'SELECT * FROM tenants JOIN userstenants WHERE tenantID = id AND userID = :userid' );
+		$stmt->bindParam( ':userid', $result['id'] );
+		$stmt->execute();
+		$tenants = $stmt->fetchAll( \PDO::FETCH_ASSOC );
+
+		foreach ( $tenants as $tenant ) {
+			$this->tenants[] = $tenant['tenant'];
+		}
 
 		// Set token.
 		$bearer_token = uniqid( 'sg', true );
@@ -159,12 +167,12 @@ class User {
 	}
 
 	/**
-	 * Get the tenant.
+	 * Get the tenants.
 	 *
-	 * @return string
+	 * @return array
 	 */
-	public function get_tenant() {
-		return $this->tenant;
+	public function get_tenants() {
+		return $this->tenants;
 	}
 
 	/**
@@ -237,8 +245,16 @@ class User {
 		}
 
 		$this->username = $result['username'];
-		$this->tenant   = $result['tenant'];
 		$this->role     = $result['role'];
+
+		$stmt = $this->db->prepare( 'SELECT * FROM tenants JOIN userstenants WHERE tenantID = id AND userID = :userid' );
+		$stmt->bindParam( ':userid', $result['id'] );
+		$stmt->execute();
+		$tenants = $stmt->fetchAll( \PDO::FETCH_ASSOC );
+
+		foreach ( $tenants as $tenant ) {
+			$this->tenants[] = $tenant['tenant'];
+		}
 
 		return $this->username;
 	}
@@ -300,8 +316,8 @@ class User {
 		$message = ob_get_clean();
 
 		$mail = new Mailer( $mail );
-		$mail->send( _( 'Account created' ), $message );
-		return true;
+
+		return $mail->send( _( 'Account created' ), $message );
 	}
 
 	/**
@@ -338,6 +354,7 @@ class User {
 	 */
 	public function send_password_link() {
 		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
+			\Sharepicgenerator\log( 'empty username in send_password_link' );
 			return false;
 		}
 
@@ -345,6 +362,7 @@ class User {
 		$token    = $this->get_token_for_user( $username );
 
 		if ( empty( $token ) ) {
+			\Sharepicgenerator\log( 'empty token in send_password_link' );
 			return false;
 		}
 
@@ -357,7 +375,9 @@ class User {
 		$message = ob_get_clean();
 
 		$mail = new Mailer( $username );
-		$mail->send( _( 'Password Reset' ), $message );
+		if ( ! $mail->send( _( 'Password Reset' ), $message ) ) {
+			\Sharepicgenerator\log( 'mailer error in send_password_link' );
+		}
 
 		return true;
 	}

@@ -63,12 +63,13 @@ class Frontend {
 	 * Show form for request password reset and send email.
 	 */
 	public function request_password_reset() {
-		if ( ! $this->user->send_password_link() ) {
-			$this->no_access();
-		}
-
 		$title   = _( 'Reset password' );
 		$message = _( 'Please check your email for the reset link.' );
+
+		if ( ! $this->user->send_password_link() ) {
+			$title   = _( 'Error' );
+			$message = _( 'An error occurred. Please try again later.' );
+		}
 		include_once './src/Views/Hero.php';
 	}
 
