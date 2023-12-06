@@ -61,24 +61,22 @@
 <main class="main">
 	<div class="row">
 		<div id="workbench" class="workbench">
-			<div id="adder">
-				<div class="add_sign"><img src="/assets/icons/add_circle.svg"></div>
-				<ul class="add_elements">
-					<li data-item="eyecatcher"><?php  echo _('Eyecatcher');?></li>
-				</ul>
-			</div>
-			<div id="canvas">
-				<div id="sharepic">
-					
+			<div style="display: flex; justify-content: center;">
+				<div id="adder">
+					<div class="add_sign"><img src="/assets/icons/add_circle.svg"></div>
+					<ul class="add_elements">
+						<li data-item="eyecatcher"><?php  echo _('Eyecatcher');?></li>
+					</ul>
+				</div>
+				<div id="canvas">
+					<div id="sharepic">
+						
+					</div>
 				</div>
 			</div>
 			<div id="inlinecockpit">
-				<div class="ictop">
-					<button class="create flat" data-click="api.create"><img src="/assets/icons/download.svg"> <?php  echo _('Download');?></button>
-				</div>
-				<div>
-					<button class="save flat" data-click="api.save"><img src="/assets/icons/save.svg"> <?php  echo _('Save');?></button>
-				</div>
+				<button class="create flat" data-click="api.create"><img src="/assets/icons/download.svg"> <?php  echo _('Download');?></button>
+				<button class="save flat" data-click="api.save"><img src="/assets/icons/save.svg"> <?php  echo _('Save');?></button>
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">

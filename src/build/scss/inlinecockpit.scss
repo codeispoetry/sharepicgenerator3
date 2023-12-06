@@ -1,6 +1,10 @@
 #inlinecockpit{
    margin-left: 20px;
    display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+   flex-direction: row;
+   justify-content: center;
+
+   button{
+      margin: 10px;
+   }
 }
