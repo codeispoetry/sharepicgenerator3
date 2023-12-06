@@ -6,6 +6,20 @@
             <input type="range" min="10" max="80" value="20" class="slider" id="eyecatcher_size">
         </label>
     </section>
+
+    <section style="margin-top:4em">
+        <h3><?php  echo _('Font color');?></h3>
+        <label>
+            <input type="color" value="#ffffff" class="" id="eyecatcher_color">
+        </label>
+    </section>
+
+    <section style="margin-top:4em">
+        <h3><?php  echo _('Background color');?></h3>
+        <label>
+            <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor">
+        </label>
+    </section>
     
     <section style="display: flex">
         <button class="to-front" data-target="eyecatcher" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
@@ -16,11 +30,23 @@
 <script>
     document.getElementById('eyecatcher_size').addEventListener('input', function(event) {
         var element = event.target;
-
         const target = document.getElementById('eyecatcher');
-
         target.style.fontSize = element.value + "px";
     });
+
+
+    document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
+      const color = document.getElementById('eyecatcher_bgcolor').value
+      const target = document.getElementById('eyecatcher');
+      console.log(color)
+      target.style.backgroundColor = color;
+    })
+
+    document.getElementById('eyecatcher_color').addEventListener('input', () => {
+      const color = document.getElementById('eyecatcher_color').value
+      const target = document.getElementById('eyecatcher');
+      target.style.color = color;
+    })
 </script>
 
 

@@ -42,6 +42,8 @@ class Cockpit {
     } else {
       document.getElementById('background_size').value = backgroundSize.replace('%', '')
     }
+
+    document.getElementById('background_color').value = rgbToHex(document.getElementById('sharepic').style.backgroundColor)
   }
 
   setup_greentext (element) {
@@ -74,6 +76,9 @@ class Cockpit {
   setup_eyecatcher (element) {
     const slider = document.getElementById('eyecatcher_size')
     slider.value = element.style.fontSize.replace('px', '')
+
+    document.getElementById('eyecatcher_color').value = rgbToHex(element.style.color)
+    document.getElementById('eyecatcher_bgcolor').value = rgbToHex(element.style.backgroundColor)
   }
 
   setup_logo (element) {
@@ -87,4 +92,22 @@ class Cockpit {
     }
     file.value = url
   }
+}
+
+function rgbToHex(rgb) {
+  let sep = rgb.indexOf(",") > -1 ? "," : " ";
+  rgb = rgb.substr(4).split(")")[0].split(sep);
+
+  let r = (+rgb[0]).toString(16),
+      g = (+rgb[1]).toString(16),
+      b = (+rgb[2]).toString(16);
+
+  if (r.length == 1)
+      r = "0" + r;
+  if (g.length == 1)
+      g = "0" + g;
+  if (b.length == 1)
+      b = "0" + b;
+
+  return "#" + r + g + b;
 }

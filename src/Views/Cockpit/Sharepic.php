@@ -47,7 +47,6 @@
         <label>
             <input type="color" value="#ffffff" class="" id="background_color">
         </label>
-        
     </section>
 
     <section style="margin-top:4em">
