@@ -64,9 +64,6 @@ class API {
   }
 
   prepare () {
-    document.querySelector('.create').disabled = true
-    document.querySelector('.create').classList.add('waiting')
-
     select.unselect_all()
     const canvas = document.getElementById('canvas')
 
@@ -95,6 +92,9 @@ class API {
 
   save () {
     const name = prompt('Name des Sharepics', 'Sharepic')
+
+    document.querySelector('.save').disabled = true
+    document.querySelector('.save').classList.add('waiting')
     const data = this.prepare()
     data.name = name
     const options = {
@@ -131,11 +131,17 @@ class API {
         ui.handleClickDelete(secondButton)
         
         mySharepics.appendChild(clonedEntry)
+
+        document.querySelector('.save').disabled = false
+        document.querySelector('.save').classList.remove('waiting')
       })
       .catch(error => console.error('Error:', error))
   }
 
   create () {
+    document.querySelector('.create').disabled = true
+    document.querySelector('.create').classList.add('waiting')
+
     const options = {
       method: 'POST',
       headers: {
