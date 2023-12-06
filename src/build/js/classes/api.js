@@ -57,6 +57,13 @@ class API {
         cockpit.setup_sharepic()
         rte.init()
         sg.init()
+
+        document.getElementById('eyecatcher').addEventListener('input', function(event) {
+          const eyecatcher = document.getElementById('eyecatcher');
+          eyecatcher.style.height = '';
+          eyecatcher.style.height=window.getComputedStyle(eyecatcher).getPropertyValue('height')
+        })
+
         logger.prepare_log_data({})
         logger.log('loads template ' + path)
       })

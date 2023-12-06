@@ -34,7 +34,6 @@
         target.style.fontSize = element.value + "px";
     });
 
-
     document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
       const color = document.getElementById('eyecatcher_bgcolor').value
       const target = document.getElementById('eyecatcher');
@@ -47,6 +46,7 @@
       const target = document.getElementById('eyecatcher');
       target.style.color = color;
     })
+
 </script>
 
 
