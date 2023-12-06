@@ -2,13 +2,6 @@
 
 class Sharepic {
   constructor () {
-    document.addEventListener('wheel', (event) => {
-      if (this.draggable === false) {
-        return
-      }
-      this.background_zoom(-event.deltaY / 10)
-    })
-
     document.querySelectorAll('[data-sizepreset]').forEach(element => {
       element.addEventListener('click', function () {
         const sizePreset = this.dataset.sizepreset.split(':')
@@ -18,6 +11,16 @@ class Sharepic {
         const event = new Event('change')
         document.getElementById('height').dispatchEvent(event)
       })
+    })
+
+    document.getElementById('background_size').addEventListener('input', () => {
+      const percentage = document.getElementById('background_size').value
+      this.background_zoom(percentage)
+    })
+
+    document.getElementById('background_color').addEventListener('input', () => {
+      const color = document.getElementById('background_color').value
+      this.background_color(color)
     })
 
     this.start_drag()
@@ -37,8 +40,14 @@ class Sharepic {
     this.set_size()
     this.start_drag()
   }
+  
+  background_color(color) {
+    const sg = document.getElementById('sharepic')
 
-  background_zoom (step) {
+    sg.style.backgroundColor = color
+  }
+
+  background_zoom (percentage) {
     const sg = document.getElementById('sharepic')
 
     let backgroundSize = sg.style.backgroundSize
@@ -52,11 +61,11 @@ class Sharepic {
       this.start_drag()
     }
 
-    const style = window.getComputedStyle(sg)
-    backgroundSize = style.getPropertyValue('background-size').replace('%', '')
-    backgroundSize = parseInt(backgroundSize, 10)
+    // const style = window.getComputedStyle(sg)
+    // backgroundSize = style.getPropertyValue('background-size').replace('%', '')
+    // backgroundSize = parseInt(backgroundSize, 10)
 
-    sg.style.backgroundSize = backgroundSize + step + '%'
+    sg.style.backgroundSize = percentage + '%'
   }
 
   start_drag () {

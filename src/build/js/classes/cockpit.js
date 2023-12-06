@@ -35,6 +35,13 @@ class Cockpit {
   setup_sharepic () {
     document.getElementById('width').value = document.getElementById('sharepic').dataset.width
     document.getElementById('height').value = document.getElementById('sharepic').dataset.height
+
+    const backgroundSize = document.getElementById('sharepic').style.backgroundSize
+    if (backgroundSize === 'cover') {
+      document.getElementById('background_size').value = 100
+    } else {
+      document.getElementById('background_size').value = backgroundSize.replace('%', '')
+    }
   }
 
   setup_greentext (element) {

@@ -40,13 +40,26 @@
             <img src="/assets/icons/upload.svg"> <?php  echo _('upload image');?>
             <input type="file" name="upload" id="upload">
         </label>
+    </section>
 
-        <label style="display:flex;margin-top: 1em">
-            <button class="link" data-click="sg.reset_background">
-                <?php echo _("Reset background"); ?>
-            </button>
+    <section style="margin-top:4em">
+        <h3><?php  echo _('Background color');?></h3>
+        <label>
+            <input type="color" value="#ffffff" class="" id="background_color">
         </label>
         
+    </section>
+
+    <section style="margin-top:4em">
+        <h3><?php  echo _('Background size');?></h3>
+        <label>
+            <input type="range" min="10" max="300" value="100" class="slider" id="background_size">
+        </label>
+        <label style="display:flex;margin-top: 1em">
+            <button class="link" data-click="sg.reset_background">
+                <?php echo _("Fit background"); ?>
+            </button>
+        </label>
     </section>
     
 </section>

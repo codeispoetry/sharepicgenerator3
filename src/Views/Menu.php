@@ -4,9 +4,13 @@
     <div class="dropdown">
         <span><?php echo _( 'Templates' ); ?></span>
         <div class="dropdown-content">
-            <button data-load="users/<?php echo $this->user->get_username(); ?>/workspace/sharepic.html"><?php  echo _('latest');?></button>
+            <?php
+            $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
+            if (file_exists($last)) {
+                echo '<button data-load="' . $last . '">' . _('latest') . '</button>';
+            }
+            ?>
             <button data-load="tenants/mint/start.html"><?php  echo _('Mint');?></button>
-
             <?php
                 foreach( $this->user->get_tenants() as $tenant ) {
                     printf( '<button data-load="tenants/%s/start.html">%s</button>', $tenant, ucfirst( $tenant ) );

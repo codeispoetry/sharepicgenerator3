@@ -75,8 +75,8 @@
 				</div>
 			</div>
 			<div id="inlinecockpit">
-				<button class="create flat" data-click="api.create"><img src="/assets/icons/download.svg"> <?php  echo _('Download');?></button>
 				<button class="save flat" data-click="api.save"><img src="/assets/icons/save.svg"> <?php  echo _('Save');?></button>
+				<button class="create flat" data-click="api.create"><img src="/assets/icons/download.svg"> <?php  echo _('Download');?></button>
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">

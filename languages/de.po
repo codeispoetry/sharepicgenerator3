@@ -167,7 +167,7 @@ msgstr "Bild hochladen"
 
 #: src/Views/Cockpit/Sharepic.php:46
 msgid "Reset background"
-msgstr "Hintergrund zurücksetzen"
+msgstr "Hintergrund einpassen"
 
 #: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:67
 msgid "Eyecatcher"

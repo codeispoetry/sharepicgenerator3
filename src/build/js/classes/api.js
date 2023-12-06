@@ -113,8 +113,9 @@ class API {
         return response.text()
       })
       .then(data => {
-        data = JSON.parse(data)
         console.log(data)
+        data = JSON.parse(data)
+      
         const mySharepics = document.querySelector('#my-sharepics');
         const clonedEntry = mySharepics.lastElementChild.cloneNode(true);
 
@@ -151,6 +152,7 @@ class API {
         return response.text()
       })
       .then(data => {
+        console.log(data)
         data = JSON.parse(data)
 
         const a = document.createElement('a')

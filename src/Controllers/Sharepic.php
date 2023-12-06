@@ -74,7 +74,11 @@ class Sharepic {
 	public function __construct() {
 		$user       = new User();
 		$this->user = $user->get_user_by_token();
-		$this->file = 'users/' . $this->user . '/workspace/sharepic.html';
+		$dir        = 'users/' . $this->user . '/workspace';
+		if ( ! file_exists( $dir ) ) {
+			mkdir( $dir );
+		}
+		$this->file = $dir . '/sharepic.html';
 
 		$this->logger = new Logger( $user );
 		$this->config = new Config();
