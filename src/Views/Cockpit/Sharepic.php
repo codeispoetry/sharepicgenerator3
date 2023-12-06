@@ -9,7 +9,9 @@
                 <span style="margin-left: 0.5em"><?php  echo _('pixel');?></span>
             </div>
         
+            
             <div class="brands">
+                <h4><?php  echo _('Presets');?>:</h4>
                 <button data-sizepreset="1280:1280" title="<?php echo _('square 1:1'); ?>">
                     <img src="/assets/icons/square1to1.svg">
                 </button>
@@ -43,15 +45,15 @@
     </section>
 
     <section style="margin-top:4em">
-        <h3><?php  echo _('Background color');?></h3>
-        <label>
+        <label class="horizontal">
+            <h4><?php  echo _('Background color');?></h4>
             <input type="color" value="#ffffff" class="" id="background_color">
         </label>
     </section>
 
-    <section style="margin-top:4em">
-        <h3><?php  echo _('Background size');?></h3>
-        <label>
+    <section style="margin-top:1em">
+        <label class="horizontal">
+            <h4><?php  echo _('Background size');?></h4>
             <input type="range" min="10" max="300" value="100" class="slider" id="background_size">
         </label>
         <label style="display:flex;margin-top: 1em">

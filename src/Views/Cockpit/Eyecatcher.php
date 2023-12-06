@@ -8,15 +8,13 @@
     </section>
 
     <section style="margin-top:4em">
-        <h3><?php  echo _('Font color');?></h3>
-        <label>
+        <label class="horizontal">
+            <h4><?php  echo _('Font color');?></h4>
             <input type="color" value="#ffffff" class="" id="eyecatcher_color">
         </label>
-    </section>
-
-    <section style="margin-top:4em">
-        <h3><?php  echo _('Background color');?></h3>
-        <label>
+  
+        <label class="horizontal" style="margin-top: 0">
+            <h4><?php  echo _('Background color');?></h4>
             <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor">
         </label>
     </section>
