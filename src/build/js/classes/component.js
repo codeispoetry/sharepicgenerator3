@@ -23,7 +23,7 @@ class Component {
 
     if (element) {
       console.log('Element already exists')
-      return
+      //return
     }
 
     const pattern = document.querySelector(`[data-id=${item}]`)
@@ -36,7 +36,8 @@ class Component {
 
     // make draggable
     const highestIndex = dragItems.reduce((max, item, index) => Math.max(max, index), 0)
-    dragItems[highestIndex] = new Drag(item, highestIndex)
+    console.log("highestIndex", highestIndex, item)
+    dragItems[highestIndex+1] = new Drag(item, highestIndex)
 
     // make selectable
     // const element = document.getElementById('eyecatcher')

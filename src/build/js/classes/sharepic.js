@@ -69,6 +69,7 @@ class Sharepic {
   }
 
   start_drag () {
+    return; 
     const sg = document.getElementById('sharepic')
 
     const moveHandler = (event) => this.drag(event)

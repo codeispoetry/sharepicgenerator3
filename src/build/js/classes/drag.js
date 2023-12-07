@@ -9,6 +9,7 @@ class Drag {
         return
       }
 
+      console.log("mousedown", e, index)
       dragging = index
 
       const canvas = document.getElementById('canvas').getBoundingClientRect()

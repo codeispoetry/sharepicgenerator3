@@ -193,6 +193,12 @@ class User {
 		$save_dir = 'users/' . $this->username . '/save/';
 
 		$savings_dir = glob( $save_dir . '/*', GLOB_ONLYDIR );
+		usort(
+			$savings_dir,
+			function( $a, $b ) {
+				return filemtime( $a ) - filemtime( $b );
+			}
+		);
 
 		$savings = array();
 		foreach ( $savings_dir as $dir ) {

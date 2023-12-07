@@ -45,18 +45,15 @@
     </section>
 
     <section style="margin-top:4em">
-        <label class="horizontal">
+        <label class="horizontal" style="margin:0">
             <h4><?php  echo _('Background color');?></h4>
             <input type="color" value="#ffffff" class="" id="background_color">
         </label>
-    </section>
-
-    <section style="margin-top:1em">
-        <label class="horizontal">
+        <label class="horizontal" style="margin-top:0">
             <h4><?php  echo _('Background size');?></h4>
             <input type="range" min="10" max="300" value="100" class="slider" id="background_size">
         </label>
-        <label style="display:flex;margin-top: 1em">
+        <label style="display:flex;margin-top: 0">
             <button class="link" data-click="sg.reset_background">
                 <?php echo _("Fit background"); ?>
             </button>
