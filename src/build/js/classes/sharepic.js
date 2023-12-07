@@ -69,7 +69,6 @@ class Sharepic {
   }
 
   start_drag () {
-    return; 
     const sg = document.getElementById('sharepic')
 
     const moveHandler = (event) => this.drag(event)
@@ -77,6 +76,10 @@ class Sharepic {
     sg.addEventListener('mousedown', (event) => {
       if (event.button !== 0) {
         return
+      }
+
+      if (!document.getElementById('drag_background').checked) {
+        return;
       }
 
       const sg = document.getElementById('sharepic')

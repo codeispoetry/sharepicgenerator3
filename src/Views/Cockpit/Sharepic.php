@@ -55,8 +55,12 @@
         </label>
         <label style="display:flex;margin-top: 0">
             <button class="link" data-click="sg.reset_background">
-                <?php echo _("Fit background"); ?>
-            </button>
+                <?php echo _("Fit background automatically"); ?>
+            </button>   
+        </label>
+        <label>
+            <input type="checkbox" id="drag_background">
+            <?php echo _("Make background draggable"); ?>
         </label>
     </section>
     
