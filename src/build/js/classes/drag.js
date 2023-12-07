@@ -3,13 +3,11 @@
 class Drag {
   constructor (id, index) {
     this.item = document.getElementById(id)
-
     this.item.addEventListener('mousedown', (e) => {
       if (e.button !== 0 || e.target !== this.item) {
         return
       }
 
-      console.log("mousedown", e, index)
       dragging = index
 
       const canvas = document.getElementById('canvas').getBoundingClientRect()
