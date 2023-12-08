@@ -66,7 +66,7 @@
 					<div class="add_sign"><img src="/assets/icons/add_circle.svg"></div>
 					<ul class="add_elements">
 						<li data-item="eyecatcher"><?php  echo _('Eyecatcher');?></li>
-						<li data-item="addpicture"><?php  echo _('Picture');?></li>
+						<li data-item="addpicture" style="display:none"><?php  echo _('Picture');?></li>
 					</ul>
 				</div>
 				<div id="canvas">
