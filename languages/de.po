@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-29 09:16+0100\n"
-"PO-Revision-Date: 2023-11-29 09:18+0100\n"
+"POT-Creation-Date: 2023-12-08 11:33+0100\n"
+"PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -36,55 +36,63 @@ msgstr ""
 "Du hast dich erfolgreich registriert. Bitte bestätige deine Registrierung in "
 "deinen Mails."
 
-#: src/Controllers/Frontend.php:70 src/Controllers/Frontend.php:85
-#: src/Controllers/Frontend.php:86
+#: src/Controllers/Frontend.php:66 src/Controllers/Frontend.php:86
+#: src/Controllers/Frontend.php:87
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
-#: src/Controllers/Frontend.php:71
+#: src/Controllers/Frontend.php:67
 msgid "Please check your email for the reset link."
 msgstr ""
 "Bitte überprüfe deine Mails für den Link zum Zurücksetzen des Passworts."
 
-#: src/Controllers/Frontend.php:82
+#: src/Controllers/Frontend.php:70
+msgid "Error"
+msgstr "Fehler"
+
+#: src/Controllers/Frontend.php:71
+msgid "An error occurred. Please try again later."
+msgstr "Ein Fehler ist passiert. Bitte versuche es später noch einmal."
+
+#: src/Controllers/Frontend.php:83
 msgid "Create your password"
 msgstr "Erstelle Dein Passwort"
 
-#: src/Controllers/Frontend.php:83
+#: src/Controllers/Frontend.php:84
 msgid "Set your new password"
 msgstr "Setze Dein Passwort"
 
-#: src/Controllers/Frontend.php:100
+#: src/Controllers/Frontend.php:101
 msgid "An error occured"
 msgstr "Ein Fehler ist aufgetreten"
 
-#: src/Controllers/Frontend.php:101
+#: src/Controllers/Frontend.php:102
 msgid "Your password could not be set. Did you repeat it correctly?"
 msgstr ""
 "Dein Passwort konnte nicht gesetzt werden. Hast Du es zwei Mal gleich "
 "eingegeben?"
 
-#: src/Controllers/Frontend.php:113 src/Views/Home.php:32
+#: src/Controllers/Frontend.php:114 src/Views/Home.php:32
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: src/Controllers/Frontend.php:114
+#: src/Controllers/Frontend.php:115
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/Frontend.php:151 src/Views/Creator.php:43
+#: src/Controllers/Frontend.php:152 src/Views/Creator.php:43
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: src/Controllers/Frontend.php:152
+#: src/Controllers/Frontend.php:153
 msgid "You have been logged out."
-msgstr "Du bist ausgeloggt"
+msgstr "Du bist ausgeloggt."
 
-#: src/Controllers/User.php:303
+#: src/Controllers/User.php:326
 msgid "Account created"
 msgstr "Account erstellt"
 
-#: src/Controllers/User.php:360
+#: src/Controllers/User.php:384
 msgid "Password Reset"
 msgstr "Passwort zurücksetzen"
 
@@ -149,27 +157,43 @@ msgstr "Abmessungen"
 msgid "pixel"
 msgstr "Pixel"
 
-#: src/Views/Cockpit/Sharepic.php:13
+#: src/Views/Cockpit/Sharepic.php:14
+msgid "Presets"
+msgstr "Voreinstellungen"
+
+#: src/Views/Cockpit/Sharepic.php:15
 msgid "square 1:1"
 msgstr "Quadratisch 1:1"
 
-#: src/Views/Cockpit/Sharepic.php:32
+#: src/Views/Cockpit/Sharepic.php:34
 msgid "Background image"
 msgstr "Hintergrundbild"
 
-#: src/Views/Cockpit/Sharepic.php:34
+#: src/Views/Cockpit/Sharepic.php:36
 msgid "search query"
 msgstr "Suchbegriff"
 
-#: src/Views/Cockpit/Sharepic.php:40
+#: src/Views/Cockpit/Sharepic.php:42
 msgid "upload image"
 msgstr "Bild hochladen"
 
-#: src/Views/Cockpit/Sharepic.php:46
-msgid "Reset background"
-msgstr "Hintergrund einpassen"
+#: src/Views/Cockpit/Sharepic.php:49 src/Views/Cockpit/Eyecatcher.php:17
+msgid "Background color"
+msgstr "Hintergrundfarbe"
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:67
+#: src/Views/Cockpit/Sharepic.php:53
+msgid "Background size"
+msgstr "Hintergrundgröße"
+
+#: src/Views/Cockpit/Sharepic.php:58
+msgid "Fit background automatically"
+msgstr "Hintergrund automtisch einpassen"
+
+#: src/Views/Cockpit/Sharepic.php:63
+msgid "Make background draggable"
+msgstr "Hintergrundbild verschieben"
+
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:68
 msgid "Eyecatcher"
 msgstr "Störer"
 
@@ -177,13 +201,23 @@ msgstr "Störer"
 msgid "Size"
 msgstr "Größe"
 
-#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Freetext.php:10
+#: src/Views/Cockpit/Eyecatcher.php:12
+msgid "Font color"
+msgstr "Schriftfarbe"
+
+#: src/Views/Cockpit/Eyecatcher.php:23 src/Views/Cockpit/Freetext.php:10
+#: src/Views/Cockpit/Addpicture.php:10
 msgid "to front"
 msgstr "nach vorne"
 
-#: src/Views/Cockpit/Eyecatcher.php:12
+#: src/Views/Cockpit/Eyecatcher.php:24
 msgid "delete"
 msgstr "löschen"
+
+#: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:4
+#: src/Views/Cockpit/Addpicture.php:4
+msgid "Total size"
+msgstr "Gesamtgröße"
 
 #: src/Views/Cockpit/Logo.php:2
 msgid "Logo"
@@ -193,9 +227,9 @@ msgstr "Logo"
 msgid "Text"
 msgstr "Text"
 
-#: src/Views/Cockpit/Freetext.php:4
-msgid "Total size"
-msgstr "Gesamtgröße"
+#: src/Views/Cockpit/Addpicture.php:2 src/Views/Creator.php:69
+msgid "Picture"
+msgstr "Bild"
 
 #: src/Views/Mail/Account_Creation.php:3 src/Views/Mail/Password_Link.php:3
 msgid "Hello"
@@ -207,11 +241,11 @@ msgid ""
 "confirm your registration: "
 msgstr ""
 "Du hast dich erfolgreich registriert. Bitte klicke auf den folgenden Link, "
-"um deine Registrierung zu bestätigen:"
+"um deine Registrierung zu bestätigen: "
 
 #: src/Views/Mail/Password_Link.php:5
 msgid "Click on the following link to reset your password: "
-msgstr "Klicke auf den folgenden Link, um dein Passwort zurückzusetzen:"
+msgstr "Klicke auf den folgenden Link, um dein Passwort zurückzusetzen: "
 
 #: src/Views/Logs/Sharepics.php:5
 msgid "Latest sharepics"
@@ -225,15 +259,15 @@ msgstr "Nutzungs-Log"
 msgid "Templates"
 msgstr "Vorlagen"
 
-#: src/Views/Menu.php:7
+#: src/Views/Menu.php:10
 msgid "latest"
 msgstr "letztes"
 
-#: src/Views/Menu.php:8
+#: src/Views/Menu.php:13
 msgid "Mint"
 msgstr "Mint"
 
-#: src/Views/Menu.php:19
+#: src/Views/Menu.php:23
 msgid "My sharepics"
 msgstr "Meine Sharepics"
 
@@ -287,21 +321,24 @@ msgstr "Englisch"
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: src/Views/Creator.php:77
-msgid "Download"
-msgstr "Herunterladen"
-
-#: src/Views/Creator.php:80
+#: src/Views/Creator.php:79
 msgid "Save"
 msgstr "Speichern"
 
-#: src/Views/Creator.php:106
+#: src/Views/Creator.php:80
+msgid "Download"
+msgstr "Herunterladen"
+
+#: src/Views/Creator.php:105
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
 msgstr "Die Bilder stammen von "
+
+#~ msgid "Reset background"
+#~ msgstr "Hintergrund einpassen"
 
 #~ msgid "Free"
 #~ msgstr "Frei"
