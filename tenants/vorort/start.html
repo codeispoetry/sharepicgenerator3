@@ -1,0 +1,131 @@
+<div id="sharepic"
+    style="background-image: url('/dtenants/vorort/start.png?rand=2'); background-color: #005437;; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:800px;border:0;overflow:hidden;"
+    data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="sharepic">
+    <link rel="stylesheet" href="/tenants/vorort/styles.css?rand=3">
+    <div style="    position: absolute; 
+                    left: 50px; top:390px; 
+                    font-size: 17px;
+                    font-weight:bold;
+                    font-family: 'PT Sans', sans-serif;
+                    z-index: 20;
+                    " contenteditable="true">
+        mit Vorname Nachname MdL
+        <br>
+        <br>
+        <br>
+        am Donnerstag, den 12. Januar 2024<br>
+        um 19 Uhr<br>
+        in dem Veranstaltungsort<br>
+        Musterstraße 123 in Musterstadt
+    </div>
+    <div
+        style="
+                position: absolute; 
+                top: 0px; left: 0px; 
+                width: 380px; height:380px; 
+                background-image: url('/tenants/vorort/logo.svg'); 
+                background-repeat: no-repeat; 
+                background-position: -210px 0px;
+                background-size:contain;
+                ">
+    </div>
+
+    <div
+        id="celebrity"
+    style="
+            position: absolute; 
+            bottom: 0px; right: 0px; 
+            width: 800px; height: 600px; 
+            background-image: url(''); 
+            background-repeat: no-repeat; 
+            background-position: right bottom;
+            z-index: 10;
+            background-size:contain;">
+</div>
+
+   
+    <div id="title" class="title"></div>
+    <div id="name" class="name"></div>
+    <div class="claim">VOR ORT</div>
+
+   
+    <div id="eyecatcher" style="display:none"></div>
+
+    <style>
+        .title, .name, .claim{
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: strong;
+        }
+
+
+        .title{
+            color: white;
+            margin: 0 30px 5px 30px; 
+            font-family: "GrueneType", sans-serif;
+            z-index: 3;
+            top: 57px; left: 98px;
+            font-size:20px;
+        }
+
+        .title::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: -6px;
+            background-color: #008939;
+            transform: skew(-9deg, 0);
+            width: calc(100% + 10px);
+            height: calc(100% - 5px);
+            z-index: -1;
+        }
+
+        .name{
+            color: white;
+            margin: 0 30px 5px 30px; 
+            font-family: "GrueneType", sans-serif;
+            z-index: 3;
+            top: 83px; left: 51px;
+            font-size: 37px;
+        }
+
+        .name::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -10px;
+            background-color: #008939;
+            transform: skew(-9deg, 0);
+            width: calc(100% + 19px);
+            height: calc(100% - 9px);
+            z-index: -1;
+        }
+
+        .claim{
+            color: #005437;
+            margin: 0 30px 5px 30px;
+            font-family: "GrueneType", sans-serif;
+            z-index: 3;
+            top: 130px; left: 72px; 
+            font-size: 80px;
+        }
+
+        .claim::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: -20px;
+            background-color: #ffffff;
+            transform: skew(-9deg, 0);
+            width: calc(100% + 40px);
+            height: calc(100% - 18px);
+            z-index: -1;
+        }
+
+        @font-face {
+            font-family: "GrueneType";
+            src: url("../../../assets/fonts/GrueneType.woff2") format("woff2");
+        }
+    </style>
+</div>

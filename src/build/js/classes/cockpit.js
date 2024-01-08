@@ -9,7 +9,8 @@ class Cockpit {
     elements.forEach(element => {
       element.classList.remove('show')
     })
-    document.getElementById('cockpit_sharepic')?.classList.add('show')
+    //document.getElementById('cockpit_sharepic')?.classList.add('show')
+    document.getElementById('cockpit_vorort')?.classList.add('show')
   }
 
   /*
