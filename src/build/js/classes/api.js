@@ -10,7 +10,7 @@ class API {
       saving
     }
 
-    fetch('/index.php/sharepic/delete/', {
+    fetch('index.php?c=sharepic&m=delete', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
