@@ -107,7 +107,7 @@ class Sharepic {
 
 			$this->set_zoom( 1 / $this->size['zoom'] );
 
-			$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><script>var create=true;</script></head><body>%s</body></html>';
+			$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body>%s</body></html>';
 			file_put_contents( $this->file, sprintf( $scaffold, $this->html ) );
 		}
 	}

@@ -1,9 +1,9 @@
 <section class="mainsection" id="cockpit_vorort">
     <h2><?php  echo _('Vor Ort');?></h2>
     <section>
-        <h3>Gast</h3>
+        <h3><?php  echo _('Guest');?></h3>
         <select id="celebrity">
-            <option>bitte wählen</option>
+            <option><?php  echo _('please choose');?></option>
         <?php
         $celebs = parse_ini_file("tenants/vorort/celebrities/celebrities.ini", true);
         foreach ($celebs as $image => $celeb) {

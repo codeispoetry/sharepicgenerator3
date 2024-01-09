@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/styles.css?v=<?php echo filemtime('assets/styles.css');?>">
     <link href="node_modules/quill/dist/quill.bubble.css" rel="stylesheet">
     <script src="node_modules/quill/dist/quill.js"></script>
-
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         #canvas{
             zoom: 1 !important;
@@ -24,8 +24,8 @@
 			<?php
 				if( $this->user->is_admin() ){
 					echo "<em>Admin:";
-					printf( ' <a href="/index.php/frontend/log" style="margin-right: 0">%s</a> | ', _( 'Usage' ) );
-					printf( ' <a href="/index.php/frontend/sharepics">%s</a>', _( 'Sharepics' ) );
+					printf( ' <a href="index.php?c=frontend&m=log" style="margin-right: 0">%s</a> | ', _( 'Usage' ) );
+					printf( ' <a href="index.php?c=frontend&m=sharepics">%s</a>', _( 'Sharepics' ) );
 					echo "</em>";
 
 				}
