@@ -12,7 +12,7 @@
         border: 1px solid #ccc;
     }
 </style>
-<form method="post" action="/index.php/frontend/reset_password">
+<form method="post" action="index.php?c=frontend&m=reset_password">
     <input type="hidden" name="token" value="<?php echo $token;?>">
     <input type="password" name="password" id="rp_password" placeholder="<?php  echo _('password');?>" autocomplete="new-password"><br>
     <input type="password" name="password_repeat" id="rp_password_repeat" placeholder="<?php  echo _('password repeat');?>"><br>

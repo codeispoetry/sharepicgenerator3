@@ -12,6 +12,7 @@ require './vendor/autoload.php';
 use Sharepicgenerator\Controllers\Frontend;
 use Sharepicgenerator\Controllers\Sharepic;
 use Sharepicgenerator\Controllers\Felogger;
+use Sharepicgenerator\Controllers\Config;
 
 bindtextdomain( 'sg', './languages' );
 textdomain( 'sg' );
@@ -19,13 +20,10 @@ if ( 'de' === get_lang() ) {
 	setlocale( LC_ALL, 'de_DE.utf8' );
 }
 
-$path = $_SERVER['REQUEST_URI'];
+$config = new Config();
 
-$parts = parse_url( $path );
-
-$segments   = explode( '/', $parts['path'] );
-$controller = $segments[2] ?? 'frontend';
-$method     = $segments[3] ?? 'index';
+$controller = ( ! empty( $_GET['c'] ) ) ? $_GET['c'] : 'frontend';
+$method     = ( ! empty( $_GET['m'] ) ) ? $_GET['m'] : 'index';
 
 if ( 'frontend' === $controller ) {
 	$frontend = new Frontend();

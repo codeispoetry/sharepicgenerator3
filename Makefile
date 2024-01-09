@@ -24,6 +24,9 @@ woff:
 deploy-develop:
 	rsync -avz --delete assets node_modules/quill/dist index.php languages src tenants vendor favicon.ico sharepic:/var/www/mint-develop.sharepicgenerator.de
 
+deploy-gruene-develop:
+	rsync -avz --delete assets node_modules/quill/dist index.php languages src tenants vendor favicon.ico install.php sharepic:/var/www/develop.sharepicgenerator.de/version3
+
 create-pot:
 	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot
 

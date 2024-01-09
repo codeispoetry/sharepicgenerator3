@@ -28,7 +28,7 @@
                foreach( $savings as $dir => $name ){
                     echo '<div class="dropdown-item-double">';
                         printf( '<button class="did-1" data-load="users/%s/save/%s/sharepic.html">%s</button>', $this->user->get_username(), $dir, $name );
-                        printf( '<button class="did-2" data-delete="%s"><img src="/assets/icons/delete.svg"></button>', $dir);
+                        printf( '<button class="did-2" data-delete="%s"><img src="assets/icons/delete.svg"></button>', $dir);
                     echo '</div>';
                }
             ?>

@@ -33,7 +33,7 @@ class Frontend {
 	 */
 	public function create() {
 		if ( ! $this->user->login() ) {
-			header( 'Location: /' );
+			header( 'Location: index.php' );
 			die();
 		}
 		include_once './src/Views/Creator.php';
@@ -112,7 +112,7 @@ class Frontend {
 		}
 
 			$title   = _( 'Password reset' );
-			$message = '<a href="/">' . _( 'Your password has been reset. Please login.' ) . '</a>';
+			$message = '<a href="index.php">' . _( 'Your password has been reset. Please login.' ) . '</a>';
 			include_once './src/Views/Hero.php';
 			return;
 

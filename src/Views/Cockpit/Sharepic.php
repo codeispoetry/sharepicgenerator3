@@ -13,19 +13,19 @@
             <div class="brands">
                 <h4><?php  echo _('Presets');?>:</h4>
                 <button data-sizepreset="1280:1280" title="<?php echo _('square 1:1'); ?>">
-                    <img src="/assets/icons/square1to1.svg">
+                    <img src="assets/icons/square1to1.svg">
                 </button>
                 <button data-sizepreset="1200:630" title="Facebook">
-                    <img src="/assets/icons/brands/facebook.svg">
+                    <img src="assets/icons/brands/facebook.svg">
                 </button>
                 <button data-sizepreset="1080:1080" title="Instagram">
-                    <img src="/assets/icons/brands/instagram.svg">
+                    <img src="assets/icons/brands/instagram.svg">
                 </button>
                 <button data-sizepreset="1600:900" title="X">
-                    <img src="/assets/icons/brands/x.svg">
+                    <img src="assets/icons/brands/x.svg">
                 </button>
                 <button data-sizepreset="1200:627" title="X">
-                    <img src="/assets/icons/brands/linkedin.svg">
+                    <img src="assets/icons/brands/linkedin.svg">
                 </button>
             </div>
     </section>

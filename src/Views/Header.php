@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo _( 'Sharepicgenerator'); ?></title>
-    <link rel="stylesheet" href="/assets/styles.css?v=<?php echo filemtime('assets/styles.css');?>">
+    <link rel="stylesheet" href="assets/styles.css?v=<?php echo filemtime('assets/styles.css');?>">
 </head>
 
 <body class="<?php echo $body ?? ''; ?>">
     
 <header>
    <nav>
-        <a href="/"><?php echo _('Home');?></a>
-        <a href="/index.php/frontend/create"><?php echo _('Create'); ?></a>
+        <a href="index.php"><?php echo _('Home');?></a>
+        <a href="index.php?c=frontend&m=create"><?php echo _('Create'); ?></a>
 
    </nav>
 

@@ -107,7 +107,8 @@ class Sharepic {
 
 			$this->set_zoom( 1 / $this->size['zoom'] );
 
-			file_put_contents( $this->file, $this->html );
+			$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><script>var create=true;</script></head><body>%s</body></html>';
+			file_put_contents( $this->file, sprintf( $scaffold, $this->html ) );
 		}
 	}
 
@@ -115,6 +116,8 @@ class Sharepic {
 	 * Downloads images and rewrites html
 	 */
 	private function download_images() {
+
+		return;
 		$this->html = str_replace( '&quot;', "'", $this->html );
 
 		preg_match_all( '/url\(\'([^)]+)\'\)/', $this->html, $matches );
@@ -225,10 +228,12 @@ class Sharepic {
 			$path,
 			(int) $this->size['width'],
 			(int) $this->size['height'],
-			escapeshellarg( $this->file )
+			escapeshellarg( $this->config->get( 'Main', 'server' ) . $this->file )
 		);
 
 		exec( $cmd, $output, $return_code );
+
+		$this->logger->access( 'Command executed ' . $cmd );
 
 		if ( 0 !== $return_code ) {
 			$this->logger->error( implode( "\n", $output ) );

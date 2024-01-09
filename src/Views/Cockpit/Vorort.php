@@ -20,7 +20,7 @@
         var element = event.target;
 
         const target = document.getElementById('celebrity');
-        target.style.backgroundImage = "url(/tenants/vorort/celebrities/" + element.value + "?rand=1)"
+        target.style.backgroundImage = "url(tenants/vorort/celebrities/" + element.value + "?rand=1)"
 
         const info = element.options[element.selectedIndex].getAttribute('data-info');
         let parts = info.split("|");

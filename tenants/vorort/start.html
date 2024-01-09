@@ -1,7 +1,6 @@
 <div id="sharepic"
-    style="background-image: url('/dtenants/vorort/start.png?rand=2'); background-color: #005437;; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:800px;border:0;overflow:hidden;"
+    style="background-color: #005437;; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:800px;border:0;overflow:hidden;"
     data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="sharepic">
-    <link rel="stylesheet" href="/tenants/vorort/styles.css?rand=3">
     <div style="    position: absolute; 
                     left: 50px; top:390px; 
                     font-size: 17px;
@@ -9,7 +8,7 @@
                     font-family: 'PT Sans', sans-serif;
                     z-index: 20;
                     " contenteditable="true">
-        mit Vorname Nachname MdL
+        mit Vorname Nachname, MdL
         <br>
         <br>
         <br>
@@ -23,9 +22,9 @@
                 position: absolute; 
                 top: 0px; left: 0px; 
                 width: 380px; height:380px; 
-                background-image: url('/tenants/vorort/logo.svg'); 
-                background-repeat: no-repeat; 
-                background-position: -210px 0px;
+                background-repeat: no-repeat;
+                background-image: url('tenants/vorort/logo.svg');
+                background-position: -210px 4px;
                 background-size:contain;
                 ">
     </div>
@@ -44,15 +43,32 @@
 </div>
 
    
-    <div id="title" class="title"></div>
-    <div id="name" class="name"></div>
-    <div class="claim">VOR ORT</div>
+    <div id="title"></div>
+    <div id="name"></div>
+    <div id="claim">VOR ORT</div>
 
    
     <div id="eyecatcher" style="display:none"></div>
 
     <style>
-        .title, .name, .claim{
+
+        @font-face {
+            font-family: "GrueneType";
+            src: url("assets/fonts/GrueneType.woff2") format("woff2");
+        }
+
+        #sharepic {
+            background-size: cover;
+            width: 500px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-family:  "GrueneType", sans-serif;
+        }
+
+        #title, #name, #claim{
             position: absolute;
             top: 0;
             left: 0;
@@ -60,7 +76,7 @@
         }
 
 
-        .title{
+        #title{
             color: white;
             margin: 0 30px 5px 30px; 
             font-family: "GrueneType", sans-serif;
@@ -69,7 +85,7 @@
             font-size:20px;
         }
 
-        .title::before {
+        #title::before {
             content: "";
             position: absolute;
             top: 3px;
@@ -81,7 +97,7 @@
             z-index: -1;
         }
 
-        .name{
+        #name{
             color: white;
             margin: 0 30px 5px 30px; 
             font-family: "GrueneType", sans-serif;
@@ -90,7 +106,7 @@
             font-size: 37px;
         }
 
-        .name::before {
+        #name::before {
             content: "";
             position: absolute;
             top: 5px;
@@ -102,7 +118,7 @@
             z-index: -1;
         }
 
-        .claim{
+        #claim{
             color: #005437;
             margin: 0 30px 5px 30px;
             font-family: "GrueneType", sans-serif;
@@ -111,7 +127,7 @@
             font-size: 80px;
         }
 
-        .claim::before {
+        #claim::before {
             content: "";
             position: absolute;
             top: 10px;
@@ -122,10 +138,9 @@
             height: calc(100% - 18px);
             z-index: -1;
         }
-
-        @font-face {
-            font-family: "GrueneType";
-            src: url("../../../assets/fonts/GrueneType.woff2") format("woff2");
-        }
     </style>
+
+    <script>
+        
+    </script>
 </div>

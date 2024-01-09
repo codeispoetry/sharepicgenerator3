@@ -308,6 +308,7 @@ class User {
 		try {
 			$stmt->execute();
 		} catch ( \PDOException $e ) {
+			$this->logger->error( 'Could not create for ' . $mail . ': ' . $e->getMessage());
 			return false;
 		}
 
@@ -315,7 +316,7 @@ class User {
 
 		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
 		$server_address = $_SERVER['HTTP_HOST'];
-		$link           = $protocol . $server_address . '/index.php/frontend/reset_password?newpassword=1&token=' . $token;
+		$link           = $protocol . $server_address . '/index.php?c=frontend&m=reset_password?newpassword=1&token=' . $token;
 
 		ob_start();
 		include 'src/Views/Mail/Account_Creation.php';

@@ -2,7 +2,7 @@
 
 class API {
   constructor () {
-    this.api = '/index.php/sharepic/'
+    this.api = 'index.php?c=sharepic'
   }
 
   delete (saving) {
@@ -40,7 +40,7 @@ class API {
       body: JSON.stringify(data)
     }
 
-    fetch(this.api + 'load', options)
+    fetch(this.api + '&m=load', options)
       .then(response => {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
@@ -64,6 +64,12 @@ class API {
           eyecatcher.style.height=window.getComputedStyle(eyecatcher).getPropertyValue('height')
         })
 
+       // Execute script tags
+       let parser = new DOMParser();
+       let doc = parser.parseFromString(data, 'text/html');
+       let script = doc.querySelector('script').innerText;
+       eval(script);
+
         logger.prepare_log_data({})
         logger.log('loads template ' + path)
       })
@@ -81,9 +87,10 @@ class API {
     clonedCanvas.querySelector('.ql-clipboard')?.remove()
     clonedCanvas.querySelector('#patterns')?.remove()
 
-    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="../../../assets/styles.css">\n')
-    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="../../../node_modules/quill/dist/quill.bubble.css">\n')
-    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="../../../tenants/mint/styles.css?rand=250">\n')
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css">\n')
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="node_modules/quill/dist/quill.bubble.css">\n')
+
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../">\n')
 
     const data = {
       data: clonedCanvas.innerHTML,
@@ -112,7 +119,7 @@ class API {
       body: JSON.stringify(data)
     }
 
-    fetch(this.api + 'save', options)
+    fetch(this.api + '&m=save', options)
       .then(response => {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
@@ -157,7 +164,7 @@ class API {
       body: JSON.stringify(this.prepare())
     }
 
-    fetch(this.api + 'create', options)
+    fetch(this.api + '&m=create', options)
       .then(response => {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
@@ -165,11 +172,10 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         const a = document.createElement('a')
-        a.href = '/' + data.path
+        a.href = data.path
         a.download = 'sharepic.png'
         document.body.appendChild(a)
         a.click()
@@ -193,7 +199,7 @@ class API {
     document.querySelector('.file-upload').disabled = true
 
     const xhr = new XMLHttpRequest()
-    xhr.open('POST', this.api + 'upload', true)
+    xhr.open('POST', this.api + '&m=upload', true)
     xhr.upload.onprogress = function (e) {
       if (e.lengthComputable) {
         const percentComplete = Math.round((e.loaded / e.total) * 100)
