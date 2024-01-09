@@ -15,7 +15,7 @@ class Logger {
       ...this.log_data
     }
 
-    fetch('/index.php/felogger/normal/', {
+    fetch('/index.php?c=felogger&m=normal', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

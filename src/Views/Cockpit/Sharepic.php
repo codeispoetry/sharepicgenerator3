@@ -34,12 +34,12 @@
         <h3><?php echo _("Background image"); ?></h3>
         <label style="display:flex; margin-top:20px;">
             <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search query');?>">
-            <button data-click="pixabay.search" style="padding:2px;"><img src="/assets/icons/search.svg"></button>
+            <button data-click="pixabay.search" style="padding:2px;"><img src="assets/icons/search.svg"></button>
         </label>
         
 
         <label style="display:flex; align-items: center;padding:3px;margin-top:2em; width: 160px;" class="file-upload">
-            <img src="/assets/icons/upload.svg"> <?php  echo _('upload image');?>
+            <img src="assets/icons/upload.svg"> <?php  echo _('upload image');?>
             <input type="file" name="upload" id="upload">
         </label>
     </section>
