@@ -23,3 +23,10 @@ Create templates-css-files with
 ```
 npm run de:scss
 ```
+
+## Translation
+```bash
+make translation-prepare
+make translate
+make stop up
+```

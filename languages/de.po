@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-08 11:33+0100\n"
+"POT-Creation-Date: 2024-01-10 07:59+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -88,11 +88,11 @@ msgstr "Ausloggen"
 msgid "You have been logged out."
 msgstr "Du bist ausgeloggt."
 
-#: src/Controllers/User.php:326
+#: src/Controllers/User.php:327
 msgid "Account created"
 msgstr "Account erstellt"
 
-#: src/Controllers/User.php:384
+#: src/Controllers/User.php:385
 msgid "Password Reset"
 msgstr "Passwort zurücksetzen"
 
@@ -129,19 +129,19 @@ msgstr "Passwort vergessen?"
 msgid "Already registered?"
 msgstr "Bereits registriert?"
 
-#: src/Views/Header.php:14 src/Views/Menu.php:2
+#: src/Views/Header.php:15 src/Views/Menu.php:2
 msgid "Home"
 msgstr "Startseite"
 
-#: src/Views/Header.php:15
+#: src/Views/Header.php:16
 msgid "Create"
 msgstr "Gestalten"
 
-#: src/Views/Header.php:20
+#: src/Views/Header.php:21
 msgid "Imprint"
 msgstr "Impressum"
 
-#: src/Views/Header.php:22
+#: src/Views/Header.php:23
 msgid "Privacy"
 msgstr "Datenschutz"
 
@@ -219,6 +219,18 @@ msgstr "löschen"
 msgid "Total size"
 msgstr "Gesamtgröße"
 
+#: src/Views/Cockpit/Vorort.php:2
+msgid "Vor Ort"
+msgstr ""
+
+#: src/Views/Cockpit/Vorort.php:4
+msgid "Guest"
+msgstr "Gast"
+
+#: src/Views/Cockpit/Vorort.php:6
+msgid "please choose"
+msgstr "bitte wählen"
+
 #: src/Views/Cockpit/Logo.php:2
 msgid "Logo"
 msgstr "Logo"
@@ -263,11 +275,7 @@ msgstr "Vorlagen"
 msgid "latest"
 msgstr "letztes"
 
-#: src/Views/Menu.php:13
-msgid "Mint"
-msgstr "Mint"
-
-#: src/Views/Menu.php:23
+#: src/Views/Menu.php:28
 msgid "My sharepics"
 msgstr "Meine Sharepics"
 
@@ -336,6 +344,9 @@ msgstr "Bist Du sicher?"
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
 msgstr "Die Bilder stammen von "
+
+#~ msgid "Mint"
+#~ msgstr "Mint"
 
 #~ msgid "Reset background"
 #~ msgstr "Hintergrund einpassen"
