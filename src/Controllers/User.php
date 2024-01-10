@@ -71,6 +71,7 @@ class User {
 			return true;
 		}
 
+
 		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
 			return false;
 		}

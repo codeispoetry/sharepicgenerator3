@@ -158,8 +158,10 @@ class Frontend {
 	 * The home page.
 	 */
 	public function index() {
-		$body = 'home';
-		include_once './src/Views/Home.php';
+		global $config;
+		$body     = 'home';
+		$template = ( 'greens' === $config->get( 'Main', 'authenticator' ) ) ? 'Home-Greens' : 'Home';
+		include_once './src/Views/' . $template . '.php';
 	}
 
 	/**

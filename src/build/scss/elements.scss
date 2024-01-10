@@ -26,23 +26,6 @@ button{
         cursor: wait !important;
     }
 
-    &.flat{
-        background-color: $theme-color;
-        border: none;
-        color: white;
-        padding: 7px 16px;
-        text-align: center;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 16px;
-    }
-
-    &:hover {
-        background-color: $theme-color-dark;
-    }
-
     &.to-front,
     &.delete{
         background-size: contain;
@@ -68,6 +51,25 @@ button{
         &.delete{
             background-image: url(assets/icons/delete.svg);
         }
+    }
+}
+
+button,a{
+    &.flat{
+        background-color: $theme-color;
+        border: none;
+        color: white;
+        padding: 7px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    &:hover {
+        background-color: $theme-color-dark;
     }
 }
 
