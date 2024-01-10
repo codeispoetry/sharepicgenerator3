@@ -19,7 +19,7 @@ chmod 777 data/users.db
 
 Create a config-file from config.iniSAMPLE.
 
-Create tenants-css-files with
+Create templates-css-files with
 ```
 npm run de:scss
 ```

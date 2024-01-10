@@ -27,7 +27,7 @@ class API {
       .catch((error) => console.error('Error:', error))
   }
 
-  load (path = 'tenants/mint/start.html') {
+  load (path = 'templates/mint/start.html') {
     const data = {
       template: path
     }

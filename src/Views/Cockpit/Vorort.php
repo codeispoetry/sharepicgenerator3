@@ -5,7 +5,7 @@
         <select id="celebrity">
             <option><?php  echo _('please choose');?></option>
         <?php
-        $celebs = parse_ini_file("tenants/vorort/celebrities/celebrities.ini", true);
+        $celebs = parse_ini_file("templates/vorort/celebrities/celebrities.ini", true);
         foreach ($celebs as $image => $celeb) {
             printf('<option value="%s" data-info="%s">%s</option>', $image, $celeb['description'], $celeb['name']);
         }
@@ -20,7 +20,7 @@
         var element = event.target;
 
         const target = document.getElementById('celebrity');
-        target.style.backgroundImage = "url(tenants/vorort/celebrities/" + element.value + "?rand=1)"
+        target.style.backgroundImage = "url(templates/vorort/celebrities/" + element.value + "?rand=1)"
 
         const info = element.options[element.selectedIndex].getAttribute('data-info');
         let parts = info.split("|");

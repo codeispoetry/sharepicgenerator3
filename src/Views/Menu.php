@@ -12,13 +12,13 @@
             ?>
             <?php
             /*
-            <button data-load="tenants/mint/start.html"><?php  echo _('Mint');?></button>
-            <button data-load="tenants/vorort/start.html"><?php  echo _('Vor Ort');?></button>
+            <button data-load="templates/mint/start.html"><?php  echo _('Mint');?></button>
+            <button data-load="templates/vorort/start.html"><?php  echo _('Vor Ort');?></button>
             */
             ?>
             <?php
                 foreach( $this->user->get_tenants() as $tenant ) {
-                    printf( '<button data-load="tenants/%s/start.html">%s</button>', $tenant, ucfirst( $tenant ) );
+                    printf( '<button data-load="templates/%s/start.html">%s</button>', $tenant, ucfirst( $tenant ) );
                 }
             ?>
         </div>

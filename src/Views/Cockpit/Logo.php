@@ -10,8 +10,8 @@
     <section>
         <h3>Farbe</h3>
         <select id="logo_file">
-            <option value="/tenants/de/logo.svg">gelb</option>
-            <option value="/tenants/de/logo-grashalm.svg">grün</option>
+            <option value="templates/de/logo.svg">gelb</option>
+            <option value="templates/de/logo-grashalm.svg">grün</option>
         </select>
     </section>
 
