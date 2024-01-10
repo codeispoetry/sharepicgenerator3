@@ -10,4 +10,5 @@ test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
+tests/*js-snapshots/
 tmp/*

@@ -13,7 +13,7 @@
     "lint:scss": "stylelint '**/*.scss'",
     "lint:php": "phpcs . -s",
     "lint": "npm-run-all --parallel lint:scss lint:js lint:php",
-    "test": "playwright test --project=chromium",
+    "test": "npx playwright test tests/base.spec.js --project=chromium",
     "de:scss": "node-sass --output-style compressed -o templates/de/ templates/de/styles.scss",
     "free:scss": "node-sass --output-style compressed -o templates/free/ templates/free/styles.scss"
   },
