@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-10 07:59+0100\n"
+"POT-Creation-Date: 2024-01-11 12:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,23 +73,23 @@ msgstr ""
 msgid "Your password has been reset. Please login."
 msgstr ""
 
-#: src/Controllers/Frontend.php:152 src/Views/Creator.php:43
+#: src/Controllers/Frontend.php:154 src/Views/Creator.php:43
 msgid "Logout"
 msgstr ""
 
-#: src/Controllers/Frontend.php:153
+#: src/Controllers/Frontend.php:155
 msgid "You have been logged out."
 msgstr ""
 
-#: src/Controllers/User.php:327
+#: src/Controllers/User.php:437
 msgid "Account created"
 msgstr ""
 
-#: src/Controllers/User.php:385
+#: src/Controllers/User.php:495
 msgid "Password Reset"
 msgstr ""
 
-#: src/Views/Home.php:4 src/Views/Header.php:6
+#: src/Views/Home.php:4 src/Views/Header.php:6 src/Views/Home-Greens.php:4
 msgid "Sharepicgenerator"
 msgstr ""
 
@@ -102,6 +102,7 @@ msgid ""
 msgstr ""
 
 #: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
+#: src/Views/Home-Greens.php:14
 msgid "Login"
 msgstr ""
 
@@ -275,7 +276,7 @@ msgstr ""
 msgid "password"
 msgstr ""
 
-#: src/Views/Components/Forms/Login.php:4
+#: src/Views/Components/Forms/Login.php:4 src/Views/Home-Greens.php:17
 msgid "login"
 msgstr ""
 
@@ -329,4 +330,14 @@ msgstr ""
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
+msgstr ""
+
+#: src/Views/Home-Greens.php:7
+msgid ""
+"Create sharepics for your social media channels in the layout of the German "
+"Green Party."
+msgstr ""
+
+#: src/Views/Home-Greens.php:21
+msgid "Login as guest"
 msgstr ""

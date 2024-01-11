@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-10 07:59+0100\n"
+"POT-Creation-Date: 2024-01-11 12:51+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -80,23 +80,23 @@ msgstr "Passwort zurücksetzen"
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/Frontend.php:152 src/Views/Creator.php:43
+#: src/Controllers/Frontend.php:154 src/Views/Creator.php:43
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: src/Controllers/Frontend.php:153
+#: src/Controllers/Frontend.php:155
 msgid "You have been logged out."
 msgstr "Du bist ausgeloggt."
 
-#: src/Controllers/User.php:327
+#: src/Controllers/User.php:437
 msgid "Account created"
 msgstr "Account erstellt"
 
-#: src/Controllers/User.php:385
+#: src/Controllers/User.php:495
 msgid "Password Reset"
 msgstr "Passwort zurücksetzen"
 
-#: src/Views/Home.php:4 src/Views/Header.php:6
+#: src/Views/Home.php:4 src/Views/Header.php:6 src/Views/Home-Greens.php:4
 msgid "Sharepicgenerator"
 msgstr "Sharepicgenerator"
 
@@ -114,6 +114,7 @@ msgstr ""
 "Anzeigen und mehr zu erstellen."
 
 #: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
+#: src/Views/Home-Greens.php:14
 msgid "Login"
 msgstr "Einloggen"
 
@@ -289,7 +290,7 @@ msgstr "Benutzer*innenname"
 msgid "password"
 msgstr "Passwort"
 
-#: src/Views/Components/Forms/Login.php:4
+#: src/Views/Components/Forms/Login.php:4 src/Views/Home-Greens.php:17
 msgid "login"
 msgstr "einloggen"
 
@@ -344,6 +345,17 @@ msgstr "Bist Du sicher?"
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
 msgstr "Die Bilder stammen von "
+
+#: src/Views/Home-Greens.php:7
+msgid ""
+"Create sharepics for your social media channels in the layout of the German "
+"Green Party."
+msgstr ""
+
+#: src/Views/Home-Greens.php:21
+#, fuzzy
+msgid "Login as guest"
+msgstr "Als Gast einloggen"
 
 #~ msgid "Mint"
 #~ msgstr "Mint"

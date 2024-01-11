@@ -100,12 +100,12 @@ class CLI {
 	 * @param string $password The password.
 	 */
 	public function create_user( $username, $password ) {
-		$user    = new User( $username );
+		$user   = new User( $username );
 		$result = $user->register( $username );
 
 		if ( empty( $result ) ) {
 			echo "User $username could not be created.\n";
-			exit(1);
+			exit( 1 );
 		}
 
 		$token = $user->get_token_for_user( $username );

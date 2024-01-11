@@ -17,6 +17,9 @@
 				<?php  echo _('login');?>
 			</a>
 
+			<a href="index.php?self=true">
+				<?php  echo _('Login as guest');?>
+			</a>
 		</div>
 	
 	</div>	

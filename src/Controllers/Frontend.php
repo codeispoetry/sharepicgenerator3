@@ -149,6 +149,8 @@ class Frontend {
 	 */
 	public function logout() {
 		$this->user->logout();
+		setcookie( 'authenticator', '', time() - 3600, '/' );
+
 		$title   = _( 'Logout' );
 		$message = _( 'You have been logged out.' );
 		include_once './src/Views/Hero.php';

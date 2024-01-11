@@ -38,5 +38,16 @@ class Config {
 		return $this->config[ $section ][ $key ];
 	}
 
+	/**
+	 * Setter for the config array.
+	 *
+	 * @param string $section The section of the config.
+	 * @param string $key The key of the config.
+	 * @param string $value The value of the config.
+	 */
+	public function set( $section, $key, $value ) {
+		$this->config[ $section ][ $key ] = $value;
+	}
+
 
 }
