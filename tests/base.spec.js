@@ -25,7 +25,7 @@ test('login', async ({ page }) => {
  // Delete user
  exec('php cli.php delete ' + config.user.name, (error, stdout, stderr) => {
   if (error) {
-   throw new Error(stdout + ' ' + stderr');
+   throw new Error(stdout + ' ' + stderr);
   }
   });
 
