@@ -105,16 +105,19 @@ class CLI {
 
 		if ( empty( $result ) ) {
 			echo "User $username could not be created.\n";
+			exit(1);
 		}
 
 		$token = $user->get_token_for_user( $username );
 		if ( empty( $token ) ) {
 			echo "Token for user $username could not be retrieved.\n";
+			exit( 1 );
 		}
 
 		$result = $user->set_password( $token, $password );
 		if ( empty( $result ) ) {
 				echo "The password for $username could not be set.\n";
+				exit( 1 );
 		}
 	}
 }
