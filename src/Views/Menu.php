@@ -1,5 +1,5 @@
 <nav>
-    <a href="/"><?php  echo _('Home');?></a>
+    <a href="index.php"><?php  echo _('Home');?></a>
 
     <div class="dropdown">
         <span><?php echo _( 'Templates' ); ?></span>

@@ -97,9 +97,9 @@
     const config = {
         'pixabay': {
             'apikey': '<?php echo $this->config->get( 'Pixabay', 'apikey' ); ?>'
-        }
+        },
+		'url': '<?php echo $this->config->get( 'Main', 'url' ); ?>',
 	};
-
 	
 	const lang = {
 		'Are you sure?': '<?php echo _( 'Are you sure?') ?>'

@@ -47,12 +47,10 @@ class Felogger {
 			'data' => join( ' ', $data ),
 		);
 
-		if ( ! is_writable( $file ) ) {
+		if ( ! file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX ) ) {
 			$this->logger->error( 'FrontendLogger error: ' . $file . ' could not be written.' );
 			$this->http_error( 'Could not log normal behaviour.' );
 		}
-
-		file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX );
 	}
 
 

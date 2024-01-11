@@ -2,7 +2,7 @@
 
 class API {
   constructor () {
-    this.api = 'index.php?c=sharepic'
+    this.api = config.url + '/index.php?c=sharepic'
   }
 
   delete (saving) {
@@ -10,7 +10,7 @@ class API {
       saving
     }
 
-    fetch('index.php?c=sharepic&m=delete', {
+    fetch(this.api + '&m=delete', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -23,7 +23,9 @@ class API {
         }
         return response.text()
       })
-      .then(data => { console.log(data) })
+      .then(data => { 
+        logger.log('deleted sharepic ' + saving )
+      })
       .catch((error) => console.error('Error:', error))
   }
 
@@ -39,12 +41,12 @@ class API {
       },
       body: JSON.stringify(data)
     }
-
     fetch(this.api + '&m=load', options)
       .then(response => {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }
+        console.log("Load", response)
         return response.text()
       })
       .then(data => {
@@ -52,13 +54,13 @@ class API {
         document.querySelectorAll('.server-only').forEach(element => {
           element.remove()
         })
+
         registerDraggableItems()
         select.setup()
         cockpit.setup_sharepic()
         rte.init()
         sg.init()
         document.getElementById("adder").style.display = "block";
-
 
         document.getElementById('eyecatcher').addEventListener('input', function(event) {
           const eyecatcher = document.getElementById('eyecatcher');
@@ -72,8 +74,9 @@ class API {
        let script = doc.querySelector('script').innerText;
        eval(script);
 
-        logger.prepare_log_data({})
-        logger.log('loads template ' + path)
+       logger.prepare_log_data({})
+
+      logger.log('loads template ' + path)
       })
       .catch(error => console.error('Error:', error))
   }
@@ -123,13 +126,13 @@ class API {
 
     fetch(this.api + '&m=save', options)
       .then(response => {
+        console.log("Save", response)
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
       
         const mySharepics = document.querySelector('#my-sharepics');
@@ -150,6 +153,8 @@ class API {
 
         document.querySelector('.save').disabled = false
         document.querySelector('.save').classList.remove('waiting')
+
+        logger.log('saved sharepic ' + name)
       })
       .catch(error => console.error('Error:', error))
   }
@@ -168,16 +173,18 @@ class API {
 
     fetch(this.api + '&m=create', options)
       .then(response => {
+        console.log("Create", response)
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }
         return response.text()
       })
       .then(data => {
+        console.log("Create data", data)
         data = JSON.parse(data)
 
         const a = document.createElement('a')
-        a.href = data.path
+        a.href = config.url + '/' + data.path
         a.download = 'sharepic.png'
         document.body.appendChild(a)
         a.click()
@@ -220,6 +227,8 @@ class API {
       }
 
       document.querySelector('.file-upload').disabled = false
+
+      logger.log('uploaded file')
     }
     xhr.onerror = function () {
       console.error('Error:', this.status, this.statusText)

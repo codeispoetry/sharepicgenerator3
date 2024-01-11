@@ -63,64 +63,131 @@ class User {
 	/**
 	 * Log the user in.
 	 *
+	 * @throws \Exception If the authenticator method does not exist.
 	 * @return bool True if the user is logged in.
 	 */
 	public function login() {
+		global $config;
+
 		// See, if user is already logged in.
 		if ( $this->get_user_by_token() ) {
 			return true;
 		}
 
+		$authenticator = 'authenticate_' . $config->get( 'Main', 'authenticator' );
+		if ( ! method_exists( $this, $authenticator ) ) {
+			throw new \Exception( "Method $authenticator does not exist" );
+		}
+
+		$user = $this->$authenticator();
+		if ( ! $user ) {
+			return false;
+		}
+
+		$this->role     = $user['role'];
+		$this->username = $user['username'];
+		$this->set_tenants( $user['id'] );
+		$this->create_user_space();
+		if ( ! $this->set_token() ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Authenticates using own database.
+	 *
+	 * @return bool|array False if the user is not authenticated, else the user array.
+	 */
+	private function authenticate_self() {
+		$user = $this->get_user_array( $_POST['username'] );
+
+		if ( ! $user ) {
+			return false;
+		}
 
 		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
 			return false;
 		}
 
-		$username = $_POST['username'];
-
-		// Check password.
-		$stmt = $this->db->prepare( 'SELECT * FROM users WHERE username = :username' );
-		$stmt->bindParam( ':username', $username );
-		$stmt->execute();
-		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
-
-		if ( ! $result ) {
-			$this->logger->error( "user $username not found" );
+		if ( ! password_verify( $_POST['password'], $user['password'] ) ) {
+			$this->logger->error( "user {$user['username']} wrong password" );
 			return false;
 		}
 
-		if ( ! password_verify( $_POST['password'], $result['password'] ) ) {
-			$this->logger->error( "user $username wrong password" );
-			return false;
+		return $user;
+	}
+
+	/**
+	 * Authenticates using the green's SSO.
+	 *
+	 * @return bool|array False if the user is not authenticated, else the user array.
+	 */
+	private function authenticate_greens() {
+		require_once '/var/simplesaml/lib/_autoload.php';
+
+		$as = new \SimpleSAML_Auth_Simple( 'default-sp' );
+		$as->requireAuth();
+
+		$saml_attributes = $as->getAttributes();
+		$username        = strToLower( $saml_attributes['uid'][0] );
+		$user            = $this->get_user_array( $username );
+
+		// Create user in db, if it does not exist.
+		if ( false === $user ) {
+			$password = bin2hex( random_bytes( 16 ) ); // no one will ever see this password.
+			$token    = bin2hex( random_bytes( 16 ) );
+
+			$sql = 'INSERT INTO users ( username,password,token ) VALUES (:username, :password, :token)';
+
+			$stmt = $this->db->prepare( $sql );
+			$stmt->bindParam( ':username', $username );
+			$stmt->bindParam( ':password', $password );
+			$stmt->bindParam( ':token', $token );
+			$stmt->execute();
+
+			if ( $stmt->rowCount() === 0 ) {
+				$this->logger->error( "could not create greens-sso user for {$username}" );
+				return false;
+			}
+
+			$user = $this->get_user_array( $username );
+			$this->logger->access( "greens-sso user {$username} created" );
 		}
 
-		$this->role = $result['role'];
+		return $user;
 
-		$stmt = $this->db->prepare( 'SELECT * FROM tenants JOIN userstenants WHERE tenantID = id AND userID = :userid' );
-		$stmt->bindParam( ':userid', $result['id'] );
-		$stmt->execute();
-		$tenants = $stmt->fetchAll( \PDO::FETCH_ASSOC );
+	}
 
-		foreach ( $tenants as $tenant ) {
-			$this->tenants[] = $tenant['tenant'];
+	/**
+	 * Creates user space, if it does not exist.
+	 *
+	 * @return void
+	 */
+	private function create_user_space() {
+		$user_dir = 'users/' . $this->username . '/workspace';
+		if ( ! file_exists( $user_dir ) ) {
+			mkdir( $user_dir, 0777, true );
 		}
+	}
 
-		// Set token.
+
+	/**
+	 * Sets the bearer token for a user in the database and as cookie.
+	 *
+	 * @return bool True if the token was set.
+	 */
+	private function set_token() {
 		$bearer_token = uniqid( 'sg', true );
 		$stmt         = $this->db->prepare( 'UPDATE users SET token = :token WHERE username = :username' );
 		$stmt->bindParam( ':token', $bearer_token );
-		$stmt->bindParam( ':username', $username );
+		$stmt->bindParam( ':username', $this->username );
 		$stmt->execute();
 
 		if ( $stmt->rowCount() === 0 ) {
-			$this->logger->error( "could not set bearer token for $username" );
+			$this->logger->error( "could not set bearer token for {$this->username}" );
 			return false;
-		}
-
-		$this->username = $username;
-		$user_dir       = 'users/' . $this->username . '/workspace';
-		if ( ! file_exists( $user_dir ) ) {
-			mkdir( $user_dir, 0777, true );
 		}
 
 		setcookie(
@@ -136,6 +203,43 @@ class User {
 		);
 
 		return true;
+	}
+
+	/**
+	 * Sets the tenants for a user.
+	 *
+	 * @param int $user_id The user id.
+	 * @return void
+	 */
+	private function set_tenants( $user_id ) {
+		$stmt = $this->db->prepare( 'SELECT * FROM tenants JOIN userstenants WHERE tenantID = id AND userID = :userId' );
+		$stmt->bindParam( ':userId', $user_id );
+		$stmt->execute();
+		$tenants = $stmt->fetchAll( \PDO::FETCH_ASSOC );
+
+		foreach ( $tenants as $tenant ) {
+			$this->tenants[] = $tenant['tenant'];
+		}
+	}
+
+	/**
+	 * Gets a user array from the database.
+	 *
+	 * @param string $username The username.
+	 * @return array|bool The user object or false.
+	 */
+	private function get_user_array( $username ) {
+		$stmt = $this->db->prepare( 'SELECT * FROM users WHERE username = :username' );
+		$stmt->bindParam( ':username', $username );
+		$stmt->execute();
+		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
+
+		if ( ! $result ) {
+			$this->logger->error( "user $username not found" );
+			return false;
+		}
+
+		return $result;
 	}
 
 	/**
@@ -309,11 +413,16 @@ class User {
 		try {
 			$stmt->execute();
 		} catch ( \PDOException $e ) {
-			$this->logger->error( 'Could not create for ' . $mail . ': ' . $e->getMessage());
+			$this->logger->error( 'Could not create for ' . $mail . ': ' . $e->getMessage() );
 			return false;
 		}
 
 		$this->logger->access( 'Account created for ' . $mail );
+
+		// Do not send e-mails, while from cli.
+		if ( 'cli' === php_sapi_name() ) {
+			return true;
+		}
 
 		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
 		$server_address = $_SERVER['HTTP_HOST'];

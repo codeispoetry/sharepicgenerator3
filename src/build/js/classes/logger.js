@@ -15,7 +15,7 @@ class Logger {
       ...this.log_data
     }
 
-    fetch('/index.php?c=felogger&m=normal', {
+    fetch( config.url + '/index.php?c=felogger&m=normal', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -23,6 +23,7 @@ class Logger {
       body: JSON.stringify(payload)
     })
       .then(response => {
+        console.log("Logger", response)
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }

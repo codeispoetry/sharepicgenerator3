@@ -26,7 +26,9 @@
         let parts = info.split("|");
 
         document.getElementById('title').innerHTML = parts[0];
-        document.getElementById('name').innerHTML = parts[1];       
+        document.getElementById('name').innerHTML = parts[1];
+        
+        logger.log('vor ort: used ' + element.value )
     });
 
 </script>
