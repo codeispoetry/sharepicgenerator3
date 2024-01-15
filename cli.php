@@ -34,6 +34,21 @@ if ( 'create' === $command ) {
 	$cli->create_user( $user, $password );
 }
 
+if ( 'set_role' === $command ) {
+	$user = @$argv[2];
+	$role = @$argv[3];
+
+	if ( empty( $user ) || empty( $role ) ) {
+		die( "Usage: php cli.php set_role <user> <role>\n" );
+	}
+
+	$result = $cli->set_role( $user, $role );
+
+	if ( $result ) {
+		echo "The role for $user was set to $role.\n";
+	}
+}
+
 
 
 /**
@@ -119,5 +134,30 @@ class CLI {
 				echo "The password for $username could not be set.\n";
 				exit( 1 );
 		}
+	}
+
+	/**
+	 * Set a user's role, e.g. admin.
+	 *
+	 * @param string $username The user.
+	 * @param string $role The role.
+	 */
+	public function set_role( $username, $role ) {
+		if ( empty( $role ) || empty( $username ) ) {
+			echo "Please provide username and role.\n";
+			return false;
+		}
+
+		$stmt = $this->db->prepare( 'UPDATE users SET role = :role WHERE username = :username' );
+		$stmt->bindParam( ':role', $role );
+		$stmt->bindParam( ':username', $username );
+		$result = $stmt->execute();
+
+		if ( empty( $result ) ) {
+				echo "The role for $username could not be set.\n";
+				exit( 1 );
+		}
+
+		return true;
 	}
 }
