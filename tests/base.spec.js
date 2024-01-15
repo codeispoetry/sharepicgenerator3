@@ -5,38 +5,39 @@ const { exec } = require('child_process');
 const fs = require('fs');
 const PNG = require('pngjs').PNG;
 const pixelmatch = require('pixelmatch');
+const { setUncaughtExceptionCaptureCallback } = require('process');
 
 test('login', async ({ page }) => {
   const config = {
-    url: 'http://localhost:9500',
+    url: {
+      local: 'http://localhost:9500',
+      remote: 'https://develop.sharepicgenerator.de/3'
+    },
     user: {
-      name: 'mail@domain.com',
-      password: 'test',
+      name: 'mail@tom-rose.de',
+      password: 'geheim',
     },
     save: {
       name: 'test_' + Math.random().toString(36).substring(3, 8),
     }
   }
 
+  const mode = 'remote' // local | remote
+  
   page.on('pageerror', exception => {
     throw new Error(`Uncaught exception: "${exception}"`)
   })
 
- // Delete user
- exec('php cli.php delete ' + config.user.name, (error, stdout, stderr) => {
-  if (error) {
-   throw new Error(stdout + ' ' + stderr);
+  switch (mode) {
+    case 'remote':
+      await page.goto(config.url.remote)
+      await page.getByRole('link', { name: 'Login as guest' }).click();
+      break;
+    default:    
+      prepare_local_user(config)
+      await page.goto(config.url.local)
   }
-  });
-
-  // Create user
-  exec('php cli.php create ' + config.user.name + ' ' + config.user.password, (error, stdout, stderr) => {
-    if (error) {
-     throw new Error(stdout + ' ' + stderr);
-    }
-  });
-
-  await page.goto(config.url)
+  
 
   // Login
   await page.getByRole('textbox', { name: 'username' }).fill('mail@tom-rose.de');
@@ -62,6 +63,8 @@ test('login', async ({ page }) => {
  
   // Reload page
   await page.reload();
+
+  await page.waitForTimeout(1000);
  
   // Load save sharepic
   await page.getByText('My sharepics').hover();
@@ -98,3 +101,19 @@ test('login', async ({ page }) => {
   await page.getByRole('link', { name: 'Logout' }).click();
 
 })
+
+function prepare_local_user(config){
+  // Delete user
+ exec('php cli.php delete ' + config.user.name, (error, stdout, stderr) => {
+  if (error) {
+   throw new Error(stdout + ' ' + stderr);
+  }
+  });
+
+  // Create user
+  exec('php cli.php create ' + config.user.name + ' ' + config.user.password, (error, stdout, stderr) => {
+    if (error) {
+     throw new Error(stdout + ' ' + stderr);
+    }
+  });
+}
