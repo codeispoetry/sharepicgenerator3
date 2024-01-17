@@ -11,7 +11,12 @@
         }
         ?>
         </select>
-      
+    </section>
+    <h2><?php  echo _('Text');?></h2>
+    <section>
+        <?php
+            echo _('Please edit the text directly in the image.');
+        ?>
     </section>
 </section>
 

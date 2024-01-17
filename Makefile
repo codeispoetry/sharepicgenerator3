@@ -27,6 +27,9 @@ deploy-develop:
 deploy-gruene-develop:
 	rsync -avz --delete assets node_modules/quill/dist index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/develop.sharepicgenerator.de/version3
 
+deploy-gruene:
+	rsync -avz --delete assets node_modules/quill/dist index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/sharepicgenerator.de/version3
+
 create-pot:
 	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot
 

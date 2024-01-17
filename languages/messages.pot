@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-11 12:51+0100\n"
+"POT-Creation-Date: 2024-01-17 09:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,11 +73,11 @@ msgstr ""
 msgid "Your password has been reset. Please login."
 msgstr ""
 
-#: src/Controllers/Frontend.php:154 src/Views/Creator.php:43
+#: src/Controllers/Frontend.php:162 src/Views/Creator.php:43
 msgid "Logout"
 msgstr ""
 
-#: src/Controllers/Frontend.php:155
+#: src/Controllers/Frontend.php:163
 msgid "You have been logged out."
 msgstr ""
 
@@ -220,12 +220,16 @@ msgstr ""
 msgid "please choose"
 msgstr ""
 
-#: src/Views/Cockpit/Logo.php:2
-msgid "Logo"
+#: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
+msgid "Text"
 msgstr ""
 
-#: src/Views/Cockpit/Freetext.php:2
-msgid "Text"
+#: src/Views/Cockpit/Vorort.php:18
+msgid "Please edit the text directly in the image."
+msgstr ""
+
+#: src/Views/Cockpit/Logo.php:2
+msgid "Logo"
 msgstr ""
 
 #: src/Views/Cockpit/Addpicture.php:2 src/Views/Creator.php:69
