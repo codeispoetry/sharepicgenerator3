@@ -5,14 +5,8 @@
 			<h1><?php echo _('Latest sharepics'); ?></h1>
 			<p>
                 <?php
-					$files = glob('./tmp/*.{jpg,png,gif}', GLOB_BRACE);
-
-					usort($files, function($a, $b) {
-						return ( filemtime($a) < filemtime($b) ) ? 1 : -1;
-					});
-
                     foreach($files as $file) {
-						echo '<img src="/' . $file . '" style="margin: 10px;">';
+						echo '<img src="' . $file . '" style="margin: 10px;">';
 					}
                 ?>
             </p>

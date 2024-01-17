@@ -138,8 +138,16 @@ class Frontend {
 			$this->no_access();
 		}
 
-		$cmd = 'find /tmp -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.gif" \) -mtime +7 -exec rm -f {} \;';
-		exec( $cmd, $output, $return_var );
+		// $cmd = 'find /tmp -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.gif" \) -mtime +7 -exec rm -f {} \;';
+		// exec( $cmd, $output, $return_var );
+		$files = glob( './tmp/*.{jpg,png,gif}', GLOB_BRACE );
+
+		usort(
+			$files,
+			function( $a, $b ) {
+				return ( filemtime( $a ) < filemtime( $b ) ) ? 1 : -1;
+			}
+		);
 
 		include_once './src/Views/Logs/Sharepics.php';
 	}
