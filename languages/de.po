@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-17 09:02+0100\n"
+"POT-Creation-Date: 2024-01-17 09:19+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Poedit 3.4.1\n"
 
 #: src/Controllers/Frontend.php:51 src/Controllers/Frontend.php:57
-#: src/Views/Home.php:17 src/Views/Home.php:24
+#: src/Views/Home.php:17 src/Views/Home.php:26
 msgid "Register"
 msgstr "Registrierung"
 
@@ -72,7 +72,7 @@ msgstr ""
 "Dein Passwort konnte nicht gesetzt werden. Hast Du es zwei Mal gleich "
 "eingegeben?"
 
-#: src/Controllers/Frontend.php:114 src/Views/Home.php:32
+#: src/Controllers/Frontend.php:114 src/Views/Home.php:34
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
@@ -113,7 +113,7 @@ msgstr ""
 "Du kannst ihn auch verwenden, um Bilder für deine Blog-Beiträge, Facebook-"
 "Anzeigen und mehr zu erstellen."
 
-#: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
+#: src/Views/Home.php:14 src/Views/Home.php:29 src/Views/Home.php:37
 #: src/Views/Home-Greens.php:14
 msgid "Login"
 msgstr "Einloggen"
@@ -126,7 +126,11 @@ msgstr "Noch nicht registriert?"
 msgid "Forgot password?"
 msgstr "Passwort vergessen?"
 
-#: src/Views/Home.php:26 src/Views/Home.php:34
+#: src/Views/Home.php:21
+msgid "Login with Gr&uuml;nes Netz"
+msgstr "Mit Grünem Netz einloggen"
+
+#: src/Views/Home.php:28 src/Views/Home.php:36
 msgid "Already registered?"
 msgstr "Bereits registriert?"
 
@@ -352,7 +356,8 @@ msgstr "Die Bilder stammen von "
 
 #: src/Views/Home-Greens.php:7
 msgid ""
-"Create sharepics for your social media channels in the layout of the German Green Party."
+"Create sharepics for your social media channels in the layout of the German "
+"Green Party."
 msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen."
 
 #: src/Views/Home-Greens.php:21

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-17 09:02+0100\n"
+"POT-Creation-Date: 2024-01-17 09:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/Controllers/Frontend.php:51 src/Controllers/Frontend.php:57
-#: src/Views/Home.php:17 src/Views/Home.php:24
+#: src/Views/Home.php:17 src/Views/Home.php:26
 msgid "Register"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Your password could not be set. Did you repeat it correctly?"
 msgstr ""
 
-#: src/Controllers/Frontend.php:114 src/Views/Home.php:32
+#: src/Controllers/Frontend.php:114 src/Views/Home.php:34
 msgid "Password reset"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgid ""
 "create images for your blog posts, Facebook ads, and more."
 msgstr ""
 
-#: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
+#: src/Views/Home.php:14 src/Views/Home.php:29 src/Views/Home.php:37
 #: src/Views/Home-Greens.php:14
 msgid "Login"
 msgstr ""
@@ -114,7 +114,11 @@ msgstr ""
 msgid "Forgot password?"
 msgstr ""
 
-#: src/Views/Home.php:26 src/Views/Home.php:34
+#: src/Views/Home.php:21
+msgid "Login with Gr&uuml;nes Netz"
+msgstr ""
+
+#: src/Views/Home.php:28 src/Views/Home.php:36
 msgid "Already registered?"
 msgstr ""
 

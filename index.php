@@ -27,8 +27,10 @@ if ( isset( $_GET['self'] ) ) {
 	$config->set( 'Main', 'authenticator', 'self' );
 }
 
-if ( isset( $_GET['green-sso'] ) ) {
+if ( isset( $_GET['auth'] ) && 'auto' === $_GET['auth'] ) {
 	setcookie( 'authenticator', '', time() - 3600 );
+	header( 'Location: index.php' );
+	die();
 }
 
 if ( isset( $_COOKIE['authenticator'] ) ) {

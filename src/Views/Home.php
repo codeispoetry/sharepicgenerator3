@@ -17,6 +17,8 @@
 				echo ' <a href="#" onclick="showRegisterBox();">'._('Register').'</a>';
 				echo '<br>';
 				echo ' <a href="#" onclick="showPasswordBox();">'._('Forgot password?').'</a>';
+				echo '<br>';
+				echo ' <a href="index.php?auth=auto"">'._('Login with Gr&uuml;nes Netz').'</a>';
 			?>
 		</div>
 		<div id="registerbox" style="display: none">
