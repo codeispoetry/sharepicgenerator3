@@ -1,15 +1,223 @@
-<div id="sharepic" style="background-image: url('templates/de/start.jpg'); background-color: #ffffff; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;" data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="sharepic">
-	<link rel="stylesheet" href="templates/de/styles.css?rand=2">
-	<div id="greentext" class="text draggable selectable" data-cockpit="greentext" style="z-index:3; left: 520px; top: 100px; font-size: 20px;">
-		<p class="tannesand">DE in Streifen</p>
-		<p class="tannesand">Die Grünen</p>
-	</div>
-	<div class="eyecatcher draggable selectable" data-cockpit="eyecatcher" id="eyecatcher" contenteditable="true" style="z-index:2; left: 12px; top: 260px; font-size: 20px";>
-		<p>Dienstag</p>
-		<p>18 Uhr</p>
-	</div>
-</div>
+<div id="sharepic"
+    style="	background-color: #005437;
+			background-repeat: no-repeat;
+			background-position: 0px 0px; 
+			width: 800px; height:800px;
+			border:0;
+			overflow:hidden;"
+    		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="sharepic">
 
-<div id="patterns">
-	<div data-id="eyecatcher" data-max="1" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher" contenteditable="true" style="z-index:2; left: 12px; top: 260px; font-size: 20px";><p>MUSTER</p></div>
+    <div 
+        class="draggable selectable" 
+        data-cockpit="greentext"  
+        id="greentext"
+        contenteditable="true"
+    >
+        <div class="tannesand">Das hier</div>
+        <div class="tannesand"style="margin-left:80px;">ist die gjIIÄÖÜ</div>
+        <div class="tannesand" style="zoom:2">Zeile</div>
+    </div>
+
+    <div id="greentextContextMenu">
+        <button data-setclass="tannesand" class="tannesand">tanne/sand</button>
+        <button data-setclass="sandtanne" class="sandtanne">sand/tanne</button>
+
+        <button data-setclass="kleesand" class="kleesand">klee/sand</button>
+        <button data-setclass="sandklee" class="sandklee">sand/klee</button>
+
+        <button data-setclass="grastanne" class="grastanne">gras/tanne</button>
+        <button data-setclass="tannegras" class="tannegras">tanne/gras</button>
+    </div>
+
+    <div id="eyecatcher" style="display:none"></div>
+
+    <style>
+        @font-face {
+            font-family: "GrueneType";
+            src: url("assets/fonts/GrueneType.woff2") format("woff2");
+        }
+
+        #sharepic {
+            background-size: cover;
+            width: 500px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-family:  "GrueneType", sans-serif;
+        }
+
+        #greentext{
+            top: 130px; left: 72px; 
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+        }
+
+        #greentext div{
+            position: relative;
+            font-weight: bold;
+            margin: 15px 0;
+            font-family: "GrueneType", sans-serif;
+            z-index: 3;
+            font-size: 50px;
+            padding: 0;
+            line-height: 1em;
+            align-self: flex-start;
+        }
+
+        #greentext div::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            transform: skew(-9deg, 0);
+            width: calc(100% + 40px);
+            height: calc(100% + 18px);
+            z-index: -1;
+        }
+
+        #greentextContextMenu{
+            position: fixed;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            color: black;
+            display: none;
+            z-index: 1000;
+            margin-top: 60px;
+            flex-direction: column;
+        }
+
+        #greentextContextMenu button{
+            background-color: unset;
+            font-weight: bold;
+            position: relative;
+        }
+        #greentextContextMenu button::before{
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+        }
+
+        .sandtanne{
+            color: #f5f1e9 !important;
+        }
+        .sandtanne::before{
+            background-color: #005437 !important;
+        }
+
+        .tannesand{
+            color: #005437;
+        }
+        .tannesand::before{
+            background-color: #f5f1e9;
+        }
+
+        .kleesand{
+            color: #008939;
+        }
+        .kleesand::before{
+            background-color: #f5f1e9;
+        }
+        .sandklee{
+            color: #f5f1e9;
+        }
+        .sandklee::before{
+            background-color: #008939;
+        }
+        .grastanne{
+            color: #8abd24;
+        }
+        .grastanne::before{
+            color: #005437;
+        }
+        .tannegras::before{
+            background-color: #005437;
+        }
+        .tannegras{
+            color: #005437;
+        }
+        .tannegras::before{
+            background-color: #8abd24;
+        }
+    </style>
+
+
+
+    <script>
+        var lastX, line
+
+        const contextMenuListener = (e) => {
+            e.preventDefault();
+
+            const greentextContextMenu = document.getElementById('greentextContextMenu');
+            greentextContextMenu.style.left = `${e.pageX}px`;
+            greentextContextMenu.style.top = `${e.pageY}px`;
+            greentextContextMenu.style.display = 'flex';
+
+            line = e.target.closest('div');
+
+            document.addEventListener('mousemove', mouseMover)
+            lastX = e.pageX
+        };
+
+        const mouseMover = (e) => { 
+            if (lastX === undefined) {
+                return
+            }
+
+            const offset = e.pageX - lastX;
+
+            // do not move contextmenu
+            if(line.id !== ''){
+                return;
+            }
+
+            let x = line.offsetLeft;
+
+            x += offset;
+            e.target.closest('div').style.marginLeft = `${x}px`;
+            
+            lastX = e.pageX;
+        }
+
+        
+        const greentext = document.getElementById('greentext');
+        greentext.addEventListener('contextmenu', contextMenuListener);
+
+        document.addEventListener('click', () => {
+            greentextContextMenu.style.display = 'none';
+        });
+
+        document.addEventListener('mouseup', (e) => {
+            if( e.button === 2 ) {
+              document.removeEventListener('mousemove', mouseMover)
+            }
+        });
+
+        const setClass = (e) => {
+            // delete all classes
+            const classes = line.classList;
+            for (let i = 0; i < classes.length; i++) {
+                line.classList.remove(classes[i]);
+            }
+
+            line.classList.add(e.target.dataset.setclass);
+        }
+        
+        const colorButtons = document.querySelectorAll('[data-setclass]');
+        colorButtons.forEach(btn => {
+            btn.addEventListener('click', setClass);
+        });
+        // document.addEventListener('click', (e) => {
+        //     if(e.target.dataset.setclass){
+        //         setClass(e.dataset.setclass);
+        //     }
+        // });
+
+
+    </script>
 </div>

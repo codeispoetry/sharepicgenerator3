@@ -23,7 +23,6 @@ class Logger {
       body: JSON.stringify(payload)
     })
       .then(response => {
-        console.log("Logger", response)
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }

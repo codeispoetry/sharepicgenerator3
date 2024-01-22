@@ -35,7 +35,6 @@
     document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
       const color = document.getElementById('eyecatcher_bgcolor').value
       const target = document.getElementById('eyecatcher');
-      console.log(color)
       target.style.backgroundColor = color;
     })
 

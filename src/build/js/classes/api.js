@@ -46,7 +46,6 @@ class API {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }
-        console.log("Load", response)
         return response.text()
       })
       .then(data => {
@@ -126,7 +125,6 @@ class API {
 
     fetch(this.api + '&m=save', options)
       .then(response => {
-        console.log("Save", response)
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }
@@ -173,14 +171,12 @@ class API {
 
     fetch(this.api + '&m=create', options)
       .then(response => {
-        console.log("Create", response)
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
         }
         return response.text()
       })
       .then(data => {
-        console.log("Create data", data)
         data = JSON.parse(data)
 
         const a = document.createElement('a')
@@ -212,7 +208,6 @@ class API {
     xhr.upload.onprogress = function (e) {
       if (e.lengthComputable) {
         const percentComplete = Math.round((e.loaded / e.total) * 100)
-        console.log(percentComplete + '% uploaded')
       }
     }
     xhr.onload = function () {
