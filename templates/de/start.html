@@ -230,7 +230,7 @@
             }
         });
 
-        const setClass = (e) => {
+        const setColor = (e) => {
             // delete all colorclasses
             const colors = new Set(['tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras']);
             const classes = line.classList;
@@ -260,7 +260,7 @@
         
         const colorButtons = document.querySelectorAll('[data-setcolor]');
         colorButtons.forEach(btn => {
-            btn.addEventListener('mouseover', setClass);
+            btn.addEventListener('mouseover', setColor);
         });
 
         const sizeButtons = document.querySelectorAll('[data-setsize]');

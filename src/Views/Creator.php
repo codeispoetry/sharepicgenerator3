@@ -93,6 +93,14 @@
 	</div>
 </main>
 
+<dialog id="waiting">
+  <p>
+	<?php
+		echo _('Please wait ...');
+	?>
+  </p>
+</dialog>
+
 <script>
     const config = {
         'pixabay': {

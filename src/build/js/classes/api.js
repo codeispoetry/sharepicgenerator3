@@ -73,7 +73,6 @@ class API {
         const script = doc.querySelector('script').innerText
         // eslint-disable-next-line no-eval
         eval(script)
-        console.log(data)
         logger.prepare_log_data({})
 
         logger.log('loads template ' + path)
@@ -170,6 +169,8 @@ class API {
       body: JSON.stringify(this.prepare())
     }
 
+    this.showWaiting()
+
     fetch(this.api + '&m=create', options)
       .then(response => {
         if (response.status !== 200) {
@@ -189,6 +190,7 @@ class API {
 
         document.querySelector('.create').disabled = false
         document.querySelector('.create').classList.remove('waiting')
+        this.closeWaiting()
 
         logger.log('created sharepic')
       })
@@ -230,5 +232,15 @@ class API {
       console.error('Error:', this.status, this.statusText)
     }
     xhr.send(formData)
+  }
+
+  showWaiting(){
+    document.getElementsByTagName('body')[0].style.opacity = 0.3
+    document.getElementById("waiting").showModal();
+  }
+
+  closeWaiting(){
+    document.getElementsByTagName('body')[0].style.opacity = 1
+    document.getElementById("waiting").close();
   }
 }
