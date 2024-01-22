@@ -45,11 +45,11 @@ button{
         }
 
         &.to-front{
-            background-image: url(assets/icons/flip_to_front.svg);
+            background-image: url(/assets/icons/flip_to_front.svg);
         }
 
         &.delete{
-            background-image: url(assets/icons/delete.svg);
+            background-image: url(/assets/icons/delete.svg);
         }
     }
 }

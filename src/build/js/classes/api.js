@@ -90,6 +90,8 @@ class API {
     clonedCanvas.querySelector('.ql-tooltip')?.remove()
     clonedCanvas.querySelector('.ql-clipboard')?.remove()
     clonedCanvas.querySelector('#patterns')?.remove()
+    clonedCanvas.querySelector('#greentextContextMenu')?.remove()
+
 
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css">\n')
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="node_modules/quill/dist/quill.bubble.css">\n')
@@ -202,6 +204,7 @@ class API {
     formData.append('file', file)
 
     const imageUrl = URL.createObjectURL(file)
+
     document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`
 
     document.querySelector('.file-upload').disabled = true
@@ -216,7 +219,7 @@ class API {
     xhr.onload = function () {
       if (this.status === 200) {
         const resp = JSON.parse(this.response)
-        document.getElementById('sharepic').style.backgroundImage = `url('/${resp.path}?rand=${Math.random()}')`
+        document.getElementById('sharepic').style.backgroundImage = `url('${resp.path}?rand=${Math.random()}')`
         logger.prepare_log_data({
           imagesrc: 'upload'
         })

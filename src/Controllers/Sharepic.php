@@ -228,7 +228,7 @@ class Sharepic {
 			$path,
 			(int) $this->size['width'],
 			(int) $this->size['height'],
-			escapeshellarg( $this->config->get( 'Main', 'server' ) . $this->file )
+			escapeshellarg( $this->file )
 		);
 
 		exec( $cmd, $output, $return_code );
