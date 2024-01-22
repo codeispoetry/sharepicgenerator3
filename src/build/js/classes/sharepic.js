@@ -40,8 +40,8 @@ class Sharepic {
     this.set_size()
     this.start_drag()
   }
-  
-  background_color(color) {
+
+  background_color (color) {
     const sg = document.getElementById('sharepic')
 
     sg.style.backgroundColor = color
@@ -50,7 +50,7 @@ class Sharepic {
   background_zoom (percentage) {
     const sg = document.getElementById('sharepic')
 
-    let backgroundSize = sg.style.backgroundSize
+    const backgroundSize = sg.style.backgroundSize
 
     if (backgroundSize === '' || backgroundSize === 'cover') {
       sg.style.backgroundSize = '100%'
@@ -79,7 +79,7 @@ class Sharepic {
       }
 
       if (!document.getElementById('drag_background').checked) {
-        return;
+        return
       }
 
       const sg = document.getElementById('sharepic')

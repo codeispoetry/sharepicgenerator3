@@ -82,18 +82,16 @@ class UI {
     })
   }
 
-  handleClickDelete (element ) {
+  handleClickDelete (element) {
     element.addEventListener('click', (event) => {
       if (!window.confirm(lang['Are you sure?'])) {
         return false
       }
-  
+
       const target = element.dataset.delete
       api.delete(target)
-  
+
       element.parentElement.remove()
     })
   }
 }
-
-

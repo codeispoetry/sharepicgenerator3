@@ -19,7 +19,7 @@ class Component {
 
   add (item) {
     const sharepic = document.getElementById('sharepic')
-   // const element = sharepic.querySelector(`#${item}`)
+    // const element = sharepic.querySelector(`#${item}`)
     const pattern = document.querySelector(`[data-id=${item}]`)
 
     if (pattern.dataset?.max === '1') {
@@ -28,7 +28,7 @@ class Component {
     }
 
     const clonedElement = pattern.cloneNode(true)
-    const newId = pattern.dataset.id + '_' + Math.round( Math.random() * 100 )
+    const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
     clonedElement.setAttribute('id', newId)
     clonedElement.setAttribute('class', pattern.dataset.class)
     clonedElement.style.top = '20px'

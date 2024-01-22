@@ -23,8 +23,8 @@ class API {
         }
         return response.text()
       })
-      .then(data => { 
-        logger.log('deleted sharepic ' + saving )
+      .then(data => {
+        logger.log('deleted sharepic ' + saving)
       })
       .catch((error) => console.error('Error:', error))
   }
@@ -59,23 +59,24 @@ class API {
         cockpit.setup_sharepic()
         rte.init()
         sg.init()
-        document.getElementById("adder").style.display = "block";
+        document.getElementById('adder').style.display = 'block'
 
-        document.getElementById('eyecatcher').addEventListener('input', function(event) {
-          const eyecatcher = document.getElementById('eyecatcher');
-          eyecatcher.style.height = '';
-          eyecatcher.style.height=window.getComputedStyle(eyecatcher).getPropertyValue('height')
+        document.getElementById('eyecatcher').addEventListener('input', function (event) {
+          const eyecatcher = document.getElementById('eyecatcher')
+          eyecatcher.style.height = ''
+          eyecatcher.style.height = window.getComputedStyle(eyecatcher).getPropertyValue('height')
         })
 
-       // Execute script tags
-       let parser = new DOMParser();
-       let doc = parser.parseFromString(data, 'text/html');
-       let script = doc.querySelector('script').innerText;
-       eval(script);
+        // Execute script tags
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(data, 'text/html')
+        const script = doc.querySelector('script').innerText
+        // eslint-disable-next-line no-eval
+        eval(script)
+        console.log(data)
+        logger.prepare_log_data({})
 
-       logger.prepare_log_data({})
-
-      logger.log('loads template ' + path)
+        logger.log('loads template ' + path)
       })
       .catch(error => console.error('Error:', error))
   }
@@ -132,21 +133,21 @@ class API {
       })
       .then(data => {
         data = JSON.parse(data)
-      
-        const mySharepics = document.querySelector('#my-sharepics');
-        const clonedEntry = mySharepics.lastElementChild.cloneNode(true);
 
-        const buttons = clonedEntry.querySelectorAll('button');
-        const firstButton = buttons[0];
-        const secondButton = buttons[1];
+        const mySharepics = document.querySelector('#my-sharepics')
+        const clonedEntry = mySharepics.lastElementChild.cloneNode(true)
 
-        firstButton.innerHTML =  name;
-        firstButton.dataset.load = data.full_path;
-        secondButton.dataset.delete = data.id;
+        const buttons = clonedEntry.querySelectorAll('button')
+        const firstButton = buttons[0]
+        const secondButton = buttons[1]
+
+        firstButton.innerHTML = name
+        firstButton.dataset.load = data.full_path
+        secondButton.dataset.delete = data.id
 
         ui.handleClickLoad(firstButton)
         ui.handleClickDelete(secondButton)
-        
+
         mySharepics.appendChild(clonedEntry)
 
         document.querySelector('.save').disabled = false

@@ -21,9 +21,9 @@ class RichTextEditor {
     ]
 
     if (!document.querySelector('#text')) {
-      return;
+      return
     }
-    
+
     quill = new Quill('#text', {
       modules: {
         toolbar: toolbarOptions

@@ -1,29 +1,28 @@
 // @ts-check
-const { test,expect } = require('@playwright/test')
-const { exec } = require('child_process');
+const { test, expect } = require('@playwright/test')
+const { exec } = require('child_process')
 
-const fs = require('fs');
-const PNG = require('pngjs').PNG;
-const pixelmatch = require('pixelmatch');
-const { setUncaughtExceptionCaptureCallback } = require('process');
+const fs = require('fs')
+const PNG = require('pngjs').PNG
+const pixelmatch = require('pixelmatch')
 
 test('login', async ({ page }) => {
   const config = {
     url: {
-      local: 'http://localhost:9500',
+      local: 'http://localhost:9500?self=true',
       remote: 'https://develop.sharepicgenerator.de/3'
     },
     user: {
       name: 'mail@tom-rose.de',
-      password: 'geheim',
+      password: 'geheim'
     },
     save: {
-      name: 'test_' + Math.random().toString(36).substring(3, 8),
+      name: 'test_' + Math.random().toString(36).substring(3, 8)
     }
   }
 
-  const mode = 'remote' // local | remote
-  
+  const mode = 'local' // local | remote
+
   page.on('pageerror', exception => {
     throw new Error(`Uncaught exception: "${exception}"`)
   })
@@ -31,89 +30,86 @@ test('login', async ({ page }) => {
   switch (mode) {
     case 'remote':
       await page.goto(config.url.remote)
-      await page.getByRole('link', { name: 'Login as guest' }).click();
-      break;
-    default:    
-      prepare_local_user(config)
+      await page.getByRole('link', { name: 'Login as guest' }).click()
+      break
+    default:
+      prepageLocalUser(config)
       await page.goto(config.url.local)
   }
-  
 
   // Login
-  await page.getByRole('textbox', { name: 'username' }).fill('mail@tom-rose.de');
-  await page.getByPlaceholder('password').fill('geheim');
+  await page.getByRole('textbox', { name: 'username' }).fill('mail@tom-rose.de')
+  await page.getByPlaceholder('password').fill('geheim')
   await page.getByRole('button', { name: 'login' }).click()
-  //await expect(page).toHaveScreenshot({ maxDiffPixels: 300 });
+  // await expect(page).toHaveScreenshot({ maxDiffPixels: 300 });
 
   // Change sharepic
-  await page.getByText('mit Vorname Nachname').fill('mit Thomas Rose');
-  await page.getByRole('combobox').selectOption('bayaz.png');
+  await page.getByText('mit Vorname Nachname').fill('mit Thomas Rose')
+  await page.getByRole('combobox').selectOption('bayaz.png')
 
   // Download
-  const downloadPromise = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Download' }).click();
-  const download1 = await downloadPromise;
-  const path1 = await download1.path();
+  const downloadPromise = page.waitForEvent('download')
+  await page.getByRole('button', { name: 'Download' }).click()
+  const download1 = await downloadPromise
+  const path1 = await download1.path()
 
   // Save the sharepic
   page.once('dialog', async dialog => {
-    await dialog.accept(config.save.name);
-  });
-  await page.getByRole('button', { name: 'Save' }).click();
- 
-  // Reload page
-  await page.reload();
+    await dialog.accept(config.save.name)
+  })
+  await page.getByRole('button', { name: 'Save' }).click()
 
-  await page.waitForTimeout(1000);
- 
+  // Reload page
+  await page.reload()
+
+  await page.waitForTimeout(1000)
+
   // Load save sharepic
-  await page.getByText('My sharepics').hover();
-  await page.click('button.did-1');
+  await page.getByText('My sharepics').hover()
+  await page.click('button.did-1')
 
   // Download saved sharepic
-  const download1Promise = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Download' }).click();
-  const download2 = await download1Promise;
-  const path2 = await download2.path();
-
+  const download1Promise = page.waitForEvent('download')
+  await page.getByRole('button', { name: 'Download' }).click()
+  const download2 = await download1Promise
+  const path2 = await download2.path()
 
   // Delete saved sharepic
   page.once('dialog', async dialog => {
-    await dialog.accept();
-  });
-  await page.getByText('My sharepics').hover();
-  await page.click('button.did-2');
-  
+    await dialog.accept()
+  })
+  await page.getByText('My sharepics').hover()
+  await page.click('button.did-2')
+
   // Compare images
-  const img1 = PNG.sync.read(fs.readFileSync(path1));
-  const img2 = PNG.sync.read(fs.readFileSync(path2));
-  const {width, height} = img1;
-  const diff = new PNG({width, height});
+  const img1 = PNG.sync.read(fs.readFileSync(path1))
+  const img2 = PNG.sync.read(fs.readFileSync(path2))
+  const { width, height } = img1
+  const diff = new PNG({ width, height })
 
   const numDiffPixels = pixelmatch(
-      img1.data, img2.data, diff.data, width, height,
-      {threshold: 0.1}
-  );
+    img1.data, img2.data, diff.data, width, height,
+    { threshold: 0.1 }
+  )
 
-  expect(numDiffPixels).toBe(0);
+  expect(numDiffPixels).toBe(0)
 
   // Logout
-  await page.getByRole('link', { name: 'Logout' }).click();
-
+  await page.getByRole('link', { name: 'Logout' }).click()
 })
 
-function prepare_local_user(config){
+function prepageLocalUser (config) {
   // Delete user
- exec('php cli.php delete ' + config.user.name, (error, stdout, stderr) => {
-  if (error) {
-   throw new Error(stdout + ' ' + stderr);
-  }
-  });
+  exec('php cli.php delete ' + config.user.name, (error, stdout, stderr) => {
+    if (error) {
+      throw new Error(stdout + ' ' + stderr)
+    }
+  })
 
   // Create user
   exec('php cli.php create ' + config.user.name + ' ' + config.user.password, (error, stdout, stderr) => {
     if (error) {
-     throw new Error(stdout + ' ' + stderr);
+      throw new Error(stdout + ' ' + stderr)
     }
-  });
+  })
 }
