@@ -15,18 +15,23 @@
     >
         <div class="tannesand">Das hier</div>
         <div class="tannesand"style="margin-left:80px;">ist die gjIIÄÖÜ</div>
-        <div class="tannesand" style="zoom:2">Zeile</div>
+        <div class="tannesand">Zeile</div>
     </div>
 
     <div id="greentextContextMenu">
-        <button data-setclass="tannesand" class="tannesand">tanne/sand</button>
-        <button data-setclass="sandtanne" class="sandtanne">sand/tanne</button>
+        <button data-setcolor="tannesand" class="tannesand">◉</button>
+        <button data-setcolor="sandtanne" class="sandtanne" style="margin-right: 1em">◉</button>
 
-        <button data-setclass="kleesand" class="kleesand">klee/sand</button>
-        <button data-setclass="sandklee" class="sandklee">sand/klee</button>
+        <button data-setcolor="kleesand" class="kleesand">◉</button>
+        <button data-setcolor="sandklee" class="sandklee" style="margin-right: 1em">◉</button>
 
-        <button data-setclass="grastanne" class="grastanne">gras/tanne</button>
-        <button data-setclass="tannegras" class="tannegras">tanne/gras</button>
+        <button data-setcolor="grastanne" class="grastanne">◉</button>
+        <button data-setcolor="tannegras" class="tannegras">◉</button>
+
+        <div style="flex:1 1 100%"></div>
+        <button data-setsize="s" class="">S</button>
+        <button data-setsize="m" class="">M</button>
+        <button data-setsize="l" class="">L</button>
     </div>
 
     <div id="eyecatcher" style="display:none"></div>
@@ -80,19 +85,29 @@
 
         #greentextContextMenu{
             position: fixed;
-            background-color: #fff;
-            border: 1px solid #ccc;
+            background-color: transparent;
+            border: 0;
             color: black;
             display: none;
             z-index: 1000;
-            margin-top: 60px;
-            flex-direction: column;
+            margin-top: 10px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: rgba(0,0,0,0.4);
+            padding: 0.5em;
+            border-radius: 10px;
         }
 
         #greentextContextMenu button{
             background-color: unset;
             font-weight: bold;
             position: relative;
+            font-size: 20px;
+            line-height: 20px;
+            overflow: hidden;
+            border-radius: 100px;
+            aspect-ratio: 1;
+            border: 1px solid white;
         }
         #greentextContextMenu button::before{
             content: "";
@@ -100,6 +115,10 @@
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: -1;
+        }
+        #greentextContextMenu button:hover{
+            cursor: pointer;
+            border-color: black;
         }
 
         .sandtanne{
@@ -132,7 +151,7 @@
             color: #8abd24;
         }
         .grastanne::before{
-            color: #005437;
+            background-color: #005437;
         }
         .tannegras::before{
             background-color: #005437;
@@ -142,6 +161,18 @@
         }
         .tannegras::before{
             background-color: #8abd24;
+        }
+
+        .s{
+            zoom: 0.5;
+        }
+
+        .m{
+            zoom: 1;
+        }
+
+        .l{
+            zoom: 2;
         }
     </style>
 
@@ -199,24 +230,42 @@
         });
 
         const setClass = (e) => {
-            // delete all classes
+            // delete all colorclasses
+            const colors = new Set(['tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras']);
             const classes = line.classList;
             for (let i = 0; i < classes.length; i++) {
+                if(!colors.has(classes[i])){
+                    continue;
+                }
                 line.classList.remove(classes[i]);
             }
 
-            line.classList.add(e.target.dataset.setclass);
+            line.classList.add(e.target.dataset.setcolor);
+        }
+
+        const setSize = (e) => {
+            // delete all sizeclasses
+            const sizes = new Set(['s', 'm', 'l']);
+            const classes = line.classList;
+            for (let i = 0; i < classes.length; i++) {
+                if(!sizes.has(classes[i])){
+                    continue;
+                }
+                line.classList.remove(classes[i]);
+            }
+
+            line.classList.add(e.target.dataset.setsize);
         }
         
-        const colorButtons = document.querySelectorAll('[data-setclass]');
+        const colorButtons = document.querySelectorAll('[data-setcolor]');
         colorButtons.forEach(btn => {
-            btn.addEventListener('click', setClass);
+            btn.addEventListener('mouseover', setClass);
         });
-        // document.addEventListener('click', (e) => {
-        //     if(e.target.dataset.setclass){
-        //         setClass(e.dataset.setclass);
-        //     }
-        // });
+
+        const sizeButtons = document.querySelectorAll('[data-setsize]');
+        sizeButtons.forEach(btn => {
+            btn.addEventListener('click', setSize);
+        });
 
 
     </script>
