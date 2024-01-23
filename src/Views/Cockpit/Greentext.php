@@ -8,7 +8,7 @@
     </section>
     
     <section style="display: flex">
-        <button class="to-front" data-target="text">nach vorne</button>
+        <button class="to-front">nach vorne</button>
     </section>
 
 </section>

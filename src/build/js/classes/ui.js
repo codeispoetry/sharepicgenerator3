@@ -33,9 +33,7 @@ class UI {
           const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
           return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)
         }, 0)
-
-        const target = element.dataset.target
-        document.getElementById(target).style.zIndex = (highestZIndex + 1).toString()
+        cockpit.target.style.zIndex = (highestZIndex + 1).toString()
       })
     })
 

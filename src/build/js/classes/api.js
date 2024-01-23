@@ -34,6 +34,8 @@ class API {
       template: path
     }
 
+    
+
     const options = {
       method: 'POST',
       headers: {

@@ -1,6 +1,7 @@
 /* eslint-disable no-undef, no-unused-vars */
 
 class Cockpit {
+  target = 3
   /*
    * Clear all cockpit elements and show the sharepic cockpit
    */
@@ -21,6 +22,7 @@ class Cockpit {
       element.classList.remove('show')
     })
 
+    this.target = element;
     const cockpitEelement = 'setup_' + element.dataset.cockpit
     if (typeof this[cockpitEelement] === 'function') {
       this[cockpitEelement](element)

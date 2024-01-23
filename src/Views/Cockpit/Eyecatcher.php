@@ -20,28 +20,26 @@
     </section>
     
     <section style="display: flex">
-        <button class="to-front" data-target="eyecatcher" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-        <button class="delete" data-target="eyecatcher" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
+        <button class="to-front" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+        <button class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
     </section>
 </section>
 
 <script>
     document.getElementById('eyecatcher_size').addEventListener('input', function(event) {
         var element = event.target;
-        const target = document.getElementById('eyecatcher');
-        target.style.fontSize = element.value + "px";
+        cockpit.target.style.fontSize = element.value + "px";
     });
 
     document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
       const color = document.getElementById('eyecatcher_bgcolor').value
-      const target = document.getElementById('eyecatcher');
-      target.style.backgroundColor = color;
+      
+      cockpit.target.style.backgroundColor = color;
     })
 
     document.getElementById('eyecatcher_color').addEventListener('input', () => {
       const color = document.getElementById('eyecatcher_color').value
-      const target = document.getElementById('eyecatcher');
-      target.style.color = color;
+      cockpit.target.style.color = color;
     })
 
 </script>

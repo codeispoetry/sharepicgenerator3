@@ -221,6 +221,9 @@
         greentext.addEventListener('contextmenu', contextMenuListener);
 
         document.addEventListener('click', () => {
+            if( !document.getElementById('greentextContextMenu') ){
+                return;
+            }
             greentextContextMenu.style.display = 'none';
         });
 
@@ -267,7 +270,6 @@
         sizeButtons.forEach(btn => {
             btn.addEventListener('click', setSize);
         });
-
 
     </script>
 </div>

@@ -16,7 +16,7 @@
     </section>
 
     <section style="display: flex">
-        <button class="to-front" data-target="logo">nach vorne</button>
+        <button class="to-front">nach vorne</button>
     </section>
     
 </section>

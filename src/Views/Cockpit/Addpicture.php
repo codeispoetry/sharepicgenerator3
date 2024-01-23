@@ -7,7 +7,7 @@
         </label>
     </section>
     <section style="display: flex">
-        <button class="to-front" data-target="text" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+        <button class="to-front" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
     </section>
 
 </section>
