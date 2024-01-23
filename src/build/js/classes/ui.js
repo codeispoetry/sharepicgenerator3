@@ -67,6 +67,9 @@ class UI {
 
     document.querySelectorAll('[data-lang]').forEach(element => {
       element.addEventListener('click', function () {
+        if(confirm(lang['All changes lost']) === false) {
+          return false
+        }
         document.cookie = 'lang=' + this.dataset.lang + '; path=/'
         window.document.location.reload()
       })

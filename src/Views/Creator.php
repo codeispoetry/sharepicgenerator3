@@ -110,7 +110,8 @@
 	};
 	
 	const lang = {
-		'Are you sure?': '<?php echo _( 'Are you sure?') ?>'
+		'Are you sure?': '<?php echo _( 'Are you sure?') ?>',
+		'All changes lost': '<?php echo _( 'Please save your sharepic. All changes will be lost.') ?>'
     };
 </script>
 
