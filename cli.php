@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 namespace Sharepicgenerator\Cli;
 
@@ -49,6 +50,38 @@ if ( 'set_role' === $command ) {
 	}
 }
 
+if ( 'flush' === $command ) {
+	$what = @$argv[2];
+
+	if ( empty( $what ) ) {
+		die( "Usage: php cli.php flush <logs|sharepics|all>\n" );
+	}
+
+	switch ( $what ) {
+		case 'logs':
+			if ( ! $cli->delete_in_filesystem( 'logs/*.log' ) ) {
+				echo "Could not delete logfiles.\n";
+			}
+			break;
+		case 'sharepics':
+			if ( ! $cli->delete_in_filesystem( 'tmp/*.png' ) ) {
+				echo "Could not delete logfiles.\n";
+			}
+			break;
+		case 'all':
+			if ( ! $cli->delete_in_filesystem( 'logs/*.log' ) ) {
+				echo "Could not delete logfiles.\n";
+			}
+			if ( ! $cli->delete_in_filesystem( 'tmp/*.png' ) ) {
+				echo "Could not delete logfiles.\n";
+			}
+			break;
+		default:
+			echo "Usage: php cli.php flush <what>\n";
+			break;
+	}
+}
+
 
 
 /**
@@ -76,6 +109,18 @@ class CLI {
 		} catch ( \PDOException $e ) {
 			echo $e->getMessage();
 		}
+	}
+
+	/**
+	 * Delete files in the filesystem.
+	 *
+	 * @param string $glob The file or directory.
+	 * @return bool
+	 */
+	public function delete_in_filesystem( $glob ) {
+		$cmd = 'rm -rf ' . $glob;
+		exec( $cmd, $output, $return_var );
+		return ( 0 === $return_var && empty( $output ) );
 	}
 
 	/**

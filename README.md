@@ -29,3 +29,11 @@ make translation-prepare
 make translate
 make stop up
 ```
+
+## CLI
+```bash
+./cli.php create <user> <password>
+./cli.php set_role <user> <role: admin>
+./cli.php delete <user>
+
+```
