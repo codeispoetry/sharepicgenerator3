@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-17 09:19+0100\n"
+"POT-Creation-Date: 2024-01-23 11:36+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -224,7 +224,7 @@ msgstr "löschen"
 msgid "Total size"
 msgstr "Gesamtgröße"
 
-#: src/Views/Cockpit/Vorort.php:2
+#: src/Views/Cockpit/Vorort.php:2 src/Views/Menu.php:14
 msgid "Vor Ort"
 msgstr ""
 
@@ -284,7 +284,15 @@ msgstr "Vorlagen"
 msgid "latest"
 msgstr "letztes"
 
-#: src/Views/Menu.php:28
+#: src/Views/Menu.php:13
+msgid "Mint"
+msgstr "Mint"
+
+#: src/Views/Menu.php:15
+msgid "De"
+msgstr "De"
+
+#: src/Views/Menu.php:25
 msgid "My sharepics"
 msgstr "Meine Sharepics"
 
@@ -346,9 +354,17 @@ msgstr "Speichern"
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/Views/Creator.php:105
+#: src/Views/Creator.php:99
+msgid "Please wait ..."
+msgstr "Augenblick bitte ..."
+
+#: src/Views/Creator.php:113
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
+
+#: src/Views/Creator.php:114
+msgid "Please save your sharepic. All changes will be lost."
+msgstr "Bitte speichere Dein Sharepic. Beim Sprachweschsel gehen alle Änderungen verloren."
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
@@ -363,9 +379,6 @@ msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen
 #: src/Views/Home-Greens.php:21
 msgid "Login as guest"
 msgstr "Als Gast einloggen"
-
-#~ msgid "Mint"
-#~ msgstr "Mint"
 
 #~ msgid "Reset background"
 #~ msgstr "Hintergrund einpassen"
