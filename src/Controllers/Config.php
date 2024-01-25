@@ -31,7 +31,11 @@ class Config {
 	 * @param string $key The key of the config.
 	 * @return string
 	 */
-	public function get( $section, $key ) {
+	public function get( $section, $key = null ) {
+		if ( null === $key ) {
+			return $this->config[ $section ];
+		}
+
 		if ( ! isset( $this->config[ $section ][ $key ] ) ) {
 			return false;
 		}

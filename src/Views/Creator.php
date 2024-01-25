@@ -17,7 +17,10 @@
 <body>
     
 <header>
-    <?php include 'src/Views/Menu.php'; ?>
+    <?php
+		$templates = $this->config->get('Templates');
+		include 'src/Views/Menu.php'; 
+	?>
 
     <div style="display: flex; align-items: center">
 		<div style="margin-right: 2em">
