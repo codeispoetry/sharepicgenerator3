@@ -48,6 +48,14 @@ class Cockpit {
 
   }
 
+  setup_copyright (element) {
+    const slider = document.getElementById('copyright_size')
+    slider.value = element.style.fontSize.replace('px', '')
+
+    document.getElementById('copyright_color').value = rgbToHex(element.style.color)
+
+  }
+
   setup_freetext (element) {
     const slider = document.getElementById('text_size')
     slider.value = element.style.fontSize.replace('px', '')

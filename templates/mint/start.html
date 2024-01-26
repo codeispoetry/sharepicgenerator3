@@ -24,6 +24,14 @@
         <div class="ap_image" style="background-image: url('templates/mint/tom.jpg');background-size: cover; width: 100px; aspect-ratio: 1; border-radius: 50%;"></div>
         <div class="ap_text" contenteditable="true" style="display: flex; justify-content: center;">War schon da</div>
     </div>
+
+    <div id="copyright" class="selectable" data-cockpit="copyright" contenteditable="true" 
+        style="
+            font-size: 14px;
+            color: #000000;
+        ">
+        © 2021 MINT-Akademie
+    </div>
 </div>
 
 <div id="patterns">
@@ -52,3 +60,16 @@
 <script>
     
 </script>
+
+<style>
+    #sharepic #copyright{
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        font-family: sans-serif;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        padding: 0;
+        margin: 0;
+    }
+</style>
