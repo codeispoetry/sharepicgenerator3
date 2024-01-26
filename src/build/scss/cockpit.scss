@@ -3,9 +3,39 @@
     padding: 0;
     margin: 0;
     border: 1px solid $light;
+    display: flex;
 
     label{
         color: white;
+    }
+
+    #componentscockpit{
+        flex-grow: 1;
+        width: 400px;
+    }
+
+    #sitecockpit{
+        border-left: 1px solid $light;
+        width: 80px;
+
+        button{
+            background-color: unset;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 0;
+            width: 100%;
+            height: 60px;
+            border-bottom: 1px solid $light;
+
+            &:hover{
+                background-color: $light;
+            }
+
+            &.active{
+                background-color: $verydark;
+            }
+        }
     }
 
     .mainsection{

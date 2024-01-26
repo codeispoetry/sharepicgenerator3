@@ -1,5 +1,11 @@
 /* eslint-disable no-undef, no-unused-vars */
 
+var mouseDownEvent = new MouseEvent('mousedown', {
+  bubbles: true,
+  cancelable: true,
+  button: 0
+});
+
 class UI {
   constructor () {
     document.querySelectorAll('[data-load]').forEach(element => {
@@ -8,6 +14,16 @@ class UI {
 
     document.querySelectorAll('[data-delete]').forEach(element => {
       this.handleClickDelete(element)
+    })
+
+    document.querySelectorAll('[data-pseudoselect]').forEach(element => {
+      element.addEventListener('click', (event) => {
+        let target = element.dataset.pseudoselect
+        if (target === 'freetext') {
+          target = 'text'
+        }
+        document.getElementById(target).dispatchEvent(mouseDownEvent)
+      })
     })
 
     document.getElementById('upload').addEventListener('change', function () {

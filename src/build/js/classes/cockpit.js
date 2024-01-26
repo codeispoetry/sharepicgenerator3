@@ -17,9 +17,12 @@ class Cockpit {
     * Show the cockpit element for the given element
     */
   show (element) {
-    const elements = document.querySelectorAll('#cockpit .show')
-    elements.forEach(element => {
+    document.querySelectorAll('#cockpit .show').forEach(element => {
       element.classList.remove('show')
+    })
+
+    document.querySelectorAll('#cockpit .active').forEach(element => {
+      element.classList.remove('active')
     })
 
     this.target = element;
@@ -29,6 +32,9 @@ class Cockpit {
     }
     const id = 'cockpit_' + element.dataset.cockpit
     document.getElementById(id)?.classList.add('show')
+
+    document.querySelector('[data-pseudoselect="' + element.dataset.cockpit + '"]')?.classList.add('active');
+
   }
 
   /*

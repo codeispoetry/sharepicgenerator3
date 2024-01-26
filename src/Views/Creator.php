@@ -84,11 +84,27 @@
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">
-			<?php
-			foreach ( glob( "src/Views/Cockpit/*.php" ) as $filename ) {
-				include $filename;
-			}
-			?>
+			<div id="componentscockpit">
+				<?php
+				foreach ( glob( "src/Views/Cockpit/*.php" ) as $filename ) {
+					include $filename;
+				}
+				?>
+			</div>
+			<div id="sitecockpit">
+				<button data-pseudoselect="sharepic" class="active">
+					<img src="assets/icons/image.svg" title="<?php echo _('Image'); ?>">
+				</button>
+				<button data-pseudoselect="freetext">
+					<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+				</button>
+				<button data-pseudoselect="eyecatcher">
+					<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
+				</button>
+				<button data-pseudoselect="copyright">
+					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
+				</button>
+			</div>
 		</div>
 		<?php
 			include 'src/Views/Pixabay.php';
