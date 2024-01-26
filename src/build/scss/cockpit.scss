@@ -48,11 +48,6 @@
             display: block;
         }
 
-        & > section{
-            margin-bottom: 20px;
-            padding: 10px 20px;
-        }
-
         & > h2{
             padding-left: 20px;
         }
@@ -119,6 +114,34 @@
         &::-webkit-color-swatch {
             border: none;
             border-radius: 50%;
+        }
+    }
+
+    input.slider{
+        width: 100%;
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px;
+        align-items: center;
+        justify-items: left;
+    }
+
+    .mainsection>section{
+        padding: 10px 20px;
+        margin-bottom: 40px;
+
+        &:not(:first-of-type) {
+            border-top: 1px solid $light;
+        }
+
+        &.row{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
     }
 

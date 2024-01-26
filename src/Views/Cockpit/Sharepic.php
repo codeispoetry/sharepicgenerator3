@@ -31,8 +31,8 @@
             </div>
     </section>
     
-    <section style="margin-top:6em;padding-top: 1em; border-top: 1px solid white;">
-        <h3><?php echo _("Set background image"); ?></h3>
+    <section>
+        <h3><?php echo _("Background image"); ?></h3>
         <label style="display:flex; margin-top:20px;">
             <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search query');?>">
             <button data-click="pixabay.search" style="padding:2px;"><img src="assets/icons/search.svg"></button>
@@ -45,7 +45,7 @@
         </label>
     </section>
 
-    <section style="margin-top:3em">
+    <section>
         <h3><?php echo _("Image preferences"); ?></h3>
         <label class="horizontal" style="margin-top:0">
             <h4><?php  echo _('Size');?></h4>

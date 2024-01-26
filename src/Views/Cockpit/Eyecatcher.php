@@ -7,19 +7,20 @@
         </label>
     </section>
 
-    <section style="margin-top:4em">
-        <label class="horizontal">
-            <h4><?php  echo _('Font color');?></h4>
-            <input type="color" value="#ffffff" class="" id="eyecatcher_color">
-        </label>
-  
-        <label class="horizontal" style="margin-top: 0">
-            <h4><?php  echo _('Background color');?></h4>
-            <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor">
-        </label>
+    <section>
+        <h3><?php echo _('Colors');?></h3>
+        <div class="grid">
+           
+                <h4><?php  echo _('Font');?></h4>
+                <input type="color" value="#ffffff" class="" id="eyecatcher_color">
+           
+                <h4><?php  echo _('Background');?></h4>
+                <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor">
+            </label>
+        </div>
     </section>
     
-    <section style="display: flex">
+    <section class="row">
         <button class="to-front" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
         <button class="to-back" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
         <button class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>

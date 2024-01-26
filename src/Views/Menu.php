@@ -2,9 +2,17 @@
     <a href="index.php"><?php  echo _('Home');?></a>
 
     <div class="dropdown">
-        <span><?php echo _( 'Edit' ); ?></span>
+        <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
-            <button data-click="ui.undo" id="undo"><?php echo _( 'Undo' ); ?></button>
+            <button data-click="api.save">
+                <?php  echo _('Save');?>
+            </button>
+            <button data-click="api.create">
+                <?php  echo _('Download');?>
+            </button>
+            <button data-click="ui.undo" id="undo">
+                <?php echo _( 'Undo' ); ?>
+            </button>
         </div>
     </div>
 

@@ -6,19 +6,18 @@
             <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size">
         </label>
     </section>
-    <section style="display: flex">
-        <button class="to-front" data-target="text" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-        <button class="to-back" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
-    </section>
 
-    <section style="margin-top:4em">
+    <section>
         <label class="horizontal">
             <h4><?php  echo _('Font color');?></h4>
             <input type="color" value="#ffffff" class="" id="copyright_color">
         </label>
     </section>
     
-
+    <section class="row">
+        <button class="to-front" data-target="text" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+        <button class="to-back" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
+    </section>
 </section>
 
 <script>
