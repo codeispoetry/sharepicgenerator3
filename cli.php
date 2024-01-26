@@ -50,6 +50,10 @@ if ( 'set_role' === $command ) {
 	}
 }
 
+if ( 'users' === $command ) {
+	printf( "There are %d users.\n", $cli->get_users() );
+}
+
 if ( 'flush' === $command ) {
 	$what = @$argv[2];
 
@@ -151,6 +155,18 @@ class CLI {
 		} else {
 			echo "and not deleted in filesystem.\n";
 		}
+	}
+
+	/**
+	 * Gets number of all users.
+	 */
+	public function get_users() {
+
+		$sql  = 'SELECT COUNT(*) AS COUNT FROM users';
+		$stmt = $this->db->prepare( $sql );
+		$stmt->execute();
+		$result = $stmt->fetch();
+		return $result['COUNT'];
 	}
 
 	/**
