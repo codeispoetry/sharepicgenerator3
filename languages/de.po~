@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-26 18:24+0100\n"
+"POT-Creation-Date: 2024-01-23 11:36+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -80,7 +80,7 @@ msgstr "Passwort zurücksetzen"
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/Frontend.php:162 src/Views/Creator.php:46
+#: src/Controllers/Frontend.php:162 src/Views/Creator.php:43
 msgid "Logout"
 msgstr "Ausloggen"
 
@@ -163,85 +163,70 @@ msgid "pixel"
 msgstr "Pixel"
 
 #: src/Views/Cockpit/Sharepic.php:14
-msgid "Size presets"
+msgid "Presets"
 msgstr "Voreinstellungen"
 
 #: src/Views/Cockpit/Sharepic.php:15
 msgid "square 1:1"
 msgstr "Quadratisch 1:1"
 
-#: src/Views/Cockpit/Sharepic.php:35
-msgid "Set background image"
-msgstr "Hintergrundbild einstellen"
+#: src/Views/Cockpit/Sharepic.php:34
+msgid "Background image"
+msgstr "Hintergrundbild"
 
-#: src/Views/Cockpit/Sharepic.php:37
+#: src/Views/Cockpit/Sharepic.php:36
 msgid "search query"
 msgstr "Suchbegriff"
 
-#: src/Views/Cockpit/Sharepic.php:43
+#: src/Views/Cockpit/Sharepic.php:42
 msgid "upload image"
 msgstr "Bild hochladen"
 
-#: src/Views/Cockpit/Sharepic.php:49
-msgid "Image preferences"
-msgstr "Bildeinstellungen"
-
-#: src/Views/Cockpit/Sharepic.php:51 src/Views/Cockpit/Eyecatcher.php:4
-#: src/Views/Cockpit/Logo.php:4
-msgid "Size"
-msgstr "Größe"
-
-#: src/Views/Cockpit/Sharepic.php:56
-msgid "Fit automatically"
-msgstr "Hintergrund automtisch einpassen"
-
-#: src/Views/Cockpit/Sharepic.php:61
-msgid "Delete background image"
-msgstr "Hintergrundbild löschen"
-
-#: src/Views/Cockpit/Sharepic.php:66
-msgid "Make background draggable"
-msgstr "Hintergrundbild verschieben"
-
-#: src/Views/Cockpit/Sharepic.php:69
-msgid "Color"
-msgstr "Farbe"
-
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:71
-msgid "Eyecatcher"
-msgstr "Störer"
-
-#: src/Views/Cockpit/Eyecatcher.php:12 src/Views/Cockpit/Copyright.php:16
-msgid "Font color"
-msgstr "Schriftfarbe"
-
-#: src/Views/Cockpit/Eyecatcher.php:17
+#: src/Views/Cockpit/Sharepic.php:49 src/Views/Cockpit/Eyecatcher.php:17
 msgid "Background color"
 msgstr "Hintergrundfarbe"
 
+#: src/Views/Cockpit/Sharepic.php:53
+msgid "Background size"
+msgstr "Hintergrundgröße"
+
+#: src/Views/Cockpit/Sharepic.php:58
+msgid "Fit background automatically"
+msgstr "Hintergrund automtisch einpassen"
+
+#: src/Views/Cockpit/Sharepic.php:63
+msgid "Make background draggable"
+msgstr "Hintergrundbild verschieben"
+
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:68
+msgid "Eyecatcher"
+msgstr "Störer"
+
+#: src/Views/Cockpit/Eyecatcher.php:4 src/Views/Cockpit/Logo.php:4
+msgid "Size"
+msgstr "Größe"
+
+#: src/Views/Cockpit/Eyecatcher.php:12
+msgid "Font color"
+msgstr "Schriftfarbe"
+
 #: src/Views/Cockpit/Eyecatcher.php:23 src/Views/Cockpit/Freetext.php:10
-#: src/Views/Cockpit/Copyright.php:10 src/Views/Cockpit/Addpicture.php:10
+#: src/Views/Cockpit/Addpicture.php:10
 msgid "to front"
 msgstr "nach vorne"
 
-#: src/Views/Cockpit/Eyecatcher.php:24 src/Views/Cockpit/Greentext.php:12
-#: src/Views/Cockpit/Logo.php:20 src/Views/Cockpit/Freetext.php:11
-#: src/Views/Cockpit/Copyright.php:11 src/Views/Cockpit/Addpicture.php:11
-msgid "to back"
-msgstr "nach hinten"
-
-#: src/Views/Cockpit/Eyecatcher.php:25
+#: src/Views/Cockpit/Eyecatcher.php:24
 msgid "delete"
 msgstr "löschen"
 
 #: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:4
-#: src/Views/Cockpit/Copyright.php:4 src/Views/Cockpit/Addpicture.php:4
+#: src/Views/Cockpit/Addpicture.php:4
 msgid "Total size"
 msgstr "Gesamtgröße"
 
-#: src/Views/Cockpit/Vorort.php:2
+#: src/Views/Cockpit/Vorort.php:2 src/Views/Menu.php:14
 msgid "Vor Ort"
-msgstr "Vor Ort"
+msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:4
 msgid "Guest"
@@ -263,11 +248,7 @@ msgstr "Bitte ändere Deinen Text direkt im Bild links."
 msgid "Logo"
 msgstr "Logo"
 
-#: src/Views/Cockpit/Copyright.php:2
-msgid "Copyright"
-msgstr "Urheberrechtshinweis"
-
-#: src/Views/Cockpit/Addpicture.php:2 src/Views/Creator.php:72
+#: src/Views/Cockpit/Addpicture.php:2 src/Views/Creator.php:69
 msgid "Picture"
 msgstr "Bild"
 
@@ -303,7 +284,15 @@ msgstr "Vorlagen"
 msgid "latest"
 msgstr "letztes"
 
-#: src/Views/Menu.php:21
+#: src/Views/Menu.php:13
+msgid "Mint"
+msgstr "Mint"
+
+#: src/Views/Menu.php:15
+msgid "De"
+msgstr "De"
+
+#: src/Views/Menu.php:25
 msgid "My sharepics"
 msgstr "Meine Sharepics"
 
@@ -337,47 +326,45 @@ msgstr "E-Mail"
 msgid "register"
 msgstr "registrieren"
 
-#: src/Views/Creator.php:30
+#: src/Views/Creator.php:27
 msgid "Usage"
 msgstr "Nutzung"
 
-#: src/Views/Creator.php:31
+#: src/Views/Creator.php:28
 msgid "Sharepics"
 msgstr "Sharepics"
 
-#: src/Views/Creator.php:38
+#: src/Views/Creator.php:35
 msgid "German"
 msgstr "Deutsch"
 
-#: src/Views/Creator.php:39
+#: src/Views/Creator.php:36
 msgid "English"
 msgstr "Englisch"
 
-#: src/Views/Creator.php:43
+#: src/Views/Creator.php:40
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: src/Views/Creator.php:82
+#: src/Views/Creator.php:79
 msgid "Save"
 msgstr "Zwischenpeichern"
 
-#: src/Views/Creator.php:83
+#: src/Views/Creator.php:80
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/Views/Creator.php:102
+#: src/Views/Creator.php:99
 msgid "Please wait ..."
 msgstr "Augenblick bitte ..."
 
-#: src/Views/Creator.php:116
+#: src/Views/Creator.php:113
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
-#: src/Views/Creator.php:117
+#: src/Views/Creator.php:114
 msgid "Please save your sharepic. All changes will be lost."
-msgstr ""
-"Bitte speichere Dein Sharepic. Beim Sprachweschsel gehen alle Änderungen "
-"verloren."
+msgstr "Bitte speichere Dein Sharepic. Beim Sprachweschsel gehen alle Änderungen verloren."
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
@@ -392,15 +379,6 @@ msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen
 #: src/Views/Home-Greens.php:21
 msgid "Login as guest"
 msgstr "Als Gast einloggen"
-
-#~ msgid "Background size"
-#~ msgstr "Hintergrundgröße"
-
-#~ msgid "Mint"
-#~ msgstr "Mint"
-
-#~ msgid "De"
-#~ msgstr "De"
 
 #~ msgid "Reset background"
 #~ msgstr "Hintergrund einpassen"
