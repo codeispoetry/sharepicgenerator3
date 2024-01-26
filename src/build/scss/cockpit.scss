@@ -33,7 +33,8 @@
             }
 
             &.active{
-                background-color: $verydark;
+                background-color: $dark;
+                margin-left: -1px;
             }
         }
     }
