@@ -27,6 +27,7 @@ button{
     }
 
     &.to-front,
+    &.to-back,
     &.delete{
         background-size: contain;
         background-repeat: no-repeat;
@@ -46,6 +47,11 @@ button{
 
         &.to-front{
             background-image: url(/assets/icons/flip_to_front.svg);
+        }
+
+
+        &.to-back{
+            background-image: url(/assets/icons/flip_to_back.svg);
         }
 
         &.delete{

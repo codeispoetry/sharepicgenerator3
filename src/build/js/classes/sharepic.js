@@ -115,6 +115,12 @@ class Sharepic {
     sg.style.backgroundPositionY = '0px'
   }
 
+  delete_background_image () {
+    const sg = document.getElementById('sharepic')
+
+    sg.style.backgroundImage = 'none'
+  }
+
   set_size () {
     const sg = document.getElementById('sharepic')
     const width = parseInt(document.getElementById('width').value)

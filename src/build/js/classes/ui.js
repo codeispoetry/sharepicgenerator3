@@ -37,6 +37,34 @@ class UI {
       })
     })
 
+    document.querySelectorAll('.to-back').forEach(element => {
+      element.addEventListener('click', (event) => {
+        const allElements = [...document.querySelectorAll('#sharepic > *')];
+
+        // Filter elements that have a z-index
+        const elementsWithZIndex = allElements.filter(element => {
+          const zIndex = parseInt(getComputedStyle(element).zIndex, 10);
+          return !isNaN(zIndex) && zIndex !== 0;
+        });
+
+        // Sort elements by z-index
+        const sortedElementsByZIndex = elementsWithZIndex.sort((a, b) => {
+          const zIndexA = parseInt(getComputedStyle(a).zIndex, 10);
+          const zIndexB = parseInt(getComputedStyle(b).zIndex, 10);
+          return zIndexA - zIndexB;
+        });
+
+        // Loop through sorted elements and increase their z-index by one
+        sortedElementsByZIndex.forEach(element => {
+          const zIndex = parseInt(getComputedStyle(element).zIndex, 10);
+          element.style.zIndex = (zIndex + 1).toString();
+        });
+
+
+        cockpit.target.style.zIndex = 1;
+      })
+    })
+
     document.querySelectorAll('[data-click]').forEach(element => {
       element.addEventListener('click', function () {
         const parts = this.dataset.click.split('.')

@@ -56,6 +56,11 @@
                 <?php echo _("Fit automatically"); ?>
             </button>   
         </label>
+        <label style="display:flex;margin-top: 0">
+            <button class="link" data-click="sg.delete_background_image">
+                <?php echo _("Delete background image"); ?>
+            </button>   
+        </label>
         <label>
             <input type="checkbox" id="drag_background">
             <?php echo _("Make background draggable"); ?>
