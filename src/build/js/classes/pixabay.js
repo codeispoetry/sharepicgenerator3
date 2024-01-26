@@ -45,7 +45,7 @@ class Pixabay {
       img.classList.add('image')
       img.setAttribute('data-url', hit.webformatURL)
       img.setAttribute('data-user', hit.user)
-      img.setAttribute('data-pageUrl', hit.pageURL)
+      img.setAttribute('data-pageurl', hit.pageURL)
 
       img.onclick = () => {
         const q = document.getElementById('pixabay_q').value
@@ -57,6 +57,8 @@ class Pixabay {
         logger.log('clicks on image after search for ' + q)
 
         this.set_imge(img.dataset.url)
+
+        document.getElementById('copyright').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
       }
       results.appendChild(img)
     })
