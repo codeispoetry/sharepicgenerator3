@@ -2,6 +2,13 @@
     <a href="index.php"><?php  echo _('Home');?></a>
 
     <div class="dropdown">
+        <span><?php echo _( 'Edit' ); ?></span>
+        <div class="dropdown-content">
+            <button data-click="ui.undo" id="undo"><?php echo _( 'Undo' ); ?></button>
+        </div>
+    </div>
+
+    <div class="dropdown">
         <span><?php echo _( 'Templates' ); ?></span>
         <div class="dropdown-content">
             <?php
