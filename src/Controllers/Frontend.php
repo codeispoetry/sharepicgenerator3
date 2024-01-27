@@ -40,6 +40,25 @@ class Frontend {
 	}
 
 	/**
+	 * Shows an arbitrary view
+	 */
+	public function view() {
+		$view = $_GET['view'] ?? '';
+
+		$pages = glob( './src/Views/Pages/*.php' );
+		$pages = array_map(
+			function( $filename ) {
+				return pathinfo( $filename, PATHINFO_FILENAME );
+			},
+			$pages
+		);
+		if ( empty( $view ) || ! in_array( $view, $pages, true ) ) {
+			$this->no_access();
+		}
+		include_once './src/Views/Pages/' . $view . '.php';
+	}
+
+	/**
 	 * The registration page.
 	 */
 	public function register() {

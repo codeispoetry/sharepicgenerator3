@@ -1,0 +1,81 @@
+<?php include_once './src/Views/Header.php'; ?>
+<main class="main" style="padding: 40px">
+	<div id="title">
+		<h1><?php  echo _('Privacy');?></h1>
+		<div id="description">
+			<h5>Erfassung allgemeiner Informationen beim Besuch unserer Website</h5>
+			<p>
+			Wenn Du auf unsere Website zugreifst, d.h., wenn Du Dich nicht registrierst oder anderweitig Informationen übermittelst, 
+			werden automatisch Informationen allgemeiner Natur erfasst. 
+			Diese Informationen (Server-Logfiles) beinhalten etwa die Art des Webbrowsers, 
+			das verwendete Betriebssystem, den Domainnamen Deine Internet-Service-Providers, Deine IP-Adresse und ähnliches.
+
+			Sie werden insbesondere zu folgenden Zwecken verarbeitet:
+
+			</p><ul>
+				<li>Sicherstellung eines problemlosen Verbindungsaufbaus der Website,</li>
+				<li>Sicherstellung einer reibungslosen Nutzung unserer Website,</li>
+				<li>Auswertung der Systemsicherheit und -stabilität sowie</li>
+				<li>zu weiteren administrativen Zwecken.</li>
+			</ul>
+			Wir verwenden Deine Daten nicht, um Rückschlüsse auf Deine Person zu ziehen. 
+			Informationen dieser Art werden von uns ggfs. statistisch ausgewertet, 
+			um unseren Internetauftritt und die dahinterstehende Technik zu optimieren.
+			<p></p>
+
+			<h5 class="mt-3">Erfasste Daten beim Einloggen</h5>
+			<p>
+				Bilder, die Du hochlädst und Sharepics, die Du erstellst, werden
+				gemeinsam mit Deinem Nutzernamen gespeichert. 
+			</p>
+			<p>
+				Erstellte Sharepics werden in Deinem Account gespeichert. 
+				Eine verkleinerte Kopie bleibt zu Prüfzwecken für maximal
+				14 Tage auf dem Server gespeichert. Das hilft, fehlerhafte
+				Sharepics zu entdecken und den Programmcode zu verbessern. 
+			</p>
+
+			<h5 class="mt-3">Cookies</h5>
+			<p>
+				Wenn Du Dich in die Seite einloggst, werden folgende Cookies gesetzt:
+
+				<ul>
+					<li>authenticator</li>
+					<li>bearer_token</li>
+					<li>lang</li>
+				</ul>
+				
+				Sie dienen der Authentifizierung und sind notwendig um die Seite nutzen zu können.
+			</p>
+
+			<h5 class="mt-3">Drittanbieter</h5>
+			<p>
+				Wenn Du Bilder über den Sharepicgenerator suchst, 
+				werden diese von einem fremden Server geladen. Im Ergebnis ist das so,
+				als würdest Du direkt auf deren Seiten surfen. Dadurch werden Deine
+				Surfdaten an diese Server übermittelt.
+				<br>
+				Die Bilder stammen von Pixabay, hier findest Du die 
+				<a href="https://pixabay.com/de/service/privacy/" target="_blank">Datenschutzerklärung von Pixabay</a>.           
+			</p>
+
+			<h5 class="mt-3">Recht auf Vergessen</h5>
+			<p>
+				Du hast das Recht, dass alle Daten, die der Sharepicgenerator über Dich und von Dir speichert, gelöscht werden.
+				Zu diesen Daten gehören hochgeladene Bilder, Sharepics und Miniaturversionen davon und evtl. 
+				Logbucheinträge. Um diese Daten löschen zu lassen, schreibe bitte eine E-Mail 
+				an <a href="MAILTO:mail@tom-rose.de?subject=Sharepicgenerator">mail@tom-rose.de</a>.
+			</p>
+		</div>
+	</div>
+</main>
+
+<style>
+	h5{
+		font-weight: bold;
+		font-size: 1.4em;
+		margin: 1.9em 0 0 0;
+	}
+</style>
+
+<?php include_once './src/Views/Footer.php'; ?>

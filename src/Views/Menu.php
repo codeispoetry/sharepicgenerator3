@@ -1,9 +1,12 @@
 <nav>
-    <a href="index.php"><?php  echo _('Home');?></a>
-
     <div class="dropdown">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
+             <a href="index.php" class="menu-link">
+                <?php  echo _('Home');?>
+			</a>
+            <div class="divider"></div>
+
             <button data-click="api.save">
                 <?php  echo _('Save');?>
             </button>
@@ -13,6 +16,37 @@
             <button data-click="ui.undo" id="undo">
                 <?php echo _( 'Undo' ); ?>
             </button>
+            
+            <div class="divider"></div>
+            <button data-lang="de">
+                <?php echo _( 'German' ); ?>
+            </button>
+            <button data-lang="en">
+                <?php echo _( 'English' ); ?>
+            </button>
+            <div class="divider"></div>
+
+            <?php
+            if( $this->user->is_admin() ){
+                echo '<div class="divider"></div>';
+                printf( '<a href="index.php?c=frontend&m=log" class="menu-link">%s</a>', _( 'Logfile' ) );
+                printf( '<a href="index.php?c=frontend&m=sharepics" class="menu-link">%s</a>', _( 'Sharepics' ) );
+                echo '<div class="divider"></div>';
+            }
+            ?>
+
+            <div class="divider"></div>
+            <a href="index.php?c=frontend&m=view&view=Imprint" class="menu-link">
+                <?php  echo _('Imprint');?>
+			</a>
+            <a href="index.php?c=frontend&m=view&view=Privacy" class="menu-link">
+                <?php  echo _('Privacy');?>
+			</a>
+
+            <div class="divider"></div>
+            <a href="index.php?c=frontend&m=logout" class="menu-link">
+                <?php  echo _('Logout');?>
+			</a>
         </div>
     </div>
 

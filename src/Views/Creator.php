@@ -23,27 +23,8 @@
 	?>
 
     <div style="display: flex; align-items: center">
-		<div style="margin-right: 2em">
-			<?php
-				if( $this->user->is_admin() ){
-					echo "<em>Admin:";
-					printf( ' <a href="index.php?c=frontend&m=log" style="margin-right: 0">%s</a> | ', _( 'Usage' ) );
-					printf( ' <a href="index.php?c=frontend&m=sharepics">%s</a>', _( 'Sharepics' ) );
-					echo "</em>";
-
-				}
-			?>
-		</div>
-        <div style="margin-right: 1em" class="flags">
-            <img src="assets/icons/de.svg" alt="<?php echo _('German');?>" title="<?php echo _('German');?>" data-lang="de" style="margin-right: 5px;">
-            <img src="assets/icons/en.svg" alt="<?php echo _('English');?>" title="<?php echo _('English');?>" data-lang="en">
-        </div>
         <?php if( $this->user->is_logged_in() ): ?>
-            <div style="margin-right: 1em">
-                <?php  echo _('Logged in as');?> <?php echo $this->user->get_username(); ?>
-            </div>
-            <a href="index.php?c=frontend&m=logout" class="link" style="margin-right:1em">
-                <?php  echo _('Logout');?>
+            <a href="index.php?c=frontend&m=logout" class="link">
                 <img src="assets/icons/logout.svg" style="height: 1em;">
 			</a>
         <?php endif; ?>

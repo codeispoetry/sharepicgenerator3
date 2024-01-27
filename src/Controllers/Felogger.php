@@ -7,9 +7,9 @@ namespace Sharepicgenerator\Controllers;
 class Felogger {
 
 	/**
-	 * The user object.
+	 * The username.
 	 *
-	 * @var object
+	 * @var string
 	 */
 	private $user;
 
@@ -43,7 +43,7 @@ class Felogger {
 
 		$infos = array(
 			'time' => gmdate( 'Y-m-d H:i:s' ),
-			'user' => $this->user,
+			'user' => md5( $this->user ),
 			'data' => join( ' ', $data ),
 		);
 
