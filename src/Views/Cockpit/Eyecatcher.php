@@ -3,7 +3,7 @@
     <section>
         <h3><?php  echo _('Size');?></h3>
         <label>
-            <input type="range" min="10" max="80" value="20" class="slider" id="eyecatcher_size">
+            <input type="range" min="0.1" max="3" value="1" step="0.1" class="slider" id="eyecatcher_size">
         </label>
     </section>
 
@@ -30,7 +30,7 @@
 <script>
     document.getElementById('eyecatcher_size').addEventListener('input', function(event) {
         var element = event.target;
-        cockpit.target.style.fontSize = element.value + "px";
+        cockpit.target.style.transform = 'scale(' + element.value + ')';
     });
 
     document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
