@@ -47,7 +47,7 @@
             <button data-click="api.create">
                 <?php  echo _('Download');?>
             </button>
-            <button data-click="ui.undo" id="undo">
+            <button data-click="undo.undo" id="undo">
                 <?php echo _( 'Undo' ); ?>
             </button>
         </div>

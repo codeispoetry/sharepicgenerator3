@@ -139,9 +139,4 @@ class UI {
       element.parentElement.remove()
     })
   }
-
-  undo(){
-    alert("Please press Ctrl + Z to undo the last action.")
-
-  }
 }

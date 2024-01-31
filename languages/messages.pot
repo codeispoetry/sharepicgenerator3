@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 07:42+0100\n"
+"POT-Creation-Date: 2024-01-31 11:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Your password has been reset. Please login."
 msgstr ""
 
-#: src/Controllers/Frontend.php:181 src/Views/Menu.php:48
+#: src/Controllers/Frontend.php:181 src/Views/Menu.php:36
 msgid "Logout"
 msgstr ""
 
@@ -122,11 +122,11 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: src/Views/Header.php:21 src/Views/Menu.php:40 src/Views/Pages/Imprint.php:4
+#: src/Views/Header.php:21 src/Views/Menu.php:28 src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr ""
 
-#: src/Views/Header.php:24 src/Views/Menu.php:43 src/Views/Pages/Privacy.php:4
+#: src/Views/Header.php:24 src/Views/Menu.php:31 src/Views/Pages/Privacy.php:4
 msgid "Privacy"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Menu.php:56
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Menu.php:59
 #: src/Views/Creator.php:75
 msgid "Eyecatcher"
 msgstr ""
@@ -287,47 +287,51 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: src/Views/Menu.php:11
-msgid "Save"
-msgstr ""
-
-#: src/Views/Menu.php:14 src/Views/Creator.php:56
-msgid "Download"
-msgstr ""
-
-#: src/Views/Menu.php:17
-msgid "Undo"
-msgstr ""
-
-#: src/Views/Menu.php:22
+#: src/Views/Menu.php:10
 msgid "German"
 msgstr ""
 
-#: src/Views/Menu.php:25
+#: src/Views/Menu.php:13
 msgid "English"
 msgstr ""
 
-#: src/Views/Menu.php:32
+#: src/Views/Menu.php:20
 msgid "Logfile"
 msgstr ""
 
-#: src/Views/Menu.php:33
+#: src/Views/Menu.php:21
 msgid "Sharepics"
 msgstr ""
 
-#: src/Views/Menu.php:54
+#: src/Views/Menu.php:42
+msgid "Edit"
+msgstr ""
+
+#: src/Views/Menu.php:45
+msgid "Save"
+msgstr ""
+
+#: src/Views/Menu.php:48 src/Views/Creator.php:56
+msgid "Download"
+msgstr ""
+
+#: src/Views/Menu.php:51
+msgid "Undo"
+msgstr ""
+
+#: src/Views/Menu.php:57
 msgid "Add"
 msgstr ""
 
-#: src/Views/Menu.php:61
+#: src/Views/Menu.php:64
 msgid "Templates"
 msgstr ""
 
-#: src/Views/Menu.php:66
+#: src/Views/Menu.php:69
 msgid "latest"
 msgstr ""
 
-#: src/Views/Menu.php:77
+#: src/Views/Menu.php:80
 msgid "My sharepics"
 msgstr ""
 

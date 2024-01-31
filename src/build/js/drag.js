@@ -30,6 +30,9 @@ document.addEventListener('mousemove', function (e) {
 })
 
 document.addEventListener('mouseup', function (e) {
+  if (dragging === false) {
+    return
+  }
   stopDragging()
   undo.commit()
 })

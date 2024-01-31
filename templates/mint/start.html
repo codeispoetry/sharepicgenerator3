@@ -72,6 +72,14 @@
 
     });
 
+    document.querySelectorAll('[contenteditable]').forEach(element => {
+      element.addEventListener('blur', () => {
+        undo.commit()
+      })
+    })
+
+    undo.commit()
+
 </script>
 
 <style>
