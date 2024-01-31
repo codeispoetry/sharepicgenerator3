@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-26 18:24+0100\n"
+"POT-Creation-Date: 2024-01-31 07:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,67 +17,67 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Controllers/Frontend.php:51 src/Controllers/Frontend.php:57
-#: src/Views/Home.php:17 src/Views/Home.php:26
+#: src/Controllers/Frontend.php:70 src/Controllers/Frontend.php:76
+#: src/Views/Home.php:17 src/Views/Home.php:24
 msgid "Register"
 msgstr ""
 
-#: src/Controllers/Frontend.php:52
+#: src/Controllers/Frontend.php:71
 msgid "Registration failed. Are you already registered?"
 msgstr ""
 
-#: src/Controllers/Frontend.php:58
+#: src/Controllers/Frontend.php:77
 msgid ""
 "You have successfully registered. Please check your mails to confirm your "
 "registration."
 msgstr ""
 
-#: src/Controllers/Frontend.php:66 src/Controllers/Frontend.php:86
-#: src/Controllers/Frontend.php:87
+#: src/Controllers/Frontend.php:85 src/Controllers/Frontend.php:105
+#: src/Controllers/Frontend.php:106
 msgid "Reset password"
 msgstr ""
 
-#: src/Controllers/Frontend.php:67
+#: src/Controllers/Frontend.php:86
 msgid "Please check your email for the reset link."
 msgstr ""
 
-#: src/Controllers/Frontend.php:70
+#: src/Controllers/Frontend.php:89
 msgid "Error"
 msgstr ""
 
-#: src/Controllers/Frontend.php:71
+#: src/Controllers/Frontend.php:90
 msgid "An error occurred. Please try again later."
 msgstr ""
 
-#: src/Controllers/Frontend.php:83
+#: src/Controllers/Frontend.php:102
 msgid "Create your password"
 msgstr ""
 
-#: src/Controllers/Frontend.php:84
+#: src/Controllers/Frontend.php:103
 msgid "Set your new password"
 msgstr ""
 
-#: src/Controllers/Frontend.php:101
+#: src/Controllers/Frontend.php:120
 msgid "An error occured"
 msgstr ""
 
-#: src/Controllers/Frontend.php:102
+#: src/Controllers/Frontend.php:121
 msgid "Your password could not be set. Did you repeat it correctly?"
 msgstr ""
 
-#: src/Controllers/Frontend.php:114 src/Views/Home.php:34
+#: src/Controllers/Frontend.php:133 src/Views/Home.php:32
 msgid "Password reset"
 msgstr ""
 
-#: src/Controllers/Frontend.php:115
+#: src/Controllers/Frontend.php:134
 msgid "Your password has been reset. Please login."
 msgstr ""
 
-#: src/Controllers/Frontend.php:162 src/Views/Creator.php:46
+#: src/Controllers/Frontend.php:181 src/Views/Menu.php:48
 msgid "Logout"
 msgstr ""
 
-#: src/Controllers/Frontend.php:163
+#: src/Controllers/Frontend.php:182
 msgid "You have been logged out."
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Password Reset"
 msgstr ""
 
-#: src/Views/Home.php:4 src/Views/Header.php:6 src/Views/Home-Greens.php:4
+#: src/Views/Home.php:4 src/Views/Home-Greens.php:4
 msgid "Sharepicgenerator"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgid ""
 "create images for your blog posts, Facebook ads, and more."
 msgstr ""
 
-#: src/Views/Home.php:14 src/Views/Home.php:29 src/Views/Home.php:37
+#: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
 #: src/Views/Home-Greens.php:14
 msgid "Login"
 msgstr ""
@@ -114,27 +114,19 @@ msgstr ""
 msgid "Forgot password?"
 msgstr ""
 
-#: src/Views/Home.php:21
-msgid "Login with Gr&uuml;nes Netz"
-msgstr ""
-
-#: src/Views/Home.php:28 src/Views/Home.php:36
+#: src/Views/Home.php:26 src/Views/Home.php:34
 msgid "Already registered?"
 msgstr ""
 
-#: src/Views/Header.php:15 src/Views/Menu.php:2
+#: src/Views/Header.php:18 src/Views/Menu.php:6
 msgid "Home"
 msgstr ""
 
-#: src/Views/Header.php:16
-msgid "Create"
-msgstr ""
-
-#: src/Views/Header.php:21
+#: src/Views/Header.php:21 src/Views/Menu.php:40 src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr ""
 
-#: src/Views/Header.php:23
+#: src/Views/Header.php:24 src/Views/Menu.php:43 src/Views/Pages/Privacy.php:4
 msgid "Privacy"
 msgstr ""
 
@@ -159,7 +151,7 @@ msgid "square 1:1"
 msgstr ""
 
 #: src/Views/Cockpit/Sharepic.php:35
-msgid "Set background image"
+msgid "Background image"
 msgstr ""
 
 #: src/Views/Cockpit/Sharepic.php:37
@@ -195,30 +187,35 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:71
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Menu.php:56
+#: src/Views/Creator.php:75
 msgid "Eyecatcher"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:12 src/Views/Cockpit/Copyright.php:16
-msgid "Font color"
+#: src/Views/Cockpit/Eyecatcher.php:11
+msgid "Colors"
+msgstr ""
+
+#: src/Views/Cockpit/Eyecatcher.php:14
+msgid "Font"
 msgstr ""
 
 #: src/Views/Cockpit/Eyecatcher.php:17
-msgid "Background color"
+msgid "Background"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:23 src/Views/Cockpit/Freetext.php:10
-#: src/Views/Cockpit/Copyright.php:10 src/Views/Cockpit/Addpicture.php:10
+#: src/Views/Cockpit/Eyecatcher.php:24 src/Views/Cockpit/Freetext.php:10
+#: src/Views/Cockpit/Copyright.php:18 src/Views/Cockpit/Addpicture.php:10
 msgid "to front"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:24 src/Views/Cockpit/Greentext.php:12
+#: src/Views/Cockpit/Eyecatcher.php:25 src/Views/Cockpit/Greentext.php:12
 #: src/Views/Cockpit/Logo.php:20 src/Views/Cockpit/Freetext.php:11
-#: src/Views/Cockpit/Copyright.php:11 src/Views/Cockpit/Addpicture.php:11
+#: src/Views/Cockpit/Copyright.php:19 src/Views/Cockpit/Addpicture.php:11
 msgid "to back"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:25
+#: src/Views/Cockpit/Eyecatcher.php:26
 msgid "delete"
 msgstr ""
 
@@ -240,6 +237,7 @@ msgid "please choose"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
+#: src/Views/Creator.php:72
 msgid "Text"
 msgstr ""
 
@@ -251,11 +249,15 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: src/Views/Cockpit/Copyright.php:2
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:78
 msgid "Copyright"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:2 src/Views/Creator.php:72
+#: src/Views/Cockpit/Copyright.php:12
+msgid "Font color"
+msgstr ""
+
+#: src/Views/Cockpit/Addpicture.php:2
 msgid "Picture"
 msgstr ""
 
@@ -281,15 +283,51 @@ msgstr ""
 msgid "Usage Log"
 msgstr ""
 
-#: src/Views/Menu.php:5
+#: src/Views/Menu.php:3
+msgid "File"
+msgstr ""
+
+#: src/Views/Menu.php:11
+msgid "Save"
+msgstr ""
+
+#: src/Views/Menu.php:14 src/Views/Creator.php:56
+msgid "Download"
+msgstr ""
+
+#: src/Views/Menu.php:17
+msgid "Undo"
+msgstr ""
+
+#: src/Views/Menu.php:22
+msgid "German"
+msgstr ""
+
+#: src/Views/Menu.php:25
+msgid "English"
+msgstr ""
+
+#: src/Views/Menu.php:32
+msgid "Logfile"
+msgstr ""
+
+#: src/Views/Menu.php:33
+msgid "Sharepics"
+msgstr ""
+
+#: src/Views/Menu.php:54
+msgid "Add"
+msgstr ""
+
+#: src/Views/Menu.php:61
 msgid "Templates"
 msgstr ""
 
-#: src/Views/Menu.php:10
+#: src/Views/Menu.php:66
 msgid "latest"
 msgstr ""
 
-#: src/Views/Menu.php:21
+#: src/Views/Menu.php:77
 msgid "My sharepics"
 msgstr ""
 
@@ -319,47 +357,32 @@ msgstr ""
 msgid "email"
 msgstr ""
 
-#: src/Views/Components/Forms/Register.php:3
+#: src/Views/Components/Forms/Register.php:8
+#, php-format
+msgid "I have read the %sterms of condition%s and accept them.</a>"
+msgstr ""
+
+#: src/Views/Components/Forms/Register.php:16
 msgid "register"
 msgstr ""
 
-#: src/Views/Creator.php:30
-msgid "Usage"
+#: src/Views/Components/Forms/Register.php:24
+msgid "close"
 msgstr ""
 
-#: src/Views/Creator.php:31
-msgid "Sharepics"
+#: src/Views/Creator.php:69
+msgid "Image"
 msgstr ""
 
-#: src/Views/Creator.php:38
-msgid "German"
-msgstr ""
-
-#: src/Views/Creator.php:39
-msgid "English"
-msgstr ""
-
-#: src/Views/Creator.php:43
-msgid "Logged in as"
-msgstr ""
-
-#: src/Views/Creator.php:82
-msgid "Save"
-msgstr ""
-
-#: src/Views/Creator.php:83
-msgid "Download"
-msgstr ""
-
-#: src/Views/Creator.php:102
+#: src/Views/Creator.php:91
 msgid "Please wait ..."
 msgstr ""
 
-#: src/Views/Creator.php:116
+#: src/Views/Creator.php:105
 msgid "Are you sure?"
 msgstr ""
 
-#: src/Views/Creator.php:117
+#: src/Views/Creator.php:106
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
