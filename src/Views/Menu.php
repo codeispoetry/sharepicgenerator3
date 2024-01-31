@@ -51,6 +51,13 @@
     </div>
 
     <div class="dropdown">
+        <span><?php echo _( 'Add' ); ?></span>
+        <div class="dropdown-content adder">
+            <button data-item="eyecatcher"><?php  echo _('Eyecatcher');?></button>
+        </div>
+    </div>
+
+    <div class="dropdown">
         <span><?php echo _( 'Templates' ); ?></span>
         <div class="dropdown-content">
             <?php

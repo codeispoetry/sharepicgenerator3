@@ -61,7 +61,6 @@ class API {
         cockpit.setup_sharepic()
         rte.init()
         sg.init()
-        document.getElementById('adder').style.display = 'block'
 
         document.getElementById('eyecatcher').addEventListener('input', function (event) {
           const eyecatcher = document.getElementById('eyecatcher')

@@ -2,7 +2,7 @@
 
 class Component {
   constructor () {
-    document.querySelectorAll('.add_elements li').forEach(element => {
+    document.querySelectorAll('.adder button').forEach(element => {
       element.addEventListener('click', (event) => {
         const item = element.dataset.item
         component.add(item)
