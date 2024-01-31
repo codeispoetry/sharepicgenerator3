@@ -4,19 +4,7 @@
         <div class="dropdown-content">
              <a href="index.php" class="menu-link">
                 <?php  echo _('Home');?>
-			</a>
-            <div class="divider"></div>
-
-            <button data-click="api.save">
-                <?php  echo _('Save');?>
-            </button>
-            <button data-click="api.create">
-                <?php  echo _('Download');?>
-            </button>
-            <button data-click="ui.undo" id="undo">
-                <?php echo _( 'Undo' ); ?>
-            </button>
-            
+			</a>           
             <div class="divider"></div>
             <button data-lang="de">
                 <?php echo _( 'German' ); ?>
@@ -47,6 +35,21 @@
             <a href="index.php?c=frontend&m=logout" class="menu-link">
                 <?php  echo _('Logout');?>
 			</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <span><?php echo _( 'Edit' ); ?></span>
+        <div class="dropdown-content">   
+            <button data-click="api.save">
+                <?php  echo _('Save');?>
+            </button>
+            <button data-click="api.create">
+                <?php  echo _('Download');?>
+            </button>
+            <button data-click="ui.undo" id="undo">
+                <?php echo _( 'Undo' ); ?>
+            </button>
         </div>
     </div>
 
