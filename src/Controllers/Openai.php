@@ -46,23 +46,13 @@ class Openai {
 			die();
 		}
 
-		if ( true ) { // use real api.
-			$response = $this->curl( $data['prompt'] );
-			$json     = json_decode( $response );
+		$response = $this->curl( $data['prompt'] );
+		$json     = json_decode( $response );
 
-			$remote_url = $json->data[0]->url;
-			$local_file = 'users/' . $this->user . '/workspace/dalle.png';
-			copy( $remote_url, $local_file );
-			$json->local_file = $local_file;
-
-			file_put_contents( 'tmp/dalle.json', $json );
-
-		} else {
-			$response         = file_get_contents( 'tmp/dalle.json' );
-			$json             = json_decode( $response );
-			$local_file       = 'users/' . $this->user . '/workspace/dalle.png';
-			$json->local_file = $local_file;
-		}
+		$remote_url = $json->data[0]->url;
+		$local_file = 'users/' . $this->user . '/workspace/background.png';
+		copy( $remote_url, $local_file );
+		$json->local_file = $local_file;
 
 		echo json_encode( $json );
 	}

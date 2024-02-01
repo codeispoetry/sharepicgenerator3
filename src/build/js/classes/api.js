@@ -134,24 +134,28 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         const mySharepics = document.querySelector('#my-sharepics')
-        const clonedEntry = mySharepics.lastElementChild.cloneNode(true)
 
-        const buttons = clonedEntry.querySelectorAll('button')
-        const firstButton = buttons[0]
-        const secondButton = buttons[1]
+        try{
+          const clonedEntry = mySharepics.lastElementChild.cloneNode(true)
 
-        firstButton.innerHTML = name
-        firstButton.dataset.load = data.full_path
-        secondButton.dataset.delete = data.id
+          const buttons = clonedEntry.querySelectorAll('button')
+          const firstButton = buttons[0]
+          const secondButton = buttons[1]
 
-        ui.handleClickLoad(firstButton)
-        ui.handleClickDelete(secondButton)
+          firstButton.innerHTML = name
+          firstButton.dataset.load = data.full_path
+          secondButton.dataset.delete = data.id
 
-        mySharepics.appendChild(clonedEntry)
+          ui.handleClickLoad(firstButton)
+          ui.handleClickDelete(secondButton)
+
+          mySharepics.appendChild(clonedEntry)
+        }catch(e){
+          window.location.reload()
+        }
 
         logger.log('saved sharepic ' + name)
       })
