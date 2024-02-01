@@ -217,6 +217,7 @@ class API {
     createButton.disabled = true
 
     const startGeneration =  Math.floor(Date.now() / 1000)
+    document.getElementById('dalle_result_waiting_progress').innerHTML = 0;
 
     const dalle_waiting = window.setInterval(function(){
       const seconds = Math.floor(Date.now() / 1000) - startGeneration
@@ -251,7 +252,7 @@ class API {
         document.getElementById('dalle_result_response').style.display = 'block'
 
         document.getElementById('dalle_prompt').value = hint
-        document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '" />'
+        document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '?rand=' + Math.random() + '" />'
 
         config.dalle = {
           url: url
@@ -270,7 +271,7 @@ class API {
   }
 
   usedalle(){
-    document.getElementById('sharepic').style.backgroundImage = `url('${config.dalle.url}')`
+    document.getElementById('sharepic').style.backgroundImage = `url('${config.dalle.url}?rand=${Math.random()}')`
     logger.prepare_log_data({
       imagesrc: 'dalle'
     })
@@ -312,6 +313,34 @@ class API {
       console.error('Error:', this.status, this.statusText)
     }
     xhr.send(formData)
+  }
+
+  load_from_url( url ) {
+    const data = {
+      url: url
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch(this.api + '&m=load_from_url', options)
+      .then(response => {
+        if (response.status !== 200) {
+          throw new Error(response.status + ' ' + response.statusText)
+        }
+        return response.text()
+      })
+      .then(data => {
+        data = JSON.parse(data)
+
+        document.getElementById('sharepic').style.backgroundImage = `url('${data.path}?rand=${Math.random()}')`
+      })
+      .catch(error => console.error('Error:', error))
   }
 
   showWaiting(){

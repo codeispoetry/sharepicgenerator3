@@ -103,39 +103,10 @@ class Sharepic {
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
 
-			$this->download_images();
-
 			$this->set_zoom( 1 / $this->size['zoom'] );
 
 			$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body>%s</body></html>';
 			file_put_contents( $this->file, sprintf( $scaffold, $this->html ) );
-		}
-	}
-
-	/**
-	 * Downloads images and rewrites html
-	 */
-	private function download_images() {
-
-		return;
-		$this->html = str_replace( '&quot;', "'", $this->html );
-
-		preg_match_all( '/url\(\'([^)]+)\'\)/', $this->html, $matches );
-		$urls = $matches[1];
-
-		foreach ( $urls as $url ) {
-
-			$masked_url = preg_quote( $url, '#' );
-			if ( ! str_starts_with( $url, 'http' ) ) {
-				$this->html = preg_replace( "#$masked_url#", '../../..' . $url, $this->html );
-				continue;
-			}
-
-			$extension  = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
-			$local_file = 'users/' . $this->user . '/workspace/background.' . $extension;
-			copy( $url, $local_file );
-
-			$this->html = preg_replace( "#$masked_url#", '../../../' . $local_file, $this->html );
 		}
 	}
 
@@ -171,6 +142,14 @@ class Sharepic {
 		if ( 0 !== $return_code ) {
 			$this->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not save sharepic' );
+		}
+
+		// Rewrite paths.
+		$cmd = "sed -i 's/workspace/save\/$id/g' $save/sharepic.html 2>&1";
+		exec( $cmd, $output, $return_code );
+		if ( 0 !== $return_code ) {
+			$this->logger->error( implode( "\n", $output ) );
+			$this->http_error( 'Could not rewrite path' );
 		}
 
 		$name = preg_replace( '/[^a-zA-Z0-9\säöüßÄÖÜ]/', '-', $this->info );
@@ -243,6 +222,32 @@ class Sharepic {
 		$this->create_thumbnail( $path );
 
 		echo json_encode( array( 'path' => $path ) );
+	}
+
+	/**
+	 * Loads an image from a URL.
+	 */
+	public function load_from_url() {
+		$data = json_decode( file_get_contents( 'php://input' ), true );
+
+		$url = $data['url'] ?? false;
+
+		if ( ! $url ) {
+			$this->http_error( 'Could not load image' );
+		}
+
+		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
+		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
+			$this->http_error( 'Invalid file type' );
+		}
+
+		$this->delete_old_files();
+
+		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
+
+		copy( $url, $upload_file );
+
+		echo json_encode( array( 'path' => $upload_file ) );
 	}
 
 

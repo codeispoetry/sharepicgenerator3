@@ -66,6 +66,6 @@ class Pixabay {
 
   set_imge (url) {
     const sharepic = document.getElementById('sharepic')
-    sharepic.style.backgroundImage = `url('${url}')`
+    api.load_from_url(url)
   }
 }
