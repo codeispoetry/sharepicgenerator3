@@ -11,8 +11,7 @@ class Component {
 
     document.querySelectorAll('.delete').forEach(element => {
       element.addEventListener('click', (event) => {
-        const target = element.dataset.target
-        document.getElementById(target).remove()
+        cockpit.target.remove()
       })
     })
   }

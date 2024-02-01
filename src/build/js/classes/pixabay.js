@@ -56,7 +56,7 @@ class Pixabay {
         })
         logger.log('clicks on image after search for ' + q)
 
-        this.set_imge(img.dataset.url)
+        this.set_imge(img)
 
         document.getElementById('copyright').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
       }
@@ -64,8 +64,8 @@ class Pixabay {
     })
   }
 
-  set_imge (url) {
-    const sharepic = document.getElementById('sharepic')
-    api.load_from_url(url)
+  set_imge (img) {
+    document.getElementById('sharepic').style.backgroundImage = img.style.backgroundImage
+    api.load_from_url(img.dataset.url)
   }
 }
