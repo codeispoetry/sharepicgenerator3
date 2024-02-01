@@ -38,6 +38,8 @@ class UI {
 
         const id = 'cockpit_' + element.dataset.showtab
         document.getElementById(id)?.classList.add('show')
+        element.classList.add('active')
+
       })
     })
 

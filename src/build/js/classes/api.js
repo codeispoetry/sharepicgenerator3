@@ -116,8 +116,6 @@ class API {
   save () {
     const name = prompt('Name des Sharepics', 'Sharepic')
 
-    document.querySelector('.save').disabled = true
-    document.querySelector('.save').classList.add('waiting')
     const data = this.prepare()
     data.name = name
     const options = {
@@ -136,6 +134,7 @@ class API {
         return response.text()
       })
       .then(data => {
+        console.log(data)
         data = JSON.parse(data)
 
         const mySharepics = document.querySelector('#my-sharepics')
@@ -153,9 +152,6 @@ class API {
         ui.handleClickDelete(secondButton)
 
         mySharepics.appendChild(clonedEntry)
-
-        document.querySelector('.save').disabled = false
-        document.querySelector('.save').classList.remove('waiting')
 
         logger.log('saved sharepic ' + name)
       })
@@ -208,12 +204,18 @@ class API {
     }
 
     if( data.prompt == '' ){
-      alert('Bitte gib einen Text ein.')
+      alert(lang["Enter prompt for image"])
       return
     }
 
     document.getElementById('dalle_result_waiting').style.display = 'block'
     document.getElementById('dalle_result_response').style.display = 'none'
+
+    const createButton = document.querySelector('[data-click="api.dalle"')
+    const createButtonLabel = createButton.innerHTML
+    createButton.innerHTML = '...'
+    createButton.disabled = true
+
 
     logger.log('used dalle with prompt: ' + data.prompt)
     const startGeneration =  Math.floor(Date.now() / 1000)
@@ -251,6 +253,9 @@ class API {
 
         const endGeneration =  Math.floor(Date.now() / 1000)
         logger.log('waited ' + (endGeneration - startGeneration) + ' seconds for dalle result')
+
+        createButton.innerHTML = createButtonLabel
+        createButton.disabled = false
 
       })
       .catch(error => console.error('Error:', error))

@@ -13,9 +13,9 @@
 
     <section id="dalle_result">
         <div id="dalle_result_waiting" style="display: none">
+            <img src="assets/icons/waiting.svg" style="width: 50px; margin: 0 10px 30px 0; float:left;">
             <?php
-                echo _('Please wait while we generate your image.');
-                echo '<br>';
+                echo _('Please wait while AI generates your image.');
                 echo _('This can take up to 30 seconds.');
             ?>
         </div>
