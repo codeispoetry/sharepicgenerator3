@@ -99,6 +99,7 @@
             'apikey': '<?php echo $this->config->get( 'Pixabay', 'apikey' ); ?>'
         },
 		'url': '<?php echo $this->config->get( 'Main', 'url' ); ?>',
+		'starttemplate': '<?php echo $this->config->get( 'Main', 'starttemplate' ); ?>',
 	};
 	
 	const lang = {

@@ -3,7 +3,7 @@ var api, sg, cockpit, select, undo, pixabay, uploader, component, rte, quill, lo
 
 window.onload = function () {
   api = new API()
-  api.load('templates/mint/start.html')
+  api.load('templates/' + config.starttemplate + '/start.html')
 
   sg = new Sharepic()
   cockpit = new Cockpit()
