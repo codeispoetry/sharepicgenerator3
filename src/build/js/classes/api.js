@@ -216,9 +216,15 @@ class API {
     createButton.innerHTML = '...'
     createButton.disabled = true
 
+    const startGeneration =  Math.floor(Date.now() / 1000)
+
+    const dalle_waiting = window.setInterval(function(){
+      const seconds = Math.floor(Date.now() / 1000) - startGeneration
+      document.getElementById('dalle_result_waiting_progress').innerHTML = seconds;
+    }, 1000);
+
 
     logger.log('used dalle with prompt: ' + data.prompt)
-    const startGeneration =  Math.floor(Date.now() / 1000)
 
     const options = {
       method: 'POST',
@@ -256,6 +262,8 @@ class API {
 
         createButton.innerHTML = createButtonLabel
         createButton.disabled = false
+
+        clearInterval(dalle_waiting)
 
       })
       .catch(error => console.error('Error:', error))

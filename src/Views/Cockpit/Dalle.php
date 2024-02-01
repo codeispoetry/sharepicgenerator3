@@ -18,6 +18,9 @@
                 echo _('Please wait while AI generates your image.');
                 echo _('This can take up to one minute.');
             ?>
+            <br>
+            <span id="dalle_result_waiting_progress">0</span>
+            <?php echo _('seconds'); ?>
         </div>
 
         <div id="dalle_result_response" style="display: none">
