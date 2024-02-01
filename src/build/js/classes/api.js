@@ -253,6 +253,9 @@ class API {
         document.getElementById('dalle_prompt').value = hint
         document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '?rand=' + Math.random() + '" />'
 
+        document.getElementById('copyright').innerHTML = `Bild generiert von DALL-E`
+
+
         config.dalle = {
           url
         }
@@ -305,7 +308,47 @@ class API {
 
       document.querySelector('.file-upload').disabled = false
 
+      document.getElementById('copyright').innerHTML = ''
+
+
       logger.log('uploaded file')
+    }
+    xhr.onerror = function () {
+      console.error('Error:', this.status, this.statusText)
+    }
+    xhr.send(formData)
+  }
+
+  upload_addpic (file) {
+    const formData = new FormData()
+    formData.append('file', file)
+
+    const imageUrl = URL.createObjectURL(file)
+
+    document.querySelector('.file-upload').disabled = true
+
+    const xhr = new XMLHttpRequest()
+    xhr.open('POST', this.api + '&m=upload_addpic', true)
+    xhr.upload.onprogress = function (e) {
+      if (e.lengthComputable) {
+        const percentComplete = Math.round((e.loaded / e.total) * 100)
+      }
+    }
+    xhr.onload = function () {
+      if (this.status === 200) {
+        const resp = JSON.parse(this.response)
+
+        cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${resp.path}?rand=${Math.random()}')`
+        logger.prepare_log_data({
+          imagesrc: 'addpic'
+        })
+      } else {
+        console.error('Error:', this.status, this.statusText)
+      }
+
+      document.querySelector('.file-upload').disabled = false
+
+      logger.log('uploaded addpic')
     }
     xhr.onerror = function () {
       console.error('Error:', this.status, this.statusText)

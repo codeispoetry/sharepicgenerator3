@@ -293,7 +293,6 @@ class Sharepic {
 		echo $file;
 	}
 
-
 	/**
 	 * Uploads an images
 	 */
@@ -312,6 +311,30 @@ class Sharepic {
 		$this->delete_old_files();
 
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
+
+		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
+			$this->http_error( 'Could not upload file' );
+		}
+
+		echo json_encode( array( 'path' => $upload_file ) );
+	}
+
+	/**
+	 * Uploads an addpic
+	 */
+	public function upload_addpic() {
+		if ( ! isset( $_FILES['file'] ) ) {
+			return;
+		}
+
+		$file = $_FILES['file'];
+
+		$extension = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
+		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
+			$this->http_error( 'Invalid file type' );
+		}
+
+		$upload_file = 'users/' . $this->user . '/workspace/addpic-' . rand() . '.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file' );

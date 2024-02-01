@@ -52,6 +52,16 @@ class UI {
       api.upload(input.files[0])
     })
 
+    document.getElementById('upload_addpic').addEventListener('change', function () {
+      const input = document.getElementById('upload_addpic')
+
+      if (!input.files.length) {
+        return
+      }
+
+      api.upload_addpic(input.files[0])
+    })
+
     document.querySelectorAll('.closer').forEach(element => {
       element.addEventListener('click', (event) => {
         const target = element.dataset.target
