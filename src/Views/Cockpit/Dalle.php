@@ -16,7 +16,7 @@
             <img src="assets/icons/waiting.svg" style="width: 50px; margin: 0 10px 30px 0; float:left;">
             <?php
                 echo _('Please wait while AI generates your image.');
-                echo _('This can take up to 30 seconds.');
+                echo _('This can take up to one minute.');
             ?>
         </div>
 

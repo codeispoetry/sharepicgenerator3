@@ -7,8 +7,18 @@
                 <?php
 					$lines = file( './logs/usage.log' );
 					$lines = array_reverse( $lines );
-                    foreach( $lines as $line ) {	
-						printf( '%s<br>', $line );
+                    foreach( $lines as $line ) {
+						list($time, $user, $entry) = explode( "\t", $line );
+
+						if( str_starts_with( $entry, 'loads template' ) ) {
+							continue;
+						}
+
+						printf( '%s %s %s<br>', 
+							$time, 
+							substr( $user, 0, 5 ), 
+							$entry
+						);
 					}
                 ?>
             </p>
