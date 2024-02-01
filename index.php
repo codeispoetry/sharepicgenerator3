@@ -12,6 +12,7 @@ require './vendor/autoload.php';
 use Sharepicgenerator\Controllers\Frontend;
 use Sharepicgenerator\Controllers\Sharepic;
 use Sharepicgenerator\Controllers\Felogger;
+use Sharepicgenerator\Controllers\Openai;
 use Sharepicgenerator\Controllers\Config;
 
 bindtextdomain( 'sg', './languages' );
@@ -53,6 +54,11 @@ if ( 'sharepic' === $controller ) {
 if ( 'felogger' === $controller ) {
 	$felogger = new Felogger();
 	$felogger->{$method}();
+}
+
+if ( 'openai' === $controller ) {
+	$openai = new Openai();
+	$openai->{$method}();
 }
 
 /**

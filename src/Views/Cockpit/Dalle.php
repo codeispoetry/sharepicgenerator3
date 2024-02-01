@@ -1,0 +1,44 @@
+<section class="mainsection" id="cockpit_dalle">
+    <h2><?php  echo _('Dall-E');?></h2>
+    <section>
+        <h3><?php  echo _('Prompt');?></h3>
+        <textarea placeholder="<?php  echo _('Describe the image you want');?>" 
+                id="dalle_prompt" spellcheck="false" style="height: 25em;"></textarea>
+        <button class="create flat" data-click="api.dalle">
+            <?php  echo _('Create');?>
+        </button>
+    </section>
+
+
+
+    <section id="dalle_result">
+        <div id="dalle_result_waiting" style="display: none">
+            <?php
+                echo _('Please wait while we generate your image.');
+                echo '<br>';
+                echo _('This can take up to 30 seconds.');
+            ?>
+        </div>
+
+        <div id="dalle_result_response" style="display: none">
+            <h3><?php  echo _('Result');?></h3>
+            <div id="dalle_result_image"></div>
+            <button class="create flat" data-click="api.usedalle">
+                <?php  echo _('Use this image');?>
+            </button>
+            <button class="create flat" data-click="api.dalle">
+                <?php  echo _('Try again');?>
+            </button>
+        </div>
+        <style>
+            #dalle_result img {
+                max-width: 100%;
+            }
+        </style>
+    </section>
+    
+</section>
+
+</script>
+
+

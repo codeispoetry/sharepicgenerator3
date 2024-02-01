@@ -77,6 +77,9 @@
 				<button data-pseudoselect="copyright">
 					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
 				</button>
+				<button data-showtab="dalle">
+					<img src="assets/icons/robot.svg" title="<?php echo _('Dall-E'); ?>">
+				</button>
 			</div>
 		</div>
 		<?php

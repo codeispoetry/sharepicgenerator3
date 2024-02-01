@@ -26,6 +26,21 @@ class UI {
       })
     })
 
+    document.querySelectorAll('[data-showtab]').forEach(element => {
+      element.addEventListener('click', (event) => {
+        document.querySelectorAll('#cockpit .show').forEach(element => {
+          element.classList.remove('show')
+        })
+    
+        document.querySelectorAll('#cockpit .active').forEach(element => {
+          element.classList.remove('active')
+        })
+
+        const id = 'cockpit_' + element.dataset.showtab
+        document.getElementById(id)?.classList.add('show')
+      })
+    })
+
     document.getElementById('upload').addEventListener('change', function () {
       const input = document.getElementById('upload')
 

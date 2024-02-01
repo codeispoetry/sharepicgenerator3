@@ -3,6 +3,8 @@
 class API {
   constructor () {
     this.api = config.url + '/index.php?c=sharepic'
+    this.ai = config.url + '/index.php?c=openai'
+
   }
 
   delete (saving) {
@@ -198,6 +200,67 @@ class API {
         logger.log('created sharepic')
       })
       .catch(error => console.error('Error:', error))
+  }
+
+  dalle () {
+    const data = {
+      prompt: document.getElementById('dalle_prompt').value
+    }
+
+    if( data.prompt == '' ){
+      alert('Bitte gib einen Text ein.')
+      return
+    }
+
+    document.getElementById('dalle_result_waiting').style.display = 'block'
+    document.getElementById('dalle_result_response').style.display = 'none'
+
+    logger.log('used dalle with prompt: ' + data.prompt)
+    const startGeneration =  Math.floor(Date.now() / 1000)
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch(this.ai + '&m=dalle', options)
+      .then(response => {
+        if (response.status !== 200) {
+          throw new Error(response.status + ' ' + response.statusText)
+        }
+        return response.text()
+      })
+      .then(data => {
+        data = JSON.parse(data)
+
+        const hint = data.data[0].revised_prompt
+        const url = data.local_file
+
+        document.getElementById('dalle_result_waiting').style.display = 'none'
+        document.getElementById('dalle_result_response').style.display = 'block'
+
+        document.getElementById('dalle_prompt').value = hint
+        document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '" />'
+
+        config.dalle = {
+          url: url
+        }
+
+        const endGeneration =  Math.floor(Date.now() / 1000)
+        logger.log('waited ' + (endGeneration - startGeneration) + ' seconds for dalle result')
+
+      })
+      .catch(error => console.error('Error:', error))
+  }
+
+  usedalle(){
+    document.getElementById('sharepic').style.backgroundImage = `url('${config.dalle.url}')`
+    logger.prepare_log_data({
+      imagesrc: 'dalle'
+    })
   }
 
   upload (file) {
