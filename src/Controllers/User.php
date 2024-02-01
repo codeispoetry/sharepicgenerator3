@@ -485,7 +485,7 @@ class User {
 
 		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
 		$server_address = $_SERVER['HTTP_HOST'];
-		$link           = $protocol . $server_address . '/index.php/frontend/reset_password?token=' . $token;
+		$link           = $protocol . $server_address . '/index.php?c=frontend&m=reset_password&token=' . $token;
 
 		ob_start();
 		include 'src/Views/Mail/Password_Link.php';
