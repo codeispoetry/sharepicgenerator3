@@ -33,15 +33,15 @@ class Undo {
     const commits = JSON.parse(localStorage.getItem('commits'))
 
     if (commits.length === 0) {
-      alert("Nothing to undo")
+      alert('Nothing to undo')
       return
     }
 
     // If we're not already undoing, pop the latest commit
     // so that we undo immediately and not the latest commit
-    if( !this.undoing ) {
+    if (!this.undoing) {
       this.undoing = true
-      commits.pop() 
+      commits.pop()
     }
 
     const latestCommit = commits.pop()

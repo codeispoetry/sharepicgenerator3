@@ -20,7 +20,7 @@ document.addEventListener('mousemove', function (e) {
   const y = e.clientY
 
   // drag, even if element is clipped outside of the sharepic
-  if( e.target.dataset.clipping === 'true' ) {
+  if (e.target.dataset.clipping === 'true') {
     dragItems[dragging].move(x, y, true)
     return
   }

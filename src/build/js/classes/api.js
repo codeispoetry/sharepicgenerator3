@@ -4,7 +4,6 @@ class API {
   constructor () {
     this.api = config.url + '/index.php?c=sharepic'
     this.ai = config.url + '/index.php?c=openai'
-
   }
 
   delete (saving) {
@@ -35,8 +34,6 @@ class API {
     const data = {
       template: path
     }
-
-    
 
     const options = {
       method: 'POST',
@@ -95,7 +92,6 @@ class API {
     clonedCanvas.querySelector('#patterns')?.remove()
     clonedCanvas.querySelector('#greentextContextMenu')?.remove()
 
-
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css">\n')
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="node_modules/quill/dist/quill.bubble.css">\n')
 
@@ -138,7 +134,7 @@ class API {
 
         const mySharepics = document.querySelector('#my-sharepics')
 
-        try{
+        try {
           const clonedEntry = mySharepics.lastElementChild.cloneNode(true)
 
           const buttons = clonedEntry.querySelectorAll('button')
@@ -153,7 +149,7 @@ class API {
           ui.handleClickDelete(secondButton)
 
           mySharepics.appendChild(clonedEntry)
-        }catch(e){
+        } catch (e) {
           window.location.reload()
         }
 
@@ -207,8 +203,8 @@ class API {
       prompt: document.getElementById('dalle_prompt').value
     }
 
-    if( data.prompt == '' ){
-      alert(lang["Enter prompt for image"])
+    if (data.prompt === '') {
+      alert(lang['Enter prompt for image'])
       return
     }
 
@@ -220,14 +216,13 @@ class API {
     createButton.innerHTML = '...'
     createButton.disabled = true
 
-    const startGeneration =  Math.floor(Date.now() / 1000)
-    document.getElementById('dalle_result_waiting_progress').innerHTML = 0;
+    const startGeneration = Math.floor(Date.now() / 1000)
+    document.getElementById('dalle_result_waiting_progress').innerHTML = 0
 
-    const dalle_waiting = window.setInterval(function(){
+    const dalleWaiting = window.setInterval(function () {
       const seconds = Math.floor(Date.now() / 1000) - startGeneration
-      document.getElementById('dalle_result_waiting_progress').innerHTML = seconds;
-    }, 1000);
-
+      document.getElementById('dalle_result_waiting_progress').innerHTML = seconds
+    }, 1000)
 
     logger.log('used dalle with prompt: ' + data.prompt)
 
@@ -259,22 +254,21 @@ class API {
         document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '?rand=' + Math.random() + '" />'
 
         config.dalle = {
-          url: url
+          url
         }
 
-        const endGeneration =  Math.floor(Date.now() / 1000)
+        const endGeneration = Math.floor(Date.now() / 1000)
         logger.log('waited ' + (endGeneration - startGeneration) + ' seconds for dalle result')
 
         createButton.innerHTML = createButtonLabel
         createButton.disabled = false
 
-        clearInterval(dalle_waiting)
-
+        clearInterval(dalleWaiting)
       })
       .catch(error => console.error('Error:', error))
   }
 
-  usedalle(){
+  usedalle () {
     document.getElementById('sharepic').style.backgroundImage = `url('${config.dalle.url}?rand=${Math.random()}')`
     logger.prepare_log_data({
       imagesrc: 'dalle'
@@ -319,9 +313,9 @@ class API {
     xhr.send(formData)
   }
 
-  load_from_url( url ) {
+  load_from_url (url) {
     const data = {
-      url: url
+      url
     }
 
     const options = {
@@ -347,13 +341,13 @@ class API {
       .catch(error => console.error('Error:', error))
   }
 
-  showWaiting(){
+  showWaiting () {
     document.getElementsByTagName('body')[0].style.opacity = 0.3
-    document.getElementById("waiting").showModal();
+    document.getElementById('waiting').showModal()
   }
 
-  closeWaiting(){
+  closeWaiting () {
     document.getElementsByTagName('body')[0].style.opacity = 1
-    document.getElementById("waiting").close();
+    document.getElementById('waiting').close()
   }
 }

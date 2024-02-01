@@ -25,7 +25,7 @@ class Cockpit {
       element.classList.remove('active')
     })
 
-    this.target = element;
+    this.target = element
     const cockpitEelement = 'setup_' + element.dataset.cockpit
     if (typeof this[cockpitEelement] === 'function') {
       this[cockpitEelement](element)
@@ -33,8 +33,7 @@ class Cockpit {
     const id = 'cockpit_' + element.dataset.cockpit
     document.getElementById(id)?.classList.add('show')
 
-    document.querySelector('[data-pseudoselect="' + element.dataset.cockpit + '"]')?.classList.add('active');
-
+    document.querySelector('[data-pseudoselect="' + element.dataset.cockpit + '"]')?.classList.add('active')
   }
 
   /*
@@ -59,7 +58,6 @@ class Cockpit {
     slider.value = element.style.fontSize.replace('px', '')
 
     document.getElementById('copyright_color').value = rgbToHex(element.style.color)
-
   }
 
   setup_freetext (element) {

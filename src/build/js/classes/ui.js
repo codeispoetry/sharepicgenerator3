@@ -1,10 +1,10 @@
 /* eslint-disable no-undef, no-unused-vars */
 
-var mouseDownEvent = new MouseEvent('mousedown', {
+const mouseDownEvent = new MouseEvent('mousedown', {
   bubbles: true,
   cancelable: true,
   button: 0
-});
+})
 
 class UI {
   constructor () {
@@ -31,7 +31,7 @@ class UI {
         document.querySelectorAll('#cockpit .show').forEach(element => {
           element.classList.remove('show')
         })
-    
+
         document.querySelectorAll('#cockpit .active').forEach(element => {
           element.classList.remove('active')
         })
@@ -39,7 +39,6 @@ class UI {
         const id = 'cockpit_' + element.dataset.showtab
         document.getElementById(id)?.classList.add('show')
         element.classList.add('active')
-
       })
     })
 
@@ -72,29 +71,28 @@ class UI {
 
     document.querySelectorAll('.to-back').forEach(element => {
       element.addEventListener('click', (event) => {
-        const allElements = [...document.querySelectorAll('#sharepic > *')];
+        const allElements = [...document.querySelectorAll('#sharepic > *')]
 
         // Filter elements that have a z-index
         const elementsWithZIndex = allElements.filter(element => {
-          const zIndex = parseInt(getComputedStyle(element).zIndex, 10);
-          return !isNaN(zIndex) && zIndex !== 0;
-        });
+          const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
+          return !isNaN(zIndex) && zIndex !== 0
+        })
 
         // Sort elements by z-index
         const sortedElementsByZIndex = elementsWithZIndex.sort((a, b) => {
-          const zIndexA = parseInt(getComputedStyle(a).zIndex, 10);
-          const zIndexB = parseInt(getComputedStyle(b).zIndex, 10);
-          return zIndexA - zIndexB;
-        });
+          const zIndexA = parseInt(getComputedStyle(a).zIndex, 10)
+          const zIndexB = parseInt(getComputedStyle(b).zIndex, 10)
+          return zIndexA - zIndexB
+        })
 
         // Loop through sorted elements and increase their z-index by one
         sortedElementsByZIndex.forEach(element => {
-          const zIndex = parseInt(getComputedStyle(element).zIndex, 10);
-          element.style.zIndex = (zIndex + 1).toString();
-        });
+          const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
+          element.style.zIndex = (zIndex + 1).toString()
+        })
 
-
-        cockpit.target.style.zIndex = 1;
+        cockpit.target.style.zIndex = 1
       })
     })
 
@@ -128,7 +126,7 @@ class UI {
 
     document.querySelectorAll('[data-lang]').forEach(element => {
       element.addEventListener('click', function () {
-        if(confirm(lang['All changes lost']) === false) {
+        if (confirm(lang['All changes lost']) === false) {
           return false
         }
         document.cookie = 'lang=' + this.dataset.lang + '; path=/'
