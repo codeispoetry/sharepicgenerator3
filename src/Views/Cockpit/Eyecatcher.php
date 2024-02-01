@@ -7,7 +7,7 @@
         </label>
     </section>
 
-    <section>
+    <section id="eyecatcher_colors">
         <h3><?php echo _('Colors');?></h3>
         <div class="grid">
            

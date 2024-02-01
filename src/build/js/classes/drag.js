@@ -20,13 +20,11 @@ class Drag {
     })
   }
 
-  move (x, y) {
+  move (x, y, clipping = false) {
     x -= this.offsetX
     y -= this.offsetY
 
-    const doNotLeaveCanvas = true
-
-    if (doNotLeaveCanvas) {
+    if (!clipping) {
       const sq = document.getElementById('sharepic').getBoundingClientRect()
 
       const right = sq.width - this.item.clientWidth

@@ -7,8 +7,8 @@
         </label>
     </section>
     
-    <section>
-        <button class="to-front">nach vorne</button>
+    <section class="row">
+        <button class="to-front" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
         <button class="to-back" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
     </section>
 

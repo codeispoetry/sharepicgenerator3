@@ -8,15 +8,15 @@
     </section>
 
     <section>
-        <h3>Farbe</h3>
+        <h3><?php echo _('Colors');?></h3>
         <select id="logo_file">
-            <option value="templates/de/logo.svg">gelb</option>
-            <option value="templates/de/logo-grashalm.svg">grün</option>
+            <option value="templates/de/logo.svg"><?php echo _('yellow'); ?></option>
+            <option value="templates/de/logo-grashalm.svg"><?php echo _('green'); ?></option>
         </select>
     </section>
 
-    <section style="display: flex">
-        <button class="to-front">nach vorne</button>
+    <section class="row">
+        <button class="to-front" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
         <button class="to-back" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
     </section>
     
@@ -29,6 +29,8 @@
         const target = document.getElementById('logo');
 
         target.style.width = element.value + "px";
+        target.style.height = element.value + "px";
+
     });
 
     document.getElementById('logo_file').addEventListener('change', function(event) {

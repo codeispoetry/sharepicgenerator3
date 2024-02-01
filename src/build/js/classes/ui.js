@@ -22,7 +22,7 @@ class UI {
         if (target === 'freetext') {
           target = 'text'
         }
-        document.getElementById(target).dispatchEvent(mouseDownEvent)
+        document.getElementById(target)?.dispatchEvent(mouseDownEvent)
       })
     })
 
