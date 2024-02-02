@@ -69,16 +69,23 @@ class Sharepic {
 	private $info;
 
 	/**
+	 * Path to the users workspace.
+	 *
+	 * @var string
+	 */
+	private $dir;
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
 		$user       = new User();
 		$this->user = $user->get_user_by_token();
-		$dir        = 'users/' . $this->user . '/workspace';
-		if ( ! file_exists( $dir ) ) {
-			mkdir( $dir );
+		$this->dir  = 'users/' . $this->user . '/workspace';
+		if ( ! file_exists( $this->dir ) ) {
+			mkdir( $this->dir );
 		}
-		$this->file = $dir . '/sharepic.html';
+		$this->file = $this->dir . '/sharepic.html';
 
 		$this->logger = new Logger( $user );
 		$this->config = new Config();
@@ -136,6 +143,8 @@ class Sharepic {
 		if ( ! file_exists( $save_dir ) ) {
 			mkdir( $save_dir );
 		}
+
+		$this->delete_unused_files();
 
 		$cmd = "cp -R $workspace $save 2>&1";
 		exec( $cmd, $output, $return_code );
@@ -201,6 +210,8 @@ class Sharepic {
 
 		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
+		$this->delete_unused_files();
+
 		$cmd = sprintf(
 			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
 			$cmd_preprend,
@@ -246,6 +257,7 @@ class Sharepic {
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 
 		copy( $url, $upload_file );
+		$this->reduce_filesize( $upload_file );
 
 		echo json_encode( array( 'path' => $upload_file ) );
 	}
@@ -316,6 +328,8 @@ class Sharepic {
 			$this->http_error( 'Could not upload file' );
 		}
 
+		$this->reduce_filesize( $upload_file );
+
 		echo json_encode( array( 'path' => $upload_file ) );
 	}
 
@@ -340,6 +354,8 @@ class Sharepic {
 			$this->http_error( 'Could not upload file' );
 		}
 
+		$this->reduce_filesize( $upload_file, 2000, 1000 );
+
 		echo json_encode( array( 'path' => $upload_file ) );
 	}
 
@@ -353,6 +369,70 @@ class Sharepic {
 			if ( is_file( $file ) ) {
 				unlink( $file );
 			}
+		}
+	}
+
+	/**
+	 * Deletes unused files from workspace.
+	 */
+	private function delete_unused_files() {
+		$html = file_get_contents( $this->file );
+
+		$dom = new \DOMDocument();
+		libxml_use_internal_errors( true ); // Suppress warnings.
+		$dom->loadHTML( $html );
+		libxml_clear_errors();
+
+		// IMG tags.
+		$images = $dom->getElementsByTagName( 'img' );
+		$files  = array_map(
+			function( $image ) {
+				return $image->getAttribute( 'src' );
+			},
+			iterator_to_array( $images )
+		);
+
+		// Background images.
+		$elements = $dom->getElementsByTagName( '*' );
+		foreach ( $elements as $element ) {
+			$style = $element->getAttribute( 'style' );
+
+			preg_match_all( '/url\(([^)]+)\)/', $style, $matches );
+
+			foreach ( $matches[1] as $url ) {
+				$files[] = $url;
+			}
+		}
+
+		// Delete unused files.
+		$image_files = glob( $this->dir . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE );
+
+		foreach ( $image_files as $image_file ) {
+			if ( ! in_array( basename( $image_file ), $files ) ) {
+				unlink( $image_file );
+			}
+		}
+	}
+
+	/**
+	 * Reduces the filesize of an image.
+	 *
+	 * @param string $file The file to reduce.
+	 * @param int    $max_pixels The maximum number of pixels.
+	 * @param int    $max_filesize The maximum filesize in kb.
+	 */
+	private function reduce_filesize( $file, $max_pixels = 4500, $max_filesize = 3000 ) {
+
+		$cmd = sprintf(
+			'mogrify -resize %1$dx%1$d  -define jpeg:extent=%2$dkb %3$s 2>&1',
+			$max_pixels,
+			$max_filesize,
+			$file
+		);
+		exec( $cmd, $output, $return_code );
+		if ( 0 !== $return_code ) {
+			$this->logger->error( implode( "\n", $output ) );
+			$this->http_error( 'Could convert image' );
 		}
 	}
 
