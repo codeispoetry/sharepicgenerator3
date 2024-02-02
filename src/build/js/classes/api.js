@@ -180,7 +180,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data, "eod")
         data = JSON.parse(data)
 
         const a = document.createElement('a')
@@ -254,8 +253,7 @@ class API {
         document.getElementById('dalle_prompt').value = hint
         document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '?rand=' + Math.random() + '" />'
 
-        document.getElementById('copyright').innerHTML = `Bild generiert von DALL-E`
-
+        document.getElementById('copyright').innerHTML = 'Bild generiert von DALL-E'
 
         config.dalle = {
           url
@@ -310,7 +308,6 @@ class API {
       document.querySelector('.file-upload').disabled = false
 
       document.getElementById('copyright').innerHTML = ''
-
 
       logger.log('uploaded file')
     }
