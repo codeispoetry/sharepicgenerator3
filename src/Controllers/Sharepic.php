@@ -384,8 +384,8 @@ class Sharepic {
 		libxml_clear_errors();
 
 		// IMG tags.
-		$images = $dom->getElementsByTagName( 'img' );
-		$files  = array_map(
+		$images     = $dom->getElementsByTagName( 'img' );
+		$used_files = array_map(
 			function( $image ) {
 				return $image->getAttribute( 'src' );
 			},
@@ -400,16 +400,23 @@ class Sharepic {
 			preg_match_all( '/url\(([^)]+)\)/', $style, $matches );
 
 			foreach ( $matches[1] as $url ) {
-				$files[] = $url;
+				$used_files[] = substr( $url, 1, -1 );
 			}
 		}
 
-		// Delete unused files.
-		$image_files = glob( $this->dir . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE );
+		$used_files = array_map(
+			function( $file ) {
+				return explode( '?', $file )[0];
+			},
+			$used_files
+		);
 
-		foreach ( $image_files as $image_file ) {
-			if ( ! in_array( basename( $image_file ), $files ) ) {
-				unlink( $image_file );
+		// Delete unused files.
+		$available_files = glob( $this->dir . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE );
+
+		foreach ( $available_files as $file ) {
+			if ( ! in_array( $file, $used_files ) ) {
+				unlink( $file );
 			}
 		}
 	}
@@ -422,6 +429,9 @@ class Sharepic {
 	 * @param int    $max_filesize The maximum filesize in kb.
 	 */
 	private function reduce_filesize( $file, $max_pixels = 4500, $max_filesize = 3000 ) {
+		if ( filesize( $file ) < $max_filesize * 1024 ) {
+			return;
+		}
 
 		$cmd = sprintf(
 			'mogrify -resize %1$dx%1$d  -define jpeg:extent=%2$dkb %3$s 2>&1',

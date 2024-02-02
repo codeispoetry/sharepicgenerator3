@@ -180,6 +180,7 @@ class API {
         return response.text()
       })
       .then(data => {
+        console.log(data, "eod")
         data = JSON.parse(data)
 
         const a = document.createElement('a')

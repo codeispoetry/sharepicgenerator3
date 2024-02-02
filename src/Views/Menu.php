@@ -57,6 +57,8 @@
         <span><?php echo _( 'Add' ); ?></span>
         <div class="dropdown-content adder">
             <button data-item="eyecatcher"><?php  echo _('Eyecatcher');?></button>
+            <button data-item="addpicture"><?php  echo _('Picture');?></button>
+
         </div>
     </div>
 
