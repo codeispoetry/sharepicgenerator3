@@ -20,10 +20,6 @@
         const target = document.getElementById('greentext');
         target.style.zoom = element.value;
     });
-
-  
-
-   
 </script>
 
 

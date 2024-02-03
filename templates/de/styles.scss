@@ -1,0 +1,191 @@
+$sand: #f5f1e9;
+$tanne: #005437;
+$gras: #8abd24;
+$klee: #008939;
+$s: 25px;
+$m: 50px;
+$l: 100px;
+
+#greentext {
+    top: 130px;
+    left: 72px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+    div {
+        position: relative;
+        font-weight: bold;
+        font-family: "GrueneType", sans-serif;
+        z-index: 3;
+        padding: 0;
+        align-self: flex-start;
+        white-space: nowrap;
+
+        &::before {
+            content: "";
+            position: absolute;
+            transform: skew(-9deg, 0);
+            z-index: -1;
+        }
+
+    }
+}
+
+.s {
+    font-size: $s;
+    line-height: $s;
+    margin: ($s / 5) 0;
+    &::before{
+        top: -($s / 5);
+        left: -2 * ($s / 5);
+        width: calc(100% + #{$s / 5 * 4});
+        height: ($s + 2 * ($s / 5));
+    }
+}
+
+.m {
+    font-size: $m;
+    line-height: $m;
+    margin: ($m / 5) 0;
+    &::before{
+        top: -($m / 5);
+        left: -2 * ($m / 5);
+        width: calc(100% + #{$m / 5 * 4});
+        height: ($m + 2 * ($m / 5));
+    }
+}
+
+.l {
+    font-size: $l;
+    line-height: $l;
+    margin: ($l / 5) 0;
+    &::before{
+        top: -($l / 5);
+        left: -2 * ($l / 5);
+        width: calc(100% + #{$l / 5 * 4});
+        height: ($l + 2 * ($l / 5));
+    }
+}
+
+#sharepic {
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: "GrueneType", sans-serif;
+}
+
+#greentextContextMenu {
+    position: fixed;
+    background-color: transparent;
+    border: 0;
+    color: black;
+    display: none;
+    z-index: 1000;
+    margin-top: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0.5em;
+    border-radius: 10px;
+
+    button {
+        background-color: unset;
+        font-weight: bold;
+        position: relative;
+        font-size: 20px;
+        line-height: 20px;
+        overflow: hidden;
+        border-radius: 100px;
+        aspect-ratio: 1;
+        border: 1px solid white;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border-color: black;
+        }
+    }
+
+}
+
+.eyecatcher {
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    rotate: -9deg;
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        margin: 0;
+        padding: 0;
+        line-height: 1em;
+        text-align: center;
+        font-size: 1.4em;
+    }
+}
+
+.sandtanne {
+    color: $sand !important;
+
+    &::before {
+        background-color: $tanne !important;
+    }
+}
+
+.tannesand {
+    color: $tanne;
+
+    &::before {
+        background-color: $sand;
+    }
+}
+
+.kleesand {
+    color: $klee;
+
+    &::before {
+        background-color: $sand;
+    }
+}
+
+.sandklee {
+    color: $sand;
+
+    &::before {
+        background-color: $klee;
+    }
+}
+
+.grastanne {
+    color: $gras;
+
+    &::before {
+        background-color: $tanne;
+    }
+}
+
+.tannegras {
+    color: $tanne;
+
+    &::before {
+        background-color: $gras;
+    }
+}
