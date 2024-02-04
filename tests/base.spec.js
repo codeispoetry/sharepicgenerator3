@@ -2,6 +2,7 @@
 const { test, expect } = require('@playwright/test')
 const { exec } = require('child_process')
 const fs = require('fs')
+const { before } = require('node:test')
 
 const config = {
   url: {
@@ -13,14 +14,19 @@ const config = {
   }
 }
 
-test('login', async ({ page }) => {
+test.beforeAll(async () => {
+  await prepareLocalUser(config)
+})
+
+test.beforeEach(async ({ page }) => {
   page.on('pageerror', exception => {
     throw new Error(`Uncaught exception: "${exception}"`)
   })
-
-  await prepareLocalUser(config)
   await page.goto(config.url.local)
+})
 
+
+test('login', async ({ page }) => {
   // Login
   await page.getByRole('textbox', { name: 'username' }).fill(config.user.name)
   await page.getByPlaceholder('password').fill(config.user.password)
@@ -30,6 +36,14 @@ test('login', async ({ page }) => {
   await page.locator('#pixabay_q').fill('Berge')
   await page.locator('[data-click="pixabay.search"]').click()
   await page.locator('#pixabay_results div.image:first-child').click()
+
+  // Change color of copyright
+  await page.locator('button[data-pseudoselect="copyright"]').click()
+  await page.locator('#copyright_color').fill('#f96654')
+
+  // Use top menu
+  await page.locator('#menu_add').hover()
+  await page.locator('#menu_add button:first-child').click()
 
   await page.waitForTimeout(1000)
 })

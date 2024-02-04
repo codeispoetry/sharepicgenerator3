@@ -1,5 +1,5 @@
 <nav>
-    <div class="dropdown">
+    <div class="dropdown" id="menu_file">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
              <a href="index.php" class="menu-link">
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="dropdown">
+    <div class="dropdown" id="menu_edit">
         <span><?php echo _( 'Edit' ); ?></span>
         <div class="dropdown-content">   
             <button data-click="api.save">
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="dropdown">
+    <div class="dropdown" id="menu_add">
         <span><?php echo _( 'Add' ); ?></span>
         <div class="dropdown-content adder">
             <button data-item="eyecatcher"><?php  echo _('Eyecatcher');?></button>
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="dropdown">
+    <div class="dropdown" id="menu_templates">
         <span><?php echo _( 'Templates' ); ?></span>
         <div class="dropdown-content">
             <?php
@@ -79,7 +79,7 @@
         </div>
     </div>
 
-    <div class="dropdown">
+    <div class="dropdown" id="menu_mysharepics">
         <span><?php echo _( 'My sharepics' ); ?></span>
         <div class="dropdown-content" id="my-sharepics">
             <?php
