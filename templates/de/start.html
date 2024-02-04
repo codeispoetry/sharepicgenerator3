@@ -11,7 +11,7 @@
 			width: 800px; height:800px;
 			border:0;
 			overflow:hidden;"
-    		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="sharepic">
+    		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
 
     <div 
         class="draggable selectable" 
@@ -102,9 +102,26 @@
             <p>MUSTER</p>
         </div>
     
-        <div data-class="addpicture draggable selectable" data-id="addpicture" data-cockpit="addpicture" style="display: flex; align-items: center;">
-            <div style="background-image: url('templates/mint/tom.jpg');background-size: cover; width: 100px; height: 100px; border-radius: 50%;"></div>
-            <div contenteditable="true" style="display: flex; justify-content: center;">Caption</div>
+        <div    data-class="addpicture draggable selectable" 
+                data-cockpit="addpicture" 
+                data-id="addpicture" 
+            style="
+                align-items: center;
+                position: absolute;
+                left:300px; top:290px;
+                ">
+                <div class="ap_image" style="
+                    background-image: url('templates/mint/addpic.jpg');
+                    background-size: cover; 
+                    width: 100px; 
+                    aspect-ratio: 1; 
+                    border-radius: 50%;"
+                ></div>
+                <div class="ap_text" contenteditable="true" style="
+                    display: flex; 
+                    justify-content: center;
+                    color: #ffffff;
+                ">Bildbeschreibung</div>
         </div>
     </div>
 
@@ -115,7 +132,7 @@
 
         const contextMenuListener = (e) => {
             e.preventDefault();
-console.log("HI")
+
             const greentextContextMenu = document.getElementById('greentextContextMenu');
             greentextContextMenu.style.left = `${e.pageX}px`;
             greentextContextMenu.style.top = `${e.pageY}px`;

@@ -155,4 +155,14 @@
         }
     }
 
+    .blankbutton{
+        background: none;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        
+        &:hover{
+            background-color: #45a049;
+        }
+    }
+
 }

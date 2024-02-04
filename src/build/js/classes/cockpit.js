@@ -10,7 +10,7 @@ class Cockpit {
     elements.forEach(element => {
       element.classList.remove('show')
     })
-    document.getElementById('cockpit_sharepic')?.classList.add('show')
+    document.getElementById('cockpit_background')?.classList.add('show')
   }
 
   /*
@@ -83,5 +83,10 @@ class Cockpit {
       url = '/' + url
     }
     file.value = url
+  }
+
+  setup_addpicture (element) {
+    document.getElementById('addpic_color').value = rgbToHex(element.querySelector('.ap_text').style.color)
+    document.getElementById('addpicture_size').value =element.querySelector('.ap_image').style.width.replace('px', '')
   }
 }

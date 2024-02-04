@@ -65,6 +65,9 @@
 				?>
 			</div>
 			<div id="sitecockpit">
+				<button data-showtab="download">
+					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
+				</button>
 				<button data-pseudoselect="sharepic" class="active">
 					<img src="assets/icons/image.svg" title="<?php echo _('Image'); ?>">
 				</button>

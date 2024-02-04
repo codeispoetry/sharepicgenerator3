@@ -1,10 +1,9 @@
 <section class="mainsection" id="cockpit_addpicture">
     <h2><?php  echo _('Picture');?></h2>
-    NOCH NICHT FERTIG
     <section>
         <h3><?php  echo _('Total size');?></h3>
         <label>
-            <input type="range" min="0" max="300" value="50" class="slider" id="addpicture_size">
+            <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size">
         </label>
     </section>
 
@@ -17,19 +16,16 @@
     </section>
 
     <section>
-        <button id="addpic_text_right" title=""><?php  echo _('text floats right');?></button>
-        <button id="addpic_text_below" title=""><?php  echo _('text below');?></button>
-        <button id="addpic_pic_round" title=""><?php  echo _('round');?></button>
-        <button id="addpic_pic_angular" title=""><?php  echo _('angular');?></button>
-
-
-
-        <section>
-        <label class="horizontal">
-            <h4><?php  echo _('Font color');?></h4>
-            <input type="color" value="#ffffff" class="" id="addpic_color">
-        </label>
+        <h3><?php echo _("Image"); ?></h3>
+        <button id="addpic_pic_round" class="blankbutton" title="<?php  echo _('round');?>"><img src="assets/icons/circle.svg"></button>
+        <button id="addpic_pic_angular" class="blankbutton" title="<?php  echo _('angular');?>"><img src="assets/icons/square.svg"></button>      
     </section>
+
+    <section>
+        <h3><?php echo _("Text"); ?></h3>
+        <button id="addpic_text_right" class="blankbutton" title="<?php  echo _('text floats right');?>"><img src="assets/icons/text-right.svg"></button>
+        <button id="addpic_text_below" class="blankbutton"  title="<?php  echo _('text below');?>"><img src="assets/icons/text-below.svg"></button>
+        <input type="color" value="#ffffff" class="" id="addpic_color" title="<?php echo _('Color'); ?>">
       
     </section>
 
@@ -43,9 +39,9 @@
 
 <script>
     document.getElementById('addpicture_size').addEventListener('input', function(e) {
-        var element = event.target;
-        const target = document.querySelector('#addpicture3 .ap_image');
-        target.style.width = element.value + 'px';
+        cockpit.target.querySelector('.ap_image').style.width = e.target.value + 'px';
+        cockpit.target.querySelector('.ap_text').style.fontSize = Math.max( 20, e.target.value * 0.1 ) + 'px';
+
     });
 
     document.getElementById('addpic_text_right').addEventListener('click', function(e) {
@@ -65,8 +61,7 @@
     });
 
     document.getElementById('addpic_color').addEventListener('input', function(e) {
-        const color = document.getElementById('addpic_color').value
-        cockpit.target.querySelector('.ap_text').style.color = color;
+        cockpit.target.querySelector('.ap_text').style.color = e.target.value;
     });
 
 </script>
