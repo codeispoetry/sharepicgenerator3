@@ -71,9 +71,9 @@ class User {
 			return true;
 		}
 
-		$this->role     = 'auto';
 		$this->username = $username;
 		$user           = $this->get_user_array( $username );
+		$this->role     = $user['role'];
 
 		// Create user in db, if it does not exist.
 		if ( false === $user ) {
@@ -184,13 +184,16 @@ class User {
 	private function create_auto_user( $username ) {
 		$password = bin2hex( random_bytes( 16 ) ); // no one will ever see this password.
 		$token    = bin2hex( random_bytes( 16 ) );
+		$role     = 'auto';
 
-		$sql = 'INSERT INTO users ( username,password,token ) VALUES (:username, :password, :token)';
+		$sql = 'INSERT INTO users ( username,password,token,role ) VALUES (:username, :password, :token,:role)';
 
 		$stmt = $this->db->prepare( $sql );
 		$stmt->bindParam( ':username', $username );
 		$stmt->bindParam( ':password', $password );
 		$stmt->bindParam( ':token', $token );
+		$stmt->bindParam( ':role', $role );
+
 		$stmt->execute();
 
 		if ( $stmt->rowCount() === 0 ) {

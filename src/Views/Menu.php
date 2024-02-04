@@ -70,9 +70,10 @@
                 if (file_exists($last)) {
                     echo '<button data-load="' . $last . '">' . _('latest') . '</button>';
                 }
-          
-                foreach( $templates as $path => $label ) {
-                    printf( '<button data-load="templates/%s/start.html">%s</button>', $path, $label );
+                if( 'auto' !== $this->user->get_role() ){
+                    foreach( $templates as $path => $label ) {
+                        printf( '<button data-load="templates/%s/start.html">%s</button>', $path, $label );
+                    }
                 }
             ?>
         </div>
