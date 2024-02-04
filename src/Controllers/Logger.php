@@ -75,7 +75,7 @@ class Logger {
 
 		try {
 			file_put_contents( $this->file, $line . PHP_EOL, FILE_APPEND );
-			chmod( $this->file, 0775 );
+			//chmod( $this->file, 0775 );
 		} catch ( \Exception $e ) {
 			throw new \Exception( $this->file . ' is not writable.' );
 		}
