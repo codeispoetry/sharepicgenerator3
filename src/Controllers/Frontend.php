@@ -32,10 +32,21 @@ class Frontend {
 	 * The generator page.
 	 */
 	public function create() {
+		$auto          = $_GET['auto'] ?? '';
+		$allowed_autos = array( 'einigungshilfe' );
+		if ( in_array( $auto, $allowed_autos, true ) ) {
+			$this->user->autologin( $auto );
+			$starttemplate = $auto;
+			include_once './src/Views/Creator.php';
+			return;
+		}
+
 		if ( ! $this->user->login() ) {
 			header( 'Location: index.php' );
 			die();
 		}
+
+		$starttemplate = $this->config->get( 'Main', 'starttemplate' );
 		include_once './src/Views/Creator.php';
 	}
 

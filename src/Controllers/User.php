@@ -61,6 +61,36 @@ class User {
 	}
 
 	/**
+	 * Logs a user in automatically.
+	 *
+	 * @param string $username The username, that should be used.
+	 */
+	public function autologin( $username ) {
+		// See, if user is already logged in.
+		if ( $this->get_user_by_token() ) {
+			return true;
+		}
+
+		$this->role     = 'auto';
+		$this->username = $username;
+		$user           = $this->get_user_array( $username );
+
+		// Create user in db, if it does not exist.
+		if ( false === $user ) {
+			$user = $this->create_auto_user( $username );
+			$this->logger->access( "auto user {$username} created" );
+		}
+
+		$this->create_user_space();
+
+		if ( ! $this->set_token() ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * Log the user in.
 	 *
 	 * @throws \Exception If the authenticator method does not exist.
@@ -80,6 +110,7 @@ class User {
 		}
 
 		$user = $this->$authenticator();
+
 		if ( ! $user ) {
 			return false;
 		}
@@ -88,6 +119,7 @@ class User {
 		$this->username = $user['username'];
 		$this->set_tenants( $user['id'] );
 		$this->create_user_space();
+
 		if ( ! $this->set_token() ) {
 			return false;
 		}
@@ -136,28 +168,38 @@ class User {
 
 		// Create user in db, if it does not exist.
 		if ( false === $user ) {
-			$password = bin2hex( random_bytes( 16 ) ); // no one will ever see this password.
-			$token    = bin2hex( random_bytes( 16 ) );
-
-			$sql = 'INSERT INTO users ( username,password,token ) VALUES (:username, :password, :token)';
-
-			$stmt = $this->db->prepare( $sql );
-			$stmt->bindParam( ':username', $username );
-			$stmt->bindParam( ':password', $password );
-			$stmt->bindParam( ':token', $token );
-			$stmt->execute();
-
-			if ( $stmt->rowCount() === 0 ) {
-				$this->logger->error( "could not create greens-sso user for {$username}" );
-				return false;
-			}
-
-			$user = $this->get_user_array( $username );
-			$this->logger->access( "greens-sso user {$username} created" );
+			$user = $this->create_auto_user( $username );
+			$this->logger->access( "greens user {$username} created" );
 		}
 
 		return $user;
+	}
 
+	/**
+	 * Creates a user in the database.
+	 *
+	 * @param string $username The username.
+	 * @return array|bool The user array or false.
+	 */
+	private function create_auto_user( $username ) {
+		$password = bin2hex( random_bytes( 16 ) ); // no one will ever see this password.
+		$token    = bin2hex( random_bytes( 16 ) );
+
+		$sql = 'INSERT INTO users ( username,password,token ) VALUES (:username, :password, :token)';
+
+		$stmt = $this->db->prepare( $sql );
+		$stmt->bindParam( ':username', $username );
+		$stmt->bindParam( ':password', $password );
+		$stmt->bindParam( ':token', $token );
+		$stmt->execute();
+
+		if ( $stmt->rowCount() === 0 ) {
+			$this->logger->error( "could not create auto user for {$username}" );
+			return false;
+		}
+
+		$user = $this->get_user_array( $username );
+		return $user;
 	}
 
 	/**
