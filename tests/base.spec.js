@@ -44,7 +44,22 @@ test('Overall test', async ({ page }) => {
 
   // Use top menu
   await page.locator('#menu_add').hover()
-  await page.locator('#menu_add button:first-child').click()
+  await page.locator('#menu_add button:nth-child(2)').click()
+
+  // Edit and move the add pic
+  const element = await page.locator('#sharepic > [data-id="addpicture"]');
+  const boundingBox = await element.boundingBox();
+  await page.mouse.move(boundingBox.x + boundingBox.width -1, boundingBox.y + 1 );
+  await page.mouse.down();
+  await page.mouse.move(boundingBox.x + boundingBox.width + 250, boundingBox.y + 50 );
+  await page.mouse.up();
+
+  await page.locator('#addpic_pic_angular').click()
+  await page.locator('#addpic_text_right').click()
+  await page.locator('#sharepic > [data-id="addpicture"] .ap_text').fill('Test Text');
+  await page.locator('#cockpit_addpicture input[type="file"]').setInputFiles('tests/image.jpg');
+
+
 
   // Wait for the image to be loaded
   await page.waitForTimeout(3000)
