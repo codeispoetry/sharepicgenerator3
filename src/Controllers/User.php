@@ -213,7 +213,9 @@ class User {
 	private function create_user_space() {
 		$user_dir = 'users/' . $this->username . '/workspace';
 		if ( ! file_exists( $user_dir ) ) {
-			mkdir( $user_dir, 0777, true );
+			$oldmask = umask( 0 );
+			mkdir( $user_dir, 0775, true );
+			umask( $oldmask );
 		}
 	}
 

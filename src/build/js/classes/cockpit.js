@@ -87,6 +87,6 @@ class Cockpit {
 
   setup_addpicture (element) {
     document.getElementById('addpic_color').value = rgbToHex(element.querySelector('.ap_text').style.color)
-    document.getElementById('addpicture_size').value =element.querySelector('.ap_image').style.width.replace('px', '')
+    document.getElementById('addpicture_size').value = element.querySelector('.ap_image').style.width.replace('px', '')
   }
 }
