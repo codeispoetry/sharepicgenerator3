@@ -22,8 +22,9 @@ test.beforeEach(async ({ page }) => {
   page.on('pageerror', exception => {
     throw new Error(`Uncaught exception: "${exception}"`)
   })
-  await page.goto(config.url.local)
   
+  await page.goto(config.url.local)
+
   // Login
   await page.getByRole('textbox', { name: 'username' }).fill(config.user.name)
   await page.getByPlaceholder('password').fill(config.user.password)
@@ -31,7 +32,7 @@ test.beforeEach(async ({ page }) => {
 })
 
 
-test('Overall test', async ({ page }) => {
+test('Overall test', async ({ page }) => { 
   // Search and use image from pixabay
   await page.locator('#pixabay_q').fill('Berge')
   await page.locator('[data-click="pixabay.search"]').click()
@@ -47,7 +48,7 @@ test('Overall test', async ({ page }) => {
   await page.locator('#menu_add button:nth-child(2)').click()
 
   // Edit and move the add pic
-  const element = await page.locator('#sharepic > [data-id="addpicture"]');
+  const element = await page.locator('#sharepic > [data-id="addpicture"]').first();
   const boundingBox = await element.boundingBox();
   await page.mouse.move(boundingBox.x + boundingBox.width -1, boundingBox.y + 1 );
   await page.mouse.down();

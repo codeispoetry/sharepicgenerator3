@@ -3,7 +3,7 @@
     <section>
         <h3><?php  echo _('Size');?></h3>
         <label>
-            <input type="range" min="0.1" max="3" value="1" step="0.1" class="slider" id="eyecatcher_size">
+            <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size">
         </label>
     </section>
 

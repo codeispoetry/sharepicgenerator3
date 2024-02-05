@@ -18,6 +18,10 @@
         data-cockpit="greentext"  
         id="greentext"
         contenteditable="true"
+        style="
+            left: 120px;
+            top: 100px;
+        "
     >
         <div class="m sandklee">Das hier</div>
         <div class="m kleesand"style="margin-left:40px;">ist der neue</div>
@@ -54,28 +58,6 @@
         "
     ></div>
 
-    <div    class="eyecatcher draggable selectable" 
-            data-cockpit="eyecatcher" 
-            id="eyecatcher" 
-            contenteditable="true" 
-            oninput="make_square(this)"
-            style="
-                z-index:2; 
-                left: 12px; top: 260px; 
-                font-size: 20px; 
-                color: #e9e9e9; 
-                background-color: rgb(11, 161, 221);
-                width: 100px;
-                height: 100px;
-                position: absolute;
-                left: 400px;
-                top: 410px;
-            "
-    >
-        <p>Dienstag</p>
-        <p>18 Uhr</p>
-    </div>
-
   
     <div id="copyright" class="selectable" data-cockpit="copyright" contenteditable="true" spellcheck="false"
         style="
@@ -89,6 +71,7 @@
                 data-max="2" 
                 data-class="eyecatcher draggable selectable" 
                 data-cockpit="eyecatcher" 
+                oninput="make_square(this)"
                 contenteditable="true" 
                 style="
                     z-index:2; 
@@ -216,17 +199,6 @@
         const sizeButtons = document.querySelectorAll('[data-setsize]');
         sizeButtons.forEach(btn => {
             btn.addEventListener('click', setSize);
-        });
-
-        document.getElementById('eyecatcher').addEventListener('input', function(event) {
-            var element = event.target;
-
-            const style = window.getComputedStyle(element);
-            const max = Math.max(parseFloat(style.width), parseFloat(style.height));
-
-            element.style.width = max + 'px';
-            element.style.height = max + 'px';
-
         });
 
         document.querySelectorAll('[contenteditable]').forEach(element => {

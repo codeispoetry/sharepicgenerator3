@@ -14,22 +14,20 @@
 
     .eyecatcher {
         border-radius: 50%;
-        background-color: palevioletred;
-        color: white;
-        aspect-ratio: 1;
+        rotate: -9deg;
         margin: 0;
-        padding: 1em;
+       padding: 1em;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        white-space: nowrap;
+    
         p {
             margin: 0;
             padding: 0;
             line-height: 1em;
             text-align: center;
-            font-size: 1.4em;
         }
     }
 
@@ -45,4 +43,15 @@
         top: 0;
         left: 0;
     }
+}
+
+#copyright{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    font-family: sans-serif;
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    padding: 0;
+    margin: 0;
 }

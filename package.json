@@ -15,7 +15,7 @@
     "lint": "npm-run-all --parallel lint:scss lint:js lint:php",
     "test": "npx playwright test tests/base.spec.js --project=chromium",
     "de:scss": "node-sass --output-style compressed -o templates/de/ templates/de/styles.scss",
-    "free:scss": "node-sass --output-style compressed -o templates/free/ templates/free/styles.scss",
+    "einigungshilfe:scss": "node-sass --output-style compressed -o templates/free/ templates/einigungshilfe/styles.scss",
     "mint:scss": "node-sass --output-style compressed -o templates/mint/ templates/mint/styles.scss"
   },
   "author": "",
