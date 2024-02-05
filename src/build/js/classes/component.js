@@ -35,6 +35,11 @@ class Component {
 
     sharepic.insertAdjacentHTML('beforeend', clonedElement.outerHTML)
 
+    // Trigger the input event listener
+    const inputEvent = new Event('input');
+    document.getElementById(newId).dispatchEvent(inputEvent);
+    
+
     // make draggable
     const nextIndex = dragItems.reduce((max, item, index) => Math.max(max, index), 0) + 2
     dragItems[nextIndex] = new Drag(newId, nextIndex)

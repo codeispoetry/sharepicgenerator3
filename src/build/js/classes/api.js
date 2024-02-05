@@ -61,12 +61,6 @@ class API {
         rte.init()
         sg.init()
 
-        document.getElementById('eyecatcher').addEventListener('input', function (event) {
-          const eyecatcher = document.getElementById('eyecatcher')
-          eyecatcher.style.height = ''
-          eyecatcher.style.height = window.getComputedStyle(eyecatcher).getPropertyValue('height')
-        })
-
         // Execute script tags
         const parser = new DOMParser()
         const doc = parser.parseFromString(data, 'text/html')
@@ -180,7 +174,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         const a = document.createElement('a')

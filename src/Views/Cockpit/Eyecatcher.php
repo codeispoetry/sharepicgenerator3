@@ -30,7 +30,10 @@
 <script>
     document.getElementById('eyecatcher_size').addEventListener('input', function(event) {
         var element = event.target;
-        cockpit.target.style.transform = 'scale(' + element.value + ')';
+        //cockpit.target.style.transform = 'scale(' + element.value + ')';
+
+        cockpit.target.style.fontSize = element.value + 'px';
+        make_square(cockpit.target);
     });
 
     document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
