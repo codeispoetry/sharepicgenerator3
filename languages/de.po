@@ -329,7 +329,7 @@ msgstr "Beschreibe das Bild, das Du möchtest"
 
 #: src/Views/Cockpit/Dalle.php:8
 msgid "Create"
-msgstr "Gestalten"
+msgstr "Erstellen"
 
 #: src/Views/Cockpit/Dalle.php:18
 msgid "Please wait while AI generates your image."
