@@ -25,8 +25,12 @@
 
     <div style="display: flex; align-items: center">
         <?php if( $this->user->is_logged_in() ): ?>
+			<?php
+				echo _('Logged in as');
+				echo ' ' . $this->user->get_username();
+			?>
             <a href="index.php?c=frontend&m=logout" class="link">
-                <img src="assets/icons/logout.svg" style="height: 1em;">
+                <img src="assets/icons/logout.svg" style="height: 1em; margin-left: 1em;">
 			</a>
         <?php endif; ?>
     </div>
