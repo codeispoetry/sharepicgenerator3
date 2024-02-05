@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 15:26+0100\n"
+"POT-Creation-Date: 2024-02-05 15:47+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -490,6 +490,10 @@ msgstr ""
 #: src/Views/Creator.php:115
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
+
+#: src/Views/Creator.php:116
+msgid "There is no such component"
+msgstr "Eine solche Komponente gibt es nicht"
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
