@@ -22,7 +22,16 @@ class UI {
         if (target === 'freetext') {
           target = 'text'
         }
+        if (target === 'background') {
+          target = 'sharepic'
+        }
+
+        document.querySelector('[data-id="' + target + '"]')?.dispatchEvent(mouseDownEvent)
         document.getElementById(target)?.dispatchEvent(mouseDownEvent)
+
+        if (!element.classList.contains('active')) {
+          alert(lang['No component'])
+        }
       })
     })
 

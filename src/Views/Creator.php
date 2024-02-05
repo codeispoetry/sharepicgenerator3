@@ -69,7 +69,7 @@
 				<button data-showtab="download">
 					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
 				</button>
-				<button data-pseudoselect="sharepic" class="active">
+				<button data-pseudoselect="background" class="active">
 					<img src="assets/icons/image.svg" title="<?php echo _('Image'); ?>">
 				</button>
 				<button data-pseudoselect="freetext">
@@ -113,6 +113,7 @@
 		'Are you sure?': '<?php echo _( 'Are you sure?') ?>',
 		'All changes lost': '<?php echo _( 'Please save your sharepic. All changes will be lost.') ?>',
 		'Enter prompt for image': '<?php echo _( 'Please enter a text describing your desired image.') ?>',
+		'No component': '<?php echo _( 'There is no such component') ?>',
 
     };
 </script>

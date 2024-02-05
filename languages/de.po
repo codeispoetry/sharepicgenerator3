@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 14:40+0100\n"
+"POT-Creation-Date: 2024-02-05 15:26+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -80,11 +80,11 @@ msgstr "Passwort zurücksetzen"
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/Frontend.php:225 src/Views/Menu.php:45
+#: src/Controllers/Frontend.php:222 src/Views/Menu.php:45
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: src/Controllers/Frontend.php:226
+#: src/Controllers/Frontend.php:223
 msgid "You have been logged out."
 msgstr "Du bist ausgeloggt."
 
@@ -151,31 +151,35 @@ msgstr "Sticker"
 msgid "Size"
 msgstr "Größe"
 
-#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Logo.php:11
+#: src/Views/Cockpit/Eyecatcher.php:7
+msgid "Rotation"
+msgstr "Drehung"
+
+#: src/Views/Cockpit/Eyecatcher.php:13 src/Views/Cockpit/Logo.php:11
 msgid "Colors"
 msgstr "Farben"
 
-#: src/Views/Cockpit/Eyecatcher.php:14
+#: src/Views/Cockpit/Eyecatcher.php:16
 msgid "Font"
 msgstr "Schrift"
 
-#: src/Views/Cockpit/Eyecatcher.php:17
+#: src/Views/Cockpit/Eyecatcher.php:19
 msgid "Background"
 msgstr "Hintergrund"
 
-#: src/Views/Cockpit/Eyecatcher.php:24 src/Views/Cockpit/Greentext.php:11
+#: src/Views/Cockpit/Eyecatcher.php:26 src/Views/Cockpit/Greentext.php:11
 #: src/Views/Cockpit/Logo.php:19 src/Views/Cockpit/Freetext.php:10
 #: src/Views/Cockpit/Copyright.php:18 src/Views/Cockpit/Addpicture.php:33
 msgid "to front"
 msgstr "nach vorne"
 
-#: src/Views/Cockpit/Eyecatcher.php:25 src/Views/Cockpit/Greentext.php:12
+#: src/Views/Cockpit/Eyecatcher.php:27 src/Views/Cockpit/Greentext.php:12
 #: src/Views/Cockpit/Logo.php:20 src/Views/Cockpit/Freetext.php:11
 #: src/Views/Cockpit/Copyright.php:19 src/Views/Cockpit/Addpicture.php:34
 msgid "to back"
 msgstr "nach hinten"
 
-#: src/Views/Cockpit/Eyecatcher.php:26 src/Views/Cockpit/Addpicture.php:35
+#: src/Views/Cockpit/Eyecatcher.php:28 src/Views/Cockpit/Addpicture.php:35
 msgid "delete"
 msgstr "löschen"
 

@@ -32,7 +32,6 @@ class Cockpit {
     }
     const id = 'cockpit_' + element.dataset.cockpit
     document.getElementById(id)?.classList.add('show')
-
     document.querySelector('[data-pseudoselect="' + element.dataset.cockpit + '"]')?.classList.add('active')
   }
 
