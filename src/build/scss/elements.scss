@@ -46,16 +46,16 @@ button{
         }
 
         &.to-front{
-            background-image: url(/assets/icons/flip_to_front.svg);
+            background-image: url(icons/flip_to_front.svg);
         }
 
 
         &.to-back{
-            background-image: url(/assets/icons/flip_to_back.svg);
+            background-image: url(icons/flip_to_back.svg);
         }
 
         &.delete{
-            background-image: url(/assets/icons/delete.svg);
+            background-image: url(icons/delete.svg);
         }
     }
 }
