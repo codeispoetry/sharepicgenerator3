@@ -26,6 +26,8 @@
                 echo '<div class="divider"></div>';
                 printf( '<a href="index.php?c=frontend&m=log" class="menu-link">%s</a>', _( 'Logfile' ) );
                 printf( '<a href="index.php?c=frontend&m=sharepics" class="menu-link">%s</a>', _( 'Sharepics' ) );
+                
+                printf( '<button onClick="api.save(\'publish\')">%s</button>', _( 'Publish' ) );
                 echo '<div class="divider"></div>';
             }
             ?>
@@ -76,13 +78,24 @@
                     echo '<div class="divider"></div>';
                 }
 
-               $savings = $this->user->get_savings();
-               foreach( $savings as $dir => $name ){
-                    echo '<div class="dropdown-item-double">';
-                        printf( '<button class="did-1" data-load="users/%s/save/%s/sharepic.html">%s</button>', $this->user->get_username(), $dir, $name );
-                        printf( '<button class="did-2" data-delete="%s"><img src="assets/icons/delete.svg"></button>', $dir);
-                    echo '</div>';
-               }
+                foreach( $published as $dir => $name ){
+                     echo '<div class="dropdown-item-double">';
+                         printf( '<button class="did-1" data-load="%s">%s</button>', $dir, $name );
+
+                         if( $this->user->is_admin() ){
+                             //printf( '<button class="did-2" data-delete="%s"><img src="assets/icons/delete.svg">!!!</button>', $dir);
+                         }
+                     echo '</div>';
+                }
+                echo '<div class="divider"></div>';
+
+                $savings = $this->user->get_savings();
+                foreach( $savings as $dir => $name ){
+                        echo '<div class="dropdown-item-double">';
+                            printf( '<button class="did-1" data-load="users/%s/save/%s/sharepic.html">%s</button>', $this->user->get_username(), $dir, $name );
+                            printf( '<button class="did-2" data-delete="%s"><img src="assets/icons/delete.svg"></button>', $dir);
+                        echo '</div>';
+                }
             ?>
         </div>
     </div>

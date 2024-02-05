@@ -145,7 +145,40 @@ class Frontend {
 			$message = '<a href="index.php">' . _( 'Your password has been reset. Please login.' ) . '</a>';
 			include_once './src/Views/Hero.php';
 			return;
+	}
 
+	/**
+	 * Get the published templates.
+	 *
+	 * @return array
+	 */
+	public function get_published() {
+		$save_dir = 'templates/mint/community/';
+
+		$savings_dir = glob( $save_dir . '/*', GLOB_ONLYDIR );
+		usort(
+			$savings_dir,
+			function( $a, $b ) {
+				return filemtime( $a ) - filemtime( $b );
+			}
+		);
+
+		$savings = array();
+		foreach ( $savings_dir as $dir ) {
+			if ( ! file_exists( $dir . '/info.json' ) ) {
+				continue;
+			}
+
+			$info = file_get_contents( $dir . '/info.json' );
+			$data = json_decode( $info, true );
+
+			if ( isset( $data['name'] ) ) {
+				$dir             = $dir . '/sharepic.html';
+				$savings[ $dir ] = $data['name'];
+			}
+		}
+
+		return $savings;
 	}
 
 	/**

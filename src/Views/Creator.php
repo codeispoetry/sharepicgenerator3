@@ -19,6 +19,7 @@
 <header>
     <?php
 		$templates = $this->config->get('Templates');
+		$published = $this->get_published();
 		include 'src/Views/Menu.php'; 
 	?>
 

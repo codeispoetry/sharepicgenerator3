@@ -76,6 +76,13 @@ class Sharepic {
 	private $dir;
 
 	/**
+	 * Saving or publishing.
+	 *
+	 * @var string
+	 */
+	private $mode;
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
@@ -106,6 +113,8 @@ class Sharepic {
 		$this->size['zoom']   = $data['size']['zoom'] ?? 1;
 		$this->template       = $data['template'] ?? $this->file;
 		$this->info           = $data['name'] ?? 'no-name';
+		$this->mode           = $data['mode'] ?? 'save';
+
 
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
@@ -132,6 +141,11 @@ class Sharepic {
 	public function save() {
 		$workspace = 'users/' . $this->user . '/workspace/';
 		$save_dir  = 'users/' . $this->user . '/save/';
+
+		if ( 'publish' === $this->mode ) {
+			$save_dir = 'templates/mint/community/';
+		}
+
 		$id        = rand( 1000000, 9999999 );
 		$save      = $save_dir . $id;
 
@@ -146,7 +160,7 @@ class Sharepic {
 
 		$this->delete_unused_files();
 
-		$cmd = "cp -R $workspace $save 2>&1";
+		$cmd = "cp -R $workspace $save 2>&1 && chmod -R 775 $save 2>&1";
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
 			$this->logger->error( implode( "\n", $output ) );
@@ -154,7 +168,7 @@ class Sharepic {
 		}
 
 		// Rewrite paths.
-		$cmd = "sed -i 's/workspace/save\/$id/g' $save/sharepic.html 2>&1";
+		$cmd = "sed -i 's#$workspace#$save/#g' $save/sharepic.html 2>&1";
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
 			$this->logger->error( implode( "\n", $output ) );

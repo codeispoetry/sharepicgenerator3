@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 12:52+0100\n"
+"POT-Creation-Date: 2024-02-05 14:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,11 +73,11 @@ msgstr ""
 msgid "Your password has been reset. Please login."
 msgstr ""
 
-#: src/Controllers/Frontend.php:192 src/Views/Menu.php:36
+#: src/Controllers/Frontend.php:225 src/Views/Menu.php:45
 msgid "Logout"
 msgstr ""
 
-#: src/Controllers/Frontend.php:193
+#: src/Controllers/Frontend.php:226
 msgid "You have been logged out."
 msgstr ""
 
@@ -122,16 +122,15 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: src/Views/Header.php:21 src/Views/Menu.php:28 src/Views/Pages/Imprint.php:4
+#: src/Views/Header.php:21 src/Views/Menu.php:37 src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr ""
 
-#: src/Views/Header.php:24 src/Views/Menu.php:31 src/Views/Pages/Privacy.php:4
+#: src/Views/Header.php:24 src/Views/Menu.php:40 src/Views/Pages/Privacy.php:4
 msgid "Privacy"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Menu.php:59
-#: src/Views/Creator.php:78
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:79
 msgid "Eyecatcher"
 msgstr ""
 
@@ -213,8 +212,8 @@ msgstr ""
 msgid "Total size"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:48
-#: src/Views/Creator.php:56 src/Views/Creator.php:69
+#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:12
+#: src/Views/Creator.php:57 src/Views/Creator.php:70
 msgid "Download"
 msgstr ""
 
@@ -247,7 +246,7 @@ msgid "please choose"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
-#: src/Views/Cockpit/Addpicture.php:25 src/Views/Creator.php:75
+#: src/Views/Cockpit/Addpicture.php:25 src/Views/Creator.php:76
 msgid "Text"
 msgstr ""
 
@@ -267,7 +266,7 @@ msgstr ""
 msgid "green"
 msgstr ""
 
-#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:81
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:82
 msgid "Copyright"
 msgstr ""
 
@@ -275,7 +274,7 @@ msgstr ""
 msgid "Font color"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:2 src/Views/Menu.php:60
+#: src/Views/Cockpit/Addpicture.php:2
 msgid "Picture"
 msgstr ""
 
@@ -283,7 +282,7 @@ msgstr ""
 msgid "Upload image"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:19 src/Views/Creator.php:72
+#: src/Views/Cockpit/Addpicture.php:19 src/Views/Creator.php:73
 msgid "Image"
 msgstr ""
 
@@ -303,7 +302,7 @@ msgstr ""
 msgid "text below"
 msgstr ""
 
-#: src/Views/Cockpit/Dalle.php:2 src/Views/Creator.php:84
+#: src/Views/Cockpit/Dalle.php:2 src/Views/Creator.php:85
 msgid "Dall-E"
 msgstr ""
 
@@ -369,48 +368,52 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: src/Views/Menu.php:10
-msgid "German"
-msgstr ""
-
-#: src/Views/Menu.php:13
-msgid "English"
-msgstr ""
-
-#: src/Views/Menu.php:20
-msgid "Logfile"
-msgstr ""
-
-#: src/Views/Menu.php:21
-msgid "Sharepics"
-msgstr ""
-
-#: src/Views/Menu.php:42
-msgid "Edit"
-msgstr ""
-
-#: src/Views/Menu.php:45
+#: src/Views/Menu.php:9
 msgid "Save"
 msgstr ""
 
+#: src/Views/Menu.php:17
+msgid "German"
+msgstr ""
+
+#: src/Views/Menu.php:20
+msgid "English"
+msgstr ""
+
+#: src/Views/Menu.php:27
+msgid "Logfile"
+msgstr ""
+
+#: src/Views/Menu.php:28
+msgid "Sharepics"
+msgstr ""
+
+#: src/Views/Menu.php:30
+msgid "Publish"
+msgstr ""
+
 #: src/Views/Menu.php:51
+msgid "Edit"
+msgstr ""
+
+#: src/Views/Menu.php:55
 msgid "Undo"
 msgstr ""
 
-#: src/Views/Menu.php:57
-msgid "Add"
+#: src/Views/Menu.php:59
+msgid "Add sticker"
 msgstr ""
 
-#: src/Views/Menu.php:66
-msgid "Templates"
+#: src/Views/Menu.php:60
+msgid "Add picture"
 msgstr ""
 
-#: src/Views/Menu.php:71
+#: src/Views/Menu.php:65
+msgid "My templates"
+msgstr ""
+
+#: src/Views/Menu.php:70
 msgid "latest"
-msgstr ""
-
-#: src/Views/Menu.php:83
-msgid "My sharepics"
 msgstr ""
 
 #: src/Views/Components/Forms/Login.php:2
@@ -452,19 +455,19 @@ msgstr ""
 msgid "close"
 msgstr ""
 
-#: src/Views/Creator.php:97
+#: src/Views/Creator.php:98
 msgid "Please wait ..."
 msgstr ""
 
-#: src/Views/Creator.php:112
+#: src/Views/Creator.php:113
 msgid "Are you sure?"
 msgstr ""
 
-#: src/Views/Creator.php:113
+#: src/Views/Creator.php:114
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: src/Views/Creator.php:114
+#: src/Views/Creator.php:115
 msgid "Please enter a text describing your desired image."
 msgstr ""
 

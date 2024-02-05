@@ -103,11 +103,13 @@ class API {
     return data
   }
 
-  save () {
+  save ( mode = 'save') {
     const name = prompt('Name des Sharepics', 'Sharepic')
-
+ 
     const data = this.prepare()
     data.name = name
+    data.mode = mode
+    
     const options = {
       method: 'POST',
       headers: {
@@ -144,7 +146,7 @@ class API {
 
           mySharepics.appendChild(clonedEntry)
         } catch (e) {
-          window.location.reload()
+          console.error(e)
         }
 
         logger.log('saved sharepic ' + name)

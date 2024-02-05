@@ -44,8 +44,8 @@ test('Overall test', async ({ page }) => {
   await page.locator('#copyright_color').fill('#f96654')
 
   // Use top menu
-  await page.locator('#menu_add').hover()
-  await page.locator('#menu_add button:nth-child(2)').click()
+  await page.locator('#menu_edit').hover()
+  await page.locator('.adder button:nth-child(4)').click()
 
   // Edit and move the add pic
   const element = await page.locator('#sharepic > [data-id="addpicture"]').first();
