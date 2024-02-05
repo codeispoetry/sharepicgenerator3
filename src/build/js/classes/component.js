@@ -39,9 +39,11 @@ class Component {
     const inputEvent = new Event('input');
     document.getElementById(newId).dispatchEvent(inputEvent);
     
-
     // make draggable
     const nextIndex = dragItems.reduce((max, item, index) => Math.max(max, index), 0) + 2
     dragItems[nextIndex] = new Drag(newId, nextIndex)
+
+    select.set_active(document.getElementById(newId))
+    ui.handleToFront(document.getElementById(newId))
   }
 }

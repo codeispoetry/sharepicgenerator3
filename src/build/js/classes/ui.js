@@ -71,13 +71,11 @@ class UI {
 
     document.querySelectorAll('.to-front').forEach(element => {
       element.addEventListener('click', (event) => {
-        const highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
-          const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
-          return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)
-        }, 0)
-        cockpit.target.style.zIndex = (highestZIndex + 1).toString()
+        this.handleToFront(element)
       })
     })
+
+    
 
     document.querySelectorAll('.to-back').forEach(element => {
       element.addEventListener('click', (event) => {
@@ -163,5 +161,13 @@ class UI {
 
       element.parentElement.remove()
     })
+  }
+
+  handleToFront (element) {
+    const highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
+      const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
+      return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)
+    }, 0)
+    cockpit.target.style.zIndex = (highestZIndex + 1).toString()
   }
 }
