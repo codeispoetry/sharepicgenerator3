@@ -75,8 +75,6 @@ class UI {
       })
     })
 
-    
-
     document.querySelectorAll('.to-back').forEach(element => {
       element.addEventListener('click', (event) => {
         const allElements = [...document.querySelectorAll('#sharepic > *')]

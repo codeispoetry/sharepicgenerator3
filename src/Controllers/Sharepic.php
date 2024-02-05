@@ -115,7 +115,6 @@ class Sharepic {
 		$this->info           = $data['name'] ?? 'no-name';
 		$this->mode           = $data['mode'] ?? 'save';
 
-
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
 
@@ -146,8 +145,8 @@ class Sharepic {
 			$save_dir = 'templates/mint/community/';
 		}
 
-		$id        = rand( 1000000, 9999999 );
-		$save      = $save_dir . $id;
+		$id   = rand( 1000000, 9999999 );
+		$save = $save_dir . $id;
 
 		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );
 		if ( $save_count > 10 ) {

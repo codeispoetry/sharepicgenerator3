@@ -32,12 +32,12 @@ function rgbToHex (rgb) {
   return '#' + r + g + b
 }
 
-function make_square(target) {
+function makeSquare (target) {
   target.style.width = 'auto'
   target.style.height = 'auto'
 
-  const width =  parseInt(window.getComputedStyle(target).getPropertyValue('width'), 10)
-  const height =  parseInt(window.getComputedStyle(target).getPropertyValue('height'), 10)
+  const width = parseInt(window.getComputedStyle(target).getPropertyValue('width'), 10)
+  const height = parseInt(window.getComputedStyle(target).getPropertyValue('height'), 10)
 
   target.style.width = Math.max(width, height) + 'px'
   target.style.height = Math.max(width, height) + 'px'

@@ -15,7 +15,7 @@ $cli = new CLI();
 $command = $argv[1];
 
 if ( 'delete' === $command ) {
-	$user = @$argv[2];
+	$user = $argv[2] ?? '';
 
 	if ( empty( $user ) ) {
 		die( "Usage: php cli.php delete <user>\n" );
@@ -25,8 +25,8 @@ if ( 'delete' === $command ) {
 }
 
 if ( 'create' === $command ) {
-	$user     = @$argv[2];
-	$password = @$argv[3];
+	$user     = $argv[2] ?? '';
+	$password = $argv[3] ?? '';
 
 	if ( empty( $user ) || empty( $password ) ) {
 		die( "Usage: php cli.php create <user> <password>\n" );
@@ -36,8 +36,8 @@ if ( 'create' === $command ) {
 }
 
 if ( 'set_role' === $command ) {
-	$user = @$argv[2];
-	$role = @$argv[3];
+	$user = $argv[2] ?? '';
+	$role = $argv[3] ?? '';
 
 	if ( empty( $user ) || empty( $role ) ) {
 		die( "Usage: php cli.php set_role <user> <role>\n" );
@@ -55,7 +55,7 @@ if ( 'users' === $command ) {
 }
 
 if ( 'flush' === $command ) {
-	$what = @$argv[2];
+	$what = $argv[2] ?? '';
 
 	if ( empty( $what ) ) {
 		die( "Usage: php cli.php flush <logs|sharepics|all>\n" );

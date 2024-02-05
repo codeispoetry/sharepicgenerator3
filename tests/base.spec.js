@@ -1,8 +1,7 @@
 // @ts-check
 const { test, expect } = require('@playwright/test')
 const { exec } = require('child_process')
-const fs = require('fs-extra');
-
+const fs = require('fs-extra')
 
 const config = {
   url: {
@@ -22,7 +21,7 @@ test.beforeEach(async ({ page }) => {
   page.on('pageerror', exception => {
     throw new Error(`Uncaught exception: "${exception}"`)
   })
-  
+
   await page.goto(config.url.local)
 
   // Login
@@ -31,13 +30,11 @@ test.beforeEach(async ({ page }) => {
   await page.getByRole('button', { name: 'login' }).click()
 })
 
-
-test('Overall test', async ({ page }) => { 
+test('Overall test', async ({ page }) => {
   // Search and use image from pixabay
   await page.locator('#pixabay_q').fill('Berge')
   await page.locator('[data-click="pixabay.search"]').click()
   await page.locator('#pixabay_results div.image:first-child').click()
-
 
   // Change color of copyright
   await page.locator('button[data-pseudoselect="copyright"]').click()
@@ -48,19 +45,17 @@ test('Overall test', async ({ page }) => {
   await page.locator('.adder button:nth-child(4)').click()
 
   // Edit and move the add pic
-  const element = await page.locator('#sharepic > [data-id="addpicture"]').first();
-  const boundingBox = await element.boundingBox();
-  await page.mouse.move(boundingBox.x + boundingBox.width -1, boundingBox.y + 1 );
-  await page.mouse.down();
-  await page.mouse.move(boundingBox.x + boundingBox.width + 250, boundingBox.y + 50 );
-  await page.mouse.up();
+  const element = await page.locator('#sharepic > [data-id="addpicture"]').first()
+  const boundingBox = await element.boundingBox()
+  await page.mouse.move(boundingBox.x + boundingBox.width - 1, boundingBox.y + 1)
+  await page.mouse.down()
+  await page.mouse.move(boundingBox.x + boundingBox.width + 250, boundingBox.y + 50)
+  await page.mouse.up()
 
   await page.locator('#addpic_pic_angular').click()
   await page.locator('#addpic_text_right').click()
-  await page.locator('#sharepic > [data-id="addpicture"] .ap_text').fill('Test Text');
-  await page.locator('#cockpit_addpicture input[type="file"]').setInputFiles('tests/image.jpg');
-
-
+  await page.locator('#sharepic > [data-id="addpicture"] .ap_text').fill('Test Text')
+  await page.locator('#cockpit_addpicture input[type="file"]').setInputFiles('tests/image.jpg')
 
   // Wait for the image to be loaded
   await page.waitForTimeout(3000)
@@ -69,17 +64,16 @@ test('Overall test', async ({ page }) => {
   await page.locator('#inlinecockpit button[data-click="api.create"]').click()
   const download = await downloadPromise
   const path = await download.path()
-  fs.move(path, 'tests/tmp/test-sharepic.png', 
+  fs.move(path, 'tests/tmp/test-sharepic.png',
     { overwrite: true },
     function (err) {
       if (err) throw err
-      console.log('See tests/tmp/test-sharepic.png');
+      console.log('See tests/tmp/test-sharepic.png')
     }
-  );
+  )
 
   // Timeout needed to wait for the download to be moved.
   await page.waitForTimeout(100)
-
 })
 
 async function prepareLocalUser (config) {
@@ -89,7 +83,7 @@ async function prepareLocalUser (config) {
       throw new Error(stdout + ' ' + stderr)
     }
 
-    console.log('User deleted');
+    console.log('User deleted')
   })
 
   // Create user

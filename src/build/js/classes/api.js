@@ -103,13 +103,13 @@ class API {
     return data
   }
 
-  save ( mode = 'save') {
+  save (mode = 'save') {
     const name = prompt('Name des Sharepics', 'Sharepic')
- 
+
     const data = this.prepare()
     data.name = name
     data.mode = mode
-    
+
     const options = {
       method: 'POST',
       headers: {

@@ -141,10 +141,9 @@ class Frontend {
 			$this->no_access();
 		}
 
-			$title   = _( 'Password reset' );
-			$message = '<a href="index.php">' . _( 'Your password has been reset. Please login.' ) . '</a>';
-			include_once './src/Views/Hero.php';
-			return;
+		$title   = _( 'Password reset' );
+		$message = '<a href="index.php">' . _( 'Your password has been reset. Please login.' ) . '</a>';
+		include_once './src/Views/Hero.php';
 	}
 
 	/**
@@ -201,8 +200,6 @@ class Frontend {
 			$this->no_access();
 		}
 
-		// $cmd = 'find /tmp -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.gif" \) -mtime +7 -exec rm -f {} \;';
-		// exec( $cmd, $output, $return_var );
 		$files = glob( './tmp/*.{jpg,png,gif}', GLOB_BRACE );
 
 		usort(
