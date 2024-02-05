@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-31 11:29+0100\n"
+"POT-Creation-Date: 2024-02-05 12:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,75 +17,75 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Controllers/Frontend.php:70 src/Controllers/Frontend.php:76
+#: src/Controllers/Frontend.php:81 src/Controllers/Frontend.php:87
 #: src/Views/Home.php:17 src/Views/Home.php:24
 msgid "Register"
 msgstr ""
 
-#: src/Controllers/Frontend.php:71
+#: src/Controllers/Frontend.php:82
 msgid "Registration failed. Are you already registered?"
 msgstr ""
 
-#: src/Controllers/Frontend.php:77
+#: src/Controllers/Frontend.php:88
 msgid ""
 "You have successfully registered. Please check your mails to confirm your "
 "registration."
 msgstr ""
 
-#: src/Controllers/Frontend.php:85 src/Controllers/Frontend.php:105
-#: src/Controllers/Frontend.php:106
+#: src/Controllers/Frontend.php:96 src/Controllers/Frontend.php:116
+#: src/Controllers/Frontend.php:117
 msgid "Reset password"
 msgstr ""
 
-#: src/Controllers/Frontend.php:86
+#: src/Controllers/Frontend.php:97
 msgid "Please check your email for the reset link."
 msgstr ""
 
-#: src/Controllers/Frontend.php:89
+#: src/Controllers/Frontend.php:100
 msgid "Error"
 msgstr ""
 
-#: src/Controllers/Frontend.php:90
+#: src/Controllers/Frontend.php:101
 msgid "An error occurred. Please try again later."
 msgstr ""
 
-#: src/Controllers/Frontend.php:102
+#: src/Controllers/Frontend.php:113
 msgid "Create your password"
 msgstr ""
 
-#: src/Controllers/Frontend.php:103
+#: src/Controllers/Frontend.php:114
 msgid "Set your new password"
 msgstr ""
 
-#: src/Controllers/Frontend.php:120
+#: src/Controllers/Frontend.php:131
 msgid "An error occured"
 msgstr ""
 
-#: src/Controllers/Frontend.php:121
+#: src/Controllers/Frontend.php:132
 msgid "Your password could not be set. Did you repeat it correctly?"
 msgstr ""
 
-#: src/Controllers/Frontend.php:133 src/Views/Home.php:32
+#: src/Controllers/Frontend.php:144 src/Views/Home.php:32
 msgid "Password reset"
 msgstr ""
 
-#: src/Controllers/Frontend.php:134
+#: src/Controllers/Frontend.php:145
 msgid "Your password has been reset. Please login."
 msgstr ""
 
-#: src/Controllers/Frontend.php:181 src/Views/Menu.php:36
+#: src/Controllers/Frontend.php:192 src/Views/Menu.php:36
 msgid "Logout"
 msgstr ""
 
-#: src/Controllers/Frontend.php:182
+#: src/Controllers/Frontend.php:193
 msgid "You have been logged out."
 msgstr ""
 
-#: src/Controllers/User.php:437
+#: src/Controllers/User.php:484
 msgid "Account created"
 msgstr ""
 
-#: src/Controllers/User.php:495
+#: src/Controllers/User.php:542
 msgid "Password Reset"
 msgstr ""
 
@@ -130,69 +130,17 @@ msgstr ""
 msgid "Privacy"
 msgstr ""
 
-#: src/Views/Cockpit/Sharepic.php:2
-msgid "Sharepic"
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Menu.php:59
+#: src/Views/Creator.php:78
+msgid "Eyecatcher"
 msgstr ""
 
-#: src/Views/Cockpit/Sharepic.php:4
-msgid "Dimensions"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:9
-msgid "pixel"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:14
-msgid "Size presets"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:15
-msgid "square 1:1"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:35
-msgid "Background image"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:37
-msgid "search query"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:43
-msgid "upload image"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:49
-msgid "Image preferences"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:51 src/Views/Cockpit/Eyecatcher.php:4
+#: src/Views/Cockpit/Eyecatcher.php:4 src/Views/Cockpit/Bcakground.php:25
 #: src/Views/Cockpit/Logo.php:4
 msgid "Size"
 msgstr ""
 
-#: src/Views/Cockpit/Sharepic.php:56
-msgid "Fit automatically"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:61
-msgid "Delete background image"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:66
-msgid "Make background draggable"
-msgstr ""
-
-#: src/Views/Cockpit/Sharepic.php:69
-msgid "Color"
-msgstr ""
-
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Menu.php:59
-#: src/Views/Creator.php:75
-msgid "Eyecatcher"
-msgstr ""
-
-#: src/Views/Cockpit/Eyecatcher.php:11
+#: src/Views/Cockpit/Eyecatcher.php:11 src/Views/Cockpit/Logo.php:11
 msgid "Colors"
 msgstr ""
 
@@ -204,24 +152,86 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:24 src/Views/Cockpit/Freetext.php:10
-#: src/Views/Cockpit/Copyright.php:18 src/Views/Cockpit/Addpicture.php:10
+#: src/Views/Cockpit/Eyecatcher.php:24 src/Views/Cockpit/Greentext.php:11
+#: src/Views/Cockpit/Logo.php:19 src/Views/Cockpit/Freetext.php:10
+#: src/Views/Cockpit/Copyright.php:18 src/Views/Cockpit/Addpicture.php:33
 msgid "to front"
 msgstr ""
 
 #: src/Views/Cockpit/Eyecatcher.php:25 src/Views/Cockpit/Greentext.php:12
 #: src/Views/Cockpit/Logo.php:20 src/Views/Cockpit/Freetext.php:11
-#: src/Views/Cockpit/Copyright.php:19 src/Views/Cockpit/Addpicture.php:11
+#: src/Views/Cockpit/Copyright.php:19 src/Views/Cockpit/Addpicture.php:34
 msgid "to back"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:26
+#: src/Views/Cockpit/Eyecatcher.php:26 src/Views/Cockpit/Addpicture.php:35
 msgid "delete"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:2
+msgid "Background image"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:6
+msgid "Search"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:8
+msgid "search query"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:15
+msgid "Own image"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:17 src/Views/Cockpit/Addpicture.php:13
+msgid "upload image"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:23
+msgid "Preferences"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:30
+msgid "Fit automatically"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:35
+msgid "Delete background image"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:40
+msgid "Make background draggable"
+msgstr ""
+
+#: src/Views/Cockpit/Bcakground.php:45 src/Views/Cockpit/Addpicture.php:28
+msgid "Color"
 msgstr ""
 
 #: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:4
 #: src/Views/Cockpit/Copyright.php:4 src/Views/Cockpit/Addpicture.php:4
 msgid "Total size"
+msgstr ""
+
+#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:48
+#: src/Views/Creator.php:56 src/Views/Creator.php:69
+msgid "Download"
+msgstr ""
+
+#: src/Views/Cockpit/Download.php:4
+msgid "Dimensions"
+msgstr ""
+
+#: src/Views/Cockpit/Download.php:9
+msgid "pixel"
+msgstr ""
+
+#: src/Views/Cockpit/Download.php:14
+msgid "Size presets"
+msgstr ""
+
+#: src/Views/Cockpit/Download.php:15
+msgid "square 1:1"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:2
@@ -237,7 +247,7 @@ msgid "please choose"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
-#: src/Views/Creator.php:72
+#: src/Views/Cockpit/Addpicture.php:25 src/Views/Creator.php:75
 msgid "Text"
 msgstr ""
 
@@ -249,7 +259,15 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:78
+#: src/Views/Cockpit/Logo.php:13
+msgid "yellow"
+msgstr ""
+
+#: src/Views/Cockpit/Logo.php:14
+msgid "green"
+msgstr ""
+
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:81
 msgid "Copyright"
 msgstr ""
 
@@ -257,8 +275,72 @@ msgstr ""
 msgid "Font color"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:2
+#: src/Views/Cockpit/Addpicture.php:2 src/Views/Menu.php:60
 msgid "Picture"
+msgstr ""
+
+#: src/Views/Cockpit/Addpicture.php:11
+msgid "Upload image"
+msgstr ""
+
+#: src/Views/Cockpit/Addpicture.php:19 src/Views/Creator.php:72
+msgid "Image"
+msgstr ""
+
+#: src/Views/Cockpit/Addpicture.php:20
+msgid "round"
+msgstr ""
+
+#: src/Views/Cockpit/Addpicture.php:21
+msgid "angular"
+msgstr ""
+
+#: src/Views/Cockpit/Addpicture.php:26
+msgid "text floats right"
+msgstr ""
+
+#: src/Views/Cockpit/Addpicture.php:27
+msgid "text below"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:2 src/Views/Creator.php:84
+msgid "Dall-E"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:4
+msgid "Prompt"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:5
+msgid "Describe the image you want"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:8
+msgid "Create"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:18
+msgid "Please wait while AI generates your image."
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:19
+msgid "This can take up to one minute."
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:23
+msgid "seconds"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:27
+msgid "Result"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:30
+msgid "Use this image"
+msgstr ""
+
+#: src/Views/Cockpit/Dalle.php:33
+msgid "Try again"
 msgstr ""
 
 #: src/Views/Mail/Account_Creation.php:3 src/Views/Mail/Password_Link.php:3
@@ -311,10 +393,6 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/Views/Menu.php:48 src/Views/Creator.php:56
-msgid "Download"
-msgstr ""
-
 #: src/Views/Menu.php:51
 msgid "Undo"
 msgstr ""
@@ -323,15 +401,15 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: src/Views/Menu.php:64
+#: src/Views/Menu.php:66
 msgid "Templates"
 msgstr ""
 
-#: src/Views/Menu.php:69
+#: src/Views/Menu.php:71
 msgid "latest"
 msgstr ""
 
-#: src/Views/Menu.php:80
+#: src/Views/Menu.php:83
 msgid "My sharepics"
 msgstr ""
 
@@ -374,20 +452,20 @@ msgstr ""
 msgid "close"
 msgstr ""
 
-#: src/Views/Creator.php:69
-msgid "Image"
-msgstr ""
-
-#: src/Views/Creator.php:91
+#: src/Views/Creator.php:97
 msgid "Please wait ..."
 msgstr ""
 
-#: src/Views/Creator.php:105
+#: src/Views/Creator.php:112
 msgid "Are you sure?"
 msgstr ""
 
-#: src/Views/Creator.php:106
+#: src/Views/Creator.php:113
 msgid "Please save your sharepic. All changes will be lost."
+msgstr ""
+
+#: src/Views/Creator.php:114
+msgid "Please enter a text describing your desired image."
 msgstr ""
 
 #: src/Views/Pixabay.php:4
