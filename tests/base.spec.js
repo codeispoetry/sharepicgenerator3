@@ -1,5 +1,5 @@
 // @ts-check
-const { test, expect } = require('@playwright/test')
+const { test } = require('@playwright/test')
 const { exec } = require('child_process')
 const fs = require('fs-extra')
 

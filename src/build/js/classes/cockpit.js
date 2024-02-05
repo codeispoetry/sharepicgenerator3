@@ -66,11 +66,10 @@ class Cockpit {
   }
 
   setup_eyecatcher (element) {
-    const slider = document.getElementById('eyecatcher_size')
-    slider.value = element.style.fontSize.replace('px', '')
-
+    document.getElementById('eyecatcher_size').value = element.style.fontSize.replace('px', '')
     document.getElementById('eyecatcher_color').value = rgbToHex(element.style.color)
     document.getElementById('eyecatcher_bgcolor').value = rgbToHex(element.style.backgroundColor)
+    document.getElementById('eyecatcher_rotation').value = element.style.transform.replace('rotate(', '').replace('deg)', '')
   }
 
   setup_logo (element) {
