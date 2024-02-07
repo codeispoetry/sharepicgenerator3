@@ -225,8 +225,17 @@ class Sharepic {
 
 		$this->delete_unused_files();
 
+		// $cmd = sprintf(
+		// '%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
+		// $cmd_preprend,
+		// $path,
+		// (int) $this->size['width'],
+		// (int) $this->size['height'],
+		// escapeshellarg( $this->file )
+		// );
+
 		$cmd = sprintf(
-			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
+			'%s xvfb-run --auto-servernum --server-num=1 node puppeteer.js %s %d %d file:///var/www/html/%s 2>&1',
 			$cmd_preprend,
 			$path,
 			(int) $this->size['width'],
@@ -236,7 +245,7 @@ class Sharepic {
 
 		exec( $cmd, $output, $return_code );
 
-		$this->logger->access( 'Command executed ' . $cmd );
+		$this->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		if ( 0 !== $return_code ) {
 			$this->logger->error( implode( "\n", $output ) );

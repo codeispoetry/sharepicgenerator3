@@ -10,7 +10,7 @@ build:
 	docker-compose build
 
 shell:
-	docker-compose run webserver bash
+	docker-compose exec webserver bash
 
 log-empty:
 	rm logs/*.log
