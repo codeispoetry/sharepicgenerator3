@@ -62,14 +62,14 @@
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">
-			<div id="componentscockpit">
+			<div id="components">
 				<?php
 				foreach ( glob( "src/Views/Cockpit/*.php" ) as $filename ) {
 					include $filename;
 				}
 				?>
 			</div>
-			<div id="sitecockpit">
+			<div id="componentbuttons">
 				<button data-showtab="download">
 					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
 				</button>

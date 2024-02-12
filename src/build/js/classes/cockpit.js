@@ -21,7 +21,7 @@ class Cockpit {
       element.classList.remove('show')
     })
 
-    document.querySelectorAll('#cockpit .active').forEach(element => {
+    document.querySelectorAll('#componentbuttons .active').forEach(element => {
       element.classList.remove('active')
     })
 
