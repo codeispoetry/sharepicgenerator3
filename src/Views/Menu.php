@@ -1,37 +1,14 @@
 <nav>
-    <div class="dropdown" id="menu_file">
-        <span><?php echo _( 'File' ); ?></span>
-        <div class="dropdown-content">
-             <a href="index.php" class="menu-link">
-                <?php  echo _('Home');?>
-			</a>   
-            <button data-click="api.save">
-                <?php  echo _('Save');?>
-            </button>
-            <button data-click="api.create">
-                <?php  echo _('Download');?>
-            </button>
 
-            <div class="divider"></div>
+    <div class="dropdown" id="menu_mint">
+        <span><?php echo _( 'MINTSharepic' ); ?></span>
+        <div class="dropdown-content">
             <button data-lang="de">
                 <?php echo _( 'German' ); ?>
             </button>
             <button data-lang="en">
                 <?php echo _( 'English' ); ?>
             </button>
-            <div class="divider"></div>
-
-            <?php
-            if( $this->user->is_admin() ){
-                echo '<div class="divider"></div>';
-                printf( '<a href="index.php?c=frontend&m=log" class="menu-link">%s</a>', _( 'Logfile' ) );
-                printf( '<a href="index.php?c=frontend&m=sharepics" class="menu-link">%s</a>', _( 'Sharepics' ) );
-                
-                printf( '<button onClick="api.save(\'publish\')">%s</button>', _( 'Publish' ) );
-                echo '<div class="divider"></div>';
-            }
-            ?>
-
             <div class="divider"></div>
             <a href="index.php?c=frontend&m=view&view=Imprint" class="menu-link">
                 <?php  echo _('Imprint');?>
@@ -40,17 +17,57 @@
                 <?php  echo _('Privacy');?>
 			</a>
 
+            <?php
+            if( $this->user->is_admin() ){
+                echo '<div class="divider"></div>';
+                printf( '<a href="index.php?c=frontend&m=log" class="menu-link">%s</a>', _( 'Logfile' ) );
+                printf( '<a href="index.php?c=frontend&m=sharepics" class="menu-link">%s</a>', _( 'Sharepics' ) );
+                
+                printf( '<button onClick="api.save(\'publish\')">%s</button>', _( 'Publish' ) );
+            }
+            ?>
+
             <div class="divider"></div>
             <a href="index.php?c=frontend&m=logout" class="menu-link">
                 <?php  echo _('Logout');?>
 			</a>
+
+            <div class="divider"></div>
+            <a href="index.php" class="menu-link">
+                <?php  echo _('Back to home');?>
+			</a>
+        </div>
+    </div>
+
+    <div class="dropdown" id="menu_file">
+        <span><?php echo _( 'File' ); ?></span>
+        <div class="dropdown-content">
+            <?php
+                 $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
+                if (file_exists($last)) {
+                    echo '<button data-load="' . $last . '">' . _('latest') . '</button>';
+                    echo '<div class="divider"></div>';
+                }
+               
+                // if( 'auto' !== $this->user->get_role() ){
+                //     foreach( $templates as $path => $label ) {
+                //         printf( '<button data-load="templates/%s/start.html">%s</button>', $path, $label );
+                //     }
+                //     echo '<div class="divider"></div>';
+                // }
+            ?>
+            <button data-click="api.save">
+                <?php  echo _('Save');?>
+            </button>
+            <button data-click="api.create">
+                <?php  echo _('Download');?>
+            </button>
         </div>
     </div>
 
     <div class="dropdown" id="menu_edit">
         <span><?php echo _( 'Edit' ); ?></span>
         <div class="dropdown-content adder">   
-           
             <button data-click="undo.undo" id="undo">
                 <?php echo _( 'Undo' ); ?>
             </button>
@@ -65,18 +82,7 @@
         <span><?php echo _( 'My templates' ); ?></span>
         <div class="dropdown-content" id="my-sharepics">
             <?php
-                $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
-                if (file_exists($last)) {
-                    echo '<button data-load="' . $last . '">' . _('latest') . '</button>';
-                    echo '<div class="divider"></div>';
-                }
-               
-                if( 'auto' !== $this->user->get_role() ){
-                    foreach( $templates as $path => $label ) {
-                        printf( '<button data-load="templates/%s/start.html">%s</button>', $path, $label );
-                    }
-                    echo '<div class="divider"></div>';
-                }
+ 
 
                 foreach( $published as $dir => $name ){
                      echo '<div class="dropdown-item-double">';

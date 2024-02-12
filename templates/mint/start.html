@@ -33,7 +33,7 @@
                 color: #e9e9e9; 
                 background-color: #784ce9;
                 transform: rotate(351deg);
-     
+                text-align: center;
             "
     >
         <p>MUSTER</p>
@@ -41,16 +41,26 @@
 
 
     <div    data-class="addpicture draggable selectable" 
-            data-cockpit="addpicture" 
-            data-id="addpicture" 
-        style="
-            align-items: center;
-            position: absolute;
-            left:300px; top:290px;
-            ">
-        <div class="ap_image" style="background-image: url('templates/mint/addpic.jpg');background-size: cover; width: 100px; aspect-ratio: 1; border-radius: 50%;"></div>
-        <div class="ap_text" contenteditable="true" style="display: flex; justify-content: center;">Bildbeschreibung</div>
-    </div>
+    data-cockpit="addpicture" 
+    data-id="addpicture" 
+style="
+    align-items: center;
+    position: absolute;
+    left:300px; top:290px;
+    ">
+    <div class="ap_image" style="
+        background-image: url('templates/mint/addpic.jpg');
+        background-size: cover; 
+        width: 100px; 
+        aspect-ratio: 1; 
+        border-radius: 50%;"
+    ></div>
+    <div class="ap_text" contenteditable="true" style="
+        display: flex; 
+        justify-content: center;
+        color: #ffffff;
+    ">Bildbeschreibung</div>
+</div>
 </div>
 
 <script>

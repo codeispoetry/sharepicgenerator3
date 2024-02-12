@@ -30,7 +30,7 @@ class UI {
         document.getElementById(target)?.dispatchEvent(mouseDownEvent)
 
         if (!element.classList.contains('active')) {
-          alert(lang['No component'])
+          alert("no element selected")
         }
       })
     })

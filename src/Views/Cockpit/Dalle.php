@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_dalle">
-    <h2><?php  echo _('Dall-E');?></h2>
+    <h2><?php  echo _('Create image with AI');?></h2>
     <section>
         <h3><?php  echo _('Prompt');?></h3>
         <textarea placeholder="<?php  echo _('Describe the image you want');?>" 

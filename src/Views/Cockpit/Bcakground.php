@@ -37,7 +37,7 @@
         </label>
         <label>
             <input type="checkbox" id="drag_background">
-            <?php echo _("Make background draggable"); ?>
+            <?php echo _("Change image crop"); ?>
         </label>
     </section>
     <section>

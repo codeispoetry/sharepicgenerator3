@@ -5,6 +5,7 @@
 
 .draggable{
     cursor: pointer;
+    position: absolute;
 }
 
 .selectable{
@@ -31,5 +32,11 @@
         top: -15%;
         left: -10%;
         cursor: move;
+    }
+}
+
+.ql-editor{
+    p{
+        color: black;
     }
 }
