@@ -2,18 +2,7 @@
 
 class Component {
   constructor () {
-    document.querySelectorAll('.adder button').forEach(element => {
-      element.addEventListener('click', (event) => {
-        const item = element.dataset.item
-        component.add(item)
-      })
-    })
 
-    document.querySelectorAll('.delete').forEach(element => {
-      element.addEventListener('click', (event) => {
-        cockpit.target.remove()
-      })
-    })
   }
 
   add (item) {
@@ -43,7 +32,7 @@ class Component {
     const nextIndex = dragItems.reduce((max, item, index) => Math.max(max, index), 0) + 2
     dragItems[nextIndex] = new Drag(newId, nextIndex)
 
-    select.set_active(document.getElementById(newId))
+    select.setActive(document.getElementById(newId))
     ui.handleToFront(document.getElementById(newId))
   }
 }

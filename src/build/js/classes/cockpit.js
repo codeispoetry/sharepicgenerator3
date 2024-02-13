@@ -14,7 +14,8 @@ class Cockpit {
   }
 
   /*
-    * Show the cockpit element for the given element
+    * Shows the cockpit element for the given compoenent
+    * and selects the first component, if it exists.
     */
   show (element) {
     document.querySelectorAll('#cockpit .show').forEach(element => {
@@ -30,9 +31,9 @@ class Cockpit {
     if (typeof this[cockpitEelement] === 'function') {
       this[cockpitEelement](element)
     }
-    const id = 'cockpit_' + element.dataset.cockpit
-    document.getElementById(id)?.classList.add('show')
-    document.querySelector('[data-pseudoselect="' + element.dataset.cockpit + '"]')?.classList.add('active')
+
+    // Selects the first input element
+    //TODO here geht es weiter
   }
 
   /*

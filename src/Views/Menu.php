@@ -3,10 +3,10 @@
     <div class="dropdown" id="menu_mint">
         <span><?php echo _( 'MINTSharepic' ); ?></span>
         <div class="dropdown-content">
-            <button data-lang="de">
+            <button onClick="ui.setLang('de')">
                 <?php echo _( 'German' ); ?>
             </button>
-            <button data-lang="en">
+            <button onClick="ui.setLang('de')">
                 <?php echo _( 'English' ); ?>
             </button>
             <div class="divider"></div>
@@ -73,7 +73,6 @@
             </button>
             <div class="divider"></div>
 
-            <button data-item="eyecatcher"><?php  echo _('Add sticker');?></button>
             <button data-item="addpicture"><?php  echo _('Add picture');?></button>
         </div>
     </div>

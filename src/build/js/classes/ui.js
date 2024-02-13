@@ -8,33 +8,17 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 
 class UI {
   constructor () {
+    // Loads a template
     document.querySelectorAll('[data-load]').forEach(element => {
       this.handleClickLoad(element)
     })
 
+    // Deletes an own template/sharepic
     document.querySelectorAll('[data-delete]').forEach(element => {
       this.handleClickDelete(element)
     })
 
-    document.querySelectorAll('[data-pseudoselect]').forEach(element => {
-      element.addEventListener('click', (event) => {
-        let target = element.dataset.pseudoselect
-        if (target === 'freetext') {
-          target = 'text'
-        }
-        if (target === 'background') {
-          target = 'sharepic'
-        }
-
-        document.querySelector('[data-id="' + target + '"]')?.dispatchEvent(mouseDownEvent)
-        document.getElementById(target)?.dispatchEvent(mouseDownEvent)
-
-        if (!element.classList.contains('active')) {
-          alert("no element selected")
-        }
-      })
-    })
-
+    // Shows a tab from the cockpit
     document.querySelectorAll('[data-showtab]').forEach(element => {
       element.addEventListener('click', (event) => {
         document.querySelectorAll('#cockpit .show').forEach(element => {
@@ -51,6 +35,7 @@ class UI {
       })
     })
 
+    // Handles upload
     document.getElementById('upload').addEventListener('change', function () {
       const input = document.getElementById('upload')
 
@@ -61,6 +46,7 @@ class UI {
       api.upload(input.files[0])
     })
 
+    // Handles upload of addpic
     document.getElementById('upload_addpic').addEventListener('change', function () {
       const input = document.getElementById('upload_addpic')
 
@@ -71,6 +57,7 @@ class UI {
       api.upload_addpic(input.files[0])
     })
 
+    // Closes an element (e.g. pixabay results)
     document.querySelectorAll('.closer').forEach(element => {
       element.addEventListener('click', (event) => {
         const target = element.dataset.target
@@ -111,6 +98,8 @@ class UI {
       })
     })
 
+    // Calls a function defined in data-click attribute
+    // @deprecated Use onClick instead
     document.querySelectorAll('[data-click]').forEach(element => {
       element.addEventListener('click', function () {
         const parts = this.dataset.click.split('.')
@@ -125,6 +114,8 @@ class UI {
       })
     })
 
+    // Calls a function defined in data-change-attribute
+    // @deprecated Use onChange instead
     document.querySelectorAll('[data-change]').forEach(element => {
       element.addEventListener('change', function () {
         const parts = this.dataset.change.split('.')
@@ -138,16 +129,15 @@ class UI {
         }
       })
     })
+  }
 
-    document.querySelectorAll('[data-lang]').forEach(element => {
-      element.addEventListener('click', function () {
-        if (confirm(lang['All changes lost']) === false) {
-          return false
-        }
-        document.cookie = 'lang=' + this.dataset.lang + '; path=/'
-        window.document.location.reload()
-      })
-    })
+  // Switches languages.
+  setLang( language ) {
+    if (confirm(lang['All changes lost']) === false) {
+      return false
+    }
+    document.cookie = 'lang=' + language + '; path=/'
+    window.document.location.reload()
   }
 
   handleClickLoad (element) {

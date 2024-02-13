@@ -31,14 +31,14 @@ class RichTextEditor {
       theme: 'bubble'
     })
 
-    this.set_fonts()
+    this.setFonts()
   }
 
   destroy () {
     quill.disable()
   }
 
-  set_fonts () {
+  setFonts () {
     const elements = document.querySelectorAll('.ql-font .ql-picker-item')
 
     const style = document.createElement('style')

@@ -73,16 +73,16 @@
 				<button data-showtab="download">
 					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
 				</button>
-				<button data-pseudoselect="background" class="active">
+				<button data-showtab="background" class="active">
 					<img src="assets/icons/image.svg" title="<?php echo _('Image'); ?>">
 				</button>
-				<button data-pseudoselect="freetext">
+				<button data-showtab="freetext">
 					<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 				</button>
-				<button data-pseudoselect="eyecatcher">
+				<button data-showtab="eyecatcher">
 					<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
 				</button>
-				<button data-pseudoselect="copyright">
+				<button data-showtab="copyright">
 					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
 				</button>
 				<button data-showtab="dalle">

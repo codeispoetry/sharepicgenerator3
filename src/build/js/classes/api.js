@@ -75,7 +75,7 @@ class API {
   }
 
   prepare () {
-    select.unselect_all()
+    select.unselectAll()
     const canvas = document.getElementById('canvas')
 
     const clonedCanvas = canvas.cloneNode(true)

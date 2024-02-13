@@ -2,7 +2,7 @@
 
 class Select {
   setup () {
-    this.unselect_all()
+    this.unselectAll()
     const elements = document.querySelectorAll('.selectable')
     const sharepic = document.getElementById('sharepic')
 
@@ -16,13 +16,13 @@ class Select {
         let target = event.target
 
         if (target.classList.contains('selectable')) {
-          this.set_active(target)
+          this.setActive(target)
           return
         }
 
         while (target !== sharepic) {
           if (target.classList.contains('selectable')) {
-            this.set_active(target)
+            this.setActive(target)
             break
           }
           target = target.parentNode
@@ -31,7 +31,7 @@ class Select {
     })
   }
 
-  unselect_all () {
+  unselectAll () {
     const elements = document.querySelectorAll('.selectable.active')
     elements.forEach(element => {
       element.classList.remove('active')
@@ -39,11 +39,11 @@ class Select {
     cockpit.show_standard()
   }
 
-  set_active (element) {
+  setActive (element) {
     if (dragging === true) {
       return
     }
-    this.unselect_all()
+    this.unselectAll()
 
     element.classList.add('active')
     cockpit.show(element)

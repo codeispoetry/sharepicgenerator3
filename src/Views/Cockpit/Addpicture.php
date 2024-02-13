@@ -32,7 +32,7 @@
     <section style="display: flex">
         <button class="to-front" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
         <button class="to-back" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
-        <button class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
+        <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
     </section>
 
 </section>
