@@ -6,7 +6,7 @@
         <h3><?php echo _("Search"); ?></h3>
         <label style="display:flex; margin-top:20px;">
             <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search query');?>">
-            <button data-click="pixabay.search" style="padding:2px;"><img src="assets/icons/search.svg"></button>
+            <button onClick="pixabay.search()" style="padding:2px;"><img src="assets/icons/search.svg"></button>
         </label>
     </section>
     
@@ -26,12 +26,12 @@
             <input type="range" min="10" max="300" value="100" class="slider" id="background_size">
         </label>
         <label style="display:flex;margin-top: 0">
-            <button class="link" data-click="sg.reset_background">
+            <button class="link" onClick="sg.resetBackground()">
                 <?php echo _("Fit automatically"); ?>
             </button>   
         </label>
         <label style="display:flex;margin-top: 0">
-            <button class="link" data-click="sg.delete_background_image">
+            <button class="link" onClick="sg.deleteBackgroundImage()">
                 <?php echo _("Delete background image"); ?>
             </button>   
         </label>

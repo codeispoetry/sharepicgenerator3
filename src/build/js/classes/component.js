@@ -33,6 +33,5 @@ class Component {
     dragItems[nextIndex] = new Drag(newId, nextIndex)
 
     select.setActive(document.getElementById(newId))
-    ui.handleToFront(document.getElementById(newId))
   }
 }

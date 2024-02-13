@@ -37,7 +37,7 @@ class Sharepic {
       this.draggable = false
     })
 
-    this.set_size()
+    this.setSize()
     this.start_drag()
   }
 
@@ -121,7 +121,7 @@ class Sharepic {
     sg.style.backgroundImage = 'none'
   }
 
-  set_size () {
+  setSize () {
     const sg = document.getElementById('sharepic')
     const width = parseInt(document.getElementById('width').value)
     const height = parseInt(document.getElementById('height').value)

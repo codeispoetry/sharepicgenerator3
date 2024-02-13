@@ -48,78 +48,7 @@ class UI {
       api.upload_addpic(input.files[0])
     })
 
-    // Closes an element (e.g. pixabay results)
-    document.querySelectorAll('.closer').forEach(element => {
-      element.addEventListener('click', (event) => {
-        const target = element.dataset.target
-        document.getElementById(target).classList.remove('show')
-      })
-    })
 
-    document.querySelectorAll('.to-front').forEach(element => {
-      element.addEventListener('click', (event) => {
-        this.handleToFront(element)
-      })
-    })
-
-    document.querySelectorAll('.to-back').forEach(element => {
-      element.addEventListener('click', (event) => {
-        const allElements = [...document.querySelectorAll('#sharepic > *')]
-
-        // Filter elements that have a z-index
-        const elementsWithZIndex = allElements.filter(element => {
-          const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
-          return !isNaN(zIndex) && zIndex !== 0
-        })
-
-        // Sort elements by z-index
-        const sortedElementsByZIndex = elementsWithZIndex.sort((a, b) => {
-          const zIndexA = parseInt(getComputedStyle(a).zIndex, 10)
-          const zIndexB = parseInt(getComputedStyle(b).zIndex, 10)
-          return zIndexA - zIndexB
-        })
-
-        // Loop through sorted elements and increase their z-index by one
-        sortedElementsByZIndex.forEach(element => {
-          const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
-          element.style.zIndex = (zIndex + 1).toString()
-        })
-
-        cockpit.target.style.zIndex = 1
-      })
-    })
-
-    // Calls a function defined in data-click attribute
-    // @deprecated Use onClick instead
-    document.querySelectorAll('[data-click]').forEach(element => {
-      element.addEventListener('click', function () {
-        const parts = this.dataset.click.split('.')
-        const obj = window[parts[0]]
-        const method = parts[1]
-
-        if (obj && typeof obj[method] === 'function') {
-          obj[method]()
-        } else {
-          console.log('Method ' + this.dataset.click + ' not found')
-        }
-      })
-    })
-
-    // Calls a function defined in data-change-attribute
-    // @deprecated Use onChange instead
-    document.querySelectorAll('[data-change]').forEach(element => {
-      element.addEventListener('change', function () {
-        const parts = this.dataset.change.split('.')
-        const obj = window[parts[0]]
-        const method = parts[1]
-
-        if (obj && typeof obj[method] === 'function') {
-          obj[method]()
-        } else {
-          console.log('Method ' + this.dataset.change + ' not found')
-        }
-      })
-    })
   }
 
   // Switches languages.
@@ -140,11 +69,41 @@ class UI {
     origin.parentElement.remove()
   }
 
-  handleToFront (element) {
+  toFront (element) {
+    console.log(element)
     const highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
       const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
       return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)
     }, 0)
     cockpit.target.style.zIndex = (highestZIndex + 1).toString()
+  }
+
+  toBack (element) {
+    const allElements = [...document.querySelectorAll('#sharepic > *')]
+
+    // Filter elements that have a z-index
+    const elementsWithZIndex = allElements.filter(element => {
+      const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
+      return !isNaN(zIndex) && zIndex !== 0
+    })
+
+    // Sort elements by z-index
+    const sortedElementsByZIndex = elementsWithZIndex.sort((a, b) => {
+      const zIndexA = parseInt(getComputedStyle(a).zIndex, 10)
+      const zIndexB = parseInt(getComputedStyle(b).zIndex, 10)
+      return zIndexA - zIndexB
+    })
+
+    // Loop through sorted elements and increase their z-index by one
+    sortedElementsByZIndex.forEach(element => {
+      const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
+      element.style.zIndex = (zIndex + 1).toString()
+    })
+
+    cockpit.target.style.zIndex = 1
+  }
+
+  close (target) {
+    document.querySelector(target).classList.remove('show')
   }
 }

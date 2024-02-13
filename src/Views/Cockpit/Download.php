@@ -3,9 +3,9 @@
     <section>
         <h3><?php  echo _('Dimensions');?></h3>
             <div style="display: flex; align-items: center;">
-                <input type="number" name="width" id="width" value="500" step="1" style="width: 25%" data-change="sg.set_size">
+                <input type="number" name="width" id="width" value="500" step="1" style="width: 25%" onChange="sg.setSize()">
                 <span style="margin: 0 0.5em">x</span>
-                <input type="number" name="height" id="height" value="400" step="1" style="width: 25%" data-change="sg.set_size">
+                <input type="number" name="height" id="height" value="400" step="1" style="width: 25%" onChange="sg.setSize()">
                 <span style="margin-left: 0.5em"><?php  echo _('pixel');?></span>
             </div>
         
@@ -32,7 +32,7 @@
     </section>
     
     <section>
-        <button class="create flat" data-click="api.create"><img src="assets/icons/download.svg"> Herunterladen</button>
+        <button class="create flat" onClick="api.create()"><img src="assets/icons/download.svg"> Herunterladen</button>
     </section>
 </section>
 

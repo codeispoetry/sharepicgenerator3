@@ -4,7 +4,7 @@
             <?php echo _('All images are from '); ?>
             <a href="https://pixabay.com" target="_blank">Pixabay</a>.
         </div>
-        <div class="closer" data-target="pixabay_page">
+        <div class="closer" onClick="ui.close('#pixabay_page')">
             <img src="assets/icons/close.svg">
         </div>
     </div>

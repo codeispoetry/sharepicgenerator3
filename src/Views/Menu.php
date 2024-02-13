@@ -49,10 +49,10 @@
                     echo '<div class="divider"></div>';
                 }
             ?>
-            <button data-click="api.save">
+            <button onClick="api.save()">
                 <?php  echo _('Save');?>
             </button>
-            <button data-click="api.create">
+            <button onClick="api.create()">
                 <?php  echo _('Download');?>
             </button>
         </div>
@@ -61,7 +61,7 @@
     <div class="dropdown" id="menu_edit">
         <span><?php echo _( 'Edit' ); ?></span>
         <div class="dropdown-content adder">   
-            <button data-click="undo.undo" id="undo">
+            <button onClick="undo.undo()" id="undo">
                 <?php echo _( 'Undo' ); ?>
             </button>
             <div class="divider"></div>

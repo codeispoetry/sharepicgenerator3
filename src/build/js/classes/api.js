@@ -205,7 +205,7 @@ class API {
     document.getElementById('dalle_result_waiting').style.display = 'block'
     document.getElementById('dalle_result_response').style.display = 'none'
 
-    const createButton = document.querySelector('[data-click="api.dalle"')
+    const createButton = document.querySelector('[onClick="api.dalle()"')
     const createButtonLabel = createButton.innerHTML
     createButton.innerHTML = '...'
     createButton.disabled = true
