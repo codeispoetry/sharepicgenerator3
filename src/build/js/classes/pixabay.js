@@ -20,12 +20,12 @@ class Pixabay {
       .then(response => response.json())
       .then(data => {
         logger.log('searches for ' + q + ' and gets ' + data.hits.length + ' results')
-        this.list(data)
+        this.showResults(data)
       })
       .catch(error => console.error('Error:', error))
   }
 
-  list (data) {
+  showResults (data) {
     const page = document.getElementById('pixabay_page')
     page.classList.add('show')
 
@@ -56,16 +56,12 @@ class Pixabay {
         })
         logger.log('clicks on image after search for ' + q)
 
-        this.set_imge(img)
+        document.getElementById('sharepic').style.backgroundImage = img.style.backgroundImage
+        api.loadByUrl(img.dataset.url)
 
         document.getElementById('copyright').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
       }
       results.appendChild(img)
     })
-  }
-
-  set_imge (img) {
-    document.getElementById('sharepic').style.backgroundImage = img.style.backgroundImage
-    api.load_from_url(img.dataset.url)
   }
 }

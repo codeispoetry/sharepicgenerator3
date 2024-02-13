@@ -5,10 +5,10 @@
     </section>
     <section>
         <h3><?php  echo _('Size');?></h3>
-        <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" onInput="eyecatcher.setSize(this)">
+        <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
 
         <h3><?php  echo _('Rotation');?></h3>
-        <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="rotateElement(event)">
+        <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
 
     </section>
 
@@ -17,17 +17,17 @@
         <div class="grid">
            
                 <h4><?php  echo _('Font');?></h4>
-                <input type="color" value="#ffffff" class="" id="eyecatcher_color">
+                <input type="color" value="#ffffff" class="" id="eyecatcher_color" oninput="eyecatcher.setFontColor(this)">
            
                 <h4><?php  echo _('Background');?></h4>
-                <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor">
+                <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor" oninput="eyecatcher.setBgColor(this)">
             </label>
         </div>
     </section>
     
     <section class="row">
-        <button class="to-front" onClick="ui.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-        <button class="to-back" onClick="ui.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
+        <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+        <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
         <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
     </section>
 </section>
@@ -36,27 +36,34 @@
     class Eyecatcher{
         setSize(input){
             cockpit.target.style.fontSize = input.value + 'px';
-            makeSquare(cockpit.target);
+            this.makeSquare(cockpit.target);
         }
+
+        setBgColor(input) {      
+            cockpit.target.style.backgroundColor = input.value;
+        }
+
+        setFontColor(input) {      
+            cockpit.target.style.color = input.value;
+        }
+
+        rotate( input ) {
+            cockpit.target.style.transform = 'rotate(' + input.value + 'deg)';
+        }
+
+        makeSquare (target) {
+            target.style.width = 'auto'
+            target.style.height = 'auto'
+
+            const width = parseInt(window.getComputedStyle(target).getPropertyValue('width'), 10)
+            const height = parseInt(window.getComputedStyle(target).getPropertyValue('height'), 10)
+
+            target.style.width = Math.max(width, height) + 'px'
+            target.style.height = Math.max(width, height) + 'px'
+        }
+
     }
     const eyecatcher = new Eyecatcher();
-
-    document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
-      const color = document.getElementById('eyecatcher_bgcolor').value
-      
-      cockpit.target.style.backgroundColor = color;
-    })
-
-    document.getElementById('eyecatcher_color').addEventListener('input', () => {
-      const color = document.getElementById('eyecatcher_color').value
-      cockpit.target.style.color = color;
-    })
-
-    function rotateElement(event) {
-        var angle = event.target.value;
-        cockpit.target.style.transform = 'rotate(' + angle + 'deg)';
-    }
-
 </script>
 
 

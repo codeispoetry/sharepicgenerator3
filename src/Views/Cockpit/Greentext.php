@@ -8,8 +8,8 @@
     </section>
     
     <section class="row">
-        <button class="to-front" onClick="ui.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-        <button class="to-back" onClick="ui.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
+        <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+        <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
     </section>
 
 </section>

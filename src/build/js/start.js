@@ -13,29 +13,3 @@ window.onload = function () {
   rte = new RichTextEditor()
   logger = new Logger()
 }
-
-function rgbToHex (rgb) {
-  const sep = rgb.indexOf(',') > -1 ? ',' : ' '
-  rgb = rgb.substr(4).split(')')[0].split(sep)
-
-  let r = (+rgb[0]).toString(16)
-  let g = (+rgb[1]).toString(16)
-  let b = (+rgb[2]).toString(16)
-
-  if (r.length === 1) { r = '0' + r }
-  if (g.length === 1) { g = '0' + g }
-  if (b.length === 1) { b = '0' + b }
-
-  return '#' + r + g + b
-}
-
-function makeSquare (target) {
-  target.style.width = 'auto'
-  target.style.height = 'auto'
-
-  const width = parseInt(window.getComputedStyle(target).getPropertyValue('width'), 10)
-  const height = parseInt(window.getComputedStyle(target).getPropertyValue('height'), 10)
-
-  target.style.width = Math.max(width, height) + 'px'
-  target.style.height = Math.max(width, height) + 'px'
-}

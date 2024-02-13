@@ -18,7 +18,7 @@ class Sharepic {
       this.backgroundZoom(percentage)
     })
 
-    this.start_drag()
+    this.startDrag()
   }
 
   init () {
@@ -33,11 +33,10 @@ class Sharepic {
     })
 
     this.setSize()
-    this.start_drag()
+    this.startDrag()
   }
 
   backgroundColor (btn) {
-    console.log(btn.value)
     document.getElementById('sharepic').style.backgroundColor = btn.value
   }
 
@@ -52,7 +51,7 @@ class Sharepic {
       sg.style.backgroundPositionY = '0px'
       sg.style.backgroundRepeat = 'no-repeat'
       sg.style.backgroundColor = 'white'
-      this.start_drag()
+      this.startDrag()
     }
 
     // const style = window.getComputedStyle(sg)
@@ -62,7 +61,7 @@ class Sharepic {
     sg.style.backgroundSize = percentage + '%'
   }
 
-  start_drag () {
+  startDrag () {
     const sg = document.getElementById('sharepic')
 
     const moveHandler = (event) => this.drag(event)

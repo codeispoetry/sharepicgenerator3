@@ -356,7 +356,7 @@ class API {
     xhr.send(formData)
   }
 
-  load_from_url (url) {
+  loadByUrl (url) {
     const data = {
       url
     }
