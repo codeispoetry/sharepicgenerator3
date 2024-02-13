@@ -7,48 +7,18 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 })
 
 class UI {
-  constructor () {
-
-    // Shows a tab from the cockpit
-    document.querySelectorAll('[data-showtab]').forEach(element => {
-      element.addEventListener('click', (event) => {
-        document.querySelectorAll('#cockpit .show').forEach(element => {
-          element.classList.remove('show')
-        })
-
-        document.querySelectorAll('#cockpit .active').forEach(element => {
-          element.classList.remove('active')
-        })
-
-        const id = 'cockpit_' + element.dataset.showtab
-        document.getElementById(id)?.classList.add('show')
-        element.classList.add('active')
-      })
+  showTab (btn, tab) {
+    document.querySelectorAll('#cockpit .show').forEach(element => {
+      element.classList.remove('show')
     })
 
-    // Handles upload
-    document.getElementById('upload').addEventListener('change', function () {
-      const input = document.getElementById('upload')
-
-      if (!input.files.length) {
-        return
-      }
-
-      api.upload(input.files[0])
+    document.querySelectorAll('#cockpit .active').forEach(element => {
+      element.classList.remove('active')
     })
 
-    // Handles upload of addpic
-    document.getElementById('upload_addpic').addEventListener('change', function () {
-      const input = document.getElementById('upload_addpic')
-
-      if (!input.files.length) {
-        return
-      }
-
-      api.upload_addpic(input.files[0])
-    })
-
-
+    const id = 'cockpit_' + tab
+    document.getElementById(id)?.classList.add('show')
+    btn.classList.add('active')
   }
 
   // Switches languages.

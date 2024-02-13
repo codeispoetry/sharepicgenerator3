@@ -271,7 +271,13 @@ class API {
     })
   }
 
-  upload (file) {
+  upload (btn) {
+    if (!btn.files.length) {
+      return
+    }
+
+    const file = btn.files[0]
+
     const formData = new FormData()
     formData.append('file', file)
 
@@ -311,7 +317,13 @@ class API {
     xhr.send(formData)
   }
 
-  upload_addpic (file) {
+  uploadAddPic (btn) {
+    if (!btn.files.length) {
+      return
+    }
+
+    const file = btn.files[0]
+
     const formData = new FormData()
     formData.append('file', file)
 

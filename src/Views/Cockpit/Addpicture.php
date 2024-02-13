@@ -11,7 +11,7 @@
         <h3><?php echo _("Upload image"); ?></h3>
         <label style="display:flex; align-items: center;padding:3px;margin-top:1em; width: 160px;" class="file-upload">
             <img src="assets/icons/upload.svg"> <?php  echo _('upload image');?>
-            <input type="file" name="upload" id="upload_addpic">
+            <input type="file" name="upload" onChange="api.uploadAddPic(this)">
         </label>
     </section>
 

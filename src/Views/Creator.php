@@ -70,22 +70,22 @@
 				?>
 			</div>
 			<div id="componentbuttons">
-				<button data-showtab="download">
+				<button onClick="ui.showTab(this, 'download')">
 					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
 				</button>
-				<button data-showtab="background" class="active">
+				<button onClick="ui.showTab(this, 'background')" class="active">
 					<img src="assets/icons/image.svg" title="<?php echo _('Image'); ?>">
 				</button>
-				<button data-showtab="freetext">
+				<button onClick="ui.showTab(this, 'freetext')">
 					<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 				</button>
-				<button data-showtab="eyecatcher">
+				<button onClick="ui.showTab(this, 'eyecatcher')">
 					<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
 				</button>
-				<button data-showtab="copyright">
+				<button onClick="ui.showTab(this, 'copyright')">
 					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
 				</button>
-				<button data-showtab="dalle">
+				<button onClick="ui.showTab(this, 'dalle')">
 					<img src="assets/icons/robot.svg" title="<?php echo _('Dall-E'); ?>">
 				</button>
 			</div>
