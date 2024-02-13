@@ -44,6 +44,8 @@
     <div    data-class="addpicture draggable selectable" 
     data-cockpit="addpicture" 
     data-id="addpicture" 
+    onclick="component.select(this)"
+    onmousedown="component.startDrag(event)"
     style="
         align-items: center;
         position: absolute;

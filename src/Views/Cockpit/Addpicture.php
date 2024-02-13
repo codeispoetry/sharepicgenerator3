@@ -1,6 +1,9 @@
 <section class="mainsection" id="cockpit_addpicture">
     <h2><?php  echo _('Picture');?></h2>
     <section>
+        <button onClick="component.add('addpicture')"><?php  echo _('Add picture');?></button>
+    </section>
+    <section>
         <h3><?php  echo _('Total size');?></h3>
         <label>
             <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size">

@@ -28,6 +28,10 @@ class Component {
   }
 
   select (element) {
+    document.querySelectorAll('.selected').forEach(selectedElement => {
+      selectedElement.classList.remove('selected')
+    })
+
     element.classList.add('selected')
     ui.showTab(element.dataset.cockpit)
 

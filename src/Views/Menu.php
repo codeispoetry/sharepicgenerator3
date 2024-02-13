@@ -64,9 +64,6 @@
             <button onClick="undo.undo()" id="undo">
                 <?php echo _( 'Undo' ); ?>
             </button>
-            <div class="divider"></div>
-
-            <button data-item="addpicture"><?php  echo _('Add picture');?></button>
         </div>
     </div>
 
