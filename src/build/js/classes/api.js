@@ -55,8 +55,6 @@ class API {
           element.remove()
         })
 
-        registerDraggableItems()
-        select.setup()
         cockpit.setup_sharepic()
         rte.init()
         sg.init()
@@ -75,7 +73,6 @@ class API {
   }
 
   prepare () {
-    select.unselectAll()
     const canvas = document.getElementById('canvas')
 
     const clonedCanvas = canvas.cloneNode(true)
@@ -140,7 +137,6 @@ class API {
           firstButton.innerHTML = name
           firstButton.dataset.load = data.full_path
           secondButton.dataset.delete = data.id
-
 
           mySharepics.appendChild(clonedEntry)
         } catch (e) {

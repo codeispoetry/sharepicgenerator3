@@ -49,8 +49,6 @@ class Undo {
     localStorage.setItem('commits', JSON.stringify(commits))
 
     document.getElementById('canvas').innerHTML = latestCommit
-    registerDraggableItems()
-    select.setup()
     cockpit.setup_sharepic()
   }
 }

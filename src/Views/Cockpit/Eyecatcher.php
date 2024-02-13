@@ -5,7 +5,7 @@
     </section>
     <section>
         <h3><?php  echo _('Size');?></h3>
-        <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size">
+        <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" onInput="eyecatcher.setSize(this)">
 
         <h3><?php  echo _('Rotation');?></h3>
         <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="rotateElement(event)">
@@ -33,11 +33,13 @@
 </section>
 
 <script>
-    document.getElementById('eyecatcher_size').addEventListener('input', function(event) {
-        var element = event.target;
-        cockpit.target.style.fontSize = element.value + 'px';
-        makeSquare(cockpit.target);
-    });
+    class Eyecatcher{
+        setSize(input){
+            cockpit.target.style.fontSize = input.value + 'px';
+            makeSquare(cockpit.target);
+        }
+    }
+    const eyecatcher = new Eyecatcher();
 
     document.getElementById('eyecatcher_bgcolor').addEventListener('input', () => {
       const color = document.getElementById('eyecatcher_bgcolor').value

@@ -7,21 +7,59 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 })
 
 class UI {
-  showTab (btn, tab) {
-    document.querySelectorAll('#cockpit .show').forEach(element => {
-      element.classList.remove('show')
-    })
+  showTab (tab) {
+    document.querySelector('#cockpit .show')?.classList.remove('show')
+    document.querySelector('#cockpit .active')?.classList.remove('active')
 
-    document.querySelectorAll('#cockpit .active').forEach(element => {
-      element.classList.remove('active')
-    })
-
-    const id = 'cockpit_' + tab
-    document.getElementById(id)?.classList.add('show')
-    btn.classList.add('active')
+    document.getElementById('cockpit_' + tab)?.classList.add('show')
+    document.getElementById('tab_btn_' + tab)?.classList.add('active')
   }
 
-  setLang( language ) {
+  select (element) {
+    element.classList.add('selected')
+    this.showTab(element.dataset.cockpit)
+
+    cockpit.target = element
+    const cockpitEelement = 'setup_' + element.dataset.cockpit
+    if (typeof cockpit[cockpitEelement] === 'function') {
+      cockpit[cockpitEelement](element)
+    }
+  }
+
+  startDrag (event) {
+    if (event.button !== 0 || event.target.classList.contains('draggable') === false) {
+      return
+    }
+
+    cockpit.target = event.target
+
+    ui.dragInfo = {
+      xOffset: event.clientX - cockpit.target.getBoundingClientRect().left + document.getElementById('canvas').getBoundingClientRect().left,
+      yOffset: event.clientY - cockpit.target.getBoundingClientRect().top + document.getElementById('canvas').getBoundingClientRect().top
+    }
+
+    
+
+    document.addEventListener('mousemove', ui.dragging)
+    document.addEventListener('mouseup', ui.stopDrag)
+  }
+
+  dragging (e) {
+    e.preventDefault()
+
+    const x = e.clientX - ui.dragInfo.xOffset
+    const y = e.clientY - ui.dragInfo.yOffset
+
+    cockpit.target.style.top = `${y}px`
+    cockpit.target.style.left = `${x}px`
+  }
+
+  stopDrag () {
+    document.removeEventListener('mousemove', ui.dragging)
+    document.removeEventListener('mouseup', ui.stopDrag)
+  }
+
+  setLang (language) {
     if (confirm(lang['All changes lost']) === false) {
       return false
     }

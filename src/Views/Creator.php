@@ -70,22 +70,22 @@
 				?>
 			</div>
 			<div id="componentbuttons">
-				<button onClick="ui.showTab(this, 'download')">
+				<button id="tab_btn_download" onClick="ui.showTab('download')">
 					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
 				</button>
-				<button onClick="ui.showTab(this, 'background')" class="active">
+				<button id="tab_btn_background" onClick="ui.showTab('background')" class="active">
 					<img src="assets/icons/image.svg" title="<?php echo _('Image'); ?>">
 				</button>
-				<button onClick="ui.showTab(this, 'freetext')">
+				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
 					<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 				</button>
-				<button onClick="ui.showTab(this, 'eyecatcher')">
+				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
 					<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
 				</button>
-				<button onClick="ui.showTab(this, 'copyright')">
+				<button id="tab_btn_copyright"  onClick="ui.showTab('copyright')">
 					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
 				</button>
-				<button onClick="ui.showTab(this, 'dalle')">
+				<button id="tab_btn_dalle"  onClick="ui.showTab(this, 'dalle')">
 					<img src="assets/icons/robot.svg" title="<?php echo _('Dall-E'); ?>">
 				</button>
 			</div>

@@ -1,7 +1,7 @@
 /* eslint-disable no-undef, no-unused-vars */
 
 class Cockpit {
-  target = 3
+  target = null
   /*
    * Clear all cockpit elements and show the sharepic cockpit
    */
@@ -11,29 +11,6 @@ class Cockpit {
       element.classList.remove('show')
     })
     document.getElementById('cockpit_background')?.classList.add('show')
-  }
-
-  /*
-    * Shows the cockpit element for the given compoenent
-    * and selects the first component, if it exists.
-    */
-  show (element) {
-    document.querySelectorAll('#cockpit .show').forEach(element => {
-      element.classList.remove('show')
-    })
-
-    document.querySelectorAll('#componentbuttons .active').forEach(element => {
-      element.classList.remove('active')
-    })
-
-    this.target = element
-    const cockpitEelement = 'setup_' + element.dataset.cockpit
-    if (typeof this[cockpitEelement] === 'function') {
-      this[cockpitEelement](element)
-    }
-
-    // Selects the first input element
-    //TODO here geht es weiter
   }
 
   /*

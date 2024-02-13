@@ -21,11 +21,12 @@
 
 <div id="patterns">
     <div    data-id="eyecatcher" 
-            data-max="2" 
             data-class="eyecatcher draggable selectable" 
             data-cockpit="eyecatcher" 
             contenteditable="true" 
             oninput="makeSquare(this)"
+            onclick="ui.select(this)"
+            onmousedown="ui.startDrag(event)"
             style="
                 z-index:2; 
                 left: 12px; top: 260px; 
@@ -43,24 +44,24 @@
     <div    data-class="addpicture draggable selectable" 
     data-cockpit="addpicture" 
     data-id="addpicture" 
-style="
-    align-items: center;
-    position: absolute;
-    left:300px; top:290px;
+    style="
+        align-items: center;
+        position: absolute;
+        left:300px; top:290px;
     ">
-    <div class="ap_image" style="
-        background-image: url('templates/mint/addpic.jpg');
-        background-size: cover; 
-        width: 100px; 
-        aspect-ratio: 1; 
-        border-radius: 50%;"
-    ></div>
-    <div class="ap_text" contenteditable="true" style="
-        display: flex; 
-        justify-content: center;
-        color: #ffffff;
-    ">Bildbeschreibung</div>
-</div>
+        <div class="ap_image" style="
+            background-image: url('templates/mint/addpic.jpg');
+            background-size: cover; 
+            width: 100px; 
+            aspect-ratio: 1; 
+            border-radius: 50%;"
+        ></div>
+        <div class="ap_text" contenteditable="true" style="
+            display: flex; 
+            justify-content: center;
+            color: #ffffff;
+        ">Bildbeschreibung</div>
+    </div>
 </div>
 
 <script>
