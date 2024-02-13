@@ -8,15 +8,6 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 
 class UI {
   constructor () {
-    // Loads a template
-    document.querySelectorAll('[data-load]').forEach(element => {
-      this.handleClickLoad(element)
-    })
-
-    // Deletes an own template/sharepic
-    document.querySelectorAll('[data-delete]').forEach(element => {
-      this.handleClickDelete(element)
-    })
 
     // Shows a tab from the cockpit
     document.querySelectorAll('[data-showtab]').forEach(element => {
@@ -140,24 +131,13 @@ class UI {
     window.document.location.reload()
   }
 
-  handleClickLoad (element) {
-    element.addEventListener('click', (event) => {
-      const target = element.dataset.load
-      api.load(target)
-    })
-  }
+  deleteSavedSharepic (origin, target) {
+    if (!window.confirm(lang['Are you sure?'])) {
+      return false
+    }
 
-  handleClickDelete (element) {
-    element.addEventListener('click', (event) => {
-      if (!window.confirm(lang['Are you sure?'])) {
-        return false
-      }
-
-      const target = element.dataset.delete
-      api.delete(target)
-
-      element.parentElement.remove()
-    })
+    api.delete(target)
+    origin.parentElement.remove()
   }
 
   handleToFront (element) {

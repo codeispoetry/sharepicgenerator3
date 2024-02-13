@@ -141,8 +141,6 @@ class API {
           firstButton.dataset.load = data.full_path
           secondButton.dataset.delete = data.id
 
-          ui.handleClickLoad(firstButton)
-          ui.handleClickDelete(secondButton)
 
           mySharepics.appendChild(clonedEntry)
         } catch (e) {

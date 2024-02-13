@@ -43,18 +43,11 @@
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
             <?php
-                 $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
+                $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
                 if (file_exists($last)) {
-                    echo '<button data-load="' . $last . '">' . _('latest') . '</button>';
+                    printf('<button onClick="api.load(\'%s\')">%s</button>', $last, _('latest'));
                     echo '<div class="divider"></div>';
                 }
-               
-                // if( 'auto' !== $this->user->get_role() ){
-                //     foreach( $templates as $path => $label ) {
-                //         printf( '<button data-load="templates/%s/start.html">%s</button>', $path, $label );
-                //     }
-                //     echo '<div class="divider"></div>';
-                // }
             ?>
             <button data-click="api.save">
                 <?php  echo _('Save');?>
@@ -85,11 +78,7 @@
 
                 foreach( $published as $dir => $name ){
                      echo '<div class="dropdown-item-double">';
-                         printf( '<button class="did-1" data-load="%s">%s</button>', $dir, $name );
-
-                         if( $this->user->is_admin() ){
-                             //printf( '<button class="did-2" data-delete="%s"><img src="assets/icons/delete.svg">!!!</button>', $dir);
-                         }
+                         printf( '<button class="did-1" onClick="api.load(\'%s\')">%s</button>', $dir, $name );
                      echo '</div>';
                 }
                 echo '<div class="divider"></div>';
@@ -97,8 +86,8 @@
                 $savings = $this->user->get_savings();
                 foreach( $savings as $dir => $name ){
                         echo '<div class="dropdown-item-double">';
-                            printf( '<button class="did-1" data-load="users/%s/save/%s/sharepic.html">%s</button>', $this->user->get_username(), $dir, $name );
-                            printf( '<button class="did-2" data-delete="%s"><img src="assets/icons/delete.svg"></button>', $dir);
+                            printf( '<button class="did-1" onClick="api.load(\'users/%s/save/%s/sharepic.html\')">%s</button>', $this->user->get_username(), $dir, $name );
+                            printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\')"><img src="assets/icons/delete.svg"></button>', $dir);
                         echo '</div>';
                 }
             ?>
