@@ -15,12 +15,7 @@ class Sharepic {
 
     document.getElementById('background_size').addEventListener('input', () => {
       const percentage = document.getElementById('background_size').value
-      this.background_zoom(percentage)
-    })
-
-    document.getElementById('background_color').addEventListener('input', () => {
-      const color = document.getElementById('background_color').value
-      this.background_color(color)
+      this.backgroundZoom(percentage)
     })
 
     this.start_drag()
@@ -41,13 +36,12 @@ class Sharepic {
     this.start_drag()
   }
 
-  background_color (color) {
-    const sg = document.getElementById('sharepic')
-
-    sg.style.backgroundColor = color
+  backgroundColor (btn) {
+    console.log(btn.value)
+    document.getElementById('sharepic').style.backgroundColor = btn.value
   }
 
-  background_zoom (percentage) {
+  backgroundZoom (percentage) {
     const sg = document.getElementById('sharepic')
 
     const backgroundSize = sg.style.backgroundSize
@@ -106,7 +100,7 @@ class Sharepic {
     sg.style.backgroundPositionY = dy + 'px'
   }
 
-  reset_background () {
+  resetBackground () {
     const sg = document.getElementById('sharepic')
 
     sg.style.backgroundSize = 'cover'
@@ -115,7 +109,7 @@ class Sharepic {
     sg.style.backgroundPositionY = '0px'
   }
 
-  delete_background_image () {
+  deleteBackgroundImage () {
     const sg = document.getElementById('sharepic')
 
     sg.style.backgroundImage = 'none'

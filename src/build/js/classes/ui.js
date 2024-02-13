@@ -21,7 +21,6 @@ class UI {
     btn.classList.add('active')
   }
 
-  // Switches languages.
   setLang( language ) {
     if (confirm(lang['All changes lost']) === false) {
       return false

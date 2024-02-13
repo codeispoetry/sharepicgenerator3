@@ -43,7 +43,7 @@
     <section>
         <label class="horizontal" style="margin:0">
             <h4><?php  echo _('Color');?></h4>
-            <input type="color" value="#ffffff" class="" id="background_color">
+            <input type="color" value="#ffffff" class="" id="background_color" onInput="sg.backgroundColor(this)">
         </label>
     </section>
     
