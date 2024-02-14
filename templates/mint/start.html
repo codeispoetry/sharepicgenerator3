@@ -1,7 +1,8 @@
 <div id="sharepic" style="background-image: url('templates/mint/start.jpg?r=1'); background-color: #ffffff; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;" data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="background">
     <div 
-        id="freetext" class="text draggable selectable" 
+        id="freetext" class="freetext draggable selectable" 
         data-cockpit="freetext" 
+        data-dragconstraint="true"
         onclick="component.select(this)"
         onmousedown="component.startDrag(event)"
         style="
@@ -28,6 +29,7 @@
     <div    data-id="freetext" 
             data-class="freetext draggable selectable" 
             data-cockpit="freetext"
+            data-dragconstraint="true"
             data-rte="true"
             onclick="component.select(this)"
             onmousedown="component.startDrag(event)"
@@ -101,5 +103,4 @@
     undo.commit()
 
     rte.add('#freetext')
-
 </script>

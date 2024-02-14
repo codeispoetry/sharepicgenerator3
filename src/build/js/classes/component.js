@@ -93,8 +93,16 @@ class Component {
   dragging (e) {
     e.preventDefault()
 
-    const x = e.clientX - component.dragInfo.xOffset
-    const y = e.clientY - component.dragInfo.yOffset
+    let x = e.clientX - component.dragInfo.xOffset
+    let y = e.clientY - component.dragInfo.yOffset
+
+    // Do not allow to drag the element outside the canvas
+    if (cockpit.target.dataset.dragconstraint === 'true') {
+      const maxLeft = document.getElementById('canvas').offsetWidth - cockpit.target.offsetWidth
+      const maxTop = document.getElementById('canvas').offsetHeight - cockpit.target.offsetHeight
+      x = Math.min(Math.max(x, 0), maxLeft)
+      y = Math.min(Math.max(y, 0), maxTop)
+    }
 
     cockpit.target.style.top = `${y}px`
     cockpit.target.style.left = `${x}px`

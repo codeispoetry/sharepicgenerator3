@@ -19,8 +19,6 @@ class RichTextEditor {
       [{ font: FontAttributor.whitelist }],
       [{ align: [] }]
     ]
-
-    this.setFonts()
   }
 
   add (selector) {
@@ -34,6 +32,8 @@ class RichTextEditor {
       },
       theme: 'bubble'
     })
+
+    this.setFonts()
   }
 
   setFonts () {
