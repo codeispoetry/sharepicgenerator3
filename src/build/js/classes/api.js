@@ -81,7 +81,7 @@ class API {
     clonedCanvas.querySelector('.ql-toolbar')?.remove()
     clonedCanvas.querySelector('.ql-tooltip')?.remove()
     clonedCanvas.querySelector('.ql-clipboard')?.remove()
-    clonedCanvas.querySelector('#patterns')?.remove()
+
     clonedCanvas.querySelector('#greentextContextMenu')?.remove()
 
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css">\n')
