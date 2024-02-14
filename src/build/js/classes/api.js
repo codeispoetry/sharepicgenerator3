@@ -260,7 +260,7 @@ class API {
       .catch(error => console.error('Error:', error))
   }
 
-  usedalle () {
+  useDalle () {
     document.getElementById('sharepic').style.backgroundImage = `url('${config.dalle.url}?rand=${Math.random()}')`
     logger.prepare_log_data({
       imagesrc: 'dalle'

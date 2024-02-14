@@ -30,11 +30,12 @@ class Cockpit {
 
   }
 
-  setup_copyright (element) {
+  setup_background (element) {
     const slider = document.getElementById('copyright_size')
     slider.value = element.style.fontSize.replace('px', '')
 
     document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
+    alert("in Setup Background")
   }
 
   setup_freetext (element) {

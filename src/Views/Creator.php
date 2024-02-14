@@ -73,6 +73,9 @@
 				<button id="tab_btn_download" onClick="ui.showTab('download')">
 					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
 				</button>
+				<button id="tab_btn_search"  onClick="ui.showTab('search')">
+					<img src="assets/icons/search_image.svg" title="<?php echo _('Search or create image'); ?>">
+				</button>
 				<button id="tab_btn_background" onClick="ui.showTab('background')" class="active">
 					<img src="assets/icons/wallpaper.svg" title="<?php echo _('Image'); ?>">
 				</button>
@@ -82,14 +85,8 @@
 				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
 					<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
 				</button>
-				<button id="tab_btn_copyright"  onClick="ui.showTab('copyright')">
-					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
-				</button>
 				<button id="tab_btn_addpicture"  onClick="ui.showTab('addpicture')">
 					<img src="assets/icons/add_image.svg" title="<?php echo _('Front picture'); ?>">
-				</button>
-				<button id="tab_btn_dalle"  onClick="ui.showTab(this, 'dalle')">
-					<img src="assets/icons/robot.svg" title="<?php echo _('Dall-E'); ?>">
 				</button>
 			</div>
 		</div>
