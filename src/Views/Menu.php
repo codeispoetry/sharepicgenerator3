@@ -42,25 +42,14 @@
     <div class="dropdown" id="menu_file">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
-            <?php
-                $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
-                if (file_exists($last)) {
-                    printf('<button onClick="api.load(\'%s\')">%s</button>', $last, _('latest'));
-                    echo '<div class="divider"></div>';
-                }
-            ?>
+        
             <button onClick="api.save()">
                 <?php  echo _('Save');?>
             </button>
             <button onClick="api.create()">
                 <?php  echo _('Download');?>
             </button>
-        </div>
-    </div>
 
-    <div class="dropdown" id="menu_edit">
-        <span><?php echo _( 'Edit' ); ?></span>
-        <div class="dropdown-content adder">   
             <button onClick="undo.undo()" id="undo">
                 <?php echo _( 'Undo' ); ?>
             </button>
@@ -68,11 +57,18 @@
     </div>
 
     <div class="dropdown" id="menu_mysharepics">
-        <span><?php echo _( 'My templates' ); ?></span>
+        <span><?php echo _( 'Open' ); ?></span>
         <div class="dropdown-content" id="my-sharepics">
             <?php
- 
-
+           
+                // Last
+                $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
+                if (file_exists($last)) {
+                    printf('<button onClick="api.load(\'%s\')">%s</button>', $last, _('latest'));
+                    echo '<div class="divider"></div>';
+                }
+            
+                // Published
                 foreach( $published as $dir => $name ){
                      echo '<div class="dropdown-item-double">';
                          printf( '<button class="did-1" onClick="api.load(\'%s\')">%s</button>', $dir, $name );
@@ -80,6 +76,7 @@
                 }
                 echo '<div class="divider"></div>';
 
+                // Saved
                 $savings = $this->user->get_savings();
                 foreach( $savings as $dir => $name ){
                         echo '<div class="dropdown-item-double">';
