@@ -36,7 +36,6 @@ class Component {
   }
 
   toFront (element) {
-    console.log(element)
     const highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
       const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
       return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)

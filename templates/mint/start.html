@@ -1,11 +1,16 @@
 <div id="sharepic" style="background-image: url('templates/mint/start.jpg?r=1'); background-color: #ffffff; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;" data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="background">
-    <div id="text" class="text draggable selectable" data-cockpit="freetext" style="
-        z-index:3; 
-        left: 120px; 
-        top: 100px; 
-        font-size: 20px;
-        color: black;
-        font-family: Calibri;
+    <div 
+        id="text" class="text draggable selectable" 
+        data-cockpit="freetext" 
+        onclick="component.select(this)"
+        onmousedown="component.startDrag(event)"
+        style="
+            z-index:3; 
+            left: 120px; 
+            top: 100px; 
+            font-size: 20px;
+            color: black;
+            font-family: Calibri;
         ">
         <h1>Dein Sharepicgenerator</h1>
         <p>Probiere ihn jetzt aus und lerne, wie er Dir im Alltag hilft.</p>
