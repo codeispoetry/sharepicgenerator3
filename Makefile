@@ -46,5 +46,5 @@ translation-prepare:
 	make create-pot update-po && code languages/de.po
 
 translate:
-	make create-mo
+	make create-mo stop up
 
