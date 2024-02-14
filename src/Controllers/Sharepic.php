@@ -219,7 +219,8 @@ class Sharepic {
 	 * Creates a sharepic.
 	 */
 	public function create() {
-		$path = 'users/' . $this->user . '/output.png';
+		$path   = 'users/' . $this->user . '/output.png';
+		$config = new Config();
 
 		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
@@ -234,14 +235,16 @@ class Sharepic {
 			escapeshellarg( $this->file )
 		);
 
-		// $cmd = sprintf(
-		// '%s xvfb-run --auto-servernum --server-num=1 node puppeteer.js %s %d %d file:///var/www/html/%s 2>&1',
-		// $cmd_preprend,
-		// $path,
-		// (int) $this->size['width'],
-		// (int) $this->size['height'],
-		// escapeshellarg( $this->file )
-		// );
+		if ( $config->get( 'Main', 'engine' ) === 'puppeteer' ) {
+			$cmd = sprintf(
+				'%s xvfb-run --auto-servernum --server-num=1 node puppeteer.js %s %d %d file:///var/www/html/%s 2>&1',
+				$cmd_preprend,
+				$path,
+				(int) $this->size['width'],
+				(int) $this->size['height'],
+				escapeshellarg( $this->file )
+			);
+		}
 
 		exec( $cmd, $output, $return_code );
 

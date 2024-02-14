@@ -6,7 +6,7 @@ class RichTextEditor {
     FontAttributor.whitelist = fonts
     Quill.register(FontAttributor, true)
 
-    const toolbarOptions = [
+    this.toolbarOptions = [
       ['bold', 'italic', 'underline', 'strike'],
 
       [{ list: 'ordered' }, { list: 'bullet' }],
@@ -20,22 +20,20 @@ class RichTextEditor {
       [{ align: [] }]
     ]
 
-    if (!document.querySelector('#text')) {
-      return
-    }
-
-    quill = new Quill('#text', {
-      modules: {
-        toolbar: toolbarOptions
-      },
-      theme: 'bubble'
-    })
-
     this.setFonts()
   }
 
-  destroy () {
-    quill.disable()
+  add (selector) {
+    if (!document.querySelector(selector)) {
+      return
+    }
+
+    quill = new Quill(selector, {
+      modules: {
+        toolbar: this.toolbarOptions
+      },
+      theme: 'bubble'
+    })
   }
 
   setFonts () {

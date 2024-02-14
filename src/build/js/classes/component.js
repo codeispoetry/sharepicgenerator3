@@ -16,6 +16,12 @@ class Component {
     // Insert the new element into the DOM
     document.getElementById('sharepic').insertAdjacentHTML('beforeend', clonedElement.outerHTML)
 
+    // Initialize RichtTextEditor on the new element
+    if (clonedElement.dataset.rte === 'true') {
+      clonedElement.removeAttribute('data-rte')
+      rte.add('#' + newId)
+    }
+
     // Click on the new element
     const inputEvent = new Event('input')
     document.getElementById(newId).dispatchEvent(inputEvent)

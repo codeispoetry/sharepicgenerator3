@@ -14,4 +14,5 @@ window.onload = function () {
   logger = new Logger()
 
   ui.showTab('search')
+  rte.add('#text')
 }

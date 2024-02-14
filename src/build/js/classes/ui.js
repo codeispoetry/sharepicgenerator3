@@ -12,7 +12,6 @@ class UI {
     * @param {HTMLElement} element The element that was clicked.
     */
   showTab (tab, element = null) {
-
     // Sets up the cockpit for the selected element.
     if (element) {
       cockpit.target = element

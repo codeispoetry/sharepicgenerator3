@@ -1,9 +1,12 @@
 <section class="mainsection" id="cockpit_freetext">
     <h2><?php  echo _('Text');?></h2>
     <section>
+        <button onClick="component.add('freetext')"><?php  echo _('Add text');?></button>
+    </section>
+    <section>
         <h3><?php  echo _('Total size');?></h3>
         <label>
-            <input type="range" min="0" max="100" value="50" class="slider" id="text_size">
+            <input type="range" min="0" max="100" value="50" class="slider" id="text_size" oninput="freetext.setSize(this)">
         </label>
     </section>
     <section class="row">
@@ -14,9 +17,10 @@
 </section>
 
 <script>
-    document.getElementById('text_size').addEventListener('input', function(e) {
-        var element = event.target;
-        const target = document.getElementById('text');
-        target.style.fontSize = element.value + "px";
-    });
+    class Freetext{
+        setSize(input){
+            cockpit.target.style.fontSize = input.value + 'px';
+        }
+    }
+    const freetext = new Freetext();
 </script>
