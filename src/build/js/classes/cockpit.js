@@ -2,16 +2,6 @@
 
 class Cockpit {
   target = null
-  /*
-   * Clear all cockpit elements and show the sharepic cockpit
-   */
-  show_standard () {
-    const elements = document.querySelectorAll('#cockpit .show')
-    elements.forEach(element => {
-      element.classList.remove('show')
-    })
-    document.getElementById('cockpit_background')?.classList.add('show')
-  }
 
   /*
     * Setup the cockpit for the given element
@@ -35,7 +25,7 @@ class Cockpit {
     slider.value = element.style.fontSize.replace('px', '')
 
     document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
-    alert("in Setup Background")
+    alert('in Setup Background')
   }
 
   setup_freetext (element) {

@@ -17,7 +17,8 @@
     <section>
         <h3><?php  echo _('Create image with AI');?></h3>
         <textarea placeholder="<?php  echo _('Describe the image you want');?>" 
-                id="dalle_prompt" spellcheck="false" style="height: 25em;"></textarea>
+                id="dalle_prompt" spellcheck="false" rows="1"
+                oninput="this.rows=this.value.split('\n').length"></textarea>
         <button class="create flat" onClick="api.dalle()">
             <?php  echo _('Create');?>
         </button>

@@ -3,14 +3,14 @@
     <section>
         <button onClick="component.add('addpicture')"><?php  echo _('Add picture');?></button>
     </section>
-    <section>
+    <section class="">
         <h3><?php  echo _('Total size');?></h3>
         <label>
             <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size">
         </label>
     </section>
 
-    <section>
+    <section class="">
         <h3><?php echo _("Upload image"); ?></h3>
         <label style="display:flex; align-items: center;padding:3px;margin-top:1em; width: 160px;" class="file-upload">
             <img src="assets/icons/upload.svg"> <?php  echo _('upload image');?>
@@ -18,13 +18,13 @@
         </label>
     </section>
 
-    <section>
+    <section class="minorsection">
         <h3><?php echo _("Image"); ?></h3>
         <button id="addpic_pic_round" class="blankbutton" title="<?php  echo _('round');?>"><img src="assets/icons/circle.svg"></button>
         <button id="addpic_pic_angular" class="blankbutton" title="<?php  echo _('angular');?>"><img src="assets/icons/square.svg"></button>      
     </section>
 
-    <section>
+    <section class="minorsection">
         <h3><?php echo _("Text"); ?></h3>
         <button id="addpic_text_right" class="blankbutton" title="<?php  echo _('text floats right');?>"><img src="assets/icons/text-right.svg"></button>
         <button id="addpic_text_below" class="blankbutton"  title="<?php  echo _('text below');?>"><img src="assets/icons/text-below.svg"></button>

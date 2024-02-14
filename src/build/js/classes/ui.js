@@ -7,7 +7,32 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 })
 
 class UI {
-  showTab (tab) {
+  /*
+    * @param {string} tab The tab to show.
+    * @param {HTMLElement} element The element that was clicked.
+    */
+  showTab (tab, element = null) {
+
+    // Sets up the cockpit for the selected element.
+    if (element) {
+      cockpit.target = element
+      const cockpitEelement = 'setup_' + element.dataset.cockpit
+      if (typeof cockpit[cockpitEelement] === 'function') {
+        cockpit[cockpitEelement](element)
+      }
+    } else {
+      // Click came from sidebar.
+      // Search, if there is an appropriate element and select it.
+      component.unselect()
+      const firstElement = document.querySelector(`#sharepic > [data-cockpit="${tab}"]`)
+      if (firstElement !== null) {
+        document.querySelector('.selected')?.classList.remove('selected')
+        firstElement.classList.add('selected')
+        this.showTab(tab, firstElement)
+        return
+      }
+    }
+
     document.querySelector('#cockpit .show')?.classList.remove('show')
     document.querySelector('#cockpit .active')?.classList.remove('active')
 
@@ -39,15 +64,15 @@ class UI {
   rgbToHex (rgb) {
     const sep = rgb.indexOf(',') > -1 ? ',' : ' '
     rgb = rgb.substr(4).split(')')[0].split(sep)
-  
+
     let r = (+rgb[0]).toString(16)
     let g = (+rgb[1]).toString(16)
     let b = (+rgb[2]).toString(16)
-  
+
     if (r.length === 1) { r = '0' + r }
     if (g.length === 1) { g = '0' + g }
     if (b.length === 1) { b = '0' + b }
-  
+
     return '#' + r + g + b
   }
 }

@@ -13,9 +13,6 @@ class Component {
     clonedElement.setAttribute('class', pattern.dataset.class)
     clonedElement.removeAttribute('data-class')
 
-    clonedElement.style.top = '20px'
-    clonedElement.style.left = '20px'
-
     // Insert the new element into the DOM
     document.getElementById('sharepic').insertAdjacentHTML('beforeend', clonedElement.outerHTML)
 
@@ -28,18 +25,14 @@ class Component {
   }
 
   select (element) {
-    document.querySelectorAll('.selected').forEach(selectedElement => {
-      selectedElement.classList.remove('selected')
-    })
-
+    document.querySelector('.selected')?.classList.remove('selected')
     element.classList.add('selected')
-    ui.showTab(element.dataset.cockpit)
+    ui.showTab(element.dataset.cockpit, element)
+  }
 
-    cockpit.target = element
-    const cockpitEelement = 'setup_' + element.dataset.cockpit
-    if (typeof cockpit[cockpitEelement] === 'function') {
-      cockpit[cockpitEelement](element)
-    }
+  unselect () {
+    document.querySelector('.selected')?.classList.remove('selected')
+    cockpit.target = null
   }
 
   toFront (element) {
@@ -106,5 +99,4 @@ class Component {
     document.removeEventListener('mousemove', component.dragging)
     document.removeEventListener('mouseup', component.stopDrag)
   }
-
 }

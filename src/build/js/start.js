@@ -12,4 +12,6 @@ window.onload = function () {
   ui = new UI()
   rte = new RichTextEditor()
   logger = new Logger()
+
+  ui.showTab('search')
 }
