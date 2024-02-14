@@ -226,21 +226,21 @@ class Sharepic {
 		$this->delete_unused_files();
 
 		$cmd = sprintf(
-		'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
-		$cmd_preprend,
-		$path,
-		(int) $this->size['width'],
-		(int) $this->size['height'],
-		escapeshellarg( $this->file )
+			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
+			$cmd_preprend,
+			$path,
+			(int) $this->size['width'],
+			(int) $this->size['height'],
+			escapeshellarg( $this->file )
 		);
 
 		// $cmd = sprintf(
-		// 	'%s xvfb-run --auto-servernum --server-num=1 node puppeteer.js %s %d %d file:///var/www/html/%s 2>&1',
-		// 	$cmd_preprend,
-		// 	$path,
-		// 	(int) $this->size['width'],
-		// 	(int) $this->size['height'],
-		// 	escapeshellarg( $this->file )
+		// '%s xvfb-run --auto-servernum --server-num=1 node puppeteer.js %s %d %d file:///var/www/html/%s 2>&1',
+		// $cmd_preprend,
+		// $path,
+		// (int) $this->size['width'],
+		// (int) $this->size['height'],
+		// escapeshellarg( $this->file )
 		// );
 
 		exec( $cmd, $output, $return_code );
