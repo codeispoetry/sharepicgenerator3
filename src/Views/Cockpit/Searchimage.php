@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_search">
-    <h2><?php  echo _('Background image');?></h2>
+    <h2><?php  echo _('Search background image');?></h2>
     <section>
         <label style="display:flex; margin-top:20px;">
             <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search in image database');?>">

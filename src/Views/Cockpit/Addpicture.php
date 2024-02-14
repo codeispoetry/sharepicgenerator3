@@ -1,30 +1,30 @@
 <section class="mainsection" id="cockpit_addpicture">
-    <h2><?php  echo _('Picture');?></h2>
+    <h2><?php  echo _('Foreground pictures');?></h2>
     <section>
-        <button onClick="component.add('addpicture')"><?php  echo _('Add picture');?></button>
+        <button onClick="component.add('addpicture'); document.getElementById('addAddPicture').click();"><?php  echo _('Add picture');?></button>
     </section>
-    <section class="">
+    <section class="selected_only">
         <h3><?php  echo _('Total size');?></h3>
         <label>
             <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size">
         </label>
     </section>
 
-    <section class="">
+    <section class="selected_only">
         <h3><?php echo _("Upload image"); ?></h3>
         <label style="display:flex; align-items: center;padding:3px;margin-top:1em; width: 160px;" class="file-upload">
-            <img src="assets/icons/upload.svg"> <?php  echo _('upload image');?>
-            <input type="file" name="upload" onChange="api.uploadAddPic(this)">
+            <img src="assets/icons/upload.svg"> <?php  echo _('upload new image');?>
+            <input type="file" id="addAddPicture" name="upload" onChange="api.uploadAddPic(this)">
         </label>
     </section>
 
-    <section class="minorsection">
+    <section class="selected_only minorsection">
         <h3><?php echo _("Image"); ?></h3>
         <button id="addpic_pic_round" class="blankbutton" title="<?php  echo _('round');?>"><img src="assets/icons/circle.svg"></button>
         <button id="addpic_pic_angular" class="blankbutton" title="<?php  echo _('angular');?>"><img src="assets/icons/square.svg"></button>      
     </section>
 
-    <section class="minorsection">
+    <section class="selected_only minorsection">
         <h3><?php echo _("Text"); ?></h3>
         <button id="addpic_text_right" class="blankbutton" title="<?php  echo _('text floats right');?>"><img src="assets/icons/text-right.svg"></button>
         <button id="addpic_text_below" class="blankbutton"  title="<?php  echo _('text below');?>"><img src="assets/icons/text-below.svg"></button>
@@ -32,7 +32,7 @@
       
     </section>
 
-    <section style="display: flex">
+    <section class="selected_only" style="display: flex">
         <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
         <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
         <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>

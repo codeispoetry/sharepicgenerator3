@@ -315,7 +315,7 @@ class API {
   }
 
   uploadAddPic (btn) {
-    if (!btn.files.length) {
+    if (!btn.files.length || cockpit.target === null) {
       return
     }
 

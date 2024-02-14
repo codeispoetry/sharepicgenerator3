@@ -32,6 +32,11 @@ class UI {
       }
     }
 
+    // Show elements that are only visible when an element is selected.
+    document.querySelectorAll('.selected_only').forEach(element => {
+      element.style.display = (cockpit.target === null) ? 'none' : 'block'
+    })
+
     document.querySelector('#cockpit .show')?.classList.remove('show')
     document.querySelector('#cockpit .active')?.classList.remove('active')
 

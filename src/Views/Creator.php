@@ -40,10 +40,13 @@
 <script>
 	<?php
 		$fontFiles = glob('assets/fonts/*.woff2');
+
 		$fontFiles = array_map(function ($filename) {
 			return pathinfo($filename, PATHINFO_FILENAME);
 		}, $fontFiles);
-		printf("var fonts = [ '%s' ]", implode("', '", $fontFiles));
+		//printf("var fonts = [ '%s' ]", implode("', '", $fontFiles));
+
+		echo "var fonts = ['Baloo2', 'Roboto-Light', 'Calibri']";
 	?>
 </script>
 

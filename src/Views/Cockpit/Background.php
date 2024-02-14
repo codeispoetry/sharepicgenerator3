@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_background">
-    <h2><?php  echo _('Background image');?></h2>
+    <h2><?php  echo _('Edit background image');?></h2>
 
     <section>
         <label class="horizontal" style="margin-top:0">
