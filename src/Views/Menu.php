@@ -42,7 +42,38 @@
     <div class="dropdown" id="menu_file">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
-        
+
+            <div class="submenu">
+                <button><?php  echo _('Open');?></button>
+                <div class="submenu-content" id="my-sharepics">
+                    <?php
+                        // Last
+                        $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
+                        if (file_exists($last)) {
+                            printf('<button onClick="api.load(\'%s\')">%s</button>', $last, _('latest'));
+                            echo '<div class="divider"></div>';
+                        }
+                    
+                        // Published
+                        foreach( $published as $dir => $name ){
+                            echo '<div class="dropdown-item-double">';
+                                printf( '<button class="did-1" onClick="api.load(\'%s\')">%s</button>', $dir, $name );
+                            echo '</div>';
+                        }
+                        echo '<div class="divider"></div>';
+
+                        // Saved
+                        $savings = $this->user->get_savings();
+                        foreach( $savings as $dir => $name ){
+                                echo '<div class="dropdown-item-double">';
+                                    printf( '<button class="did-1" onClick="api.load(\'users/%s/save/%s/sharepic.html\')">%s</button>', $this->user->get_username(), $dir, $name );
+                                    printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\')"><img src="assets/icons/delete.svg"></button>', $dir);
+                                echo '</div>';
+                        }
+                    ?>
+                </div>
+            </div>
+
             <button onClick="api.save()">
                 <?php  echo _('Save');?>
             </button>
@@ -55,37 +86,4 @@
             </button>
         </div>
     </div>
-
-    <div class="dropdown" id="menu_mysharepics">
-        <span><?php echo _( 'Open' ); ?></span>
-        <div class="dropdown-content" id="my-sharepics">
-            <?php
-           
-                // Last
-                $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
-                if (file_exists($last)) {
-                    printf('<button onClick="api.load(\'%s\')">%s</button>', $last, _('latest'));
-                    echo '<div class="divider"></div>';
-                }
-            
-                // Published
-                foreach( $published as $dir => $name ){
-                     echo '<div class="dropdown-item-double">';
-                         printf( '<button class="did-1" onClick="api.load(\'%s\')">%s</button>', $dir, $name );
-                     echo '</div>';
-                }
-                echo '<div class="divider"></div>';
-
-                // Saved
-                $savings = $this->user->get_savings();
-                foreach( $savings as $dir => $name ){
-                        echo '<div class="dropdown-item-double">';
-                            printf( '<button class="did-1" onClick="api.load(\'users/%s/save/%s/sharepic.html\')">%s</button>', $this->user->get_username(), $dir, $name );
-                            printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\')"><img src="assets/icons/delete.svg"></button>', $dir);
-                        echo '</div>';
-                }
-            ?>
-        </div>
-    </div>
-
 </nav>

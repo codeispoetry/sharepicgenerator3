@@ -15,6 +15,40 @@ nav{
     }
 }
 
+.submenu{
+    width: 100%;
+
+    &:hover{
+        .submenu-content{
+            display: block;
+            background-color: #f9f9f9;
+            top: 0;
+            left: 100%;
+            position: absolute;
+        }
+
+        button{
+            &::after{
+                transform: rotate(45deg);
+            }
+        
+        }
+    }
+    &-content{
+        display: none;
+
+    }
+
+    & > button{
+        &::after{
+            content: '>';
+            position: absolute;
+            right: 1em;
+            transition: all 0.2s;
+        }
+    }
+}
+
 
 .dropdown {
     position: relative;
