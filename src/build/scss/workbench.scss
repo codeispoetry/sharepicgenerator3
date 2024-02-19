@@ -69,3 +69,15 @@
         display: none !important;
     }
 }
+
+.ql-bubble {
+    
+    & .ql-tooltip{
+        border-radius: 2px !important;
+        padding: 10px;
+    }
+}
+
+#gtx-trans{
+    display: none;
+}

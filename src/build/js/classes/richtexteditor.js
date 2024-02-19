@@ -1,24 +1,32 @@
 /* eslint-disable no-undef, no-unused-vars */
-
 class RichTextEditor {
   init () {
-    const FontAttributor = Quill.import('attributors/class/font')
-    FontAttributor.whitelist = fonts
-    Quill.register(FontAttributor, true)
+    const Font = Quill.import('formats/font')
+    Font.whitelist = ['Baloo2', 'Roboto-Light', 'Calibri']
+    Quill.register(Font, true)
 
-    this.toolbarOptions = [
-      ['bold', 'italic', 'underline', 'strike'],
+    this.registerBlock('tanne')
+    this.registerBlock('klee')
+  }
 
-      [{ list: 'ordered' }, { list: 'bullet' }],
-      [{ script: 'sub' }, { script: 'super' }],
-      [{ indent: '-1' }, { indent: '+1' }],
+  registerInline (name) {
+    const Inline = Quill.import('blots/inline')
+    class Blot extends Inline {
+      static blotName = name
+      static className = name
+      static tagName = 'span'
+    }
+    Quill.register(Blot)
+  }
 
-      [{ size: ['small', false, 'large', 'huge'] }],
-
-      [{ color: [] }, { background: [] }],
-      [{ font: FontAttributor.whitelist }],
-      [{ align: [] }]
-    ]
+  registerBlock (name) {
+    const Block = Quill.import('blots/block')
+    class Blot extends Block {
+      static blotName = name
+      static className = name
+      static tagName = 'div'
+    }
+    Quill.register(Blot)
   }
 
   add (selector) {
@@ -28,40 +36,20 @@ class RichTextEditor {
 
     quill = new Quill(selector, {
       modules: {
-        toolbar: this.toolbarOptions
+        toolbar: '#toolbar'
       },
       theme: 'bubble'
     })
-
-    this.setFonts()
   }
 
-  setFonts () {
-    const elements = document.querySelectorAll('.ql-font .ql-picker-item')
+  setClass (classname) {
+    const classNames = ['tanne', 'klee']
+    const range = quill.getSelection(true)
 
-    const style = document.createElement('style')
-    elements.forEach((element) => {
-      const fontName = element.dataset.value
-
-      style.innerHTML += `
-        [data-value="${fontName}"] {
-          font-family: '${fontName}', sans-serif;
-        }
-        [data-value="${fontName}"]::before {
-          content: '${fontName}' !important;
-        }
-        .ql-font-${fontName} {
-          font-family: '${fontName}', sans-serif;
-        }
-        @font-face {
-          font-family: '${fontName}';
-          font-style: normal;
-          font-weight: 400;
-          src: url('assets/fonts/${fontName}.woff2') format('woff2');
-        }
-      `
+    classNames.forEach((name) => {
+      quill.formatLine(range.index, range.length, name, false)
     })
 
-    document.getElementById('sharepic').appendChild(style)
+    quill.formatLine(range.index, range.length, classname, true)
   }
 }

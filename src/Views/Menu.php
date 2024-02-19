@@ -6,7 +6,7 @@
             <button onClick="ui.setLang('de')">
                 <?php echo _( 'German' ); ?>
             </button>
-            <button onClick="ui.setLang('de')">
+            <button onClick="ui.setLang('en')">
                 <?php echo _( 'English' ); ?>
             </button>
             <div class="divider"></div>

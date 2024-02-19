@@ -42,7 +42,7 @@ class Component {
   }
 
   toFront (element) {
-    if( cockpit.target === null ) {
+    if (cockpit.target === null) {
       return
     }
     const highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
@@ -53,9 +53,9 @@ class Component {
   }
 
   toBack (element) {
-    if( cockpit.target === null ) {
+    if (cockpit.target === null) {
       return
-    }    
+    }
     const allElements = [...document.querySelectorAll('#sharepic > *')]
 
     // Filter elements that have a z-index
@@ -63,8 +63,6 @@ class Component {
       const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
       return !isNaN(zIndex) && zIndex !== 0
     })
-
-    
 
     // Sort elements by z-index
     const sortedElementsByZIndex = elementsWithZIndex.sort((a, b) => {

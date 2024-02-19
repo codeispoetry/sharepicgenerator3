@@ -37,24 +37,12 @@
 </header>
 
 <script src="assets/script.js?r=<?php echo rand(); ?>" defer></script>
-<script>
-	<?php
-		$fontFiles = glob('assets/fonts/*.woff2');
-
-		$fontFiles = array_map(function ($filename) {
-			return pathinfo($filename, PATHINFO_FILENAME);
-		}, $fontFiles);
-		//printf("var fonts = [ '%s' ]", implode("', '", $fontFiles));
-
-		echo "var fonts = ['Baloo2', 'Roboto-Light', 'Calibri', 'SaunaPro']";
-	?>
-</script>
 
 <main class="main">
 	<div class="row">
 		<div id="workbench" class="workbench">
 			<div style="display: flex; justify-content: center;">
-				<div id="canvas">
+				<div id="canvas" translate="no">
 					<div id="sharepic">
 						
 					</div>
@@ -124,6 +112,22 @@
 	?>
   </p>
 </dialog>
+
+<?php
+	require 'src/Views/Toolbars/Free.php';
+?>
+
+<style>
+	.ql-font-Roboto-Light {
+		font-family: 'Roboto', sans-serif;
+	}
+	.ql-font-Baloo2 {
+		font-family: 'Baloo2', cursive;
+	}
+	.ql-font-Calibri {
+		font-family: 'Calibri', sans-serif;
+	}
+</style>
 
 <script>
     const config = {
