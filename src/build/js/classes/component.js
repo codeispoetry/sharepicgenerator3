@@ -64,6 +64,8 @@ class Component {
       return !isNaN(zIndex) && zIndex !== 0
     })
 
+    
+
     // Sort elements by z-index
     const sortedElementsByZIndex = elementsWithZIndex.sort((a, b) => {
       const zIndexA = parseInt(getComputedStyle(a).zIndex, 10)
@@ -72,9 +74,10 @@ class Component {
     })
 
     // Loop through sorted elements and increase their z-index by one
+    let thisZIndex = 1
     sortedElementsByZIndex.forEach(element => {
-      const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
-      element.style.zIndex = (zIndex + 1).toString()
+      thisZIndex++
+      element.style.zIndex = thisZIndex.toString()
     })
 
     cockpit.target.style.zIndex = 1
