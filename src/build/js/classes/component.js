@@ -84,7 +84,7 @@ class Component {
   }
 
   startDrag (event) {
-    if (event.button !== 0 || event.target.classList.contains('draggable') === false) {
+    if (event.button !== 0) {
       return
     }
 

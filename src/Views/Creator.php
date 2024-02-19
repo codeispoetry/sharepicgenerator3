@@ -46,7 +46,7 @@
 		}, $fontFiles);
 		//printf("var fonts = [ '%s' ]", implode("', '", $fontFiles));
 
-		echo "var fonts = ['Baloo2', 'Roboto-Light', 'Calibri']";
+		echo "var fonts = ['Baloo2', 'Roboto-Light', 'Calibri', 'SaunaPro']";
 	?>
 </script>
 
