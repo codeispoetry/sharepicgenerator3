@@ -55,8 +55,7 @@ class Component {
   toBack (element) {
     if( cockpit.target === null ) {
       return
-    }
-    
+    }    
     const allElements = [...document.querySelectorAll('#sharepic > *')]
 
     // Filter elements that have a z-index

@@ -25,7 +25,7 @@ class Cockpit {
     slider.value = element.style.fontSize.replace('px', '')
 
     document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
-    alert('in Setup Background')
+    cockpit.target = document.getElementById('copyright')
   }
 
   setup_freetext (element) {
