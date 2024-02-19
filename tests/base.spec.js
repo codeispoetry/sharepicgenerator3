@@ -33,35 +33,32 @@ test.beforeEach(async ({ page }) => {
 test('Overall test', async ({ page }) => {
   // Search and use image from pixabay
   await page.locator('#pixabay_q').fill('Berge')
-  await page.locator('[data-click="pixabay.search"]').click()
+  await page.locator('[onclick="pixabay.search()"]').click()
   await page.locator('#pixabay_results div.image:first-child').click()
 
   // Change color of copyright
-  await page.locator('button[data-pseudoselect="copyright"]').click()
+  await page.locator('#tab_btn_background').click()
   await page.locator('#copyright_color').fill('#f96654')
 
-  // Use top menu
-  await page.locator('#menu_edit').hover()
-  await page.locator('.adder button:nth-child(4)').click()
+  // Add eyecatcher, then edit and move it
+  await page.getByTitle('Eyecatcher').click()
+  await page.getByText('Add sticker').click()
 
-  // Edit and move the add pic
-  const element = await page.locator('#sharepic > [data-id="addpicture"]').first()
+  const element = await page.locator('#sharepic > [data-cockpit="eyecatcher"]').first()
   const boundingBox = await element.boundingBox()
-  await page.mouse.move(boundingBox.x + boundingBox.width - 1, boundingBox.y + 1)
+  await page.mouse.move(boundingBox.x + boundingBox.width / 2, boundingBox.y + 10)
   await page.mouse.down()
-  await page.mouse.move(boundingBox.x + boundingBox.width + 250, boundingBox.y + 50)
+  await page.mouse.move(100, 100)
   await page.mouse.up()
+  await element.fill('Hello World')
 
-  await page.locator('#addpic_pic_angular').click()
-  await page.locator('#addpic_text_right').click()
-  await page.locator('#sharepic > [data-id="addpicture"] .ap_text').fill('Test Text')
-  await page.locator('#cockpit_addpicture input[type="file"]').setInputFiles('tests/image.jpg')
+  // await page.locator('#cockpit_addpicture input[type="file"]').setInputFiles('tests/image.jpg')
 
   // Wait for the image to be loaded
-  await page.waitForTimeout(3000)
+  await page.waitForTimeout(1000)
   // Download
   const downloadPromise = page.waitForEvent('download')
-  await page.locator('#inlinecockpit button[data-click="api.create"]').click()
+  await page.locator('#inlinecockpit > [onclick="api.create()"]').click()
   const download = await downloadPromise
   const path = await download.path()
   fs.move(path, 'tests/tmp/test-sharepic.png',
@@ -93,5 +90,14 @@ async function prepareLocalUser (config) {
     }
 
     console.log('User created ')
+  })
+
+  // Delete sharepic
+  exec('rm tests/tmp/test-sharepic.png', (error, stdout, stderr) => {
+    if (error) {
+      throw new Error(stdout + ' ' + stderr)
+    }
+
+    console.log('Old downloaded sharepic deleted')
   })
 }
