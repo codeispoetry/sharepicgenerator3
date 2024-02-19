@@ -75,21 +75,39 @@
 			<div id="componentbuttons">
 				<button id="tab_btn_download" onClick="ui.showTab('download')">
 					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
+					<div class="description">
+						<?php echo _('Download'); ?>
+					</div>
 				</button>
 				<button id="tab_btn_search"  onClick="ui.showTab('search')">
 					<img src="assets/icons/search_image.svg" title="<?php echo _('Search or create image'); ?>">
+					<div class="description">
+						<?php echo _('Search or create image'); ?>
+					</div>
 				</button>
 				<button id="tab_btn_background" onClick="ui.showTab('background')" class="active">
 					<img src="assets/icons/wallpaper.svg" title="<?php echo _('Image'); ?>">
+					<div class="description">
+						<?php echo _('Image'); ?>
+					</div>
 				</button>
 				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
 					<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+					<div class="description">
+						<?php echo _('Text'); ?>
+					</div>
 				</button>
 				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
 					<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
+					<div class="description">
+						<?php echo _('Eyecatcher'); ?>
+					</div>
 				</button>
 				<button id="tab_btn_addpicture"  onClick="ui.showTab('addpicture')">
 					<img src="assets/icons/add_image.svg" title="<?php echo _('Front picture'); ?>">
+					<div class="description">
+						<?php echo _('Front picture'); ?>
+					</div>
 				</button>
 			</div>
 		</div>
