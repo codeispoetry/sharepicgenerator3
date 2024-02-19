@@ -42,6 +42,9 @@ class Component {
   }
 
   toFront (element) {
+    if( cockpit.target === null ) {
+      return
+    }
     const highestZIndex = [...document.querySelectorAll('.draggable')].reduce((maxZIndex, element) => {
       const zIndex = parseInt(getComputedStyle(element).zIndex, 10)
       return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)
@@ -50,6 +53,10 @@ class Component {
   }
 
   toBack (element) {
+    if( cockpit.target === null ) {
+      return
+    }
+    
     const allElements = [...document.querySelectorAll('#sharepic > *')]
 
     // Filter elements that have a z-index
