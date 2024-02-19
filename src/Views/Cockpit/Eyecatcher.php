@@ -4,12 +4,14 @@
         <button onClick="component.add('eyecatcher')"><?php  echo _('Add sticker');?></button>
     </section>
     <section class="selected_only">
-        <h3><?php  echo _('Size');?></h3>
-        <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
-
-        <h3><?php  echo _('Rotation');?></h3>
-        <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
-
+        <label class="horizontal">
+            <h4><?php  echo _('Size');?></h4>
+            <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
+        </label>
+        <label class="horizontal">
+            <h4><?php  echo _('Rotation');?></h4>
+            <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
+        </label>
     </section>
 
     <section id="eyecatcher_colors" class="selected_only">
@@ -24,11 +26,13 @@
         </div>
     </section>
     
-    <section class="row selected_only">
-        <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-        <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
-        <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
-    </section>
+    <section class="selected_only">
+        <div class="row">
+            <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+            <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
+            <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
+        </div>
+        </section>
 </section>
 
 <script>

@@ -4,8 +4,8 @@
         <button onClick="component.add('freetext')"><?php  echo _('Add text');?></button>
     </section>
     <section>
-        <h3><?php  echo _('Total size');?></h3>
-        <label>
+        <label class="horizontal">
+            <h4><?php  echo _('Total size');?></h4>
             <input type="range" min="0" max="100" value="50" class="slider" id="text_size" oninput="freetext.setSize(this)">
         </label>
     </section>

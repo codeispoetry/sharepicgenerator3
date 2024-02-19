@@ -4,8 +4,8 @@
         <button onClick="component.add('addpicture'); document.getElementById('addAddPicture').click();"><?php  echo _('Add picture');?></button>
     </section>
     <section class="selected_only">
-        <h3><?php  echo _('Total size');?></h3>
-        <label>
+        <label class="horizontal">
+            <h4><?php  echo _('Total size');?></h4>
             <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size">
         </label>
     </section>
@@ -33,9 +33,11 @@
     </section>
 
     <section class="selected_only" style="display: flex">
-        <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-        <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
-        <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
+        <div class="row">
+            <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
+            <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
+            <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
+        </div>
     </section>
 
 </section>

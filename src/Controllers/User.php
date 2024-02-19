@@ -133,6 +133,9 @@ class User {
 	 * @return bool|array False if the user is not authenticated, else the user array.
 	 */
 	private function authenticate_self() {
+		if ( empty( $_POST['username'] ) ) {
+			return false;
+		}
 		$user = $this->get_user_array( $_POST['username'] );
 
 		if ( ! $user ) {

@@ -29,8 +29,8 @@
 
     <h2><?php  echo _('Copyright');?></h2>
     <section>
-        <h3><?php  echo _('Size');?></h3>
-        <label>
+        <label class="horizontal">
+            <h4><?php  echo _('Size');?></h4>
             <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size" oninput="copyright.setSize(this)">
         </label>
 

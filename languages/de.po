@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 11:53+0100\n"
+"POT-Creation-Date: 2024-02-19 09:08+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -88,11 +88,11 @@ msgstr "Ausloggen"
 msgid "You have been logged out."
 msgstr "Du bist ausgeloggt."
 
-#: src/Controllers/User.php:484
+#: src/Controllers/User.php:487
 msgid "Account created"
 msgstr "Account erstellt"
 
-#: src/Controllers/User.php:542
+#: src/Controllers/User.php:545
 msgid "Password Reset"
 msgstr "Passwort zurücksetzen"
 
@@ -150,49 +150,49 @@ msgstr "Sticker"
 msgid "Add sticker"
 msgstr "Sticker hinzufügen"
 
-#: src/Views/Cockpit/Eyecatcher.php:7 src/Views/Cockpit/Background.php:6
-#: src/Views/Cockpit/Background.php:32 src/Views/Cockpit/Logo.php:4
+#: src/Views/Cockpit/Eyecatcher.php:8 src/Views/Cockpit/Background.php:6
+#: src/Views/Cockpit/Background.php:33 src/Views/Cockpit/Logo.php:4
 msgid "Size"
 msgstr "Größe"
 
-#: src/Views/Cockpit/Eyecatcher.php:10
+#: src/Views/Cockpit/Eyecatcher.php:12
 msgid "Rotation"
 msgstr "Drehung"
 
-#: src/Views/Cockpit/Eyecatcher.php:16 src/Views/Cockpit/Logo.php:11
+#: src/Views/Cockpit/Eyecatcher.php:18 src/Views/Cockpit/Logo.php:11
 msgid "Colors"
 msgstr "Farben"
 
-#: src/Views/Cockpit/Eyecatcher.php:18
+#: src/Views/Cockpit/Eyecatcher.php:20
 msgid "Font"
 msgstr "Schrift"
 
-#: src/Views/Cockpit/Eyecatcher.php:21
+#: src/Views/Cockpit/Eyecatcher.php:23
 msgid "Background"
 msgstr "Hintergrund"
 
-#: src/Views/Cockpit/Eyecatcher.php:28 src/Views/Cockpit/Greentext.php:11
+#: src/Views/Cockpit/Eyecatcher.php:31 src/Views/Cockpit/Greentext.php:11
 #: src/Views/Cockpit/Background.php:43 src/Views/Cockpit/Logo.php:19
-#: src/Views/Cockpit/Freetext.php:13 src/Views/Cockpit/Addpicture.php:36
+#: src/Views/Cockpit/Freetext.php:13 src/Views/Cockpit/Addpicture.php:37
 msgid "to front"
 msgstr "nach vorne"
 
-#: src/Views/Cockpit/Eyecatcher.php:29 src/Views/Cockpit/Greentext.php:12
+#: src/Views/Cockpit/Eyecatcher.php:32 src/Views/Cockpit/Greentext.php:12
 #: src/Views/Cockpit/Background.php:44 src/Views/Cockpit/Logo.php:20
-#: src/Views/Cockpit/Freetext.php:14 src/Views/Cockpit/Addpicture.php:37
+#: src/Views/Cockpit/Freetext.php:14 src/Views/Cockpit/Addpicture.php:38
 msgid "to back"
 msgstr "nach hinten"
 
-#: src/Views/Cockpit/Eyecatcher.php:30 src/Views/Cockpit/Addpicture.php:38
+#: src/Views/Cockpit/Eyecatcher.php:33 src/Views/Cockpit/Addpicture.php:39
 msgid "delete"
 msgstr "löschen"
 
-#: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:7
-#: src/Views/Cockpit/Addpicture.php:7
+#: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:8
+#: src/Views/Cockpit/Addpicture.php:8
 msgid "Total size"
 msgstr "Gesamtgröße"
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:50
+#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:81
 #: src/Views/Creator.php:64 src/Views/Creator.php:77
 msgid "Download"
 msgstr "Herunterladen"
@@ -201,15 +201,19 @@ msgstr "Herunterladen"
 msgid "Dimensions"
 msgstr "Abmessungen"
 
-#: src/Views/Cockpit/Download.php:9
-msgid "pixel"
-msgstr "Pixel"
+#: src/Views/Cockpit/Download.php:7
+msgid "Width"
+msgstr "Breite"
 
-#: src/Views/Cockpit/Download.php:14
+#: src/Views/Cockpit/Download.php:11
+msgid "Height"
+msgstr "Höhe"
+
+#: src/Views/Cockpit/Download.php:15
 msgid "Size presets"
 msgstr "Voreinstellungen"
 
-#: src/Views/Cockpit/Download.php:15
+#: src/Views/Cockpit/Download.php:17 src/Views/Cockpit/Download.php:20
 msgid "square 1:1"
 msgstr "Quadratisch 1:1"
 
@@ -280,8 +284,8 @@ msgid "search in image database"
 msgstr "Suche in Bilddatenbank"
 
 #: src/Views/Cockpit/Searchimage.php:12
-msgid "upload own image"
-msgstr "eigenes Bild hochladen"
+msgid "upload image"
+msgstr "Bild hochladen"
 
 #: src/Views/Cockpit/Searchimage.php:18 src/Views/Cockpit/Dalle.php:2
 msgid "Create image with AI"
@@ -416,20 +420,20 @@ msgid "File"
 msgstr "Datei"
 
 #: src/Views/Menu.php:47
-msgid "Save"
-msgstr "Zwischenpeichern"
-
-#: src/Views/Menu.php:54
-msgid "Undo"
-msgstr "Rückgängig"
-
-#: src/Views/Menu.php:60
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/Views/Menu.php:67
+#: src/Views/Menu.php:53
 msgid "latest"
 msgstr "letztes"
+
+#: src/Views/Menu.php:78
+msgid "Save"
+msgstr "Zwischenpeichern"
+
+#: src/Views/Menu.php:85
+msgid "Undo"
+msgstr "Rückgängig"
 
 #: src/Views/Components/Forms/Login.php:2
 #: src/Views/Components/Forms/RequestPassword.php:2
@@ -513,6 +517,9 @@ msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen
 #: src/Views/Home-Greens.php:21
 msgid "Login as guest"
 msgstr "Als Gast einloggen"
+
+#~ msgid "pixel"
+#~ msgstr "Pixel"
 
 #~ msgid "Background image"
 #~ msgstr "Hintergrundbild"

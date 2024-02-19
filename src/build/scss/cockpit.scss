@@ -39,6 +39,19 @@
         }
     }
 
+    .center-row{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
     .mainsection{
         border: 0px solid #dbdbdb;
         display: none;
@@ -58,12 +71,6 @@
     
             &:not(:first-of-type) {
                 border-top: 1px solid $light;
-            }
-    
-            &.row{
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
             }
         }
 
@@ -117,21 +124,58 @@
         }
     }
 
-    input[type="color"] {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        padding: 0;
-        -webkit-appearance: none;
-        appearance: none;
-
-        &::-webkit-color-swatch-wrapper {
-            padding: 0;
-        }
-
-        &::-webkit-color-swatch {
-            border: none;
+    input{
+        &[type="color"] {
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
+            padding: 0;
+            -webkit-appearance: none;
+            appearance: none;
+
+            &::-webkit-color-swatch-wrapper {
+                padding: 0;
+            }
+
+            &::-webkit-color-swatch {
+                border: none;
+                border-radius: 50%;
+            }
+
+            &::-moz-color-swatch {
+                background-color: red;
+            }
+    }
+
+        &[type="range"]{
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                border: none;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: white;
+                margin-top: -4px;
+            }
+            
+            &::-webkit-slider-runnable-track{
+                background: $verydark;
+                height: 100px;
+                width: 300px;
+                height: 5px;
+                border: none;
+                border-radius: 3px;
+            }
+          
+            background-color: $dark;
+            &::-moz-range-track {
+                background: $verydark;
+              }
+          
         }
     }
 
@@ -144,8 +188,15 @@
         font-family: inherit;
     }
 
-    input.slider{
-        width: 100%;
+    input, textarea{
+        background-color: $verydark;
+        color: white;
+        border-radius: 5px;
+
+        &::placeholder{
+            color: $light;
+            font-style: italic;
+        }
     }
 
     .grid{

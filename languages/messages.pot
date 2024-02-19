@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 11:53+0100\n"
+"POT-Creation-Date: 2024-02-19 09:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,11 +81,11 @@ msgstr ""
 msgid "You have been logged out."
 msgstr ""
 
-#: src/Controllers/User.php:484
+#: src/Controllers/User.php:487
 msgid "Account created"
 msgstr ""
 
-#: src/Controllers/User.php:542
+#: src/Controllers/User.php:545
 msgid "Password Reset"
 msgstr ""
 
@@ -138,49 +138,49 @@ msgstr ""
 msgid "Add sticker"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:7 src/Views/Cockpit/Background.php:6
-#: src/Views/Cockpit/Background.php:32 src/Views/Cockpit/Logo.php:4
+#: src/Views/Cockpit/Eyecatcher.php:8 src/Views/Cockpit/Background.php:6
+#: src/Views/Cockpit/Background.php:33 src/Views/Cockpit/Logo.php:4
 msgid "Size"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:10
+#: src/Views/Cockpit/Eyecatcher.php:12
 msgid "Rotation"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:16 src/Views/Cockpit/Logo.php:11
+#: src/Views/Cockpit/Eyecatcher.php:18 src/Views/Cockpit/Logo.php:11
 msgid "Colors"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:18
+#: src/Views/Cockpit/Eyecatcher.php:20
 msgid "Font"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:21
+#: src/Views/Cockpit/Eyecatcher.php:23
 msgid "Background"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:28 src/Views/Cockpit/Greentext.php:11
+#: src/Views/Cockpit/Eyecatcher.php:31 src/Views/Cockpit/Greentext.php:11
 #: src/Views/Cockpit/Background.php:43 src/Views/Cockpit/Logo.php:19
-#: src/Views/Cockpit/Freetext.php:13 src/Views/Cockpit/Addpicture.php:36
+#: src/Views/Cockpit/Freetext.php:13 src/Views/Cockpit/Addpicture.php:37
 msgid "to front"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:29 src/Views/Cockpit/Greentext.php:12
+#: src/Views/Cockpit/Eyecatcher.php:32 src/Views/Cockpit/Greentext.php:12
 #: src/Views/Cockpit/Background.php:44 src/Views/Cockpit/Logo.php:20
-#: src/Views/Cockpit/Freetext.php:14 src/Views/Cockpit/Addpicture.php:37
+#: src/Views/Cockpit/Freetext.php:14 src/Views/Cockpit/Addpicture.php:38
 msgid "to back"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:30 src/Views/Cockpit/Addpicture.php:38
+#: src/Views/Cockpit/Eyecatcher.php:33 src/Views/Cockpit/Addpicture.php:39
 msgid "delete"
 msgstr ""
 
-#: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:7
-#: src/Views/Cockpit/Addpicture.php:7
+#: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:8
+#: src/Views/Cockpit/Addpicture.php:8
 msgid "Total size"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:50
+#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:81
 #: src/Views/Creator.php:64 src/Views/Creator.php:77
 msgid "Download"
 msgstr ""
@@ -189,15 +189,19 @@ msgstr ""
 msgid "Dimensions"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:9
-msgid "pixel"
+#: src/Views/Cockpit/Download.php:7
+msgid "Width"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:14
-msgid "Size presets"
+#: src/Views/Cockpit/Download.php:11
+msgid "Height"
 msgstr ""
 
 #: src/Views/Cockpit/Download.php:15
+msgid "Size presets"
+msgstr ""
+
+#: src/Views/Cockpit/Download.php:17 src/Views/Cockpit/Download.php:20
 msgid "square 1:1"
 msgstr ""
 
@@ -268,7 +272,7 @@ msgid "search in image database"
 msgstr ""
 
 #: src/Views/Cockpit/Searchimage.php:12
-msgid "upload own image"
+msgid "upload image"
 msgstr ""
 
 #: src/Views/Cockpit/Searchimage.php:18 src/Views/Cockpit/Dalle.php:2
@@ -402,19 +406,19 @@ msgid "File"
 msgstr ""
 
 #: src/Views/Menu.php:47
-msgid "Save"
-msgstr ""
-
-#: src/Views/Menu.php:54
-msgid "Undo"
-msgstr ""
-
-#: src/Views/Menu.php:60
 msgid "Open"
 msgstr ""
 
-#: src/Views/Menu.php:67
+#: src/Views/Menu.php:53
 msgid "latest"
+msgstr ""
+
+#: src/Views/Menu.php:78
+msgid "Save"
+msgstr ""
+
+#: src/Views/Menu.php:85
+msgid "Undo"
 msgstr ""
 
 #: src/Views/Components/Forms/Login.php:2
