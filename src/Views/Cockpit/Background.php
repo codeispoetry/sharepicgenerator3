@@ -53,10 +53,12 @@
     class Copyright{
         setSize(input){
             document.getElementById('copyright').style.fontSize = input.value + 'px';
+            undo.commit()
         }
 
         setFontColor(input) {      
             document.getElementById('copyright').style.color = input.value;
+            undo.commit()
         }
     }
     const copyright = new Copyright();

@@ -40,6 +40,8 @@ class RichTextEditor {
       },
       theme: 'bubble'
     })
+
+    undo.commit()
   }
 
   setClass (classname) {
@@ -53,3 +55,4 @@ class RichTextEditor {
     quill.formatLine(range.index, range.length, classname, true)
   }
 }
+

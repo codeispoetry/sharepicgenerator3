@@ -21,6 +21,8 @@ class Undo {
   }
 
   commit () {
+    console.log('Committing', new Error().stack)
+
     const data = document.getElementById('canvas').innerHTML
     const commits = JSON.parse(localStorage.getItem('commits'))
     commits.push(data)
@@ -32,7 +34,7 @@ class Undo {
   undo () {
     const commits = JSON.parse(localStorage.getItem('commits'))
 
-    if (commits.length === 0) {
+    if (commits.length <= 1) {
       alert('Nothing to undo')
       return
     }

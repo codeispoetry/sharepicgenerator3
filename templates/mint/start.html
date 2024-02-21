@@ -54,7 +54,7 @@
             data-class="eyecatcher draggable selectable" 
             data-cockpit="eyecatcher" 
             contenteditable="true" 
-            oninput="eyecatcher.makeSquare(this)"
+            oninput="eyecatcher.makeSquare(this);"
             onclick="component.select(this)"
             onmousedown="component.startDrag(event)"
             style="
@@ -98,14 +98,6 @@
 
 <script>
     document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/mint/styles.css?r= ' + Math.random() + '">');
-
-    document.querySelectorAll('[contenteditable]').forEach(element => {
-      element.addEventListener('blur', () => {
-        undo.commit()
-      })
-    })
-
-    undo.commit()
 
     rte.add('#freetext')
 </script>

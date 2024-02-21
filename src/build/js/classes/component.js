@@ -28,6 +28,8 @@ class Component {
 
     // and select it (the click event is not enough to select it, because the input event is not yet processed)
     component.select(document.getElementById(newId))
+
+    undo.commit()
   }
 
   select (element) {
@@ -50,6 +52,8 @@ class Component {
       return isNaN(zIndex) ? maxZIndex : Math.max(maxZIndex, zIndex)
     }, 0)
     cockpit.target.style.zIndex = (highestZIndex + 1).toString()
+
+    undo.commit()
   }
 
   toBack (element) {
@@ -79,6 +83,8 @@ class Component {
     })
 
     cockpit.target.style.zIndex = 1
+
+    undo.commit()
   }
 
   startDrag (event) {
@@ -118,5 +124,6 @@ class Component {
   stopDrag () {
     document.removeEventListener('mousemove', component.dragging)
     document.removeEventListener('mouseup', component.stopDrag)
+    undo.commit()
   }
 }

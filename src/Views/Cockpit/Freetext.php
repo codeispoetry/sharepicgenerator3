@@ -25,6 +25,7 @@
     class Freetext{
         setSize(input){
             cockpit.target.style.fontSize = input.value + 'px';
+            undo.commit()
         }
 
         toggleShadow(button){
@@ -33,6 +34,7 @@
             }else{
                 cockpit.target.style.textShadow = '2px 2px 5px rgba(0,0,0,0.5)  ';
             }
+            undo.commit()
         }
     }
     const freetext = new Freetext();
