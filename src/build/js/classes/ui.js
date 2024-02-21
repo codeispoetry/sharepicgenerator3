@@ -42,6 +42,8 @@ class UI {
 
     document.getElementById('cockpit_' + tab)?.classList.add('show')
     document.getElementById('tab_btn_' + tab)?.classList.add('active')
+
+    document.getElementById('drag_background').checked=false
   }
 
   setLang (language) {
@@ -49,6 +51,13 @@ class UI {
       return false
     }
     document.cookie = 'lang=' + language + '; path=/'
+    window.document.location.reload()
+  }
+
+  reload () {
+    if (confirm(lang['All changes lost']) === false) {
+      return false
+    }
     window.document.location.reload()
   }
 

@@ -13,6 +13,6 @@ window.onload = function () {
   rte = new RichTextEditor()
   logger = new Logger()
 
-  ui.showTab('search')
+  ui.showTab('download')
   rte.add('#text')
 }

@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_download">
-    <h2><?php  echo _('Download');?></h2>
+    <h2><?php  echo _('Dimensions');?></h2>
     <section>
         <h3><?php  echo _('Dimensions');?></h3>
 
@@ -33,10 +33,6 @@
                     <img src="assets/icons/brands/linkedin.svg">
                 </button>                
             </div>
-    </section>
-    
-    <section>
-        <button class="create flat" onClick="api.create()"><img src="assets/icons/download.svg"> Herunterladen</button>
     </section>
 </section>
 

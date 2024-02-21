@@ -42,9 +42,14 @@
 	<div class="row">
 		<div id="workbench" class="workbench">
 			<div style="display: flex; justify-content: center;">
-				<div id="canvas" translate="no">
-					<div id="sharepic">
-						
+				<div>
+					<button onClick="undo.undo()" id="undo" class="no-button">
+						<img src="assets/icons/undo.svg" title="<?php echo _('Undo'); ?>">	
+					</button>
+					<div id="canvas" translate="no">
+						<div id="sharepic">
+							
+						</div>
 					</div>
 				</div>
 			</div>
@@ -62,9 +67,9 @@
 			</div>
 			<div id="componentbuttons">
 				<button id="tab_btn_download" onClick="ui.showTab('download')">
-					<img src="assets/icons/download.svg" title="<?php echo _('Download'); ?>">
+					<img src="assets/icons/resize.svg" title="<?php echo _('Download'); ?>">
 					<div class="description">
-						<?php echo _('Download'); ?>
+						<?php echo _('Dimensions'); ?>
 					</div>
 				</button>
 				<button id="tab_btn_search"  onClick="ui.showTab('search')">

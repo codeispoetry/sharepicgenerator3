@@ -497,7 +497,7 @@ msgstr "Bist Du sicher?"
 #: src/Views/Creator.php:121
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
-"Bitte speichere Dein Sharepic. Beim Sprachweschsel gehen alle Änderungen "
+"Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen "
 "verloren."
 
 #: src/Views/Creator.php:122

@@ -59,14 +59,15 @@
         }
 
         makeSquare (target) {
+            return;
             target.style.width = 'auto'
             target.style.height = 'auto'
 
             const width = parseInt(window.getComputedStyle(target).getPropertyValue('width'), 10)
             const height = parseInt(window.getComputedStyle(target).getPropertyValue('height'), 10)
 
-            target.style.width = Math.max(width, height) + 'px'
-            target.style.height = Math.max(width, height) + 'px'
+            cockpit.target.style.width = Math.max(width, height) + 'px'
+            cockpit.target.style.height = Math.max(width, height) + 'px'
         }
 
     }

@@ -92,7 +92,7 @@ class Component {
       return
     }
 
-    cockpit.target = event.target
+    cockpit.target = this.parentWithOnMouseDown(event.target) || console.error('No parent with onmousedown found')
 
     component.dragInfo = {
       xOffset: event.clientX - cockpit.target.getBoundingClientRect().left + document.getElementById('canvas').getBoundingClientRect().left,
@@ -125,5 +125,15 @@ class Component {
     document.removeEventListener('mousemove', component.dragging)
     document.removeEventListener('mouseup', component.stopDrag)
     undo.commit()
+  }
+
+  parentWithOnMouseDown(element) {
+    while (element) {
+      if (element.onmousedown) {
+        return element;
+      }
+      element = element.parentElement;
+    }
+    return null;
   }
 }
