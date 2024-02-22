@@ -46,7 +46,6 @@
     document.getElementById('addpicture_size').addEventListener('input', function(e) {
         cockpit.target.querySelector('.ap_image').style.width = e.target.value + 'px';
         cockpit.target.querySelector('.ap_text').style.fontSize = Math.max( 20, e.target.value * 0.1 ) + 'px';
-        undo.commit()
     });
 
     document.getElementById('addpic_text_right').addEventListener('click', function(e) {
@@ -71,7 +70,6 @@
 
     document.getElementById('addpic_color').addEventListener('input', function(e) {
         cockpit.target.querySelector('.ap_text').style.color = e.target.value;
-        undo.commit()
     });
 
 </script>

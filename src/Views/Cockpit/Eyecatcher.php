@@ -40,22 +40,18 @@
         setSize(input){
             cockpit.target.style.fontSize = input.value + 'px';
             this.makeSquare(cockpit.target);
-            undo.commit()
         }
 
         setBgColor(input) {  
             cockpit.target.querySelector('#sticker_bg').style.fill = input.value;
-            undo.commit()
         }
 
         setFontColor(input) {      
             cockpit.target.style.color = input.value;
-            undo.commit()
         }
 
         rotate( input ) {
             cockpit.target.style.transform = 'rotate(' + input.value + 'deg)';
-            undo.commit()
         }
 
         makeSquare (whole) {

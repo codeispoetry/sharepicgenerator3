@@ -25,7 +25,6 @@
     class Freetext{
         setSize(input){
             cockpit.target.style.fontSize = input.value + 'px';
-            undo.commit()
         }
 
         toggleShadow(button){
