@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="inlinecockpit">
+			<div class="workbench-below">
 				<button class="create flat" onClick="api.create()"><img src="assets/icons/download.svg"> <?php  echo _('Download');?></button>
 			</div>
 		</div>

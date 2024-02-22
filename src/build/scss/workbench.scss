@@ -7,49 +7,19 @@
     margin: 0;
     border: 1px solid $light;
     flex-direction: column;
-}
 
-/* deprecated */
-#adder{
-    cursor: pointer;
-
-    .add_sign{
-        margin: 0 10px;
-        img{
-            width: 40px;
-        }
-    }
-
-    .add_elements{
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-       opacity: 0;
-       transition: all 0.4s ease-in-out;
-       display: flex;;
-       flex-direction: column;
-       
-       li{
-              display: inline-block;
-              margin: 0 10px;
-              padding: 0;
-              cursor: pointer;
-              font-size: 20px;
-              color: $light;
-              transition: all 0.2s ease-in-out;
-    
-              &:hover{
-                color: #ffffff;
-              }
-       }
-    }
-
-    &:hover{
-        .add_elements{
-            opacity: 1;
+    &-below{
+        margin-left: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+     
+        button{
+           margin: 10px;
         }
     }
 }
+
 
 #patterns{
     display: none;
@@ -89,4 +59,58 @@ button.no-button{
     cursor: pointer;
     outline: none;
 
+}
+
+#canvas{
+    width: auto;
+}
+
+
+.draggable{
+    cursor: move;
+    position: absolute;
+}
+
+.selectable{
+    border: 2px dotted transparent;
+}
+
+.active{
+    border-color: black;
+}
+
+[contenteditable]{
+    outline: none;
+}
+
+#text{
+    &::after{
+        content: "";
+        display: block;
+        background-color: transparent;
+        width: 120%;
+        height: 130%;
+        z-index: -1;
+        position: absolute;
+        top: -15%;
+        left: -10%;
+        cursor: move;
+    }
+}
+
+.ql-editor{
+    h1, h2, h3, h4, h5, h6, p{
+        font-weight: unset;
+    }
+    p{
+        color: black;
+    }
+}
+
+#sharepic{
+    overflow: hidden;
+
+    .selected{
+        border: 2px dotted black;
+    }
 }
