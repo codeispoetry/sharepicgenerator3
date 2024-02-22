@@ -124,16 +124,17 @@ class Component {
   stopDrag () {
     document.removeEventListener('mousemove', component.dragging)
     document.removeEventListener('mouseup', component.stopDrag)
+    sg.putBackOnCanvas()
     undo.commit()
   }
 
-  parentWithOnMouseDown(element) {
+  parentWithOnMouseDown (element) {
     while (element) {
       if (element.onmousedown) {
-        return element;
+        return element
       }
-      element = element.parentElement;
+      element = element.parentElement
     }
-    return null;
+    return null
   }
 }

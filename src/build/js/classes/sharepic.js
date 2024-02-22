@@ -134,5 +134,31 @@ class Sharepic {
     sg.dataset.zoom = zoom
     sg.dataset.width = width
     sg.dataset.height = height
+
+    this.putBackOnCanvas()
+  }
+
+  /*
+    Put all draggable elements back on canvas, in case they are
+    outside. After dragging or changing the sharepic dimensions
+  */
+  putBackOnCanvas () {
+    document.querySelectorAll('#sharepic .draggable').forEach(element => {
+      const sharepicWidth = parseInt(document.getElementById('sharepic').style.width.replace('px', ''))
+      const sharepicHeight = parseInt(document.getElementById('sharepic').style.height.replace('px', ''))
+      if (element.style.left.replace('px', '') > sharepicWidth) {
+        element.style.left = (sharepicWidth - element.offsetWidth) + 'px'
+      }
+      if (element.style.top.replace('px', '') > sharepicHeight) {
+        element.style.top = (sharepicHeight - element.offsetHeight) + 'px'
+      }
+
+      if (element.style.left.replace('px', '') < -element.offsetWidth) {
+        element.style.left = '0px'
+      }
+      if (element.style.top.replace('px', '') < -element.offsetHeight) {
+        element.style.top = '0px'
+      }
+    })
   }
 }

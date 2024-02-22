@@ -43,7 +43,7 @@ class UI {
     document.getElementById('cockpit_' + tab)?.classList.add('show')
     document.getElementById('tab_btn_' + tab)?.classList.add('active')
 
-    document.getElementById('drag_background').checked=false
+    document.getElementById('drag_background').checked = false
   }
 
   setLang (language) {

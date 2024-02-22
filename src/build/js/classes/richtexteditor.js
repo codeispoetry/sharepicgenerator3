@@ -55,4 +55,3 @@ class RichTextEditor {
     quill.formatLine(range.index, range.length, classname, true)
   }
 }
-
