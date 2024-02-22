@@ -39,6 +39,10 @@ class Component {
   }
 
   unselect () {
+    document.querySelectorAll('.selected_only').forEach(element => {
+      element.style.display = 'none'
+    })
+
     document.querySelector('.selected')?.classList.remove('selected')
     cockpit.target = null
   }
@@ -101,9 +105,11 @@ class Component {
 
     document.addEventListener('mousemove', component.dragging)
     document.addEventListener('mouseup', component.stopDrag)
+    console.log("start dragging")
   }
 
   dragging (e) {
+    console.log("dragging")
     e.preventDefault()
 
     let x = e.clientX - component.dragInfo.xOffset
@@ -122,6 +128,7 @@ class Component {
   }
 
   stopDrag () {
+    console.log("dragging stopped")
     document.removeEventListener('mousemove', component.dragging)
     document.removeEventListener('mouseup', component.stopDrag)
     sg.putBackOnCanvas()

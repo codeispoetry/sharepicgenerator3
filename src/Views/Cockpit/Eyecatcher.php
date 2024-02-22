@@ -43,8 +43,8 @@
             undo.commit()
         }
 
-        setBgColor(input) {      
-            cockpit.target.style.backgroundColor = input.value;
+        setBgColor(input) {  
+            cockpit.target.querySelector('#sticker_bg').style.fill = input.value;
             undo.commit()
         }
 
@@ -58,16 +58,22 @@
             undo.commit()
         }
 
-        makeSquare (target) {
-            return;
-            target.style.width = 'auto'
-            target.style.height = 'auto'
+        makeSquare (whole) {
+            if(cockpit.target === null) return
+            
+            console.log("make square")
+            const text = whole.querySelector('div')
+            text.style.width = 'auto'
+            text.style.height = 'auto'
 
-            const width = parseInt(window.getComputedStyle(target).getPropertyValue('width'), 10)
-            const height = parseInt(window.getComputedStyle(target).getPropertyValue('height'), 10)
+            const width = parseInt(window.getComputedStyle(text).getPropertyValue('width'), 10)
+            const height = parseInt(window.getComputedStyle(text).getPropertyValue('height'), 10)
 
             cockpit.target.style.width = Math.max(width, height) + 'px'
             cockpit.target.style.height = Math.max(width, height) + 'px'
+
+            text.style.width = '100%'
+            text.style.height = '100%'
         }
 
     }

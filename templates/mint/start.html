@@ -1,11 +1,8 @@
-<div id="sharepic" style="background-image: url('templates/mint/start.jpg?r=1'); background-color: #ffffff; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;" data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="background">
-    <div 
-        id="freetext" class="freetext draggable selectable" 
-        data-cockpit="freetext" 
-        data-dragconstraint="true"
-        onclick="component.select(this)"
-        onmousedown="component.startDrag(event)"
-        style="
+<div id="sharepic"
+    style="background-image: url('templates/mint/start.jpg?r=1'); background-color: #ffffff; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;"
+    data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="background">
+    <div id="freetext" class="freetext draggable selectable" data-cockpit="freetext" data-dragconstraint="true"
+        onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
             z-index: 21; 
             left: 120px; 
             top: 100px; 
@@ -15,14 +12,8 @@
         ">
         <p>Tippe Deinen Text hier.</p>
     </div>
-    
-    <div 
-        id="copyright" 
-        class="selectable" 
-        data-cockpit="background" 
-        contenteditable="true" 
-        spellcheck="false"
-        style="
+
+    <div id="copyright" class="selectable" data-cockpit="background" contenteditable="true" spellcheck="false" style="
             font-size: 14px;
             color: #000000;
             z-index: 10;
@@ -31,57 +22,47 @@
 </div>
 
 <div id="patterns">
-    <div    data-id="freetext" 
-            data-class="freetext draggable selectable" 
-            data-cockpit="freetext"
-            data-dragconstraint="true"
-            data-rte="true"
-            onclick="component.select(this)"
-            onmousedown="component.startDrag(event)"
-            style="
+    <div data-id="freetext" data-class="freetext draggable selectable" data-cockpit="freetext"
+        data-dragconstraint="true" data-rte="true" onclick="component.select(this)"
+        onmousedown="component.startDrag(event)" style="
                 z-index: 20; 
                 left: 0px; 
                 top: 0px; 
                 font-size: 20px;
                 color: red;
                 font-family: Calibri;
-            "
-        >
+            ">
         NEUER TEXT
     </div>
 
-    <div    data-id="eyecatcher" 
-            data-class="eyecatcher draggable selectable" 
-            data-cockpit="eyecatcher" 
-            contenteditable="true" 
-            oninput="eyecatcher.makeSquare(this);"
-            onclick="component.select(this)"
-            onmousedown="component.startDrag(event)"
-            style="
+    <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
+        contenteditable="true" oninput="eyecatcher.makeSquare(this);" onclick="component.select(this)"
+        onmousedown="component.startDrag(event)" style="
                 z-index: 30; 
-                left: 12px; top: 260px; 
+                left: 0px; top: 0px; 
                 font-size: 20px; 
-                color: #e9e9e9; 
-                background-color: #47991e;
-                transform: rotate(351deg);
+                color: #232323; 
+                background-color: transparent;
+                transform: rotate(0deg);
                 text-align: center;
-                width: 100px;
-                height: 100px;
-            "
-    >
-        <object id="sticker" data="templates/mint/sticker.svg" type="image/svg+xml"></object> 
+                width: 36px;
+                height: 36px;
+            ">
+        <svg width="280" height="280" viewBox="0 0 74.083332 74.083333" version="1.1" id="svg1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+            <path
+                d="M 28.952854,0.40200885 C 35.932645,-1.4308193 44.036565,3.5671375 45.380381,4.1049773 46.723927,4.6428441 61.070749,11.359814 68.742171,17.313868 78.331512,24.756414 73.766987,35.183485 64.825338,57.782482 55.88395,80.38121 46.878507,77.040823 18.520613,62.575286 -11.237954,47.395627 2.5201489,31.733951 7.8298762,22.389858 13.139634,13.045832 21.972763,2.2348339 28.952854,0.40200885 Z"
+                id="sticker_bg" style="fill:#ffcf53;stroke-width:0.26513" />
+        </svg>
+
         <div>
-            <p>NEUER EYECATCHER</p>
+            <p>Text</p>
         </div>
     </div>
 
 
-    <div    data-class="addpicture draggable selectable" 
-            data-cockpit="addpicture" 
-            data-id="addpicture" 
-            onclick="component.select(this)"
-            onmousedown="component.startDrag(event)"
-            style="
+    <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
+        onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
                 align-items: center;
                 position: absolute;
                 left:300px; top:290px;
@@ -91,8 +72,7 @@
             background-size: cover; 
             width: 100px; 
             aspect-ratio: 1; 
-            border-radius: 50%;"
-        ></div>
+            border-radius: 50%;"></div>
         <div class="ap_text" contenteditable="true" style="
             display: flex; 
             justify-content: center;
