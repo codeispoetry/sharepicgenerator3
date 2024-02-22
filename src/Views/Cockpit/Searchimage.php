@@ -23,7 +23,7 @@
         <h3><?php  echo _('Create image with AI');?></h3>
         <p><?php echo _('Use artificial intelligence to create a unique image');?></p>
         <textarea placeholder="<?php  echo _('Describe the image you want');?>" 
-                id="dalle_prompt" spellcheck="false" rows="1"
+                id="dalle_prompt" spellcheck="false" rows="2"
                 oninput="this.rows=this.value.split('\n').length"></textarea>
         <button class="create flat" onClick="api.dalle()">
             <?php  echo _('Create');?>
