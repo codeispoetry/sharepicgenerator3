@@ -17,6 +17,8 @@
     #componentbuttons{
         border-left: 1px solid $light;
         width: 80px;
+        display: flex;
+        flex-direction: column;
 
         button{
             background-color: unset;
@@ -28,6 +30,10 @@
             height: 60px;
             border-bottom: 1px solid $light;
             position: relative;
+
+            &:last-child{
+                margin-top: auto;
+            }
 
             &:hover{
                 background-color: $light;
@@ -79,7 +85,7 @@
     .mainsection{
         border: 0px solid #dbdbdb;
         display: none;
-        padding-top: 1.5em;
+        padding: 1.5em 10px 0 10px;
 
         &.show{
             display: block;

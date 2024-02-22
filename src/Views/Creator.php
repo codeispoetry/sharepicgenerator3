@@ -22,18 +22,6 @@
 		$published = $this->get_published();
 		include 'src/Views/Menu.php'; 
 	?>
-
-    <div style="display: flex; align-items: center">
-        <?php if( $this->user->is_logged_in() ): ?>
-			<?php
-				echo _('Logged in as');
-				echo ' ' . $this->user->get_username();
-			?>
-            <a href="index.php?c=frontend&m=logout" class="link">
-                <img src="assets/icons/logout.svg" style="height: 1em; margin-left: 1em;">
-			</a>
-        <?php endif; ?>
-    </div>
 </header>
 
 <script src="assets/script.js?r=<?php echo rand(); ?>" defer></script>
@@ -102,6 +90,17 @@
 						<?php echo _('Front picture'); ?>
 					</div>
 				</button>
+
+				<button>
+					<a href="index.php?c=frontend&m=logout" class="link">
+						<img src="assets/icons/logout.svg">
+					</a>
+					<div class="description">
+						<?php echo ( $this->user->is_logged_in() ) ? _('Logged in as ') . $this->user->get_username() : '' ?>
+					</div>
+				</button>
+
+
 			</div>
 		</div>
 		<?php

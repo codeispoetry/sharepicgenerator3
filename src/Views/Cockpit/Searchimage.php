@@ -1,13 +1,9 @@
 <section class="mainsection" id="cockpit_search">
-    <h2><?php  echo _('Search background image');?></h2>
+    <h2><?php  echo _('Create background ');?></h2>
+
     <section>
-        <label style="display:flex; margin-top:20px;">
-            <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search in image database');?>">
-            <button onClick="pixabay.search()" style="padding:2px;"><img src="assets/icons/search.svg"></button>
-        </label>
-    </section>
-    
-    <section>
+        <h3><?php  echo _('Own image');?></h3>
+        <p><?php echo _('Upload an image from your local computer');?></p>
         <label style="display:flex; align-items: center;padding:3px;margin-top:1em; width: 160px;" class="file-upload">
             <img src="assets/icons/upload.svg"> <?php  echo _('upload image');?>
             <input type="file" name="upload" id="upload" onChange="api.upload(this)">
@@ -15,7 +11,17 @@
     </section>
 
     <section>
+        <h3><?php  echo _('Search image');?></h3>
+        <p><?php echo _('Search in an online image database');?></p>
+        <label style="display:flex; margin-top:20px;">
+            <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search in image database');?>">
+            <button onClick="pixabay.search()" style="padding:2px;"><img src="assets/icons/search.svg"></button>
+        </label>
+    </section>
+
+    <section>
         <h3><?php  echo _('Create image with AI');?></h3>
+        <p><?php echo _('Use artificial intelligence to create a unique image');?></p>
         <textarea placeholder="<?php  echo _('Describe the image you want');?>" 
                 id="dalle_prompt" spellcheck="false" rows="1"
                 oninput="this.rows=this.value.split('\n').length"></textarea>

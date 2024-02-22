@@ -1,8 +1,10 @@
 <section class="mainsection" id="cockpit_freetext">
     <h2><?php  echo _('Text');?></h2>
     <section>
+        <p><?php echo _('For a text in your sharepic, edit it directly in the sharepic.');?></p>
         <button onClick="component.add('freetext')"><?php  echo _('Add text');?></button>
     </section>
+    
     <section>
         <label class="horizontal">
             <h4><?php  echo _('Total size');?></h4>
