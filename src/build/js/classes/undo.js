@@ -21,7 +21,7 @@ class Undo {
   }
 
   commit () {
-    //console.log('Committing', new Error().stack)
+    // console.log('Committing', new Error().stack)
 
     const data = document.getElementById('canvas').innerHTML
     const commits = JSON.parse(localStorage.getItem('commits'))

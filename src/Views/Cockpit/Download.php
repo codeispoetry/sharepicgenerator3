@@ -1,7 +1,7 @@
 <section class="mainsection" id="cockpit_download">
     <h2><?php  echo _('Dimensions');?></h2>
     <section>
-        <h3><?php  echo _('Dimensions');?></h3>
+        <h3><?php  echo _('Set dimensions manually');?></h3>
 
             <div class="center-row">
                 <?php echo _(   'Width' ); ?>: 

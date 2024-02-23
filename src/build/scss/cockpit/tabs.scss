@@ -1,0 +1,59 @@
+#components{
+    flex-grow: 1;
+    width: 400px;
+}
+
+#componentbuttons{
+    border-left: 1px solid $light;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+
+    button{
+        background-color: unset;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0;
+        width: 100%;
+        height: 60px;
+        border-bottom: 1px solid $light;
+        position: relative;
+
+        &:last-child{
+            margin-top: auto;
+        }
+
+        &:hover{
+            background-color: $light;
+        }
+
+        &.active{
+            background-color: $dark;
+            margin-left: -1px;
+        }
+
+        &:hover{
+            .description{
+                display: flex;
+            }
+        }
+
+        .description{
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: $verydark;
+            margin-left: -150px;
+            display: none;
+            width: 139px;
+            align-content: center;
+            align-items: center;
+            padding-left: 10px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+    }
+}

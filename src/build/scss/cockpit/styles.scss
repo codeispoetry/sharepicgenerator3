@@ -1,0 +1,11 @@
+#cockpit{
+    width: 350px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid $light;
+    display: flex;
+}
+
+@import 'tags.scss';
+@import 'classes.scss';
+@import 'tabs.scss';

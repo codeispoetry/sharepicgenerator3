@@ -1,0 +1,129 @@
+#cockpit{
+
+    .file-upload {
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: $theme-color;
+        color: $white;
+        cursor: pointer;
+        transition-duration: 0.2s;
+    
+        &:hover {
+            background-color: $theme-color-dark;
+        }
+    
+        &:disabled{
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    
+        input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 0;
+        }
+    }
+
+    .mainsection{
+        border: 0px solid #dbdbdb;
+        display: none;
+        padding: 1.5em 10px 0 10px;
+
+        &.show{
+            display: block;
+        }
+
+        & > h2{
+            padding-left: 20px;
+        }
+
+        >section{
+            padding: 10px 20px;
+            margin-bottom: 20px;
+    
+            &:not(:first-of-type) {
+                border-top: 1px solid $light;
+            }
+        }
+
+        >.minorsection{
+           margin-bottom: 0;
+        }
+    }
+
+    .center-row{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .line_indent,
+    .line_layout{
+        display: none;
+        
+        &.show{
+           display: block;
+        }
+    }
+
+    .brands{
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        button{
+            background-color: unset;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            padding: 0;
+
+            &:hover{
+                background-color: $theme-color;
+            }
+        }
+    }
+
+    .horizontal{
+        display: flex;
+        align-items: center;
+
+        h4{
+            margin-right: 1em;
+        }
+    }
+
+
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0px;
+        align-items: center;
+        justify-items: left;
+    }
+
+    .blankbutton{
+        background: none;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        
+        &:hover{
+            background-color: #45a049;
+        }
+    }
+
+}
