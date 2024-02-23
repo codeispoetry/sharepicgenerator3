@@ -83,7 +83,7 @@ button{
             &::-moz-color-swatch {
                 background-color: red;
             }
-    }
+        } 
 
         &[type="range"]{
             width: 92%;
@@ -149,7 +149,6 @@ button{
             width: 5em;
         }
     }
-
 
     textarea{
         width: 100%;

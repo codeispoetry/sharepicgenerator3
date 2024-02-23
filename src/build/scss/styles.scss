@@ -1,12 +1,9 @@
 @import 'variables.scss';
 @import 'workbench.scss';
-
 @import 'cockpit/styles.scss';
-
 @import 'header.scss';
 @import 'pixabay.scss';
 @import 'home.scss';
-
 
 @font-face {
     font-family: 'Roboto';
@@ -22,6 +19,7 @@ html{
     color: #FFFFFF;
     height: 100%;
 }
+
 body{
     background-color: $dark;
     min-height: 100%;
@@ -32,7 +30,6 @@ body{
 
 a, a:visited{
     color: #FFFFFF;
-
 }
 
 .row{
