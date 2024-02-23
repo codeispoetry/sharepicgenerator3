@@ -269,6 +269,7 @@ class API {
   }
 
   upload (btn) {
+    console.log(btn.files.length)
     if (!btn.files.length) {
       return
     }

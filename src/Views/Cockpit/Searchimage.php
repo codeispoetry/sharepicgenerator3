@@ -4,10 +4,14 @@
     <section>
         <h3><?php  echo _('Own image');?></h3>
         <p><?php echo _('Upload an image from your local computer');?></p>
-        <label style="display:flex; align-items: center;padding:3px;margin-top:1em; width: 160px;" class="file-upload">
-            <img src="assets/icons/upload.svg"> <?php  echo _('upload image');?>
-            <input type="file" name="upload" id="upload" onChange="api.upload(this)">
-        </label>
+
+        <button onClick="document.getElementById('upload').click()">
+            <img src="assets/icons/upload.svg">
+            <?php  echo _('upload image');?>
+        </button>
+
+        <input type="file" name="upload" id="upload" onChange="api.upload(this)" style="display:none">
+       
     </section>
 
     <section>

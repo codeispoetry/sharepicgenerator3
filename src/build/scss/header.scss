@@ -97,6 +97,7 @@ nav{
         background-color: unset;
         color: #000;
         text-align: left;
+        border: 0;
         width: 100%;
         padding: 10px 15px;
         font-size: 13px;
@@ -104,6 +105,7 @@ nav{
         font-weight: 400;
         font-family: Arial, Helvetica, sans-serif;
         box-sizing: border-box;
+        border-radius: 0;
 
         &:hover{
             background-color: $theme-color;
@@ -127,6 +129,7 @@ nav{
     
     button{
         width: auto;
+        border-radius: 0;
     }
 
     .did-1{
