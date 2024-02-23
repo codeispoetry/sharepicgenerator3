@@ -32,6 +32,7 @@ test.beforeEach(async ({ page }) => {
 
 test('Overall test', async ({ page }) => {
   // Search and use image from pixabay
+  await page.locator('#tab_btn_search').click()
   await page.locator('#pixabay_q').fill('Berge')
   await page.locator('[onclick="pixabay.search()"]').click()
   await page.locator('#pixabay_results div.image:first-child').click()
@@ -58,7 +59,7 @@ test('Overall test', async ({ page }) => {
   await page.waitForTimeout(1000)
   // Download
   const downloadPromise = page.waitForEvent('download')
-  await page.locator('#inlinecockpit > [onclick="api.create()"]').click()
+  await page.locator('.workbench-below > [onclick="api.create()"]').click()
   const download = await downloadPromise
   const path = await download.path()
   fs.move(path, 'tests/tmp/test-sharepic.png',
@@ -94,10 +95,6 @@ async function prepareLocalUser (config) {
 
   // Delete sharepic
   exec('rm tests/tmp/test-sharepic.png', (error, stdout, stderr) => {
-    if (error) {
-      throw new Error(stdout + ' ' + stderr)
-    }
-
     console.log('Old downloaded sharepic deleted')
   })
 }
