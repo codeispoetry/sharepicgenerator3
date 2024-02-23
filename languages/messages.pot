@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-19 09:08+0100\n"
+"POT-Creation-Date: 2024-02-23 13:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,7 +130,8 @@ msgstr ""
 msgid "Privacy"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:89
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:90
+#: src/Views/Creator.php:92
 msgid "Eyecatcher"
 msgstr ""
 
@@ -138,16 +139,16 @@ msgstr ""
 msgid "Add sticker"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:8 src/Views/Cockpit/Background.php:6
-#: src/Views/Cockpit/Background.php:33 src/Views/Cockpit/Logo.php:4
+#: src/Views/Cockpit/Eyecatcher.php:8 src/Views/Cockpit/Background.php:5
+#: src/Views/Cockpit/Logo.php:4 src/Views/Cockpit/Copyright.php:5
 msgid "Size"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:12
+#: src/Views/Cockpit/Eyecatcher.php:11
 msgid "Rotation"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:18 src/Views/Cockpit/Logo.php:11
+#: src/Views/Cockpit/Eyecatcher.php:16 src/Views/Cockpit/Logo.php:11
 msgid "Colors"
 msgstr ""
 
@@ -155,53 +156,28 @@ msgstr ""
 msgid "Font"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:23
+#: src/Views/Cockpit/Eyecatcher.php:25
 msgid "Background"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:31 src/Views/Cockpit/Greentext.php:11
-#: src/Views/Cockpit/Background.php:43 src/Views/Cockpit/Logo.php:19
-#: src/Views/Cockpit/Freetext.php:13 src/Views/Cockpit/Addpicture.php:37
-msgid "to front"
-msgstr ""
-
-#: src/Views/Cockpit/Eyecatcher.php:32 src/Views/Cockpit/Greentext.php:12
-#: src/Views/Cockpit/Background.php:44 src/Views/Cockpit/Logo.php:20
-#: src/Views/Cockpit/Freetext.php:14 src/Views/Cockpit/Addpicture.php:38
-msgid "to back"
-msgstr ""
-
-#: src/Views/Cockpit/Eyecatcher.php:33 src/Views/Cockpit/Addpicture.php:39
-msgid "delete"
-msgstr ""
-
-#: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:8
-#: src/Views/Cockpit/Addpicture.php:8
+#: src/Views/Cockpit/Greentext.php:4 src/Views/Cockpit/Freetext.php:10
+#: src/Views/Cockpit/Addpicture.php:9
 msgid "Total size"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Menu.php:81
-#: src/Views/Creator.php:64 src/Views/Creator.php:77
-msgid "Download"
-msgstr ""
-
-#: src/Views/Cockpit/Download.php:4
+#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:62
 msgid "Dimensions"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:7
-msgid "Width"
+#: src/Views/Cockpit/Download.php:4
+msgid "Set dimensions manually"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:11
-msgid "Height"
-msgstr ""
-
-#: src/Views/Cockpit/Download.php:15
+#: src/Views/Cockpit/Download.php:10
 msgid "Size presets"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:17 src/Views/Cockpit/Download.php:20
+#: src/Views/Cockpit/Download.php:12 src/Views/Cockpit/Download.php:15
 msgid "square 1:1"
 msgstr ""
 
@@ -209,7 +185,11 @@ msgstr ""
 msgid "Edit background image"
 msgstr ""
 
-#: src/Views/Cockpit/Background.php:11
+#: src/Views/Cockpit/Background.php:10
+msgid "Preferences"
+msgstr ""
+
+#: src/Views/Cockpit/Background.php:12
 msgid "Fit automatically"
 msgstr ""
 
@@ -221,13 +201,9 @@ msgstr ""
 msgid "Change image crop"
 msgstr ""
 
-#: src/Views/Cockpit/Background.php:25 src/Views/Cockpit/Background.php:38
-#: src/Views/Cockpit/Addpicture.php:31
+#: src/Views/Cockpit/Background.php:26 src/Views/Cockpit/Copyright.php:10
+#: src/Views/Cockpit/Addpicture.php:37
 msgid "Color"
-msgstr ""
-
-#: src/Views/Cockpit/Background.php:30
-msgid "Copyright"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:2
@@ -243,7 +219,8 @@ msgid "please choose"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
-#: src/Views/Cockpit/Addpicture.php:28 src/Views/Creator.php:86
+#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:84
+#: src/Views/Creator.php:86
 msgid "Text"
 msgstr ""
 
@@ -264,62 +241,95 @@ msgid "green"
 msgstr ""
 
 #: src/Views/Cockpit/Searchimage.php:2
-msgid "Search background image"
+msgid "Create background "
 msgstr ""
 
 #: src/Views/Cockpit/Searchimage.php:5
-msgid "search in image database"
+msgid "Own image"
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:12
+#: src/Views/Cockpit/Searchimage.php:6
+msgid "Upload an image from your local computer"
+msgstr ""
+
+#: src/Views/Cockpit/Searchimage.php:10
 msgid "upload image"
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:18 src/Views/Cockpit/Dalle.php:2
-msgid "Create image with AI"
+#: src/Views/Cockpit/Searchimage.php:18
+msgid "Search image"
 msgstr ""
 
 #: src/Views/Cockpit/Searchimage.php:19
+msgid "Search in an online image database"
+msgstr ""
+
+#: src/Views/Cockpit/Searchimage.php:22
+msgid "search in image database"
+msgstr ""
+
+#: src/Views/Cockpit/Searchimage.php:28
+msgid "Create image with AI"
+msgstr ""
+
+#: src/Views/Cockpit/Searchimage.php:29
+msgid "Use artificial intelligence to create a unique image"
+msgstr ""
+
+#: src/Views/Cockpit/Searchimage.php:30
 msgid "Describe the image you want"
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:23
+#: src/Views/Cockpit/Searchimage.php:34
 msgid "Create"
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:31
+#: src/Views/Cockpit/Searchimage.php:42
 msgid "Please wait while AI generates your image."
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:32
+#: src/Views/Cockpit/Searchimage.php:43
 msgid "This can take up to one minute."
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:36
+#: src/Views/Cockpit/Searchimage.php:47
 msgid "seconds"
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:40
+#: src/Views/Cockpit/Searchimage.php:51
 msgid "Result"
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:43
+#: src/Views/Cockpit/Searchimage.php:54
 msgid "Use this image"
 msgstr ""
 
-#: src/Views/Cockpit/Searchimage.php:46
+#: src/Views/Cockpit/Searchimage.php:57
 msgid "Try again"
 msgstr ""
 
 #: src/Views/Cockpit/Freetext.php:4
+msgid "For a text in your sharepic, edit it directly in the sharepic."
+msgstr ""
+
+#: src/Views/Cockpit/Freetext.php:5
 msgid "Add text"
+msgstr ""
+
+#: src/Views/Cockpit/Freetext.php:14
+msgid "Toggle text shadow"
+msgstr ""
+
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:78
+#: src/Views/Creator.php:80
+msgid "Copyright"
 msgstr ""
 
 #: src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground pictures"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:4
+#: src/Views/Cockpit/Addpicture.php:5
 msgid "Add picture"
 msgstr ""
 
@@ -327,27 +337,28 @@ msgstr ""
 msgid "Upload image"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:16
+#: src/Views/Cockpit/Addpicture.php:18
 msgid "upload new image"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:22 src/Views/Creator.php:83
+#: src/Views/Cockpit/Addpicture.php:25 src/Views/Creator.php:72
+#: src/Views/Creator.php:74
 msgid "Image"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:23
+#: src/Views/Cockpit/Addpicture.php:27
 msgid "round"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:24
+#: src/Views/Cockpit/Addpicture.php:28
 msgid "angular"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:29
+#: src/Views/Cockpit/Addpicture.php:35
 msgid "text floats right"
 msgstr ""
 
-#: src/Views/Cockpit/Addpicture.php:30
+#: src/Views/Cockpit/Addpicture.php:36
 msgid "text below"
 msgstr ""
 
@@ -405,20 +416,24 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: src/Views/Menu.php:47
-msgid "Open"
+#: src/Views/Menu.php:46
+msgid "New template"
 msgstr ""
 
-#: src/Views/Menu.php:53
-msgid "latest"
-msgstr ""
-
-#: src/Views/Menu.php:78
+#: src/Views/Menu.php:49
 msgid "Save"
 msgstr ""
 
-#: src/Views/Menu.php:85
-msgid "Undo"
+#: src/Views/Menu.php:52 src/Views/Creator.php:46 src/Views/Creator.php:60
+msgid "Download"
+msgstr ""
+
+#: src/Views/Menu.php:58
+msgid "My Sharepics"
+msgstr ""
+
+#: src/Views/Menu.php:64
+msgid "latest"
 msgstr ""
 
 #: src/Views/Components/Forms/Login.php:2
@@ -460,31 +475,55 @@ msgstr ""
 msgid "close"
 msgstr ""
 
-#: src/Views/Creator.php:29
-msgid "Logged in as"
+#: src/Views/Components/ToFrontAndBack.php:2
+msgid "Order"
 msgstr ""
 
-#: src/Views/Creator.php:80
+#: src/Views/Components/ToFrontAndBack.php:5
+#: src/Views/Components/ToFrontAndBack.php:6
+msgid "to front"
+msgstr ""
+
+#: src/Views/Components/ToFrontAndBack.php:8
+#: src/Views/Components/ToFrontAndBack.php:9
+msgid "to back"
+msgstr ""
+
+#: src/Views/Components/ToFrontAndBack.php:15
+#: src/Views/Components/ToFrontAndBack.php:16
+#: src/Views/Components/ToFrontAndBack.php:17
+msgid "delete"
+msgstr ""
+
+#: src/Views/Creator.php:35
+msgid "Undo"
+msgstr ""
+
+#: src/Views/Creator.php:66 src/Views/Creator.php:68
 msgid "Search or create image"
 msgstr ""
 
-#: src/Views/Creator.php:92
+#: src/Views/Creator.php:96 src/Views/Creator.php:98
 msgid "Front picture"
 msgstr ""
 
-#: src/Views/Creator.php:105
+#: src/Views/Creator.php:107
+msgid "Logged in as"
+msgstr ""
+
+#: src/Views/Creator.php:123
 msgid "Please wait ..."
 msgstr ""
 
-#: src/Views/Creator.php:120
+#: src/Views/Creator.php:154
 msgid "Are you sure?"
 msgstr ""
 
-#: src/Views/Creator.php:121
+#: src/Views/Creator.php:155
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: src/Views/Creator.php:122
+#: src/Views/Creator.php:156
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
