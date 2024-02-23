@@ -2,17 +2,12 @@
     <h2><?php  echo _('Dimensions');?></h2>
     <section>
         <h3><?php  echo _('Set dimensions manually');?></h3>
-
-            <div class="row">
-                <?php echo _(   'Width' ); ?>: 
-                <input type="number" name="width" id="width" value="500" step="1" style="width: 25%; text-align: right;" onChange="sg.setSize()">
-            </div>
-            <div class="row">
-                <?php echo _(   'Height' ); ?>: 
-                <input type="number" name="height" id="height" value="400" step="1" style="width: 25%; text-align: right;" onChange="sg.setSize()">
-            </div>     
-           
-            <br><?php echo _('Size presets');?>:<br>
+        <input type="number" name="width" id="width" value="500" step="1" style="width: 25%;" onChange="sg.setSize()">
+        x
+        <input type="number" name="height" id="height" value="400" step="1" style="width: 25%;" onChange="sg.setSize()">       
+    </section>
+    <section>     
+            <h3><?php echo _('Size presets');?></h3>
             <div class="dimensions"> 
                 <button data-sizepreset="1280:1280" title="<?php echo _('square 1:1'); ?>">
                     <img src="assets/icons/square1to1.svg">

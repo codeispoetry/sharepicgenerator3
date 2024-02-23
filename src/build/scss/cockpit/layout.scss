@@ -1,0 +1,57 @@
+#cockpit{
+    h2, h3{
+        margin: 0;
+    }
+
+    .mainsection{
+        border: 0;
+        display: none;
+        padding: 1.5em $section-gap $section-gap;
+
+        &.show{
+            display: block;
+        }
+        >section{
+            padding: $section-gap 0;
+            
+            &:not(:first-of-type) {
+                border-top: 1px solid $light;
+            }
+
+            > *{
+                margin-bottom: 2em;
+            }
+            > h3{
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    .dimensions{
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        button{
+            background-color: unset;
+            margin-right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            padding: 0;
+
+            &:hover{
+                background-color: $theme-color;
+            }
+        }
+    }
+
+    .horizontal{
+        display: flex;
+
+        button{
+            width: auto;
+            margin-right: 1em;
+        }
+    }
+}

@@ -74,6 +74,12 @@
 						<?php echo _('Image'); ?>
 					</div>
 				</button>
+				<button id="tab_btn_copyright" onClick="ui.showTab('copyright')">
+					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
+					<div class="description">
+						<?php echo _('Copyright'); ?>
+					</div>
+				</button>
 				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
 					<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 					<div class="description">

@@ -6,15 +6,14 @@
     </section>
     
     <section>
-        <label class="horizontal">
-            <h4><?php  echo _('Total size');?></h4>
-            <input type="range" min="0" max="100" value="50" class="slider" id="text_size" oninput="freetext.setSize(this)">
-        </label>
-        <label style="display:flex;margin-top: 0">
-            <button class="" onClick="freetext.toggleShadow(this)">
-                <?php echo _("Toggle text shadow"); ?>
-            </button>   
-        </label>
+        
+        <h3><?php  echo _('Total size');?></h3>
+        <input type="range" min="0" max="100" value="50" class="slider" id="text_size" oninput="freetext.setSize(this)">
+    
+        <button class="" onClick="freetext.toggleShadow(this)">
+            <?php echo _("Toggle text shadow"); ?>
+        </button>   
+      
     </section>
     <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 

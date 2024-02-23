@@ -1,5 +1,7 @@
 <section class="selected_only">
-    <div class="row">
+    <h3><?php  echo _('Order');?></h3>
+
+    <div class="horizontal">
         <button class="to-front no-button" onClick="component.toFront(this)" title="<?php  echo _('to front');?>">
             <img src="assets/icons/to_front.svg" alt="<?php  echo _('to front');?>" />
         </button>

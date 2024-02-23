@@ -4,26 +4,23 @@
         <button onClick="component.add('eyecatcher')"><?php  echo _('Add sticker');?></button>
     </section>
     <section class="selected_only">
-        <label class="horizontal">
-            <h4><?php  echo _('Size');?></h4>
-            <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
-        </label>
-        <label class="horizontal">
-            <h4><?php  echo _('Rotation');?></h4>
-            <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
-        </label>
+        
+        <h3><?php  echo _('Size');?></h3>
+        <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
+    
+        <h3><?php  echo _('Rotation');?></h3>
+        <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
     </section>
 
     <section id="eyecatcher_colors" class="selected_only">
         <h3><?php echo _('Colors');?></h3>
-        <div>
-                <h4><?php  echo _('Font');?></h4>
-                <input type="color" value="#ffffff" class="" id="eyecatcher_color" oninput="eyecatcher.setFontColor(this)">
-           
-                <h4><?php  echo _('Background');?></h4>
-                <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor" oninput="eyecatcher.setBgColor(this)">
-            </label>
-        </div>
+       
+        <h4><?php  echo _('Font');?></h4>
+        <input type="color" value="#ffffff" class="" id="eyecatcher_color" oninput="eyecatcher.setFontColor(this)">
+    
+        <h4><?php  echo _('Background');?></h4>
+        <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor" oninput="eyecatcher.setBgColor(this)">
+
     </section>
     
     <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>

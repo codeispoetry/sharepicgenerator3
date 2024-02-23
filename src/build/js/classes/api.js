@@ -199,6 +199,7 @@ class API {
       return
     }
 
+    document.getElementById('dalle_result').style.display = 'block'
     document.getElementById('dalle_result_waiting').style.display = 'block'
     document.getElementById('dalle_result_response').style.display = 'none'
 
