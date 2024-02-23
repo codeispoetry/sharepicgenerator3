@@ -1,6 +1,4 @@
 #cockpit{
-
-
     h2, h3{
         margin: 0;
     }
@@ -17,15 +15,6 @@
         border: 0;
         transition-duration: 0.2s;
     
-        &.link{
-            padding: unset;
-            background-color: unset;
-            border: unset;
-            font-size: unset;
-            text-decoration: underline;
-            color: $theme-color;
-        }
-    
         :disabled{
             cursor: not-allowed;
             opacity: 0.5;
@@ -33,59 +22,6 @@
     
         &.waiting{
             cursor: wait !important;
-        }
-    
-        &.to-front,
-        &.to-back,
-        &.delete{
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-color: transparent;
-            background-origin: content-box;
-            padding: 8px;
-            width: 40px;
-            height: 40px;
-            display: block;
-            color: transparent;
-            border: 0;
-            border-radius: 50%;
-    
-            &:hover{
-                background-color: #45a049;
-            }
-    
-            &.to-front{
-                background-image: url(icons/flip_to_front.svg);
-            }
-    
-    
-            &.to-back{
-                background-image: url(icons/flip_to_back.svg);
-            }
-    
-            &.delete{
-                background-image: url(icons/delete.svg);
-            }
-        }
-    }
-    
-    button,a{
-        &.flat{
-            background-color: $theme-color;
-            border: none;
-            color: white;
-            padding: 7px 16px;
-            text-align: center;
-            text-decoration: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            border-radius: 8px;
-        }
-    
-        &:hover {
-            background-color: $theme-color-dark;
         }
     }
     
@@ -110,6 +46,17 @@
     
     label{
         color: white;
+    }
+
+    input, textarea{
+        background-color: $verydark;
+        color: white;
+        border-radius: 5px;
+
+        &::placeholder{
+            color: $light;
+            font-style: italic;
+        }
     }
 
     input{
@@ -173,16 +120,5 @@
         border: 1px solid $light;
         border-radius: 0;
         font-family: inherit;
-    }
-
-    input, textarea{
-        background-color: $verydark;
-        color: white;
-        border-radius: 5px;
-
-        &::placeholder{
-            color: $light;
-            font-style: italic;
-        }
     }
 }

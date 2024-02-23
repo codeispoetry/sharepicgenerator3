@@ -32,13 +32,7 @@
       
     </section>
 
-    <section class="selected_only" style="display: flex">
-        <div class="row">
-            <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-            <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
-            <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
-        </div>
-    </section>
+    <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
 </section>
 

@@ -16,7 +16,7 @@
 
     <section id="eyecatcher_colors" class="selected_only">
         <h3><?php echo _('Colors');?></h3>
-        <div class="grid">
+        <div>
                 <h4><?php  echo _('Font');?></h4>
                 <input type="color" value="#ffffff" class="" id="eyecatcher_color" oninput="eyecatcher.setFontColor(this)">
            
@@ -26,13 +26,7 @@
         </div>
     </section>
     
-    <section class="selected_only">
-        <div class="row">
-            <button class="to-front" onClick="component.toFront(this)" title="<?php  echo _('to front');?>"><?php  echo _('to front');?></button>
-            <button class="to-back" onClick="component.toBack(this)" title="<?php  echo _('to back');?>"><?php  echo _('to back');?></button>
-            <button onClick="cockpit.target.remove()" class="delete" title="<?php  echo _('delete');?>"><?php  echo _('delete');?></button>
-        </div>
-        </section>
+    <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 </section>
 
 <script>

@@ -25,7 +25,7 @@
         <textarea placeholder="<?php  echo _('Describe the image you want');?>" 
                 id="dalle_prompt" spellcheck="false" rows="2"
                 oninput="this.rows=this.value.split('\n').length"></textarea>
-        <button class="create flat" onClick="api.dalle()">
+        <button class="create" onClick="api.dalle()">
             <?php  echo _('Create');?>
         </button>
     </section>
@@ -45,10 +45,10 @@
         <div id="dalle_result_response" style="display: none">
             <h3><?php  echo _('Result');?></h3>
             <div id="dalle_result_image"></div>
-            <button class="create flat" onClick="api.useDalle()">
+            <button class="create" onClick="api.useDalle()">
                 <?php  echo _('Use this image');?>
             </button>
-            <button class="create flat" onClick="api.dalle()">
+            <button class="create" onClick="api.dalle()">
                 <?php  echo _('Try again');?>
             </button>
         </div>

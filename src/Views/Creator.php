@@ -42,18 +42,20 @@
 				</div>
 			</div>
 			<div class="workbench-below">
-				<button class="create flat" onClick="api.create()"><img src="assets/icons/download.svg"> <?php  echo _('Download');?></button>
+				<button class="create" onClick="api.create()">
+					<img src="assets/icons/download.svg"> <?php  echo _('Download');?>
+				</button>
 			</div>
 		</div>
 		<div id="cockpit" class="cockpit">
-			<div id="components">
+			<div id="tabs">
 				<?php
 				foreach ( glob( "src/Views/Cockpit/*.php" ) as $filename ) {
 					include $filename;
 				}
 				?>
 			</div>
-			<div id="componentbuttons">
+			<div id="tabsbuttons">
 				<button id="tab_btn_download" onClick="ui.showTab('download')">
 					<img src="assets/icons/resize.svg" title="<?php echo _('Download'); ?>">
 					<div class="description">
