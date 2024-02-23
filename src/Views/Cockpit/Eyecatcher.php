@@ -8,8 +8,8 @@
         <h3><?php  echo _('Size');?></h3>
         <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
     
-        <h3><?php  echo _('Rotation');?></h3>
-        <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
+        <h3 class="no-greens"><?php  echo _('Rotation');?></h3>
+        <input type="range" min="0" max="360" value="0" class="slider no-greens" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
     </section>
 
     <section id="eyecatcher_colors" class="selected_only">

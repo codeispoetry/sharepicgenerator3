@@ -4,6 +4,12 @@ class Component {
   add (item) {
     const pattern = document.querySelector(`[data-id=${item}]`)
 
+    const max = pattern?.dataset?.max || -1
+    const currentCount = document.querySelectorAll(`#sharepic [id^=${item}_]`).length
+    if(max !== -1 && currentCount >= max) {
+      return
+    }
+
     const clonedElement = pattern.cloneNode(true)
     const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
 

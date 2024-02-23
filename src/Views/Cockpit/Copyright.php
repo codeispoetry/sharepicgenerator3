@@ -1,5 +1,9 @@
 <section class="mainsection" id="cockpit_copyright">
     <h2><?php  echo _('Copyright');?></h2>
+
+    <section>
+        <button onClick="component.add('copyright')"><?php  echo _('Add copyright');?></button>
+    </section>
     
     <section>
         <h3><?php  echo _('Size');?></h3>
@@ -17,12 +21,20 @@
 <script>
     class Copyright{
         setSize(input){
-            document.getElementById('copyright').style.fontSize = input.value + 'px';
+            const e = document.getElementById('copyright');
+            if( !e ) {
+                return;
+            }
+            e.style.fontSize = input.value + 'px';
             undo.commit()
         }
 
         setFontColor(input) {      
-            document.getElementById('copyright').style.color = input.value;
+            const e = document.getElementById('copyright');
+            if( !e ) {
+                return;
+            }
+            e.style.color = input.value;
             undo.commit()
         }
     }

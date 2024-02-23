@@ -14,12 +14,10 @@
         }
     </style>
 </head>
-<body>
+<body class="<?php echo $body_classes;?>">
     
 <header>
     <?php
-		$templates = $this->config->get('Templates');
-		$published = $this->get_published();
 		include 'src/Views/Menu.php'; 
 	?>
 </header>
@@ -88,7 +86,7 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
+				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')" class="no-greens">
 					<div>
 						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 						<div class="description">

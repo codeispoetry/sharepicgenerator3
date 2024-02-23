@@ -33,6 +33,10 @@ class Cockpit {
   }
 
   setup_eyecatcher (element) {
+    if( config.starttemplate === 'de' ) {
+      return;
+    }
+
     document.getElementById('eyecatcher_size').value = element.style.fontSize.replace('px', '')
     document.getElementById('eyecatcher_color').value = ui.rgbToHex(element.style.color)
     document.getElementById('eyecatcher_bgcolor').value = ui.rgbToHex(element.querySelector('#sticker_bg').style.fill)

@@ -57,9 +57,15 @@ class Pixabay {
         logger.log('clicks on image after search for ' + q)
 
         document.getElementById('sharepic').style.backgroundImage = img.style.backgroundImage
+        console.log("set thumnbail")
         api.loadByUrl(img.dataset.url)
 
-        document.getElementById('copyright').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
+        // is copyrigth already shown?
+        const copyright = document.getElementById('copyright')
+        if (!copyright) {
+          component.add('copyright')
+        }
+        document.querySelector('[id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
       }
       results.appendChild(img)
     })

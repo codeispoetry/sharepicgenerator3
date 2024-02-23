@@ -379,6 +379,7 @@ class API {
         data = JSON.parse(data)
 
         document.getElementById('sharepic').style.backgroundImage = `url('${data.path}?rand=${Math.random()}')`
+        console.log("main pic loaded")
       })
       .catch(error => console.error('Error:', error))
   }

@@ -335,7 +335,7 @@ msgstr "Schatten ein-/ausschalten"
 #: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:78
 #: src/Views/Creator.php:80
 msgid "Copyright"
-msgstr "Urheberrechtshinweis"
+msgstr "Urheberrechts&shy;hinweis"
 
 #: src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground pictures"

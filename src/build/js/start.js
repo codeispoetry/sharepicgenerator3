@@ -14,5 +14,5 @@ window.onload = function () {
   logger = new Logger()
 
   rte.add('#text')
-  ui.showTab('search')
+  ui.showTab('download')
 }
