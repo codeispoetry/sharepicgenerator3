@@ -464,7 +464,7 @@ msgstr "E-Mail"
 #: src/Views/Components/Forms/Register.php:8
 #, php-format
 msgid "I have read the %sterms of condition%s and accept them.</a>"
-msgstr "I habe die %sNutzungsbedingungen%s gelesen und akzeptiere sie.</a>"
+msgstr "Ich habe die %sNutzungsbedingungen%s gelesen und akzeptiere sie.</a>"
 
 #: src/Views/Components/Forms/Register.php:16
 msgid "register"

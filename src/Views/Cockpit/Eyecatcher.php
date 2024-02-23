@@ -15,12 +15,15 @@
     <section id="eyecatcher_colors" class="selected_only">
         <h3><?php echo _('Colors');?></h3>
        
-        <h4><?php  echo _('Font');?></h4>
-        <input type="color" value="#ffffff" class="" id="eyecatcher_color" oninput="eyecatcher.setFontColor(this)">
-    
-        <h4><?php  echo _('Background');?></h4>
-        <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor" oninput="eyecatcher.setBgColor(this)">
+        <div class="horizontal">
+            <input type="color" value="#ffffff" class="" id="eyecatcher_color" oninput="eyecatcher.setFontColor(this)">
+            <h4><?php  echo _('Font');?></h4>
+        </div>
 
+        <div class="horizontal">
+            <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor" oninput="eyecatcher.setBgColor(this)">
+            <h4><?php  echo _('Background');?></h4>
+        </div>
     </section>
     
     <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>

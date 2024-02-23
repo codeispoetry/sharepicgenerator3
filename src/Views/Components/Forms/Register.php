@@ -13,7 +13,7 @@
         </p>
     </label>
     <br>
-    <input type="submit" name="submit" value="<?php  echo _('register');?>">
+    <button type="submit" name="submit"><?php  echo _('register');?></button>
 </form>
 
 <dialog id="terms_condition" style="margin: 30px">

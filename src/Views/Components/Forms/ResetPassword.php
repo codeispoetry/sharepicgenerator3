@@ -16,7 +16,7 @@
     <input type="hidden" name="token" value="<?php echo $token;?>">
     <input type="password" name="password" id="rp_password" placeholder="<?php  echo _('password');?>" autocomplete="new-password"><br>
     <input type="password" name="password_repeat" id="rp_password_repeat" placeholder="<?php  echo _('password repeat');?>"><br>
-    <input type="submit" name="submit" value="<?php echo $submit_value; ?>">
+    <button type="submit" name="submit"><?php echo $submit_value; ?></button>
 </form>
 
 <script>

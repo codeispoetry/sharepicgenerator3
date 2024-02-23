@@ -328,8 +328,6 @@ class API {
 
     const imageUrl = URL.createObjectURL(file)
 
-    document.querySelector('.file-upload').disabled = true
-
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload_addpic', true)
     xhr.upload.onprogress = function (e) {
@@ -348,8 +346,6 @@ class API {
       } else {
         console.error('Error:', this.status, this.statusText)
       }
-
-      document.querySelector('.file-upload').disabled = false
 
       logger.log('uploaded addpic')
     }

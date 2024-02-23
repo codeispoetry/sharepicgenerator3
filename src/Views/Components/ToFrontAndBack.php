@@ -8,8 +8,12 @@
         <button class="to-back no-button" onClick="component.toBack(this)" title="<?php  echo _('to back');?>">
             <img src="assets/icons/to_back.svg" alt="<?php  echo _('to back');?>" />
         </button>
-        <button class="no-button" onClick="cockpit.target.remove()" title="<?php  echo _('delete');?>">
-            <img src="assets/icons/delete.svg" alt="<?php  echo _('delete');?>" />
-        </button>
     </div>
+</section>
+
+<section class="selected_only">
+    <button class="outline" onClick="cockpit.target.remove()" title="<?php  echo _('delete');?>">
+        <img src="assets/icons/delete.svg" alt="<?php  echo _('delete');?>" />
+        <?php  echo _('delete');?>
+    </button>
 </section>
