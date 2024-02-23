@@ -94,7 +94,7 @@ async function prepareLocalUser (config) {
   })
 
   // Delete sharepic
-  exec('rm tests/tmp/test-sharepic.png', (error, stdout, stderr) => {
+  exec('rm tests/tmp/test-sharepic.png', () => {
     console.log('Old downloaded sharepic deleted')
   })
 }

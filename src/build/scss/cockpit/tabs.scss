@@ -21,22 +21,7 @@
             border-radius: 0;
 
             &:last-child{
-                margin-top: auto;
-            }
-
-            &:hover{
-                background-color: $light;
-            }
-
-            &.active{
-                background-color: $dark;
-                margin-left: -1px;
-            }
-
-            &:hover{
-                .description{
-                    display: flex;
-                }
+               margin-top: auto;
             }
 
             .description{
@@ -54,6 +39,19 @@
                 padding-left: 10px;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
+            }
+
+            &:hover{
+                background-color: $light;
+
+                .description{
+                    display: flex;
+                }
+            }
+
+            &.active{
+                background-color: $dark;
+                margin-left: -1px;
             }
         }
     }

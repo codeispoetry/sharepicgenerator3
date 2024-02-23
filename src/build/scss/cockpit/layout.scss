@@ -27,6 +27,21 @@
         }
     }
 
+    .horizontal{
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        button{
+            width: auto;
+            margin-right: 1em;
+        }
+
+        input{
+            margin-right: 1em;
+        }
+    }
+    
     .dimensions{
         display: flex;
         align-items: center;
@@ -43,20 +58,6 @@
             &:hover{
                 background-color: $theme-color;
             }
-        }
-    }
-
-    .horizontal{
-        display: flex;
-        align-items: center;
-
-        button{
-            width: auto;
-            margin-right: 1em;
-        }
-
-        input{
-            margin-right: 1em;
         }
     }
 }

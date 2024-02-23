@@ -59,22 +59,6 @@ button{
             font-style: italic;
         }
     }
-
-    .button-group{
-        display: flex;
-
-        input{
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        button{
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            width: 5em;
-        }
-    }
-
     input{
         border: 0;
         padding: 10px;
@@ -135,7 +119,6 @@ button{
             
             &::-webkit-slider-runnable-track{
                 background: $verydark;
-                height: 100px;
                 width: 300px;
                 height: 5px;
                 border: none;
@@ -149,6 +132,23 @@ button{
           
         }
     }
+    
+    .button-group{
+        display: flex;
+
+        input{
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        button{
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            width: 5em;
+        }
+    }
+
+
     textarea{
         width: 100%;
         box-sizing: border-box;
