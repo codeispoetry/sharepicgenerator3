@@ -13,7 +13,7 @@
 			<?php
 				echo '<h3>' . _('Login') . '</h3>';
 			?>
-			<a href="index.php?c=frontend&m=create" class="flat">
+			<a href="index.php?c=frontend&m=create">
 				<?php  echo _('login');?>
 			</a>
 

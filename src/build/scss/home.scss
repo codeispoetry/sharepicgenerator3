@@ -34,5 +34,10 @@ body.home{
                 } 
             }
         }
+
+        #loginbox{
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

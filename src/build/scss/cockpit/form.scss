@@ -91,20 +91,22 @@ button{
             -webkit-appearance: none;
             position: relative;
 
+            &::before, &::after{
+                color: white;
+                position: absolute;
+                line-height: 20px;
+                top: 20px;
+                font-size: 20px;
+            }
+
             &::before{
                 content: '-';
-                position: absolute;
-                top: 16px;
-                font-size: 20px;
+                left: 13px;
             }
 
             &::after{
                 content: '+';
-                position: absolute;
-                right: 10px;
-                top: 14px;
-                font-size: 20px;
-               
+                right: 12px;
             }
 
             &::-webkit-slider-thumb {

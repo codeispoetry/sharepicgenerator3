@@ -57,54 +57,70 @@
 			</div>
 			<div id="tabsbuttons">
 				<button id="tab_btn_download" onClick="ui.showTab('download')">
-					<img src="assets/icons/resize.svg" title="<?php echo _('Download'); ?>">
-					<div class="description">
-						<?php echo _('Dimensions'); ?>
+					<div>
+						<img src="assets/icons/resize.svg" title="<?php echo _('Download'); ?>">
+						<div class="description">
+							<?php echo _('Dimensions'); ?>
+						</div>
 					</div>
 				</button>
 				<button id="tab_btn_search"  onClick="ui.showTab('search')">
-					<img src="assets/icons/search_image.svg" title="<?php echo _('Search or create image'); ?>">
-					<div class="description">
-						<?php echo _('Search or create image'); ?>
+					<div>
+						<img src="assets/icons/search_image.svg" title="<?php echo _('Search or create image'); ?>">
+						<div class="description">
+							<?php echo _('Search or create image'); ?>
+						</div>
 					</div>
 				</button>
 				<button id="tab_btn_background" onClick="ui.showTab('background')" class="active">
-					<img src="assets/icons/wallpaper.svg" title="<?php echo _('Image'); ?>">
-					<div class="description">
-						<?php echo _('Image'); ?>
+					<div>
+						<img src="assets/icons/wallpaper.svg" title="<?php echo _('Image'); ?>">
+						<div class="description">
+							<?php echo _('Image'); ?>
+						</div>
 					</div>
 				</button>
 				<button id="tab_btn_copyright" onClick="ui.showTab('copyright')">
-					<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
-					<div class="description">
-						<?php echo _('Copyright'); ?>
+					<div>
+						<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
+						<div class="description">
+							<?php echo _('Copyright'); ?>
+						</div>
 					</div>
 				</button>
 				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
-					<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
-					<div class="description">
-						<?php echo _('Text'); ?>
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+						<div class="description">
+							<?php echo _('Text'); ?>
+						</div>
 					</div>
 				</button>
 				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
-					<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
-					<div class="description">
-						<?php echo _('Eyecatcher'); ?>
+					<div>
+						<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
+						<div class="description">
+							<?php echo _('Eyecatcher'); ?>
+						</div>
 					</div>
 				</button>
 				<button id="tab_btn_addpicture"  onClick="ui.showTab('addpicture')">
-					<img src="assets/icons/add_image.svg" title="<?php echo _('Front picture'); ?>">
-					<div class="description">
-						<?php echo _('Front picture'); ?>
+					<div>
+						<img src="assets/icons/add_image.svg" title="<?php echo _('Front picture'); ?>">
+						<div class="description">
+							<?php echo _('Front picture'); ?>
+						</div>
 					</div>
 				</button>
 
 				<button>
-					<a href="index.php?c=frontend&m=logout" class="link">
-						<img src="assets/icons/logout.svg">
-					</a>
-					<div class="description">
-						<?php echo ( $this->user->is_logged_in() ) ? _('Logged in as') . ' ' . $this->user->get_username() : '' ?>
+					<div>
+						<a href="index.php?c=frontend&m=logout" class="link">
+							<img src="assets/icons/logout.svg">
+						</a>
+						<div class="description">
+							<?php echo ( $this->user->is_logged_in() ) ? _('Logged in as') . ' ' . $this->user->get_username() : '' ?>
+						</div>
 					</div>
 				</button>
 
