@@ -38,7 +38,6 @@ test('Overall test', async ({ page }) => {
   await page.locator('#pixabay_results div.image:first-child').click()
 
   // Change color of copyright
-  await page.locator('#tab_btn_background').click()
   await page.locator('#copyright_color').fill('#f96654')
 
   // Add eyecatcher, then edit and move it

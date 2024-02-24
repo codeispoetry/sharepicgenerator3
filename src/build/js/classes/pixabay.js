@@ -13,9 +13,9 @@ class Pixabay {
     const q = document.getElementById('pixabay_q').value
 
     const page = 1
-    const perPage = 20
-    const url = `https://pixabay.com/api/?key=${config.pixabay.apikey}&q=${encodeURIComponent(q)}&image_type=photo&page=${page}&perPage=${perPage}&lang=de`
-
+    const perPage = 80
+    const url = `https://pixabay.com/api/?key=${config.pixabay.apikey}&q=${encodeURIComponent(q)}&image_type=photo&page=${page}&per_page=${perPage}&lang=de`
+console.log(url)
     fetch(url)
       .then(response => response.json())
       .then(data => {

@@ -5,12 +5,12 @@
         <button onClick="component.add('copyright')"><?php  echo _('Add copyright');?></button>
     </section>
     
-    <section>
+    <section class="selected_only">
         <h3><?php  echo _('Size');?></h3>
         <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size" oninput="copyright.setSize(this)">
     </section>
 
-    <section>
+    <section class="selected_only">
         <h3><?php  echo _('Color');?></h3>
         <input type="color" value="#ffffff" class="" id="copyright_color" oninput="copyright.setFontColor(this)">
     
