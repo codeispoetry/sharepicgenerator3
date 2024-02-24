@@ -4,6 +4,7 @@ class Component {
   add (item) {
     const pattern = document.querySelector(`[data-id=${item}]`)
 
+    // Check if the maximum number of elements is reached
     const max = pattern?.dataset?.max || -1
     const currentCount = document.querySelectorAll(`#sharepic [id^=${item}_]`).length
     if(max !== -1 && currentCount >= max) {
@@ -35,6 +36,8 @@ class Component {
     // and select it (the click event is not enough to select it, because the input event is not yet processed)
     component.select(document.getElementById(newId))
 
+    this.toFront(document.getElementById(newId))
+
     undo.commit()
   }
 
@@ -51,6 +54,11 @@ class Component {
 
     document.querySelector('.selected')?.classList.remove('selected')
     cockpit.target = null
+  }
+
+  delete () {
+    cockpit.target.remove()
+    this.unselect()
   }
 
   toFront (element) {

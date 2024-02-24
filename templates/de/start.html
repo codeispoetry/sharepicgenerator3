@@ -19,6 +19,7 @@
         onclick="component.select(this)"
         onmousedown="component.startDrag(event)"
         id="greentext"
+        spellcheck="false"
         contenteditable="true"
         style="
             left: 120px;
@@ -34,6 +35,7 @@
         onclick="component.select(this)"
         onmousedown="component.startDrag(event)"
         data-cockpit="logo" data-clipping="true"
+        contenteditable="false"
         style="
             width: 400px;
             height: 400px;
@@ -60,14 +62,15 @@
         </div>
 
         <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
-        data-max="1"
+        data-max="1" spellcheck="false"
         contenteditable="true" oninput="eyecatcher.makeSquare(this);" onclick="component.select(this)"
         onmousedown="component.startDrag(event)" style="
                     z-index:2; 
-                    left: 12px; top: 260px; 
+                    left: 5px; top: 5px; 
                     font-size: 20px; 
                     color: #e9e9e9; 
                     background-color: #0ba1dd;
+                    width: 40px; height: 40px;
                 "
         >
             <div>

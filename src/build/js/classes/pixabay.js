@@ -57,7 +57,6 @@ class Pixabay {
         logger.log('clicks on image after search for ' + q)
 
         document.getElementById('sharepic').style.backgroundImage = img.style.backgroundImage
-        console.log("set thumnbail")
         api.loadByUrl(img.dataset.url)
 
         // is copyrigth already shown?
