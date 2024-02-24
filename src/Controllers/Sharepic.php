@@ -264,6 +264,7 @@ class Sharepic {
 	 * Loads an image from a URL.
 	 */
 	public function load_from_url() {
+		$this->logger->access( 'Loading image from URL' );
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
 		$url = $data['url'] ?? false;
@@ -284,6 +285,7 @@ class Sharepic {
 		copy( $url, $upload_file );
 		$this->reduce_filesize( $upload_file );
 
+		$this->logger->access( 'Image loaded from URL' );
 		echo json_encode( array( 'path' => $upload_file ) );
 	}
 
