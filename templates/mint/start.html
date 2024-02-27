@@ -13,12 +13,7 @@
         <p>Tippe Deinen Text hier.</p>
     </div>
 
-    <div id="copyright" class="selectable" data-cockpit="background" contenteditable="true" spellcheck="false" style="
-            font-size: 14px;
-            color: #000000;
-            z-index: 10;
-        ">&nbsp;Hinweis
-    </div>
+
 </div>
 
 <div id="patterns">
@@ -60,6 +55,18 @@
         </div>
     </div>
 
+    <div
+        data-class="selectable copyright" 
+        data-cockpit="copyright" 
+        data-id="copyright"
+        contenteditable="true" spellcheck="false" 
+        onclick="component.select(this)"
+        style="
+            font-size: 14px;
+            color: #000000;
+            z-index: 10;
+        ">&nbsp;Hinweis
+</div>
 
     <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
         onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
@@ -80,7 +87,17 @@
         ">Bildbeschreibung</div>
     </div>
 </div>
-
+<style>
+	.ql-font-Roboto-Light {
+		font-family: 'Roboto', sans-serif;
+	}
+	.ql-font-Baloo2 {
+		font-family: 'Baloo2', cursive;
+	}
+	.ql-font-Calibri, .ql-editor {
+		font-family: 'Calibri', sans-serif;
+	}
+</style>
 <script>
     document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/mint/styles.css?r= ' + Math.random() + '">');
 

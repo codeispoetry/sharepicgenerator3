@@ -39,9 +39,9 @@
   <button class="ql-align" value="right"></button>
   <button class="ql-align" value="justify"></button>
 
-  <select class="ql-size" onChange="rte.setClass(this.value);">
-	<option value="tanne">Tanne</option>
-	<option value="klee">Klee</option>
+  <select style="display: none" class="ql-size" onChange="rte.setClass(this.value);">
+    <option value="tanne">Tanne</option>
+    <option value="klee">Klee</option>
   </select>
   <button class="ql-clean"></button>
 </div>

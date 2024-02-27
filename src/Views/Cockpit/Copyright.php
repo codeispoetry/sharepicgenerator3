@@ -13,9 +13,9 @@
     <section class="selected_only">
         <h3><?php  echo _('Color');?></h3>
         <input type="color" value="#ffffff" class="" id="copyright_color" oninput="copyright.setFontColor(this)">
-    
-        <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
     </section>
+
+    <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 </section>
 
 <script>

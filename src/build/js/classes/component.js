@@ -10,7 +10,7 @@ class Component {
     if(max !== -1 && currentCount >= max) {
       return
     }
-
+console.log(pattern)
     const clonedElement = pattern.cloneNode(true)
     const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
 
