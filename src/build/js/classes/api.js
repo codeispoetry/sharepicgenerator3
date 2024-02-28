@@ -272,7 +272,6 @@ class API {
   }
 
   upload (btn) {
-    console.log(btn.files.length)
     if (!btn.files.length) {
       return
     }
@@ -309,6 +308,8 @@ class API {
       if (copyright) {
         copyright.innerHTML = ''
       }
+
+      ui.showTab('background')
 
       logger.log('uploaded file')
     }

@@ -13,17 +13,17 @@
 			<?php
 				echo '<h3>' . _('Login') . '</h3>';
 			?>
-			<a href="index.php?c=frontend&m=create">
-				<?php  echo _('login');?>
+			<a href="index.php?c=frontend&m=create" class="button">
+				<img src="assets/icons/login.svg" style="margin-right: 10px">
+				<?php  echo _('login with Grünes Netz ');?>
 			</a>
 
-			<a href="index.php?self=true">
-				<?php  echo _('Login as guest');?>
-			</a>
+			<small style="text-align: right; margin-top: 20px">
+				<a href="index.php?self=true">
+					<?php  echo _('Login as guest');?>
+				</a>
+			</small>
 
-			<a href="index.php?c=frontend&m=create&auto=einigungshilfe">
-				Einigungshilfe
-			</a>
 		</div>
 	
 	</div>	

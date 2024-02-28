@@ -1,4 +1,4 @@
-body.de{
+body.greens{
     #toolbar,
     #eyecatcher_colors,
     .no-greens{
@@ -79,6 +79,18 @@ body.de{
                     width: 80px;
                 }
             }
+        }
+    }
+
+    .button{
+        background-color: $tanne;
+        color: $sand;
+        padding: 10px;
+        text-decoration: none;
+        display: flex;
+
+        &:hover{
+            background-color: $klee;
         }
     }
 

@@ -233,8 +233,8 @@ class Frontend {
 	 */
 	public function index() {
 		global $config;
-		$body     = 'home';
 		$template = ( 'greens' === $config->get( 'Main', 'authenticator' ) ) ? 'Home-Greens' : 'Home';
+		$body =  ( 'greens' === $config->get( 'Main', 'authenticator' ) ) ? 'greens' : 'mint';
 		include_once './src/Views/' . $template . '.php';
 	}
 

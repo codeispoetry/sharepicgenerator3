@@ -8,7 +8,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-<body class="<?php echo $body ?? ''; ?>">
+<body class="home <?php echo $body ?? ''; ?>">
     
 <header>
 <nav>
