@@ -9,6 +9,8 @@ class RichTextEditor {
       return
     }
 
+    document.querySelector(selector).style.zIndex = "100"
+
     const fontAttributor = Quill.import('attributors/class/font')
     fontAttributor.whitelist = ['Baloo2', 'Roboto-Light', 'Calibri']
     Quill.register(fontAttributor, true)

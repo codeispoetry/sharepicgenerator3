@@ -89,7 +89,7 @@
 }
 
 #sharepic{
-    overflow: hidden;
+    overflow: unset;
 
     .selected{
         border: 2px dotted black;

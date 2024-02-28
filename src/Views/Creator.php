@@ -72,9 +72,9 @@
 				</button>
 				<button id="tab_btn_background" onClick="ui.showTab('background')" class="active">
 					<div>
-						<img src="assets/icons/wallpaper.svg" title="<?php echo _('Image'); ?>">
+						<img src="assets/icons/wallpaper.svg" title="<?php echo _('Edit background image'); ?>">
 						<div class="description">
-							<?php echo _('Image'); ?>
+							<?php echo _('Edit background image'); ?>
 						</div>
 					</div>
 				</button>
