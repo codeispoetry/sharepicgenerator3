@@ -149,6 +149,18 @@
 	.ql-font-Calibri {
 		font-family: 'Calibri', sans-serif;
 	}
+
+	[data-value="Baloo2"]::before {
+		content: 'Baloo2' !important;
+	}
+
+	[data-value="Roboto-Light"]::before {
+		content: 'Roboto' !important;
+	}
+
+	[data-value="Calibri"]::before {
+		content: 'Calibri' !important;
+	}
 </style>
 
 <script>

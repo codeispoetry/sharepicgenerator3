@@ -1,9 +1,6 @@
 /* eslint-disable no-undef, no-unused-vars */
 class RichTextEditor {
   init () {
-    const FontAttributor = Quill.import('attributors/class/font');
-    FontAttributor.whitelist = ['Baloo2', 'Roboto-Light', 'Calibri']
-    Quill.register(FontAttributor, true)
 
   }
 
@@ -11,7 +8,11 @@ class RichTextEditor {
     if (!document.querySelector(selector)) {
       return
     }
-    
+
+    const fontAttributor = Quill.import('attributors/class/font');
+    fontAttributor.whitelist = ['Baloo2', 'Roboto-Light', 'Calibri']
+    Quill.register(fontAttributor, true)
+
     const toolbarOptions = [
       ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
       ['blockquote', 'code-block'],
@@ -20,13 +21,12 @@ class RichTextEditor {
       [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
       [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
       [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-      [{ 'direction': 'rtl' }],                         // text direction
     
       [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
       [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
     
       [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-      [{ 'font': [] }],
+      [{ 'font': fontAttributor.whitelist }],
       [{ 'align': [] }],
     
       ['clean']                                         // remove formatting button
