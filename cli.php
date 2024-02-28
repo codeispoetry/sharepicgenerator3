@@ -86,7 +86,9 @@ if ( 'flush' === $command ) {
 	}
 }
 
-
+if ( 'clean' === $command ) {
+	printf( "All savings deleted.\n", $cli->delete_savings() );
+}
 
 /**
  * The CLI class.
@@ -220,5 +222,14 @@ class CLI {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Delete all savings.
+	 */
+	public function delete_savings() {
+		$cmd = 'rm -rf users/*/save';
+		exec( $cmd, $output, $return_var );
+		return ( 0 === $return_var && empty( $output ) );
 	}
 }
