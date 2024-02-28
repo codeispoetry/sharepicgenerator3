@@ -1,0 +1,86 @@
+<div id="sharepic"
+    style="	background-color: #8abd24;
+            NOPEbackground-image: url('templates/bw-kandi-vorstellung/start.jpg');
+			background-repeat: no-repeat;
+			background-position: 0px 0px; 
+			width: 800px; height:800px;
+			border:0;
+			overflow:hidden;"
+    		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
+
+    <div id="bar" style="
+            position: absolute;
+            width: 142px;
+            height: 115%;
+            background-color: #005437;
+            transform: rotate(9.5deg);
+            right: 0;
+            bottom: 0px;
+            transform-origin: bottom left;
+        ">
+    </div>
+    <div 
+        class="" 
+        data-cockpit="greentext"  
+        id="greentext"
+        spellcheck="false"
+        contenteditable="false"
+        style="
+            top: unset;
+            left: unset;
+            right: 60px;
+            bottom: 40px;
+        "
+    >
+        <div class="m sandklee" contenteditable="true">Vorname Nachname</div>
+        <div class="s tannesand" contenteditable="true" style="
+            align-self: flex-end;
+            margin-right: 30px;
+        ">Listenplatz 2</div>
+    </div>
+
+    <div class="" id="logo" 
+        contenteditable="false"
+        style="
+            width: 300px;
+            height: 300px;
+            background-image: url('templates/de/logo.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: -140px;
+            top: -110px;
+            position: absolute;
+        "
+    ></div>
+
+    <div id="patterns">
+    </div>
+
+    <script>
+        document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-kandi-vorstellung/styles.css?r= ' + Math.random() + '">');
+
+        document.getElementById('tabsbuttons').style.display = 'flex'
+        document.querySelector('#cockpit .show')?.classList.remove('show')
+        document.getElementById('cockpit_search')?.classList.add('show')
+
+        document.getElementById('tab_btn_copyright').style.display = 'none'
+        document.getElementById('tab_btn_freetext').style.display = 'none'
+        document.getElementById('tab_btn_eyecatcher').style.display = 'none'
+        document.getElementById('tab_btn_addpicture').style.display = 'none'
+        document.getElementById('search_dalle').style.display = 'none'
+        document.getElementById('search_pixabay').style.display = 'none'
+
+
+
+
+
+    </script>
+</div>
+
+<style>
+    @font-face {
+        font-family: "GrueneType";
+        src: url("assets/fonts/GrueneType.woff2") format("woff2");
+    }
+</style>
+
