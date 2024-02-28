@@ -48,7 +48,7 @@ class Openai {
 
 		$response = $this->curl( $data['prompt'] );
 
-		$json     = json_decode( $response );
+		$json = json_decode( $response );
 
 		if ( empty( $json ) || empty( $json->data ) ) {
 			header( 'HTTP/1.0 500 ' . $json->error->message );

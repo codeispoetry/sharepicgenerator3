@@ -33,8 +33,8 @@ class Cockpit {
   }
 
   setup_eyecatcher (element) {
-    if( config.starttemplate === 'de' ) {
-      return;
+    if (config.starttemplate === 'de') {
+      return
     }
 
     document.getElementById('eyecatcher_size').value = element.style.fontSize.replace('px', '')
@@ -60,7 +60,6 @@ class Cockpit {
   }
 
   setup_copyright (element) {
-
     document.getElementById('copyright_size').value = element.style.fontSize.replace('px', '')
     document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
   }

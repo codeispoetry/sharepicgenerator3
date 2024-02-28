@@ -37,8 +37,6 @@ class UI {
       element.style.display = (cockpit.target === null) ? 'none' : 'block'
     })
 
-    
-
     document.querySelector('#cockpit .show')?.classList.remove('show')
     document.querySelector('#cockpit .active')?.classList.remove('active')
 

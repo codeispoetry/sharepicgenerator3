@@ -7,7 +7,7 @@ class Component {
     // Check if the maximum number of elements is reached
     const max = pattern?.dataset?.max || -1
     const currentCount = document.querySelectorAll(`#sharepic [id^=${item}_]`).length
-    if(max !== -1 && currentCount >= max) {
+    if (max !== -1 && currentCount >= max) {
       alert(lang['Max reached'])
       return
     }

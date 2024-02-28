@@ -135,7 +135,7 @@ class API {
             <button class="did-2" onclick="ui.deleteSavedSharepic(this, '${data.id}')">
               <img src="assets/icons/delete.svg">
             </button>
-          </div>`;
+          </div>`
           document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
         } catch (e) {
           console.error(e)
@@ -242,8 +242,13 @@ class API {
         document.getElementById('dalle_prompt').value = hint
         document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '?rand=' + Math.random() + '" />'
 
-        document.getElementById('copyright').innerHTML = 'Bild generiert von DALL-E'
-
+        // is copyrigth already shown?
+        const copyright = document.querySelector('#sharepic [id^=copyright_]')
+        if (!copyright) {
+          component.add('copyright')
+        }
+        document.querySelector('#sharepic [id^=copyright_]').innerHTML = 'Bild generiert von DALL-E'
+        ui.showTab('search')
         config.dalle = {
           url
         }

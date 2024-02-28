@@ -50,7 +50,7 @@
         <div id="dalle_result_response" style="display: none">
             <h3><?php  echo _('Result');?></h3>
             <div id="dalle_result_image"></div>
-            <button class="create" onClick="api.useDalle()">
+            <button class="create" onClick="api.useDalle()" style="margin-bottom: 1em">
                 <?php  echo _('Use this image');?>
             </button>
             <button class="create" onClick="api.dalle()">
