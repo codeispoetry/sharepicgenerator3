@@ -85,7 +85,6 @@ class API {
     clonedCanvas.querySelector('#greentextContextMenu')?.remove()
 
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css">\n')
-    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="node_modules/quill/dist/quill.bubble.css">\n')
 
     clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../">\n')
 

@@ -62,5 +62,7 @@ class Cockpit {
   setup_copyright (element) {
     document.getElementById('copyright_size').value = element.style.fontSize.replace('px', '')
     document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
+
+    document.getElementById('add_copyright').style.display = 'none'
   }
 }

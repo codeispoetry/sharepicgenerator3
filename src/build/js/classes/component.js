@@ -42,10 +42,6 @@ class Component {
     if (element.classList.contains('selected')) {
       return
     }
-    // Initialize RichtTextEditor on the element
-    if (element.dataset.rte === 'true') {
-      rte.add('#' + element.id)
-    }
 
     document.querySelector('.selected')?.classList.remove('selected')
     element.classList.add('selected')
@@ -59,9 +55,11 @@ class Component {
 
     document.querySelector('.selected')?.classList.remove('selected')
     cockpit.target = null
+    rte.hide()
   }
 
   delete () {
+    document.getElementById('add_copyright').style.display = "flex"
     cockpit.target.remove()
     this.unselect()
   }
@@ -111,9 +109,10 @@ class Component {
   }
 
   startDrag (event) {
-    if (event.button !== 0) {
+    if (event.button !== 0 || !event.target.classList.contains('draggable')) {
       return
     }
+
 
     cockpit.target = this.parentWithOnMouseDown(event.target) || console.error('No parent with onmousedown found')
 

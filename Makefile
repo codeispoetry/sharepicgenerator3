@@ -22,13 +22,13 @@ woff:
 	woff2_compress Pacifico.ttf 
 
 deploy-develop:
-	rsync -avz --delete assets node_modules/quill/dist .htaccess index.php cli.php languages src templates vendor favicon.ico sharepic:/var/www/mint-develop.sharepicgenerator.de
+	rsync -avz --delete assets .htaccess index.php cli.php languages src templates vendor favicon.ico sharepic:/var/www/mint-develop.sharepicgenerator.de
 
 deploy-gruene-develop:
-	rsync -avz --delete assets node_modules/quill/dist .htaccess index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/develop.sharepicgenerator.de/version3
+	rsync -avz --delete assets .htaccess index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/develop.sharepicgenerator.de/version3
 
 deploy-gruene:
-	rsync -avz --delete assets node_modules/quill/dist .htaccess index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/sharepicgenerator.de/version3
+	rsync -avz --delete assets .htaccess index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/sharepicgenerator.de/version3
 
 create-pot:
 	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot

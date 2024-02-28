@@ -7,8 +7,8 @@
         class="freetext draggable selectable" 
         data-cockpit="freetext" 
         data-dragconstraint="true"
-        data-rte="true"
-        onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
+        onclick="component.select(this);rte.setPosition()" 
+        onmousedown="component.startDrag(event)" style="
             z-index: 21; 
             left: 120px; 
             top: 100px; 
@@ -16,7 +16,8 @@
             color: black;
             font-family: Calibri;
         ">
-        <p>Tippe Deinen Text hier.</p>
+
+        <div contenteditable="true">Tippe Deinen Text hier.</div>
     </div>
 
 
@@ -24,13 +25,13 @@
 
 <div id="patterns">
     <div data-id="freetext" data-class="freetext draggable selectable" data-cockpit="freetext"
-        data-dragconstraint="true" data-rte="true" onclick="component.select(this)"
+        data-dragconstraint="true" onclick="component.select(this);rte.setPosition()"
         onmousedown="component.startDrag(event)" style="
                 z-index: 20; 
                 left: 0px; 
                 top: 0px; 
                 font-size: 20px;
-                color: red;
+                color: black;
                 font-family: Calibri;
             ">
         NEUER TEXT
@@ -95,17 +96,7 @@
         ">Bildbeschreibung</div>
     </div>
 </div>
-<style>
-	.ql-font-Roboto-Light {
-		font-family: 'Roboto', sans-serif;
-	}
-	.ql-font-Baloo2 {
-		font-family: 'Baloo2', cursive;
-	}
-	.ql-font-Calibri, .ql-editor {
-		font-family: 'Calibri', sans-serif;
-	}
-</style>
+
 <script>
     document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/mint/styles.css?r= ' + Math.random() + '">');
 </script>

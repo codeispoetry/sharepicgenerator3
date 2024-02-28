@@ -2,7 +2,7 @@
     <h2><?php  echo _('Copyright');?></h2>
 
     <section>
-        <button onClick="component.add('copyright')"><?php  echo _('Add copyright');?></button>
+        <button onClick="component.add('copyright')" id="add_copyright"><?php  echo _('Add copyright');?></button>
     </section>
     
     <section class="selected_only">

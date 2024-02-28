@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharepicgenerator</title>
     <link rel="stylesheet" href="assets/styles.css?v=<?php echo filemtime('assets/styles.css');?>">
-    <link href="node_modules/quill/dist/quill.bubble.css" rel="stylesheet">
-    <script src="node_modules/quill/dist/quill.js"></script>
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         #canvas{
@@ -47,6 +45,9 @@
 					<img src="assets/icons/download.svg"> <?php  echo _('Download');?>
 				</button>
 			</div>
+			<?php
+				require 'src/Views/RTE.php';
+			?>
 		</div>
 		<div id="cockpit" class="cockpit">
 			<div id="tabs">
@@ -143,6 +144,14 @@
 </dialog>
 
 <style>
+
+	.red{
+		color: red;
+	}	
+	.green{
+		color: green;
+	}
+
 	.ql-font-Roboto-Light {
 		font-family: 'Roboto', sans-serif;
 	}

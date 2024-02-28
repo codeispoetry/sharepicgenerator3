@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, no-unused-vars, no-var */
-var api, sg, cockpit, undo, pixabay, component, rte, quill, logger, ui
+var api, sg, cockpit, undo, pixabay, component, rte, logger, ui
 
 window.onload = function () {
   api = new API()

@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
-    "puppeteer": "^22.0.0",
-    "quill": "^2.0.0-rc.2"
+    "puppeteer": "^22.0.0"
   }
 }
