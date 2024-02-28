@@ -56,7 +56,7 @@
 
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
-        <div class="dropdown-content">
+        <div id="my-sharepics" class="dropdown-content">
             <?php
                 // Last
                 $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';

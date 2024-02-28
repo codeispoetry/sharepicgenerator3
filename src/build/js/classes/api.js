@@ -101,6 +101,7 @@ class API {
     return data
   }
 
+  // mode=save or mode=publish
   save (mode = 'save') {
     const name = prompt('Name des Sharepics', 'Sharepic')
 
@@ -126,20 +127,16 @@ class API {
       .then(data => {
         data = JSON.parse(data)
 
-        const mySharepics = document.querySelector('#my-sharepics')
-
         try {
-          const clonedEntry = mySharepics.lastElementChild.cloneNode(true)
-
-          const buttons = clonedEntry.querySelectorAll('button')
-          const firstButton = buttons[0]
-          const secondButton = buttons[1]
-
-          firstButton.innerHTML = name
-          firstButton.dataset.load = data.full_path
-          secondButton.dataset.delete = data.id
-
-          mySharepics.appendChild(clonedEntry)
+          const html = `<div class="dropdown-item-double">
+            <button class="did-1" onclick="api.load('${data.full_path}')">
+              ${name}
+            </button>
+            <button class="did-2" onclick="ui.deleteSavedSharepic(this, '${data.id}')">
+              <img src="assets/icons/delete.svg">
+            </button>
+          </div>`;
+          document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
         } catch (e) {
           console.error(e)
         }
@@ -234,7 +231,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         const hint = data.data[0].revised_prompt
