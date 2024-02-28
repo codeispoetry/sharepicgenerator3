@@ -50,8 +50,7 @@
 
         makeSquare (whole) {
             if(cockpit.target === null) return
-            
-            console.log("make square")
+
             const text = whole.querySelector('div')
             text.style.width = 'auto'
             text.style.height = 'auto'

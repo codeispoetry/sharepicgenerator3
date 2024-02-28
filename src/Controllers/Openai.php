@@ -34,7 +34,7 @@ class Openai {
 	}
 
 	/**
-	 * Undocumented function
+	 * Function, that is called from the frontend to get the response from the OpenAI API.
 	 *
 	 * @return void
 	 */
@@ -47,8 +47,13 @@ class Openai {
 		}
 
 		$response = $this->curl( $data['prompt'] );
+
 		$json     = json_decode( $response );
 
+		if ( empty( $json ) || empty( $json->data ) ) {
+			header( 'HTTP/1.0 500 ' . $json->error->message );
+			die();
+		}
 		$remote_url = $json->data[0]->url;
 		$local_file = 'users/' . $this->user . '/workspace/background.png';
 		copy( $remote_url, $local_file );

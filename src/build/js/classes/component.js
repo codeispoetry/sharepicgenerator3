@@ -10,7 +10,6 @@ class Component {
     if(max !== -1 && currentCount >= max) {
       return
     }
-console.log(pattern)
     const clonedElement = pattern.cloneNode(true)
     const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
 
@@ -29,14 +28,16 @@ console.log(pattern)
       rte.add('#' + newId)
     }
 
+    const newElement = document.getElementById(newId)
+    cockpit.target = newElement
     // Click on the new element
     const inputEvent = new Event('input')
-    document.getElementById(newId).dispatchEvent(inputEvent)
+    newElement.dispatchEvent(inputEvent)
 
     // and select it (the click event is not enough to select it, because the input event is not yet processed)
-    component.select(document.getElementById(newId))
+    component.select(newElement)
 
-    this.toFront(document.getElementById(newId))
+    this.toFront(newElement)
 
     undo.commit()
   }
