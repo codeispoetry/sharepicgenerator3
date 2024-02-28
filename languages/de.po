@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-23 13:44+0100\n"
+"POT-Creation-Date: 2024-02-28 14:13+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -19,16 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.1\n"
 
-#: src/Controllers/Frontend.php:81 src/Controllers/Frontend.php:87
-#: src/Views/Home.php:17 src/Views/Home.php:24
+#: src/Controllers/Frontend.php:85 src/Controllers/Frontend.php:91
+#: src/Views/Home.php:17 src/Views/Home.php:28
 msgid "Register"
 msgstr "Registrierung"
 
-#: src/Controllers/Frontend.php:82
+#: src/Controllers/Frontend.php:86
 msgid "Registration failed. Are you already registered?"
 msgstr "Registrierung fehlgeschlagen. Bist du schon registriert?"
 
-#: src/Controllers/Frontend.php:88
+#: src/Controllers/Frontend.php:92
 msgid ""
 "You have successfully registered. Please check your mails to confirm your "
 "registration."
@@ -36,55 +36,56 @@ msgstr ""
 "Du hast dich erfolgreich registriert. Bitte bestätige deine Registrierung in "
 "deinen Mails."
 
-#: src/Controllers/Frontend.php:96 src/Controllers/Frontend.php:116
-#: src/Controllers/Frontend.php:117
+#: src/Controllers/Frontend.php:100 src/Controllers/Frontend.php:120
+#: src/Controllers/Frontend.php:121
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
-#: src/Controllers/Frontend.php:97
+#: src/Controllers/Frontend.php:101
 msgid "Please check your email for the reset link."
 msgstr ""
 "Bitte überprüfe deine Mails für den Link zum Zurücksetzen des Passworts."
 
-#: src/Controllers/Frontend.php:100
+#: src/Controllers/Frontend.php:104
 msgid "Error"
 msgstr "Fehler"
 
-#: src/Controllers/Frontend.php:101
+#: src/Controllers/Frontend.php:105
 msgid "An error occurred. Please try again later."
 msgstr "Ein Fehler ist passiert. Bitte versuche es später noch einmal."
 
-#: src/Controllers/Frontend.php:113
+#: src/Controllers/Frontend.php:117
 msgid "Create your password"
 msgstr "Erstelle Dein Passwort"
 
-#: src/Controllers/Frontend.php:114
+#: src/Controllers/Frontend.php:118
 msgid "Set your new password"
 msgstr "Setze Dein Passwort"
 
-#: src/Controllers/Frontend.php:131
+#: src/Controllers/Frontend.php:135
 msgid "An error occured"
 msgstr "Ein Fehler ist aufgetreten"
 
-#: src/Controllers/Frontend.php:132
+#: src/Controllers/Frontend.php:136
 msgid "Your password could not be set. Did you repeat it correctly?"
 msgstr ""
 "Dein Passwort konnte nicht gesetzt werden. Hast Du es zwei Mal gleich "
 "eingegeben?"
 
-#: src/Controllers/Frontend.php:144 src/Views/Home.php:32
+#: src/Controllers/Frontend.php:148 src/Views/Home.php:36
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: src/Controllers/Frontend.php:145
+#: src/Controllers/Frontend.php:149
 msgid "Your password has been reset. Please login."
 msgstr "Dein Passwort wurde zurückgesetzt. Bitte logge dich ein."
 
-#: src/Controllers/Frontend.php:222 src/Views/Menu.php:32
+#: src/Controllers/Frontend.php:226 src/Views/Menu-Mint.php:32
+#: src/Views/Menu-Greens.php:31
 msgid "Logout"
 msgstr "Ausloggen"
 
-#: src/Controllers/Frontend.php:223
+#: src/Controllers/Frontend.php:227
 msgid "You have been logged out."
 msgstr "Du bist ausgeloggt."
 
@@ -113,7 +114,7 @@ msgstr ""
 "Du kannst ihn auch verwenden, um Bilder für deine Blog-Beiträge, Facebook-"
 "Anzeigen und mehr zu erstellen."
 
-#: src/Views/Home.php:14 src/Views/Home.php:27 src/Views/Home.php:35
+#: src/Views/Home.php:14 src/Views/Home.php:31 src/Views/Home.php:39
 #: src/Views/Home-Greens.php:14
 msgid "Login"
 msgstr "Einloggen"
@@ -126,24 +127,83 @@ msgstr "Noch nicht registriert?"
 msgid "Forgot password?"
 msgstr "Passwort vergessen?"
 
-#: src/Views/Home.php:26 src/Views/Home.php:34
+#: src/Views/Home.php:22 src/Views/Home-Greens.php:18
+msgid "login with Green Net"
+msgstr "Mit Grünem Netz einloggen"
+
+#: src/Views/Home.php:30 src/Views/Home.php:38
 msgid "Already registered?"
 msgstr "Bereits registriert?"
+
+#: src/Views/Menu-Mint.php:4 src/Views/Menu-Greens.php:3
+msgid "MINTSharepic"
+msgstr "MINTSharepic"
+
+#: src/Views/Menu-Mint.php:7 src/Views/Menu-Greens.php:6
+msgid "German"
+msgstr "Deutsch"
+
+#: src/Views/Menu-Mint.php:10 src/Views/Menu-Greens.php:9
+msgid "English"
+msgstr "Englisch"
+
+#: src/Views/Menu-Mint.php:14 src/Views/Header.php:21
+#: src/Views/Menu-Greens.php:13 src/Views/Pages/Imprint.php:4
+msgid "Imprint"
+msgstr "Impressum"
+
+#: src/Views/Menu-Mint.php:17 src/Views/Header.php:24
+#: src/Views/Menu-Greens.php:16 src/Views/Pages/Privacy.php:4
+msgid "Privacy"
+msgstr "Datenschutz"
+
+#: src/Views/Menu-Mint.php:23 src/Views/Menu-Greens.php:22
+msgid "Logfile"
+msgstr "Logdatei"
+
+#: src/Views/Menu-Mint.php:24 src/Views/Menu-Greens.php:23
+msgid "Sharepics"
+msgstr "Sharepics"
+
+#: src/Views/Menu-Mint.php:26 src/Views/Menu-Greens.php:25
+msgid "Publish"
+msgstr "Veröffentlichen"
+
+#: src/Views/Menu-Mint.php:37 src/Views/Menu-Greens.php:36
+msgid "Back to home"
+msgstr "Startseite"
+
+#: src/Views/Menu-Mint.php:43
+msgid "File"
+msgstr "Datei"
+
+#: src/Views/Menu-Mint.php:46
+msgid "New template"
+msgstr "Neue Vorlage"
+
+#: src/Views/Menu-Mint.php:49 src/Views/Menu-Greens.php:52
+msgid "Save"
+msgstr "Zwischenpeichern"
+
+#: src/Views/Menu-Mint.php:52 src/Views/Menu-Greens.php:55
+#: src/Views/Creator.php:47 src/Views/Creator.php:62
+msgid "Download"
+msgstr "Herunterladen"
+
+#: src/Views/Menu-Mint.php:58 src/Views/Menu-Greens.php:61
+msgid "My Sharepics"
+msgstr "Meine Sharepics"
+
+#: src/Views/Menu-Mint.php:64 src/Views/Menu-Greens.php:67
+msgid "latest"
+msgstr "letztes"
 
 #: src/Views/Header.php:18
 msgid "Home"
 msgstr "Startseite"
 
-#: src/Views/Header.php:21 src/Views/Menu.php:14 src/Views/Pages/Imprint.php:4
-msgid "Imprint"
-msgstr "Impressum"
-
-#: src/Views/Header.php:24 src/Views/Menu.php:17 src/Views/Pages/Privacy.php:4
-msgid "Privacy"
-msgstr "Datenschutz"
-
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:90
-#: src/Views/Creator.php:92
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:102
+#: src/Views/Creator.php:104
 msgid "Eyecatcher"
 msgstr "Sticker"
 
@@ -152,7 +212,7 @@ msgid "Add sticker"
 msgstr "Sticker hinzufügen"
 
 #: src/Views/Cockpit/Eyecatcher.php:8 src/Views/Cockpit/Background.php:5
-#: src/Views/Cockpit/Logo.php:4 src/Views/Cockpit/Copyright.php:5
+#: src/Views/Cockpit/Logo.php:4 src/Views/Cockpit/Copyright.php:9
 msgid "Size"
 msgstr "Größe"
 
@@ -177,7 +237,7 @@ msgstr "Hintergrund"
 msgid "Total size"
 msgstr "Gesamtgröße"
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:62
+#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:64
 msgid "Dimensions"
 msgstr "Abmessungen"
 
@@ -193,7 +253,8 @@ msgstr "Voreinstellungen"
 msgid "square 1:1"
 msgstr "Quadratisch 1:1"
 
-#: src/Views/Cockpit/Background.php:2
+#: src/Views/Cockpit/Background.php:2 src/Views/Creator.php:78
+#: src/Views/Creator.php:80
 msgid "Edit background image"
 msgstr "Hintergrundbild einstellen"
 
@@ -213,12 +274,12 @@ msgstr "Hintergrundbild löschen"
 msgid "Change image crop"
 msgstr "Bildausschnitt verschieben"
 
-#: src/Views/Cockpit/Background.php:26 src/Views/Cockpit/Copyright.php:10
+#: src/Views/Cockpit/Background.php:26 src/Views/Cockpit/Copyright.php:14
 #: src/Views/Cockpit/Addpicture.php:37
 msgid "Color"
 msgstr "Farbe"
 
-#: src/Views/Cockpit/Vorort.php:2
+#: src/Views/Cockpit/Vorort.php:2 src/Views/Menu-Greens.php:48
 msgid "Vor Ort"
 msgstr "Vor Ort"
 
@@ -231,8 +292,8 @@ msgid "please choose"
 msgstr "bitte wählen"
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
-#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:84
-#: src/Views/Creator.php:86
+#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:94
+#: src/Views/Creator.php:96
 msgid "Text"
 msgstr "Text"
 
@@ -286,7 +347,8 @@ msgstr "Bild mit KI erstellen"
 
 #: src/Views/Cockpit/Searchimage.php:29
 msgid "Use artificial intelligence to create a unique image"
-msgstr "Verwende künstliche Intelligenz, um ein einzigartiges Bild zu erstellen"
+msgstr ""
+"Verwende künstliche Intelligenz, um ein einzigartiges Bild zu erstellen"
 
 #: src/Views/Cockpit/Searchimage.php:30
 msgid "Describe the image you want"
@@ -332,10 +394,14 @@ msgstr "Text hinzufügen"
 msgid "Toggle text shadow"
 msgstr "Schatten ein-/ausschalten"
 
-#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:78
-#: src/Views/Creator.php:80
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:86
+#: src/Views/Creator.php:88
 msgid "Copyright"
 msgstr "Urheberrechts&shy;hinweis"
+
+#: src/Views/Cockpit/Copyright.php:5
+msgid "Add copyright"
+msgstr "Urheberrechts&shy;hinweis hinzufügen"
 
 #: src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground pictures"
@@ -353,8 +419,7 @@ msgstr "Bild hochladen"
 msgid "upload new image"
 msgstr "neues Bild hochladen"
 
-#: src/Views/Cockpit/Addpicture.php:25 src/Views/Creator.php:72
-#: src/Views/Creator.php:74
+#: src/Views/Cockpit/Addpicture.php:25
 msgid "Image"
 msgstr "Bild"
 
@@ -398,58 +463,6 @@ msgstr "Neueste Sharepics"
 msgid "Usage Log"
 msgstr "Nutzungs-Log"
 
-#: src/Views/Menu.php:4
-msgid "MINTSharepic"
-msgstr "MINTSharepic"
-
-#: src/Views/Menu.php:7
-msgid "German"
-msgstr "Deutsch"
-
-#: src/Views/Menu.php:10
-msgid "English"
-msgstr "Englisch"
-
-#: src/Views/Menu.php:23
-msgid "Logfile"
-msgstr "Logdatei"
-
-#: src/Views/Menu.php:24
-msgid "Sharepics"
-msgstr "Sharepics"
-
-#: src/Views/Menu.php:26
-msgid "Publish"
-msgstr "Veröffentlichen"
-
-#: src/Views/Menu.php:37
-msgid "Back to home"
-msgstr "Startseite"
-
-#: src/Views/Menu.php:43
-msgid "File"
-msgstr "Datei"
-
-#: src/Views/Menu.php:46
-msgid "New template"
-msgstr "Neue Vorlage"
-
-#: src/Views/Menu.php:49
-msgid "Save"
-msgstr "Zwischenpeichern"
-
-#: src/Views/Menu.php:52 src/Views/Creator.php:46 src/Views/Creator.php:60
-msgid "Download"
-msgstr "Herunterladen"
-
-#: src/Views/Menu.php:58
-msgid "My Sharepics"
-msgstr "Meine Sharepics"
-
-#: src/Views/Menu.php:64
-msgid "latest"
-msgstr "letztes"
-
 #: src/Views/Components/Forms/Login.php:2
 #: src/Views/Components/Forms/RequestPassword.php:2
 msgid "username"
@@ -460,7 +473,7 @@ msgstr "Benutzer*innenname"
 msgid "password"
 msgstr "Passwort"
 
-#: src/Views/Components/Forms/Login.php:4 src/Views/Home-Greens.php:17
+#: src/Views/Components/Forms/Login.php:4
 msgid "login"
 msgstr "einloggen"
 
@@ -509,38 +522,50 @@ msgstr "nach hinten"
 msgid "delete"
 msgstr "löschen"
 
-#: src/Views/Creator.php:35
+#: src/Views/Menu-Greens.php:42
+msgid "Templates"
+msgstr "Vorlagen"
+
+#: src/Views/Menu-Greens.php:45
+msgid "BW Kandi Vorstellung"
+msgstr ""
+
+#: src/Views/Creator.php:36
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/Views/Creator.php:66 src/Views/Creator.php:68
+#: src/Views/Creator.php:70 src/Views/Creator.php:72
 msgid "Search or create image"
 msgstr "Bild suchen oder erstellen"
 
-#: src/Views/Creator.php:96 src/Views/Creator.php:98
+#: src/Views/Creator.php:110 src/Views/Creator.php:112
 msgid "Front picture"
 msgstr "Vordergrundbild"
 
-#: src/Views/Creator.php:107
+#: src/Views/Creator.php:123
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: src/Views/Creator.php:123
+#: src/Views/Creator.php:140
 msgid "Please wait ..."
 msgstr "Augenblick bitte ..."
 
-#: src/Views/Creator.php:154
+#: src/Views/Creator.php:179
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
-#: src/Views/Creator.php:155
+#: src/Views/Creator.php:180
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: src/Views/Creator.php:156
+#: src/Views/Creator.php:181
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
+
+#: src/Views/Creator.php:182
+msgid "Maximum number of elements reached"
+msgstr "Maximale Anzahl von Elementen erreicht"
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "
@@ -552,7 +577,7 @@ msgid ""
 "Green Party."
 msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen."
 
-#: src/Views/Home-Greens.php:21
+#: src/Views/Home-Greens.php:23
 msgid "Login as guest"
 msgstr "Als Gast einloggen"
 
@@ -603,9 +628,6 @@ msgstr "Als Gast einloggen"
 
 #~ msgid "Add"
 #~ msgstr "Hinzufügen"
-
-#~ msgid "Login with Gr&uuml;nes Netz"
-#~ msgstr "Mit Grünem Netz einloggen"
 
 #~ msgid "Background color"
 #~ msgstr "Hintergrundfarbe"

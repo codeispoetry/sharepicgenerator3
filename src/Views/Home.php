@@ -17,6 +17,10 @@
 				echo ' <a href="#" onclick="showRegisterBox();">'._('Register').'</a>';
 				echo '<br>';
 				echo ' <a href="#" onclick="showPasswordBox();">'._('Forgot password?').'</a>';
+
+				if ( 'Greens' === $config->get( 'Main', 'menu' ) ) {
+					printf( '<a href="index.php?auth=auto">%s</a>', _('login with Green Net'));
+				}
 			?>
 		</div>
 		<div id="registerbox" style="display: none">
