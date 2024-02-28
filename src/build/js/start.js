@@ -13,6 +13,5 @@ window.onload = function () {
   rte = new RichTextEditor()
   logger = new Logger()
 
-  rte.add('#text')
   ui.showTab('download')
 }

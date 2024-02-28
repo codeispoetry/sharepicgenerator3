@@ -1,7 +1,13 @@
 <div id="sharepic"
     style="background-color: #df9191; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;"
     data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="background">
-    <div id="freetext" class="freetext draggable selectable" data-cockpit="freetext" data-dragconstraint="true"
+   
+   
+    <div id="freetext" 
+        class="freetext draggable selectable" 
+        data-cockpit="freetext" 
+        data-dragconstraint="true"
+        data-rte="true"
         onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
             z-index: 21; 
             left: 120px; 
@@ -100,6 +106,4 @@
 </style>
 <script>
     document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/mint/styles.css?r= ' + Math.random() + '">');
-
-    rte.add('#freetext')
 </script>

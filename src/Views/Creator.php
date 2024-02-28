@@ -139,10 +139,6 @@
   </p>
 </dialog>
 
-<?php
-	require 'src/Views/Toolbars/Free.php';
-?>
-
 <style>
 	.ql-font-Roboto-Light {
 		font-family: 'Roboto', sans-serif;

@@ -22,12 +22,6 @@ class Component {
     // Insert the new element into the DOM
     document.getElementById('sharepic').insertAdjacentHTML('beforeend', clonedElement.outerHTML)
 
-    // Initialize RichtTextEditor on the new element
-    if (clonedElement.dataset.rte === 'true') {
-      clonedElement.removeAttribute('data-rte')
-      rte.add('#' + newId)
-    }
-
     const newElement = document.getElementById(newId)
     cockpit.target = newElement
     // Click on the new element
@@ -43,6 +37,15 @@ class Component {
   }
 
   select (element) {
+    // do not reselect, if the element is already selected
+    if (element.classList.contains('selected')) {
+      return
+    }
+    // Initialize RichtTextEditor on the element
+    if (element.dataset.rte === 'true') {
+      rte.add('#' + element.id)
+    }
+
     document.querySelector('.selected')?.classList.remove('selected')
     element.classList.add('selected')
     ui.showTab(element.dataset.cockpit, element)
