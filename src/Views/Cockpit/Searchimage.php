@@ -14,7 +14,7 @@
        
     </section>
 
-    <section>
+    <section id="search_pixabay">
         <h3><?php  echo _('Search image');?></h3>
         <p><?php echo _('Search in an online image database');?></p>
         
@@ -24,7 +24,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="search_dalle">
         <h3><?php  echo _('Create image with AI');?></h3>
         <p><?php echo _('Use artificial intelligence to create a unique image');?></p>
         <textarea placeholder="<?php  echo _('Describe the image you want');?>" 

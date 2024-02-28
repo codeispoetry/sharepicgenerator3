@@ -242,7 +242,7 @@ class API {
         document.getElementById('dalle_prompt').value = hint
         document.getElementById('dalle_result_image').innerHTML = '<img src="' + url + '?rand=' + Math.random() + '" />'
 
-        // is copyrigth already shown?
+        // is copyright already shown?
         const copyright = document.querySelector('#sharepic [id^=copyright_]')
         if (!copyright) {
           component.add('copyright')
@@ -286,8 +286,7 @@ class API {
 
     document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`
 
-    document.querySelector('.file-upload').disabled = true
-
+  
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload', true)
     xhr.upload.onprogress = function (e) {
@@ -306,9 +305,10 @@ class API {
         console.error('Error:', this.status, this.statusText)
       }
 
-      document.querySelector('.file-upload').disabled = false
-
-      document.getElementById('copyright').innerHTML = ''
+      const copyright = document.querySelector('#sharepic [id^=copyright_]')
+      if (copyright) {
+        copyright.innerHTML = ''
+      }
 
       logger.log('uploaded file')
     }
