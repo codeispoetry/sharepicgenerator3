@@ -58,4 +58,10 @@ class Cockpit {
     document.getElementById('addpic_color').value = ui.rgbToHex(element.querySelector('.ap_text').style.color)
     document.getElementById('addpicture_size').value = element.querySelector('.ap_image').style.width.replace('px', '')
   }
+
+  setup_copyright (element) {
+
+    document.getElementById('copyright_size').value = element.style.fontSize.replace('px', '')
+    document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
+  }
 }

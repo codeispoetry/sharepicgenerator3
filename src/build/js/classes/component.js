@@ -8,6 +8,7 @@ class Component {
     const max = pattern?.dataset?.max || -1
     const currentCount = document.querySelectorAll(`#sharepic [id^=${item}_]`).length
     if(max !== -1 && currentCount >= max) {
+      alert(lang['Max reached'])
       return
     }
     const clonedElement = pattern.cloneNode(true)

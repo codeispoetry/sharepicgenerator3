@@ -21,20 +21,12 @@
 <script>
     class Copyright{
         setSize(input){
-            const e = document.getElementById('copyright');
-            if( !e ) {
-                return;
-            }
-            e.style.fontSize = input.value + 'px';
+            cockpit.target.style.fontSize = input.value + 'px';
             undo.commit()
         }
 
         setFontColor(input) {      
-            const e = document.getElementById('copyright');
-            if( !e ) {
-                return;
-            }
-            e.style.color = input.value;
+            cockpit.target.style.color = input.value;
             undo.commit()
         }
     }

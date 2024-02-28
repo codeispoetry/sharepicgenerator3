@@ -15,7 +15,7 @@ class Pixabay {
     const page = 1
     const perPage = 80
     const url = `https://pixabay.com/api/?key=${config.pixabay.apikey}&q=${encodeURIComponent(q)}&image_type=photo&page=${page}&per_page=${perPage}&lang=de`
-console.log(url)
+
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -60,11 +60,11 @@ console.log(url)
         api.loadByUrl(img.dataset.url)
 
         // is copyrigth already shown?
-        const copyright = document.getElementById('copyright')
+        const copyright = document.querySelector('#sharepic [id^=copyright_]')
         if (!copyright) {
           component.add('copyright')
         }
-        document.querySelector('[id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
+        document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
       }
       results.appendChild(img)
     })
