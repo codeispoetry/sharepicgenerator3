@@ -18,8 +18,11 @@
     
 <header>
     <?php
-		include 'src/Views/Menu.php'; 
-	?>
+		$menu = 'src/Views/Menu-' . $this->config->get( 'Main', 'menu' );
+		if( file_exists( $menu . '.php' ) )
+			include $menu . '.php';
+		else
+			include 'src/Views/Menu-Mint.php';	?>
 </header>
 
 <script src="assets/script.js?r=<?php echo rand(); ?>" defer></script>

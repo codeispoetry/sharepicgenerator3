@@ -1,5 +1,4 @@
 <nav>
-
     <div class="dropdown" id="menu_mint">
         <span><?php echo _( 'MINTSharepic' ); ?></span>
         <div class="dropdown-content">
@@ -40,11 +39,15 @@
     </div>
 
     <div class="dropdown" id="menu_file">
-        <span><?php echo _( 'File' ); ?></span>
+        <span><?php echo _( 'Templates' ); ?></span>
         <div class="dropdown-content">
-            <button onClick="ui.reload()">
-                <?php  echo _('New template');?>
+            <button onClick="api.load('templates/bw-kandi-vorstellung/start.html')">
+                <?php  echo _('BW Kandi Vorstellung');?>
             </button>
+            <button onClick="api.load('templates/vorort/start.html')">
+                <?php  echo _('Vor Ort');?>
+            </button>
+            <div class="divider"></div>
             <button onClick="api.save()">
                 <?php  echo _('Save');?>
             </button>
