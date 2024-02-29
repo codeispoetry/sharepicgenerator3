@@ -2,8 +2,8 @@ $sand: #f5f1e9;
 $tanne: #005437;
 $gras: #8abd24;
 $klee: #008939;
-$s: 33alignpx;
-$m: 60px;
+$s: 28px;
+$m: 36px;
 $l: 100px;
 
 #greentext {
@@ -30,6 +30,24 @@ $l: 100px;
         }
 
     }
+}
+
+.withbar {
+    position: relative;
+    font-weight: normal;
+    font-family: "GrueneType", sans-serif;
+    z-index: 3;
+    padding: 0;
+    align-self: flex-start;
+    white-space: nowrap;
+
+    &::before {
+        content: "";
+        position: absolute;
+        transform: skew(-9deg, 0);
+        z-index: -1;
+    }
+
 }
 
 .s {

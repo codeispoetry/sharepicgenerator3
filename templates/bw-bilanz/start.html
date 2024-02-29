@@ -1,5 +1,6 @@
 <div id="sharepic"
     style="	background-color: #8abd24;
+            background-image: url('templates/bw-bilanz/start.jpg');
 			background-repeat: no-repeat;
 			background-position: 0px 0px; 
 			width: 800px; height:800px;
@@ -9,14 +10,23 @@
 
     <div id="bar" style="
             position: absolute;
-            width: 142px;
-            height: 115%;
+            width: 400px;
+            height: 150%;
             background-color: #005437;
-            transform: rotate(9.5deg);
-            right: 0;
-            bottom: 0px;
-            transform-origin: bottom left;
+            transform: rotate(11deg);
+            left: -340px;
+            bottom: -50px;
+            transform-origin: bottom right;
         ">
+    </div>
+
+    <div class="m sandklee withbar" contenteditable="true" 
+        style="
+            z-index: 200;
+            left: 56px;
+            top: 46px;
+        ">
+        Dafür haben wir uns eingesetzt.
     </div>
     <div 
         class="" 
@@ -31,23 +41,25 @@
             bottom: 40px;
         "
     >
-        <div class="m sandklee" contenteditable="true">Vorname Nachname</div>
         <div class="s tannesand" contenteditable="true" style="
             align-self: flex-end;
             margin-right: 30px;
-        ">Listenplatz 2</div>
+        ">Buslinie 106 nach Musterlingen</div>
     </div>
 
-    <div class="" id="logo" 
+    <div class="draggable selectable" id="logo" 
         contenteditable="false"
+        data-cockpit="logo"
+        onclick="component.select(this)"
+        onmousedown="component.startDrag(event)"
         style="
             width: 300px;
             height: 300px;
             background-image: url('templates/de/logo.svg');
             background-size: contain;
             background-repeat: no-repeat;
-            left: -140px;
-            top: -110px;
+            left: -147px;
+            top:  176px;
             position: absolute;
         "
     ></div>
@@ -56,18 +68,19 @@
     </div>
 
     <script>
-        document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-kandi-vorstellung/styles.css?r= ' + Math.random() + '">');
+        document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-bilanz/styles.css?r= ' + Math.random() + '">');
 
         document.getElementById('tabsbuttons').style.display = 'flex'
         document.querySelector('#cockpit .show')?.classList.remove('show')
         document.getElementById('cockpit_search')?.classList.add('show')
 
+        document.getElementById('logo_colors').style.display = 'none'
         document.getElementById('tab_btn_copyright').style.display = 'none'
         document.getElementById('tab_btn_freetext').style.display = 'none'
         document.getElementById('tab_btn_eyecatcher').style.display = 'none'
         document.getElementById('tab_btn_addpicture').style.display = 'none'
-        document.getElementById('search_dalle').style.display = 'none'
-        document.getElementById('search_pixabay').style.display = 'none'
+        document.getElementById('search_dalle').style.display = 'block'
+        document.getElementById('search_pixabay').style.display = 'block'
     </script>
 </div>
 

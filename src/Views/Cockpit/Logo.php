@@ -7,7 +7,7 @@
         </label>
     </section>
 
-    <section>
+    <section id="logo_colors">
         <h3><?php echo _('Colors');?></h3>
         <select id="logo_file">
             <option value="templates/de/logo.svg"><?php echo _('yellow'); ?></option>
