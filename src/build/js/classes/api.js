@@ -284,7 +284,6 @@ class API {
 
     document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`
 
-  
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload', true)
     xhr.upload.onprogress = function (e) {

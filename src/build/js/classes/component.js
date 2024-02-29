@@ -59,7 +59,7 @@ class Component {
   }
 
   delete () {
-    document.getElementById('add_copyright').style.display = "flex"
+    document.getElementById('add_copyright').style.display = 'flex'
     cockpit.target.remove()
     this.unselect()
   }
@@ -112,7 +112,6 @@ class Component {
     if (event.button !== 0 || !event.target.classList.contains('draggable')) {
       return
     }
-
 
     cockpit.target = this.parentWithOnMouseDown(event.target) || console.error('No parent with onmousedown found')
 

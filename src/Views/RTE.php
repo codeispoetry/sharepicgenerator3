@@ -32,9 +32,18 @@
     </select>
 
 
-    <button onClick="rte.clearFormat()" style="margin-left: auto" class="pictogram" title="<?php echo _('clear format'); ?>">
+    <div style="margin-left: auto">
+        <button onClick="rte.showSource()" id="show_source" class="pictogram" title="<?php echo _('show source'); ?>">
+            <img src="assets/icons/code.svg">
+        </button>
+        <button onClick="rte.showRTE()" id="show_rte" style="display: none" class="pictogram"  title="<?php echo _('show richt text editor'); ?>">
+            <img src="assets/icons/ink_marker.svg">
+        </button>
+    </div>
+
+    <button onClick="rte.clearFormat()" class="pictogram" title="<?php echo _('clear format'); ?>">
         <img src="assets/icons/format_clear.svg">
     </button>
 
-
+    <textarea id="source" style="display: none"></textarea>
 </div>
