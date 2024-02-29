@@ -44,6 +44,9 @@
             <button onClick="api.load('templates/bw-kandi-vorstellung/start.html')">
                 <?php  echo _('BW Kandi Vorstellung');?>
             </button>
+            <button onClick="api.load('templates/bw-bilanz/start.html')">
+                <?php  echo _('Bilanz');?>
+            </button>
             <button onClick="api.load('templates/vorort/start.html')">
                 <?php  echo _('Vor Ort');?>
             </button>

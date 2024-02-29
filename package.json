@@ -17,7 +17,9 @@
     "de:scss": "node-sass --output-style compressed -o templates/de/ templates/de/styles.scss",
     "bw:scss": "node-sass --output-style compressed -o templates/bw-kandi-vorstellung/ templates/bw-kandi-vorstellung/styles.scss",
     "einigungshilfe:scss": "node-sass --output-style compressed -o templates/einigungshilfe/ templates/einigungshilfe/styles.scss",
-    "mint:scss": "node-sass --output-style compressed -o templates/mint/ templates/mint/styles.scss"
+    "mint:scss": "node-sass --output-style compressed -o templates/mint/ templates/mint/styles.scss",
+    "bw-bilanz:scss": "node-sass --output-style compressed -o templates/bw-bilanz/ templates/bw-bilanz/styles.scss"
+
   },
   "author": "",
   "license": "ISC",

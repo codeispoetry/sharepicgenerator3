@@ -143,38 +143,6 @@
   </p>
 </dialog>
 
-<style>
-
-	.red{
-		color: red;
-	}	
-	.green{
-		color: green;
-	}
-
-	.ql-font-Roboto-Light {
-		font-family: 'Roboto', sans-serif;
-	}
-	.ql-font-Baloo2 {
-		font-family: 'Baloo2', cursive;
-	}
-	.ql-font-Calibri {
-		font-family: 'Calibri', sans-serif;
-	}
-
-	[data-value="Baloo2"]::before {
-		content: 'Baloo2' !important;
-	}
-
-	[data-value="Roboto-Light"]::before {
-		content: 'Roboto' !important;
-	}
-
-	[data-value="Calibri"]::before {
-		content: 'Calibri' !important;
-	}
-</style>
-
 <script>
     const config = {
         'pixabay': {
