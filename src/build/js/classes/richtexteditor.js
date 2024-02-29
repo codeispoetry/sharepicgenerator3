@@ -80,7 +80,7 @@ class RichTextEditor {
 
     sourceContainer.style.display = 'block'
     document.querySelector('#show_source').style.display = 'none'
-    document.querySelector('#show_rte').style.display = 'block'
+    document.querySelector('#show_rte').style.display = 'flex'
   }
 
   showRTE () {
@@ -89,7 +89,7 @@ class RichTextEditor {
     document.querySelector('#freetext>div').innerHTML = source.replace(/&lt;/g, '<')
 
     document.querySelector('#source').style.display = 'none'
-    document.querySelector('#show_source').style.display = 'block'
+    document.querySelector('#show_source').style.display = 'flex'
     document.querySelector('#show_rte').style.display = 'none'
   }
 }
