@@ -50,8 +50,12 @@ if ( 'set_role' === $command ) {
 	}
 }
 
-if ( 'users' === $command ) {
+if ( 'user-count' === $command ) {
 	printf( "There are %d users.\n", $cli->get_users() );
+}
+
+if ( 'users' === $command ) {
+	$cli->list_users();
 }
 
 if ( 'flush' === $command ) {
@@ -169,6 +173,18 @@ class CLI {
 		$stmt->execute();
 		$result = $stmt->fetch();
 		return $result['COUNT'];
+	}
+
+	/**
+	 * List users.
+	 */
+	public function list_users() {
+		$sql  = 'SELECT * FROM users';
+		$stmt = $this->db->prepare( $sql );
+		$stmt->execute();
+		while ( $result = $stmt->fetch() ) {
+			echo $result['username'] . ' ' . $result['role'] . "\n";
+		}
 	}
 
 	/**

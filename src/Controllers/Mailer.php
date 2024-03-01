@@ -56,6 +56,8 @@ class Mailer {
 			\Sharepicgenerator\log( "Message could not be sent. phpMailer Error: {$this->phpmailer->ErrorInfo}" );
 			return false;
 		}
+
+		return true;
 	}
 
 }
