@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 22:52+0100\n"
+"POT-Creation-Date: 2024-03-01 22:57+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -586,6 +586,10 @@ msgstr "Maximale Anzahl von Elementen erreicht"
 #: src/Views/Creator.php:161
 msgid "Uploading your image ..."
 msgstr "Das Bild wird hochladen ..."
+
+#: src/Views/Creator.php:162
+msgid "Your image is being processed ..."
+msgstr "Dein Bild wird vorbereitet ..."
 
 #: src/Views/Pixabay.php:4
 msgid "All images are from "

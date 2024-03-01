@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 22:52+0100\n"
+"POT-Creation-Date: 2024-03-01 22:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -567,6 +567,10 @@ msgstr ""
 
 #: src/Views/Creator.php:161
 msgid "Uploading your image ..."
+msgstr ""
+
+#: src/Views/Creator.php:162
+msgid "Your image is being processed ..."
 msgstr ""
 
 #: src/Views/Pixabay.php:4

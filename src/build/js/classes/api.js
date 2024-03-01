@@ -287,7 +287,12 @@ class API {
       if (e.lengthComputable) {
         const percentComplete = Math.round((e.loaded / e.total) * 100)
 
-        document.querySelector('.workbench-below .message').innerHTML = lang['Uploading image'] + ' ' + percentComplete + '%'
+        let message =  lang['Uploading image'] + ' ' + percentComplete + '%'
+        if( percentComplete > 98 ) {
+          message = lang['Processing image']
+        }
+        
+        document.querySelector('.workbench-below .message').innerHTML = message
       }
     }
     xhr.onload = function () {

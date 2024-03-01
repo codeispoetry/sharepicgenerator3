@@ -159,6 +159,8 @@
 		'Enter prompt for image': '<?php echo _( 'Please enter a text describing your desired image.') ?>',
 		'Max reached': '<?php echo _( 'Maximum number of elements reached') ?>',
 		'Uploading image': '<?php echo _( 'Uploading your image ...') ?>',
+		'Processing image': '<?php echo _( 'Your image is being processed ...') ?>',
+
     };
 </script>
 
