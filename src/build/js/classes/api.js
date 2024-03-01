@@ -80,7 +80,7 @@ class API {
 
     clonedCanvas.querySelector('#greentextContextMenu')?.remove()
 
-    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css">\n')
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css?r=1">\n')
     clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../">\n')
 
     const data = {
@@ -89,7 +89,8 @@ class API {
         width: document.getElementById('width').value,
         height: document.getElementById('height').value,
         zoom: document.getElementById('sharepic').dataset.zoom
-      }
+      },
+      body_class: document.getElementsByTagName('body')[0].classList.value
     }
 
     return data

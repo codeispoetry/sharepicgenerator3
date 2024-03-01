@@ -114,14 +114,15 @@ class Sharepic {
 		$this->template       = $data['template'] ?? $this->file;
 		$this->info           = $data['name'] ?? 'no-name';
 		$this->mode           = $data['mode'] ?? 'save';
+		$body_class           = $data['body_class'] ?? '';
 
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
 
 			$this->set_zoom( 1 / $this->size['zoom'] );
 
-			$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body>%s</body></html>';
-			file_put_contents( $this->file, sprintf( $scaffold, $this->html ) );
+			$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
+			file_put_contents( $this->file, sprintf( $scaffold, $body_class, $this->html ) );
 		}
 	}
 
