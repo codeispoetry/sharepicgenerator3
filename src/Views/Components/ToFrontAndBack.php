@@ -11,9 +11,11 @@
     </div>
 </section>
 
-<section class="selected_only">
+<?php if (!isset($nodelete)) {?>
+<section class="selected_only btn_delete">
     <button class="outline" onClick="component.delete()" title="<?php  echo _('delete');?>">
         <img src="assets/icons/delete.svg" alt="<?php  echo _('delete');?>" />
         <?php  echo _('delete');?>
     </button>
 </section>
+<?php } ?>

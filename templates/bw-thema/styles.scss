@@ -1,0 +1,47 @@
+$sand: #f5f1e9;
+$tanne: #005437;
+$gras: #8abd24;
+$klee: #008939;
+$s: 28px;
+$m: 36px;
+$l: 100px;
+
+
+.s, .s>div {
+    font-size: $s;
+    line-height: $s;
+    margin: ($s / 5) 0;
+    &::before{
+        top: -($s / 5);
+        left: -2 * ($s / 5);
+        width: calc(100% + #{$s / 5 * 4});
+        height: ($s + 2 * ($s / 5));
+    }
+}
+
+.m, .m>div {
+    font-size: $m;
+    line-height: $m;
+    margin: ($m / 5) 0;
+    &::before{
+        top: -($m / 5);
+        left: -2 * ($m / 5);
+        width: calc(100% + #{$m / 5 * 4});
+        height: ($m + 2 * ($m / 5));
+    }
+}
+
+.l, .l>div {
+    font-size: $l;
+    line-height: $l;
+    margin: ($l / 5) 0;
+    &::before{
+        top: -($l / 5);
+        left: -2 * ($l / 5);
+        width: calc(100% + #{$l / 5 * 4});
+        height: ($l + 2 * ($l / 5));
+    }
+}
+
+
+

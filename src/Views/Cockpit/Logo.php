@@ -15,7 +15,7 @@
         </select>
     </section>
 
-<?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
+<?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
     
 </section>
 

@@ -18,36 +18,29 @@
             transform-origin: bottom right;
         "
         onclick="component.select(this)"
-        data-cockpit="area">
+        data-cockpit="area"
+           >
     </div>
 
-    <div class="m sandklee withbar"
-        style="
-            z-index: 200;
-            position: absolute;
-            left: 56px;
-            top: 46px;
-        ">
-        <div>Dafür haben wir uns eingesetzt.</div>
-    </div>
+
     <div 
-        class="" 
+        class="draggable" 
         data-cockpit="greentext"  
         id="greentext"
         spellcheck="false"
         contenteditable="false"
-        style="
-            top: unset;
-            left: unset;
-            right: 60px;
-            bottom: 40px;
-        "
+        onmousedown="component.startDrag(event)"
     >
-        <div class="s tannesand bw-right" contenteditable="true" style="
+        <div class="m tannesand bw-right " contenteditable="true" style="
+            align-self: flex-end;
+        ">
+            <div class="draggable">Für _HIER_DEIN_THEMA_</div>
+        </div>
+        <div class="s sandklee bw-right " style="margin-top:-7px" contenteditable="false" style="
             align-self: flex-end;
             margin-right: 30px;
         ">
-            <div>Buslinie 106 nach Musterlingen</div>
+            <div class="draggable">Dafür sind wir hier.</div>
         </div>
     </div>
 
@@ -57,24 +50,22 @@
         onclick="component.select(this)"
         onmousedown="component.startDrag(event)"
         style="
-            width: 300px;
-            height: 300px;
+            width: 226px;
+            height: 226px;
             background-image: url('templates/de/logo.svg');
             background-size: contain;
             background-repeat: no-repeat;
-            left: -147px;
-            top:  176px;
+            left: -70px;
+            top: -52px;
             position: absolute;
         "
-        onclick="component.select(this)"
-        data-cockpit="area"
     ></div>
 
     <div id="patterns">
     </div>
 
     <script>
-        document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-bilanz/styles.css?r= ' + Math.random() + '">');
+        document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-thema/styles.css?r= ' + Math.random() + '">');
 
         document.getElementById('tabsbuttons').style.display = 'flex'
         document.querySelector('#cockpit .show')?.classList.remove('show')

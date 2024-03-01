@@ -41,11 +41,14 @@
     <div class="dropdown" id="menu_file">
         <span><?php echo _( 'Templates' ); ?></span>
         <div class="dropdown-content">
-            <button onClick="api.load('templates/bw-kandi-vorstellung/start.html')">
-                <?php  echo _('KW 24 Kandi Vorstellung');?>
+            <button onClick="api.load('templates/bw-thema/start.html')">
+                <?php  echo _('KW 24 Thema');?>
             </button>
             <button onClick="api.load('templates/bw-bilanz/start.html')">
                 <?php  echo _('KW 24 Erfolgsbilanz');?>
+            </button>
+            <button onClick="api.load('templates/bw-kandi-vorstellung/start.html')">
+                <?php  echo _('KW 24 Kandi Vorstellung');?>
             </button>
             <button onClick="api.load('templates/vorort/start.html')">
                 <?php  echo _('Vor Ort');?>
