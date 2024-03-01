@@ -279,6 +279,8 @@ class API {
     const imageUrl = URL.createObjectURL(file)
 
     document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`
+    document.getElementById('sharepic').style.filter = 'grayscale(100%)'
+    document.querySelector('.workbench-below .message').innerHTML = lang['Uploading image']
 
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload', true)
@@ -297,6 +299,9 @@ class API {
       } else {
         console.error('Error:', this.status, this.statusText)
       }
+
+      document.getElementById('sharepic').style.filter = 'none'
+      document.querySelector('.workbench-below .message').innerHTML = ''
 
       const copyright = document.querySelector('#sharepic [id^=copyright_]')
       if (copyright) {
