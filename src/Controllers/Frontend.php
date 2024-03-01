@@ -34,7 +34,7 @@ class Frontend {
 	public function create() {
 		$auto          = $_GET['auto'] ?? '';
 		$allowed_autos = array( 'einigungshilfe' );
-		$body_classes  = $this->config->get( 'Main', 'starttemplate' );
+		$body_classes  = strToLower( $this->config->get( 'Main', 'menu' ) );
 		$templates     = $this->config->get( 'Templates' );
 		$published     = $this->get_published();
 

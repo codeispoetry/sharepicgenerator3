@@ -2,7 +2,7 @@ $sand: #f5f1e9;
 $tanne: #005437;
 $gras: #8abd24;
 $klee: #008939;
-$s: 33alignpx;
+$s: 33px;
 $m: 60px;
 $l: 100px;
 
@@ -32,7 +32,7 @@ $l: 100px;
     }
 }
 
-.s {
+.s, .s>div {
     font-size: $s;
     line-height: $s;
     margin: ($s / 5) 0;
@@ -44,7 +44,7 @@ $l: 100px;
     }
 }
 
-.m {
+.m, .m>div {
     font-size: $m;
     line-height: $m;
     margin: ($m / 5) 0;
@@ -56,7 +56,7 @@ $l: 100px;
     }
 }
 
-.l {
+.l, .l>div {
     font-size: $l;
     line-height: $l;
     margin: ($l / 5) 0;
@@ -97,63 +97,4 @@ $l: 100px;
         line-height: 1em;
         text-align: center;
     }
-}
-
-.sandtanne {
-    color: $sand !important;
-
-    &::before {
-        background-color: $tanne !important;
-    }
-}
-
-.tannesand {
-    color: $tanne;
-
-    &::before {
-        background-color: $sand;
-    }
-}
-
-.kleesand {
-    color: $klee;
-
-    &::before {
-        background-color: $sand;
-    }
-}
-
-.sandklee {
-    color: $sand;
-
-    &::before {
-        background-color: $klee;
-    }
-}
-
-.grastanne {
-    color: $gras;
-
-    &::before {
-        background-color: $tanne;
-    }
-}
-
-.tannegras {
-    color: $tanne;
-
-    &::before {
-        background-color: $gras;
-    }
-}
-
-.copyright{
-    position: absolute;
-    bottom: 0;
-    left: 10px;
-    font-family: sans-serif;
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    padding: 0;
-    margin: 0;
 }

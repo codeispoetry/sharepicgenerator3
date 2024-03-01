@@ -6,6 +6,8 @@
 
     <button style="display: none" onClick="rte.setStyle('textShadow', '2px 2px 5px rgba(0,0,0,0.5)')"><?php echo _("Shadow"); ?></button>
 
+    <button onClick="rte.setStyle('text-decoration', 'underline')">U</button>
+
     <select 
         onchange="rte.setStyle('fontSize', this.value)"
         title="<?php echo _('font size'); ?>"

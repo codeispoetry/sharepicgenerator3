@@ -109,4 +109,86 @@ body.greens{
     .bg-sand{
         background-color: $sand
     }
+
+    .sandtanne,
+    .sandtanne>div{
+        color: $sand !important;
+    
+        &::before {
+            background-color: $tanne !important;
+        }
+    }
+    
+    .tannesand,
+    .tannesand>div{
+        color: $tanne;
+    
+        &::before {
+            background-color: $sand;
+        }
+    }
+    
+    .kleesand,
+    .kleesand>div {
+        color: $klee;
+    
+        &::before {
+            background-color: $sand;
+        }
+    }
+    
+    .sandklee,
+    .sandklee>div {
+        color: $sand;
+    
+        &::before {
+            background-color: $klee;
+        }
+    }
+    
+    .grastanne,
+    .grastanne>div {
+        color: $gras;
+    
+        &::before {
+            background-color: $tanne;
+        }
+    }
+    
+    .tannegras,
+    .tannegras>div{
+        color: $tanne;
+    
+        &::before {
+            background-color: $gras;
+        }
+    }
+
+    .withbar {
+        position: relative;
+        font-weight: normal;
+        font-family: "GrueneType", sans-serif;
+        z-index: 3;
+        padding: 0;
+        align-self: flex-start;
+        white-space: nowrap;
+    
+        &::before {
+            content: "";
+            position: absolute;
+            transform: skew(-9deg, 0);
+            z-index: -1;
+        }
+    }
+
+    .copyright{
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        font-family: sans-serif;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        padding: 0;
+        margin: 0;
+    }
 }
