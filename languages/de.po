@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 14:13+0100\n"
+"POT-Creation-Date: 2024-03-01 22:06+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -181,20 +181,20 @@ msgstr "Datei"
 msgid "New template"
 msgstr "Neue Vorlage"
 
-#: src/Views/Menu-Mint.php:49 src/Views/Menu-Greens.php:52
+#: src/Views/Menu-Mint.php:49 src/Views/Menu-Greens.php:58
 msgid "Save"
 msgstr "Zwischenpeichern"
 
-#: src/Views/Menu-Mint.php:52 src/Views/Menu-Greens.php:55
-#: src/Views/Creator.php:47 src/Views/Creator.php:62
+#: src/Views/Menu-Mint.php:52 src/Views/Menu-Greens.php:61
+#: src/Views/Creator.php:45 src/Views/Creator.php:63
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/Views/Menu-Mint.php:58 src/Views/Menu-Greens.php:61
+#: src/Views/Menu-Mint.php:58 src/Views/Menu-Greens.php:67
 msgid "My Sharepics"
 msgstr "Meine Sharepics"
 
-#: src/Views/Menu-Mint.php:64 src/Views/Menu-Greens.php:67
+#: src/Views/Menu-Mint.php:64 src/Views/Menu-Greens.php:73
 msgid "latest"
 msgstr "letztes"
 
@@ -202,8 +202,8 @@ msgstr "letztes"
 msgid "Home"
 msgstr "Startseite"
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:102
-#: src/Views/Creator.php:104
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:103
+#: src/Views/Creator.php:105
 msgid "Eyecatcher"
 msgstr "Sticker"
 
@@ -237,7 +237,7 @@ msgstr "Hintergrund"
 msgid "Total size"
 msgstr "Gesamtgröße"
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:64
+#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:65
 msgid "Dimensions"
 msgstr "Abmessungen"
 
@@ -253,8 +253,8 @@ msgstr "Voreinstellungen"
 msgid "square 1:1"
 msgstr "Quadratisch 1:1"
 
-#: src/Views/Cockpit/Background.php:2 src/Views/Creator.php:78
-#: src/Views/Creator.php:80
+#: src/Views/Cockpit/Background.php:2 src/Views/Creator.php:79
+#: src/Views/Creator.php:81
 msgid "Edit background image"
 msgstr "Hintergrundbild einstellen"
 
@@ -279,7 +279,7 @@ msgstr "Bildausschnitt verschieben"
 msgid "Color"
 msgstr "Farbe"
 
-#: src/Views/Cockpit/Vorort.php:2 src/Views/Menu-Greens.php:48
+#: src/Views/Cockpit/Vorort.php:2 src/Views/Menu-Greens.php:54
 msgid "Vor Ort"
 msgstr "Vor Ort"
 
@@ -292,8 +292,8 @@ msgid "please choose"
 msgstr "bitte wählen"
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
-#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:94
-#: src/Views/Creator.php:96
+#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:95
+#: src/Views/Creator.php:97
 msgid "Text"
 msgstr "Text"
 
@@ -382,6 +382,14 @@ msgstr "Dieses Bild verwenden"
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
+#: src/Views/Cockpit/Area.php:2
+msgid "Area"
+msgstr "Grüne Fläche"
+
+#: src/Views/Cockpit/Area.php:6
+msgid "Show green area"
+msgstr "Grüne Fläche anzeigen"
+
 #: src/Views/Cockpit/Freetext.php:4
 msgid "For a text in your sharepic, edit it directly in the sharepic."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
@@ -390,12 +398,8 @@ msgstr "Bitte ändere Deinen Text direkt im Bild links."
 msgid "Add text"
 msgstr "Text hinzufügen"
 
-#: src/Views/Cockpit/Freetext.php:14
-msgid "Toggle text shadow"
-msgstr "Schatten ein-/ausschalten"
-
-#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:86
-#: src/Views/Creator.php:88
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:87
+#: src/Views/Creator.php:89
 msgid "Copyright"
 msgstr "Urheberrechts&shy;hinweis"
 
@@ -516,9 +520,9 @@ msgstr "nach vorne"
 msgid "to back"
 msgstr "nach hinten"
 
-#: src/Views/Components/ToFrontAndBack.php:15
 #: src/Views/Components/ToFrontAndBack.php:16
 #: src/Views/Components/ToFrontAndBack.php:17
+#: src/Views/Components/ToFrontAndBack.php:18
 msgid "delete"
 msgstr "löschen"
 
@@ -527,43 +531,53 @@ msgid "Templates"
 msgstr "Vorlagen"
 
 #: src/Views/Menu-Greens.php:45
-msgid "BW Kandi Vorstellung"
+msgid "KW 24 Thema"
 msgstr ""
 
-#: src/Views/Creator.php:36
+#: src/Views/Menu-Greens.php:48
+msgid "KW 24 Erfolgsbilanz"
+msgstr ""
+
+#: src/Views/Menu-Greens.php:51
+msgid "KW 24 Kandi Vorstellung"
+msgstr ""
+
+#: src/Views/Creator.php:34
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/Views/Creator.php:70 src/Views/Creator.php:72
+#: src/Views/Creator.php:71 src/Views/Creator.php:73
 msgid "Search or create image"
 msgstr "Bild suchen oder erstellen"
 
-#: src/Views/Creator.php:110 src/Views/Creator.php:112
+#: src/Views/Creator.php:111 src/Views/Creator.php:113
 msgid "Front picture"
 msgstr "Vordergrundbild"
 
-#: src/Views/Creator.php:123
+#: src/Views/Creator.php:124
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: src/Views/Creator.php:140
-msgid "Please wait ..."
-msgstr "Augenblick bitte ..."
+#: src/Views/Creator.php:141
+msgid ""
+"Please wait, while your sharepic is being created. This may take a few "
+"seconds."
+msgstr "Bitte warte, während Dein Sharepic erstellt wird. Dies kann einige Sekunden dauern."
 
-#: src/Views/Creator.php:179
+#: src/Views/Creator.php:156
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
-#: src/Views/Creator.php:180
+#: src/Views/Creator.php:157
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: src/Views/Creator.php:181
+#: src/Views/Creator.php:158
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: src/Views/Creator.php:182
+#: src/Views/Creator.php:159
 msgid "Maximum number of elements reached"
 msgstr "Maximale Anzahl von Elementen erreicht"
 
@@ -580,6 +594,44 @@ msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen
 #: src/Views/Home-Greens.php:23
 msgid "Login as guest"
 msgstr "Als Gast einloggen"
+
+#: src/Views/RTE.php:4
+msgid "color"
+msgstr "Farbe"
+
+#: src/Views/RTE.php:7
+msgid "Shadow"
+msgstr "Schatten"
+
+#: src/Views/RTE.php:13
+msgid "font size"
+msgstr "Schriftgröße"
+
+#: src/Views/RTE.php:22
+msgid "font appearance"
+msgstr "Schrift"
+
+#: src/Views/RTE.php:30
+msgid "font"
+msgstr "Schriftart"
+
+#: src/Views/RTE.php:37
+msgid "clear format"
+msgstr "Formatierung löschen"
+
+#: src/Views/RTE.php:41
+msgid "show source"
+msgstr "Quelltext"
+
+#: src/Views/RTE.php:44
+msgid "show richt text editor"
+msgstr "Rich Text Editor"
+
+#~ msgid "Toggle text shadow"
+#~ msgstr "Schatten ein-/ausschalten"
+
+#~ msgid "Please wait ..."
+#~ msgstr "Augenblick bitte ..."
 
 #~ msgid "Width"
 #~ msgstr "Breite"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-28 14:13+0100\n"
+"POT-Creation-Date: 2024-03-01 22:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,20 +169,20 @@ msgstr ""
 msgid "New template"
 msgstr ""
 
-#: src/Views/Menu-Mint.php:49 src/Views/Menu-Greens.php:52
+#: src/Views/Menu-Mint.php:49 src/Views/Menu-Greens.php:58
 msgid "Save"
 msgstr ""
 
-#: src/Views/Menu-Mint.php:52 src/Views/Menu-Greens.php:55
-#: src/Views/Creator.php:47 src/Views/Creator.php:62
+#: src/Views/Menu-Mint.php:52 src/Views/Menu-Greens.php:61
+#: src/Views/Creator.php:45 src/Views/Creator.php:63
 msgid "Download"
 msgstr ""
 
-#: src/Views/Menu-Mint.php:58 src/Views/Menu-Greens.php:61
+#: src/Views/Menu-Mint.php:58 src/Views/Menu-Greens.php:67
 msgid "My Sharepics"
 msgstr ""
 
-#: src/Views/Menu-Mint.php:64 src/Views/Menu-Greens.php:67
+#: src/Views/Menu-Mint.php:64 src/Views/Menu-Greens.php:73
 msgid "latest"
 msgstr ""
 
@@ -190,8 +190,8 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:102
-#: src/Views/Creator.php:104
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:103
+#: src/Views/Creator.php:105
 msgid "Eyecatcher"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Total size"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:64
+#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:65
 msgid "Dimensions"
 msgstr ""
 
@@ -241,8 +241,8 @@ msgstr ""
 msgid "square 1:1"
 msgstr ""
 
-#: src/Views/Cockpit/Background.php:2 src/Views/Creator.php:78
-#: src/Views/Creator.php:80
+#: src/Views/Cockpit/Background.php:2 src/Views/Creator.php:79
+#: src/Views/Creator.php:81
 msgid "Edit background image"
 msgstr ""
 
@@ -267,7 +267,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: src/Views/Cockpit/Vorort.php:2 src/Views/Menu-Greens.php:48
+#: src/Views/Cockpit/Vorort.php:2 src/Views/Menu-Greens.php:54
 msgid "Vor Ort"
 msgstr ""
 
@@ -280,8 +280,8 @@ msgid "please choose"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
-#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:94
-#: src/Views/Creator.php:96
+#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:95
+#: src/Views/Creator.php:97
 msgid "Text"
 msgstr ""
 
@@ -369,6 +369,14 @@ msgstr ""
 msgid "Try again"
 msgstr ""
 
+#: src/Views/Cockpit/Area.php:2
+msgid "Area"
+msgstr ""
+
+#: src/Views/Cockpit/Area.php:6
+msgid "Show green area"
+msgstr ""
+
 #: src/Views/Cockpit/Freetext.php:4
 msgid "For a text in your sharepic, edit it directly in the sharepic."
 msgstr ""
@@ -377,12 +385,8 @@ msgstr ""
 msgid "Add text"
 msgstr ""
 
-#: src/Views/Cockpit/Freetext.php:14
-msgid "Toggle text shadow"
-msgstr ""
-
-#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:86
-#: src/Views/Creator.php:88
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:87
+#: src/Views/Creator.php:89
 msgid "Copyright"
 msgstr ""
 
@@ -501,9 +505,9 @@ msgstr ""
 msgid "to back"
 msgstr ""
 
-#: src/Views/Components/ToFrontAndBack.php:15
 #: src/Views/Components/ToFrontAndBack.php:16
 #: src/Views/Components/ToFrontAndBack.php:17
+#: src/Views/Components/ToFrontAndBack.php:18
 msgid "delete"
 msgstr ""
 
@@ -512,42 +516,52 @@ msgid "Templates"
 msgstr ""
 
 #: src/Views/Menu-Greens.php:45
-msgid "BW Kandi Vorstellung"
+msgid "KW 24 Thema"
 msgstr ""
 
-#: src/Views/Creator.php:36
+#: src/Views/Menu-Greens.php:48
+msgid "KW 24 Erfolgsbilanz"
+msgstr ""
+
+#: src/Views/Menu-Greens.php:51
+msgid "KW 24 Kandi Vorstellung"
+msgstr ""
+
+#: src/Views/Creator.php:34
 msgid "Undo"
 msgstr ""
 
-#: src/Views/Creator.php:70 src/Views/Creator.php:72
+#: src/Views/Creator.php:71 src/Views/Creator.php:73
 msgid "Search or create image"
 msgstr ""
 
-#: src/Views/Creator.php:110 src/Views/Creator.php:112
+#: src/Views/Creator.php:111 src/Views/Creator.php:113
 msgid "Front picture"
 msgstr ""
 
-#: src/Views/Creator.php:123
+#: src/Views/Creator.php:124
 msgid "Logged in as"
 msgstr ""
 
-#: src/Views/Creator.php:140
-msgid "Please wait ..."
+#: src/Views/Creator.php:141
+msgid ""
+"Please wait, while your sharepic is being created. This may take a few "
+"seconds."
 msgstr ""
 
-#: src/Views/Creator.php:179
+#: src/Views/Creator.php:156
 msgid "Are you sure?"
 msgstr ""
 
-#: src/Views/Creator.php:180
+#: src/Views/Creator.php:157
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: src/Views/Creator.php:181
+#: src/Views/Creator.php:158
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: src/Views/Creator.php:182
+#: src/Views/Creator.php:159
 msgid "Maximum number of elements reached"
 msgstr ""
 
@@ -563,4 +577,36 @@ msgstr ""
 
 #: src/Views/Home-Greens.php:23
 msgid "Login as guest"
+msgstr ""
+
+#: src/Views/RTE.php:4
+msgid "color"
+msgstr ""
+
+#: src/Views/RTE.php:7
+msgid "Shadow"
+msgstr ""
+
+#: src/Views/RTE.php:13
+msgid "font size"
+msgstr ""
+
+#: src/Views/RTE.php:22
+msgid "font appearance"
+msgstr ""
+
+#: src/Views/RTE.php:30
+msgid "font"
+msgstr ""
+
+#: src/Views/RTE.php:37
+msgid "clear format"
+msgstr ""
+
+#: src/Views/RTE.php:41
+msgid "show source"
+msgstr ""
+
+#: src/Views/RTE.php:44
+msgid "show richt text editor"
 msgstr ""

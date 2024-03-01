@@ -138,7 +138,7 @@
 <dialog id="waiting">
   <p>
 	<?php
-		echo _('Please wait ...');
+		echo _('Please wait, while your sharepic is being created. This may take a few seconds.');
 	?>
   </p>
 </dialog>
