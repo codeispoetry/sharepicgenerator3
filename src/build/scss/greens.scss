@@ -5,6 +5,61 @@ body.greens{
         display: none !important;
     }
 
+    #sharepic {
+        background-size: cover;
+        width: 500px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        font-family: "GrueneType", sans-serif;
+    }
+
+    #greentext {
+        top: 130px;
+        left: 72px;
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+    
+        div {
+            position: relative;
+            font-weight: normal;
+            font-family: "GrueneType", sans-serif;
+            z-index: 3;
+            padding: 0;
+            align-self: flex-end;
+            white-space: nowrap;
+        }
+    }
+    .s, .m, .l{
+        display: flex; 
+        flex-direction: column;
+    }
+
+    .bw{
+        &-right{
+            div:nth-of-type(1){
+                margin-right: 0;
+            }
+            div:nth-of-type(2){
+                margin-right: 40px;
+            }
+        }
+    }
+
+    .s>div, 
+    .m>div, 
+    .l>div{
+          &::before {
+            content: "";
+            position: absolute;
+            transform: skew(-12deg, 0);
+            z-index: -1;
+        }
+    }
+    
     #greentextContextMenu {
         position: fixed;
         border: 0;
@@ -110,7 +165,6 @@ body.greens{
         background-color: $sand
     }
 
-    .sandtanne,
     .sandtanne>div{
         color: $sand !important;
     
@@ -119,7 +173,6 @@ body.greens{
         }
     }
     
-    .tannesand,
     .tannesand>div{
         color: $tanne;
     
@@ -128,7 +181,6 @@ body.greens{
         }
     }
     
-    .kleesand,
     .kleesand>div {
         color: $klee;
     
@@ -136,8 +188,7 @@ body.greens{
             background-color: $sand;
         }
     }
-    
-    .sandklee,
+
     .sandklee>div {
         color: $sand;
     
@@ -146,7 +197,6 @@ body.greens{
         }
     }
     
-    .grastanne,
     .grastanne>div {
         color: $gras;
     
@@ -155,7 +205,6 @@ body.greens{
         }
     }
     
-    .tannegras,
     .tannegras>div{
         color: $tanne;
     
@@ -164,7 +213,7 @@ body.greens{
         }
     }
 
-    .withbar {
+    .withbar div{
         position: relative;
         font-weight: normal;
         font-family: "GrueneType", sans-serif;
@@ -172,13 +221,7 @@ body.greens{
         padding: 0;
         align-self: flex-start;
         white-space: nowrap;
-    
-        &::before {
-            content: "";
-            position: absolute;
-            transform: skew(-9deg, 0);
-            z-index: -1;
-        }
+
     }
 
     .copyright{

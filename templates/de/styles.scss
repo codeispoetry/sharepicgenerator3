@@ -21,14 +21,6 @@ $l: 100px;
         padding: 0;
         align-self: flex-start;
         white-space: nowrap;
-
-        &::before {
-            content: "";
-            position: absolute;
-            transform: skew(-9deg, 0);
-            z-index: -1;
-        }
-
     }
 }
 
