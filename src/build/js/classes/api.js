@@ -77,15 +77,10 @@ class API {
     const canvas = document.getElementById('canvas')
 
     const clonedCanvas = canvas.cloneNode(true)
-    clonedCanvas.querySelector('.ql-hidden')?.remove()
-    clonedCanvas.querySelector('.ql-toolbar')?.remove()
-    clonedCanvas.querySelector('.ql-tooltip')?.remove()
-    clonedCanvas.querySelector('.ql-clipboard')?.remove()
 
     clonedCanvas.querySelector('#greentextContextMenu')?.remove()
 
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css">\n')
-
     clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../">\n')
 
     const data = {

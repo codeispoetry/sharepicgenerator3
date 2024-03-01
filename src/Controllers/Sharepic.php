@@ -216,7 +216,7 @@ class Sharepic {
 	}
 
 	/**
-	 * Creates a sharepic.
+	 * Creates a sharepic by taking the screenshot of the HTML.
 	 */
 	public function create() {
 		$path   = 'users/' . $this->user . '/output.png';
