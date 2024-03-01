@@ -280,13 +280,14 @@ class API {
 
     document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`
     document.getElementById('sharepic').style.filter = 'grayscale(100%)'
-    document.querySelector('.workbench-below .message').innerHTML = lang['Uploading image']
 
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload', true)
     xhr.upload.onprogress = function (e) {
       if (e.lengthComputable) {
         const percentComplete = Math.round((e.loaded / e.total) * 100)
+
+        document.querySelector('.workbench-below .message').innerHTML = lang['Uploading image'] + ' ' + percentComplete + '%'
       }
     }
     xhr.onload = function () {

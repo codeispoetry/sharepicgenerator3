@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 22:06+0100\n"
+"POT-Creation-Date: 2024-03-01 22:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Already registered?"
 msgstr ""
 
-#: src/Views/Menu-Mint.php:4 src/Views/Menu-Greens.php:3
+#: src/Views/Menu-Mint.php:4
 msgid "MINTSharepic"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
-#: src/Views/Menu-Mint.php:43
+#: src/Views/Menu-Mint.php:43 src/Views/Menu-Greens.php:3
 msgid "File"
 msgstr ""
 
@@ -174,7 +174,7 @@ msgid "Save"
 msgstr ""
 
 #: src/Views/Menu-Mint.php:52 src/Views/Menu-Greens.php:61
-#: src/Views/Creator.php:45 src/Views/Creator.php:63
+#: src/Views/Creator.php:45 src/Views/Creator.php:64
 msgid "Download"
 msgstr ""
 
@@ -190,8 +190,8 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:103
-#: src/Views/Creator.php:105
+#: src/Views/Cockpit/Eyecatcher.php:2 src/Views/Creator.php:104
+#: src/Views/Creator.php:106
 msgid "Eyecatcher"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Total size"
 msgstr ""
 
-#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:65
+#: src/Views/Cockpit/Download.php:2 src/Views/Creator.php:66
 msgid "Dimensions"
 msgstr ""
 
@@ -241,8 +241,8 @@ msgstr ""
 msgid "square 1:1"
 msgstr ""
 
-#: src/Views/Cockpit/Background.php:2 src/Views/Creator.php:79
-#: src/Views/Creator.php:81
+#: src/Views/Cockpit/Background.php:2 src/Views/Creator.php:80
+#: src/Views/Creator.php:82
 msgid "Edit background image"
 msgstr ""
 
@@ -280,8 +280,8 @@ msgid "please choose"
 msgstr ""
 
 #: src/Views/Cockpit/Vorort.php:15 src/Views/Cockpit/Freetext.php:2
-#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:95
-#: src/Views/Creator.php:97
+#: src/Views/Cockpit/Addpicture.php:33 src/Views/Creator.php:96
+#: src/Views/Creator.php:98
 msgid "Text"
 msgstr ""
 
@@ -385,8 +385,8 @@ msgstr ""
 msgid "Add text"
 msgstr ""
 
-#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:87
-#: src/Views/Creator.php:89
+#: src/Views/Cockpit/Copyright.php:2 src/Views/Creator.php:88
+#: src/Views/Creator.php:90
 msgid "Copyright"
 msgstr ""
 
@@ -531,38 +531,42 @@ msgstr ""
 msgid "Undo"
 msgstr ""
 
-#: src/Views/Creator.php:71 src/Views/Creator.php:73
+#: src/Views/Creator.php:72 src/Views/Creator.php:74
 msgid "Search or create image"
 msgstr ""
 
-#: src/Views/Creator.php:111 src/Views/Creator.php:113
+#: src/Views/Creator.php:112 src/Views/Creator.php:114
 msgid "Front picture"
 msgstr ""
 
-#: src/Views/Creator.php:124
+#: src/Views/Creator.php:125
 msgid "Logged in as"
 msgstr ""
 
-#: src/Views/Creator.php:141
+#: src/Views/Creator.php:142
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
 msgstr ""
 
-#: src/Views/Creator.php:156
+#: src/Views/Creator.php:157
 msgid "Are you sure?"
 msgstr ""
 
-#: src/Views/Creator.php:157
+#: src/Views/Creator.php:158
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: src/Views/Creator.php:158
+#: src/Views/Creator.php:159
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: src/Views/Creator.php:159
+#: src/Views/Creator.php:160
 msgid "Maximum number of elements reached"
+msgstr ""
+
+#: src/Views/Creator.php:161
+msgid "Uploading your image ..."
 msgstr ""
 
 #: src/Views/Pixabay.php:4
