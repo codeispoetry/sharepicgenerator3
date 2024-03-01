@@ -43,8 +43,8 @@ class Felogger {
 
 		$infos = array(
 			'time' => gmdate( 'Y-m-d H:i:s' ),
-			'user' => md5( $this->user ),
-			'data' => join( ' ', $data ),
+			'user' => $this->user,
+			'data' => trim( join( ' ', $data ) ),
 		);
 
 		if ( ! file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX ) ) {

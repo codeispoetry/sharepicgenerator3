@@ -1,5 +1,5 @@
 <?php include_once './src/Views/Header.php'; ?>
-<main class="main" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+<main class="main" style="background-image: none; height: 100%; display: flex; justify-content: center; align-items: center;">
 	<div class="row">
 		<div class="">
 			<h1><?php echo _('Usage Log'); ?></h1>
@@ -16,7 +16,7 @@
 
 						printf( '%s %s %s<br>', 
 							$time, 
-							substr( $user, 0, 5 ), 
+							substr( $user, 0, 12 ), 
 							$entry
 						);
 					}

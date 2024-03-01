@@ -1,6 +1,6 @@
 <nav>
     <div class="dropdown" id="menu_mint">
-        <span><?php echo _( 'MINTSharepic' ); ?></span>
+        <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
             <button onClick="ui.setLang('de')">
                 <?php echo _( 'German' ); ?>
