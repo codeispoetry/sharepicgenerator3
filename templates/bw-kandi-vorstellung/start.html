@@ -39,9 +39,9 @@
             display: flex; flex-direction: column;
             align-self: flex-end;
             margin-right: 30px;
-            margin-top: -7px;
+            margin-top: 0px;
         ">
-            <div>Listenplatz 2</div>
+            <div>Listenplatz 3</div>
         </div>
     </div>
 
@@ -76,7 +76,7 @@
     </div>
 
     <script>
-        document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-kandi-vorstellung/styles.css?r= ' + Math.random() + '">');
+        document.querySelector('#sharepic').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-kandi-vorstellung/styles.css?r= ' + Math.random() + '">');
 
         document.getElementById('tabsbuttons').style.display = 'flex'
         document.querySelector('#cockpit .show')?.classList.remove('show')
