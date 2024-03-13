@@ -136,6 +136,9 @@ class Sharepic {
     sg.dataset.height = height
 
     this.putBackOnCanvas()
+
+    document.getElementById('sharepic').classList.toggle('small', newWidth < 400)
+
   }
 
   /*
