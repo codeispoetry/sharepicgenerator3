@@ -50,6 +50,9 @@
             <button onClick="api.load('templates/bw-kandi-vorstellung/start.html')">
                 <?php  echo _('KW 24 Kandi Vorstellung');?>
             </button>
+            <button onClick="api.load('templates/bw-zitat/start.html')">
+                <?php  echo _('KW 24 Zitat');?>
+            </button>
             <button onClick="api.load('templates/vorort/start.html')">
                 <?php  echo _('Vor Ort');?>
             </button>

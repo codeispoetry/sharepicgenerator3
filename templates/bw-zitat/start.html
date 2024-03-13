@@ -1,0 +1,108 @@
+<div id="sharepic"
+    style="	background-color: #f5f1e9;
+			background-repeat: no-repeat;
+			background-position: 0px 0px; 
+			width: 800px; height:800px;
+			border:0;
+			overflow:hidden;"
+    		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
+
+    <div id="bar" style="
+            position: absolute;
+            width: 400px;
+            height: 150%;
+            background-color: hsl(159, 100%, 16%);
+            transform: rotate(12deg);
+            left: -340px;
+            bottom: -50px;
+            transform-origin: bottom right;
+        "
+        onclick="component.select(this)"
+        data-cockpit="area">
+    </div>
+
+    <div class="m sandklee withbar"
+        contenteditable="true"
+        style="
+            z-index: 200;
+            position: absolute;
+            left: 56px;
+            bottom: 146px;
+        ">
+        <div id="dafuer">Vorname Nachname</div>
+    </div>
+    <div 
+        class="longtext" 
+        data-cockpit="greentext"  
+        id="greentext"
+        spellcheck="false"
+        contenteditable="false"
+        ddonclick="component.select(this);rte.setPosition()" 
+        style="
+            top: unset;
+            bottom: 250px;
+            color: black;
+        "
+    >
+         <div contenteditable="true">Tippe Deinen Text hier.</div>
+    </div>
+
+    <div class="draggable selectable" id="logo" 
+        contenteditable="false"
+        data-cockpit="logo"
+        onclick="component.select(this)"
+        onmousedown="component.startDrag(event)"
+        style="
+            width: 250px;
+            height: 250px;
+            background-image: url('templates/de/logo.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: -130px;
+            top:  100px;
+            position: absolute;
+        "
+        onclick="component.select(this)"
+        data-cockpit="area"
+    ></div>
+
+    <div id="patterns">
+        <div
+            data-class="selectable copyright" 
+            data-cockpit="copyright" 
+            data-id="copyright"
+            data-max="1"
+            contenteditable="true" spellcheck="false" 
+            onclick="component.select(this)"
+            style="
+                font-size: 14px;
+                color: #000000;
+                z-index: 10;
+            ">&nbsp;Hinweis
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#sharepic').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-bilanz/styles.css?r= ' + Math.random() + '">');
+
+        document.getElementById('tabsbuttons').style.display = 'flex'
+        document.querySelector('#cockpit .show')?.classList.remove('show')
+        document.getElementById('cockpit_search')?.classList.add('show')
+
+        document.getElementById('logo_colors').style.display = 'none'
+        document.getElementById('tab_btn_copyright').style.display = 'none'
+        document.getElementById('tab_btn_freetext').style.display = 'none'
+        document.getElementById('tab_btn_eyecatcher').style.display = 'none'
+        document.getElementById('tab_btn_addpicture').style.display = 'none'
+        document.getElementById('search_dalle').style.display = 'block'
+        document.getElementById('search_pixabay').style.display = 'block'
+    </script>
+</div>
+
+<style>
+    @font-face {
+        font-family: "GrueneType";
+        src: url("assets/fonts/GrueneType.woff2") format("woff2");
+    }
+</style>
+

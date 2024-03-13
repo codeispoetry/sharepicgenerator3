@@ -16,9 +16,17 @@ body.greens{
         font-family: "GrueneType", sans-serif;
 
 
+        .longtext{
+            left: 200px;
+        }
+
         &.small{
             #greentext, #dafuer{
                 transform: scale(0.6);
+            }
+
+            .longtext{
+                left: 100px;
             }
         }
     }
@@ -35,6 +43,14 @@ body.greens{
         flex-direction: column;
         transform-origin: bottom right;
     
+
+        &.longtext{
+            div{
+                font-family: 'PT Sans', sans-serif !important;
+                font-weight: normal !important;
+            }
+        }
+
         div {
             position: relative;
             font-weight: normal;
