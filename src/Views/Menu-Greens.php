@@ -53,6 +53,9 @@
             <button onClick="api.load('templates/bw-zitat/start.html')">
                 <?php  echo _('KW 24 Zitat');?>
             </button>
+            <button onClick="api.load('templates/bw-steckbrief/start.html')">
+                <?php  echo _('KW 24 Steckbrief');?>
+            </button>
             <button onClick="api.load('templates/vorort/start.html')">
                 <?php  echo _('Vor Ort');?>
             </button>
