@@ -23,10 +23,11 @@ body.greens{
         &.small{
             #greentext, #dafuer{
                 transform: scale(0.6);
+                margin-bottom: -8%;
             }
 
             .longtext{
-                left: 100px;
+                left: 70px;
             }
         }
     }
@@ -263,4 +264,20 @@ body.greens{
         padding: 0;
         margin: 0;
     }
+
+    .dropdown {
+        &-content {   
+            button,
+            a.menu-link{   
+                height: 40px;
+
+                &.story{
+                   padding-left: 40px;
+                   font-style: italic;
+                }
+            }
+        }
+      
+    }
 }
+

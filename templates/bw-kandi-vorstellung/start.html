@@ -88,6 +88,10 @@
         document.getElementById('tab_btn_addpicture').style.display = 'none'
         document.getElementById('search_dalle').style.display = 'none'
         document.getElementById('search_pixabay').style.display = 'none'
+
+        if( typeof bwstory != 'undefined' && bwstory == true) {
+            document.querySelector('[title="Instagram"]').click();
+        }
     </script>
 </div>
 

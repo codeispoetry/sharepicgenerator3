@@ -21,13 +21,13 @@
         data-cockpit="area">
     </div>
 
-    <div class="m sandklee withbar"
+    <div class="m sandklee withbar second-to-right"
         contenteditable="true"
         style="
             z-index: 200;
             position: absolute;
             left: 56px;
-            bottom: 146px;
+            top: 375px;
         ">
         <div id="dafuer">Vorname Nachname</div>
     </div>
@@ -96,6 +96,10 @@
         document.getElementById('tab_btn_addpicture').style.display = 'none'
         document.getElementById('search_dalle').style.display = 'block'
         document.getElementById('search_pixabay').style.display = 'block'
+
+        if( typeof bwstory != 'undefined' && bwstory == true) {
+            document.querySelector('[title="Instagram"]').click();
+        }
     </script>
 </div>
 
@@ -103,6 +107,31 @@
     @font-face {
         font-family: "GrueneType";
         src: url("assets/fonts/GrueneType.woff2") format("woff2");
+    }
+
+    .second-to-right{
+        div:nth-of-type(2){
+            margin-left: 40px;
+        }
+    }
+
+    #greentext{
+        div{
+            white-space: pre-wrap !important;
+        }
+
+        font-size: 120%;
+    }
+
+    #sharepic.small{
+        #bar{
+            left: -380px !important;
+        }
+
+        #logo{
+            width: 220px !important;
+            height: 220px !important;
+        }
     }
 </style>
 
