@@ -41,10 +41,14 @@ class Felogger {
 			return;
 		}
 
+		// Should data be more sanitized?
+		$data = trim( join( ' ', $data ) );
+		$data = escapeshellarg( $data );
+
 		$infos = array(
 			'time' => gmdate( 'Y-m-d H:i:s' ),
 			'user' => $this->user,
-			'data' => trim( join( ' ', $data ) ),
+			'data' => $data,
 		);
 
 		if ( ! file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX ) ) {

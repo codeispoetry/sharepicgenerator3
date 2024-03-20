@@ -108,6 +108,7 @@ class Sharepic {
 			return;
 		}
 
+		// ToDo: Sanitize this / cast
 		$this->size['width']  = $data['size']['width'] ?? 100;
 		$this->size['height'] = $data['size']['height'] ?? 100;
 		$this->size['zoom']   = $data['size']['zoom'] ?? 1;

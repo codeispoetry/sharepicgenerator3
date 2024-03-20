@@ -32,13 +32,13 @@ class Frontend {
 	 * The generator page.
 	 */
 	public function create() {
-		$auto          = $_GET['auto'] ?? '';
+		$auto          = ( ! empty( $_GET['auto'] ) ) ? Helper::sanitze_az09( $_GET['auto'] ) : '';
 		$allowed_autos = array( 'einigungshilfe' );
 		$body_classes  = strToLower( $this->config->get( 'Main', 'menu' ) );
 		$templates     = $this->config->get( 'Templates' );
 		$published     = $this->get_published();
 
-		if ( in_array( $auto, $allowed_autos, true ) ) {
+		if ( ! empty( $auto ) && in_array( $auto, $allowed_autos, true ) ) {
 			$this->user->autologin( $auto );
 			$starttemplate = $auto;
 			include_once './src/Views/Creator.php';
@@ -58,7 +58,7 @@ class Frontend {
 	 * Shows an arbitrary view
 	 */
 	public function view() {
-		$view = $_GET['view'] ?? '';
+		$view = ( ! empty( $_GET['view'] ) ) ? Helper::sanitze_az09( $_GET['view'] ) : '';
 
 		$pages = glob( './src/Views/Pages/*.php' );
 		$pages = array_map(
@@ -67,6 +67,7 @@ class Frontend {
 			},
 			$pages
 		);
+
 		if ( empty( $view ) || ! in_array( $view, $pages, true ) ) {
 			$this->no_access();
 		}
@@ -77,8 +78,10 @@ class Frontend {
 	 * The registration page.
 	 */
 	public function register() {
-		if ( ! isset( $_POST['register_mail'] ) ) {
+		$register_mail = $_POST['register_mail'];
+		if ( empty( $register_mail ) || ! filter_var( $register_mail, FILTER_VALIDATE_EMAIL ) ) {
 			$this->no_access();
+			return false;
 		}
 
 		if ( ! $this->user->register( $_POST['register_mail'] ) ) {
@@ -112,7 +115,7 @@ class Frontend {
 	 */
 	public function reset_password() {
 		if ( empty( $_POST['password'] ) ) {
-			$token = $_GET['token'] ?? '';
+			$token = ( ! empty( $_GET['token'] ) ) ? Helper::sanitze_token( $_GET['token']) : '';
 			if ( isset( $_GET['newpassword'] ) ) {
 				$title        = _( 'Create your password' );
 				$submit_value = _( 'Set your new password' );
@@ -139,8 +142,8 @@ class Frontend {
 		}
 
 		// Perform the password reset.
-		$token    = $_POST['token'];
-		$password = $_POST['password'];
+		$token    = Helper::sanitze_token( $_POST['token'] );
+		$password = Helper::sanitize( $_POST['password'] );
 		if ( ! $this->user->set_password( $token, $password ) ) {
 			$this->no_access();
 		}

@@ -2,6 +2,7 @@
 namespace Sharepicgenerator\Controllers;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Sharepicgenerator\Controllers\Logger;
 
 /**
  * Mailer controller.
@@ -16,6 +17,13 @@ class Mailer {
 	private $phpmailer;
 
 	/**
+	 * The logger object.
+	 *
+	 * @var Logger
+	 */
+	private $logger;
+
+	/**
 	 * The constructor. Sets up the mailer.
 	 *
 	 * @param string $username The users email.
@@ -23,6 +31,7 @@ class Mailer {
 	public function __construct( $username ) {
 		$this->phpmailer = new PHPMailer( true );
 		$config          = new Config();
+		$this->logger    = new Logger( $username );
 
 		//phpcs:disable
         $this->phpmailer->isSMTP();
@@ -53,7 +62,7 @@ class Mailer {
 			$this->phpmailer->Body    = $message;
 			$this->phpmailer->send();
 		} catch ( \Exception $e ) {
-			\Sharepicgenerator\log( "Message could not be sent. phpMailer Error: {$this->phpmailer->ErrorInfo}" );
+			$this->logger->error( "E-,ail could not be sent. phpMailer Error: {$this->phpmailer->ErrorInfo}" );
 			return false;
 		}
 

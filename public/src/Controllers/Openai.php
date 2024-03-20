@@ -2,7 +2,6 @@
 namespace Sharepicgenerator\Controllers;
 
 use Sharepicgenerator\Controllers\User;
-use Sharepicgenerator\Controllers\Logger;
 
 /**
  * Open AI controller.
@@ -46,7 +45,10 @@ class Openai {
 			die();
 		}
 
-		$response = $this->curl( $data['prompt'] );
+		// Should data be more sanitized?
+		$prompt = urlencode( $data['prompt'] );
+
+		$response = $this->curl( $prompt );
 
 		$json = json_decode( $response );
 

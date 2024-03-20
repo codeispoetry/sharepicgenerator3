@@ -401,7 +401,6 @@ class User {
 		$result = $stmt->fetch( \PDO::FETCH_ASSOC );
 
 		if ( false === $result ) {
-
 			return false;
 		}
 
@@ -521,7 +520,7 @@ class User {
 	 */
 	public function send_password_link() {
 		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
-			\Sharepicgenerator\log( 'empty username in send_password_link' );
+			$this->logger->error( 'empty username in send_password_link' );
 			return false;
 		}
 
@@ -529,7 +528,7 @@ class User {
 		$token    = $this->get_token_for_user( $username );
 
 		if ( empty( $token ) ) {
-			\Sharepicgenerator\log( 'empty token in send_password_link' );
+			$this->logger->error( 'empty token in send_password_link' );
 			return false;
 		}
 
@@ -543,7 +542,7 @@ class User {
 
 		$mail = new Mailer( $username );
 		if ( ! $mail->send( _( 'Password Reset' ), $message ) ) {
-			\Sharepicgenerator\log( 'mailer error in send_password_link' );
+			$this->logger->error( 'mailer error in send_password_link' );
 		}
 
 		return true;

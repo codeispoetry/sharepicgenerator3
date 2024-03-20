@@ -71,6 +71,9 @@ class Logger {
 		$backtrace            = debug_backtrace(); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_debug_backtrace
 		$this->line['caller'] = $backtrace[2]['class'] . '::' . $backtrace[2]['function'];
 
+		// Should data be more sanitized?
+		$this->line['message'] = escapeshellarg( $this->line['message'] );
+
 		$line = implode( ' | ', $this->line );
 
 		try {
