@@ -78,13 +78,13 @@ class Frontend {
 	 * The registration page.
 	 */
 	public function register() {
-		$register_mail = $_POST['register_mail'];
+		$register_mail = Helper::sanitize( $_POST['register_mail'] );
 		if ( empty( $register_mail ) || ! filter_var( $register_mail, FILTER_VALIDATE_EMAIL ) ) {
 			$this->no_access();
 			return false;
 		}
 
-		if ( ! $this->user->register( $_POST['register_mail'] ) ) {
+		if ( ! $this->user->register( $register_mail ) ) {
 			$title   = _( 'Register' );
 			$message = _( 'Registration failed. Are you already registered?' );
 			include_once './src/Views/Hero.php';

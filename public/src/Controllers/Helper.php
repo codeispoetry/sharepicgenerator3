@@ -15,7 +15,6 @@ class Helper {
 		$input = trim( $input );
 		$input = stripslashes( $input );
 		$input = htmlspecialchars( $input );
-		$input = escapeshellarg( $input );
 		return $input;
 	}
 

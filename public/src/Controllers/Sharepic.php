@@ -394,6 +394,7 @@ class Sharepic {
 
 		$file = $_FILES['file'];
 
+		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$upload_file = 'users/' . $this->user . '/workspace/addpic-' . rand() . '.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
@@ -428,7 +429,7 @@ class Sharepic {
 	 * Deletes unused files from workspace.
 	 */
 	private function delete_unused_files() {
-		// ToDo: sanitze deletions
+		// ToDo: sanitze deletions.
 		$html = file_get_contents( $this->file );
 
 		$dom = new \DOMDocument();

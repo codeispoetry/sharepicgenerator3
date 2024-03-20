@@ -12,5 +12,5 @@ blob-report/
 playwright/.cache/
 tests/*js-snapshots/
 tests/tmp/*
-tmp/*
+public/tmp/*
 de.po~

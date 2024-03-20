@@ -136,17 +136,19 @@ class User {
 		if ( empty( $_POST['username'] ) ) {
 			return false;
 		}
-		$user = $this->get_user_array( $_POST['username'] );
+
+		$username = Helper::sanitize( $_POST['username'] );
+		$user     = $this->get_user_array( $username );
 
 		if ( ! $user ) {
 			return false;
 		}
 
-		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
+		if ( empty( $username ) || ! filter_var( $username, FILTER_VALIDATE_EMAIL ) ) {
 			return false;
 		}
 
-		if ( ! password_verify( $_POST['password'], $user['password'] ) ) {
+		if ( ! password_verify( Helper::sanitize( $_POST['password'] ), $user['password'] ) ) {
 			$this->logger->error( "user {$user['username']} wrong password" );
 			return false;
 		}
@@ -524,7 +526,7 @@ class User {
 			return false;
 		}
 
-		$username = $_POST['username'];
+		$username = Helper::sanitize( $_POST['username'] );
 		$token    = $this->get_token_for_user( $username );
 
 		if ( empty( $token ) ) {
