@@ -62,7 +62,7 @@ class Mailer {
 			$this->phpmailer->Body    = $message;
 			$this->phpmailer->send();
 		} catch ( \Exception $e ) {
-			$this->logger->error( "E-,ail could not be sent. phpMailer Error: {$this->phpmailer->ErrorInfo}" );
+			$this->logger->error( "E-mail could not be sent. phpMailer Error: {$this->phpmailer->ErrorInfo}" );
 			return false;
 		}
 

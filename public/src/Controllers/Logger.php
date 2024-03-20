@@ -63,6 +63,17 @@ class Logger {
 	}
 
 	/**
+	 * Prepares alarm.log
+	 *
+	 * @param string $message The info to log.
+	 */
+	public function alarm( $message ) {
+		$this->line['message'] = $message;
+		$this->file            = '../logs/alarm.log';
+		$this->write();
+	}
+
+	/**
 	 * Write the log info.
 	 *
 	 * @throws \Exception If the log file is not writable.

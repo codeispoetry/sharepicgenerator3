@@ -108,7 +108,7 @@ class Sharepic {
 			return;
 		}
 
-		// ToDo: Sanitize this / cast
+		// ToDo: Sanitize this / cast.
 		$this->size['width']  = $data['size']['width'] ?? 100;
 		$this->size['height'] = $data['size']['height'] ?? 100;
 		$this->size['zoom']   = $data['size']['zoom'] ?? 1;
@@ -201,6 +201,7 @@ class Sharepic {
 			$this->http_error( 'Could not delete sharepic' );
 		}
 
+		// The casting to int is necessary to prevent directory traversal.
 		$save_dir = './users/' . $this->user . '/save/' . (int) $sharepic;
 
 		if ( ! file_exists( $save_dir ) ) {
@@ -269,31 +270,31 @@ class Sharepic {
 		$this->logger->access( 'Loading image from URL' );
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
-		$url = ( ! empty( $data['url'] ) ) ? filter_var( $data['url'], FILTER_VALIDATE_URL ) : false;
+		$url = filter_var( $data['url'], FILTER_VALIDATE_URL );
 
 		if ( ! $url ) {
 			$this->http_error( 'Could not load image' );
 			return;
 		}
 
-		$headers = get_headers( $url, 1 );
-		$ct      = $headers['Content-Type'];
-		if ( empty( $ct ) || ! str_starts_with( $ct, 'image/' ) ) {
-			$this->logger->error( Helper::sanitize_log( $url ) . ' has Content-Type: ' . $ct );
+		if ( ! Helper::is_image_file_remote( $url ) ) {
 			$this->http_error( 'Could not load image' );
 			return;
 		}
 
-		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
-		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			$this->http_error( 'Invalid file type' );
-		}
-
 		$this->delete_my_old_files();
 
+		$extension   = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 
 		copy( $url, $upload_file );
+
+		if ( ! Helper::is_image_file_local( $upload_file ) ) {
+			unlink( $upload_file );
+			$this->http_error( 'Could copy load image' );
+			return;
+		}
+
 		$this->reduce_filesize( $upload_file );
 
 		$this->logger->access( 'Image loaded from URL' );
@@ -351,19 +352,26 @@ class Sharepic {
 			return;
 		}
 
-		$file = $_FILES['file'];
-
-		$extension = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
-		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			$this->http_error( 'Invalid file type' );
+		if ( is_array( $_FILES['file']['name'] ) ) {
+			$this->logger->alarm( 'Multiple files uploaded' );
+			$this->http_error( 'Could not upload file' );
 		}
+
+		$file = $_FILES['file'];
 
 		$this->delete_my_old_files();
 
+		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
-			$this->http_error( 'Could not upload file' );
+			$this->http_error( 'Could not upload file. Code 1.' );
+		}
+
+		if ( ! Helper::is_image_file_local( $upload_file ) ) {
+			unlink( $upload_file );
+			$this->http_error( 'Could not upload image. Code 2.' );
+			return;
 		}
 
 		$this->reduce_filesize( $upload_file );
@@ -379,17 +387,23 @@ class Sharepic {
 			return;
 		}
 
-		$file = $_FILES['file'];
-
-		$extension = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
-		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
-			$this->http_error( 'Invalid file type' );
+		if ( is_array( $_FILES['file']['name'] ) ) {
+			$this->logger->alarm( 'Multiple files uploaded' );
+			$this->http_error( 'Could not upload file' );
 		}
+
+		$file = $_FILES['file'];
 
 		$upload_file = 'users/' . $this->user . '/workspace/addpic-' . rand() . '.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file' );
+		}
+
+		if ( ! Helper::is_image_file_local( $upload_file ) ) {
+			unlink( $upload_file );
+			$this->http_error( 'Could not upload image. Code 2.' );
+			return;
 		}
 
 		$this->reduce_filesize( $upload_file, 2000, 1000 );
@@ -414,6 +428,7 @@ class Sharepic {
 	 * Deletes unused files from workspace.
 	 */
 	private function delete_unused_files() {
+		// ToDo: sanitze deletions
 		$html = file_get_contents( $this->file );
 
 		$dom = new \DOMDocument();
