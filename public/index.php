@@ -14,6 +14,7 @@ use Sharepicgenerator\Controllers\Sharepic;
 use Sharepicgenerator\Controllers\Felogger;
 use Sharepicgenerator\Controllers\Openai;
 use Sharepicgenerator\Controllers\Config;
+use Sharepicgenerator\Controllers\Proxy;
 
 bindtextdomain( 'sg', './languages' );
 textdomain( 'sg' );
@@ -61,6 +62,10 @@ if ( 'openai' === $controller ) {
 	$openai->{$method}();
 }
 
+if ( 'proxy' === $controller ) {
+	Proxy::serve();
+}
+
 /**
  * Get the language.
  *
@@ -78,15 +83,3 @@ function get_lang() {
 	return false;
 }
 
-/**
- * Logs to local file.
- *
- * @param string $message The Log-Message.
- * @return void
- */
-function log( $message ) {
-	$line  = gmdate( 'Y-m-d H:i:s' );
-	$line .= "\t" . $message;
-	$line .= "\n";
-	file_put_contents( 'logs/logger.log', $line );
-}

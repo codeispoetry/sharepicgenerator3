@@ -6,7 +6,7 @@
 			<p>
                 <?php
                     foreach($files as $file) {
-						echo '<img src="' . $file . '" style="margin: 10px;">';
+						echo '<img src="index.php?c=proxy&p=' . $file . '" style="margin: 10px;">';
 					}
                 ?>
             </p>
