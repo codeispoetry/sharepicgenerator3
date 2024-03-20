@@ -269,10 +269,19 @@ class Sharepic {
 		$this->logger->access( 'Loading image from URL' );
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
-		$url = $data['url'] ?? false;
+		$url = ( ! empty( $data['url'] ) ) ? filter_var( $data['url'], FILTER_VALIDATE_URL ) : false;
 
 		if ( ! $url ) {
 			$this->http_error( 'Could not load image' );
+			return;
+		}
+
+		$headers = get_headers( $url, 1 );
+		$ct      = $headers['Content-Type'];
+		if ( empty( $ct ) || ! str_starts_with( $ct, 'image/' ) ) {
+			$this->logger->error( Helper::sanitize_log( $url ) . ' has Content-Type: ' . $ct );
+			$this->http_error( 'Could not load image' );
+			return;
 		}
 
 		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
@@ -280,7 +289,7 @@ class Sharepic {
 			$this->http_error( 'Invalid file type' );
 		}
 
-		$this->delete_old_files();
+		$this->delete_my_old_files();
 
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 
@@ -349,7 +358,7 @@ class Sharepic {
 			$this->http_error( 'Invalid file type' );
 		}
 
-		$this->delete_old_files();
+		$this->delete_my_old_files();
 
 		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
 
@@ -391,7 +400,7 @@ class Sharepic {
 	/**
 	 * Deletes old files.
 	 */
-	private function delete_old_files() {
+	private function delete_my_old_files() {
 		$files = glob( 'users/' . $this->user . '/workspace/background.*' );
 
 		foreach ( $files as $file ) {

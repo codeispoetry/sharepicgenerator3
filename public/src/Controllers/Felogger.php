@@ -41,9 +41,7 @@ class Felogger {
 			return;
 		}
 
-		// Should data be more sanitized?
-		$data = trim( join( ' ', $data ) );
-		$data = escapeshellarg( $data );
+		$data = Helper::sanitize_log( join( ' ', $data ) );
 
 		$infos = array(
 			'time' => gmdate( 'Y-m-d H:i:s' ),

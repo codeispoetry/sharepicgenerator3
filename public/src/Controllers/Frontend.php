@@ -115,7 +115,7 @@ class Frontend {
 	 */
 	public function reset_password() {
 		if ( empty( $_POST['password'] ) ) {
-			$token = ( ! empty( $_GET['token'] ) ) ? Helper::sanitze_token( $_GET['token']) : '';
+			$token = ( ! empty( $_GET['token'] ) ) ? Helper::sanitze_token( $_GET['token'] ) : '';
 			if ( isset( $_GET['newpassword'] ) ) {
 				$title        = _( 'Create your password' );
 				$submit_value = _( 'Set your new password' );

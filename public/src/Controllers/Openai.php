@@ -45,8 +45,7 @@ class Openai {
 			die();
 		}
 
-		// Should data be more sanitized?
-		$prompt = urlencode( $data['prompt'] );
+		$prompt = Helper::sanitize_url( $data['prompt'] );
 
 		$response = $this->curl( $prompt );
 
