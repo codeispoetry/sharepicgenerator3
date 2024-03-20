@@ -60,7 +60,7 @@ class API {
         const clonedCanvas = canvas.cloneNode(true);
         clonedCanvas.querySelector("#greentextContextMenu")?.remove();
         clonedCanvas.insertAdjacentHTML("afterbegin", '<link rel="stylesheet" href="assets/styles.css?r=1">\n');
-        clonedCanvas.insertAdjacentHTML("afterbegin", '<base href="../../../">\n');
+        clonedCanvas.insertAdjacentHTML("afterbegin", '<base href="../../../html/">\n');
         const data = {
             data: clonedCanvas.innerHTML,
             size: {

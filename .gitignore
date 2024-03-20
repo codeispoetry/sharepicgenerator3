@@ -1,7 +1,7 @@
 vendor/
 node_modules/
-assets/script.js
-assets/styles.css
+public/assets/script.js
+public/assets/styles.css
 users/
 users.db
 config.ini

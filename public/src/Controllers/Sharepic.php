@@ -238,6 +238,8 @@ class Sharepic {
 			escapeshellarg( $this->file )
 		);
 
+		$this->logger->access( 'Command executed: ' . $cmd );
+
 		if ( $config->get( 'Main', 'engine' ) === 'puppeteer' ) {
 			$cmd = sprintf(
 				'%s xvfb-run --auto-servernum --server-num=1 node puppeteer.js %s %d %d file:///var/www/html/%s 2>&1',
@@ -260,7 +262,7 @@ class Sharepic {
 
 		$this->create_thumbnail( $path );
 
-		echo json_encode( array( 'path' => $path ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $path, 3 ) ) );
 	}
 
 	/**
@@ -298,7 +300,7 @@ class Sharepic {
 		$this->reduce_filesize( $upload_file );
 
 		$this->logger->access( 'Image loaded from URL' );
-		echo json_encode( array( 'path' => 'index.php?c=proxy&p=' . substr( $upload_file, 3 ) ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $upload_file, 3 ) ) );
 
 	}
 
@@ -377,7 +379,7 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file );
 
-		echo json_encode( array( 'path' => 'index.php?c=proxy&p=' . substr( $upload_file, 3 ) ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $upload_file, 3 ) ) );
 	}
 
 	/**
@@ -410,7 +412,7 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file, 2000, 1000 );
 
-		echo json_encode( array( 'path' => 'index.php?c=proxy&p=' . substr( $upload_file, 3 ) ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $upload_file, 3 ) ) );
 	}
 
 	/**
