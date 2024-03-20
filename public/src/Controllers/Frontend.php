@@ -216,6 +216,8 @@ class Frontend {
 			}
 		);
 
+		print_r($files);
+
 		include_once './src/Views/Logs/Sharepics.php';
 	}
 

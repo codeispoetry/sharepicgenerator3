@@ -318,7 +318,7 @@ class Sharepic {
 		exec( $cmd, $output, $return_code );
 
 		if ( 0 !== $return_code ) {
-			$this->logger->error( implode( "\n", $output ) );
+			$this->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not create thumbnail' );
 		}
 
