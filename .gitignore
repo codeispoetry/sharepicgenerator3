@@ -2,7 +2,7 @@ vendor/
 node_modules/
 assets/script.js
 assets/styles.css
-public/users/
+users/
 users.db
 config.ini
 *.log

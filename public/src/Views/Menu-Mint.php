@@ -59,7 +59,7 @@
         <div id="my-sharepics" class="dropdown-content">
             <?php
                 // Last
-                $last = 'users/' . $this->user->get_username() . '/workspace/sharepic.html';
+                $last = '../users/' . $this->user->get_username() . '/workspace/sharepic.html';
                 if (file_exists($last)) {
                     printf('<button onClick="api.load(\'%s\')">%s</button>', $last, _('latest'));
                     echo '<div class="divider"></div>';

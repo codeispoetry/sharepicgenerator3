@@ -216,7 +216,7 @@ class User {
 	 * @return void
 	 */
 	private function create_user_space() {
-		$user_dir = 'users/' . $this->username . '/workspace';
+		$user_dir = '../users/' . $this->username . '/workspace';
 		if ( ! file_exists( $user_dir ) ) {
 			$oldmask = umask( 0 );
 			mkdir( $user_dir, 0775, true );
@@ -347,7 +347,7 @@ class User {
 	 * @return array
 	 */
 	public function get_savings() {
-		$save_dir = 'users/' . $this->username . '/save/';
+		$save_dir = '../users/' . $this->username . '/save/';
 
 		$savings_dir = glob( $save_dir . '/*', GLOB_ONLYDIR );
 		usort(

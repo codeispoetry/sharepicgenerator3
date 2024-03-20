@@ -56,7 +56,7 @@ class Openai {
 			die();
 		}
 		$remote_url = $json->data[0]->url;
-		$local_file = 'users/' . $this->user . '/workspace/background.png';
+		$local_file = '../users/' . $this->user . '/workspace/background.png';
 		copy( $remote_url, $local_file );
 
 		if ( Helper::is_image_file_local( $local_file ) === false ) {

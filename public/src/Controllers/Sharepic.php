@@ -88,7 +88,7 @@ class Sharepic {
 	public function __construct() {
 		$user       = new User();
 		$this->user = $user->get_user_by_token();
-		$this->dir  = 'users/' . $this->user . '/workspace';
+		$this->dir  = '../users/' . $this->user . '/workspace';
 		if ( ! file_exists( $this->dir ) ) {
 			mkdir( $this->dir );
 		}
@@ -140,8 +140,8 @@ class Sharepic {
 	 * Saves the sharepic.
 	 */
 	public function save() {
-		$workspace = 'users/' . $this->user . '/workspace/';
-		$save_dir  = 'users/' . $this->user . '/save/';
+		$workspace = '../users/' . $this->user . '/workspace/';
+		$save_dir  = '../users/' . $this->user . '/save/';
 
 		if ( 'publish' === $this->mode ) {
 			$save_dir = 'templates/mint/community/';
@@ -202,7 +202,7 @@ class Sharepic {
 		}
 
 		// The casting to int is necessary to prevent directory traversal.
-		$save_dir = './users/' . $this->user . '/save/' . (int) $sharepic;
+		$save_dir = '../users/' . $this->user . '/save/' . (int) $sharepic;
 
 		if ( ! file_exists( $save_dir ) ) {
 			$this->http_error( 'Could not find sharepic' );
@@ -222,7 +222,7 @@ class Sharepic {
 	 * Creates a sharepic by taking the screenshot of the HTML.
 	 */
 	public function create() {
-		$path   = 'users/' . $this->user . '/output.png';
+		$path   = '../users/' . $this->user . '/output.png';
 		$config = new Config();
 
 		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
@@ -285,7 +285,7 @@ class Sharepic {
 		$this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
-		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
+		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
 
 		copy( $url, $upload_file );
 
@@ -298,7 +298,8 @@ class Sharepic {
 		$this->reduce_filesize( $upload_file );
 
 		$this->logger->access( 'Image loaded from URL' );
-		echo json_encode( array( 'path' => $upload_file ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&p=' . substr( $upload_file, 3 ) ) );
+
 	}
 
 
@@ -362,7 +363,7 @@ class Sharepic {
 		$this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
-		$upload_file = 'users/' . $this->user . '/workspace/background.' . $extension;
+		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file. Code 1.' );
@@ -376,7 +377,7 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file );
 
-		echo json_encode( array( 'path' => $upload_file ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&p=' . substr( $upload_file, 3 ) ) );
 	}
 
 	/**
@@ -395,7 +396,7 @@ class Sharepic {
 		$file = $_FILES['file'];
 
 		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
-		$upload_file = 'users/' . $this->user . '/workspace/addpic-' . rand() . '.' . $extension;
+		$upload_file = '../users/' . $this->user . '/workspace/addpic-' . rand() . '.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file' );
@@ -409,14 +410,14 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file, 2000, 1000 );
 
-		echo json_encode( array( 'path' => $upload_file ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&p=' . substr( $upload_file, 3 ) ) );
 	}
 
 	/**
 	 * Deletes old files.
 	 */
 	private function delete_my_old_files() {
-		$files = glob( 'users/' . $this->user . '/workspace/background.*' );
+		$files = glob( '../users/' . $this->user . '/workspace/background.*' );
 
 		foreach ( $files as $file ) {
 			if ( is_file( $file ) ) {

@@ -299,7 +299,7 @@ class API {
     xhr.onload = function () {
       if (this.status === 200) {
         const resp = JSON.parse(this.response)
-        document.getElementById('sharepic').style.backgroundImage = `url('${resp.path}?rand=${Math.random()}')`
+        document.getElementById('sharepic').style.backgroundImage = `url('${resp.path}')`
         logger.prepare_log_data({
           imagesrc: 'upload'
         })
@@ -348,7 +348,7 @@ class API {
       if (this.status === 200) {
         const resp = JSON.parse(this.response)
 
-        cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${resp.path}?rand=${Math.random()}')`
+        cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${resp.path}')`
         logger.prepare_log_data({
           imagesrc: 'addpic'
         })
@@ -387,7 +387,7 @@ class API {
       .then(data => {
         data = JSON.parse(data)
 
-        document.getElementById('sharepic').style.backgroundImage = `url('${data.path}?rand=${Math.random()}')`
+        document.getElementById('sharepic').style.backgroundImage = `url('${data.path}')`
       })
       .catch(error => console.error('Error:', error))
   }

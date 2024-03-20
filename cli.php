@@ -154,7 +154,7 @@ class CLI {
 		}
 
 		// Delete in filesystem.
-		$cmd = 'rm -rf users/' . $username;
+		$cmd = 'rm -rf ../users/' . $username;
 		exec( $cmd, $output, $return_var );
 		if ( 0 === $return_var && empty( $output ) ) {
 			echo "and deleted in filesystem.\n";
@@ -244,7 +244,7 @@ class CLI {
 	 * Delete all savings.
 	 */
 	public function delete_savings() {
-		$cmd = 'rm -rf users/*/save';
+		$cmd = 'rm -rf ../users/*/save';
 		exec( $cmd, $output, $return_var );
 		return ( 0 === $return_var && empty( $output ) );
 	}
