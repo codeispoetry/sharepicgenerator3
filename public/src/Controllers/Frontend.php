@@ -207,7 +207,7 @@ class Frontend {
 			$this->no_access();
 		}
 
-		$files = glob( './tmp/*.{jpg,png,gif}', GLOB_BRACE );
+		$files = glob( '../tmp/*.{jpg,png,gif}', GLOB_BRACE );
 
 		usort(
 			$files,

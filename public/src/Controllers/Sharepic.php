@@ -310,7 +310,7 @@ class Sharepic {
 	private function create_thumbnail( $path ) {
 		$thumbnail = bin2hex( random_bytes( 16 ) ) . '.png';
 		$cmd       = sprintf(
-			'convert %s -resize 400x400 ./tmp/%s 2>&1',
+			'convert %s -resize 400x400 ../tmp/%s 2>&1',
 			$path,
 			$thumbnail
 		);
