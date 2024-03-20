@@ -1,4 +1,5 @@
 <?php
+die();
 unlink( 'data/users.db' );
 try {
 	$db = new PDO( 'sqlite:data/users.db' );

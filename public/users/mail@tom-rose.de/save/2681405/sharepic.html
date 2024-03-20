@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body><style class="server-only">body{ margin: 0; padding: 0;} #sharepic{ zoom: 1; }</style><base href="../../../">
+<link rel="stylesheet" href="assets/styles.css">
+<div id="sharepic" style="background-color: #df9191; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;" data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="background">
+   
+   
+    <div id="freetext" class="freetext draggable selectable" data-cockpit="freetext" data-dragconstraint="true" onclick="component.select(this);rte.setPosition()" onmousedown="component.startDrag(event)" style="z-index: 21; left: 120px; top: 100px; font-size: 61px; color: black; font-family: Calibri;">
+
+        <div contenteditable="true"><span style="text-shadow: rgba(0, 0, 0, 0.5) 2px 2px 5px;"><span style="font-family: Baloo2;">Tipp</span></span>e <span style="color: rgb(237, 7, 7);">Deinen</span>&nbsp;<div>Text <span style="font-style: normal;"><span style="font-weight: bold;">hier</span></span>.</div><div><span style="font-family: GrueneType;">asdf</span></div><div>asdfa asdfasfd&nbsp;</div></div>
+    </div>
+
+
+</div>
+
+<div id="patterns">
+    <div data-id="freetext" data-class="freetext draggable selectable" data-cockpit="freetext" data-dragconstraint="true" onclick="component.select(this);rte.setPosition()" onmousedown="component.startDrag(event)" style="
+                z-index: 20; 
+                left: 0px; 
+                top: 0px; 
+                font-size: 20px;
+                color: black;
+                font-family: Calibri;
+            ">
+        NEUER TEXT
+    </div>
+
+    <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher" contenteditable="true" oninput="eyecatcher.makeSquare(this);" onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
+                z-index: 30; 
+                left: 0px; top: 0px; 
+                font-size: 20px; 
+                color: #232323; 
+                background-color: transparent;
+                transform: rotate(0deg);
+                text-align: center;
+                width: 36px;
+                height: 36px;
+            ">
+        <svg width="280" height="280" viewBox="0 0 74.083332 74.083333" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+            <path d="M 28.952854,0.40200885 C 35.932645,-1.4308193 44.036565,3.5671375 45.380381,4.1049773 46.723927,4.6428441 61.070749,11.359814 68.742171,17.313868 78.331512,24.756414 73.766987,35.183485 64.825338,57.782482 55.88395,80.38121 46.878507,77.040823 18.520613,62.575286 -11.237954,47.395627 2.5201489,31.733951 7.8298762,22.389858 13.139634,13.045832 21.972763,2.2348339 28.952854,0.40200885 Z" id="sticker_bg" style="fill:#ffcf53;stroke-width:0.26513"></path>
+        </svg>
+
+        <div>
+            <p>Text</p>
+        </div>
+    </div>
+
+    <div data-class="selectable copyright" data-cockpit="copyright" data-id="copyright" data-max="1" contenteditable="true" spellcheck="false" onclick="component.select(this)" style="
+            font-size: 14px;
+            color: #000000;
+            z-index: 10;
+        ">&nbsp;Hinweis
+</div>
+
+    <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture" onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
+                align-items: center;
+                position: absolute;
+                left:300px; top:290px;
+            ">
+        <div class="ap_image" style="
+            background-image: url('templates/mint/addpic.jpg');
+            background-size: cover; 
+            width: 100px; 
+            aspect-ratio: 1; 
+            border-radius: 50%;"></div>
+        <div class="ap_text" contenteditable="true" style="
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            color: #ffffff;
+        ">Bildbeschreibung</div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/mint/styles.css?r= ' + Math.random() + '">');
+</script></body></html>

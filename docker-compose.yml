@@ -6,5 +6,9 @@ services:
     ports:
       - '${PORT}:80'
     volumes:
-      - .:/var/www/html
-    mem_limit: 512m    
+      - ./public:/var/www/html
+      - .:/var/www
+    mem_limit: 512m
+volumes:
+  public:
+  

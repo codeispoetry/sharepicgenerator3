@@ -16,11 +16,11 @@ class Config {
 	 * The constructor. Reads the config.ini file.
 	 */
 	public function __construct() {
-		$config_file = 'config.ini';
+		$config_file = '../config.ini';
 		if ( ! file_exists( $config_file ) ) {
 			die( 'Please create a config.ini file.' );
 		}
-		$this->config = parse_ini_file( 'config.ini', true );
+		$this->config = parse_ini_file( $config_file, true );
 	}
 
 
