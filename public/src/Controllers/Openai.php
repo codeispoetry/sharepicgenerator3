@@ -64,8 +64,7 @@ class Openai {
 			$this->http_error( 'Could not use image.' );
 			return;
 		}
-
-		$json->local_file = $local_file;
+		$json->local_file = 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $local_file, 3 );
 
 		echo json_encode( $json );
 	}

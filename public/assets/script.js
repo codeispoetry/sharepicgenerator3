@@ -179,7 +179,7 @@ class API {
             document.getElementById("dalle_result_waiting").style.display = "none";
             document.getElementById("dalle_result_response").style.display = "block";
             document.getElementById("dalle_prompt").value = hint;
-            document.getElementById("dalle_result_image").innerHTML = '<img src="' + url + "?rand=" + Math.random() + '" />';
+            document.getElementById("dalle_result_image").innerHTML = '<img src="' + url + '" />';
             const copyright = document.querySelector("#sharepic [id^=copyright_]");
             if (!copyright) {
                 component.add("copyright");
@@ -197,7 +197,7 @@ class API {
         }).catch(error => console.error("Error:", error));
     }
     useDalle() {
-        document.getElementById("sharepic").style.backgroundImage = `url('${config.dalle.url}?rand=${Math.random()}')`;
+        document.getElementById("sharepic").style.backgroundImage = `url('${config.dalle.url}')`;
         logger.prepare_log_data({
             imagesrc: "dalle"
         });

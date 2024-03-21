@@ -12,23 +12,11 @@ build:
 shell:
 	docker-compose exec webserver bash
 
-log-empty:
-	rm logs/*.log
-
-png:
-	chromium-browser --headless --disable-gpu --screenshot=output.png --window-size=800,600 input.svg
-
 woff:
 	woff2_compress Pacifico.ttf 
 
-deploy-develop:
-	rsync -avz --delete assets .htaccess index.php cli.php languages src templates vendor favicon.ico sharepic:/var/www/mint-develop.sharepicgenerator.de
-
-deploy-gruene-develop:
-	rsync -avz --delete assets .htaccess index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/develop.sharepicgenerator.de/version3
-
 deploy-gruene:
-	rsync -avz --delete assets .htaccess index.php cli.php languages src templates vendor favicon.ico install.php sharepic:/var/www/sharepicgenerator.de/version3
+	rsync -avz --delete --progress public/assets sharepic:httpdocs
 
 create-pot:
 	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot
