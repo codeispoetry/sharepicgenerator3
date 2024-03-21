@@ -116,6 +116,10 @@ class Sharepic {
 		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish' ) ) ) ? $data['mode'] : 'save';
 		$body_class           = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
 
+		if ( str_starts_with( $this->template, 'save' ) ) {
+			$this->template = '../users/' . $this->user . '/' . $this->template;
+		}
+
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
 
@@ -180,7 +184,7 @@ class Sharepic {
 
 		echo json_encode(
 			array(
-				'full_path'  => $save . '/sharepic.html',
+				'full_path'  => 'save/' . $id . '/sharepic.html',
 				'id'         => $id,
 				'save_count' => $save_count,
 			)
@@ -332,20 +336,25 @@ class Sharepic {
 	 * @throws \Exception If the file does not exist.
 	 */
 	public function load() {
-		$this->logger->alarm( $this->template );
 		try {
-			if ( ! file_exists( $this->template ) ) {
+			$real_path    = realpath( $this->template );
+			$template_dir = realpath( dirname( __FILE__, 3 ) ) . '/templates/';
+			$user_dir     = realpath( dirname( __FILE__, 4 ) . '/users/' . $this->user );
+
+			if ( ! $real_path ) {
 				throw new \Exception( 'File does not exist' );
 			}
-			if ( ! str_starts_with( $this->template, 'template' ) ) {
+
+			// Do only load from template or user directory.
+			if ( ! str_starts_with( $real_path, $template_dir ) && ! str_starts_with( $real_path, $user_dir ) ) {
 				throw new \Exception( 'File may not be serverd' );
 			}
+
 			echo file_get_contents( $this->template );
 		} catch ( \Exception $e ) {
 			$this->logger->alarm( $this->template . ' ' . $e->getMessage() );
-			$this->http_error( 'Could not load file ' . $this->template );
+			$this->http_error( 'Could not load file ' );
 		}
-
 	}
 
 	/**

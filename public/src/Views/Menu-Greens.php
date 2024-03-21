@@ -117,7 +117,7 @@
                 $savings = $this->user->get_savings();
                 foreach( $savings as $dir => $name ){
                         echo '<div class="dropdown-item-double">';
-                            printf( '<button class="did-1" onClick="api.load(\'users/%s/save/%s/sharepic.html\')">%s</button>', $this->user->get_username(), $dir, $name );
+                            printf( '<button class="did-1" onClick="api.load(\'save/%s/sharepic.html\')">%s</button>', $dir, $name );
                             printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\')"><img src="assets/icons/delete.svg"></button>', $dir);
                         echo '</div>';
                 }
