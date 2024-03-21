@@ -121,13 +121,15 @@ class Sharepic {
 		}
 
 		if ( ! empty( $data['data'] ) ) {
-			$this->html = $data['data'];
-
-			$this->set_zoom( 1 / $this->size['zoom'] );
-
-			$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
-			file_put_contents( $this->file, sprintf( $scaffold, $body_class, $this->html ) );
+			return;
 		}
+
+		// toDo: sanitize input!!!!
+		$this->html = $data['data'];
+		$this->set_zoom( 1 / $this->size['zoom'] );
+
+		$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
+		file_put_contents( $this->file, sprintf( $scaffold, $body_class, $this->html ) );
 	}
 
 	/**
@@ -211,7 +213,7 @@ class Sharepic {
 			$this->http_error( 'Could not find sharepic' );
 		}
 
-		$cmd = "rm -rf $save_dir 2>&1";
+		$cmd = sprintf( 'rm -rf %s 2>&1', escapeshellarg( $save_dir ) );
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
 			$this->logger->error( implode( "\n", $output ) );
@@ -442,7 +444,6 @@ class Sharepic {
 	 * Deletes unused files from workspace.
 	 */
 	private function delete_unused_files() {
-		// ToDo: sanitze deletions.
 		$html = file_get_contents( $this->file );
 
 		$dom = new \DOMDocument();
@@ -500,10 +501,11 @@ class Sharepic {
 			return;
 		}
 
-		$cmd = sprintf(
+		$file = escapeshellarg( $file );
+		$cmd  = sprintf(
 			'mogrify -resize %1$dx%1$d  -define jpeg:extent=%2$dkb %3$s 2>&1',
-			$max_pixels,
-			$max_filesize,
+			(int) $max_pixels,
+			(int) $max_filesize,
 			$file
 		);
 		exec( $cmd, $output, $return_code );
