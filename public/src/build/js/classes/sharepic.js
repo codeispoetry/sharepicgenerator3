@@ -138,7 +138,6 @@ class Sharepic {
     this.putBackOnCanvas()
 
     document.getElementById('sharepic').classList.toggle('small', newWidth < 400)
-
   }
 
   /*

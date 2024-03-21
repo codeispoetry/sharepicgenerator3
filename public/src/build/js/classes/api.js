@@ -85,11 +85,11 @@ class API {
 
     // Replace background image with local path file
     const bgImage = document.getElementById('sharepic').style.backgroundImage
-    if( bgImage !== '' ) {
-      const url = new URL(bgImage, 'http://dummybase.com'); // dummy base URL is needed because urlString is a relative URL
-      const params = new URLSearchParams(url.search);
-      const backgroundImage = params.get('p').replace(/"\)$/g, '');
-      clonedCanvas.querySelector('#sharepic').style.backgroundImage = `url(../${backgroundImage})`;
+    if (bgImage !== '') {
+      const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
+      const params = new URLSearchParams(url.search)
+      const backgroundImage = params.get('p').replace(/"\)$/g, '')
+      clonedCanvas.querySelector('#sharepic').style.backgroundImage = `url(../${backgroundImage})`
     }
 
     const data = {
@@ -111,8 +111,8 @@ class API {
 
     const data = {
       data: document.getElementById('canvas').outerHTML,
-      name: name,
-      mode: mode
+      name,
+      mode
     }
 
     const options = {
