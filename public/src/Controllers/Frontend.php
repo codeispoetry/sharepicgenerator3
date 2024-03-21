@@ -32,9 +32,9 @@ class Frontend {
 	 * The generator page.
 	 */
 	public function create() {
-		$body_classes  = strToLower( $this->config->get( 'Main', 'menu' ) );
-		$templates     = $this->config->get( 'Templates' );
-		$published     = $this->get_published();
+		$body_classes = strToLower( $this->config->get( 'Main', 'menu' ) );
+		$templates    = $this->config->get( 'Templates' );
+		$published    = $this->get_published();
 
 		if ( ! $this->user->login() ) {
 			header( 'Location: index.php' );
