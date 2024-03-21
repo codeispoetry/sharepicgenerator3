@@ -1,12 +1,13 @@
 <div id="sharepic"
-    style="	background-color: #005437;
+    style="	background-color: gray;
 			background-repeat: no-repeat;
 			background-position: 0px 0px; 
 			width: 800px; height:800px;
 			border:0;
 			overflow:hidden;"
     		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
-
+    <link rel="stylesheet" type="text/css" href="templates/de/styles.css?r=1">
+    
     <div 
         class="draggable selectable" 
         data-cockpit="greentext"  
@@ -20,9 +21,9 @@
             top: 100px;
         "
     >
-        <div class="m sandklee">Das hier</div>
-        <div class="m kleesand"style="margin-left:40px;">ist der neue</div>
-        <div class="m sandklee">Sharepicgenerator</div>
+        <div class="s sandklee">Das hier</div>
+        <div class="s kleesand"style="margin-left:40px;">ist der neue</div>
+        <div class="s sandklee">Sharepicgenerator</div>
     </div>
 
     <div class="draggable selectable" id="logo" 
@@ -92,8 +93,6 @@
     </div>
 
     <script>
-        document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/de/styles.css?r= ' + Math.random() + '">');
-
         var lastX, line
 
         const contextMenuListener = (e) => {

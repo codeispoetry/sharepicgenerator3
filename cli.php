@@ -24,6 +24,16 @@ if ( 'delete' === $command ) {
 	$cli->delete_user( $user );
 }
 
+if ( 'deletedir' === $command ) {
+	$user = $argv[2] ?? '';
+
+	if ( empty( $user ) ) {
+		die( "Usage: php cli.php deletedir <user>\n" );
+	}
+
+	$cli->delete_user_dir( $user );
+}
+
 if ( 'create' === $command ) {
 	$user     = $argv[2] ?? '';
 	$password = $argv[3] ?? '';
@@ -154,12 +164,22 @@ class CLI {
 		}
 
 		// Delete in filesystem.
-		$cmd = 'rm -rf ../users/' . $username;
+		$this->delete_user_dir( $username );
+	}
+
+	/**
+	 * Delete a user's directory in the filesystem.
+	 *
+	 * @param string $username The user.
+	 */
+	public function delete_user_dir( $username ) {
+		// Delete in filesystem.
+		$cmd = 'rm -rf users/' . $username;
 		exec( $cmd, $output, $return_var );
 		if ( 0 === $return_var && empty( $output ) ) {
-			echo "and deleted in filesystem.\n";
+			echo "Deleted in filesystem.\n";
 		} else {
-			echo "and not deleted in filesystem.\n";
+			echo "Nothing deleted in filesystem.\n";
 		}
 	}
 
