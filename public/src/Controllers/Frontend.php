@@ -209,18 +209,18 @@ class Frontend {
 
 		$files = glob( '../tmp/*.{jpg,png,gif}', GLOB_BRACE );
 
-		$files = array_map(
-			function( $file ) {
-				return strncmp( $file, '../', 3 ) === 0 ? substr( $file, 3 ) : $file;
-			},
-			$files
-		);
-
 		usort(
 			$files,
 			function( $a, $b ) {
 				return ( filemtime( $a ) < filemtime( $b ) ) ? 1 : -1;
 			}
+		);
+	
+		$files = array_map(
+			function( $file ) {
+				return strncmp( $file, '../', 3 ) === 0 ? substr( $file, 3 ) : $file;
+			},
+			$files
 		);
 
 		include_once './src/Views/Logs/Sharepics.php';

@@ -120,12 +120,16 @@ class Sharepic {
 			$this->template = '../users/' . $this->user . '/' . $this->template;
 		}
 
-		if ( ! empty( $data['data'] ) ) {
+		if ( ! isset( $data['data'] ) || empty( $data['data'] ) ) {
 			return;
 		}
 
-		// toDo: sanitize input!!!!
-		$this->html = $data['data'];
+		$doc  = new \DOMDocument();
+		libxml_use_internal_errors( true );
+		$doc->loadHTML( $data['data'] );
+		libxml_clear_errors();
+		$this->html = filter_var( $doc->saveHTML(), FILTER_DEFAULT, FILTER_FLAG_STRIP_LOW );
+
 		$this->set_zoom( 1 / $this->size['zoom'] );
 
 		$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
@@ -164,7 +168,7 @@ class Sharepic {
 			mkdir( $save_dir );
 		}
 
-		$this->delete_unused_files();
+		//$this->delete_unused_files();
 
 		$cmd = "cp -R $workspace $save 2>&1 && chmod -R 775 $save 2>&1";
 		exec( $cmd, $output, $return_code );
@@ -232,7 +236,7 @@ class Sharepic {
 
 		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
-		$this->delete_unused_files();
+		//$this->delete_unused_files();
 
 		$cmd = sprintf(
 			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
@@ -442,6 +446,8 @@ class Sharepic {
 
 	/**
 	 * Deletes unused files from workspace.
+	 *
+	 * @deprecated This method will soon be deleted.
 	 */
 	private function delete_unused_files() {
 		$html = file_get_contents( $this->file );

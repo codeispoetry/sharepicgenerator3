@@ -111,7 +111,7 @@ class Sharepic {
   deleteBackgroundImage () {
     const sg = document.getElementById('sharepic')
 
-    sg.style.backgroundImage = 'none'
+    sg.style.backgroundImage = null
   }
 
   setSize () {
