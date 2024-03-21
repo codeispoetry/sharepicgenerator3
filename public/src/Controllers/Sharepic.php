@@ -124,9 +124,10 @@ class Sharepic {
 			return;
 		}
 
-		$doc  = new \DOMDocument();
+		$doc = new \DOMDocument();
 		libxml_use_internal_errors( true );
-		$doc->loadHTML( $data['data'] );
+		// mb_convert_encoding is said to be deprecated, but not in the docs.
+		$doc->loadHTML( @mb_convert_encoding( $data['data'], 'HTML-ENTITIES', 'UTF-8' ) );
 		libxml_clear_errors();
 		$this->html = filter_var( $doc->saveHTML(), FILTER_DEFAULT, FILTER_FLAG_STRIP_LOW );
 
@@ -168,7 +169,7 @@ class Sharepic {
 			mkdir( $save_dir );
 		}
 
-		//$this->delete_unused_files();
+		// $this->delete_unused_files();
 
 		$cmd = "cp -R $workspace $save 2>&1 && chmod -R 775 $save 2>&1";
 		exec( $cmd, $output, $return_code );
@@ -236,7 +237,7 @@ class Sharepic {
 
 		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
-		//$this->delete_unused_files();
+		// $this->delete_unused_files();
 
 		$cmd = sprintf(
 			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
