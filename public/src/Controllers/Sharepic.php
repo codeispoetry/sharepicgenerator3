@@ -294,7 +294,7 @@ class Sharepic {
 			return;
 		}
 
-		$this->delete_my_old_files();
+		//$this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
@@ -379,7 +379,7 @@ class Sharepic {
 
 		$file = $_FILES['file'];
 
-		$this->delete_my_old_files();
+		//$this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
@@ -434,6 +434,7 @@ class Sharepic {
 
 	/**
 	 * Deletes old files.
+	 * @deprecated This method will soon be deleted.
 	 */
 	private function delete_my_old_files() {
 		$files = glob( '../users/' . $this->user . '/workspace/background.*' );
