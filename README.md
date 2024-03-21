@@ -2,12 +2,16 @@
 
 ## Installation
 ```
+cd public
 composer install
 npm install
 npm run scss
 npm run js
+
+# copy install.php into webdirectory and then
 make shell -> php install.php
 
+# just for local development
 mkdir logs && chmod 777 logs
 mkdir users && chmod 777 users
 mkdir tmp && chmod 777 tmp
