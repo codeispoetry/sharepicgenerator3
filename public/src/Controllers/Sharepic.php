@@ -108,14 +108,13 @@ class Sharepic {
 			return;
 		}
 
-		// ToDo: Sanitize this / cast.
-		$this->size['width']  = $data['size']['width'] ?? 100;
-		$this->size['height'] = $data['size']['height'] ?? 100;
-		$this->size['zoom']   = $data['size']['zoom'] ?? 1;
-		$this->template       = $data['template'] ?? $this->file;
-		$this->info           = $data['name'] ?? 'no-name';
-		$this->mode           = $data['mode'] ?? 'save';
-		$body_class           = $data['body_class'] ?? '';
+		$this->size['width']  = (int) ( $data['size']['width'] ?? 100 );
+		$this->size['height'] = (int) ( $data['size']['height'] ?? 100 );
+		$this->size['zoom']   = (float) ( $data['size']['zoom'] ?? 1 );
+		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
+		$this->info           = ( isset( $data['name'] ) ) ? Helper::sanitze_az09( $data['name'] ) : 'no-name';
+		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish' ) ) ) ? $data['mode'] : 'save';
+		$body_class           = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
 
 		if ( ! empty( $data['data'] ) ) {
 			$this->html = $data['data'];
@@ -333,18 +332,20 @@ class Sharepic {
 	 * @throws \Exception If the file does not exist.
 	 */
 	public function load() {
-		$file = '';
+		$this->logger->alarm( $this->template );
 		try {
 			if ( ! file_exists( $this->template ) ) {
 				throw new \Exception( 'File does not exist' );
 			}
-			$file = file_get_contents( $this->template );
+			if ( ! str_starts_with( $this->template, 'template' ) ) {
+				throw new \Exception( 'File may not be serverd' );
+			}
+			echo file_get_contents( $this->template );
 		} catch ( \Exception $e ) {
-			$this->logger->error( $this->template . ' ' . $e->getMessage() );
+			$this->logger->alarm( $this->template . ' ' . $e->getMessage() );
 			$this->http_error( 'Could not load file ' . $this->template );
 		}
 
-		echo $file;
 	}
 
 	/**

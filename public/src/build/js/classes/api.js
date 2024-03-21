@@ -42,7 +42,7 @@ class API {
       },
       body: JSON.stringify(data)
     }
-    fetch(this.api + '&m=load', options)
+    fetch(this.api + '&r=' + Math.random() + '&m=load', options)
       .then(response => {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
@@ -172,6 +172,7 @@ class API {
         return response.text()
       })
       .then(data => {
+        console.log(data)
         data = JSON.parse(data)
 
         const a = document.createElement('a')
