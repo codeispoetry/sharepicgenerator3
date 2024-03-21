@@ -47,7 +47,7 @@ class Logger {
 	 */
 	public function access( $message ) {
 		$this->line['message'] = $message;
-		$this->file            = '../logs/access.log';
+		$this->file            = '../logfiles/access.log';
 		$this->write();
 	}
 
@@ -58,7 +58,7 @@ class Logger {
 	 */
 	public function error( $message ) {
 		$this->line['message'] = $message;
-		$this->file            = '../logs/error.log';
+		$this->file            = '../logfiles/error.log';
 		$this->write();
 	}
 
@@ -69,7 +69,7 @@ class Logger {
 	 */
 	public function alarm( $message ) {
 		$this->line['message'] = $message;
-		$this->file            = '../logs/alarm.log';
+		$this->file            = '../logfiles/alarm.log';
 		$this->write();
 	}
 

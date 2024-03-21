@@ -5,7 +5,7 @@
 			<h1><?php echo _('Usage Log'); ?></h1>
 			<p>
                 <?php
-					$lines = file( '../logs/usage.log' );
+					$lines = file( '../logfiles/usage.log' );
 					$lines = array_reverse( $lines );
                     foreach( $lines as $line ) {
 						list($time, $user, $entry) = explode( "\t", $line );

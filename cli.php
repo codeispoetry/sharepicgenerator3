@@ -77,7 +77,7 @@ if ( 'flush' === $command ) {
 
 	switch ( $what ) {
 		case 'logs':
-			if ( ! $cli->delete_in_filesystem( 'logs/*.log' ) ) {
+			if ( ! $cli->delete_in_filesystem( 'logfiles/*.log' ) ) {
 				echo "Could not delete logfiles.\n";
 			}
 			break;
@@ -87,7 +87,7 @@ if ( 'flush' === $command ) {
 			}
 			break;
 		case 'all':
-			if ( ! $cli->delete_in_filesystem( 'logs/*.log' ) ) {
+			if ( ! $cli->delete_in_filesystem( 'logfiles/*.log' ) ) {
 				echo "Could not delete logfiles.\n";
 			}
 			if ( ! $cli->delete_in_filesystem( 'tmp/*.png' ) ) {

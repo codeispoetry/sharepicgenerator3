@@ -1,3 +1,8 @@
-test.php
+httpdocs/vendor
 httpdocs/assets
 httpdocs/languages/de_DE
+httpdocs/src/Controllers
+httpdocs/src/Views
+httpdocs/templates
+httpdocs/index.php
+httpdocs/favicon.ico
