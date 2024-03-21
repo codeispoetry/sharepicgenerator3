@@ -2,7 +2,7 @@
 <?php
 namespace Sharepicgenerator\Cli;
 
-require './public/vendor/autoload.php';
+require './httpdocs/vendor/autoload.php';
 
 use Sharepicgenerator\Controllers\User;
 

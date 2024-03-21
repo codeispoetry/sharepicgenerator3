@@ -1,0 +1,3 @@
+test.php
+httpdocs/assets
+httpdocs/languages/de_DE

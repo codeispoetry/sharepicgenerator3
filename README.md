@@ -8,7 +8,6 @@ npm install
 npm run scss
 npm run js
 
-# copy install.php into webdirectory and then
 make shell -> php install.php
 
 # just for local development
