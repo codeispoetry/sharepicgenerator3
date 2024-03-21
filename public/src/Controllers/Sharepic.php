@@ -83,6 +83,20 @@ class Sharepic {
 	private $mode;
 
 	/**
+	 * Raw data.
+	 *
+	 * @var string
+	 */
+	private $raw_data;
+
+	/**
+	 * The body class.
+	 *
+	 * @var string
+	 */
+	private $body_class;
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
@@ -114,27 +128,12 @@ class Sharepic {
 		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
 		$this->info           = ( isset( $data['name'] ) ) ? Helper::sanitze_az09( $data['name'] ) : 'no-name';
 		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish' ) ) ) ? $data['mode'] : 'save';
-		$body_class           = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
+		$this->raw_data       = $data['data'] ?? '';
+		$this->body_class     = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
 
 		if ( str_starts_with( $this->template, 'save' ) ) {
 			$this->template = '../users/' . $this->user . '/' . $this->template;
 		}
-
-		if ( ! isset( $data['data'] ) || empty( $data['data'] ) ) {
-			return;
-		}
-
-		$doc = new \DOMDocument();
-		libxml_use_internal_errors( true );
-		// mb_convert_encoding is said to be deprecated, but not in the docs.
-		$doc->loadHTML( @mb_convert_encoding( $data['data'], 'HTML-ENTITIES', 'UTF-8' ) );
-		libxml_clear_errors();
-		$this->html = filter_var( $doc->saveHTML(), FILTER_DEFAULT, FILTER_FLAG_STRIP_LOW );
-
-		$this->set_zoom( 1 / $this->size['zoom'] );
-
-		$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
-		file_put_contents( $this->file, sprintf( $scaffold, $body_class, $this->html ) );
 	}
 
 	/**
@@ -171,21 +170,17 @@ class Sharepic {
 
 		// $this->delete_unused_files();
 
-		$cmd = "cp -R $workspace $save 2>&1 && chmod -R 775 $save 2>&1";
+		$cmd = "cp -R $workspace $save 2>&1";
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
 			$this->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not save sharepic' );
 		}
 
-		// Rewrite paths.
-		$cmd = "sed -i 's#$workspace#$save/#g' $save/sharepic.html 2>&1";
-		exec( $cmd, $output, $return_code );
-		if ( 0 !== $return_code ) {
-			$this->logger->error( implode( "\n", $output ) );
-			$this->http_error( 'Could not rewrite path' );
-		}
+		// Write HTML-File.
+		file_put_contents( $save . '/sharepic.html', $this->raw_data );
 
+		// Write info file.
 		$name = preg_replace( '/[^a-zA-Z0-9\säöüßÄÖÜ]/', '-', $this->info );
 		file_put_contents( $save . '/info.json', json_encode( array( 'name' => $name ) ) );
 
@@ -234,6 +229,18 @@ class Sharepic {
 	public function create() {
 		$path   = '../users/' . $this->user . '/output.png';
 		$config = new Config();
+
+		$doc = new \DOMDocument();
+		libxml_use_internal_errors( true );
+		// mb_convert_encoding is said to be deprecated, but not in the docs.
+		$doc->loadHTML( @mb_convert_encoding( $this->raw_data, 'HTML-ENTITIES', 'UTF-8' ) );
+		libxml_clear_errors();
+		$this->html = filter_var( $doc->saveHTML(), FILTER_DEFAULT, FILTER_FLAG_STRIP_LOW );
+
+		$this->set_zoom( 1 / $this->size['zoom'] );
+
+		$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
+		file_put_contents( $this->file, sprintf( $scaffold, $this->body_class, $this->html ) );
 
 		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
@@ -294,7 +301,7 @@ class Sharepic {
 			return;
 		}
 
-		//$this->delete_my_old_files();
+		// $this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
@@ -379,7 +386,7 @@ class Sharepic {
 
 		$file = $_FILES['file'];
 
-		//$this->delete_my_old_files();
+		// $this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
@@ -434,6 +441,7 @@ class Sharepic {
 
 	/**
 	 * Deletes old files.
+	 *
 	 * @deprecated This method will soon be deleted.
 	 */
 	private function delete_my_old_files() {

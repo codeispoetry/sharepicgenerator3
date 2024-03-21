@@ -2,6 +2,10 @@
     <div class="dropdown" id="menu_mint">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
+            <button onClick="api.save()">
+                <?php  echo _('Save');?>
+            </button>
+            <div class="divider"></div>
             <button onClick="ui.setLang('de')">
                 <?php echo _( 'German' ); ?>
             </button>
@@ -38,8 +42,17 @@
         </div>
     </div>
 
+    <div class="dropdown" id="menu_de">
+        <span><?php echo _( 'Deutschland' ); ?></span>
+        <div class="dropdown-content">
+            <button onClick="api.load('templates/de/start.html'); bwstory=false;">
+                <?php  echo _('Standardlayout');?>
+            </button> 
+        </div>
+    </div>
+
     <div class="dropdown" id="menu_file">
-        <span><?php echo _( 'Templates' ); ?></span>
+        <span><?php echo _( 'Baden-Württemberg' ); ?></span>
         <div class="dropdown-content">
             <button onClick="api.load('templates/bw-kandi-vorstellung/start.html'); bwstory=false;">
                 <?php  echo _('KW 24 Kandi Vorstellung');?>
@@ -84,13 +97,7 @@
             <button onClick="api.load('templates/vorort/start.html'); bwstory=false;">
                 <?php  echo _('Vor Ort');?>
             </button>
-            <div class="divider"></div>
-            <button onClick="api.save()">
-                <?php  echo _('Save');?>
-            </button>
-            <button onClick="api.create()">
-                <?php  echo _('Download');?>
-            </button>
+
         </div>
     </div>
 

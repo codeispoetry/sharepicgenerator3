@@ -81,9 +81,11 @@ class API {
     }
     save(mode = "save") {
         const name = prompt("Name des Sharepics", "Sharepic");
-        const data = this.prepare();
-        data.name = name;
-        data.mode = mode;
+        const data = {
+            data: document.getElementById("canvas").outerHTML,
+            name: name,
+            mode: mode
+        };
         const options = {
             method: "POST",
             headers: {
@@ -722,7 +724,7 @@ class Sharepic {
     }
     deleteBackgroundImage() {
         const sg = document.getElementById("sharepic");
-        sg.style.backgroundImage = "none";
+        sg.style.backgroundImage = null;
     }
     setSize() {
         const sg = document.getElementById("sharepic");

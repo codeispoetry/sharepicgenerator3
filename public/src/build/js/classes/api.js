@@ -109,9 +109,11 @@ class API {
   save (mode = 'save') {
     const name = prompt('Name des Sharepics', 'Sharepic')
 
-    const data = this.prepare()
-    data.name = name
-    data.mode = mode
+    const data = {
+      data: document.getElementById('canvas').outerHTML,
+      name: name,
+      mode: mode
+    }
 
     const options = {
       method: 'POST',

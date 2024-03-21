@@ -244,7 +244,7 @@ class CLI {
 	 * Delete all savings.
 	 */
 	public function delete_savings() {
-		$cmd = 'rm -rf ../users/*/save';
+		$cmd = 'rm -rf users/*/save';
 		exec( $cmd, $output, $return_var );
 		return ( 0 === $return_var && empty( $output ) );
 	}
