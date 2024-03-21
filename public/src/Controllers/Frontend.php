@@ -32,18 +32,9 @@ class Frontend {
 	 * The generator page.
 	 */
 	public function create() {
-		$auto          = ( ! empty( $_GET['auto'] ) ) ? Helper::sanitze_az09( $_GET['auto'] ) : '';
-		$allowed_autos = array( 'einigungshilfe' );
 		$body_classes  = strToLower( $this->config->get( 'Main', 'menu' ) );
 		$templates     = $this->config->get( 'Templates' );
 		$published     = $this->get_published();
-
-		if ( ! empty( $auto ) && in_array( $auto, $allowed_autos, true ) ) {
-			$this->user->autologin( $auto );
-			$starttemplate = $auto;
-			include_once './src/Views/Creator.php';
-			return;
-		}
 
 		if ( ! $this->user->login() ) {
 			header( 'Location: index.php' );
