@@ -83,6 +83,15 @@ class API {
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css?r=1">\n')
     clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../html/">\n')
 
+    // Replace background image with local path file
+    const bgImage = document.getElementById('sharepic').style.backgroundImage
+    if( bgImage !== '' ) {
+      const url = new URL(bgImage, 'http://dummybase.com'); // dummy base URL is needed because urlString is a relative URL
+      const params = new URLSearchParams(url.search);
+      const backgroundImage = params.get('p').replace(/"\)$/g, '');
+      clonedCanvas.querySelector('#sharepic').style.backgroundImage = `url(../${backgroundImage})`;
+    }
+
     const data = {
       data: clonedCanvas.innerHTML,
       size: {
@@ -163,7 +172,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         const a = document.createElement('a')
