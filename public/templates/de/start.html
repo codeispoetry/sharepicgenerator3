@@ -6,7 +6,7 @@
 			border:0;
 			overflow:hidden;"
     		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
-    <link rel="stylesheet" type="text/css" href="templates/de/styles.css?r=3">
+    <link rel="stylesheet" type="text/css" href="templates/de/styles.css?r=5">
 
     <div 
         class="draggable selectable" 
@@ -110,6 +110,7 @@
         };
 
         const mouseMover = (e) => { 
+           
             if (lastX === undefined) {
                 return
             }
@@ -120,6 +121,7 @@
             if(line.id !== ''){
                 return;
             }
+            console.log(e.target.closest('div'))
 
             let x = line.offsetLeft;
 

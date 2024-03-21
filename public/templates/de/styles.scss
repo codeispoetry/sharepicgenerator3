@@ -19,7 +19,7 @@ $l: 75px;
         font-family: "GrueneType", sans-serif;
         z-index: 3;
         padding: 0;
-        align-self: flex-start;
+        align-self: flex-start !important;
         white-space: nowrap;
     }
 }
