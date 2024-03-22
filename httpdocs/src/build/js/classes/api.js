@@ -81,7 +81,7 @@ class API {
     clonedCanvas.querySelector('#greentextContextMenu')?.remove()
 
     clonedCanvas.insertAdjacentHTML('afterbegin', '<link rel="stylesheet" href="assets/styles.css?r=1">\n')
-    clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../html/">\n')
+    clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../httpdocs/">\n')
 
     // Replace background image with local path file
     const bgImage = document.getElementById('sharepic').style.backgroundImage
@@ -89,7 +89,7 @@ class API {
       const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
       const params = new URLSearchParams(url.search)
       const backgroundImage = params.get('p').replace(/"\)$/g, '')
-      clonedCanvas.querySelector('#sharepic').style.backgroundImage = `url(../${backgroundImage})`
+      clonedCanvas.querySelector('#sharepic').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
     }
 
     const data = {
@@ -399,6 +399,8 @@ class API {
         data = JSON.parse(data)
 
         document.getElementById('sharepic').style.backgroundImage = `url('${data.path}')`
+        document.getElementById('sharepic').style.filter = 'none';
+
       })
       .catch(error => console.error('Error:', error))
   }

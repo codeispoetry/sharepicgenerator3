@@ -279,7 +279,7 @@ class Sharepic {
 
 		$this->create_thumbnail( $path );
 
-		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $path, 3 ) ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=output.png' ) );
 	}
 
 	/**
@@ -317,7 +317,7 @@ class Sharepic {
 		$this->reduce_filesize( $upload_file );
 
 		$this->logger->access( 'Image loaded from URL' );
-		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $upload_file, 3 ) ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=workspace/background.' . $extension ) );
 
 	}
 
@@ -403,7 +403,7 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file );
 
-		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $upload_file, 3 ) ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=workspace/background.' . $extension ) );
 	}
 
 	/**
@@ -421,8 +421,9 @@ class Sharepic {
 
 		$file = $_FILES['file'];
 
-		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
-		$upload_file = '../users/' . $this->user . '/workspace/addpic-' . rand() . '.' . $extension;
+		$extension     = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
+		$raw_file_path = 'workspace/addpic-' . rand() . '.' . $extension;
+		$upload_file   = '../users/' . $this->user . '' . $raw_file_path;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file' );
@@ -436,7 +437,7 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file, 2000, 1000 );
 
-		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . substr( $upload_file, 3 ) ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $raw_file_path ) );
 	}
 
 	/**

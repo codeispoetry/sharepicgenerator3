@@ -57,6 +57,8 @@ class Pixabay {
         logger.log('clicks on image after search for ' + q)
 
         document.getElementById('sharepic').style.backgroundImage = img.style.backgroundImage
+        document.getElementById('sharepic').style.filter = 'grayscale(100%)';
+
         api.loadByUrl(img.dataset.url)
 
         // is copyrigth already shown?

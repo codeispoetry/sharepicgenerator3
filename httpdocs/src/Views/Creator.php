@@ -151,6 +151,7 @@
         },
 		'url': '<?php echo $this->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
+		'username': '<?php echo $this->user->get_username(); ?>',
 	};
 	
 	const lang = {
@@ -160,7 +161,6 @@
 		'Max reached': '<?php echo _( 'Maximum number of elements reached') ?>',
 		'Uploading image': '<?php echo _( 'Uploading your image ...') ?>',
 		'Processing image': '<?php echo _( 'Your image is being processed ...') ?>',
-
     };
 </script>
 
