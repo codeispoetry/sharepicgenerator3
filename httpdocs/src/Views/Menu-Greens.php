@@ -2,10 +2,6 @@
     <div class="dropdown" id="menu_mint">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
-            <button onClick="api.save()">
-                <?php  echo _('Save');?>
-            </button>
-            <div class="divider"></div>
             <button onClick="ui.setLang('de')">
                 <?php echo _( 'German' ); ?>
             </button>
@@ -104,22 +100,11 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
+            <button onClick="api.save()">
+                <?php  echo _('Save');?>
+            </button>
+            <div class="divider"></div>
             <?php
-                // Last
-                $last = '../users/' . $this->user->get_username() . '/workspace/sharepic.html';
-                if (file_exists($last)) {
-                    printf('<button onClick="api.load(\'%s\')">%s</button>', $last, _('latest'));
-                    echo '<div class="divider"></div>';
-                }
-            
-                // Published
-                foreach( $published as $dir => $name ){
-                    echo '<div class="dropdown-item-double">';
-                        printf( '<button class="did-1" onClick="api.load(\'%s\')">%s</button>', $dir, $name );
-                    echo '</div>';
-                }
-                echo '<div class="divider"></div>';
-
                 // Saved
                 $savings = $this->user->get_savings();
                 foreach( $savings as $dir => $name ){
