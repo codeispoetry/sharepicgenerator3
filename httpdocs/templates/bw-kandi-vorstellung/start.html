@@ -78,19 +78,12 @@
     <script>
         document.querySelector('#sharepic').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-kandi-vorstellung/styles.css?r= ' + Math.random() + '">');
 
-        document.getElementById('tabsbuttons').style.display = 'flex'
-        document.querySelector('#cockpit .show')?.classList.remove('show')
-        document.getElementById('cockpit_search')?.classList.add('show')
-
-        document.getElementById('tab_btn_copyright').style.display = 'none'
-        document.getElementById('tab_btn_freetext').style.display = 'none'
-        document.getElementById('tab_btn_eyecatcher').style.display = 'none'
-        document.getElementById('tab_btn_addpicture').style.display = 'none'
-        document.getElementById('search_dalle').style.display = 'none'
-        document.getElementById('search_pixabay').style.display = 'none'
-
         if( typeof bwstory != 'undefined' && bwstory == true) {
             document.querySelector('[title="Instagram"]').click();
+        }
+
+        config.cockpit = {
+            elements: ['download','background']
         }
     </script>
 </div>

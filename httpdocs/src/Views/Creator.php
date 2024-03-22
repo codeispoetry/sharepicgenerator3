@@ -91,7 +91,15 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')" class="no-greens">
+				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+						<div class="description">
+							<?php echo _('Text'); ?>
+						</div>
+					</div>
+				</button>
+				<button id="tab_btn_greentext" onClick="ui.showTab('greentext')">
 					<div>
 						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 						<div class="description">
@@ -115,6 +123,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_vorort" onClick="ui.showTab('vorort')">
+					<div>
+						<img src="assets/icons/resize.svg" title="<?php echo _('Vor ORt'); ?>">
+						<div class="description">
+							<?php echo _('Vor Ort'); ?>
+						</div>
+					</div>
+				</button>
 
 				<button>
 					<div>
@@ -126,8 +142,6 @@
 						</div>
 					</div>
 				</button>
-
-
 			</div>
 		</div>
 		<?php

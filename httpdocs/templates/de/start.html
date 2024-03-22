@@ -194,10 +194,9 @@
 
         undo.commit()
 
-        document.getElementById('tabsbuttons').style.display = 'block'
-  
-        document.getElementById('cockpit_vorort')?.classList.remove('show')
-        document.getElementById('cockpit_download')?.classList.add('show')
+        config.cockpit = {
+            elements: ['download','search','background','copyright','greentext','eyecatcher','addpicture']
+        }
 
     </script>
 </div>

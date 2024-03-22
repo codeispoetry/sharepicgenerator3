@@ -65,4 +65,12 @@ class Cockpit {
 
     document.getElementById('add_copyright').style.display = 'none'
   }
+
+  render () {
+    const elements = document.querySelectorAll('[id^="tab_btn_"]')
+    elements.forEach((element) => {
+      const id = element.id.replace('tab_btn_', '')
+      element.style.display = (config.cockpit.elements.includes(id)) ? 'block' : 'none'
+    })
+  }
 }

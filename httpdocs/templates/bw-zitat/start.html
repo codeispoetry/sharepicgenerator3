@@ -85,20 +85,12 @@
     <script>
         document.querySelector('#sharepic').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/bw-bilanz/styles.css?r= ' + Math.random() + '">');
 
-        document.getElementById('tabsbuttons').style.display = 'flex'
-        document.querySelector('#cockpit .show')?.classList.remove('show')
-        document.getElementById('cockpit_search')?.classList.add('show')
-
-        document.getElementById('logo_colors').style.display = 'none'
-        document.getElementById('tab_btn_copyright').style.display = 'none'
-        document.getElementById('tab_btn_freetext').style.display = 'none'
-        document.getElementById('tab_btn_eyecatcher').style.display = 'none'
-        document.getElementById('tab_btn_addpicture').style.display = 'none'
-        document.getElementById('search_dalle').style.display = 'block'
-        document.getElementById('search_pixabay').style.display = 'block'
-
         if( typeof bwstory != 'undefined' && bwstory == true) {
             document.querySelector('[title="Instagram"]').click();
+        }
+
+        config.cockpit = {
+            elements: ['download','search','background']
         }
     </script>
 </div>

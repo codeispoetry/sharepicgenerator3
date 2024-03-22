@@ -141,9 +141,9 @@
     </style>
 
     <script>
-        document.getElementById('tabsbuttons').style.display = 'none'
-  
-        document.querySelector('.mainsection.show')?.classList.remove('show')
-        document.getElementById('cockpit_vorort')?.classList.add('show')
+        config.cockpit = {
+            elements: ['vorort']
+        }
+        document.getElementById('tab_btn_vorort').click();
     </script>
 </div>

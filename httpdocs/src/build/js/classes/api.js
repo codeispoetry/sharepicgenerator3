@@ -35,6 +35,8 @@ class API {
       template: path
     }
 
+    config.template = path
+
     const options = {
       method: 'POST',
       headers: {
@@ -65,6 +67,7 @@ class API {
         const script = doc.querySelector('script').innerText
         // eslint-disable-next-line no-eval
         eval(script)
+        cockpit.render()
         logger.prepare_log_data({})
 
         logger.log('loads template ' + path)
