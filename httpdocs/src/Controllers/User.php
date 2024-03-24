@@ -61,25 +61,22 @@ class User {
 	}
 
 	/**
-	 * Logs a user in automatically.
-	 *
-	 * @param string $username The username, that should be used.
+	 * Logs a user in automatically with random password
 	 */
-	public function autologin( $username ) {
+	public function autologin() {
 		// See, if user is already logged in.
 		if ( $this->get_user_by_token() ) {
 			return true;
 		}
 
+		$username = 'auto' . bin2hex( random_bytes( 4 ) );
+
 		$this->username = $username;
-		$user           = $this->get_user_array( $username );
-		$this->role     = $user['role'];
+		$this->role     = 'auto';
 
 		// Create user in db, if it does not exist.
-		if ( false === $user ) {
-			$user = $this->create_auto_user( $username );
-			$this->logger->access( "auto user {$username} created" );
-		}
+		$user = $this->create_user( $username );
+		$this->logger->access( "auto user {$username} created" );
 
 		$this->create_user_space();
 
@@ -173,7 +170,7 @@ class User {
 
 		// Create user in db, if it does not exist.
 		if ( false === $user ) {
-			$user = $this->create_auto_user( $username );
+			$user = $this->create_user( $username );
 			$this->logger->access( "greens user {$username} created" );
 		}
 
@@ -184,12 +181,12 @@ class User {
 	 * Creates a user in the database.
 	 *
 	 * @param string $username The username.
+	 * @param string $role The role.
 	 * @return array|bool The user array or false.
 	 */
-	private function create_auto_user( $username ) {
+	private function create_user( $username, $role = 'auto' ) {
 		$password = bin2hex( random_bytes( 16 ) ); // no one will ever see this password.
 		$token    = bin2hex( random_bytes( 16 ) );
-		$role     = 'auto';
 
 		$sql = 'INSERT INTO users ( username,password,token,role ) VALUES (:username, :password, :token,:role)';
 
@@ -393,6 +390,7 @@ class User {
 		$cookie_token = $_COOKIE['bearer_token'] ?? false;
 
 		if ( empty( $cookie_token ) ) {
+			$this->logger->error( 'No token in get_user_by_token' );
 			return false;
 		}
 

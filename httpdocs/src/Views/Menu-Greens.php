@@ -97,6 +97,7 @@
         </div>
     </div>
 
+    <?php if( isset( $show_my_sharepics ) && $show_my_sharepics === true) { ?>
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
@@ -116,4 +117,5 @@
             ?>
         </div>
     </div>
+    <?php } ?>
 </nav>

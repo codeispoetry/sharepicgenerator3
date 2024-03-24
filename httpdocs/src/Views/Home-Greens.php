@@ -13,6 +13,13 @@
 			<?php
 				echo '<h3>' . _('Login') . '</h3>';
 			?>
+
+			<a href="index.php?c=frontend&m=create" class="button">
+				<img src="assets/icons/login.svg" style="margin-right: 10px">
+				<?php echo _('Login as guest');?>
+			</a>
+
+			<?php /*
 			<a href="index.php?c=frontend&m=create" class="button">
 				<img src="assets/icons/login.svg" style="margin-right: 10px">
 				<?php  echo _('login with Green Net');?>
@@ -23,6 +30,8 @@
 					<?php  echo _('Login as guest');?>
 				</a>
 			</small>
+
+			*/ ?>
 
 		</div>
 	

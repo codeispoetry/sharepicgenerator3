@@ -19,7 +19,7 @@
 				echo ' <a href="#" onclick="showPasswordBox();">'._('Forgot password?').'</a>';
 
 				if ( 'Greens' === $config->get( 'Main', 'menu' ) ) {
-					printf( '<a href="index.php?auth=auto">%s</a>', _('login with Green Net'));
+					printf( '<a href="index.php?auth=config">%s</a>', _('login with Green Net'));
 				}
 			?>
 		</div>

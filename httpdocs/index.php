@@ -24,20 +24,6 @@ if ( 'de' === get_lang() ) {
 
 $config = new Config();
 
-if ( isset( $_GET['self'] ) ) {
-	setcookie( 'authenticator', 'self' );
-	$config->set( 'Main', 'authenticator', 'self' );
-}
-
-if ( isset( $_GET['auth'] ) && 'auto' === $_GET['auth'] ) {
-	setcookie( 'authenticator', '', time() - 3600 );
-	header( 'Location: index.php' );
-	die();
-}
-
-if ( isset( $_COOKIE['authenticator'] ) ) {
-	$config->set( 'Main', 'authenticator', 'self' );
-}
 
 $controller = ( ! empty( $_GET['c'] ) ) ? $_GET['c'] : 'frontend';
 $method     = ( ! empty( $_GET['m'] ) ) ? $_GET['m'] : 'index';

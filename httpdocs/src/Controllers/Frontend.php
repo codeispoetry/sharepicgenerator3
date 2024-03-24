@@ -26,6 +26,10 @@ class Frontend {
 	public function __construct() {
 		$this->user   = new User();
 		$this->config = new Config();
+
+		if ( 'auto' === $this->config->get( 'Main', 'authenticator' ) ) {
+			$this->user->autologin();
+		}
 	}
 
 	/**
@@ -234,8 +238,8 @@ class Frontend {
 	 */
 	public function index() {
 		global $config;
-		$template = ( 'greens' === $config->get( 'Main', 'authenticator' ) ) ? 'Home-Greens' : 'Home';
-		$body     = ( 'greens' === $config->get( 'Main', 'authenticator' ) ) ? 'greens' : 'mint';
+		$template = ( 'greens' === $config->get( 'Main', 'home' ) ) ? 'Home-Greens' : 'Home';
+		$body     = ( 'greens' === $config->get( 'Main', 'home' ) ) ? 'greens' : 'mint';
 		include_once './src/Views/' . $template . '.php';
 	}
 
