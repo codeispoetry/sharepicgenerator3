@@ -473,17 +473,56 @@ class User {
 			return true;
 		}
 
-		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
-		$server_address = $_SERVER['HTTP_HOST'];
-		$link           = $protocol . $server_address . '/index.php?c=frontend&m=reset_password?newpassword=1&token=' . $token;
-
-		ob_start();
-		include 'src/Views/Mail/Account_Creation.php';
-		$message = ob_get_clean();
+		$message = $this->prepare_mail_message( 'src/Views/Mail/Account_Creation.php' );
 
 		$mail = new Mailer( $mail );
 
 		return $mail->send( _( 'Account created' ), $message );
+	}
+
+	/**
+	 * Send the password reset mail.
+	 *
+	 * @return bool True if the mail was sent.
+	 */
+	public function send_password_link() {
+		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
+			$this->logger->error( 'empty username in send_password_link' );
+			return false;
+		}
+
+		$username = Helper::sanitize( $_POST['username'] );
+		$token    = $this->get_token_for_user( $username );
+
+		if ( empty( $token ) ) {
+			$this->logger->error( 'empty token in send_password_link' );
+			return false;
+		}
+
+		$message = $this->prepare_mail_message( 'src/Views/Mail/Password_Link.php' );
+
+		$mail = new Mailer( $username );
+		if ( ! $mail->send( _( 'Password Reset' ), $message ) ) {
+			$this->logger->error( 'mailer error in send_password_link' );
+		}
+
+		return true;
+	}
+
+	/**
+	 * Prepare the mail message.
+	 *
+	 * @param string $view The path to the view.
+	 * @return string The message.
+	 */
+	private function prepare_mail_message( $view ) {
+		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
+		$server_address = $_SERVER['HTTP_HOST'];
+		$link           = $protocol . $server_address . '/index.php?c=frontend&m=reset_password&token=' . $token;
+
+		ob_start();
+		include $view;
+		return ob_get_clean();
 	}
 
 	/**
@@ -511,40 +550,5 @@ class User {
 		$result = $stmt->execute();
 
 		return $result;
-	}
-
-	/**
-	 * Send the password reset mail.
-	 *
-	 * @return bool True if the mail was sent.
-	 */
-	public function send_password_link() {
-		if ( empty( $_POST['username'] ) || ! filter_var( $_POST['username'], FILTER_VALIDATE_EMAIL ) ) {
-			$this->logger->error( 'empty username in send_password_link' );
-			return false;
-		}
-
-		$username = Helper::sanitize( $_POST['username'] );
-		$token    = $this->get_token_for_user( $username );
-
-		if ( empty( $token ) ) {
-			$this->logger->error( 'empty token in send_password_link' );
-			return false;
-		}
-
-		$protocol       = ( ! empty( $_SERVER['HTTPS'] ) && 'off' !== $_SERVER['HTTPS'] || '443' === $_SERVER['SERVER_PORT'] ) ? 'https://' : 'http://';
-		$server_address = $_SERVER['HTTP_HOST'];
-		$link           = $protocol . $server_address . '/index.php?c=frontend&m=reset_password&token=' . $token;
-
-		ob_start();
-		include 'src/Views/Mail/Password_Link.php';
-		$message = ob_get_clean();
-
-		$mail = new Mailer( $username );
-		if ( ! $mail->send( _( 'Password Reset' ), $message ) ) {
-			$this->logger->error( 'mailer error in send_password_link' );
-		}
-
-		return true;
 	}
 }

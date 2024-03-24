@@ -56,7 +56,6 @@ class Mailer {
 	 * @param string $message The message.
 	 */
 	public function send( $subject, $message ) {
-
 		try {
 			$this->phpmailer->Subject = $subject;
 			$this->phpmailer->Body    = $message;
