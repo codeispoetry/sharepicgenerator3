@@ -159,6 +159,34 @@
   </p>
 </dialog>
 
+<dialog id="blog" class="full-modal">
+	<div>
+		<h1>Willkommen zum neuen Sharepicgenerator</h1>
+		<p>
+			Das ist neu im Sharepicgenerator:
+		</p>
+		<ul>
+			<li>Ändere Deinen Text direkt im Bild</li>
+			<li>Speichere Deine Bilder direkt im Sharepicgenerator ab (ab Ostern)</li>
+			<li>Zusatzbilder mit Bildunterschrift</li>
+		</ul>
+		Los geht's!
+	</div>
+	<script>
+		if ( ! new URL( window.location.href).hostname.startsWith( 'localhost' ) ) {
+			const blogModal = document.getElementById('blog');
+			blogModal.showModal();
+
+			const blogCloser = document.addEventListener('click', function() {
+				blogModal.close();
+				removeEventListener('click', blogCloser);
+			});
+		}
+
+	</script>
+</dialog>
+
+
 <script>
     const config = {
         'pixabay': {

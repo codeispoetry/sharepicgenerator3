@@ -7,7 +7,7 @@
         </label>
     </section>
     
-<?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
+<?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
 </section>
 
@@ -15,7 +15,7 @@
     document.getElementById('greentext_size').addEventListener('input', function(e) {
         var element = event.target;
         const target = document.getElementById('greentext');
-        target.style.zoom = element.value;
+        target.style.transform = `scale(${element.value})`;
     });
 </script>
 

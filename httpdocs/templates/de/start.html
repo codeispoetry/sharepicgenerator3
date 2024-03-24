@@ -19,11 +19,12 @@
         style="
             left: 120px;
             top: 100px;
+            transform: scale(0.8);
         "
     >
-        <div class="s sandklee">Das hier</div>
-        <div class="s kleesand"style="margin-left:40px;">ist der neue</div>
-        <div class="s sandklee">Sharepicgenerator</div>
+        <div class="s sandklee">Tippe Deinen Text</div>
+        <div class="m kleesand"style="margin-left:40px;">direkt hier.</div>
+        <div class="s sandklee">Verschiebe ihn mit der rechten Maustaste.</div>
     </div>
 
     <div class="draggable selectable" id="logo" 
@@ -121,12 +122,12 @@
             if(line.id !== ''){
                 return;
             }
-            console.log(e.target.closest('div'))
+            console.log(line)
 
             let x = line.offsetLeft;
 
             x += offset;
-            e.target.closest('div').style.marginLeft = `${x}px`;
+            line.style.marginLeft = `${x}px`;
             
             lastX = e.pageX;
         }
@@ -212,6 +213,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+
+    #greentext{
+        transform-origin: top left !important;
     }
 </style>
 

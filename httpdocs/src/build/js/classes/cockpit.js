@@ -48,9 +48,6 @@ class Cockpit {
 
     const file = document.getElementById('logo_file')
     let url = element.style.backgroundImage.replace(/url\("(\.\.\/)*/, '').replace('")', '')
-    if (!url.startsWith('/')) {
-      url = '/' + url
-    }
     file.value = url
   }
 
