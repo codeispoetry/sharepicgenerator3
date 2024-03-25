@@ -16,7 +16,8 @@ woff:
 	woff2_compress Pacifico.ttf 
 
 deploy-gruene:
-	rsync -avzr --delete --progress --files-from=rsync-list.txt ./ sharepic:./
+	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic-verdigado:/srv/sharepic || true
+	ssh sharepic-verdigado 'sudo chown -R www-data:www-data /srv/sharepic'
 
 create-pot:
 	find src -name '*.php' | xargs xgettext --language=PHP -o languages/messages.pot
