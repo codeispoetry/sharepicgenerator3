@@ -304,6 +304,10 @@ class Sharepic {
 		// $this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
+		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {
+			$this->http_error( 'Could not load image' );
+			return;
+		}
 		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
 
 		copy( $url, $upload_file );
