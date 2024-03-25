@@ -16,14 +16,11 @@
 
 			<a href="index.php?c=frontend&m=create" class="button">
 				<img src="assets/icons/login.svg" style="margin-right: 10px">
-				<?php echo _('Login as guest');?>
+				<?php  echo _('login with Green Net');?>
 			</a>
 
 			<?php /*
-			<a href="index.php?c=frontend&m=create" class="button">
-				<img src="assets/icons/login.svg" style="margin-right: 10px">
-				<?php  echo _('login with Green Net');?>
-			</a>
+		
 
 			<small style="text-align: right; margin-top: 20px">
 				<a href="index.php?self=true">

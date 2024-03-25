@@ -169,13 +169,12 @@
 				offline war.<br>Aber jetzt ist er da und besser als je zuvor.
 			</p>
 			<p>Noch ist nicht alles fertig, wir arbeiten mit Hochdruck weiter,<br>
-				z.B. binden wir ihn gerade ans <em>Grüne Netz</em> an. In Kürze wird es auch wieder
-				die Regionalversionen für einezlne Landesverbände geben.<br>
-				 Aber Du kannst schon jetzt loslegen:
+				Bald wird es auch wieder die Regionalversionen für einezlne Landesverbände geben.<br>
+				Du kannst schon jetzt loslegen:
 			</p>
 			<ul>
 				<li>Ändere Deinen Text direkt im Bild <small>nicht mehr in der Seiteleiste</small></li>
-				<li>Speichere Deine Bilder im Sharepicgenerator ab <small>(sobald er ans <em>Grüne Netz</em> angeschlossen ist)</small></li>
+				<li>Speichere Deine Bilder im Sharepicgenerator ab und arbeite später daran weiter</li>
 				<li>Eine künstliche Intelligenz hilft Dir, Hintergrundbilder zu erstellen</li>
 				<li>Mit der Rückgängig-Funktion kannst Du Fehler korrigieren</li>
 				<li>Reichere Zusatzbilder mit einer Bildunterschrift an</li>
