@@ -161,19 +161,32 @@
 
 <dialog id="blog" class="full-modal">
 	<div>
-		<h1>Willkommen zum neuen Sharepicgenerator</h1>
-		<p>
-			Das ist neu im Sharepicgenerator:
-		</p>
-		<ul>
-			<li>Ändere Deinen Text direkt im Bild</li>
-			<li>Speichere Deine Bilder direkt im Sharepicgenerator ab (ab Ostern)</li>
-			<li>Zusatzbilder mit Bildunterschrift</li>
-		</ul>
-		Los geht's!
+		<div style="text-align: left">
+			<h1>Willkommen zum neuen Sharepicgenerator</h1>
+			<p>
+				Endlich ist es soweit: Der neue Sharepicgenerator ist online.<br>
+				Es hat länger gedauert als geplant, bitte entschuldige, dass er ein paar Tage 
+				offline war.<br>Aber jetzt ist er da und besser als je zuvor.
+			</p>
+			<p>Noch ist nicht alles fertig, wir arbeiten mit Hochdruck weiter,<br>
+				z.B. binden wir ihn gerade ans <em>Grüne Netz</em> an. In Kürze wird es auch wieder
+				die Regionalversionen für einezlne Landesverbände geben.<br>
+				 Aber Du kannst schon jetzt loslegen:
+			</p>
+			<ul>
+				<li>Ändere Deinen Text direkt im Bild <small>nicht mehr in der Seiteleiste</small></li>
+				<li>Speichere Deine Bilder im Sharepicgenerator ab <small>(sobald er ans <em>Grüne Netz</em> angeschlossen ist)</small></li>
+				<li>Eine künstliche Intelligenz hilft Dir, Hintergrundbilder zu erstellen</li>
+				<li>Mit der Rückgängig-Funktion kannst Du Fehler korrigieren</li>
+				<li>Reichere Zusatzbilder mit einer Bildunterschrift an</li>
+				<li>und viele weitere Verbesserungen</li>
+
+			</ul>
+			<button style="border: 0">Los geht's!</button>
+		</div>
 	</div>
 	<script>
-		if ( ! new URL( window.location.href).hostname.startsWith( 'localhost' ) ) {
+		if ( ! new URL( window.location.href).hostname.startsWith( 'localhostk' ) ) {
 			const blogModal = document.getElementById('blog');
 			blogModal.showModal();
 

@@ -26,7 +26,16 @@
             </button>
             <button data-sizepreset="1200:627" title="X">
                 <img src="assets/icons/brands/linkedin.svg">
-            </button>                
+            </button>   
+        </div>
+        <div class="dimensions">
+            <button data-sizepreset="1500:2102">A6h</button>
+            <button data-sizepreset="2102:1500">A6q</button>
+
+            <button data-sizepreset="3531:4984">A3</button>
+            <button data-sizepreset="2492:3520">A2</button>
+            <button data-sizepreset="3520:4972">A1</button>
+
         </div>
     </section>
 </section>
