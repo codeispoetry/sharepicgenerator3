@@ -159,55 +159,14 @@ class User {
 	 * @return bool|array False if the user is not authenticated, else the user array.
 	 */
 	private function authenticate_greens() {
-		global $config;
+		$username = $_SERVER['OIDC_CLAIM_preferred_username'];
 
-		$provider = new \League\OAuth2\Client\Provider\GenericProvider(
-			array(
-				'clientId'                => $config->get( 'OAuth', 'clientId' ),
-				'clientSecret'            => $config->get( 'OAuth', 'clientSecret' ),
-				'redirectUri'             => $config->get( 'OAuth', 'redirectUri' ),
-				'urlAuthorize'            => $config->get( 'OAuth', 'urlAuthorize' ),
-				'urlAccessToken'          => $config->get( 'OAuth', 'urlAccessToken' ),
-				'urlResourceOwnerDetails' => $config->get( 'OAuth', 'urlResourceOwnerDetails' ),
-			)
-		);
-
-		if ( ! isset( $_GET['code'] ) ) {
-			$authorization_url       = $provider->getAuthorizationUrl();
-			$_SESSION['oauth2state'] = $provider->getState();
-			header( 'Location: ' . $authorization_url );
-			exit;
-		} elseif ( empty( $_GET['state'] ) || empty( $_SESSION['oauth2state'] ) || ( $_GET['state'] !== $_SESSION['oauth2state'] ) ) {
-			if ( isset( $_SESSION['oauth2state'] ) ) {
-				unset( $_SESSION['oauth2state'] );
-			}
-			exit( 'Invalid state' );
-
-		} else {
-
-			try {
-				$access_token = $provider->getAccessToken(
-					'authorization_code',
-					array(
-						'code' => $_GET['code'],
-					)
-				);
-
-				echo 'Access Token: ' . $access_token->getToken() . '<br>';
-				echo 'Refresh Token: ' . $access_token->getRefreshToken() . '<br>';
-				echo 'Expired in: ' . $access_token->getExpires() . '<br>';
-				echo 'Already expired? ' . ( $access_token->hasExpired() ? 'expired' : 'not expired' ) . '<br>';
-
-				$resource_owner = $provider->getResourceOwner( $access_token );
-
-				var_export( $resource_owner->toArray() );
-
-			} catch ( \League\OAuth2\Client\Provider\Exception\IdentityProviderException $e ) {
-
-				exit( 'Error' . $e->getMessage() );
-
-			}
+		if ( empty( $username ) ) {
+			$this->logger->error( "{$username} not set by OIDC" );
+			die( 'Error: Username not set by OIDC' );
 		}
+
+		$user = $this->get_user_array( $username );
 
 		// Create user in db, if it does not exist.
 		if ( false === $user ) {
