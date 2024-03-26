@@ -159,6 +159,12 @@ class User {
 	 * @return bool|array False if the user is not authenticated, else the user array.
 	 */
 	private function authenticate_greens() {
+		global $config;
+
+		if ( 'localhost:9500' === $_SERVER['HTTP_HOST'] && 'local' === $config->get( 'Main', 'env' ) ) {
+			$_SERVER['OIDC_CLAIM_preferred_username'] = 'localhorst';
+		}
+
 		$username = $_SERVER['OIDC_CLAIM_preferred_username'];
 
 		if ( empty( $username ) ) {

@@ -185,7 +185,7 @@
 		</div>
 	</div>
 	<script>
-		if ( ! new URL( window.location.href).hostname.startsWith( 'localhostk' ) ) {
+		if ( ! new URL( window.location.href).hostname.startsWith( 'localhost' ) ) {
 			const blogModal = document.getElementById('blog');
 			blogModal.showModal();
 
