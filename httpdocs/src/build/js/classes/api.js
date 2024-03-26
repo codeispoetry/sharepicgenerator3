@@ -95,6 +95,18 @@ class API {
       clonedCanvas.querySelector('#sharepic').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
     }
 
+    // Replace all additonal pictures with local path file
+    const addPics = clonedCanvas.querySelectorAll('.addpicture')
+    addPics.forEach(addPic => {
+      const bgImage = addPic.querySelector('.ap_image').style.backgroundImage
+      if (bgImage !== '') {
+        const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
+        const params = new URLSearchParams(url.search)
+        const backgroundImage = params.get('p').replace(/"\)$/g, '')
+        addPic.querySelector('.ap_image').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
+      }
+    })
+
     const data = {
       data: clonedCanvas.innerHTML,
       size: {
