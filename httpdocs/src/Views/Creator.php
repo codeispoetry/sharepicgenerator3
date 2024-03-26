@@ -16,7 +16,7 @@
     
 <header>
     <?php
-		$show_my_sharepics = ( $this->config->get( 'Main', 'authenticator' ) === 'true');
+		$show_my_sharepics = ( $this->config->get( 'Main', 'authenticator' ) === 'greens');
 		$menu = 'src/Views/Menu-' . $this->config->get( 'Main', 'menu' );
 		if( file_exists( $menu . '.php' ) )
 			include $menu . '.php';

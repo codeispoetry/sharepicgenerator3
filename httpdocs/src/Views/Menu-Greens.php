@@ -80,14 +80,20 @@
             <button onClick="api.load('templates/bw-zitat/start.html'); bwstory=true;" class="story">
                 <?php  echo _('Hochformat/Story');?>
             </button>
-            <div class="divider"></div>
+           
             
+            <?php
+            /*
+             <div class="divider"></div>
             <button onClick="api.load('templates/bw-steckbrief/start.html'); bwstory=false;">
                 <?php  echo _('KW 24 Steckbrief');?>
             </button>
             <button onClick="api.load('templates/bw-steckbrief/start.html'); bwstory=true;" class="story">
                 <?php  echo _('Hochformat/Story');?>
             </button>
+
+            */
+            ?>
             <div class="divider"></div>
             
             <button onClick="api.load('templates/vorort/start.html'); bwstory=false;">
