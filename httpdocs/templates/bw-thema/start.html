@@ -82,6 +82,10 @@
 
         if( typeof bwstory != 'undefined' && bwstory == true) {
             document.querySelector('[title="Instagram"]').click();
+
+            const logo = document.querySelector('.small #logo');
+            logo.style.left = '208px';
+            logo.style.top = '299px';
         }
 
         config.cockpit = {
@@ -104,9 +108,5 @@
        left: 0px;
     }
 
-    .small #logo{
-        left: 208px !important;
-        top: 299px !important;
-    }
 </style>
 
