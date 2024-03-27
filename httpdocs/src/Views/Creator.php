@@ -126,7 +126,7 @@
 				</button>
 				<button id="tab_btn_vorort" onClick="ui.showTab('vorort')">
 					<div>
-						<img src="assets/icons/resize.svg" title="<?php echo _('Vor ORt'); ?>">
+						<img src="assets/icons/resize.svg" title="<?php echo _('Vor Ort'); ?>">
 						<div class="description">
 							<?php echo _('Vor Ort'); ?>
 						</div>

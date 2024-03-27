@@ -48,7 +48,7 @@
     </div>
 
     <div class="dropdown" id="menu_file">
-        <span><?php echo _( 'Baden-Württemberg' ); ?></span>
+        <span><?php echo _( 'Baden-W&uuml;rttemberg' ); ?></span>
         <div class="dropdown-content">
             <button onClick="api.load('templates/bw-kandi-vorstellung/start.html'); bwstory=false;">
                 <?php  echo _('KW 24 Kandi Vorstellung');?>
