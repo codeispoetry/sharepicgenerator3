@@ -3,7 +3,6 @@ var api, sg, cockpit, undo, pixabay, component, rte, logger, ui
 
 window.onload = function () {
   api = new API()
-  api.load('templates/' + config.starttemplate + '/start.html')
   sg = new Sharepic()
   cockpit = new Cockpit()
   undo = new Undo()
@@ -13,5 +12,6 @@ window.onload = function () {
   rte = new RichTextEditor()
   logger = new Logger()
 
-  ui.showTab('download')
+  api.load('templates/' + config.starttemplate + '/start.html')
+
 }
