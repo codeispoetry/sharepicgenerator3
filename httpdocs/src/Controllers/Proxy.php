@@ -28,11 +28,25 @@ class Proxy {
 			exit( 1 );
 		}
 
-		$real_path = realpath( '../users/' . $user->get_username() . '/' . $path );
-		$user_dir  = realpath( dirname( __FILE__, 4 ) . '/users/' . $user->get_username() . '/' );
+		$clearance = false;
 
-		// Do only load from user directory.
-		if ( ! $real_path || ! str_starts_with( $real_path, $user_dir ) ) {
+		// Check, if the requested file is in the userdir.
+		$provided_path = realpath( '../users/' . $user->get_username() . '/' . $path );
+		$allowed_dir   = realpath( dirname( __FILE__, 4 ) . '/users/' . $user->get_username() . '/' );
+		if ( $provided_path && str_starts_with( $provided_path, $allowed_dir ) ) {
+			$clearance = true;
+		}
+
+		// Check, if the requested file is in the tmp dir.
+		if ( ! $clearance ) {
+			$provided_path = realpath( '../' . $path );
+			$allowed_dir   = realpath( dirname( __FILE__, 4 ) . '/tmp/' );
+			if ( $provided_path && str_starts_with( $provided_path, $allowed_dir ) ) {
+				$clearance = true;
+			}
+		}
+
+		if ( ! $clearance ) {
 			$logger = new Logger( 'Helper' );
 			$logger->alarm( Helper::sanitize_log( $path ) . ' was requested, but is not in userdir' );
 			header( 'HTTP/1.1 404 Not Found' );
@@ -40,15 +54,15 @@ class Proxy {
 		}
 
 		$finfo = finfo_open( FILEINFO_MIME_TYPE );
-		$mime  = finfo_file( $finfo, $real_path );
+		$mime  = finfo_file( $finfo, $provided_path );
 		finfo_close( $finfo );
 
 		header( 'Content-Type: ' . $mime );
-		header( 'Content-Length: ' . filesize( $real_path ) );
+		header( 'Content-Length: ' . filesize( $provided_path ) );
 		header( 'Cache-Control: no-store, no-cache, must-revalidate, max-age=0' );
 		header( 'Cache-Control: post-check=0, pre-check=0', false );
 		header( 'Pragma: no-cache' );
 
-		readfile( $real_path );
+		readfile( $provided_path );
 	}
 }
