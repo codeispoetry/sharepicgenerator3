@@ -38,4 +38,12 @@
 
         </div>
     </section>
+    <section>
+        <h3><?php  echo _('Format');?></h3>
+        <label>
+            <input type="checkbox" id="jpg">
+            <?php echo _("Download as jpg"); ?>
+        </label>
+       
+    </section>
 </section>

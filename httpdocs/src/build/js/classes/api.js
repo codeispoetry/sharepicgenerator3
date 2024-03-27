@@ -109,6 +109,7 @@ class API {
 
     const data = {
       data: clonedCanvas.innerHTML,
+      jpg: document.getElementById('jpg').checked,
       size: {
         width: document.getElementById('width').value,
         height: document.getElementById('height').value,
@@ -193,7 +194,8 @@ class API {
 
         const a = document.createElement('a')
         a.href = config.url + '/' + data.path
-        a.download = 'sharepic.png'
+
+        a.download = 'sharepic.' + data.path.slice(-3)
         document.body.appendChild(a)
         a.click()
         document.body.removeChild(a)

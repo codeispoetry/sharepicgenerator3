@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-27 09:16+0100\n"
+"POT-Creation-Date: 2024-03-27 10:58+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,7 +193,7 @@ msgid "Home"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
-#: httpdocs/src/Views/Creator.php:113 httpdocs/src/Views/Creator.php:115
+#: httpdocs/src/Views/Creator.php:121 httpdocs/src/Views/Creator.php:123
 msgid "Eyecatcher"
 msgstr ""
 
@@ -226,9 +226,27 @@ msgid "Background"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
 #: httpdocs/src/Views/Cockpit/Freetext.php:10
 #: httpdocs/src/Views/Cockpit/Addpicture.php:9
 msgid "Total size"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
+#: httpdocs/src/Views/Creator.php:113 httpdocs/src/Views/Creator.php:115
+msgid "Additional text"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:4
+#: httpdocs/src/Views/Cockpit/Freetext.php:5
+msgid "Add text"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
+#: httpdocs/src/Views/Cockpit/Background.php:26
+#: httpdocs/src/Views/Cockpit/Copyright.php:14
+#: httpdocs/src/Views/Cockpit/Addpicture.php:38
+msgid "Color"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Download.php:2 httpdocs/src/Views/Creator.php:67
@@ -249,6 +267,14 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Download.php:15
 msgid "square 16:9"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Download.php:42
+msgid "Format"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Download.php:45
+msgid "Download as jpg"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:2
@@ -272,12 +298,6 @@ msgstr ""
 msgid "Change image crop"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:26
-#: httpdocs/src/Views/Cockpit/Copyright.php:14
-#: httpdocs/src/Views/Cockpit/Addpicture.php:38
-msgid "Color"
-msgstr ""
-
 #: httpdocs/src/Views/Cockpit/Background.php:31
 msgid "Tanne"
 msgstr ""
@@ -295,7 +315,8 @@ msgid "Sand"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2
-#: httpdocs/src/Views/Menu-Greens.php:96 httpdocs/src/Views/Creator.php:131
+#: httpdocs/src/Views/Menu-Greens.php:96 httpdocs/src/Views/Creator.php:137
+#: httpdocs/src/Views/Creator.php:139
 msgid "Vor Ort"
 msgstr ""
 
@@ -409,10 +430,6 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Freetext.php:4
 msgid "For a text in your sharepic, edit it directly in the sharepic."
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Freetext.php:5
-msgid "Add text"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Copyright.php:2 httpdocs/src/Views/Creator.php:89
@@ -604,45 +621,41 @@ msgstr ""
 msgid "Search or create image"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:121 httpdocs/src/Views/Creator.php:123
+#: httpdocs/src/Views/Creator.php:129 httpdocs/src/Views/Creator.php:131
 msgid "Front picture"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:129
-msgid "Vor ORt"
-msgstr ""
-
-#: httpdocs/src/Views/Creator.php:142
+#: httpdocs/src/Views/Creator.php:150
 msgid "Logged in as"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:157
+#: httpdocs/src/Views/Creator.php:165
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:213
+#: httpdocs/src/Views/Creator.php:221
 msgid "Are you sure?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:214
+#: httpdocs/src/Views/Creator.php:222
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:215
+#: httpdocs/src/Views/Creator.php:223
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:216
+#: httpdocs/src/Views/Creator.php:224
 msgid "Maximum number of elements reached"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:217
+#: httpdocs/src/Views/Creator.php:225
 msgid "Uploading your image ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:218
+#: httpdocs/src/Views/Creator.php:226
 msgid "Your image is being processed ..."
 msgstr ""
 

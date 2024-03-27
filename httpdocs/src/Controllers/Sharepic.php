@@ -97,6 +97,14 @@ class Sharepic {
 	private $body_class;
 
 	/**
+	 * Should the output image be a jpg?
+	 *
+	 * @var bool
+	 */
+	private $jpg;
+
+
+	/**
 	 * The constructor. Reads the inputs, stores information.
 	 */
 	public function __construct() {
@@ -125,6 +133,7 @@ class Sharepic {
 		$this->size['width']  = (int) ( $data['size']['width'] ?? 100 );
 		$this->size['height'] = (int) ( $data['size']['height'] ?? 100 );
 		$this->size['zoom']   = (float) ( $data['size']['zoom'] ?? 1 );
+		$this->jpg            = (bool) ( $data['jpg'] ?? 1 );
 		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
 		$this->info           = ( isset( $data['name'] ) ) ? Helper::sanitze_az09( $data['name'] ) : 'no-name';
 		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish' ) ) ) ? $data['mode'] : 'save';
@@ -227,8 +236,9 @@ class Sharepic {
 	 * Creates a sharepic by taking the screenshot of the HTML.
 	 */
 	public function create() {
-		$path   = '../users/' . $this->user . '/output.png';
-		$config = new Config();
+		$output_file = 'output.png';
+		$path        = '../users/' . $this->user . '/' . $output_file;
+		$config      = new Config();
 
 		$doc = new \DOMDocument();
 		libxml_use_internal_errors( true );
@@ -277,9 +287,14 @@ class Sharepic {
 			$this->http_error( 'Could not create file' );
 		}
 
+		if ( $this->jpg ) {
+			$this->convert_to_jpg( $path );
+			$output_file = substr( $output_file, 0, -3 ) . 'jpg';
+		}
+
 		$this->create_thumbnail( $path );
 
-		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=output.png' ) );
+		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $output_file ) );
 	}
 
 	/**
@@ -325,6 +340,32 @@ class Sharepic {
 
 	}
 
+	/**
+	 * Converts an image to jpg.
+	 *
+	 * @param string $path The path to the image.
+	 */
+	private function convert_to_jpg( $path ) {
+		$extension = strtolower( pathinfo( $path, PATHINFO_EXTENSION ) );
+
+		if ( 'jpg' === $extension ) {
+			return;
+		}
+
+		$cmd = sprintf(
+			'convert %s %s 2>&1',
+			$path,
+			substr( $path, 0, -3 ) . 'jpg'
+		);
+
+		exec( $cmd, $output, $return_code );
+		$this->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+
+		if ( 0 !== $return_code ) {
+			$this->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
+			$this->http_error( 'Could not convert image' );
+		}
+	}
 
 	/**
 	 * Creates a thumbnail and saves it to the tmp folder.
