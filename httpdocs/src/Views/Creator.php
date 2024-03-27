@@ -187,11 +187,9 @@
 			<ul>
 				<li>Ändere Deinen Text direkt im Bild <small>nicht mehr in der Seiteleiste</small></li>
 				<li>Speichere Deine Bilder im Sharepicgenerator ab und arbeite später daran weiter</li>
-				<li>Eine künstliche Intelligenz hilft Dir, Hintergrundbilder zu erstellen</li>
 				<li>Mit der Rückgängig-Funktion kannst Du Fehler korrigieren</li>
 				<li>Reichere Zusatzbilder mit einer Bildunterschrift an</li>
 				<li>und viele weitere Verbesserungen</li>
-
 			</ul>
 			<button style="border: 0">Los geht's!</button>
 		</div>

@@ -7,12 +7,11 @@
         </label>
     </section>
     
-    <?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
-
     <section>
+        <h3><?php echo _('Appearance'); ?></h3>
         <div style="display: flex;font-size: 75%;margin-bottom: 0;justify-content:space-between;">
             <span><?php echo _('Line'); ?></span>
-            <span><?php echo _('Color'); ?></span>
+            <span><?php echo _('Colorset'); ?></span>
             <span><?php echo _('Size'); ?></span>
             <span><?php echo _('Indent'); ?></span>
         </div>
@@ -40,6 +39,9 @@
         </div>
         <?php } ?>
     </section>
+
+    <?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
+
 </section>
 
 <script>
