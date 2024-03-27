@@ -7,8 +7,13 @@
         </label>
     </section>
     
-<?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
+    <?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
+    <section>
+        Du kannst den Text direkt in der Vorschau bearbeiten.
+        Klicke ihn mit der <u>rechten Maustaste</u> an und wähle dann die Größe und Farbe.
+        Zudem kannst du den Text dann auch direkt verschieben.
+    </section>
 </section>
 
 <script>
