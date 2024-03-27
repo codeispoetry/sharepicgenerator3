@@ -17,22 +17,22 @@ class Cockpit {
   }
 
   setup_greentext (element) {
-    document.querySelectorAll('#greentext > div').forEach( (div, i) => {
+    document.querySelectorAll('#greentext > div').forEach((div, i) => {
       const cockpitLine = document.querySelectorAll('.cockpit_greentext')[i]
-     
-      cockpitLine.querySelectorAll( '.linesize option' ).forEach( (option) => {
-        if ( div.classList.contains( option.value ) ) {
+
+      cockpitLine.querySelectorAll('.linesize option').forEach((option) => {
+        if (div.classList.contains(option.value)) {
           option.selected = true
         }
       })
 
-      cockpitLine.querySelectorAll( '.linecolor option' ).forEach( (option) => {
-        if ( div.classList.contains( option.value ) ) {
+      cockpitLine.querySelectorAll('.linecolor option').forEach((option) => {
+        if (div.classList.contains(option.value)) {
           option.selected = true
         }
       })
 
-      cockpitLine.querySelector( '.lineindent' ).value = div.style.marginLeft.replace('px', '')
+      cockpitLine.querySelector('.lineindent').value = div.style.marginLeft.replace('px', '')
     })
   }
 
@@ -70,7 +70,7 @@ class Cockpit {
     document.getElementById('logo_size').value = element.style.width.replace('px', '')
 
     const file = document.getElementById('logo_file')
-    let url = element.style.backgroundImage.replace(/url\("(\.\.\/)*/, '').replace('")', '')
+    const url = element.style.backgroundImage.replace(/url\("(\.\.\/)*/, '').replace('")', '')
     file.value = url
   }
 

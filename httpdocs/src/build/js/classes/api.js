@@ -37,6 +37,8 @@ class API {
 
     config.template = path
 
+    document.querySelector('#tabsbuttons button').click()
+
     const options = {
       method: 'POST',
       headers: {
@@ -171,6 +173,8 @@ class API {
   create () {
     document.querySelector('.create').disabled = true
     document.querySelector('.create').classList.add('waiting')
+
+    document.querySelector('#tabsbuttons button').click()
 
     const options = {
       method: 'POST',
@@ -374,7 +378,7 @@ class API {
         const percentComplete = Math.round((e.loaded / e.total) * 100)
 
         let message = lang['Uploading image'] + ' ' + percentComplete + '%'
-        cockpit.target.querySelector('.ap_image').style.opacity = Math.max( 0.3, percentComplete / 100 )
+        cockpit.target.querySelector('.ap_image').style.opacity = Math.max(0.3, percentComplete / 100)
         if (percentComplete > 98) {
           message = lang['Processing image']
         }
@@ -431,8 +435,7 @@ class API {
         data = JSON.parse(data)
 
         document.getElementById('sharepic').style.backgroundImage = `url('${data.path}')`
-        document.getElementById('sharepic').style.filter = 'none';
-
+        document.getElementById('sharepic').style.filter = 'none'
       })
       .catch(error => console.error('Error:', error))
   }

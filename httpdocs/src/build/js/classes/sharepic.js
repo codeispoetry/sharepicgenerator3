@@ -40,7 +40,7 @@ class Sharepic {
     document.getElementById('sharepic').style.backgroundColor = btn.value
   }
 
-  backgroundColorPreset( color ) {
+  backgroundColorPreset (color) {
     document.getElementById('background_color').value = color
     document.getElementById('sharepic').style.backgroundColor = color
   }

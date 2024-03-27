@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-27 10:58+0100\n"
+"POT-Creation-Date: 2024-03-27 23:44+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -187,8 +187,8 @@ msgstr "Neue Vorlage"
 msgid "Save"
 msgstr "Zwischenpeichern"
 
-#: httpdocs/src/Views/Menu-Mint.php:52 httpdocs/src/Views/Creator.php:46
-#: httpdocs/src/Views/Creator.php:65
+#: httpdocs/src/Views/Menu-Mint.php:52 httpdocs/src/Views/Creator.php:50
+#: httpdocs/src/Views/Creator.php:69
 msgid "Download"
 msgstr "Herunterladen"
 
@@ -205,7 +205,7 @@ msgid "Home"
 msgstr "Startseite"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
-#: httpdocs/src/Views/Creator.php:121 httpdocs/src/Views/Creator.php:123
+#: httpdocs/src/Views/Creator.php:125 httpdocs/src/Views/Creator.php:127
 msgid "Eyecatcher"
 msgstr "Sticker"
 
@@ -214,6 +214,7 @@ msgid "Add sticker"
 msgstr "Sticker hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
+#: httpdocs/src/Views/Cockpit/Greentext.php:16
 #: httpdocs/src/Views/Cockpit/Background.php:5
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Copyright.php:9
@@ -244,8 +245,60 @@ msgstr "Hintergrund"
 msgid "Total size"
 msgstr "Gesamtgröße"
 
+#: httpdocs/src/Views/Cockpit/Greentext.php:14
+msgid "Line"
+msgstr "Zeile"
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:15
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
+#: httpdocs/src/Views/Cockpit/Background.php:26
+#: httpdocs/src/Views/Cockpit/Copyright.php:14
+#: httpdocs/src/Views/Cockpit/Addpicture.php:38
+msgid "Color"
+msgstr "Farbe"
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:17
+msgid "Indent"
+msgstr "Einrückung"
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:23
+msgid "tanne/sand"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:24
+msgid "sand/tanne"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:26
+msgid "klee/sand"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:27
+msgid "sand/klee"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:29
+msgid "gras/tanne"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:30
+msgid "tanne/gras"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:33
+msgid "S"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:34
+msgid "M"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:35
+msgid "L"
+msgstr ""
+
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
-#: httpdocs/src/Views/Creator.php:113 httpdocs/src/Views/Creator.php:115
+#: httpdocs/src/Views/Creator.php:117 httpdocs/src/Views/Creator.php:119
 msgid "Additional text"
 msgstr "Zusatztext"
 
@@ -254,14 +307,7 @@ msgstr "Zusatztext"
 msgid "Add text"
 msgstr "Text hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
-#: httpdocs/src/Views/Cockpit/Background.php:26
-#: httpdocs/src/Views/Cockpit/Copyright.php:14
-#: httpdocs/src/Views/Cockpit/Addpicture.php:38
-msgid "Color"
-msgstr "Farbe"
-
-#: httpdocs/src/Views/Cockpit/Download.php:2 httpdocs/src/Views/Creator.php:67
+#: httpdocs/src/Views/Cockpit/Download.php:2 httpdocs/src/Views/Creator.php:71
 msgid "Dimensions"
 msgstr "Abmessungen"
 
@@ -281,16 +327,8 @@ msgstr "Quadratisch 1:1"
 msgid "square 16:9"
 msgstr "16:9"
 
-#: httpdocs/src/Views/Cockpit/Download.php:42
-msgid "Format"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Download.php:45
-msgid "Download as jpg"
-msgstr "als JPG herunterladen"
-
 #: httpdocs/src/Views/Cockpit/Background.php:2
-#: httpdocs/src/Views/Creator.php:81 httpdocs/src/Views/Creator.php:83
+#: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:87
 msgid "Edit background image"
 msgstr "Hintergrundbild einstellen"
 
@@ -327,8 +365,8 @@ msgid "Sand"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2
-#: httpdocs/src/Views/Menu-Greens.php:96 httpdocs/src/Views/Creator.php:137
-#: httpdocs/src/Views/Creator.php:139
+#: httpdocs/src/Views/Menu-Greens.php:96 httpdocs/src/Views/Creator.php:141
+#: httpdocs/src/Views/Creator.php:143
 msgid "Vor Ort"
 msgstr "Vor Ort"
 
@@ -343,8 +381,8 @@ msgstr "bitte wählen"
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
 #: httpdocs/src/Views/Cockpit/Addpicture.php:34
-#: httpdocs/src/Views/Creator.php:97 httpdocs/src/Views/Creator.php:99
-#: httpdocs/src/Views/Creator.php:105 httpdocs/src/Views/Creator.php:107
+#: httpdocs/src/Views/Creator.php:101 httpdocs/src/Views/Creator.php:103
+#: httpdocs/src/Views/Creator.php:109 httpdocs/src/Views/Creator.php:111
 msgid "Text"
 msgstr "Text"
 
@@ -392,44 +430,44 @@ msgstr "Suche in Bilddatenbank"
 msgid "search in image database"
 msgstr "Suche in Bilddatenbank"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:28
+#: httpdocs/src/Views/Cockpit/Searchimage.php:29
 msgid "Create image with AI"
 msgstr "Bild mit KI erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:29
+#: httpdocs/src/Views/Cockpit/Searchimage.php:30
 msgid "Use artificial intelligence to create a unique image"
 msgstr ""
 "Verwende künstliche Intelligenz, um ein einzigartiges Bild zu erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:30
+#: httpdocs/src/Views/Cockpit/Searchimage.php:31
 msgid "Describe the image you want"
 msgstr "Beschreibe das Bild, das Du möchtest"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:34
+#: httpdocs/src/Views/Cockpit/Searchimage.php:35
 msgid "Create"
 msgstr "Erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:42
+#: httpdocs/src/Views/Cockpit/Searchimage.php:44
 msgid "Please wait while AI generates your image."
 msgstr "Bitte warte, während die KI Dein Bild generiert."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:43
+#: httpdocs/src/Views/Cockpit/Searchimage.php:45
 msgid "This can take up to one minute."
 msgstr "Dies kann bis zu einer Minute dauern."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:47
+#: httpdocs/src/Views/Cockpit/Searchimage.php:49
 msgid "seconds"
 msgstr "Sekunden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:51
+#: httpdocs/src/Views/Cockpit/Searchimage.php:53
 msgid "Result"
 msgstr "Ergebnis"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:54
+#: httpdocs/src/Views/Cockpit/Searchimage.php:56
 msgid "Use this image"
 msgstr "Dieses Bild verwenden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:57
+#: httpdocs/src/Views/Cockpit/Searchimage.php:59
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
@@ -445,8 +483,8 @@ msgstr "Grüne Fläche anzeigen"
 msgid "For a text in your sharepic, edit it directly in the sharepic."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Cockpit/Copyright.php:2 httpdocs/src/Views/Creator.php:89
-#: httpdocs/src/Views/Creator.php:91
+#: httpdocs/src/Views/Cockpit/Copyright.php:2 httpdocs/src/Views/Creator.php:93
+#: httpdocs/src/Views/Creator.php:95
 msgid "Copyright"
 msgstr "Urheberrechts&shy;hinweis"
 
@@ -632,19 +670,23 @@ msgstr ""
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: httpdocs/src/Views/Creator.php:73 httpdocs/src/Views/Creator.php:75
+#: httpdocs/src/Views/Creator.php:47
+msgid "as jpg"
+msgstr "als jpg"
+
+#: httpdocs/src/Views/Creator.php:77 httpdocs/src/Views/Creator.php:79
 msgid "Search or create image"
 msgstr "Bild suchen oder erstellen"
 
-#: httpdocs/src/Views/Creator.php:129 httpdocs/src/Views/Creator.php:131
+#: httpdocs/src/Views/Creator.php:133 httpdocs/src/Views/Creator.php:135
 msgid "Front picture"
 msgstr "Vordergrundbild"
 
-#: httpdocs/src/Views/Creator.php:150
+#: httpdocs/src/Views/Creator.php:154
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: httpdocs/src/Views/Creator.php:165
+#: httpdocs/src/Views/Creator.php:169
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
@@ -652,28 +694,28 @@ msgstr ""
 "Bitte warte, während Dein Sharepic erstellt wird. Dies kann einige Sekunden "
 "dauern."
 
-#: httpdocs/src/Views/Creator.php:221
+#: httpdocs/src/Views/Creator.php:225
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
-#: httpdocs/src/Views/Creator.php:222
+#: httpdocs/src/Views/Creator.php:226
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: httpdocs/src/Views/Creator.php:223
+#: httpdocs/src/Views/Creator.php:227
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Creator.php:224
+#: httpdocs/src/Views/Creator.php:228
 msgid "Maximum number of elements reached"
 msgstr "Maximale Anzahl von Elementen erreicht"
 
-#: httpdocs/src/Views/Creator.php:225
+#: httpdocs/src/Views/Creator.php:229
 msgid "Uploading your image ..."
 msgstr "Das Bild wird hochladen ..."
 
-#: httpdocs/src/Views/Creator.php:226
+#: httpdocs/src/Views/Creator.php:230
 msgid "Your image is being processed ..."
 msgstr "Dein Bild wird vorbereitet ..."
 
@@ -718,6 +760,9 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Download as jpg"
+#~ msgstr "als JPG herunterladen"
 
 #~ msgid "Templates"
 #~ msgstr "Vorlagen"
