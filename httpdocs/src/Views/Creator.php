@@ -42,6 +42,10 @@
 				</div>
 			</div>
 			<div class="workbench-below">
+				<label style="margin-right: 1em">
+					<input type="checkbox" id="jpg">
+					<?php echo _("as jpg"); ?>
+				</label>
 				<button class="create" onClick="api.create()">
 					<img src="assets/icons/download.svg"> <?php  echo _('Download');?>
 				</button>

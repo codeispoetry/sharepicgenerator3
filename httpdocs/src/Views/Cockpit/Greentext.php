@@ -3,25 +3,70 @@
     <section>
         <h3><?php echo _('Total size'); ?></h3>
         <label>
-            <input type="range" min="0" max="3" value="1" class="slider" step="0.05" id="greentext_size">
+            <input type="range" min="0" max="3" value="1" class="slider" step="0.05" id="greentext_size" oninput="greentext.setSize(this)">
         </label>
     </section>
     
     <?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
     <section>
-        Du kannst den Text direkt in der Vorschau bearbeiten.
-        Klicke ihn mit der <u>rechten Maustaste</u> an und wähle dann die Größe und Farbe.
-        Zudem kannst du den Text dann auch direkt verschieben.
+        <div style="display: flex;font-size: 75%;margin-bottom: 0;justify-content:space-between;">
+            <span><?php echo _('Line'); ?></span>
+            <span><?php echo _('Color'); ?></span>
+            <span><?php echo _('Size'); ?></span>
+            <span><?php echo _('Indent'); ?></span>
+        </div>
+        <?php for( $i = 1; $i <= 3; $i++ ) { ?>
+        <div class="cockpit_greentext">
+            <?php echo $i; ?></strong>
+            <select class="linecolor" onChange="greentext.setLineColorset(this, <?php echo $i; ?>)">
+                <option value="tannesand"><?php echo _('tanne/sand'); ?></option>
+                <option value="sandtanne"><?php echo _('sand/tanne'); ?></option>
+
+                <option value="kleesand"><?php echo _('klee/sand'); ?></option>
+                <option value="sandklee"><?php echo _('sand/klee'); ?></option>
+
+                <option value="grastanne"><?php echo _('gras/tanne'); ?></option>
+                <option value="tannegras"><?php echo _('tanne/gras'); ?></option>
+            </select>
+            <select class="linesize" onChange="greentext.setLineSize(this, <?php echo $i; ?>)">
+                <option value="s"><?php echo _('S'); ?></option>
+                <option value="m"><?php echo _('M'); ?></option>
+                <option value="l"><?php echo _('L'); ?></option>
+            </select>
+        
+            <input type="range" class="lineindent" min="-300" max="300" value="0" oninput="greentext.setLineIndent(this, <?php echo $i; ?>)">
+           
+        </div>
+        <?php } ?>
     </section>
 </section>
 
 <script>
-    document.getElementById('greentext_size').addEventListener('input', function(e) {
-        var element = event.target;
-        const target = document.getElementById('greentext');
-        target.style.transform = `scale(${element.value})`;
-    });
+    class Greentext{
+        setSize(input){
+            cockpit.target.style.transform =  `scale(${input.value})`;
+            undo.commit()
+        }
+
+        setLineIndent(input, line) {      
+            document.querySelector('#greentext > div:nth-child(' + line + ')' ).style.marginLeft = input.value + 'px'
+        }
+
+        setLineSize(input, lineNr) {  
+            const line = document.querySelector('#greentext > div:nth-child(' + lineNr + ')' );
+            line.classList.remove('s', 'm', 'l')
+            line.classList.add(input.value)
+        }
+
+        setLineColorset(input, lineNr) {  
+            const line = document.querySelector('#greentext > div:nth-child(' + lineNr + ')' );
+            line.classList.remove('tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras')
+            line.classList.add(input.value)
+        }
+    }
+    const greentext = new Greentext();
+
 </script>
 
 

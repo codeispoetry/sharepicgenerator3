@@ -177,7 +177,7 @@ class Sharepic {
 			mkdir( $save_dir );
 		}
 
-		// $this->delete_unused_files();
+		$this->delete_unused_files();
 
 		$cmd = "cp -R $workspace $save 2>&1";
 		exec( $cmd, $output, $return_code );
@@ -254,7 +254,7 @@ class Sharepic {
 
 		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
-		// $this->delete_unused_files();
+		$this->delete_unused_files();
 
 		$cmd = sprintf(
 			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
@@ -407,6 +407,25 @@ class Sharepic {
 			// Do only load from template or user directory.
 			if ( ! str_starts_with( $real_path, $template_dir ) && ! str_starts_with( $real_path, $user_dir ) ) {
 				throw new \Exception( 'File may not be serverd' );
+			}
+
+			// If the file is in the user directory (it is saved), copy all files to workspace.
+			if ( str_starts_with( $real_path, $user_dir ) ) {
+				$workspace = $user_dir . '/workspace';
+
+				$cmd = sprintf(
+					'cp -R %s/* %s 2>&1',
+					dirname( $real_path ),
+					$workspace
+				);
+
+				exec( $cmd, $output, $return_code );
+				$this->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+
+				if ( 0 !== $return_code ) {
+					$this->logger->alarm( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
+					$this->http_error( 'Could not copy files' );
+				}
 			}
 
 			echo file_get_contents( $this->template );

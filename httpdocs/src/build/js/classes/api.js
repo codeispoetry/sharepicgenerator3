@@ -364,11 +364,22 @@ class API {
 
     const imageUrl = URL.createObjectURL(file)
 
+    cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${imageUrl}')`
+    cockpit.target.querySelector('.ap_image').style.filter = 'grayscale(100%)'
+
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload_addpic', true)
     xhr.upload.onprogress = function (e) {
       if (e.lengthComputable) {
         const percentComplete = Math.round((e.loaded / e.total) * 100)
+
+        let message = lang['Uploading image'] + ' ' + percentComplete + '%'
+        cockpit.target.querySelector('.ap_image').style.opacity = Math.max( 0.3, percentComplete / 100 )
+        if (percentComplete > 98) {
+          message = lang['Processing image']
+        }
+
+        document.querySelector('.workbench-below .message').innerHTML = message
       }
     }
     xhr.onload = function () {
@@ -376,6 +387,11 @@ class API {
         const resp = JSON.parse(this.response)
 
         cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${resp.path}')`
+
+        document.querySelector('.workbench-below .message').innerHTML = ''
+        cockpit.target.querySelector('.ap_image').style.filter = 'none'
+        cockpit.target.querySelector('.ap_image').style.opacity = 1
+
         logger.prepare_log_data({
           imagesrc: 'addpic'
         })

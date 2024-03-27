@@ -284,5 +284,38 @@ body.greens{
         }
       
     }
+
+    #cockpit{
+        .cockpit_greentext{
+            margin: 0;
+            display: flex;
+            align-items: center;
+
+            select{
+                &:nth-of-type(1){
+                    width: 6em;
+                }
+                &:nth-of-type(2){
+                    width: 3em;
+                }
+                width: 40%;
+                padding: 0;
+                background-color: $dark;
+                color: white;
+
+                option{
+                    padding: 0;
+                
+                }
+            }
+
+            input[type="range"] {
+                padding: 0;
+                &::before, &::after{
+                    content: '';
+                }
+            }
+        }
+    }
 }
 

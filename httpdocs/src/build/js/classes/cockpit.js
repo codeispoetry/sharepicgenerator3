@@ -17,7 +17,23 @@ class Cockpit {
   }
 
   setup_greentext (element) {
+    document.querySelectorAll('#greentext > div').forEach( (div, i) => {
+      const cockpitLine = document.querySelectorAll('.cockpit_greentext')[i]
+     
+      cockpitLine.querySelectorAll( '.linesize option' ).forEach( (option) => {
+        if ( div.classList.contains( option.value ) ) {
+          option.selected = true
+        }
+      })
 
+      cockpitLine.querySelectorAll( '.linecolor option' ).forEach( (option) => {
+        if ( div.classList.contains( option.value ) ) {
+          option.selected = true
+        }
+      })
+
+      cockpitLine.querySelector( '.lineindent' ).value = div.style.marginLeft.replace('px', '')
+    })
   }
 
   setup_greenaddtext (element) {

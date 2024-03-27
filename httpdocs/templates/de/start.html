@@ -20,11 +20,13 @@
             left: 120px;
             top: 100px;
             transform: scale(0.8);
+            padding: 30px;
         "
     >
-        <div class="s sandklee">Tippe Deinen Text</div>
-        <div class="m kleesand"style="margin-left:40px;">direkt hier.</div>
-        <div class="s sandklee">Ändere die Farbe mit der rechten Maustaste.</div>
+        <div class="s sandklee">Tippe </div>
+        <div class="m kleesand"style="margin-left:40px;">Deinen Text</div>
+        <div class="s sandklee"style="">direkt hier.</div>
+
     </div>
 
     <div class="draggable selectable" id="logo" 
@@ -112,105 +114,6 @@
     </div>
 
     <script>
-        var lastX, line
-
-        const contextMenuListener = (e) => {
-            e.preventDefault();
-
-            const greentextContextMenu = document.getElementById('greentextContextMenu');
-            greentextContextMenu.style.left = `${e.pageX}px`;
-            greentextContextMenu.style.top = `${e.pageY}px`;
-            greentextContextMenu.style.display = 'flex';
-
-            line = e.target.closest('div');
-
-            document.addEventListener('mousemove', mouseMover)
-            lastX = e.pageX
-        };
-
-        const mouseMover = (e) => { 
-           
-            if (lastX === undefined) {
-                return
-            }
-
-            const offset = e.pageX - lastX;
-
-            // do not move contextmenu
-            if(line.id !== ''){
-                return;
-            }
-            console.log(line)
-
-            let x = line.offsetLeft;
-
-            x += offset;
-            line.style.marginLeft = `${x}px`;
-            
-            lastX = e.pageX;
-        }
-
-        
-        const greentext = document.getElementById('greentext');
-        greentext.addEventListener('contextmenu', contextMenuListener);
-
-        document.addEventListener('click', () => {
-            if( !document.getElementById('greentextContextMenu') ){
-                return;
-            }
-            greentextContextMenu.style.display = 'none';
-        });
-
-        document.addEventListener('mouseup', (e) => {
-            if( e.button === 2 ) {
-              document.removeEventListener('mousemove', mouseMover)
-            }
-        });
-
-        const setColor = (e) => {
-            // delete all colorclasses
-            const colors = new Set(['tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras']);
-            const classes = line.classList;
-            for (let i = 0; i < classes.length; i++) {
-                if(!colors.has(classes[i])){
-                    continue;
-                }
-                line.classList.remove(classes[i]);
-            }
-
-            line.classList.add(e.target.dataset.setcolor);
-        }
-
-        const setSize = (e) => {
-            // delete all sizeclasses
-            const sizes = new Set(['s', 'm', 'l']);
-            const classes = line.classList;
-            for (let i = 0; i < classes.length; i++) {
-                if(!sizes.has(classes[i])){
-                    continue;
-                }
-                line.classList.remove(classes[i]);
-            }
-
-            line.classList.add(e.target.dataset.setsize);
-        }
-        
-        const colorButtons = document.querySelectorAll('[data-setcolor]');
-        colorButtons.forEach(btn => {
-            btn.addEventListener('click', setColor);
-        });
-
-        const sizeButtons = document.querySelectorAll('[data-setsize]');
-        sizeButtons.forEach(btn => {
-            btn.addEventListener('click', setSize);
-        });
-
-        document.querySelectorAll('[contenteditable]').forEach(element => {
-            element.addEventListener('blur', () => {
-                undo.commit()
-            })
-        })
-
         undo.commit()
 
         config.cockpit = {

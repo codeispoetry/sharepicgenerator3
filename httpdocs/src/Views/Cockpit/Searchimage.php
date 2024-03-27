@@ -24,6 +24,7 @@
         </div>
     </section>
 
+    <?php if ( false ) { ?>
     <section id="search_dalle">
         <h3><?php  echo _('Create image with AI');?></h3>
         <p><?php echo _('Use artificial intelligence to create a unique image');?></p>
@@ -34,6 +35,7 @@
             <?php  echo _('Create');?>
         </button>
     </section>
+    <?php } ?>
 
     <section id="dalle_result" style="display: none";>
         <div id="dalle_result_waiting" style="display: none">
