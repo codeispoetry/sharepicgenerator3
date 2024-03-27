@@ -26,6 +26,7 @@
         <div class="horizontal">
             <button id="addpic_pic_round" class="no-button" title="<?php  echo _('round');?>"><img src="assets/icons/circle.svg"></button>
             <button id="addpic_pic_angular" class="no-button" title="<?php  echo _('angular');?>"><img src="assets/icons/square.svg"></button>      
+            <button id="addpic_pic_original" class="no-button" title="<?php  echo _('original');?>"><img src="assets/icons/rectangle.svg"></button>      
         </div>
         </section>
 
@@ -45,7 +46,9 @@
 <script>
     document.getElementById('addpicture_size').addEventListener('input', function(e) {
         cockpit.target.querySelector('.ap_image').style.width = e.target.value + 'px';
-        cockpit.target.querySelector('.ap_text').style.fontSize = Math.max( 20, e.target.value * 0.1 ) + 'px';
+    
+        const fontSize = Math.min( 22, Math.max( 18, e.target.value * 0.1 ) );
+        cockpit.target.querySelector('.ap_text').style.fontSize = fontSize + 'px';
     });
 
     document.getElementById('addpic_text_right').addEventListener('click', function(e) {
@@ -60,11 +63,37 @@
 
     document.getElementById('addpic_pic_round').addEventListener('click', function(e) {
         cockpit.target.querySelector('.ap_image').style.borderRadius = '50%';
+        cockpit.target.querySelector('.ap_image').style.width = '100px';
+        cockpit.target.querySelector('.ap_image').style.height = '100px';
         undo.commit()
     });
 
     document.getElementById('addpic_pic_angular').addEventListener('click', function(e) {
         cockpit.target.querySelector('.ap_image').style.borderRadius = '0';
+        cockpit.target.querySelector('.ap_image').style.width = '100px';
+        cockpit.target.querySelector('.ap_image').style.height = '100px';
+        undo.commit()
+    });
+
+    document.getElementById('addpic_pic_original').addEventListener('click', function(e) {
+        cockpit.target.querySelector('.ap_image').style.borderRadius = '0';
+        
+        var img = new Image();
+        img.onload = function() {
+            const w = this.width;
+            const h = this.height;
+            const ratio = w / h;
+
+            let factor = 0.1
+            new_w = w * factor;
+            new_h = h * factor;
+            
+            cockpit.target.querySelector('.ap_image').style.height= new_h + 'px';
+            cockpit.target.querySelector('.ap_image').style.width = new_w + 'px';
+
+        }
+        img.src = cockpit.target.querySelector('.ap_image').style.backgroundImage.replace('url("', '').replace('")', '');
+
         undo.commit()
     });
 
