@@ -108,6 +108,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_greenaddtext" onClick="ui.showTab('greenaddtext')">
+					<div>
+						<img src="assets/icons/text-add.svg" title="<?php echo _('Additional text'); ?>">
+						<div class="description">
+							<?php echo _('Additional text'); ?>
+						</div>
+					</div>
+				</button>
 				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
 					<div>
 						<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">

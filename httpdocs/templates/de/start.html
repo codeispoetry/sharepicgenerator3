@@ -72,6 +72,23 @@
                 <p>Text</p>
             </div>
         </div>
+
+        <div data-id="greenaddtext" data-class="greenaddtext draggable selectable" data-cockpit="greenaddtext"
+        data-max="10" spellcheck="false"
+        contenteditable="true" onclick="component.select(this)"
+        onmousedown="component.startDrag(event)" style="
+                    z-index:2; 
+                    left: 5px; top: 5px; 
+                    font-size: 20px; 
+                    color: #000000; 
+                    font-family: 'PT Sans', sans-serif;
+                    line-height: 1em;
+                "
+        >
+            <div>
+                Hier kommt Dein Sternchentext.
+            </div>
+        </div>
     
         <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
         onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
@@ -196,7 +213,7 @@
         undo.commit()
 
         config.cockpit = {
-            elements: ['download','search','background','copyright','greentext','eyecatcher','addpicture']
+            elements: ['download','search','background','copyright','greentext','greenaddtext', 'eyecatcher','addpicture']
         }
 
     </script>

@@ -20,6 +20,13 @@ class Cockpit {
 
   }
 
+  setup_greenaddtext (element) {
+    const slider = document.getElementById('greenaddtext_size')
+    slider.value = element.style.fontSize.replace('px', '')
+
+    document.getElementById('greenaddtext_color').value = ui.rgbToHex(element.style.color)
+  }
+
   setup_background (element) {
     const slider = document.getElementById('copyright_size')
     slider.value = element.style.fontSize.replace('px', '')
