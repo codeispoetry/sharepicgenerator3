@@ -70,9 +70,9 @@
 				?>
 			</div>
 			<div id="tabsbuttons">
-				<button id="tab_btn_download" onClick="ui.showTab('download')">
+				<button id="tab_btn_dimensions" onClick="ui.showTab('dimensions')">
 					<div>
-						<img src="assets/icons/resize.svg" title="<?php echo _('Download'); ?>">
+						<img src="assets/icons/resize.svg" title="<?php echo _('Dimensions'); ?>">
 						<div class="description">
 							<?php echo _('Dimensions'); ?>
 						</div>

@@ -7,13 +7,9 @@
     </section>
 
     <section>
-        <h3><?php  echo _('Preferences');?></h3>
-        <button class="" onClick="background.reset()">
+        <h3><?php  echo _('Image crop');?></h3>
+        <button class="no-button" onClick="background.reset()">
             <?php echo _("Fit automatically"); ?>
-        </button>   
-    
-        <button class="" onClick="background.delete()">
-            <?php echo _("Delete background image"); ?>
         </button>   
 
         <label>
@@ -24,23 +20,33 @@
 
     <section>  
         <h3><?php  echo _('Color');?></h3>
-        <input type="color" value="#ffffff" class="" id="background_color" onInput="background.color(this.value)">
-        <br>
+        
+        
         <div style="display: flex">
-            <button class="no-button" onClick="background.color('#005437');">
-                <?php echo _("Tanne"); ?>
-            </button>
-            <button class="no-button" onClick="background.color('#008939');">
-                <?php echo _("Klee"); ?>
-            </button>
-            <button class="no-button" onClick="background.color('#8abd24');">
-                <?php echo _("Gras"); ?>
-            </button>
-            <button class="no-button" onClick="background.color('#f5f1e9');">
-                <?php echo _("Sand"); ?>
-            </button>
+            <input type="color" value="#ffffff" class="" id="background_color" onInput="background.color(this.value)">
+            
+            <div style="display: flex; flex-wrap: wrap;">
+                <button class="no-button" onClick="background.color('#005437');">
+                    <?php echo _("Tanne"); ?>
+                </button>
+                <button class="no-button" onClick="background.color('#008939');">
+                    <?php echo _("Klee"); ?>
+                </button>
+                <button class="no-button" onClick="background.color('#8abd24');">
+                    <?php echo _("Gras"); ?>
+                </button>
+                <button class="no-button" onClick="background.color('#f5f1e9');">
+                    <?php echo _("Sand"); ?>
+                </button>
+            </div>
         </div>
     
+    </section>
+
+    <section>
+        <button class="outline" onClick="background.delete()">
+            <?php echo _("Delete background image"); ?>
+        </button>   
     </section>
     
 </section>
