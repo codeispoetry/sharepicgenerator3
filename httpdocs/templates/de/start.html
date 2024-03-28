@@ -8,6 +8,25 @@
     		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
     <link rel="stylesheet" type="text/css" href="templates/de/styles.css?r=7">
 
+    <div    class="" 
+            id="background"
+            data-cockpit="background"  
+            onmousedown="background.startDrag(); component.select(this)"
+            onmouseup="background.stopDrag()"
+            style="
+                background-image: url('templates/de/start.jpg');
+                background-size: cover;
+                background-position-x: 0px;
+                background-position-y: 0px;
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            ">
+    </div>
+
     <div 
         class="draggable selectable" 
         data-cockpit="greentext"  
@@ -140,21 +159,3 @@
         transform-origin: top left !important;
     }
 </style>
-
-<div id="greentextContextMenu">
-    <div class="colors">
-        <button data-setcolor="tannesand" class="bg-sand"><div data-setcolor="tannesand" class="bg-tanne"></button>
-        <button data-setcolor="sandtanne" class="bg-tanne"><div data-setcolor="sandtanne" class="bg-sand"></button>
-
-        <button data-setcolor="kleesand" class="bg-sand"><div data-setcolor="kleesand" class="bg-klee"></button>
-        <button data-setcolor="sandklee" class="bg-klee"><div data-setcolor="sandklee" class="bg-sand"></button>
-
-        <button data-setcolor="grastanne" class="bg-tanne"><div data-setcolor="grastanne" class="bg-gras"></button>
-        <button data-setcolor="tannegras" class="bg-gras"><div data-setcolor="tannegras" class="bg-tanne"></button>
-    </div>
-    <div class="sizes">
-        <button data-setsize="s" class="s">S</button>
-        <button data-setsize="m" class="m">M</button>
-        <button data-setsize="l" class="l">L</button>
-    </div>
-</div>
