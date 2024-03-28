@@ -396,7 +396,6 @@ class User {
 		$cookie_token = $_COOKIE['bearer_token'] ?? false;
 
 		if ( empty( $cookie_token ) ) {
-			$this->logger->error( 'No token in get_user_by_token' );
 			return false;
 		}
 

@@ -37,3 +37,12 @@ translation-prepare:
 translate:
 	make create-mo stop up
 
+log-downloads:
+	grep -c 'created sharepic' logfiles/usage.log
+
+log-users:
+	cut -f2 logfiles/usage.log | sort | uniq -c | wc -l
+
+log-power-users:
+	cut -f2 logfiles/usage.log | sort | uniq -c | sort -nr | head -n 20
+

@@ -111,7 +111,7 @@ class API {
 
     const data = {
       data: clonedCanvas.innerHTML,
-      jpg: document.getElementById('jpg').checked,
+      jpg: (document.getElementById('jpg').value === 'true'),
       size: {
         width: document.getElementById('width').value,
         height: document.getElementById('height').value,

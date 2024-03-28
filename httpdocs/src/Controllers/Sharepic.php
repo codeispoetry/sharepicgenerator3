@@ -257,15 +257,13 @@ class Sharepic {
 		$this->delete_unused_files();
 
 		$cmd = sprintf(
-			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>&1',
+			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>/dev/null',
 			$cmd_preprend,
 			$path,
 			(int) $this->size['width'],
 			(int) $this->size['height'],
 			escapeshellarg( $this->file )
 		);
-
-		$this->logger->access( 'Command executed: ' . $cmd );
 
 		if ( $config->get( 'Main', 'engine' ) === 'puppeteer' ) {
 			$cmd = sprintf(

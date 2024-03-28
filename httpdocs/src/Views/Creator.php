@@ -42,13 +42,14 @@
 				</div>
 			</div>
 			<div class="workbench-below">
-				<label style="margin-right: 1em">
-					<input type="checkbox" id="jpg">
-					<?php echo _("as jpg"); ?>
-				</label>
-				<button class="create" onClick="api.create()">
+				<button class="create" style="border-top-right-radius: 0; border-bottom-right-radius:0;" onClick="api.create()">
 					<img src="assets/icons/download.svg"> <?php  echo _('Download');?>
 				</button>
+				<select class="button-dropdown" id="jpg">
+					<option value="false">png</option>
+					<option value="true">jpg</option>
+				</select>
+
 				<div class="message"></div>
 			</div>
 			<?php
@@ -198,9 +199,11 @@
 		if ( ! new URL( window.location.href).hostname.startsWith( 'localhost' ) ) {
 			const blogModal = document.getElementById('blog');
 			blogModal.showModal();
+			console.log("HI")
 
-			const blogCloser = document.addEventListener('click', function() {
+			const blogCloser = blogModal.addEventListener('click', function() {
 				blogModal.close();
+				console.log("close")
 				removeEventListener('click', blogCloser);
 			});
 		}

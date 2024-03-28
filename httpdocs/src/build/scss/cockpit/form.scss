@@ -43,6 +43,16 @@ button{
     }
 }
 
+select{
+    &.button-dropdown{
+        background-color: $theme-color;
+        color: white;
+        height: 40px;
+        border-top-right-radius: $button-border-radius;
+        border-bottom-right-radius: $button-border-radius;
+    }
+}
+
 #cockpit{
 
     label{
