@@ -59,6 +59,15 @@
                 background-color: $theme-color;
             }
         }
+
+        &-column{
+            flex-direction: column; 
+            align-items: flex-start;
+
+            button{
+                width: auto;
+            }
+        }
     }
 }
 
