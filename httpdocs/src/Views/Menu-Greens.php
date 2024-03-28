@@ -2,6 +2,7 @@
     <div class="dropdown" id="menu_mint">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
+           
             <button onClick="ui.setLang('de')">
                 <?php echo _( 'German' ); ?>
             </button>
@@ -9,11 +10,20 @@
                 <?php echo _( 'English' ); ?>
             </button>
             <div class="divider"></div>
+            <a href="https://chatbegruenung.de/channel/sharepicgenerator" target="_blank" class="menu-link">
+                <?php  echo _('Support');?>
+			</a>
+            <a href="index.php?c=frontend&m=create" class="menu-link">
+                <?php  echo _('Create');?>
+			</a>
             <a href="index.php?c=frontend&m=view&view=Imprint" class="menu-link">
                 <?php  echo _('Imprint');?>
 			</a>
             <a href="index.php?c=frontend&m=view&view=Privacy" class="menu-link">
                 <?php  echo _('Privacy');?>
+			</a>    
+            <a href="index.php?c=frontend&m=logout" class="menu-link">
+                <?php  echo _('Logout');?>
 			</a>
 
             <?php
@@ -25,16 +35,6 @@
                 printf( '<button onClick="api.save(\'publish\')">%s</button>', _( 'Publish' ) );
             }
             ?>
-
-            <div class="divider"></div>
-            <a href="index.php?c=frontend&m=logout" class="menu-link">
-                <?php  echo _('Logout');?>
-			</a>
-
-            <div class="divider"></div>
-            <a href="index.php" class="menu-link">
-                <?php  echo _('Back to home');?>
-			</a>
         </div>
     </div>
 

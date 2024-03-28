@@ -61,3 +61,11 @@
         }
     }
 }
+
+#welcome{
+    max-width: 300px;
+    margin-right: -340px;
+    border-right: 1px solid $light;
+    padding: 20px;
+    flex-grow: 1;
+}

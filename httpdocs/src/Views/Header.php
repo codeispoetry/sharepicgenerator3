@@ -11,17 +11,11 @@
 <body class="home <?php echo $body ?? ''; ?>">
     
 <header>
-<nav>
-
-    <div style="display: flex; align-items: center">
-        <a href="index.php" class="menu-link">
-            <?php  echo _('Home');?>
-        </a>
-        <a href="index.php?c=frontend&m=view&view=Imprint" class="menu-link">
-            <?php  echo _('Imprint');?>
-        </a>
-        <a href="index.php?c=frontend&m=view&view=Privacy" class="menu-link">
-            <?php  echo _('Privacy');?>
-        </a>
-    </div>
+    <?php
+		$show_my_sharepics = ( $this->config->get( 'Main', 'authenticator' ) === 'greens');
+		$menu = 'src/Views/Menu-' . $this->config->get( 'Main', 'menu' );
+		if( file_exists( $menu . '.php' ) )
+			include $menu . '.php';
+		else
+			include 'src/Views/Menu-Mint.php';	?>
 </header>

@@ -28,6 +28,11 @@
 
 <main class="main">
 	<div class="row">
+		<div id="welcome">
+				<?php
+					require 'src/Views/Message.php';
+				?>
+			</div>
 		<div id="workbench" class="workbench">
 			<div style="display: flex; justify-content: center;">
 				<div>
@@ -171,46 +176,6 @@
 	?>
   </p>
 </dialog>
-
-<dialog id="blog" class="full-modal">
-	<div>
-		<div style="text-align: left">
-			<h1>Willkommen zum neuen Sharepicgenerator</h1>
-			<p>
-				Endlich ist es soweit: Der neue Sharepicgenerator ist online.<br>
-				Es hat länger gedauert als geplant, bitte entschuldige, dass er ein paar Tage 
-				offline war.<br>Aber jetzt ist er da und besser als je zuvor.
-			</p>
-			<p>Noch ist nicht alles fertig, wir arbeiten mit Hochdruck weiter,<br>
-				Bald wird es auch wieder die Regionalversionen für einezlne Landesverbände geben.<br>
-				Du kannst schon jetzt loslegen:
-			</p>
-			<ul>
-				<li>Ändere Deinen Text direkt im Bild <small>nicht mehr in der Seiteleiste</small></li>
-				<li>Speichere Deine Bilder im Sharepicgenerator ab und arbeite später daran weiter</li>
-				<li>Mit der Rückgängig-Funktion kannst Du Fehler korrigieren</li>
-				<li>Reichere Zusatzbilder mit einer Bildunterschrift an</li>
-				<li>und viele weitere Verbesserungen</li>
-			</ul>
-			<button style="border: 0">Los geht's!</button>
-		</div>
-	</div>
-	<script>
-		if ( ! new URL( window.location.href).hostname.startsWith( 'localhost' ) ) {
-			const blogModal = document.getElementById('blog');
-			blogModal.showModal();
-			console.log("HI")
-
-			const blogCloser = blogModal.addEventListener('click', function() {
-				blogModal.close();
-				console.log("close")
-				removeEventListener('click', blogCloser);
-			});
-		}
-
-	</script>
-</dialog>
-
 
 <script>
     const config = {
