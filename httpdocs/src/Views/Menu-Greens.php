@@ -39,7 +39,7 @@
     </div>
 
     <div class="dropdown" id="menu_de">
-        <span><?php echo _( 'Deutschland' ); ?></span>
+        <span><?php echo _( 'Germany' ); ?></span>
         <div class="dropdown-content">
             <button onClick="api.load('templates/de/start.html'); bwstory=false;">
                 <?php  echo _('Standardlayout');?>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="dropdown" id="menu_file">
-        <span><?php echo _( 'Baden-W&uuml;rttemberg' ); ?></span>
+        <span><?php echo _( 'Baden-Wuerttemberg' ); ?></span>
         <div class="dropdown-content">
             <button onClick="api.load('templates/bw-kandi-vorstellung/start.html'); bwstory=false;">
                 <?php  echo _('KW 24 Kandi Vorstellung');?>
