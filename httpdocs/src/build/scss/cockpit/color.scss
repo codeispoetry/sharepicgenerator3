@@ -1,0 +1,20 @@
+#cockpit{
+    .color{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .palette{
+            display: flex;
+
+            button{
+                width: 15px;
+                height: 15px;
+                margin: 2px;
+                border: none;
+                border-radius: 2px;
+                cursor: pointer;
+            }
+        }
+    }
+}

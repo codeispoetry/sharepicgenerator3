@@ -12,7 +12,14 @@
 
     <section class="selected_only">
         <h3><?php  echo _('Color');?></h3>
-        <input type="color" value="#ffffff" class="" id="copyright_color" oninput="copyright.setFontColor(this)">
+        <?php
+            $color = new stdClass();
+            $color->value = "#ffffff";
+            $color->id = "copyright_color";
+            $color->oninput = "copyright.setFontColor(this.value)";
+            $color->onclick = "copyright.setFontColor";
+            require ("./src/Views/Components/Color.php"); 
+        ?>
     </section>
 
     <section class="selected_only">
@@ -37,8 +44,9 @@
             undo.commit()
         }
 
-        setFontColor(input) {      
-            cockpit.target.style.color = input.value;
+        setFontColor(color) {      
+            document.getElementById('copyright_color').value = color
+            cockpit.target.style.color = color
             undo.commit()
         }
 

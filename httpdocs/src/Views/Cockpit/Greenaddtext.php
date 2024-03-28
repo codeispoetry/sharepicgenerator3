@@ -12,8 +12,18 @@
 
     <section class="selected_only">
         <h3><?php  echo _('Color');?></h3>
-        <input type="color" value="#000000" class="" id="greenaddtext_color" oninput="greenaddtext.setFontColor(this)">
+
+        <?php
+            $color = new stdClass();
+            $color->value = "#000000";
+            $color->id = "greenaddtext_color";
+            $color->oninput = "greenaddtext.setFontColor(this.value)";
+            $color->onclick = "greenaddtext.setFontColor";
+            require ("./src/Views/Components/Color.php"); 
+        ?>
     </section>
+
+
     
 <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
@@ -26,8 +36,9 @@
             undo.commit()
         }
 
-        setFontColor(input) {      
-            cockpit.target.style.color = input.value;
+        setFontColor(color) {      
+            document.getElementById('greenaddtext_color').value = color
+            cockpit.target.style.color = color
            
             undo.commit()
         }

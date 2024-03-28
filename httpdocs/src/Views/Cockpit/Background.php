@@ -19,28 +19,15 @@
     </section>
 
     <section>  
-        <h3><?php  echo _('Color');?></h3>
-        
-        
-        <div style="display: flex">
-            <input type="color" value="#ffffff" class="" id="background_color" onInput="background.color(this.value)">
-            
-            <div style="display: flex; flex-wrap: wrap;">
-                <button class="no-button" onClick="background.color('#005437');">
-                    <?php echo _("Tanne"); ?>
-                </button>
-                <button class="no-button" onClick="background.color('#008939');">
-                    <?php echo _("Klee"); ?>
-                </button>
-                <button class="no-button" onClick="background.color('#8abd24');">
-                    <?php echo _("Gras"); ?>
-                </button>
-                <button class="no-button" onClick="background.color('#f5f1e9');">
-                    <?php echo _("Sand"); ?>
-                </button>
-            </div>
-        </div>
-    
+        <h3><?php  echo _('Color');?></h3>   
+        <?php
+            $color = new stdClass();
+            $color->value = "#ffffff";
+            $color->id = "background_color";
+            $color->oninput = "background.color(this.value)";
+            $color->onclick = "background.color";
+            require ("./src/Views/Components/Color.php"); 
+        ?>
     </section>
 
     <section>
