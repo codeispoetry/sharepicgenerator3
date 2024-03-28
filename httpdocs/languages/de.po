@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 00:08+0100\n"
+"POT-Creation-Date: 2024-03-29 00:17+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -572,6 +572,14 @@ msgstr "Gras"
 msgid "Sand"
 msgstr "Sand"
 
+#: httpdocs/src/Views/Components/Color.php:14
+msgid "White"
+msgstr ""
+
+#: httpdocs/src/Views/Components/Color.php:15
+msgid "Black"
+msgstr ""
+
 #: httpdocs/src/Views/Components/Forms/Login.php:2
 #: httpdocs/src/Views/Components/Forms/RequestPassword.php:2
 msgid "username"
@@ -636,7 +644,7 @@ msgid "Support"
 msgstr ""
 
 #: httpdocs/src/Views/Menu-Greens.php:42
-msgid "Deutschland"
+msgid "Germany"
 msgstr "Deutschland"
 
 #: httpdocs/src/Views/Menu-Greens.php:45
@@ -644,8 +652,8 @@ msgid "Standardlayout"
 msgstr "Standardlayout"
 
 #: httpdocs/src/Views/Menu-Greens.php:51
-msgid "Baden-W&uuml;rttemberg"
-msgstr "Baden-W&urttemberg"
+msgid "Baden-Wuerttemberg"
+msgstr "Baden-W&uuml;rttemberg"
 
 #: httpdocs/src/Views/Menu-Greens.php:54
 msgid "KW 24 Kandi Vorstellung"
@@ -763,6 +771,9 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Deutschland"
+#~ msgstr "Deutschland"
 
 #~ msgid "Home"
 #~ msgstr "Startseite"

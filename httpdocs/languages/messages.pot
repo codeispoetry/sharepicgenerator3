@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 00:08+0100\n"
+"POT-Creation-Date: 2024-03-29 00:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -557,6 +557,14 @@ msgstr ""
 msgid "Sand"
 msgstr ""
 
+#: httpdocs/src/Views/Components/Color.php:14
+msgid "White"
+msgstr ""
+
+#: httpdocs/src/Views/Components/Color.php:15
+msgid "Black"
+msgstr ""
+
 #: httpdocs/src/Views/Components/Forms/Login.php:2
 #: httpdocs/src/Views/Components/Forms/RequestPassword.php:2
 msgid "username"
@@ -621,7 +629,7 @@ msgid "Support"
 msgstr ""
 
 #: httpdocs/src/Views/Menu-Greens.php:42
-msgid "Deutschland"
+msgid "Germany"
 msgstr ""
 
 #: httpdocs/src/Views/Menu-Greens.php:45
@@ -629,7 +637,7 @@ msgid "Standardlayout"
 msgstr ""
 
 #: httpdocs/src/Views/Menu-Greens.php:51
-msgid "Baden-W&uuml;rttemberg"
+msgid "Baden-Wuerttemberg"
 msgstr ""
 
 #: httpdocs/src/Views/Menu-Greens.php:54
