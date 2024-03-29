@@ -15,5 +15,5 @@ window.onload = function () {
 
   api.load('templates/' + config.starttemplate + '/start.html')
 
-  document.getElementById('version').innerHTML = 'js4'
+  document.getElementById('version').innerHTML = 'js5'
 }

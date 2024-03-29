@@ -94,7 +94,7 @@ class API {
       const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
       const params = new URLSearchParams(url.search)
       const backgroundImage = params.get('p').replace(/"\)$/g, '')
-      clonedCanvas.querySelector('#sharepic').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
+      clonedCanvas.querySelector('#background').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
     }
 
     // Replace all additonal pictures with local path file
