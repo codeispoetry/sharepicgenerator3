@@ -47,6 +47,10 @@ class Pixabay {
       img.setAttribute('data-user', hit.user)
       img.setAttribute('data-pageurl', hit.pageURL)
 
+      img.ondblclick = () => {
+        ui.close('#pixabay_page')
+      }
+
       img.onclick = () => {
         const q = document.getElementById('pixabay_q').value
 
@@ -56,8 +60,8 @@ class Pixabay {
         })
         logger.log('clicks on image after search for ' + q)
 
-        document.getElementById('sharepic').style.backgroundImage = img.style.backgroundImage
-        document.getElementById('sharepic').style.filter = 'grayscale(100%)'
+        document.getElementById('background').style.backgroundImage = img.style.backgroundImage
+        document.getElementById('background').style.filter = 'grayscale(100%)'
 
         api.loadByUrl(img.dataset.url)
 

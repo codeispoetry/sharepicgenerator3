@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 00:17+0100\n"
+"POT-Creation-Date: 2024-03-29 09:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -331,10 +331,26 @@ msgid "Fit automatically"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:17
-msgid "Change image crop"
+msgid "Drag image"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:34
+msgid "Filter"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:35
+msgid "Brightness"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:37
+msgid "Saturate"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:39
+msgid "Blur"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:45
 msgid "Delete background image"
 msgstr ""
 
@@ -621,6 +637,7 @@ msgstr ""
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:16
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:17
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:18
+#: httpdocs/src/Views/Menu-Greens.php:116
 msgid "delete"
 msgstr ""
 

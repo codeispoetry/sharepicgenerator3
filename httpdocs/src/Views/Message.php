@@ -1,6 +1,6 @@
-<h1>Der neue Sharepicgenerator</h1>
+<h1>Hallo,</h1>
 <p>
-    Wir haben den Sharepicgenerator komplett überarbeitet.
+    wir haben den Sharepic&shy;generator komplett überarbeitet.
     Deshalb stand er zeitweise nicht in der gewohnten Qualität zur Verfügung.
     Bitte entschuldige das.
     Wir verbesern ihn kontinuierlich weiter. 

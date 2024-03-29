@@ -89,7 +89,7 @@ class API {
     clonedCanvas.insertAdjacentHTML('afterbegin', '<base href="../../../httpdocs/">\n')
 
     // Replace background image with local path file
-    const bgImage = document.getElementById('sharepic').style.backgroundImage
+    const bgImage = document.getElementById('background').style.backgroundImage
     if (bgImage !== '') {
       const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
       const params = new URLSearchParams(url.search)
@@ -292,7 +292,7 @@ class API {
   }
 
   useDalle () {
-    document.getElementById('sharepic').style.backgroundImage = `url('${config.dalle.url}')`
+    document.getElementById('background').style.backgroundImage = `url('${config.dalle.url}')`
     logger.prepare_log_data({
       imagesrc: 'dalle'
     })
@@ -310,8 +310,8 @@ class API {
 
     const imageUrl = URL.createObjectURL(file)
 
-    document.getElementById('sharepic').style.backgroundImage = `url('${imageUrl}')`
-    document.getElementById('sharepic').style.filter = 'grayscale(100%)'
+    document.getElementById('background').style.backgroundImage = `url('${imageUrl}')`
+    document.getElementById('background').style.filter = 'grayscale(100%)'
 
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload', true)
@@ -330,7 +330,7 @@ class API {
     xhr.onload = function () {
       if (this.status === 200) {
         const resp = JSON.parse(this.response)
-        document.getElementById('sharepic').style.backgroundImage = `url('${resp.path}')`
+        document.getElementById('background').style.backgroundImage = `url('${resp.path}')`
         logger.prepare_log_data({
           imagesrc: 'upload'
         })
@@ -338,7 +338,7 @@ class API {
         console.error('Error:', this.status, this.statusText)
       }
 
-      document.getElementById('sharepic').style.filter = 'none'
+      document.getElementById('background').style.filter = ''
       document.querySelector('.workbench-below .message').innerHTML = ''
 
       const copyright = document.querySelector('#sharepic [id^=copyright_]')
@@ -393,7 +393,7 @@ class API {
         cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${resp.path}')`
 
         document.querySelector('.workbench-below .message').innerHTML = ''
-        cockpit.target.querySelector('.ap_image').style.filter = 'none'
+        cockpit.target.querySelector('.ap_image').style.filter = ''
         cockpit.target.querySelector('.ap_image').style.opacity = 1
 
         logger.prepare_log_data({
@@ -434,8 +434,8 @@ class API {
       .then(data => {
         data = JSON.parse(data)
 
-        document.getElementById('sharepic').style.backgroundImage = `url('${data.path}')`
-        document.getElementById('sharepic').style.filter = 'none'
+        document.getElementById('background').style.backgroundImage = `url('${data.path}')`
+        document.getElementById('background').style.filter = ''
       })
       .catch(error => console.error('Error:', error))
   }

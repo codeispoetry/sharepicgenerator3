@@ -59,4 +59,23 @@ class Background {
   delete () {
     document.getElementById('background').style.backgroundImage = null
   }
+
+  filter (key, value) {
+    const bg = document.getElementById('background')
+    const filters = bg.style.filter.split(' ')
+
+    const filterIndex = filters.findIndex(filter => filter.startsWith(key))
+
+    if (key === 'blur') {
+      value = value + 'px'
+    }
+
+    if (filterIndex !== -1) {
+      filters[filterIndex] = `${key}(${value})`
+    } else {
+      filters.push(`${key}(${value})`)
+    }
+
+    bg.style.filter = filters.join(' ')
+  }
 }

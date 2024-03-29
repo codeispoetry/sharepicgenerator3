@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 00:17+0100\n"
+"POT-Creation-Date: 2024-03-29 09:52+0100\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -340,13 +340,29 @@ msgstr "Bildausschnitt"
 
 #: httpdocs/src/Views/Cockpit/Background.php:12
 msgid "Fit automatically"
-msgstr "Hintergrund automatisch einpassen"
+msgstr "automatisch einpassen"
 
 #: httpdocs/src/Views/Cockpit/Background.php:17
-msgid "Change image crop"
-msgstr "Bildausschnitt verschieben"
+msgid "Drag image"
+msgstr "Bild verschieben"
+
+#: httpdocs/src/Views/Cockpit/Background.php:34
+msgid "Filter"
+msgstr "Filter"
 
 #: httpdocs/src/Views/Cockpit/Background.php:35
+msgid "Brightness"
+msgstr "Helligkeit"
+
+#: httpdocs/src/Views/Cockpit/Background.php:37
+msgid "Saturate"
+msgstr "Sättigung"
+
+#: httpdocs/src/Views/Cockpit/Background.php:39
+msgid "Blur"
+msgstr "Unschärfe"
+
+#: httpdocs/src/Views/Cockpit/Background.php:45
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
@@ -574,11 +590,11 @@ msgstr "Sand"
 
 #: httpdocs/src/Views/Components/Color.php:14
 msgid "White"
-msgstr ""
+msgstr "Weiß"
 
 #: httpdocs/src/Views/Components/Color.php:15
 msgid "Black"
-msgstr ""
+msgstr "Schwarz"
 
 #: httpdocs/src/Views/Components/Forms/Login.php:2
 #: httpdocs/src/Views/Components/Forms/RequestPassword.php:2
@@ -636,12 +652,13 @@ msgstr "nach hinten"
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:16
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:17
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:18
+#: httpdocs/src/Views/Menu-Greens.php:116
 msgid "delete"
 msgstr "löschen"
 
 #: httpdocs/src/Views/Menu-Greens.php:14
 msgid "Support"
-msgstr ""
+msgstr "Hilfe"
 
 #: httpdocs/src/Views/Menu-Greens.php:42
 msgid "Germany"
@@ -771,6 +788,9 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Change image crop"
+#~ msgstr "Bildausschnitt verschieben"
 
 #~ msgid "Deutschland"
 #~ msgstr "Deutschland"
