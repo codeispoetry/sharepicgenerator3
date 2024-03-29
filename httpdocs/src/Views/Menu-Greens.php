@@ -122,4 +122,6 @@
     <?php } ?>
 
     <em><small>Weitere Regionallayouts folgen</small></em>
+
+    <span id="version"></span>
 </nav>

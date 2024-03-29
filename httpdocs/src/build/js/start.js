@@ -14,4 +14,6 @@ window.onload = function () {
   logger = new Logger()
 
   api.load('templates/' + config.starttemplate + '/start.html')
+
+  document.getElementById('version').innerHTML = 'js4'
 }
