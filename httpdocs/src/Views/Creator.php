@@ -157,7 +157,7 @@
 							<img src="assets/icons/logout.svg">
 						</a>
 						<div class="description">
-							<?php echo ( $this->user->is_logged_in() ) ? _('Logged in as') . ' ' . $this->user->get_username() : '' ?>
+							<?php echo _('Logged in as') . ' ' . $this->user->get_username(); ?>
 						</div>
 					</div>
 				</button>

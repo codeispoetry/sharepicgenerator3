@@ -13,21 +13,31 @@ class Felogger {
 	 */
 	private $user;
 
-		/**
-		 * The logger object.
-		 *
-		 * @var Logger
-		 */
+	/**
+	 * The logger object.
+	 *
+	 * @var Logger
+	 */
 	private $logger;
 
 	/**
-	 * The constructor.
+	 * The config object.
+	 *
+	 * @var Config
 	 */
-	public function __construct() {
-		$user       = new User();
-		$this->user = $user->get_user_by_token();
+	private $config;
 
-		$this->logger = new Logger( $user );
+	/**
+	 * The constructor.
+	 *
+	 * @param string $user The user object.
+	 * @param string $config The config object.
+	 * @param string $logger The logger object.
+	 */
+	public function __construct( $user, $config, $logger ) {
+		$this->user   = $user;
+		$this->config = $config;
+		$this->logger = $logger;
 	}
 
 	/**

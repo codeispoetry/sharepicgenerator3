@@ -9,10 +9,10 @@ class Proxy {
 
 	/**
 	 * Serves a file to an authenticated user.
+	 *
+	 * @param User $user The user object.
 	 */
-	public static function serve() {
-		$user = new User();
-		$user->login();
+	public static function serve( $user, $config, $logger ) {
 
 		$path = $_GET['p'] ?? null;
 
@@ -21,18 +21,11 @@ class Proxy {
 			exit( 1 );
 		}
 
-		if ( ! $user->is_logged_in() ) {
-			$logger = new Logger( 'Helper' );
-			$logger->alarm( Helper::sanitize_log( $path ) . ' was requested without authentication.' );
-			header( 'HTTP/1.1 401 Unauthorized' );
-			exit( 1 );
-		}
-
 		$clearance = false;
 
 		// Check, if the requested file is in the userdir.
-		$provided_path = realpath( '../users/' . $user->get_username() . '/' . $path );
-		$allowed_dir   = realpath( dirname( __FILE__, 4 ) . '/users/' . $user->get_username() . '/' );
+		$provided_path = realpath( $user->get_dir() . $path );
+		$allowed_dir   = realpath( $user->get_dir() );
 		if ( $provided_path && str_starts_with( $provided_path, $allowed_dir ) ) {
 			$clearance = true;
 		}
@@ -47,7 +40,6 @@ class Proxy {
 		}
 
 		if ( ! $clearance ) {
-			$logger = new Logger( 'Helper' );
 			$logger->alarm( Helper::sanitize_log( $path ) . ' was requested, but is not in userdir' );
 			header( 'HTTP/1.1 404 Not Found' );
 			exit( 1 );

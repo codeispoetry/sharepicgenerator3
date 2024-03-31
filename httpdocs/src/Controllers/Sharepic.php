@@ -106,23 +106,21 @@ class Sharepic {
 
 	/**
 	 * The constructor. Reads the inputs, stores information.
+	 *
+	 * @param User   $user   The user object.
+	 * @param Config $config The config object.
+	 * @param Logger $logger The logger object.
 	 */
-	public function __construct() {
-		$user       = new User();
-		$this->user = $user->get_user_by_token();
-		$this->dir  = '../users/' . $this->user . '/workspace';
+	public function __construct( $user, $config, $logger ) {
+		$this->user   = $user;
+		$this->config = $config;
+		$this->logger = $logger;
+
+		$this->dir = $this->user->get_dir() . 'workspace';
 		if ( ! file_exists( $this->dir ) ) {
 			mkdir( $this->dir );
 		}
 		$this->file = $this->dir . '/sharepic.html';
-
-		$this->logger = new Logger( $user );
-		$this->config = new Config();
-
-		if ( empty( $this->user ) ) {
-			$this->http_error( 'no user' );
-			die();
-		}
 
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
@@ -141,7 +139,7 @@ class Sharepic {
 		$this->body_class     = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
 
 		if ( str_starts_with( $this->template, 'save' ) ) {
-			$this->template = '../users/' . $this->user . '/' . $this->template;
+			$this->template = $user->get_dir() . $this->template;
 		}
 	}
 
@@ -158,8 +156,8 @@ class Sharepic {
 	 * Saves the sharepic.
 	 */
 	public function save() {
-		$workspace = '../users/' . $this->user . '/workspace/';
-		$save_dir  = '../users/' . $this->user . '/save/';
+		$workspace = $this->user->get_dir() . 'workspace/';
+		$save_dir  = $this->user->get_dir() . 'save/';
 
 		if ( 'publish' === $this->mode ) {
 			$save_dir = 'templates/mint/community/';
@@ -216,7 +214,7 @@ class Sharepic {
 		}
 
 		// The casting to int is necessary to prevent directory traversal.
-		$save_dir = '../users/' . $this->user . '/save/' . (int) $sharepic;
+		$save_dir = $this->user->get_dir() . '/save/' . (int) $sharepic;
 
 		if ( ! file_exists( $save_dir ) ) {
 			$this->http_error( 'Could not find sharepic' );
@@ -237,7 +235,7 @@ class Sharepic {
 	 */
 	public function create() {
 		$output_file = 'output.png';
-		$path        = '../users/' . $this->user . '/' . $output_file;
+		$path        = $this->user->get_dir() . $output_file;
 		$config      = new Config();
 
 		$doc = new \DOMDocument();
@@ -321,7 +319,7 @@ class Sharepic {
 			$this->http_error( 'Could not load image' );
 			return;
 		}
-		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
+		$upload_file = $this->user->get_dir() . 'workspace/background.' . $extension;
 
 		copy( $url, $upload_file );
 
@@ -396,7 +394,7 @@ class Sharepic {
 		try {
 			$real_path    = realpath( $this->template );
 			$template_dir = realpath( dirname( __FILE__, 3 ) ) . '/templates/';
-			$user_dir     = realpath( dirname( __FILE__, 4 ) . '/users/' . $this->user );
+			$user_dir     = realpath( $this->user->get_dir() );
 
 			if ( ! $real_path ) {
 				throw new \Exception( 'File does not exist' );
@@ -451,7 +449,7 @@ class Sharepic {
 		// $this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
-		$upload_file = '../users/' . $this->user . '/workspace/background.' . $extension;
+		$upload_file = $this->user->get_dir() . 'workspace/background.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file. Code 1.' );
@@ -485,7 +483,7 @@ class Sharepic {
 
 		$extension     = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$raw_file_path = 'workspace/addpic-' . rand() . '.' . $extension;
-		$upload_file   = '../users/' . $this->user . '/' . $raw_file_path;
+		$upload_file   =  $this->user->get_dir() . $raw_file_path;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file' );
@@ -508,7 +506,7 @@ class Sharepic {
 	 * @deprecated This method will soon be deleted.
 	 */
 	private function delete_my_old_files() {
-		$files = glob( '../users/' . $this->user . '/workspace/background.*' );
+		$files = glob( $this->user->get_dir() . 'workspace/background.*' );
 
 		foreach ( $files as $file ) {
 			if ( is_file( $file ) ) {

@@ -107,4 +107,34 @@ class Helper {
 
 		return true;
 	}
+
+
+	/**
+	 * Load the textdomain.
+	 */
+	public static function load_textdomain() {
+		bindtextdomain( 'sg', './languages' );
+		textdomain( 'sg' );
+		if ( 'de' === self::get_lang() ) {
+			setlocale( LC_ALL, 'de_DE.utf8' );
+		}
+	}
+
+	/**
+	 * Get the language.
+	 *
+	 * @return string
+	 */
+	private static function get_lang() {
+		if ( isset( $_COOKIE['lang'] ) ) {
+			return $_COOKIE['lang'];
+		}
+
+		if ( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ) {
+			return substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 );
+		}
+
+		return false;
+	}
 }
+

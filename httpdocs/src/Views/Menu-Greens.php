@@ -27,13 +27,13 @@
 			</a>
 
             <?php
-            if( $this->user->is_admin() ){
-                echo '<div class="divider"></div>';
-                printf( '<a href="index.php?c=frontend&m=log" class="menu-link">%s</a>', _( 'Logfile' ) );
-                printf( '<a href="index.php?c=frontend&m=sharepics" class="menu-link">%s</a>', _( 'Sharepics' ) );
+            // if( $this->user->is_admin() ){
+            //     echo '<div class="divider"></div>';
+            //     printf( '<a href="index.php?c=frontend&m=log" class="menu-link">%s</a>', _( 'Logfile' ) );
+            //     printf( '<a href="index.php?c=frontend&m=sharepics" class="menu-link">%s</a>', _( 'Sharepics' ) );
                 
-                printf( '<button onClick="api.save(\'publish\')">%s</button>', _( 'Publish' ) );
-            }
+            //     printf( '<button onClick="api.save(\'publish\')">%s</button>', _( 'Publish' ) );
+            // }
             ?>
         </div>
     </div>
