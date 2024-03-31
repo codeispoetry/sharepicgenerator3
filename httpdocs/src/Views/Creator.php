@@ -28,11 +28,11 @@
 
 <main class="main">
 	<div class="row">
-		<div id="welcome">
+			<!-- <div id="welcome">
 				<?php
-					require 'src/Views/Message.php';
+					//require 'src/Views/Message.php';
 				?>
-			</div>
+			</div> -->
 		<div id="workbench" class="workbench">
 			<div style="display: flex; justify-content: center;">
 				<div>
