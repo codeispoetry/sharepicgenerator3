@@ -483,7 +483,7 @@ class Sharepic {
 
 		$extension     = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$raw_file_path = 'workspace/addpic-' . rand() . '.' . $extension;
-		$upload_file   =  $this->user->get_dir() . $raw_file_path;
+		$upload_file   = $this->user->get_dir() . $raw_file_path;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file' );
