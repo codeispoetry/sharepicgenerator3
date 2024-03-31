@@ -8,6 +8,26 @@
     		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
 
 
+   <div    class="" 
+            id="background"
+            data-cockpit="background"  
+            onmousedown="background.startDrag(); component.select(this)"
+            onmouseup="background.stopDrag()"
+            style="
+                background-size: cover;
+                background-position-x: 0px;
+                background-position-y: 0px;
+                background-repeat: no-repeat;
+                background-color: #005437;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 0 !important;
+            ">
+    </div>
+
     <div 
         class="longtext" 
         data-cockpit="greentext"  
