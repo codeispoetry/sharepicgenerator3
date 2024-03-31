@@ -9,13 +9,13 @@ class Logger {
     this.log_data = data
   }
 
-  log (data) {
+  log (data, type='normal') {
     const payload = {
       data,
       ...this.log_data
     }
 
-    fetch(config.url + '/index.php?c=felogger&m=normal', {
+    fetch(config.url + '/index.php?c=felogger&m=' + type, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -71,6 +71,14 @@
     }
 }
 
+.bug{
+    &-detected{
+        color: rgb(218, 92, 92);
+        font-size: 80%;
+        max-width: 350px;
+        display: none;
+    }
+}
 
 #sharepic{
     overflow: hidden;

@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, no-unused-vars, no-var */
-var api, sg, cockpit, undo, pixabay, component, rte, logger, ui, background
+var api, sg, cockpit, undo, pixabay, component, rte, logger, ui, background, debug
 
 window.onload = function () {
   api = new API()
@@ -12,8 +12,9 @@ window.onload = function () {
   ui = new UI()
   rte = new RichTextEditor()
   logger = new Logger()
+  debug = new Debug();
 
   api.load('templates/' + config.starttemplate + '/start.html')
 
-  document.getElementById('version').innerHTML = 'js5'
+  document.getElementById('version').innerHTML = 'js6'
 }

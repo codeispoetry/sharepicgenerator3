@@ -36,9 +36,14 @@
 		<div id="workbench" class="workbench">
 			<div style="display: flex; justify-content: center;">
 				<div>
-					<button onClick="undo.undo()" id="undo" class="no-button">
-						<img src="assets/icons/undo.svg" title="<?php echo _('Undo'); ?>">	
-					</button>
+					<div style="display: flex;justify-content: space-between;align-items: center;">
+						<button onClick="undo.undo()" id="undo" class="no-button">
+							<img src="assets/icons/undo.svg" title="<?php echo _('Undo'); ?>">	
+						</button>
+						<div class="bug-detected">
+							<?php echo _('An error occurred. The sharepicgenerator might not behave as expected. This bug has been reported for further investigation.'); ?>
+						</div>
+					</div>
 					<div id="canvas" translate="no">
 						<div id="sharepic">
 							

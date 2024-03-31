@@ -55,7 +55,33 @@ class Felogger {
 
 		$infos = array(
 			'time' => gmdate( 'Y-m-d H:i:s' ),
-			'user' => $this->user,
+			'user' => $this->user->get_username(),
+			'data' => $data,
+		);
+
+		if ( ! file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX ) ) {
+			$this->logger->error( 'FrontendLogger error: ' . $file . ' could not be written.' );
+			$this->http_error( 'Could not log normal behaviour.' );
+		}
+	}
+
+
+	/**
+	 * Logs bugs
+	 */
+	public function bug() {
+		$file = '../logfiles/bugs.log';
+		$data = json_decode( file_get_contents( 'php://input' ), true );
+
+		if ( empty( $data ) ) {
+			return;
+		}
+
+		$data = Helper::sanitize_log( join( ' ', $data ) );
+
+		$infos = array(
+			'time' => gmdate( 'Y-m-d H:i:s' ),
+			'user' => $this->user->get_username(),
 			'data' => $data,
 		);
 
