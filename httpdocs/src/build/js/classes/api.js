@@ -25,7 +25,7 @@ class API {
         return response.text()
       })
       .then(data => {
-        logger.log('deleted sharepic ' + saving)
+        logger.log('deletes sharepic ' + saving)
       })
       .catch((error) => console.error('Error:', error))
   }
@@ -148,7 +148,7 @@ class API {
         return response.text()
       })
       .then(data => {
-        //console.log(data)
+        // console.log(data)
         data = JSON.parse(data)
 
         try {
@@ -165,7 +165,7 @@ class API {
           console.error(e)
         }
 
-        logger.log('saved sharepic ' + name)
+        logger.log('saves sharepic ' + name)
       })
       .catch(error => console.error('Error:', error))
   }
@@ -209,18 +209,18 @@ class API {
         document.body.removeChild(a)
 
         // Display qr code
-        document.getElementById('qrcode-section').style.display = 'block'
+        // document.getElementById('qrcode-section').style.display = 'block'
         const qrcontainer = document.getElementById('qrcode')
         qrcontainer.innerHTML = ''
         const qr = document.createElement('img')
-        qr.src = 'index.php?c=proxy&r=' + Math.random() + '&p=qrcode.png';
+        qr.src = 'index.php?c=proxy&r=' + Math.random() + '&p=qrcode.png'
         qrcontainer.appendChild(qr)
 
         document.querySelector('.create').disabled = false
         document.querySelector('.create').classList.remove('waiting')
         this.closeWaiting()
 
-        logger.log('created sharepic')
+        logger.log('creates sharepic')
       })
       .catch(error => console.error('Error:', error))
   }
@@ -252,7 +252,7 @@ class API {
       document.getElementById('dalle_result_waiting_progress').innerHTML = seconds
     }, 1000)
 
-    logger.log('used dalle with prompt: ' + data.prompt)
+    logger.log('uses dalle with prompt: ' + data.prompt)
 
     const options = {
       method: 'POST',
@@ -293,7 +293,7 @@ class API {
         }
 
         const endGeneration = Math.floor(Date.now() / 1000)
-        logger.log('waited ' + (endGeneration - startGeneration) + ' seconds for dalle result')
+        logger.log('waits ' + (endGeneration - startGeneration) + ' seconds for dalle result')
 
         createButton.innerHTML = createButtonLabel
         createButton.disabled = false
@@ -329,6 +329,10 @@ class API {
 
     document.getElementById('background').style.backgroundImage = `url('${imageUrl}')`
     document.getElementById('background').style.filter = 'grayscale(100%)'
+    logger.prepare_log_data({
+      original_path: file.name,
+      file_size: Math.round(10 * file.size / 1024 / 1024) / 10 + ' MB'
+    })
 
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload', true)
@@ -349,8 +353,8 @@ class API {
         const resp = JSON.parse(this.response)
         document.getElementById('background').style.backgroundImage = `url('${resp.path}')`
         logger.prepare_log_data({
-          imagesrc: 'upload'
-        })
+          path: resp.path
+        }, true)
       } else {
         console.error('Error:', this.status, this.statusText)
       }
@@ -365,7 +369,7 @@ class API {
 
       ui.showTab('background')
 
-      logger.log('uploaded file')
+      logger.log('uploads file')
     }
     xhr.onerror = function () {
       console.error('Error:', this.status, this.statusText)
@@ -425,7 +429,7 @@ class API {
         console.error('Error:', this.status, this.statusText)
       }
 
-      logger.log('uploaded addpic')
+      logger.log('uploads addpic')
     }
     xhr.onerror = function () {
       console.error('Error:', this.status, this.statusText)

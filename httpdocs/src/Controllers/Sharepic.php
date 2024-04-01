@@ -521,12 +521,11 @@ class Sharepic {
 		}
 		$html = file_get_contents( $file );
 
-		// Delete unused files.
 		$available_files = glob( $this->workspace . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE );
-
 		foreach ( $available_files as $file ) {
 			if ( ! str_contains( $html, basename( $file ) ) ) {
 				unlink( $file );
+				$this->env->logger->access( 'Deleted ' . $file );
 			}
 		}
 	}

@@ -12,7 +12,6 @@ class Component {
       return
     }
 
-
     const clonedElement = pattern.cloneNode(true)
     const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
 
@@ -36,7 +35,7 @@ class Component {
 
     this.toFront(newElement)
 
-    logger.log('add component' + item );
+    logger.log('adds component ' + item)
 
     undo.commit()
   }
@@ -64,7 +63,7 @@ class Component {
 
   delete () {
     document.getElementById('add_copyright').style.display = 'flex'
-    logger.log('delete component' + cockpit.target.id );
+    logger.log('deletes component ' + cockpit.target.id)
 
     cockpit.target.remove()
     this.unselect()

@@ -19,7 +19,7 @@ class UI {
       const sec = Math.floor((logginPeriod - elapsedTime) % 60).toString().padStart(2, '0')
       document.getElementById('time-to-logout').innerHTML = `${min}:${sec}`
 
-      if ( min == 3 ){
+      if (min == 3) {
         this.reminderToSave()
       }
     },
@@ -27,11 +27,11 @@ class UI {
   }
 
   reminderToSave () {
-    if( config.remindedToSave === true) {
+    if (config.remindedToSave === true) {
       return
     }
 
-    alert( lang[ 'You will be logged out soon'] )
+    alert(lang['You will be logged out soon'])
 
     config.remindedToSave = true
   }

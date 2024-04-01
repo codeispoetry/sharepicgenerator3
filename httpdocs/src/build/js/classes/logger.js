@@ -5,8 +5,12 @@ class Logger {
     this.log_data = {}
   }
 
-  prepare_log_data (data) {
-    this.log_data = data
+  prepare_log_data (data, append = false) {
+    if (append) {
+      this.log_data = Object.assign({}, this.log_data, data)
+    } else {
+      this.log_data = data
+    }
   }
 
   log (data, type = 'normal') {
