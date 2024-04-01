@@ -7,37 +7,20 @@ namespace Sharepicgenerator\Controllers;
 class Felogger {
 
 	/**
-	 * The username.
+	 * Env variable like user, config, mailer, etc..
 	 *
-	 * @var string
+	 * @var object
 	 */
-	private $user;
+	private $env;
 
-	/**
-	 * The logger object.
-	 *
-	 * @var Logger
-	 */
-	private $logger;
-
-	/**
-	 * The config object.
-	 *
-	 * @var Config
-	 */
-	private $config;
 
 	/**
 	 * The constructor.
 	 *
-	 * @param string $user The user object.
-	 * @param string $config The config object.
-	 * @param string $logger The logger object.
+	 * @param Env $env Environment with user, config, logger, mailer, etc.
 	 */
-	public function __construct( $user, $config, $logger ) {
-		$this->user   = $user;
-		$this->config = $config;
-		$this->logger = $logger;
+	public function __construct( $env ) {
+		$this->env = $env;
 	}
 
 	/**
@@ -55,12 +38,12 @@ class Felogger {
 
 		$infos = array(
 			'time' => gmdate( 'Y-m-d H:i:s' ),
-			'user' => $this->user->get_username(),
+			'user' => $this->env->user->get_username(),
 			'data' => $data,
 		);
 
 		if ( ! file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX ) ) {
-			$this->logger->error( 'FrontendLogger error: ' . $file . ' could not be written.' );
+			$this->env->logger->error( 'FrontendLogger error: ' . $file . ' could not be written.' );
 			$this->http_error( 'Could not log normal behaviour.' );
 		}
 	}
@@ -81,14 +64,16 @@ class Felogger {
 
 		$infos = array(
 			'time' => gmdate( 'Y-m-d H:i:s' ),
-			'user' => $this->user->get_username(),
+			'user' => $this->env->user->get_username(),
 			'data' => $data,
 		);
 
 		if ( ! file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX ) ) {
-			$this->logger->error( 'FrontendLogger error: ' . $file . ' could not be written.' );
+			$this->env->logger->error( 'FrontendLogger error: ' . $file . ' could not be written.' );
 			$this->http_error( 'Could not log normal behaviour.' );
 		}
+
+		$this->env->mailer->send( 'mail@tom-rose.de', 'Bug report', $data );
 	}
 
 

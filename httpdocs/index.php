@@ -17,29 +17,33 @@ use Sharepicgenerator\Controllers\Felogger;
 use Sharepicgenerator\Controllers\Openai;
 use Sharepicgenerator\Controllers\Config;
 use Sharepicgenerator\Controllers\Proxy;
+use Sharepicgenerator\Controllers\Mailer;
 use Sharepicgenerator\Controllers\Helper;
-
+use stdClass;
 
 Helper::load_textdomain();
-$config = new Config();
-$user   = new User();
-$logger = new Logger( $user );
+
+$env         = new stdClass();
+$env->user   = new User();
+$env->config = new Config();
+$env->logger = new Logger( $env->user );
+$env->mailer = new Mailer( $env->config, $env->logger );
 
 $controller = ( ! empty( $_GET['c'] ) ) ? $_GET['c'] : 'frontend';
 $method     = ( ! empty( $_GET['m'] ) ) ? $_GET['m'] : 'index';
 
 if ( 'frontend' === $controller ) {
-	$frontend = new Frontend( $user, $config, $logger );
+	$frontend = new Frontend( $env );
 	$frontend->{$method}();
 }
 
 if ( 'sharepic' === $controller ) {
-	$sharepic = new Sharepic( $user, $config, $logger );
+	$sharepic = new Sharepic( $env );
 	$sharepic->{$method}();
 }
 
 if ( 'felogger' === $controller ) {
-	$felogger = new Felogger( $user, $config, $logger );
+	$felogger = new Felogger( $env );
 	$felogger->{$method}();
 }
 
@@ -49,5 +53,5 @@ if ( 'openai' === $controller ) {
 }
 
 if ( 'proxy' === $controller ) {
-	Proxy::serve( $user, $config, $logger );
+	Proxy::serve( $env );
 }

@@ -7,49 +7,28 @@ namespace Sharepicgenerator\Controllers;
 class Frontendgreens {
 
 	/**
-	 * The user object.
+	 * Env variable like user, config, mailer, etc..
 	 *
-	 * @var User
+	 * @var object
 	 */
-	private $user;
+	private $env;
 
-	/**
-	 * The config object.
-	 *
-	 * @var Config
-	 */
-	private $config;
-
-	/**
-	 * The logger object.
-	 *
-	 * @var Logger
-	 */
-	private $logger;
 
 	/**
 	 * Enables the user-object.
 	 *
-	 * @param User   $user   The user object.
-	 * @param Config $config The config object.
-	 * @param Logger $logger The logger object.
+	 * @param Env $env Environment with user, config, logger, mailer, etc.
 	 */
-	public function __construct( $user, $config, $logger ) {
-		$this->user   = $user;
-		$this->config = $config;
-		$this->logger = $logger;
-
-		if ( 'auto' === $this->config->get( 'Main', 'authenticator' ) ) {
-			$this->user->autologin();
-		}
+	public function __construct( $env ) {
+		$this->env = $env;
 	}
 
 	/**
 	 * The generator page.
 	 */
 	public function create() {
-		$body_classes  = strToLower( $this->config->get( 'Main', 'menu' ) );
-		$starttemplate = $this->config->get( 'Main', 'starttemplate' );
+		$body_classes  = strToLower( $this->env->config->get( 'Main', 'menu' ) );
+		$starttemplate = $this->env->config->get( 'Main', 'starttemplate' );
 		include_once './src/Views/Creator.php';
 	}
 

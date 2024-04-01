@@ -26,12 +26,12 @@ class Mailer {
 	/**
 	 * The constructor. Sets up the mailer.
 	 *
-	 * @param string $username The users email.
+	 * @param Config $config The config object.
+	 * @param Logger $logger The logger object.
 	 */
-	public function __construct( $username ) {
+	public function __construct( $config, $logger ) {
+		$this->logger    = $logger;
 		$this->phpmailer = new PHPMailer( true );
-		$config          = new Config();
-		$this->logger    = new Logger( $username );
 
 		//phpcs:disable
         $this->phpmailer->isSMTP();
@@ -43,7 +43,6 @@ class Mailer {
         $this->phpmailer->Port       = $config->get( 'Mail', 'port' );
 		$this->phpmailer->CharSet    = 'UTF-8';
         $this->phpmailer->setFrom( 'mail@tom-rose.de', 'Sharepicgenerator' );
-        $this->phpmailer->addAddress( $username );
 		$this->phpmailer->isHTML( true );
 		$this->phpmailer->Timeout = 30;
 		//phpcs:enable
@@ -52,11 +51,13 @@ class Mailer {
 	/**
 	 * Send a message to the logged in user
 	 *
+	 * @param string $to The receiver.
 	 * @param string $subject The message.
 	 * @param string $message The message.
 	 */
-	public function send( $subject, $message ) {
+	public function send( $to, $subject, $message ) {
 		try {
+			$this->phpmailer->addAddress( $to );
 			$this->phpmailer->Subject = $subject;
 			$this->phpmailer->Body    = $message;
 			$this->phpmailer->send();

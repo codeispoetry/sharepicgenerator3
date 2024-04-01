@@ -25,16 +25,6 @@
             <a href="index.php?c=frontend&m=logout" class="menu-link">
                 <?php  echo _('Logout');?>
 			</a>
-
-            <?php
-            // if( $this->user->is_admin() ){
-            //     echo '<div class="divider"></div>';
-            //     printf( '<a href="index.php?c=frontend&m=log" class="menu-link">%s</a>', _( 'Logfile' ) );
-            //     printf( '<a href="index.php?c=frontend&m=sharepics" class="menu-link">%s</a>', _( 'Sharepics' ) );
-                
-            //     printf( '<button onClick="api.save(\'publish\')">%s</button>', _( 'Publish' ) );
-            // }
-            ?>
         </div>
     </div>
 
@@ -103,13 +93,14 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
+            <div>Leider gingen wegen einer Fehlerbehebung alle bisher gespeicherten Sharepics kaputt. Sie wurden deshalb gelöscht. Bitte entschuldige diese Unannehmlichkeit. </div>
             <button onClick="api.save()">
                 <?php  echo _('Save');?>
             </button>
             <div class="divider"></div>
             <?php
                 // Saved
-                $savings = $this->user->get_savings();
+                $savings = $this->env->user->get_savings();
                 foreach( $savings as $dir => $name ){
                         echo '<div class="dropdown-item-double">';
                             printf( '<button class="did-1" onClick="api.load(\'save/%s/sharepic.html\')">%s</button>', $dir, $name );

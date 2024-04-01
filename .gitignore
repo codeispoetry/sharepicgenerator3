@@ -14,3 +14,4 @@ tests/*js-snapshots/
 tests/tmp/*
 tmp/*
 de.po~
+.vscode

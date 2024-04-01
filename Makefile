@@ -46,3 +46,5 @@ log-users:
 log-power-users:
 	cut -f2 logfiles/usage.log | sort | uniq -c | sort -nr | head -n 20
 
+log-savings:
+	for dir in $(shell find users -type d -name "save"); do echo "$$dir has $$(find $$dir -mindepth 1 -maxdepth 1 -type d | wc -l) savings"; done	

@@ -41,25 +41,12 @@ class Sharepic {
 	);
 
 	/**
-	 * The user object.
+	 * Env variable like user, config, mailer, etc..
 	 *
-	 * @var User
+	 * @var object
 	 */
-	private $user;
+	private $env;
 
-	/**
-	 * The logger object.
-	 *
-	 * @var Logger
-	 */
-	private $logger;
-
-	/**
-	 * The config object.
-	 *
-	 * @var Config
-	 */
-	private $config;
 
 	/**
 	 * Infos about the sharepic, like name.
@@ -107,16 +94,12 @@ class Sharepic {
 	/**
 	 * The constructor. Reads the inputs, stores information.
 	 *
-	 * @param User   $user   The user object.
-	 * @param Config $config The config object.
-	 * @param Logger $logger The logger object.
+	 * @param Env $env Environment with user, config, logger, mailer, etc.
 	 */
-	public function __construct( $user, $config, $logger ) {
-		$this->user   = $user;
-		$this->config = $config;
-		$this->logger = $logger;
+	public function __construct( $env ) {
+		$this->env = $env;
 
-		$this->dir = $this->user->get_dir() . 'workspace';
+		$this->dir = $this->env->user->get_dir() . 'workspace';
 		if ( ! file_exists( $this->dir ) ) {
 			mkdir( $this->dir );
 		}
@@ -139,7 +122,7 @@ class Sharepic {
 		$this->body_class     = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
 
 		if ( str_starts_with( $this->template, 'save' ) ) {
-			$this->template = $user->get_dir() . $this->template;
+			$this->template = $this->env->user->get_dir() . $this->template;
 		}
 	}
 
@@ -156,8 +139,8 @@ class Sharepic {
 	 * Saves the sharepic.
 	 */
 	public function save() {
-		$workspace = $this->user->get_dir() . 'workspace/';
-		$save_dir  = $this->user->get_dir() . 'save/';
+		$workspace = $this->env->user->get_dir() . 'workspace/';
+		$save_dir  = $this->env->user->get_dir() . 'save/';
 
 		if ( 'publish' === $this->mode ) {
 			$save_dir = 'templates/mint/community/';
@@ -180,7 +163,7 @@ class Sharepic {
 		$cmd = "cp -R $workspace $save 2>&1";
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
-			$this->logger->error( implode( "\n", $output ) );
+			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not save sharepic' );
 		}
 
@@ -214,7 +197,7 @@ class Sharepic {
 		}
 
 		// The casting to int is necessary to prevent directory traversal.
-		$save_dir = $this->user->get_dir() . '/save/' . (int) $sharepic;
+		$save_dir = $this->env->user->get_dir() . '/save/' . (int) $sharepic;
 
 		if ( ! file_exists( $save_dir ) ) {
 			$this->http_error( 'Could not find sharepic' );
@@ -223,7 +206,7 @@ class Sharepic {
 		$cmd = sprintf( 'rm -rf %s 2>&1', escapeshellarg( $save_dir ) );
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
-			$this->logger->error( implode( "\n", $output ) );
+			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not delete sharepic' );
 		}
 
@@ -235,7 +218,7 @@ class Sharepic {
 	 */
 	public function create() {
 		$output_file = 'output.png';
-		$path        = $this->user->get_dir() . $output_file;
+		$path        = $this->env->user->get_dir() . $output_file;
 		$config      = new Config();
 
 		$doc = new \DOMDocument();
@@ -250,7 +233,7 @@ class Sharepic {
 		$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
 		file_put_contents( $this->file, sprintf( $scaffold, $this->body_class, $this->html ) );
 
-		$cmd_preprend = ( 'local' === $this->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
+		$cmd_preprend = ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
 		$this->delete_unused_files();
 
@@ -276,10 +259,10 @@ class Sharepic {
 
 		exec( $cmd, $output, $return_code );
 
-		$this->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		if ( 0 !== $return_code ) {
-			$this->logger->error( implode( "\n", $output ) );
+			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not create file' );
 		}
 
@@ -297,7 +280,7 @@ class Sharepic {
 	 * Loads an image from a URL.
 	 */
 	public function load_from_url() {
-		$this->logger->access( 'Loading image from URL' );
+		$this->env->logger->access( 'Loading image from URL' );
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
 		$url = filter_var( $data['url'], FILTER_VALIDATE_URL );
@@ -319,7 +302,7 @@ class Sharepic {
 			$this->http_error( 'Could not load image' );
 			return;
 		}
-		$upload_file = $this->user->get_dir() . 'workspace/background.' . $extension;
+		$upload_file = $this->env->user->get_dir() . 'workspace/background.' . $extension;
 
 		copy( $url, $upload_file );
 
@@ -331,7 +314,7 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file );
 
-		$this->logger->access( 'Image loaded from URL' );
+		$this->env->logger->access( 'Image loaded from URL' );
 		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=workspace/background.' . $extension ) );
 
 	}
@@ -355,10 +338,10 @@ class Sharepic {
 		);
 
 		exec( $cmd, $output, $return_code );
-		$this->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		if ( 0 !== $return_code ) {
-			$this->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
+			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not convert image' );
 		}
 	}
@@ -379,7 +362,7 @@ class Sharepic {
 		exec( $cmd, $output, $return_code );
 
 		if ( 0 !== $return_code ) {
-			$this->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
+			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not create thumbnail' );
 		}
 
@@ -394,7 +377,7 @@ class Sharepic {
 		try {
 			$real_path    = realpath( $this->template );
 			$template_dir = realpath( dirname( __FILE__, 3 ) ) . '/templates/';
-			$user_dir     = realpath( $this->user->get_dir() );
+			$user_dir     = realpath( $this->env->user->get_dir() );
 
 			if ( ! $real_path ) {
 				throw new \Exception( 'File does not exist' );
@@ -416,17 +399,17 @@ class Sharepic {
 				);
 
 				exec( $cmd, $output, $return_code );
-				$this->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+				$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 				if ( 0 !== $return_code ) {
-					$this->logger->alarm( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
+					$this->env->logger->alarm( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 					$this->http_error( 'Could not copy files' );
 				}
 			}
 
 			echo file_get_contents( $this->template );
 		} catch ( \Exception $e ) {
-			$this->logger->alarm( $this->template . ' ' . $e->getMessage() );
+			$this->env->logger->alarm( $this->template . ' ' . $e->getMessage() );
 			$this->http_error( 'Could not load file ' );
 		}
 	}
@@ -440,7 +423,7 @@ class Sharepic {
 		}
 
 		if ( is_array( $_FILES['file']['name'] ) ) {
-			$this->logger->alarm( 'Multiple files uploaded' );
+			$this->env->logger->alarm( 'Multiple files uploaded' );
 			$this->http_error( 'Could not upload file' );
 		}
 
@@ -449,7 +432,7 @@ class Sharepic {
 		// $this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
-		$upload_file = $this->user->get_dir() . 'workspace/background.' . $extension;
+		$upload_file = $this->env->user->get_dir() . 'workspace/background.' . $extension;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file. Code 1.' );
@@ -475,7 +458,7 @@ class Sharepic {
 		}
 
 		if ( is_array( $_FILES['file']['name'] ) ) {
-			$this->logger->alarm( 'Multiple files uploaded' );
+			$this->env->logger->alarm( 'Multiple files uploaded' );
 			$this->http_error( 'Could not upload file' );
 		}
 
@@ -483,7 +466,7 @@ class Sharepic {
 
 		$extension     = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$raw_file_path = 'workspace/addpic-' . rand() . '.' . $extension;
-		$upload_file   = $this->user->get_dir() . $raw_file_path;
+		$upload_file   = $this->env->user->get_dir() . $raw_file_path;
 
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file' );
@@ -506,7 +489,7 @@ class Sharepic {
 	 * @deprecated This method will soon be deleted.
 	 */
 	private function delete_my_old_files() {
-		$files = glob( $this->user->get_dir() . 'workspace/background.*' );
+		$files = glob( $this->env->user->get_dir() . 'workspace/background.*' );
 
 		foreach ( $files as $file ) {
 			if ( is_file( $file ) ) {
@@ -587,7 +570,7 @@ class Sharepic {
 		);
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
-			$this->logger->error( implode( "\n", $output ) );
+			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could convert image' );
 		}
 	}

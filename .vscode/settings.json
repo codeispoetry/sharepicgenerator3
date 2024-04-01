@@ -23,6 +23,10 @@
         {
             "filePath": "templates",
             "group": "Default"
+        },
+        {
+            "filePath": "httpdocs/templates",
+            "group": "Default"
         }
     ]
 }

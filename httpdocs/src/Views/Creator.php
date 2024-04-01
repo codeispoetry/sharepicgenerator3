@@ -16,8 +16,8 @@
     
 <header>
     <?php
-		$show_my_sharepics = ( $this->config->get( 'Main', 'authenticator' ) === 'greens');
-		$menu = 'src/Views/Menu-' . $this->config->get( 'Main', 'menu' );
+		$show_my_sharepics = ($this->env->config->get( 'Main', 'authenticator' ) === 'greens');
+		$menu = 'src/Views/Menu-' .$this->env->config->get( 'Main', 'menu' );
 		if( file_exists( $menu . '.php' ) )
 			include $menu . '.php';
 		else
@@ -162,7 +162,7 @@
 							<img src="assets/icons/logout.svg">
 						</a>
 						<div class="description">
-							<?php echo _('Logged in as') . ' ' . $this->user->get_username(); ?>
+							<?php echo _('Logged in as') . ' ' .$this->env->user->get_username(); ?>
 						</div>
 					</div>
 				</button>
@@ -185,11 +185,11 @@
 <script>
     const config = {
         'pixabay': {
-            'apikey': '<?php echo $this->config->get( 'Pixabay', 'apikey' ); ?>'
+            'apikey': '<?php echo$this->env->config->get( 'Pixabay', 'apikey' ); ?>'
         },
-		'url': '<?php echo $this->config->get( 'Main', 'url' ); ?>',
+		'url': '<?php echo$this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
-		'username': '<?php echo $this->user->get_username(); ?>',
+		'username': '<?php echo$this->env->user->get_username(); ?>',
 	};
 	
 	const lang = {

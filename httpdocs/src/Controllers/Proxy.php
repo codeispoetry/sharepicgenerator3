@@ -10,10 +10,9 @@ class Proxy {
 	/**
 	 * Serves a file to an authenticated user.
 	 *
-	 * @param User $user The user object.
+	 * @param Object $env Environment with user, config, logger, mailer, etc.
 	 */
-	public static function serve( $user, $config, $logger ) {
-
+	public static function serve( $env ) {
 		$path = $_GET['p'] ?? null;
 
 		if ( ! $path || str_contains( $path, '..' ) ) {
@@ -24,8 +23,8 @@ class Proxy {
 		$clearance = false;
 
 		// Check, if the requested file is in the userdir.
-		$provided_path = realpath( $user->get_dir() . $path );
-		$allowed_dir   = realpath( $user->get_dir() );
+		$provided_path = realpath( $env->user->get_dir() . $path );
+		$allowed_dir   = realpath( $env->user->get_dir() );
 		if ( $provided_path && str_starts_with( $provided_path, $allowed_dir ) ) {
 			$clearance = true;
 		}
@@ -40,7 +39,7 @@ class Proxy {
 		}
 
 		if ( ! $clearance ) {
-			$logger->alarm( Helper::sanitize_log( $path ) . ' was requested, but is not in userdir' );
+			$env->logger->alarm( Helper::sanitize_log( $path ) . ' was requested, but is not in userdir' );
 			header( 'HTTP/1.1 404 Not Found' );
 			exit( 1 );
 		}
