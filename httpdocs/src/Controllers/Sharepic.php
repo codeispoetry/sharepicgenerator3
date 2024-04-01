@@ -277,7 +277,6 @@ class Sharepic {
 	 * Loads an image from a URL.
 	 */
 	public function load_from_url() {
-		$this->env->logger->access( 'Loading image from URL' );
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
 		$url = filter_var( $data['url'], FILTER_VALIDATE_URL );
@@ -300,6 +299,7 @@ class Sharepic {
 		$upload_file = $this->env->user->get_dir() . 'workspace/background.' . $extension;
 
 		copy( $url, $upload_file );
+		$this->env->logger->access( 'Loading image from URL ' . $url . ' to ' . $upload_file );
 
 		if ( ! Helper::is_image_file_local( $upload_file ) ) {
 			unlink( $upload_file );
@@ -309,7 +309,6 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file );
 
-		$this->env->logger->access( 'Image loaded from URL' );
 		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=workspace/background.' . $extension ) );
 
 	}
@@ -459,6 +458,8 @@ class Sharepic {
 		if ( ! move_uploaded_file( $file['tmp_name'], $upload_file ) ) {
 			$this->http_error( 'Could not upload file. Code 1.' );
 		}
+
+		$this->env->logger->access( 'Uploaded image to ' . $upload_file );
 
 		if ( ! Helper::is_image_file_local( $upload_file ) ) {
 			unlink( $upload_file );
