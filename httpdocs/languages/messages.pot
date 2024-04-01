@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-01 18:24+0200\n"
+"POT-Creation-Date: 2024-04-01 19:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -296,25 +296,39 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Download.php:2 httpdocs/src/Views/Creator.php:83
-#: httpdocs/src/Views/Creator.php:85
+#: httpdocs/src/Views/Cockpit/Dimensions.php:2
+#: httpdocs/src/Views/Creator.php:83 httpdocs/src/Views/Creator.php:85
 msgid "Dimensions"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Download.php:4
+#: httpdocs/src/Views/Cockpit/Dimensions.php:4
 msgid "Set dimensions manually"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Download.php:10
+#: httpdocs/src/Views/Cockpit/Dimensions.php:10
 msgid "Size presets"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Download.php:12
+#: httpdocs/src/Views/Cockpit/Dimensions.php:12
 msgid "square 1:1"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Download.php:15
+#: httpdocs/src/Views/Cockpit/Dimensions.php:15
 msgid "square 16:9"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:42
+msgid "QR-Code"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:45
+msgid ""
+"You can scan this QR-Code with your smartphone to open your sharepic on your "
+"mobile."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:46
+msgid "This link is valid for 5 minutes."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:2
@@ -658,7 +672,7 @@ msgid "Baden-Wuerttemberg"
 msgstr ""
 
 #: httpdocs/src/Views/Menu-Greens.php:125
-msgid "Time to logout: "
+msgid "Time to logout:"
 msgstr ""
 
 #: httpdocs/src/Views/Menu-Greens.php:125
@@ -731,6 +745,12 @@ msgstr ""
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:207
+msgid ""
+"You will be automatically logged out soon. Please either save your work or "
+"download it and reload the page."
 msgstr ""
 
 #: httpdocs/src/Views/Pixabay.php:4

@@ -38,13 +38,13 @@
         </div>
     </section>
 
-   <section id="qrcode-section">
+   <section id="qrcode-section" style="display:none">
         <h3><?php  echo _('QR-Code');?></h3>
         <div id="qrcode"></div>
         <?php
             echo _('You can scan this QR-Code with your smartphone to open your sharepic on your mobile.');
+            echo ' ';
             echo _('This link is valid for 5 minutes.');
         ?>
-      
-   </section>
+       </section>
 </section>

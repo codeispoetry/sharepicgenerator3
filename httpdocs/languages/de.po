@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-01 18:24+0200\n"
+"POT-Creation-Date: 2024-04-01 19:40+0200\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -308,26 +308,40 @@ msgstr "Text hinzufügen"
 msgid "Color"
 msgstr "Farbe"
 
-#: httpdocs/src/Views/Cockpit/Download.php:2 httpdocs/src/Views/Creator.php:83
-#: httpdocs/src/Views/Creator.php:85
+#: httpdocs/src/Views/Cockpit/Dimensions.php:2
+#: httpdocs/src/Views/Creator.php:83 httpdocs/src/Views/Creator.php:85
 msgid "Dimensions"
 msgstr "Abmessungen"
 
-#: httpdocs/src/Views/Cockpit/Download.php:4
+#: httpdocs/src/Views/Cockpit/Dimensions.php:4
 msgid "Set dimensions manually"
 msgstr "Größe manuell einstellen"
 
-#: httpdocs/src/Views/Cockpit/Download.php:10
+#: httpdocs/src/Views/Cockpit/Dimensions.php:10
 msgid "Size presets"
 msgstr "Voreinstellungen"
 
-#: httpdocs/src/Views/Cockpit/Download.php:12
+#: httpdocs/src/Views/Cockpit/Dimensions.php:12
 msgid "square 1:1"
 msgstr "Quadratisch 1:1"
 
-#: httpdocs/src/Views/Cockpit/Download.php:15
+#: httpdocs/src/Views/Cockpit/Dimensions.php:15
 msgid "square 16:9"
 msgstr "16:9"
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:42
+msgid "QR-Code"
+msgstr "QR-Code"
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:45
+msgid ""
+"You can scan this QR-Code with your smartphone to open your sharepic on your "
+"mobile."
+msgstr "Du kannst diesen QR-Code mit Deinem Smartphone scannen, um Dein Sharepic auf Deinem Handy zu öffnen."
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:46
+msgid "This link is valid for 5 minutes."
+msgstr "Dieser Link ist 5 Minuten gültig."
 
 #: httpdocs/src/Views/Cockpit/Background.php:2
 #: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
@@ -688,7 +702,9 @@ msgstr "Rückgängig"
 msgid ""
 "An error occurred. The sharepicgenerator might not behave as expected. This "
 "bug has been reported for further investigation."
-msgstr "Leider ist ein Fehler aufgetreten. Der Sharepicgenerator könnte sich  anders verhalten als erwartet. Dieser Fehler wurde registriert und wird untersucht."
+msgstr ""
+"Leider ist ein Fehler aufgetreten. Der Sharepicgenerator könnte sich  anders "
+"verhalten als erwartet. Dieser Fehler wurde registriert und wird untersucht."
 
 #: httpdocs/src/Views/Creator.php:47
 msgid ""
@@ -751,7 +767,13 @@ msgstr "Das Bild ist zu groß. Es sind maximal 15 MB erlaubt."
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
-msgstr ""
+msgstr "Du wurdest automatisch ausgeloggt. Bitte lade die Seite neu, um Dich erneut einzuloggen."
+
+#: httpdocs/src/Views/Creator.php:207
+msgid ""
+"You will be automatically logged out soon. Please either save your work or "
+"download it and reload the page."
+msgstr "Du wirst in Kürze automatisch ausgeloggt. Bitte speichere Deine Arbeit oder lade sie herunter und lade die Seite neu."
 
 #: httpdocs/src/Views/Pixabay.php:4
 msgid "All images are from "
