@@ -318,6 +318,7 @@ class API {
     const file = btn.files[0]
 
     if (file.size > 15 * 1024 * 1024 || file.size < 1000) {
+      logger.log('tried to upload file that is too big ', Math.round( file.size / 1024 ) + ' kb')
       alert(lang['Image too big'])
       return
     }
@@ -388,9 +389,15 @@ class API {
     formData.append('file', file)
 
     if (file.size > 15 * 1024 * 1024 || file.size < 1000) {
+      logger.log('tried to upload file that is too big ', Math.round( file.size / 1024 ) + ' kb')
       alert(lang['Image too big'])
       return
     }
+
+    logger.prepare_log_data({
+      original_path: file.name,
+      file_size: Math.round(10 * file.size / 1024 / 1024) / 10 + ' MB'
+    })
 
     const imageUrl = URL.createObjectURL(file)
 
@@ -423,8 +430,8 @@ class API {
         cockpit.target.querySelector('.ap_image').style.opacity = 1
 
         logger.prepare_log_data({
-          imagesrc: 'addpic'
-        })
+          path_on_server: resp.path
+        }, true)
       } else {
         console.error('Error:', this.status, this.statusText)
       }
