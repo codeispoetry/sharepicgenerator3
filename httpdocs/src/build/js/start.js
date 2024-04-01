@@ -17,4 +17,9 @@ window.onload = function () {
   api.load('templates/' + config.starttemplate + '/start.html')
 
   document.getElementById('version').innerHTML = 'js6'
+
+  const supportedBrowsers = ['Chrome', 'Firefox']
+  if( !supportedBrowsers.includes(debug.getBrowserInfo().name) ) {
+    document.querySelector('.browser-not-supported').style.display = 'block'
+  }
 }

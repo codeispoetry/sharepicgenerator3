@@ -60,7 +60,7 @@ class Sharepic {
 	 *
 	 * @var string
 	 */
-	private $dir;
+	private $workspace;
 
 	/**
 	 * Saving or publishing.
@@ -99,11 +99,11 @@ class Sharepic {
 	public function __construct( $env ) {
 		$this->env = $env;
 
-		$this->dir = $this->env->user->get_dir() . 'workspace';
-		if ( ! file_exists( $this->dir ) ) {
-			mkdir( $this->dir );
+		$this->workspace = $this->env->user->get_dir() . 'workspace';
+		if ( ! file_exists( $this->workspace ) ) {
+			mkdir( $this->workspace );
 		}
-		$this->file = $this->dir . '/sharepic.html';
+		$this->file = $this->workspace . '/sharepic.html';
 
 		$data = json_decode( file_get_contents( 'php://input' ), true );
 
@@ -157,8 +157,6 @@ class Sharepic {
 		if ( ! file_exists( $save_dir ) ) {
 			mkdir( $save_dir );
 		}
-
-		$this->delete_unused_files();
 
 		$cmd = "cp -R $workspace $save 2>&1";
 		exec( $cmd, $output, $return_code );
@@ -217,6 +215,8 @@ class Sharepic {
 	 * Creates a sharepic by taking the screenshot of the HTML.
 	 */
 	public function create() {
+		header('401 Unauthorized', true, 401);
+		die();
 		$output_file = 'output.png';
 		$path        = $this->env->user->get_dir() . $output_file;
 		$config      = new Config();
@@ -234,8 +234,6 @@ class Sharepic {
 		file_put_contents( $this->file, sprintf( $scaffold, $this->body_class, $this->html ) );
 
 		$cmd_preprend = ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
-
-		$this->delete_unused_files();
 
 		$cmd = sprintf(
 			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>/dev/null',
@@ -294,8 +292,6 @@ class Sharepic {
 			$this->http_error( 'Could not load image' );
 			return;
 		}
-
-		// $this->delete_my_old_files();
 
 		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {
@@ -407,6 +403,8 @@ class Sharepic {
 				}
 			}
 
+			$this->delete_unused_files();
+
 			echo file_get_contents( $this->template );
 		} catch ( \Exception $e ) {
 			$this->env->logger->alarm( $this->template . ' ' . $e->getMessage() );
@@ -428,8 +426,6 @@ class Sharepic {
 		}
 
 		$file = $_FILES['file'];
-
-		// $this->delete_my_old_files();
 
 		$extension   = strtolower( pathinfo( $file['name'], PATHINFO_EXTENSION ) );
 		$upload_file = $this->env->user->get_dir() . 'workspace/background.' . $extension;
@@ -490,66 +486,20 @@ class Sharepic {
 	}
 
 	/**
-	 * Deletes old files.
-	 *
-	 * @deprecated This method will soon be deleted.
-	 */
-	private function delete_my_old_files() {
-		$files = glob( $this->env->user->get_dir() . 'workspace/background.*' );
-
-		foreach ( $files as $file ) {
-			if ( is_file( $file ) ) {
-				unlink( $file );
-			}
-		}
-	}
-
-	/**
 	 * Deletes unused files from workspace.
-	 *
-	 * @deprecated This method will soon be deleted.
 	 */
 	private function delete_unused_files() {
-		$html = file_get_contents( $this->file );
-
-		$dom = new \DOMDocument();
-		libxml_use_internal_errors( true ); // Suppress warnings.
-		$dom->loadHTML( $html );
-		libxml_clear_errors();
-
-		// IMG tags.
-		$images     = $dom->getElementsByTagName( 'img' );
-		$used_files = array_map(
-			function( $image ) {
-				return $image->getAttribute( 'src' );
-			},
-			iterator_to_array( $images )
-		);
-
-		// Background images.
-		$elements = $dom->getElementsByTagName( '*' );
-		foreach ( $elements as $element ) {
-			$style = $element->getAttribute( 'style' );
-
-			preg_match_all( '/url\(([^)]+)\)/', $style, $matches );
-
-			foreach ( $matches[1] as $url ) {
-				$used_files[] = substr( $url, 1, -1 );
-			}
+		$file = $this->env->user->get_dir() . 'workspace/sharepic.html';
+		if ( ! file_exists( $file ) ) {
+			return;
 		}
-
-		$used_files = array_map(
-			function( $file ) {
-				return explode( '?', $file )[0];
-			},
-			$used_files
-		);
+		$html = file_get_contents( $file );
 
 		// Delete unused files.
-		$available_files = glob( $this->dir . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE );
+		$available_files = glob( $this->workspace . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE );
 
 		foreach ( $available_files as $file ) {
-			if ( ! in_array( $file, $used_files ) ) {
+			if ( ! str_contains( $html, basename( $file ) ) ) {
 				unlink( $file );
 			}
 		}

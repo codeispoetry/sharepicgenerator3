@@ -29,12 +29,4 @@ class Debug {
       version: M[1]
     }
   }
-
-  createReport( ) {
-
-    document.getElementById('debug').style.display = 'block'
-    logger.log('Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version + '\n');
-
-    alert("Danke, Dein Report wurde gesendet.")
-  }
 }

@@ -189,6 +189,9 @@ class API {
     fetch(this.api + '&m=create', options)
       .then(response => {
         if (response.status !== 200) {
+          if( confirm( lang['logged out'] + ' ' + response.status + ' ' + response.statusText) ) {
+            location.reload()
+          }
           throw new Error(response.status + ' ' + response.statusText)
         }
         return response.text()

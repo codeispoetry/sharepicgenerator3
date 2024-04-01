@@ -43,6 +43,9 @@
 						<div class="bug-detected">
 							<?php echo _('An error occurred. The sharepicgenerator might not behave as expected. This bug has been reported for further investigation.'); ?>
 						</div>
+						<div class="browser-not-supported">
+							<?php echo _('Your are using a yet unsupported browser. If you encounter any problems, please try Chrome or Firefox instead.'); ?>
+						</div>
 					</div>
 					<div id="canvas" translate="no">
 						<div id="sharepic">
@@ -200,6 +203,7 @@
 		'Uploading image': '<?php echo _( 'Uploading your image ...') ?>',
 		'Processing image': '<?php echo _( 'Your image is being processed ...') ?>',
 		'Image too big': '<?php echo _( 'The image is too big. Max. 15 MB are allowed.') ?>',
+		'logged out': '<?php echo _( 'You have automatically been logged out. Please reload the page and log in again.') ?>',
     };
 </script>
 

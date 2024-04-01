@@ -10,7 +10,7 @@
                     foreach( $lines as $line ) {
 						list($time, $user, $entry) = explode( "\t", $line );
 
-						if( str_starts_with( $entry, 'loads template' ) ) {
+						if( str_starts_with( $entry, 'template' ) ) {
 							continue;
 						}
 

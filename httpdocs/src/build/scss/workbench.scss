@@ -73,11 +73,19 @@
 
 .bug{
     &-detected{
-        color: rgb(218, 92, 92);
+        color: rgb(244, 149, 240);
         font-size: 80%;
         max-width: 350px;
         display: none;
     }
+}
+
+.browser-not-supported{
+    color: rgb(244, 149, 240);
+    font-size: 80%;
+    max-width: 350px;
+    display: none;
+
 }
 
 #sharepic{
