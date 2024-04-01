@@ -9,7 +9,7 @@ class Logger {
     this.log_data = data
   }
 
-  log (data, type='normal') {
+  log (data, type = 'normal') {
     const payload = {
       data,
       ...this.log_data

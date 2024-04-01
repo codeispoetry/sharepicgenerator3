@@ -3,12 +3,25 @@
 class Debug {
   constructor () {
     window.onerror = (message, source, lineno, colno, error) => {
-        const browser = 'Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version
-        const bug = 'Error: ' + message + ' in ' + source + ' at line ' + lineno + ' column ' + colno;
-        logger.log(browser + '\t' + bug, 'bug');
+      if (config.debug_logged) {
+        return
+      }
 
-        document.querySelector('.bug-detected').style.display = 'block'
-    };
+      const browser = 'Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version
+      const bug = 'Error: ' + message + ' in ' + source + ' at line ' + lineno + ' column ' + colno
+      logger.log(browser + '\t' + bug, 'bug')
+
+      document.querySelector('.bug-detected').style.display = 'block'
+
+      config.debug_logged = true
+    }
+
+    const supportedBrowsers = ['Chrome', 'Firefox']
+    if (!supportedBrowsers.includes(this.getBrowserInfo().name)) {
+      document.querySelector('.browser-not-supported').style.display = 'block'
+    }
+
+    document.getElementById('version').innerHTML = 'js6'
   }
 
   getBrowserInfo () {

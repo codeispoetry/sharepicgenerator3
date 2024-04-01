@@ -204,6 +204,7 @@
 		'Processing image': '<?php echo _( 'Your image is being processed ...') ?>',
 		'Image too big': '<?php echo _( 'The image is too big. Max. 15 MB are allowed.') ?>',
 		'logged out': '<?php echo _( 'You have automatically been logged out. Please reload the page and log in again.') ?>',
+		'You will be logged out soon': '<?php echo _( 'You will be automatically logged out soon. Please either save your work or download it and reload the page.') ?>',
     };
 </script>
 

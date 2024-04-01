@@ -15,3 +15,4 @@ tests/tmp/*
 tmp/*
 de.po~
 .vscode
+httpdocs/qrcodes/*.png

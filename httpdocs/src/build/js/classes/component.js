@@ -11,6 +11,8 @@ class Component {
       alert(lang['Max reached'])
       return
     }
+
+
     const clonedElement = pattern.cloneNode(true)
     const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
 
@@ -33,6 +35,8 @@ class Component {
     component.select(newElement)
 
     this.toFront(newElement)
+
+    logger.log('add component' + item );
 
     undo.commit()
   }
@@ -60,6 +64,8 @@ class Component {
 
   delete () {
     document.getElementById('add_copyright').style.display = 'flex'
+    logger.log('delete component' + cockpit.target.id );
+
     cockpit.target.remove()
     this.unselect()
   }

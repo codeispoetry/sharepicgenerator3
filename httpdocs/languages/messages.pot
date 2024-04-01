@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-01 14:28+0200\n"
+"POT-Creation-Date: 2024-04-01 18:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -657,6 +657,14 @@ msgstr ""
 msgid "Baden-Wuerttemberg"
 msgstr ""
 
+#: httpdocs/src/Views/Menu-Greens.php:125
+msgid "Time to logout: "
+msgstr ""
+
+#: httpdocs/src/Views/Menu-Greens.php:125
+msgid "minutes"
+msgstr ""
+
 #: httpdocs/src/Views/Creator.php:41
 msgid "Undo"
 msgstr ""
@@ -717,6 +725,12 @@ msgstr ""
 
 #: httpdocs/src/Views/Creator.php:205
 msgid "The image is too big. Max. 15 MB are allowed."
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:206
+msgid ""
+"You have automatically been logged out. Please reload the page and log in "
+"again."
 msgstr ""
 
 #: httpdocs/src/Views/Pixabay.php:4

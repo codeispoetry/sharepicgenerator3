@@ -215,8 +215,6 @@ class Sharepic {
 	 * Creates a sharepic by taking the screenshot of the HTML.
 	 */
 	public function create() {
-		header('401 Unauthorized', true, 401);
-		die();
 		$output_file = 'output.png';
 		$path        = $this->env->user->get_dir() . $output_file;
 		$config      = new Config();
@@ -270,6 +268,7 @@ class Sharepic {
 		}
 
 		$this->create_thumbnail( $path );
+		$this->create_qrcode( $path );
 
 		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $output_file ) );
 	}
@@ -339,6 +338,33 @@ class Sharepic {
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not convert image' );
+		}
+	}
+
+	/**
+	 * Creates a QR code.
+	 *
+	 * @param string $path The path to the image.
+	 */
+	private function create_qrcode( $path ) {
+		$random_filename = bin2hex( random_bytes( 16 ) ) . '.png';
+
+		copy( $path, 'qrcodes/' . $random_filename );
+
+		$qrcode_file = $this->env->user->get_dir() . 'qrcode.png';
+		$qrcode_url  = 'https://' . $_SERVER['HTTP_HOST'] . '/tmp/' . $random_filename;
+
+		$cmd = sprintf(
+			'qrencode -s 4 -o %s %s 2>&1',
+			$qrcode_file,
+			$qrcode_url
+		);
+
+		exec( $cmd, $output, $return_code );
+
+		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		if ( 0 !== $return_code ) {
+			$this->env->logger->error( implode( "\n", $output ) );
 		}
 	}
 

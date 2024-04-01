@@ -22,6 +22,7 @@ use Sharepicgenerator\Controllers\Helper;
 use stdClass;
 
 Helper::load_textdomain();
+Helper::clean_up_dir( './qrcodes/*', 5 );
 
 $env         = new stdClass();
 $env->user   = new User();

@@ -148,7 +148,7 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
+        //console.log(data)
         data = JSON.parse(data)
 
         try {
@@ -189,7 +189,7 @@ class API {
     fetch(this.api + '&m=create', options)
       .then(response => {
         if (response.status !== 200) {
-          if( confirm( lang['logged out'] + ' ' + response.status + ' ' + response.statusText) ) {
+          if (confirm(lang['logged out'] + ' ' + response.status + ' ' + response.statusText)) {
             location.reload()
           }
           throw new Error(response.status + ' ' + response.statusText)
@@ -200,13 +200,20 @@ class API {
         console.log(data)
         data = JSON.parse(data)
 
+        // Create download link and click it
         const a = document.createElement('a')
         a.href = config.url + '/' + data.path
-
         a.download = 'sharepic.' + data.path.slice(-3)
         document.body.appendChild(a)
         a.click()
         document.body.removeChild(a)
+
+        // Display qr code
+        const qrcontainer = document.getElementById('qrcode')
+        qrcontainer.innerHTML = ''
+        const qr = document.createElement('img')
+        qr.src = 'index.php?c=proxy&r=' + Math.random() + '&p=qrcode.png';
+        qrcontainer.appendChild(qr)
 
         document.querySelector('.create').disabled = false
         document.querySelector('.create').classList.remove('waiting')

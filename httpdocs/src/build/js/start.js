@@ -12,14 +12,7 @@ window.onload = function () {
   ui = new UI()
   rte = new RichTextEditor()
   logger = new Logger()
-  debug = new Debug();
+  debug = new Debug()
 
   api.load('templates/' + config.starttemplate + '/start.html')
-
-  document.getElementById('version').innerHTML = 'js6'
-
-  const supportedBrowsers = ['Chrome', 'Firefox']
-  if( !supportedBrowsers.includes(debug.getBrowserInfo().name) ) {
-    document.querySelector('.browser-not-supported').style.display = 'block'
-  }
 }

@@ -23,7 +23,7 @@ class Cockpit {
 
     document.querySelectorAll('#greentext > div').forEach((div, i) => {
       const cockpitLine = document.querySelectorAll('.cockpit_greentext')[i]
-      cockpitLine.style.display = 'flex' 
+      cockpitLine.style.display = 'flex'
 
       cockpitLine.querySelectorAll('.linesize option').forEach((option) => {
         if (div.classList.contains(option.value)) {

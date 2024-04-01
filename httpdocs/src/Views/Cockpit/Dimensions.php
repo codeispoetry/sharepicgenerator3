@@ -37,4 +37,14 @@
             <button data-sizepreset="3520:4972">Plakat DIN A1</button>
         </div>
     </section>
+
+   <section id="qrcode-section">
+        <h3><?php  echo _('QR-Code');?></h3>
+        <div id="qrcode"></div>
+        <?php
+            echo _('You can scan this QR-Code with your smartphone to open your sharepic on your mobile.');
+            echo _('This link is valid for 5 minutes.');
+        ?>
+      
+   </section>
 </section>

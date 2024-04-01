@@ -19,6 +19,24 @@ class Helper {
 	}
 
 	/**
+	 * Clean up a directory.
+	 * Delete all files that are too old.
+	 *
+	 * @param string $glob The glob pattern.
+	 * @param int    $minutes The minutes, that a file is allowed to exist.
+	 */
+	public static function clean_up_dir( $glob, $minutes ) {
+		$files = glob( $glob );
+		$now   = time();
+
+		foreach ( $files as $file ) {
+			if ( is_file( $file ) && $now - filemtime( $file ) >= $minutes * 60 ) {
+				unlink( $file );
+			}
+		}
+	}
+
+	/**
 	 * Allow only a-z, A-Z and 0-9.
 	 *
 	 * @param string $input The input, that should be sanitized.
