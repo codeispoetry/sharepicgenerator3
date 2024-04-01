@@ -8,32 +8,12 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 
 class UI {
   constructor () {
-    document.getElementById('time-to-logout').innerHTML = '29:59'
-    const startTime = new Date().getTime()
-    const logginPeriod = 30 * 60
     setInterval(() => {
-      const currentTime = new Date().getTime()
-      const elapsedTime = Math.floor((currentTime - startTime) / 1000)
-
-      const min = Math.floor((logginPeriod - elapsedTime) / 60)
-      const sec = Math.floor((logginPeriod - elapsedTime) % 60).toString().padStart(2, '0')
-      document.getElementById('time-to-logout').innerHTML = `${min}:${sec}`
-
-      if (min == 3) {
-        this.reminderToSave()
-      }
+      // This is a hack to keep the connection alive.
+      // The server will close the connection after 10 minutes of inactivity.
+      logger.log('Generator page is open. Keeping connection alive.')
     },
-    1000)
-  }
-
-  reminderToSave () {
-    if (config.remindedToSave === true) {
-      return
-    }
-
-    alert(lang['You will be logged out soon'])
-
-    config.remindedToSave = true
+    9 * 60 * 1000)
   }
 
   /*

@@ -122,7 +122,6 @@
 
     <em><small>Weitere Regionallayouts folgen</small></em>
 
-    <span class="info-in-menu"><?php echo _( 'Time to logout:'); ?> <span id="time-to-logout">30:00</span><?php echo _('minutes'); ?></span>
-    <span id="version" class="info-in-menu" style="margin-left: 0"></span>
+    <span id="version" class="info-in-menu"></span>
 
 </nav>
