@@ -17,8 +17,13 @@ class Cockpit {
   }
 
   setup_greentext (element) {
+    document.querySelectorAll('.cockpit_greentext').forEach((div) => {
+      div.style.display = 'none'
+    })
+
     document.querySelectorAll('#greentext > div').forEach((div, i) => {
       const cockpitLine = document.querySelectorAll('.cockpit_greentext')[i]
+      cockpitLine.style.display = 'flex' 
 
       cockpitLine.querySelectorAll('.linesize option').forEach((option) => {
         if (div.classList.contains(option.value)) {

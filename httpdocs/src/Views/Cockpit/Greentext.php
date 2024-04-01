@@ -15,7 +15,7 @@
             <span><?php echo _('Size'); ?></span>
             <span><?php echo _('Indent'); ?></span>
         </div>
-        <?php for( $i = 1; $i <= 3; $i++ ) { ?>
+        <?php for( $i = 1; $i <= 10; $i++ ) { ?>
         <div class="cockpit_greentext">
             <?php echo $i; ?></strong>
             <select class="linecolor" onChange="greentext.setLineColorset(this, <?php echo $i; ?>)">
@@ -51,23 +51,29 @@
             undo.commit()
         }
 
-        setLineIndent(input, line) {      
-            document.querySelector('#greentext > div:nth-child(' + line + ')' ).style.marginLeft = input.value + 'px'
+        setLineIndent(input, lineNr) {      
+            const line = document.querySelector('#greentext > div:nth-child(' + lineNr + ')' )
+            if( line == null ) return
+            line.style.marginLeft = input.value + 'px'
         }
 
         setLineSize(input, lineNr) {  
             const line = document.querySelector('#greentext > div:nth-child(' + lineNr + ')' );
+            if( line == null ) return
             line.classList.remove('s', 'm', 'l')
             line.classList.add(input.value)
         }
 
         setLineColorset(input, lineNr) {  
             const line = document.querySelector('#greentext > div:nth-child(' + lineNr + ')' );
+            if( line == null ) return
             line.classList.remove('tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras')
             line.classList.add(input.value)
         }
     }
     const greentext = new Greentext();
+
+    
 
 </script>
 

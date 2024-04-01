@@ -71,7 +71,6 @@ class API {
         eval(script)
         cockpit.render()
         logger.prepare_log_data({})
-
         logger.log('loads template ' + path)
       })
       .catch(error => console.error('Error:', error))
