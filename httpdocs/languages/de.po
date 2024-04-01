@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-29 09:52+0100\n"
+"POT-Creation-Date: 2024-04-01 12:14+0200\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -159,15 +159,15 @@ msgstr "Impressum"
 msgid "Privacy"
 msgstr "Datenschutz"
 
-#: httpdocs/src/Views/Menu-Mint.php:23 httpdocs/src/Views/Menu-Greens.php:32
+#: httpdocs/src/Views/Menu-Mint.php:23
 msgid "Logfile"
 msgstr "Logdatei"
 
-#: httpdocs/src/Views/Menu-Mint.php:24 httpdocs/src/Views/Menu-Greens.php:33
+#: httpdocs/src/Views/Menu-Mint.php:24
 msgid "Sharepics"
 msgstr "Sharepics"
 
-#: httpdocs/src/Views/Menu-Mint.php:26 httpdocs/src/Views/Menu-Greens.php:35
+#: httpdocs/src/Views/Menu-Mint.php:26
 msgid "Publish"
 msgstr "Veröffentlichen"
 
@@ -183,15 +183,15 @@ msgstr "Datei"
 msgid "New template"
 msgstr "Neue Vorlage"
 
-#: httpdocs/src/Views/Menu-Mint.php:49 httpdocs/src/Views/Menu-Greens.php:107
+#: httpdocs/src/Views/Menu-Mint.php:49 httpdocs/src/Views/Menu-Greens.php:98
 msgid "Save"
 msgstr "Zwischenpeichern"
 
-#: httpdocs/src/Views/Menu-Mint.php:52 httpdocs/src/Views/Creator.php:51
+#: httpdocs/src/Views/Menu-Mint.php:52 httpdocs/src/Views/Creator.php:56
 msgid "Download"
 msgstr "Herunterladen"
 
-#: httpdocs/src/Views/Menu-Mint.php:58 httpdocs/src/Views/Menu-Greens.php:104
+#: httpdocs/src/Views/Menu-Mint.php:58 httpdocs/src/Views/Menu-Greens.php:94
 msgid "My Sharepics"
 msgstr "Meine Sharepics"
 
@@ -200,7 +200,7 @@ msgid "latest"
 msgstr "letztes"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
-#: httpdocs/src/Views/Creator.php:131 httpdocs/src/Views/Creator.php:133
+#: httpdocs/src/Views/Creator.php:136 httpdocs/src/Views/Creator.php:138
 msgid "Eyecatcher"
 msgstr "Sticker"
 
@@ -258,42 +258,42 @@ msgstr "Einrückung"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:22
 msgid "tanne/sand"
-msgstr ""
+msgstr "tanne/sand"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:23
 msgid "sand/tanne"
-msgstr ""
+msgstr "sand/tanne"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:25
 msgid "klee/sand"
-msgstr ""
+msgstr "klee/sand"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:26
 msgid "sand/klee"
-msgstr ""
+msgstr "sand/klee"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:28
 msgid "gras/tanne"
-msgstr ""
+msgstr "gras/tanne"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:29
 msgid "tanne/gras"
-msgstr ""
+msgstr "tanne/gras"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:32
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:33
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:34
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
-#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
+#: httpdocs/src/Views/Creator.php:128 httpdocs/src/Views/Creator.php:130
 msgid "Additional text"
 msgstr "Zusatztext"
 
@@ -303,13 +303,13 @@ msgid "Add text"
 msgstr "Text hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
-#: httpdocs/src/Views/Cockpit/Background.php:22
+#: httpdocs/src/Views/Cockpit/Background.php:25
 #: httpdocs/src/Views/Cockpit/Copyright.php:14
 msgid "Color"
 msgstr "Farbe"
 
-#: httpdocs/src/Views/Cockpit/Download.php:2 httpdocs/src/Views/Creator.php:75
-#: httpdocs/src/Views/Creator.php:77
+#: httpdocs/src/Views/Cockpit/Download.php:2 httpdocs/src/Views/Creator.php:80
+#: httpdocs/src/Views/Creator.php:82
 msgid "Dimensions"
 msgstr "Abmessungen"
 
@@ -330,7 +330,7 @@ msgid "square 16:9"
 msgstr "16:9"
 
 #: httpdocs/src/Views/Cockpit/Background.php:2
-#: httpdocs/src/Views/Creator.php:91 httpdocs/src/Views/Creator.php:93
+#: httpdocs/src/Views/Creator.php:96 httpdocs/src/Views/Creator.php:98
 msgid "Edit background image"
 msgstr "Hintergrundbild einstellen"
 
@@ -338,37 +338,37 @@ msgstr "Hintergrundbild einstellen"
 msgid "Image crop"
 msgstr "Bildausschnitt"
 
-#: httpdocs/src/Views/Cockpit/Background.php:12
+#: httpdocs/src/Views/Cockpit/Background.php:14
 msgid "Fit automatically"
 msgstr "automatisch einpassen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:17
+#: httpdocs/src/Views/Cockpit/Background.php:19
 msgid "Drag image"
 msgstr "Bild verschieben"
 
-#: httpdocs/src/Views/Cockpit/Background.php:34
+#: httpdocs/src/Views/Cockpit/Background.php:37
 msgid "Filter"
 msgstr "Filter"
 
-#: httpdocs/src/Views/Cockpit/Background.php:35
+#: httpdocs/src/Views/Cockpit/Background.php:38
 msgid "Brightness"
 msgstr "Helligkeit"
 
-#: httpdocs/src/Views/Cockpit/Background.php:37
+#: httpdocs/src/Views/Cockpit/Background.php:40
 msgid "Saturate"
 msgstr "Sättigung"
 
-#: httpdocs/src/Views/Cockpit/Background.php:39
+#: httpdocs/src/Views/Cockpit/Background.php:42
 msgid "Blur"
 msgstr "Unschärfe"
 
-#: httpdocs/src/Views/Cockpit/Background.php:45
+#: httpdocs/src/Views/Cockpit/Background.php:48
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2
-#: httpdocs/src/Views/Menu-Greens.php:96 httpdocs/src/Views/Creator.php:147
-#: httpdocs/src/Views/Creator.php:149
+#: httpdocs/src/Views/Menu-Greens.php:86 httpdocs/src/Views/Creator.php:152
+#: httpdocs/src/Views/Creator.php:154
 msgid "Vor Ort"
 msgstr "Vor Ort"
 
@@ -383,8 +383,8 @@ msgstr "bitte wählen"
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
 #: httpdocs/src/Views/Cockpit/Addpicture.php:34
-#: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
-#: httpdocs/src/Views/Creator.php:115 httpdocs/src/Views/Creator.php:117
+#: httpdocs/src/Views/Creator.php:112 httpdocs/src/Views/Creator.php:114
+#: httpdocs/src/Views/Creator.php:120 httpdocs/src/Views/Creator.php:122
 msgid "Text"
 msgstr "Text"
 
@@ -486,8 +486,8 @@ msgstr "Grüne Fläche anzeigen"
 msgid "For a text in your sharepic, edit it directly in the sharepic."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Cockpit/Copyright.php:2 httpdocs/src/Views/Creator.php:99
-#: httpdocs/src/Views/Creator.php:101
+#: httpdocs/src/Views/Cockpit/Copyright.php:2
+#: httpdocs/src/Views/Creator.php:104 httpdocs/src/Views/Creator.php:106
 msgid "Copyright"
 msgstr "Urheberrechts&shy;hinweis"
 
@@ -652,7 +652,7 @@ msgstr "nach hinten"
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:16
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:17
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:18
-#: httpdocs/src/Views/Menu-Greens.php:116
+#: httpdocs/src/Views/Menu-Greens.php:107
 msgid "delete"
 msgstr "löschen"
 
@@ -660,61 +660,67 @@ msgstr "löschen"
 msgid "Support"
 msgstr "Hilfe"
 
-#: httpdocs/src/Views/Menu-Greens.php:42
+#: httpdocs/src/Views/Menu-Greens.php:32
 msgid "Germany"
 msgstr "Deutschland"
 
-#: httpdocs/src/Views/Menu-Greens.php:45
+#: httpdocs/src/Views/Menu-Greens.php:35
 msgid "Standardlayout"
 msgstr "Standardlayout"
 
-#: httpdocs/src/Views/Menu-Greens.php:51
+#: httpdocs/src/Views/Menu-Greens.php:41
 msgid "Baden-Wuerttemberg"
 msgstr "Baden-W&uuml;rttemberg"
 
-#: httpdocs/src/Views/Menu-Greens.php:54
+#: httpdocs/src/Views/Menu-Greens.php:44
 msgid "KW 24 Kandi Vorstellung"
 msgstr ""
 
-#: httpdocs/src/Views/Menu-Greens.php:57 httpdocs/src/Views/Menu-Greens.php:65
-#: httpdocs/src/Views/Menu-Greens.php:73 httpdocs/src/Views/Menu-Greens.php:82
-#: httpdocs/src/Views/Menu-Greens.php:90
+#: httpdocs/src/Views/Menu-Greens.php:47 httpdocs/src/Views/Menu-Greens.php:55
+#: httpdocs/src/Views/Menu-Greens.php:63 httpdocs/src/Views/Menu-Greens.php:72
+#: httpdocs/src/Views/Menu-Greens.php:80
 msgid "Hochformat/Story"
 msgstr ""
 
-#: httpdocs/src/Views/Menu-Greens.php:62
+#: httpdocs/src/Views/Menu-Greens.php:52
 msgid "KW 24 Thema"
 msgstr ""
 
-#: httpdocs/src/Views/Menu-Greens.php:70
+#: httpdocs/src/Views/Menu-Greens.php:60
 msgid "KW 24 Erfolgsbilanz"
 msgstr ""
 
-#: httpdocs/src/Views/Menu-Greens.php:79
+#: httpdocs/src/Views/Menu-Greens.php:69
 msgid "KW 24 Zitat"
 msgstr ""
 
-#: httpdocs/src/Views/Menu-Greens.php:87
+#: httpdocs/src/Views/Menu-Greens.php:77
 msgid "KW 24 Steckbrief"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:40
+#: httpdocs/src/Views/Creator.php:41
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: httpdocs/src/Views/Creator.php:83 httpdocs/src/Views/Creator.php:85
+#: httpdocs/src/Views/Creator.php:44
+msgid ""
+"An error occurred. The sharepicgenerator might not behave as expected. This "
+"bug has been reported for further investigation."
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:88 httpdocs/src/Views/Creator.php:90
 msgid "Search or create image"
 msgstr "Bild suchen oder erstellen"
 
-#: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
+#: httpdocs/src/Views/Creator.php:144 httpdocs/src/Views/Creator.php:146
 msgid "Front picture"
 msgstr "Vordergrundbild"
 
-#: httpdocs/src/Views/Creator.php:160
+#: httpdocs/src/Views/Creator.php:165
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: httpdocs/src/Views/Creator.php:175
+#: httpdocs/src/Views/Creator.php:180
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
@@ -722,34 +728,44 @@ msgstr ""
 "Bitte warte, während Dein Sharepic erstellt wird. Dies kann einige Sekunden "
 "dauern."
 
-#: httpdocs/src/Views/Creator.php:191
+#: httpdocs/src/Views/Creator.php:196
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
-#: httpdocs/src/Views/Creator.php:192
+#: httpdocs/src/Views/Creator.php:197
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: httpdocs/src/Views/Creator.php:193
+#: httpdocs/src/Views/Creator.php:198
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Creator.php:194
+#: httpdocs/src/Views/Creator.php:199
 msgid "Maximum number of elements reached"
 msgstr "Maximale Anzahl von Elementen erreicht"
 
-#: httpdocs/src/Views/Creator.php:195
+#: httpdocs/src/Views/Creator.php:200
 msgid "Uploading your image ..."
 msgstr "Das Bild wird hochladen ..."
 
-#: httpdocs/src/Views/Creator.php:196
+#: httpdocs/src/Views/Creator.php:201
 msgid "Your image is being processed ..."
 msgstr "Dein Bild wird vorbereitet ..."
+
+#: httpdocs/src/Views/Creator.php:202
+msgid "The image is too big. Max. 15 MB are allowed."
+msgstr "Das Bild ist zu groß. Es sind maximal 15 MB erlaubt."
 
 #: httpdocs/src/Views/Pixabay.php:4
 msgid "All images are from "
 msgstr "Die Bilder stammen von "
+
+#: httpdocs/src/Views/Pixabay.php:6
+msgid ""
+"Single click on an image sets the image as background, double click sets "
+"image and closes results."
+msgstr "Ein Klick setzt das Bild als Hintergrund, ein Doppelklick setzt das Bild und schließt die Ergebnisse."
 
 #: httpdocs/src/Views/Home-Greens.php:7
 msgid ""

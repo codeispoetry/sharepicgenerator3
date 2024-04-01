@@ -480,7 +480,13 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file, 2000, 1000 );
 
-		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $raw_file_path ) );
+		$return = array(
+			'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $raw_file_path,
+		);
+
+		$this->env->logger->access( json_encode( $return ) );
+
+		echo json_encode( $return );
 	}
 
 	/**

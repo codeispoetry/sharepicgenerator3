@@ -40,45 +40,45 @@
     <div class="dropdown" id="menu_file">
         <span><?php echo _( 'Baden-Wuerttemberg' ); ?></span>
         <div class="dropdown-content">
-            <button onClick="api.load('templates/bw-kandi-vorstellung/start.html'); bwstory=false;">
-                <?php  echo _('KW 24 Kandi Vorstellung');?>
-            </button>
-            <button onClick="api.load('templates/bw-kandi-vorstellung/start.html'); bwstory=true;" class="story">
-                <?php  echo _('Hochformat/Story');?>
-            </button>
-            <div class="divider"></div>
+            <div class="submenu">
+                <button>Kandi Vorstellung</button>
+                <div class="submenu-content">
+                    <button onClick="api.load('templates/bw-kandi-vorstellung/start.html'); bwstory=false;">Quadratisch</button>
+                    <button onClick="api.load('templates/bw-kandi-vorstellung/start.html'); bwstory=true;" >Hochformat</button>
+                </div>
+            </div>
 
-            <button onClick="api.load('templates/bw-thema/start.html'); bwstory=false;">
-                <?php  echo _('KW 24 Thema');?>
-            </button>
-            <button onClick="api.load('templates/bw-thema/start.html'); bwstory=true;" class="story">
-                <?php  echo _('Hochformat/Story');?>
-            </button>
-            <div class="divider"></div>
-            
-            <button onClick="api.load('templates/bw-bilanz/start.html'); bwstory=false;">
-                <?php  echo _('KW 24 Erfolgsbilanz');?>
-            </button>
-            <button onClick="api.load('templates/bw-bilanz/start.html'); bwstory=true;" class="story">
-                <?php  echo _('Hochformat/Story');?>
-            </button>
-            
-            <div class="divider"></div>
-            
-            <button onClick="api.load('templates/bw-zitat/start.html'); bwstory=false;">
-                <?php  echo _('KW 24 Zitat');?>
-            </button>
-            <button onClick="api.load('templates/bw-zitat/start.html'); bwstory=true;" class="story">
-                <?php  echo _('Hochformat/Story');?>
-            </button>
-            
-            <div class="divider"></div>
-            <button onClick="api.load('templates/bw-steckbrief/start.html'); bwstory=false;">
-                <?php  echo _('KW 24 Steckbrief');?>
-            </button>
-            <button onClick="api.load('templates/bw-steckbrief/start.html'); bwstory=true;" class="story">
-                <?php  echo _('Hochformat/Story');?>
-            </button>
+            <div class="submenu">
+                <button>Thema</button>
+                <div class="submenu-content">
+                    <button onClick="api.load('templates/bw-thema/start.html'); bwstory=false;">Quadratisch</button>
+                    <button onClick="api.load('templates/bw-thema/start.html'); bwstory=true;" >Hochformat</button>
+                </div>
+            </div>
+
+            <div class="submenu">
+                <button>Erfolgsbilanz</button>
+                <div class="submenu-content">
+                    <button onClick="api.load('templates/bw-bilanz/start.html'); bwstory=false;">Quadratisch</button>
+                    <button onClick="api.load('templates/bw-bilanz/start.html'); bwstory=true;" >Hochformat</button>
+                </div>
+            </div>
+
+            <div class="submenu">
+                <button>Zitat</button>
+                <div class="submenu-content">
+                    <button onClick="api.load('templates/bw-zitat/start.html'); bwstory=false;">Quadratisch</button>
+                    <button onClick="api.load('templates/bw-zitat/start.html'); bwstory=true;" >Hochformat</button>
+                </div>
+            </div>
+
+            <div class="submenu">
+                <button>Steckbrief</button>
+                <div class="submenu-content">
+                    <button onClick="api.load('templates/bw-steckbrief/start.html'); bwstory=false;">Quadratisch</button>
+                    <button onClick="api.load('templates/bw-steckbrief/start.html'); bwstory=true;" >Hochformat</button>
+                </div>
+            </div>
 
             <div class="divider"></div>
             
@@ -93,7 +93,15 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
-            <div>Leider gingen wegen einer Fehlerbehebung alle bisher gespeicherten Sharepics kaputt. Sie wurden deshalb gelöscht. Bitte entschuldige diese Unannehmlichkeit. </div>
+            <div class="submenu">
+                <button>Wo sind meine Bilder?</button>
+                <div class="submenu-content">
+                <div style="padding: 1em; color: black;font-style: italic;  font-size: 90%;">
+                Leider gingen wegen einer Fehlerbehebung alle bisher gespeicherten Sharepics kaputt. Sie wurden deshalb gelöscht. Bitte entschuldige diese Unannehmlichkeit. </div>
+
+                </div>
+            </div>
+
             <button onClick="api.save()">
                 <?php  echo _('Save');?>
             </button>

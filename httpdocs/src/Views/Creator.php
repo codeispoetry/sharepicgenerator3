@@ -199,6 +199,7 @@
 		'Max reached': '<?php echo _( 'Maximum number of elements reached') ?>',
 		'Uploading image': '<?php echo _( 'Uploading your image ...') ?>',
 		'Processing image': '<?php echo _( 'Your image is being processed ...') ?>',
+		'Image too big': '<?php echo _( 'The image is too big. Max. 15 MB are allowed.') ?>',
     };
 </script>
 

@@ -306,6 +306,11 @@ class API {
 
     const file = btn.files[0]
 
+    if (file.size > 15 * 1024 * 1024 || file.size < 1000) {
+      alert(lang['Image too big'])
+      return
+    }
+
     const formData = new FormData()
     formData.append('file', file)
 
@@ -366,6 +371,11 @@ class API {
 
     const formData = new FormData()
     formData.append('file', file)
+
+    if (file.size > 15 * 1024 * 1024 || file.size < 1000) {
+      alert(lang['Image too big'])
+      return
+    }
 
     const imageUrl = URL.createObjectURL(file)
 
