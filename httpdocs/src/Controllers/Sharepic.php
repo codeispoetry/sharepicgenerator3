@@ -117,7 +117,7 @@ class Sharepic {
 		$this->jpg            = (bool) ( $data['jpg'] ?? 1 );
 		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
 		$this->info           = ( isset( $data['name'] ) ) ? Helper::sanitze_az09( $data['name'] ) : 'no-name';
-		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish' ) ) ) ? $data['mode'] : 'save';
+		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish', 'bug' ) ) ) ? $data['mode'] : 'save';
 		$this->raw_data       = $data['data'] ?? '';
 		$this->body_class     = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
 
@@ -144,6 +144,10 @@ class Sharepic {
 
 		if ( 'publish' === $this->mode ) {
 			$save_dir = 'templates/mint/community/';
+		}
+
+		if ( 'bug' === $this->mode ) {
+			$save_dir = $this->env->user->get_dir() . 'bug/';
 		}
 
 		$id   = rand( 1000000, 9999999 );
@@ -174,7 +178,7 @@ class Sharepic {
 
 		echo json_encode(
 			array(
-				'full_path'  => 'save/' . $id . '/sharepic.html',
+				'full_path'  => $save . '/sharepic.html',
 				'id'         => $id,
 				'save_count' => $save_count,
 			)

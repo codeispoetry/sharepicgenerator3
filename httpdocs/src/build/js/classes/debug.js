@@ -7,10 +7,9 @@ class Debug {
         return
       }
 
-      const browser = 'Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version
-      const bug = 'Error: ' + message + ' in ' + source + ' at line ' + lineno + ' column ' + colno
-      logger.log(browser + '\t' + bug, 'bug')
-
+      const bugDescription = 'Error: ' + message + ' in ' + source + ' at line ' + lineno + ' column ' + colno
+      this.saveDebugInfo( bugDescription )
+      
       document.querySelector('.bug-detected').style.display = 'block'
 
       config.debug_logged = true
@@ -41,5 +40,34 @@ class Debug {
       name: M[0],
       version: M[1]
     }
+  }
+
+  saveDebugInfo( bugDescription ) {
+    const data = {
+      data: document.getElementById('canvas').outerHTML,
+      name: 'bug.html',
+      mode: 'bug'
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    return fetch(api.api + '&m=save', options)
+    .then(response => {
+      return response.json()
+    })
+    .then(data => {
+      const browser = 'Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version
+      const logLine = browser + '\t' + bugDescription + '\t' + data.full_path
+      logger.log(logLine, 'bug')
+
+    }
+    )
+    .catch(error => console.error('Error:', error))
   }
 }
