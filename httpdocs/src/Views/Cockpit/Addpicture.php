@@ -7,7 +7,7 @@
 
     <section class="selected_only">
         <h3><?php  echo _('Total size');?></h3>
-        <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size" oninput="addpicture.zoom(this.value)">
+        <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size" oninput="addpicture.setSize(this.value)">
     </section>
 
     <section class="selected_only">
@@ -60,21 +60,24 @@
         }  
 
         picRound() {
-            cockpit.target.querySelector('.ap_image').style.borderRadius = '50%';
-            cockpit.target.querySelector('.ap_image').style.width = '100px';
-            cockpit.target.querySelector('.ap_image').style.height = '100px';
+            const apImage = cockpit.target.querySelector('.ap_image')
+            apImage.style.borderRadius = '50%';
+            apImage.dataset.aspectRatio = 1;
+            addpicture.setSize(document.getElementById('addpicture_size').value)
             undo.commit()
         }
 
         picAngular() {
-            cockpit.target.querySelector('.ap_image').style.borderRadius = '0';
-            cockpit.target.querySelector('.ap_image').style.width = '100px';
-            cockpit.target.querySelector('.ap_image').style.height = '100px';
+            const apImage = cockpit.target.querySelector('.ap_image')
+            apImage.style.borderRadius = '0';
+            apImage.dataset.aspectRatio = 1;
+            addpicture.setSize(document.getElementById('addpicture_size').value)
             undo.commit()
         }
 
         picOriginal() {
-            cockpit.target.querySelector('.ap_image').style.borderRadius = '0';
+            const apImage = cockpit.target.querySelector('.ap_image')
+            apImage.style.borderRadius = '0';
         
             const img = new Image();
             img.onload = function() {
@@ -86,11 +89,12 @@
                 const new_w = w * factor;
                 const new_h = h * factor;
                 
-                cockpit.target.querySelector('.ap_image').style.height= new_h + 'px';
-                cockpit.target.querySelector('.ap_image').style.width = new_w + 'px';
-
+                const apImage = cockpit.target.querySelector('.ap_image')
+                apImage.style.height= new_h + 'px';
+                apImage.style.width = new_w + 'px';
+                apImage.dataset.aspectRatio = new_w / new_h;
             }
-            img.src = cockpit.target.querySelector('.ap_image').style.backgroundImage.replace('url("', '').replace('")', '');
+            img.src = apImage.style.backgroundImage.replace('url("', '').replace('")', '');
 
             undo.commit()
         }
@@ -105,10 +109,12 @@
             undo.commit()
         }
 
-        zoom(value) {
-            cockpit.target.querySelector('.ap_image').style.width = value + 'px';
-            cockpit.target.querySelector('.ap_image').style.height = value + 'px';
+        setSize(value) {
+            const apImage = cockpit.target.querySelector('.ap_image')
+            const aspectRatio = apImage.dataset.aspectRatio;
 
+            apImage.style.width = value + 'px';
+            apImage.style.height = value / aspectRatio + 'px';
     
             const fontSize = Math.min( 22, Math.max( 18, value * 0.1 ) );
             cockpit.target.querySelector('.ap_text').style.fontSize = fontSize + 'px';
