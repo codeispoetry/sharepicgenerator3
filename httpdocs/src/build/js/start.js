@@ -13,6 +13,6 @@ window.onload = function () {
   rte = new RichTextEditor()
   logger = new Logger()
   debug = new Debug()
-ddf
+
   api.load('templates/' + config.starttemplate + '/start.html')
 }
