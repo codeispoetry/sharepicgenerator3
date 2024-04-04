@@ -29,7 +29,7 @@
     </div>
 
     <div 
-        class="draggable selectable" 
+        class="draggable selectable freetext" 
         data-cockpit="freetext"  
         onclick="component.select(this)"
         onmousedown="component.startDrag(event)"
@@ -52,7 +52,7 @@
     <div id="patterns">
 
         <div 
-            data-class="draggable selectable" 
+            data-class="draggable selectable freetext" 
             data-cockpit="freetext"  
             onclick="component.select(this)"
             onmousedown="component.startDrag(event)"
@@ -133,5 +133,7 @@
 </div>
 
 <style>
-
+    .freetext{
+        font-family: 'Courier New', Courier, monospace;
+    }
 </style>

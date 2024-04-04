@@ -73,7 +73,9 @@ class Felogger {
 			$this->http_error( 'Could not log normal behaviour.' );
 		}
 
-		$this->env->mailer->send( 'mail@tom-rose.de', 'Bug report', $data );
+		if ( $this->env->config->get( 'Main', 'env' ) !== 'local' ) {
+			$this->env->mailer->send( 'mail@tom-rose.de', 'Bug report', $data );
+		}
 	}
 
 

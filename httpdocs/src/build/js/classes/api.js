@@ -408,10 +408,16 @@ class API {
     xhr.open('POST', this.api + '&m=upload_addpic', true)
     xhr.upload.onprogress = function (e) {
       if (e.lengthComputable) {
+        if( cockpit.target === null) {
+          xhr.abort()
+          return
+        }
+
+        const targetElement = cockpit.target.querySelector('.ap_image')
         const percentComplete = Math.round((e.loaded / e.total) * 100)
 
         let message = lang['Uploading image'] + ' ' + percentComplete + '%'
-        cockpit.target.querySelector('.ap_image').style.opacity = Math.max(0.3, percentComplete / 100)
+        targetElement.style.opacity = Math.max(0.3, percentComplete / 100)
         if (percentComplete > 98) {
           message = lang['Processing image']
         }
@@ -437,6 +443,9 @@ class API {
       }
 
       logger.log('uploads addpic')
+    }
+    xhr.onabort = function () {
+      document.querySelector('.workbench-below .message').innerHTML = ''
     }
     xhr.onerror = function () {
       console.error('Error:', this.status, this.statusText)
