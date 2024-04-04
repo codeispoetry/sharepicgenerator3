@@ -9,8 +9,7 @@ namespace Sharepicgenerator;
 
 require './vendor/autoload.php';
 
-use Sharepicgenerator\Controllers\Usergreens as User;
-use Sharepicgenerator\Controllers\Frontendgreens as Frontend;
+use Sharepicgenerator\Controllers\Frontend;
 use Sharepicgenerator\Controllers\Sharepic;
 use Sharepicgenerator\Controllers\Logger;
 use Sharepicgenerator\Controllers\Felogger;
@@ -25,10 +24,13 @@ Helper::load_textdomain();
 Helper::clean_up_dir( './qrcodes/*', 5 );
 
 $env         = new stdClass();
-$env->user   = new User();
 $env->config = new Config();
+$env->user   = ( $env->config->get( 'Main', 'tenant' ) === 'greens' ) ? new Controllers\Usergreens() : new Controllers\Usermint();
 $env->logger = new Logger( $env->user );
 $env->mailer = new Mailer( $env->config, $env->logger );
+
+##
+
 
 $controller = ( ! empty( $_GET['c'] ) ) ? $_GET['c'] : 'frontend';
 $method     = ( ! empty( $_GET['m'] ) ) ? $_GET['m'] : 'index';

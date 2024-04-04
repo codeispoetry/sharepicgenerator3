@@ -8,7 +8,7 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 
 class UI {
   constructor () {
-    document.getElementById('time-to-logout').innerHTML = '29:59'
+    document.getElementById('time-to-logout').innerHTML = '30:00'
     const startTime = new Date().getTime()
     const logginPeriod = 30 * 60
     setInterval(() => {

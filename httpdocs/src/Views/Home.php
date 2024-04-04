@@ -18,7 +18,7 @@
 				echo '<br>';
 				echo ' <a href="#" onclick="showPasswordBox();">'._('Forgot password?').'</a>';
 
-				if ( 'Greens' === $config->get( 'Main', 'menu' ) ) {
+				if ( 'greens' === $config->get( 'Main', 'tenant' ) ) {
 					printf( '<a href="index.php?auth=config">%s</a>', _('login with Green Net'));
 				}
 			?>

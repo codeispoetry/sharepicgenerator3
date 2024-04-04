@@ -16,12 +16,14 @@
     
 <header>
     <?php
-		$show_my_sharepics = ($this->env->config->get( 'Main', 'authenticator' ) === 'greens');
-		$menu = 'src/Views/Menu-' .$this->env->config->get( 'Main', 'menu' );
-		if( file_exists( $menu . '.php' ) )
-			include $menu . '.php';
-		else
-			include 'src/Views/Menu-Mint.php';	?>
+		$show_my_sharepics = true;
+		$menu = 'src/Views/Menu' . $this->env->config->get( 'Main', 'tenant' ) . '.php';
+		if( ! file_exists( $menu ) ) {
+			echo "Could not find menu file: $menu.php";
+			exit( 1 );	
+		}
+		include $menu;
+		?>
 </header>
 
 <script src="assets/script.js?r=<?php echo rand(); ?>" defer></script>

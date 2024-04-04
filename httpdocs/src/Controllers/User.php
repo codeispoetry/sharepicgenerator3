@@ -3,6 +3,8 @@ namespace Sharepicgenerator\Controllers;
 
 /**
  * User controller.
+ *
+ * @deprecated version 1.0
  */
 class User {
 

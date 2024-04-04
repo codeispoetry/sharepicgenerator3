@@ -1,105 +1,137 @@
 <div id="sharepic"
-    style="background-color: #df9191; background-repeat: no-repeat; background-position: 0px 0px; width: 800px; height:600px;border:0;"
-    data-width="800" data-height="600" data-zoom="1" class="selectable" data-cockpit="background">
-   
-   
-    <div id="freetext" 
-        class="freetext draggable selectable" 
-        data-cockpit="freetext" 
-        data-dragconstraint="true"
-        onclick="component.select(this);rte.setPosition()" 
-        onmousedown="component.startDrag(event)" style="
-            z-index: 21; 
-            left: 120px; 
-            top: 100px; 
-            font-size: 20px;
-            color: black;
-            font-family: Calibri;
-        ">
+    style="	background-color: #000000;
+			background-repeat: no-repeat;
+			background-position: 0px 0px; 
+			width: 800px; height:800px;
+			border:0;
+			overflow:hidden;"
+    		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
+    <link rel="stylesheet" type="text/css" href="templates/de/styles.css?r=7">
 
-        <div contenteditable="true">Tippe Deinen Text hier.</div>
-    </div>
-
-
-</div>
-
-<div id="patterns">
-    <div data-id="freetext" data-class="freetext draggable selectable" data-cockpit="freetext"
-        data-dragconstraint="true" onclick="component.select(this);rte.setPosition()"
-        onmousedown="component.startDrag(event)" style="
-                z-index: 20; 
-                left: 0px; 
-                top: 0px; 
-                font-size: 20px;
-                color: black;
-                font-family: Calibri;
+    <div    class="" 
+            id="background"
+            data-cockpit="background"  
+            onmousedown="background.startDrag(); component.select(this)"
+            onmouseup="background.stopDrag()"
+            style="
+                background-size: cover;
+                background-position-x: 0px;
+                background-position-y: 0px;
+                background-repeat: no-repeat;
+                background-color: #9260ad;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 0 !important;
             ">
-         <div contenteditable="true">Tippe Deinen Text hier.</div>
     </div>
 
-    <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
-        contenteditable="true" 
-        oninput="eyecatcher.makeSquare(this);" 
+    <div 
+        class="draggable selectable" 
+        data-cockpit="freetext"  
         onclick="component.select(this)"
-        onmousedown="component.startDrag(event)" 
+        onmousedown="component.startDrag(event)"
+        oninput="cockpit.setup_freetext(this)"
+        id="freetext"
+        spellcheck="false"
+        contenteditable="true"
         style="
-                z-index: 30; 
-                left: 0px; top: 0px; 
-                font-size: 20px; 
-                color: #232323; 
-                background-color: transparent;
-                transform: rotate(0deg);
-                text-align: center;
-                width: 36px;
-                height: 36px;
-            ">
-        <svg class="draggable" width="280" height="280" viewBox="0 0 74.083332 74.083333" version="1.1" id="svg1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-            <path
-                d="M 28.952854,0.40200885 C 35.932645,-1.4308193 44.036565,3.5671375 45.380381,4.1049773 46.723927,4.6428441 61.070749,11.359814 68.742171,17.313868 78.331512,24.756414 73.766987,35.183485 64.825338,57.782482 55.88395,80.38121 46.878507,77.040823 18.520613,62.575286 -11.237954,47.395627 2.5201489,31.733951 7.8298762,22.389858 13.139634,13.045832 21.972763,2.2348339 28.952854,0.40200885 Z"
-                id="sticker_bg" style="fill:#ffcf53;stroke-width:0.26513" />
-        </svg>
+            left: 120px;
+            top: 100px;
+            transform: scale(0.8);
+            padding: 30px;
+            z-index: 2;
+        "
+    >
+        Mint
+    </div>
 
-        <div class="draggable">
-            <p>Text</p>
+
+    <div id="patterns">
+
+        <div 
+            data-class="draggable selectable" 
+            data-cockpit="freetext"  
+            onclick="component.select(this)"
+            onmousedown="component.startDrag(event)"
+            oninput="cockpit.setup_freetext(this)"
+            data-id="freetext"
+            spellcheck="false"
+            contenteditable="true"
+            style="
+                left: 20px;
+                top: 20px;
+                transform: scale(0.8);
+                padding: 30px;
+                z-index: 2;
+            "
+        >
+            Mint
         </div>
-    </div>
+    
+        <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 
+            data-max="1" contenteditable="true" spellcheck="false"
+            onclick="component.select(this)"
+            data-id="copyright"
+            style="
+                font-size: 14px;
+                color: #000000;
+            ">Copyright-Hinweis
+        </div>
 
-    <div
-        data-class="selectable copyright" 
-        data-cockpit="copyright" 
-        data-id="copyright"
-        data-max="1"
-        contenteditable="true" spellcheck="false" 
-        onclick="component.select(this)"
-        style="
-            font-size: 14px;
-            color: #000000;
-            z-index: 10;
-        ">&nbsp;Hinweis
-    </div>
+        <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
+        data-max="1" spellcheck="false"
+        contenteditable="true" oninput="eyecatcher.makeSquare(this);" onclick="component.select(this)"
+        onmousedown="component.startDrag(event)" style="
+                    z-index:2; 
+                    left: 5px; top: 5px; 
+                    font-size: 20px; 
+                    color: #e9e9e9; 
+                    background-color: #0ba1dd;
+                    width: 40px; height: 40px;
+                "
+        >
+            <div>
+                <p>Text</p>
+            </div>
+        </div>
 
-    <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
+
+    
+        <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
         onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
                 align-items: center;
                 position: absolute;
-                left:300px; top:290px;
+                left:300px; 
+                top:290px;
+                padding: 20px;
             ">
-        <div class="ap_image" style="
-            background-image: url('templates/mint/addpic.jpg');
+        <div class="ap_image" data-aspect-ratio="1" style="
+            background-image: url('assets/addpic.jpg');
             background-size: cover; 
             width: 100px; 
-            aspect-ratio: 1; 
+            height: 100px;
             border-radius: 50%;"></div>
         <div class="ap_text" contenteditable="true" style="
             display: flex; 
-            flex-direction: column;
             justify-content: center;
             color: #ffffff;
         ">Bildbeschreibung</div>
     </div>
+    </div>
+
+    <script>
+        undo.commit()
+
+        config.cockpit = {
+            elements: ['dimensions','search','background','freetext','copyright', 'eyecatcher','addpicture']
+        }
+
+    </script>
 </div>
 
-<script>
-    document.querySelector('head').insertAdjacentHTML('beforeend', '<link rel="stylesheet" type="text/css" href="templates/mint/styles.css?r= ' + Math.random() + '">');
-</script>
+<style>
+
+</style>
