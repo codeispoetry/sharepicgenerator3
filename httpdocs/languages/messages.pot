@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-01 19:40+0200\n"
+"POT-Creation-Date: 2024-04-05 12:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,82 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: httpdocs/src/Controllers/Frontend.php:83
-#: httpdocs/src/Controllers/Frontend.php:89 httpdocs/src/Views/Home.php:17
-#: httpdocs/src/Views/Home.php:28
-msgid "Register"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:84
-msgid "Registration failed. Are you already registered?"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:90
-msgid ""
-"You have successfully registered. Please check your mails to confirm your "
-"registration."
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:98
-#: httpdocs/src/Controllers/Frontend.php:118
-#: httpdocs/src/Controllers/Frontend.php:119
-msgid "Reset password"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:99
-msgid "Please check your email for the reset link."
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:102
-msgid "Error"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:103
-msgid "An error occurred. Please try again later."
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:115
-msgid "Create your password"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:116
-msgid "Set your new password"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:133
-msgid "An error occured"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:134
-msgid "Your password could not be set. Did you repeat it correctly?"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:146 httpdocs/src/Views/Home.php:36
-msgid "Password reset"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:147
-msgid "Your password has been reset. Please login."
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:231
-#: httpdocs/src/Views/Menu-Mint.php:32 httpdocs/src/Views/Menu-Greens.php:26
-msgid "Logout"
-msgstr ""
-
-#: httpdocs/src/Controllers/Frontend.php:232
-msgid "You have been logged out."
-msgstr ""
-
-#: httpdocs/src/Controllers/User.php:485
+#: httpdocs/src/Controllers/User.php:487
 msgid "Account created"
 msgstr ""
 
-#: httpdocs/src/Controllers/User.php:510
+#: httpdocs/src/Controllers/User.php:512
 msgid "Password Reset"
 msgstr ""
 
-#: httpdocs/src/Views/Home.php:4 httpdocs/src/Views/Home-Greens.php:4
+#: httpdocs/src/Views/Home.php:4 httpdocs/src/Views/Homegreens.php:4
 msgid "Sharepicgenerator"
 msgstr ""
 
@@ -105,7 +38,7 @@ msgid ""
 msgstr ""
 
 #: httpdocs/src/Views/Home.php:14 httpdocs/src/Views/Home.php:31
-#: httpdocs/src/Views/Home.php:39 httpdocs/src/Views/Home-Greens.php:14
+#: httpdocs/src/Views/Home.php:39 httpdocs/src/Views/Homegreens.php:14
 msgid "Login"
 msgstr ""
 
@@ -113,11 +46,15 @@ msgstr ""
 msgid "Not registered yet?"
 msgstr ""
 
+#: httpdocs/src/Views/Home.php:17 httpdocs/src/Views/Home.php:28
+msgid "Register"
+msgstr ""
+
 #: httpdocs/src/Views/Home.php:19
 msgid "Forgot password?"
 msgstr ""
 
-#: httpdocs/src/Views/Home.php:22 httpdocs/src/Views/Home-Greens.php:19
+#: httpdocs/src/Views/Home.php:22 httpdocs/src/Views/Homegreens.php:19
 msgid "login with Green Net"
 msgstr ""
 
@@ -125,70 +62,12 @@ msgstr ""
 msgid "Already registered?"
 msgstr ""
 
-#: httpdocs/src/Views/Menu-Mint.php:4
-msgid "MINTSharepic"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:7 httpdocs/src/Views/Menu-Greens.php:7
-msgid "German"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:10 httpdocs/src/Views/Menu-Greens.php:10
-msgid "English"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:14 httpdocs/src/Views/Menu-Greens.php:20
-#: httpdocs/src/Views/Pages/Imprint.php:4
-msgid "Imprint"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:17 httpdocs/src/Views/Menu-Greens.php:23
-#: httpdocs/src/Views/Pages/Privacy.php:4
-msgid "Privacy"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:23
-msgid "Logfile"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:24
-msgid "Sharepics"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:26
-msgid "Publish"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:37
-msgid "Back to home"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:43 httpdocs/src/Views/Menu-Greens.php:3
-msgid "File"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:46
-msgid "New template"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:49 httpdocs/src/Views/Menu-Greens.php:106
-msgid "Save"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:52 httpdocs/src/Views/Creator.php:59
-msgid "Download"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:58 httpdocs/src/Views/Menu-Greens.php:94
-msgid "My Sharepics"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Mint.php:64
-msgid "latest"
+#: httpdocs/src/Views/Home.php:36
+msgid "Password reset"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
-#: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
+#: httpdocs/src/Views/Creator.php:141 httpdocs/src/Views/Creator.php:143
 msgid "Eyecatcher"
 msgstr ""
 
@@ -281,7 +160,7 @@ msgid "L"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
-#: httpdocs/src/Views/Creator.php:131 httpdocs/src/Views/Creator.php:133
+#: httpdocs/src/Views/Creator.php:133 httpdocs/src/Views/Creator.php:135
 msgid "Additional text"
 msgstr ""
 
@@ -297,7 +176,7 @@ msgid "Color"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Dimensions.php:2
-#: httpdocs/src/Views/Creator.php:83 httpdocs/src/Views/Creator.php:85
+#: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:87
 msgid "Dimensions"
 msgstr ""
 
@@ -317,22 +196,28 @@ msgstr ""
 msgid "square 16:9"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:42
+#: httpdocs/src/Views/Cockpit/Dimensions.php:41
+msgid ""
+"You are missing a particular size? Please feel free to edit the sizes "
+"manually above."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:47
 msgid "QR-Code"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:45
+#: httpdocs/src/Views/Cockpit/Dimensions.php:50
 msgid ""
 "You can scan this QR-Code with your smartphone to open your sharepic on your "
 "mobile."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:46
+#: httpdocs/src/Views/Cockpit/Dimensions.php:52
 msgid "This link is valid for 5 minutes."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:2
-#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
+#: httpdocs/src/Views/Creator.php:101 httpdocs/src/Views/Creator.php:103
 msgid "Edit background image"
 msgstr ""
 
@@ -368,9 +253,8 @@ msgstr ""
 msgid "Delete background image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Vorort.php:2
-#: httpdocs/src/Views/Menu-Greens.php:86 httpdocs/src/Views/Creator.php:155
-#: httpdocs/src/Views/Creator.php:157
+#: httpdocs/src/Views/Cockpit/Vorort.php:2 httpdocs/src/Views/Menugreens.php:86
+#: httpdocs/src/Views/Creator.php:157 httpdocs/src/Views/Creator.php:159
 msgid "Vor Ort"
 msgstr ""
 
@@ -385,8 +269,8 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
 #: httpdocs/src/Views/Cockpit/Addpicture.php:34
-#: httpdocs/src/Views/Creator.php:115 httpdocs/src/Views/Creator.php:117
-#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
+#: httpdocs/src/Views/Creator.php:117 httpdocs/src/Views/Creator.php:119
+#: httpdocs/src/Views/Creator.php:125 httpdocs/src/Views/Creator.php:127
 msgid "Text"
 msgstr ""
 
@@ -447,7 +331,7 @@ msgid "Describe the image you want"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:35
-#: httpdocs/src/Views/Menu-Greens.php:17
+#: httpdocs/src/Views/Menumint.php:17 httpdocs/src/Views/Menugreens.php:17
 msgid "Create"
 msgstr ""
 
@@ -488,7 +372,7 @@ msgid "For a text in your sharepic, edit it directly in the sharepic."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Copyright.php:2
-#: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
+#: httpdocs/src/Views/Creator.php:109 httpdocs/src/Views/Creator.php:111
 msgid "Copyright"
 msgstr ""
 
@@ -571,6 +455,79 @@ msgstr ""
 msgid "Usage Log"
 msgstr ""
 
+#: httpdocs/src/Views/Menumint.php:3 httpdocs/src/Views/Menugreens.php:3
+msgid "File"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:7 httpdocs/src/Views/Menugreens.php:7
+msgid "German"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:10 httpdocs/src/Views/Menugreens.php:10
+msgid "English"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:14 httpdocs/src/Views/Menugreens.php:14
+msgid "Support"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:20 httpdocs/src/Views/Menugreens.php:20
+#: httpdocs/src/Views/Pages/Imprint.php:4
+msgid "Imprint"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:23 httpdocs/src/Views/Menugreens.php:23
+#: httpdocs/src/Views/Pages/Privacy.php:4
+msgid "Privacy"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:26 httpdocs/src/Views/Menugreens.php:26
+msgid "Logout"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:32
+msgid "Mint"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:35
+msgid "Create Sharepic"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:42 httpdocs/src/Views/Menugreens.php:94
+msgid "My Sharepics"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:45 httpdocs/src/Views/Menugreens.php:106
+msgid "Save"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:54 httpdocs/src/Views/Menugreens.php:115
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:16
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:17
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:18
+msgid "delete"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:125
+msgid "Time to logout:"
+msgstr ""
+
+#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:125
+msgid "minutes"
+msgstr ""
+
+#: httpdocs/src/Views/Menugreens.php:32
+msgid "Germany"
+msgstr ""
+
+#: httpdocs/src/Views/Menugreens.php:35
+msgid "Standardlayout"
+msgstr ""
+
+#: httpdocs/src/Views/Menugreens.php:41
+msgid "Baden-Wuerttemberg"
+msgstr ""
+
 #: httpdocs/src/Views/Components/Color.php:9
 msgid "Tanne"
 msgstr ""
@@ -648,109 +605,86 @@ msgstr ""
 msgid "to back"
 msgstr ""
 
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:16
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:17
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:18
-#: httpdocs/src/Views/Menu-Greens.php:115
-msgid "delete"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Greens.php:14
-msgid "Support"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Greens.php:32
-msgid "Germany"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Greens.php:35
-msgid "Standardlayout"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Greens.php:41
-msgid "Baden-Wuerttemberg"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Greens.php:125
-msgid "Time to logout:"
-msgstr ""
-
-#: httpdocs/src/Views/Menu-Greens.php:125
-msgid "minutes"
-msgstr ""
-
-#: httpdocs/src/Views/Creator.php:41
+#: httpdocs/src/Views/Creator.php:43
 msgid "Undo"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:44
+#: httpdocs/src/Views/Creator.php:46
 msgid ""
 "An error occurred. The sharepicgenerator might not behave as expected. This "
 "bug has been reported for further investigation."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:47
+#: httpdocs/src/Views/Creator.php:49
 msgid ""
 "Your are using a yet unsupported browser. If you encounter any problems, "
 "please try Chrome or Firefox instead."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:91 httpdocs/src/Views/Creator.php:93
+#: httpdocs/src/Views/Creator.php:61
+msgid "Download"
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:93 httpdocs/src/Views/Creator.php:95
 msgid "Search or create image"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:147 httpdocs/src/Views/Creator.php:149
+#: httpdocs/src/Views/Creator.php:149 httpdocs/src/Views/Creator.php:151
 msgid "Front picture"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:168
+#: httpdocs/src/Views/Creator.php:170
 msgid "Logged in as"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:183
+#: httpdocs/src/Views/Creator.php:185
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:199
+#: httpdocs/src/Views/Creator.php:201
 msgid "Are you sure?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:200
+#: httpdocs/src/Views/Creator.php:202
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:201
+#: httpdocs/src/Views/Creator.php:203
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:202
+#: httpdocs/src/Views/Creator.php:204
 msgid "Maximum number of elements reached"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:203
+#: httpdocs/src/Views/Creator.php:205
 msgid "Uploading your image ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:204
+#: httpdocs/src/Views/Creator.php:206
 msgid "Your image is being processed ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:205
+#: httpdocs/src/Views/Creator.php:207
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:206
+#: httpdocs/src/Views/Creator.php:208
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:207
+#: httpdocs/src/Views/Creator.php:209
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:210
+msgid "Please wait until the image is uploaded."
 msgstr ""
 
 #: httpdocs/src/Views/Pixabay.php:4
@@ -763,7 +697,7 @@ msgid ""
 "image and closes results."
 msgstr ""
 
-#: httpdocs/src/Views/Home-Greens.php:7
+#: httpdocs/src/Views/Homegreens.php:7
 msgid ""
 "Create sharepics for your social media channels in the layout of the German "
 "Green Party."

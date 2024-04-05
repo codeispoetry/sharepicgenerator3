@@ -7,6 +7,11 @@ class API {
   }
 
   create () {
+    if (config.uploading) {
+      alert(lang['Please wait until the image is uploaded'])
+      return
+    }
+
     document.querySelector('.create').disabled = true
     document.querySelector('.create').classList.add('waiting')
 
@@ -326,6 +331,7 @@ class API {
       return
     }
 
+    config.uploading = true
     const formData = new FormData()
     formData.append('file', file)
 
@@ -372,10 +378,12 @@ class API {
       }
 
       ui.showTab('background')
+      config.uploading = false
 
       logger.log('uploads file')
     }
     xhr.onerror = function () {
+      config.uploading = false
       console.error('Error:', this.status, this.statusText)
     }
     xhr.send(formData)
@@ -405,6 +413,7 @@ class API {
     const imageUrl = URL.createObjectURL(file)
 
     config.uploadAddPic = cockpit.target
+    config.uploading = true
 
     const imgElement = config.uploadAddPic.querySelector('.ap_image')
 
@@ -448,6 +457,7 @@ class API {
         document.querySelector('.workbench-below .message').innerHTML = ''
 
         config.uploadAddPic = null
+        config.uploading = false
 
         logger.prepare_log_data({
           path_on_server: resp.path
@@ -461,10 +471,12 @@ class API {
     xhr.onabort = function () {
       document.querySelector('.workbench-below .message').innerHTML = ''
       config.uploadAddPic = null
+      config.uploading = false
     }
     xhr.onerror = function () {
       console.error('Error:', this.status, this.statusText)
       config.uploadAddPic = null
+      config.uploading = false
     }
     xhr.send(formData)
   }
