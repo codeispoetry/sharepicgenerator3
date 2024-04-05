@@ -8,8 +8,8 @@ class Debug {
       }
 
       const bugDescription = 'Error: ' + message + ' in ' + source + ' at line ' + lineno + ' column ' + colno
-      this.saveDebugInfo( bugDescription )
-      
+      this.saveDebugInfo(bugDescription)
+
       document.querySelector('.bug-detected').style.display = 'block'
 
       config.debug_logged = true
@@ -42,7 +42,7 @@ class Debug {
     }
   }
 
-  saveDebugInfo( bugDescription ) {
+  saveDebugInfo (bugDescription) {
     const data = {
       data: document.getElementById('canvas').outerHTML,
       name: 'bug.html',
@@ -58,16 +58,15 @@ class Debug {
     }
 
     return fetch(api.api + '&m=save', options)
-    .then(response => {
-      return response.json()
-    })
-    .then(data => {
-      const browser = 'Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version
-      const logLine = browser + '\t' + bugDescription + '\t' + data.full_path
-      logger.log(logLine, 'bug')
-
-    }
-    )
-    .catch(error => console.error('Error:', error))
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        const browser = 'Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version
+        const logLine = browser + '\t' + bugDescription + '\t' + data.full_path
+        logger.log(logLine, 'bug')
+      }
+      )
+      .catch(error => console.error('Error:', error))
   }
 }

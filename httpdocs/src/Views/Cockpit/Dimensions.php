@@ -18,7 +18,7 @@
             <button data-sizepreset="1200:630" title="Facebook">
                 <img src="assets/icons/brands/facebook.svg">
             </button>
-            <button data-sizepreset="900:1600" title="Instagram">
+            <button data-sizepreset="1080:1350" title="Instagram">
                 <img src="assets/icons/brands/instagram.svg">
             </button>
             <button data-sizepreset="1600:900" title="X">
@@ -35,6 +35,11 @@
             <button data-sizepreset="3531:4984">Plakat DIN A3</button>
             <button data-sizepreset="2492:3520">Plakat DIN A2</button>
             <button data-sizepreset="3520:4972">Plakat DIN A1</button>
+        </div>
+        <div>
+            <?php
+                echo _('You are missing a particular size? Please feel free to edit the sizes manually above.');
+            ?>
         </div>
     </section>
 

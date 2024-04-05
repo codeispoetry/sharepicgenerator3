@@ -9,11 +9,11 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 class UI {
   constructor () {
     document.getElementById('time-to-logout').innerHTML = '30:00'
-    const startTime = new Date().getTime()
+    config.startTime = new Date().getTime()
     const logginPeriod = 30 * 60
     setInterval(() => {
       const currentTime = new Date().getTime()
-      const elapsedTime = Math.floor((currentTime - startTime) / 1000)
+      const elapsedTime = Math.floor((currentTime - config.startTime) / 1000)
 
       const min = Math.floor((logginPeriod - elapsedTime) / 60)
       const sec = Math.floor((logginPeriod - elapsedTime) % 60).toString().padStart(2, '0')
@@ -24,6 +24,11 @@ class UI {
       }
     },
     1000)
+  }
+
+  resetLogoutTimer () {
+    config.startTime = new Date().getTime()
+    config.remindedToSave = false
   }
 
   reminderToSave () {

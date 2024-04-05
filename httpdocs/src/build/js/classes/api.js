@@ -6,18 +6,82 @@ class API {
     this.ai = config.url + '/index.php?c=openai'
   }
 
-  delete (saving) {
-    const payload = {
-      saving
-    }
+  create () {
+    document.querySelector('.create').disabled = true
+    document.querySelector('.create').classList.add('waiting')
 
-    fetch(this.api + '&m=delete', {
+    document.querySelector('#tabsbuttons button').click()
+
+    const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(payload)
-    })
+      body: JSON.stringify(this.prepare())
+    }
+
+    this.showWaiting()
+
+    fetch(this.api + '&m=create', options)
+      .then(response => {
+        if (response.status !== 200) {
+          if (confirm(lang['logged out'] + ' ' + response.status + ' ' + response.statusText)) {
+            location.reload()
+          }
+          throw new Error(response.status + ' ' + response.statusText)
+        }
+        return response.text()
+      })
+      .then(data => {
+        console.log(data)
+        data = JSON.parse(data)
+
+        // Create download link and click it
+        const a = document.createElement('a')
+        a.href = config.url + '/' + data.path
+        a.download = 'sharepic.' + data.path.slice(-3)
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+
+        // Display qr code
+        // document.getElementById('qrcode-section').style.display = 'block'
+        const qrcontainer = document.getElementById('qrcode')
+        qrcontainer.innerHTML = ''
+        const qr = document.createElement('img')
+        qr.src = 'index.php?c=proxy&r=' + Math.random() + '&p=qrcode.png'
+        qrcontainer.appendChild(qr)
+
+        document.querySelector('.create').disabled = false
+        document.querySelector('.create').classList.remove('waiting')
+        this.closeWaiting()
+
+        logger.log('creates sharepic')
+
+        ui.resetLogoutTimer()
+      })
+      .catch(error => console.error('Error:', error))
+  }
+
+  // mode=save or mode=publish
+  save (mode = 'save') {
+    const name = prompt('Name des Sharepics', 'Sharepic')
+
+    const data = {
+      data: document.getElementById('canvas').outerHTML,
+      name,
+      mode
+    }
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    fetch(this.api + '&m=save', options)
       .then(response => {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
@@ -25,9 +89,27 @@ class API {
         return response.text()
       })
       .then(data => {
-        logger.log('deletes sharepic ' + saving)
+        // console.log(data)
+        data = JSON.parse(data)
+
+        try {
+          const html = `<div class="dropdown-item-double">
+              <button class="did-1" onclick="api.load('${data.full_path}')">
+                ${name}
+              </button>
+              <button class="did-2" onclick="ui.deleteSavedSharepic(this, '${data.id}')">
+                <img src="assets/icons/delete.svg">
+              </button>
+            </div>`
+          document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
+        } catch (e) {
+          console.error(e)
+        }
+
+        logger.log('saves sharepic ' + name)
+        ui.resetLogoutTimer()
       })
-      .catch((error) => console.error('Error:', error))
+      .catch(error => console.error('Error:', error))
   }
 
   load (path = 'templates/mint/start.html') {
@@ -122,25 +204,18 @@ class API {
     return data
   }
 
-  // mode=save or mode=publish
-  save (mode = 'save') {
-    const name = prompt('Name des Sharepics', 'Sharepic')
-
-    const data = {
-      data: document.getElementById('canvas').outerHTML,
-      name,
-      mode
+  delete (saving) {
+    const payload = {
+      saving
     }
 
-    const options = {
+    fetch(this.api + '&m=delete', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
-    }
-
-    fetch(this.api + '&m=save', options)
+      body: JSON.stringify(payload)
+    })
       .then(response => {
         if (response.status !== 200) {
           throw new Error(response.status + ' ' + response.statusText)
@@ -148,81 +223,9 @@ class API {
         return response.text()
       })
       .then(data => {
-        // console.log(data)
-        data = JSON.parse(data)
-
-        try {
-          const html = `<div class="dropdown-item-double">
-            <button class="did-1" onclick="api.load('${data.full_path}')">
-              ${name}
-            </button>
-            <button class="did-2" onclick="ui.deleteSavedSharepic(this, '${data.id}')">
-              <img src="assets/icons/delete.svg">
-            </button>
-          </div>`
-          document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
-        } catch (e) {
-          console.error(e)
-        }
-
-        logger.log('saves sharepic ' + name)
+        logger.log('deletes sharepic ' + saving)
       })
-      .catch(error => console.error('Error:', error))
-  }
-
-  create () {
-    document.querySelector('.create').disabled = true
-    document.querySelector('.create').classList.add('waiting')
-
-    document.querySelector('#tabsbuttons button').click()
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.prepare())
-    }
-
-    this.showWaiting()
-
-    fetch(this.api + '&m=create', options)
-      .then(response => {
-        if (response.status !== 200) {
-          if (confirm(lang['logged out'] + ' ' + response.status + ' ' + response.statusText)) {
-            location.reload()
-          }
-          throw new Error(response.status + ' ' + response.statusText)
-        }
-        return response.text()
-      })
-      .then(data => {
-        console.log(data)
-        data = JSON.parse(data)
-
-        // Create download link and click it
-        const a = document.createElement('a')
-        a.href = config.url + '/' + data.path
-        a.download = 'sharepic.' + data.path.slice(-3)
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
-
-        // Display qr code
-        // document.getElementById('qrcode-section').style.display = 'block'
-        const qrcontainer = document.getElementById('qrcode')
-        qrcontainer.innerHTML = ''
-        const qr = document.createElement('img')
-        qr.src = 'index.php?c=proxy&r=' + Math.random() + '&p=qrcode.png'
-        qrcontainer.appendChild(qr)
-
-        document.querySelector('.create').disabled = false
-        document.querySelector('.create').classList.remove('waiting')
-        this.closeWaiting()
-
-        logger.log('creates sharepic')
-      })
-      .catch(error => console.error('Error:', error))
+      .catch((error) => console.error('Error:', error))
   }
 
   dalle () {
@@ -318,7 +321,7 @@ class API {
     const file = btn.files[0]
 
     if (file.size > 15 * 1024 * 1024 || file.size < 1000) {
-      logger.log('tried to upload file that is too big ', Math.round( file.size / 1024 ) + ' kb')
+      logger.log('tried to upload file that is too big ', Math.round(file.size / 1024) + ' kb')
       alert(lang['Image too big'])
       return
     }
@@ -389,7 +392,7 @@ class API {
     formData.append('file', file)
 
     if (file.size > 15 * 1024 * 1024 || file.size < 1000) {
-      logger.log('tried to upload file that is too big ', Math.round( file.size / 1024 ) + ' kb')
+      logger.log('tried to upload file that is too big ', Math.round(file.size / 1024) + ' kb')
       alert(lang['Image too big'])
       return
     }
@@ -401,19 +404,26 @@ class API {
 
     const imageUrl = URL.createObjectURL(file)
 
-    cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${imageUrl}')`
-    cockpit.target.querySelector('.ap_image').style.filter = 'grayscale(100%)'
+    config.uploadAddPic = cockpit.target
+
+    const imgElement = config.uploadAddPic.querySelector('.ap_image')
+
+    imgElement.style.backgroundImage = `url('${imageUrl}')`
+    imgElement.style.filter = 'grayscale(100%)'
 
     const xhr = new XMLHttpRequest()
     xhr.open('POST', this.api + '&m=upload_addpic', true)
     xhr.upload.onprogress = function (e) {
       if (e.lengthComputable) {
-        if( cockpit.target === null) {
+        if (config.uploadAddPic === null ||
+            document.contains(config.uploadAddPic) === false ||
+            config.uploadAddPic.querySelector('.ap_image') === null
+        ) {
           xhr.abort()
           return
         }
 
-        const targetElement = cockpit.target.querySelector('.ap_image')
+        const targetElement = config.uploadAddPic.querySelector('.ap_image')
         const percentComplete = Math.round((e.loaded / e.total) * 100)
 
         let message = lang['Uploading image'] + ' ' + percentComplete + '%'
@@ -429,11 +439,15 @@ class API {
       if (this.status === 200) {
         const resp = JSON.parse(this.response)
 
-        cockpit.target.querySelector('.ap_image').style.backgroundImage = `url('${resp.path}')`
+        const imgElement = config.uploadAddPic.querySelector('.ap_image')
+
+        imgElement.style.backgroundImage = `url('${resp.path}')`
+        imgElement.style.filter = ''
+        imgElement.style.opacity = 1
 
         document.querySelector('.workbench-below .message').innerHTML = ''
-        cockpit.target.querySelector('.ap_image').style.filter = ''
-        cockpit.target.querySelector('.ap_image').style.opacity = 1
+
+        config.uploadAddPic = null
 
         logger.prepare_log_data({
           path_on_server: resp.path
@@ -446,9 +460,11 @@ class API {
     }
     xhr.onabort = function () {
       document.querySelector('.workbench-below .message').innerHTML = ''
+      config.uploadAddPic = null
     }
     xhr.onerror = function () {
       console.error('Error:', this.status, this.statusText)
+      config.uploadAddPic = null
     }
     xhr.send(formData)
   }
