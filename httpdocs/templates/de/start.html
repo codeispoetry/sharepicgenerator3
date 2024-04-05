@@ -149,6 +149,12 @@
         *  Remove empty lines
         */
         document.getElementById('greentext').onkeydown = function(event){
+            const lineCount = event.target.childElementCount;
+            if (lineCount >= 10 && event.key === 'Enter') {
+                alert(lang['Max number of lines reached'])
+                event.preventDefault();
+            }
+
             const selection = window.getSelection();
             const leaveLine = event.key === 'Enter' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'ArrowUp' || event.key === 'ArrowDown';
             const activeLine = selection.anchorNode;
@@ -162,7 +168,6 @@
             if (activeLine.textContent === '' && leaveLine ) {
                 activeLine.remove()
             }
-
 
             config.lastActiveLine = activeLine;
         }

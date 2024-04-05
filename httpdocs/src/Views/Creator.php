@@ -208,6 +208,7 @@
 		'logged out': '<?php echo _( 'You have automatically been logged out. Please reload the page and log in again.') ?>',
 		'You will be logged out soon': '<?php echo _( 'You will be automatically logged out soon. Please either save your work or download it and reload the page.') ?>',
 		'Please wait until the image is uploaded': '<?php echo _( 'Please wait until the image is uploaded.') ?>',
+		'Max number of lines reached': '<?php echo _( 'Maximum number of lines reached. For longer text, please use additional text element.') ?>',
    };
 </script>
 
