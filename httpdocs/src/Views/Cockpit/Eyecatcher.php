@@ -33,7 +33,7 @@
     class Eyecatcher{
         setSize(input){
             cockpit.target.style.fontSize = input.value + 'px';
-            this.makeSquare(cockpit.target);
+            this.makeSquare();
         }
 
         setBgColor(input) {  
@@ -48,10 +48,12 @@
             cockpit.target.style.transform = 'rotate(' + input.value + 'deg)';
         }
 
-        makeSquare (whole) {
+        makeSquare () {
             if(cockpit.target === null) return
 
-            const text = whole.querySelector('div')
+            const text = cockpit.target.querySelector('div')
+            if (text === null) return
+            
             text.style.width = 'auto'
             text.style.height = 'auto'
 
