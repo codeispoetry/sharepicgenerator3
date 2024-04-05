@@ -492,6 +492,8 @@ class API {
       url
     }
 
+    config.uploading = true
+
     const options = {
       method: 'POST',
       headers: {
@@ -509,11 +511,15 @@ class API {
       })
       .then(data => {
         data = JSON.parse(data)
+        config.uploading = false
 
         document.getElementById('background').style.backgroundImage = `url('${data.path}')`
         document.getElementById('background').style.filter = ''
       })
-      .catch(error => console.error('Error:', error))
+      .catch(error =>{
+        config.uploading = false
+        console.error('Error:', error)
+      } )
   }
 
   showWaiting () {
