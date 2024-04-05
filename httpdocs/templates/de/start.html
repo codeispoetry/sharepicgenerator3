@@ -145,6 +145,28 @@
             elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','addpicture']
         }
 
+        /*
+        *  Remove empty lines
+        */
+        document.getElementById('greentext').onkeydown = function(event){
+            const selection = window.getSelection();
+            const leaveLine = event.key === 'Enter' || event.key === 'ArrowLeft' || event.key === 'ArrowRight' || event.key === 'ArrowUp' || event.key === 'ArrowDown';
+            const activeLine = selection.anchorNode;
+
+            // If you type Enter at the beginning of a line, remove the line
+           if(selection.getRangeAt(0).startOffset === 0 && event.key === 'Enter'){
+                event.preventDefault();
+            }
+
+            // If you leave an empty line, remove the line
+            if (activeLine.textContent === '' && leaveLine ) {
+                activeLine.remove()
+            }
+
+
+            config.lastActiveLine = activeLine;
+        }
+
     </script>
 </div>
 
