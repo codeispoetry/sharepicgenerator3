@@ -179,8 +179,11 @@ class API {
     if (bgImage !== '') {
       const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
       const params = new URLSearchParams(url.search)
-      const backgroundImage = params.get('p').replace(/"\)$/g, '')
-      clonedCanvas.querySelector('#background').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
+      const p = params.get('p')
+      if ( p ) {
+        const backgroundImage = p.replace(/"\)$/g, '')
+        clonedCanvas.querySelector('#background').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
+      }
     }
 
     // Replace all additonal pictures with local path file
@@ -190,8 +193,11 @@ class API {
       if (bgImage !== '') {
         const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
         const params = new URLSearchParams(url.search)
-        const backgroundImage = params.get('p').replace(/"\)$/g, '')
-        addPic.querySelector('.ap_image').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
+        const p = params.get('p')
+        if ( p  ) {
+          const backgroundImage = p.replace(/"\)$/g, '')
+          addPic.querySelector('.ap_image').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
+        }
       }
     })
 
