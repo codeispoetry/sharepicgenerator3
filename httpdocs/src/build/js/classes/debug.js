@@ -19,8 +19,6 @@ class Debug {
     if (!supportedBrowsers.includes(this.getBrowserInfo().name)) {
       document.querySelector('.browser-not-supported').style.display = 'block'
     }
-
-    document.getElementById('version').innerHTML = 'js6'
   }
 
   getBrowserInfo () {
