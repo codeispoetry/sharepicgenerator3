@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-05 12:37+0200\n"
+"POT-Creation-Date: 2024-04-05 21:06+0200\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -166,6 +166,16 @@ msgstr "M"
 msgid "L"
 msgstr "L"
 
+#: httpdocs/src/Views/Cockpit/Greentext.php:44
+msgid ""
+"Sometimes the text is not displayed correctly. In this case, please reset "
+"the text."
+msgstr "Manchmal wird der Text nicht korrekt angezeigt. In diesem Fall kannst Du den Text zurücksetzen."
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:46
+msgid "Reset text"
+msgstr "Text zurückgesetzen"
+
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
 #: httpdocs/src/Views/Creator.php:133 httpdocs/src/Views/Creator.php:135
 msgid "Additional text"
@@ -207,7 +217,9 @@ msgstr "16:9"
 msgid ""
 "You are missing a particular size? Please feel free to edit the sizes "
 "manually above."
-msgstr "Du vermisst eine bestimmte Größe? Du kannst jederzeit die Größen oben manuell anpassen."
+msgstr ""
+"Du vermisst eine bestimmte Größe? Du kannst jederzeit die Größen oben "
+"manuell anpassen."
 
 #: httpdocs/src/Views/Cockpit/Dimensions.php:47
 msgid "QR-Code"
@@ -520,11 +532,11 @@ msgstr "Zwischenpeichern"
 msgid "delete"
 msgstr "löschen"
 
-#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:125
+#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:123
 msgid "Time to logout:"
 msgstr "Zeit bis zum automatischen Ausloggen:"
 
-#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:125
+#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:123
 msgid "minutes"
 msgstr "Minuten"
 
@@ -709,6 +721,12 @@ msgstr ""
 #: httpdocs/src/Views/Creator.php:210
 msgid "Please wait until the image is uploaded."
 msgstr "Bitte warte, bis das Bild hochgeladen ist."
+
+#: httpdocs/src/Views/Creator.php:211
+msgid ""
+"Maximum number of lines reached. For longer text, please use additional text "
+"element."
+msgstr "Die maximale Anzahl von Zeilen wurde erreicht. Für längeren Text nutze bitte das zusätzliche Textelement."
 
 #: httpdocs/src/Views/Pixabay.php:4
 msgid "All images are from "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-05 12:37+0200\n"
+"POT-Creation-Date: 2024-04-05 21:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,6 +157,16 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:34
 msgid "L"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:44
+msgid ""
+"Sometimes the text is not displayed correctly. In this case, please reset "
+"the text."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:46
+msgid "Reset text"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
@@ -508,11 +518,11 @@ msgstr ""
 msgid "delete"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:125
+#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:123
 msgid "Time to logout:"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:125
+#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:123
 msgid "minutes"
 msgstr ""
 
@@ -685,6 +695,12 @@ msgstr ""
 
 #: httpdocs/src/Views/Creator.php:210
 msgid "Please wait until the image is uploaded."
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:211
+msgid ""
+"Maximum number of lines reached. For longer text, please use additional text "
+"element."
 msgstr ""
 
 #: httpdocs/src/Views/Pixabay.php:4
