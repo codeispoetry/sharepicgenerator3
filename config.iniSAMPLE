@@ -1,5 +1,10 @@
 [Main]
+[Main]
 env = local
+tenant = greens
+starttemplate = de
+url = http://localhost:9500
+engine = chrome
 
 [Pixabay]
 comment = "Find your API key on https://pixabay.com/api/docs/"

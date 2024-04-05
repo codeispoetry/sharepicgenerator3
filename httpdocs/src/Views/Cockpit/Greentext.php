@@ -72,10 +72,4 @@
         }
     }
     const greentext = new Greentext();
-
-    
-
 </script>
-
-
-
