@@ -15,7 +15,7 @@
             <span><?php echo _('Size'); ?></span>
             <span><?php echo _('Indent'); ?></span>
         </div>
-        <?php for( $i = 1; $i <= 10; $i++ ) { ?>
+        <?php for( $i = 1; $i <= 12; $i++ ) { ?>
         <div class="cockpit_greentext">
             <?php echo $i; ?></strong>
             <select class="linecolor" onChange="greentext.setLineColorset(this, <?php echo $i; ?>)">

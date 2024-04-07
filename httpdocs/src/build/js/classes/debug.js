@@ -57,6 +57,9 @@ class Debug {
 
     return fetch(api.api + '&m=save', options)
       .then(response => {
+        if (response.status !== 200) {
+          throw new Error('Unexpected response status: ' + response.status);
+        }
         return response.json()
       })
       .then(data => {
