@@ -73,7 +73,7 @@ class API {
     const name = prompt('Name des Sharepics', 'Sharepic')
 
     const data = {
-      data: document.getElementById('canvas').outerHTML,
+      data: document.getElementById('canvas').innerHTML,
       name,
       mode
     }
