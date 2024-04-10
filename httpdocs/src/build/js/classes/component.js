@@ -115,26 +115,49 @@ class Component {
   }
 
   startDrag (event) {
-    if (event.button !== 0 || !event.target.classList.contains('draggable')) {
-      return
+    let clientX, clientY
+
+    if (event.touches) {
+      event.preventDefault();
+  
+      clientX = event.touches[0].clientX;
+      clientY = event.touches[0].clientY;
+    } else {
+      if (event.button !== 0) {
+        return
+      }
+      clientX = event.clientX;
+      clientY = event.clientY;
     }
 
     cockpit.target = this.parentWithOnMouseDown(event.target) || console.error('No parent with onmousedown found')
 
     component.dragInfo = {
-      xOffset: event.clientX - cockpit.target.getBoundingClientRect().left + document.getElementById('canvas').getBoundingClientRect().left,
-      yOffset: event.clientY - cockpit.target.getBoundingClientRect().top + document.getElementById('canvas').getBoundingClientRect().top
+      xOffset: clientX - cockpit.target.getBoundingClientRect().left + document.getElementById('canvas').getBoundingClientRect().left,
+      yOffset: clientY - cockpit.target.getBoundingClientRect().top + document.getElementById('canvas').getBoundingClientRect().top
     }
 
     document.addEventListener('mousemove', component.dragging)
     document.addEventListener('mouseup', component.stopDrag)
+
+    document.addEventListener('touchmove', component.dragging)
+    document.addEventListener('touchend', component.stopDrag)
   }
 
   dragging (e) {
+    let clientX, clientY
     e.preventDefault()
 
-    let x = e.clientX - component.dragInfo.xOffset
-    let y = e.clientY - component.dragInfo.yOffset
+    if (e.touches) {
+      clientX = e.touches[0].clientX;
+      clientY = e.touches[0].clientY;
+    } else {
+      clientX = e.clientX;
+      clientY = e.clientY;
+    }
+
+    let x = clientX - component.dragInfo.xOffset
+    let y = clientY - component.dragInfo.yOffset
 
     // Do not allow to drag the element outside the canvas
     if (cockpit.target.dataset.dragconstraint === 'true') {
@@ -151,6 +174,8 @@ class Component {
   stopDrag () {
     document.removeEventListener('mousemove', component.dragging)
     document.removeEventListener('mouseup', component.stopDrag)
+    document.removeEventListener('touchmove', component.dragging)
+    document.removeEventListener('touchend', component.stopDrag)
     sg.putBackOnCanvas()
     undo.commit()
   }
