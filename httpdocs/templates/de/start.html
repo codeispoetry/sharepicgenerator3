@@ -31,7 +31,6 @@
     <div 
         class="draggable selectable" 
         data-cockpit="greentext"  
-        onclick="component.select(this)"
         onmousedown="component.startDrag(event)"
         ontouchstart="component.startDrag(event)"
         oninput="cockpit.setup_greentext(this)"
@@ -53,8 +52,8 @@
     </div>
 
     <div class="draggable selectable" id="logo" 
-        onclick="component.select(this)"
         onmousedown="component.startDrag(event)"
+        ontouchstart="component.startDrag(event)"
         data-cockpit="logo" data-clipping="true"
         contenteditable="false"
         style="
@@ -74,7 +73,6 @@
 
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 
             data-max="1" contenteditable="true" spellcheck="false"
-            onclick="component.select(this)"
             data-id="copyright"
             style="
                 font-size: 14px;
@@ -84,8 +82,8 @@
 
         <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
         data-max="1" spellcheck="false"
-        contenteditable="true" oninput="eyecatcher.makeSquare();" onclick="component.select(this)"
-        onmousedown="component.startDrag(event)" style="
+        contenteditable="true" oninput="eyecatcher.makeSquare();"
+        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
                     z-index:2; 
                     left: 5px; top: 5px; 
                     font-size: 20px; 
@@ -101,8 +99,8 @@
 
         <div data-id="greenaddtext" data-class="greenaddtext draggable selectable" data-cockpit="greenaddtext"
         data-max="10" spellcheck="false"
-        contenteditable="true" onclick="component.select(this)"
-        onmousedown="component.startDrag(event)" style="
+        contenteditable="true"
+        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
                     z-index:2; 
                     left: 5px; top: 5px; 
                     font-size: 20px; 
@@ -118,7 +116,7 @@
         </div>
     
         <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
-        onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
+        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
                 align-items: center;
                 position: absolute;
                 left:300px; 

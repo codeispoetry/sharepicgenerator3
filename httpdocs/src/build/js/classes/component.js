@@ -117,6 +117,8 @@ class Component {
   startDrag (event) {
     let clientX, clientY
 
+    component.select(event.target.closest('.draggable'))
+
     if (event.touches) {
       event.preventDefault();
   
@@ -146,7 +148,7 @@ class Component {
 
   dragging (e) {
     let clientX, clientY
-    e.preventDefault()
+   // e.preventDefault()
 
     if (e.touches) {
       clientX = e.touches[0].clientX;
