@@ -37,6 +37,9 @@ translation-prepare:
 translate:
 	make create-mo stop up
 
+download-bugs:
+	rsync -avzr sharepic-verdigado:/srv/sharepic/logfiles/*.log logfiles/
+
 log-downloads:
 	grep -c 'created sharepic' logfiles/usage.log
 

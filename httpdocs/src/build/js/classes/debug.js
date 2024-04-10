@@ -64,7 +64,7 @@ class Debug {
       })
       .then(data => {
         const browser = 'Browser: ' + this.getBrowserInfo().name + ' ' + this.getBrowserInfo().version
-        const logLine = browser + '\t' + bugDescription + '\t' + data.full_path
+        const logLine = browser + '\t' + bugDescription + '\t' + data.full_path + '\t' + cockpit.target.id
         logger.log(logLine, 'bug')
       }
       )

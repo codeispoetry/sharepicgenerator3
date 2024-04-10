@@ -2,6 +2,7 @@
 
 class Component {
   add (item) {
+    logger.log('wants to add component ' + item)
     const pattern = document.querySelector(`[data-id=${item}]`)
 
     // Check if the maximum number of elements is reached

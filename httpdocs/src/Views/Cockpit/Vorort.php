@@ -24,6 +24,10 @@
     document.getElementById('celebrity').addEventListener('change', function(event) {
         var element = event.target;
 
+       if(element.selectedIndex === 0) {
+        return;
+       }
+
         const target = document.getElementById('celebrity');
         target.style.backgroundImage = "url(templates/vorort/celebrities/" + element.value + "?rand=1)"
 
