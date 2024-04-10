@@ -105,6 +105,7 @@ class UI {
   }
 
   close (target) {
+    document.getElementById('cockpit').style.display = 'flex'
     document.querySelector(target).classList.remove('show')
   }
 

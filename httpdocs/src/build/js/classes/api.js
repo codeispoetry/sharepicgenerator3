@@ -515,6 +515,8 @@ class API {
 
         document.getElementById('background').style.backgroundImage = `url('${data.path}')`
         document.getElementById('background').style.filter = ''
+
+        logger.log('image loaded from ' + data.path)
       })
       .catch(error =>{
         config.uploading = false

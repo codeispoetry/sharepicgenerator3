@@ -28,6 +28,7 @@ class Pixabay {
   showResults (data) {
     const page = document.getElementById('pixabay_page')
     page.classList.add('show')
+    document.getElementById('cockpit').style.display = 'none'
 
     const results = document.getElementById('pixabay_results')
     results.classList.add('show')
@@ -65,7 +66,7 @@ class Pixabay {
 
         api.loadByUrl(img.dataset.url)
 
-        // is copyrigth already shown?
+        // is copyright already shown?
         const copyright = document.querySelector('#sharepic [id^=copyright_]')
         if (!copyright) {
           component.add('copyright')

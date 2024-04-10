@@ -729,8 +729,8 @@ msgid ""
 msgstr "Die maximale Anzahl von Zeilen wurde erreicht. Für längeren Text nutze bitte das zusätzliche Textelement."
 
 #: httpdocs/src/Views/Pixabay.php:4
-msgid "All images are from "
-msgstr "Die Bilder stammen von "
+msgid "All images are from"
+msgstr "Die Bilder stammen von"
 
 #: httpdocs/src/Views/Pixabay.php:6
 msgid ""

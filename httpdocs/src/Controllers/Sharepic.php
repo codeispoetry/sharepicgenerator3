@@ -555,6 +555,7 @@ class Sharepic {
 			$file
 		);
 		exec( $cmd, $output, $return_code );
+		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could convert image' );

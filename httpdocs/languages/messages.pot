@@ -704,7 +704,7 @@ msgid ""
 msgstr ""
 
 #: httpdocs/src/Views/Pixabay.php:4
-msgid "All images are from "
+msgid "All images are from"
 msgstr ""
 
 #: httpdocs/src/Views/Pixabay.php:6
