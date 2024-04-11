@@ -93,15 +93,6 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
-            <div class="submenu">
-                <button>Wo sind meine Bilder?</button>
-                <div class="submenu-content">
-                <div style="padding: 1em; color: black;font-style: italic;  font-size: 90%;">
-                Leider gingen wegen einer Fehlerbehebung alle bisher gespeicherten Sharepics kaputt. Sie wurden deshalb gelöscht. Bitte entschuldige diese Unannehmlichkeit. </div>
-
-                </div>
-            </div>
-
             <button onClick="api.save()">
                 <?php  echo _('Save');?>
             </button>
