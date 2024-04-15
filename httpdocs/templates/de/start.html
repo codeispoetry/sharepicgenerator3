@@ -114,6 +114,45 @@
                 Hier kommt Dein Sternchentext.
             </div>
         </div>
+
+        <div data-id="europeangreens" data-class="europeangreens draggable selectable" data-cockpit="europe"
+            data-max="1" spellcheck="false"
+            contenteditable="true"
+            onclick="component.select(this)"
+            style="
+                    z-index:2; 
+                    right: 0; bottom:0;
+                    font-size: 20px; 
+                    color: #000000; 
+                    font-family: 'PT Sans', sans-serif;
+                    line-height: 1em;
+                    padding: 20px;
+                "
+        >
+            <div>
+               <img src="/templates/de/member-of-the-european-greens.png" style="width: 150px;">
+            </div>
+        </div>
+
+        <div data-id="machenwaszaehlt" data-class="machenwaszaehlt greentext draggable selectable" data-cockpit="europe"
+            data-max="1" spellcheck="false"
+            contenteditable="true"
+            onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
+                    z-index:2; 
+                    left: 5px; top: 5px; 
+                    font-size: 20px; 
+                    color: #000000; 
+                    font-family: 'PT Sans', sans-serif;
+                    line-height: 1em;
+                    padding: 20px;
+                    transform: scale(0.75);
+                "
+        >
+
+            <div class="s tannesand" style="align-self: flex-start;">MACHEN,</div>
+            <div class="s tannesand" style="align-self: flex-start;margin-left:20px;">WAS ZÄHLT</div>
+           
+        </div>
     
         <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
         onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
@@ -141,7 +180,7 @@
         undo.commit()
 
         config.cockpit = {
-            elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','addpicture']
+            elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','addpicture','europe']
         }
 
         /*

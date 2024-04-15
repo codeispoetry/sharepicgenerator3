@@ -65,4 +65,15 @@
             }
         }
     }
+
+    &buttons{
+        button#tab_btn_{
+            &europe{
+                background-color: #003399;
+                &:hover{
+                    background-color: #009933;
+                }
+            }
+        }
+    }
 }

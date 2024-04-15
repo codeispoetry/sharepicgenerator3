@@ -36,7 +36,8 @@ body.greens{
         transform-origin: top left;
     }
 
-    #greentext {
+    #greentext,
+    .greentext {
         top: 130px;
         left: 72px;
         display: flex;
