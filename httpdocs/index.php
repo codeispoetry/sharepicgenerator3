@@ -18,6 +18,7 @@ use Sharepicgenerator\Controllers\Config;
 use Sharepicgenerator\Controllers\Proxy;
 use Sharepicgenerator\Controllers\Mailer;
 use Sharepicgenerator\Controllers\Helper;
+use Sharepicgenerator\Controllers\User;
 use stdClass;
 
 Helper::load_textdomain();
@@ -25,7 +26,7 @@ Helper::clean_up_dir( './qrcodes/*', 5 );
 
 $env         = new stdClass();
 $env->config = new Config();
-$env->user   = ( $env->config->get( 'Main', 'tenant' ) === 'greens' ) ? new Controllers\Usergreens() : new Controllers\Usermint();
+$env->user   = new User( $env->config );
 $env->logger = new Logger( $env->user );
 $env->mailer = new Mailer( $env->config, $env->logger );
 
