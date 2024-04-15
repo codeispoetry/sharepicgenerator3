@@ -29,9 +29,6 @@ $env->user   = ( $env->config->get( 'Main', 'tenant' ) === 'greens' ) ? new Cont
 $env->logger = new Logger( $env->user );
 $env->mailer = new Mailer( $env->config, $env->logger );
 
-##
-
-
 $controller = ( ! empty( $_GET['c'] ) ) ? $_GET['c'] : 'frontend';
 $method     = ( ! empty( $_GET['m'] ) ) ? $_GET['m'] : 'index';
 

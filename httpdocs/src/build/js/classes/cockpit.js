@@ -23,6 +23,9 @@ class Cockpit {
 
     document.querySelectorAll('#greentext > div').forEach((div, i) => {
       const cockpitLine = document.querySelectorAll('.cockpit_greentext')[i]
+      if( !cockpitLine ) {
+        return
+      }
       cockpitLine.style.display = 'flex'
 
       cockpitLine.querySelectorAll('.linesize option').forEach((option) => {

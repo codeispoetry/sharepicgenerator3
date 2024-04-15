@@ -24,8 +24,13 @@ class Undo {
     // console.log('Committing', new Error().stack)
 
     const data = document.getElementById('canvas').innerHTML
-    const commits = JSON.parse(localStorage.getItem('commits'))
+    let commits = JSON.parse(localStorage.getItem('commits'))
     commits.push(data)
+
+    if (commits.length > 20) {
+      commits = commits.slice(-20);
+    }
+
     localStorage.setItem('commits', JSON.stringify(commits))
 
     this.undoing = false
