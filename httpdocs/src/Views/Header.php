@@ -13,12 +13,11 @@
 <header>
     <?php
 		$show_my_sharepics = true;
-		$menu = 'src/Views/Menu-' . $this->config->get( 'Main', 'tenant' ) . '.php';
+		$menu = 'src/Views/Menu' . $this->env->config->get( 'Main', 'tenant' ) . '.php';
 		if( ! file_exists( $menu ) ) {
 			echo "Could not find menu file: $menu.php";
-			exit( 1 );
+			exit( 1 );	
 		}
-
 		include $menu;
 		?>
 </header>

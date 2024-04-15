@@ -33,6 +33,26 @@ class Frontend {
 	}
 
 	/**
+	 * The Logview
+	 */
+	public function log() {
+		echo $this->env->user->get_username();
+		$scope = ( ! empty( $_GET['scope'] ) ) ? Helper::sanitze_az09( $_GET['scope'] ) : 'Sharepics';
+		$pages = glob( './src/Views/Logs/*.php' );
+		$pages = array_map(
+			function( $filename ) {
+				return pathinfo( $filename, PATHINFO_FILENAME );
+			},
+			$pages
+		);
+		if ( ! in_array( $scope, $pages, true ) ) {
+			$scope = 'Sharepics';
+		}
+		include_once './src/Views/Logs/' . $scope . '.php';
+	}
+
+
+	/**
 	 * Shows an arbitrary view
 	 */
 	public function view() {
