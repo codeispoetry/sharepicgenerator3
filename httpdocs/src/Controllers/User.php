@@ -22,6 +22,8 @@ class User {
 
 	/**
 	 * The constructor.
+	 *
+	 * @param object $config The config.
 	 */
 	public function __construct( $config ) {
 		if ( 'localhost:9500' === $_SERVER['HTTP_HOST'] ) {
@@ -76,9 +78,23 @@ class User {
 	 * @return bool
 	 */
 	public function is_admin() {
-		$admins = explode(',', $this->config->get( 'Main', 'admins' ));
-		
-		return in_array($this->username, $admins);
+		$admins = explode( ',', $this->config->get( 'Main', 'admins' ) );
+
+		return in_array( $this->username, $admins );
+	}
+
+	/**
+	 * Logs the user out.
+	 */
+	public function logout() {
+		$url = $this->config->get( 'OIDC', 'logouturl' );
+		if ( empty( $url ) ) {
+			die( 'No logout url configured' );
+		}
+		setcookie( 'mod_auth_openidc_session', '', time() - 3600, '/', '', true, true );
+
+		header( 'Location: ' . $url );
+		exit( 0 );
 	}
 
 	/**

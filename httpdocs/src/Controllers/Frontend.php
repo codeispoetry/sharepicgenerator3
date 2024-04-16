@@ -33,13 +33,21 @@ class Frontend {
 	}
 
 	/**
+	 * Logs the user out.
+	 */
+	public function logout() {
+		$this->env->user->logout();
+		header( 'Location: index.php' );
+	}
+
+	/**
 	 * The Logview
 	 */
 	public function log() {
 		if ( ! $this->env->user->is_admin() ) {
 			$this->no_access();
 		}
-		
+
 		$scope = ( ! empty( $_GET['scope'] ) ) ? Helper::sanitze_az09( $_GET['scope'] ) : 'Sharepics';
 		$pages = glob( './src/Views/Logs/*.php' );
 		$pages = array_map(
