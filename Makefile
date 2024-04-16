@@ -19,6 +19,9 @@ deploy-gruene:
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic-verdigado:/srv/sharepic || true
 	ssh sharepic-verdigado 'sudo chown -R www-data:www-data /srv/sharepic'
 
+deploy-mint:
+	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic:/var/www/vhosts/sharepicgenerator.de/mint.sharepicgenerator.de
+
 create-pot:
 	find httpdocs/src -name '*.php' | xargs xgettext --language=PHP -o httpdocs/languages/messages.pot
 
