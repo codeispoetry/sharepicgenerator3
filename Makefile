@@ -45,7 +45,7 @@ download-bugs:
 	rsync -avzr sharepic-verdigado:/srv/sharepic/logfiles/*.log logfiles/
 	chmod 777 logfiles/*.log
 	code logfiles/bugs.log
-	./download-bugs.sh
+	./scripts/download-bugs.sh
 
 log-downloads:
 	grep -c 'created sharepic' logfiles/usage.log

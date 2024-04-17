@@ -41,6 +41,46 @@ class User {
 	}
 
 	/**
+	 * Deletes a user.
+	 *
+	 * @param string $username The username.
+	 * @return string The status deleted or not_found.
+	 * @throws \Exception On missing $username.
+	 */
+	public static function delete( $username ) {
+		if ( empty( $username ) ) {
+			throw new \Exception( 'No username given' );
+		}
+
+		$status = 'not_found';
+
+		$user_dir = './users/' . $username . '/';
+		if ( file_exists( $user_dir ) ) {
+			system( 'rm -rf ' . $user_dir );
+			$status = 'deleted';
+		}
+
+		$logfiles = glob( 'logfiles/*.log' );
+		foreach ( $logfiles as $logfile ) {
+			$lines = file( $logfile );
+
+			$filtered_lines = array_filter(
+				$lines,
+				function ( $line ) use ( $username ) {
+					return strpos( $line, $username ) === false;
+				}
+			);
+
+			if ( $filtered_lines !== $lines ) {
+				$status = 'deleted';
+				file_put_contents( $logfile, implode( '', $filtered_lines ) );
+			}
+		}
+
+		return $status;
+	}
+
+	/**
 	 * Creates user space, if it does not exist.
 	 *
 	 * @return void

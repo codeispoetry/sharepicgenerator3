@@ -14,9 +14,10 @@ class Config {
 	private $config;
 	/**
 	 * The constructor. Reads the config.ini file.
+	 *
+	 * @param string $config_file The path to the config file.
 	 */
-	public function __construct() {
-		$config_file = '../config.ini';
+	public function __construct( $config_file = '../config.ini' ) {
 		if ( ! file_exists( $config_file ) ) {
 			die( 'Please create a config.ini file.' );
 		}
