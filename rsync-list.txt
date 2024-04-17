@@ -6,3 +6,4 @@ httpdocs/src/Views
 httpdocs/templates
 httpdocs/index.php
 httpdocs/favicon.ico
+scripts/autodeletion.php

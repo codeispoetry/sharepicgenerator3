@@ -19,7 +19,7 @@
 		$show_my_sharepics = true;
 		$menu = 'src/Views/Menu' . $this->env->config->get( 'Main', 'tenant' ) . '.php';
 		if( ! file_exists( $menu ) ) {
-			echo "Could not find menu file: $menu.php";
+			echo "Could not find menu file: $menu";
 			exit( 1 );	
 		}
 		include $menu;
@@ -207,6 +207,7 @@
 	
 	const lang = {
 		'Are you sure?': '<?php echo _( 'Are you sure?') ?>',
+		'Want to log out?': '<?php echo _( 'Do you want to log out?') ?>',
 		'All changes lost': '<?php echo _( 'Please save your sharepic. All changes will be lost.') ?>',
 		'Enter prompt for image': '<?php echo _( 'Please enter a text describing your desired image.') ?>',
 		'Max reached': '<?php echo _( 'Maximum number of elements reached') ?>',

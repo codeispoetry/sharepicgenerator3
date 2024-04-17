@@ -19,6 +19,9 @@ deploy-gruene:
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic-verdigado:/srv/sharepic || true
 	ssh sharepic-verdigado 'sudo chown -R www-data:www-data /srv/sharepic'
 
+deploy-mint:
+	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic:/var/www/vhosts/sharepicgenerator.de/mint.sharepicgenerator.de
+
 create-pot:
 	find httpdocs/src -name '*.php' | xargs xgettext --language=PHP -o httpdocs/languages/messages.pot
 
@@ -42,7 +45,7 @@ download-bugs:
 	rsync -avzr sharepic-verdigado:/srv/sharepic/logfiles/*.log logfiles/
 	chmod 777 logfiles/*.log
 	code logfiles/bugs.log
-	./download-bugs.sh
+	./scripts/download-bugs.sh
 
 log-downloads:
 	grep -c 'created sharepic' logfiles/usage.log

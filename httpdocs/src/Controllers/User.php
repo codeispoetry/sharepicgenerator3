@@ -22,6 +22,8 @@ class User {
 
 	/**
 	 * The constructor.
+	 *
+	 * @param object $config The config.
 	 */
 	public function __construct( $config ) {
 		if ( 'localhost:9500' === $_SERVER['HTTP_HOST'] ) {
@@ -36,6 +38,46 @@ class User {
 
 		$this->create_user_space();
 		$this->config = $config;
+	}
+
+	/**
+	 * Deletes a user.
+	 *
+	 * @param string $username The username.
+	 * @return string The status deleted or not_found.
+	 * @throws \Exception On missing $username.
+	 */
+	public static function delete( $username ) {
+		if ( empty( $username ) ) {
+			throw new \Exception( 'No username given' );
+		}
+
+		$status = 'not_found';
+
+		$user_dir = './users/' . $username . '/';
+		if ( file_exists( $user_dir ) ) {
+			system( 'rm -rf ' . $user_dir );
+			$status = 'deleted';
+		}
+
+		$logfiles = glob( 'logfiles/*.log' );
+		foreach ( $logfiles as $logfile ) {
+			$lines = file( $logfile );
+
+			$filtered_lines = array_filter(
+				$lines,
+				function ( $line ) use ( $username ) {
+					return strpos( $line, $username ) === false;
+				}
+			);
+
+			if ( $filtered_lines !== $lines ) {
+				$status = 'deleted';
+				file_put_contents( $logfile, implode( '', $filtered_lines ) );
+			}
+		}
+
+		return $status;
 	}
 
 	/**
@@ -76,9 +118,23 @@ class User {
 	 * @return bool
 	 */
 	public function is_admin() {
-		$admins = explode(',', $this->config->get( 'Main', 'admins' ));
-		
-		return in_array($this->username, $admins);
+		$admins = explode( ',', $this->config->get( 'Main', 'admins' ) );
+
+		return in_array( $this->username, $admins );
+	}
+
+	/**
+	 * Logs the user out.
+	 */
+	public function logout() {
+		$url = $this->config->get( 'OIDC', 'logouturl' );
+		if ( empty( $url ) ) {
+			die( 'No logout url configured' );
+		}
+		setcookie( 'mod_auth_openidc_session', '', time() - 3600, '/', '', true, true );
+
+		header( 'Location: ' . $url );
+		exit( 0 );
 	}
 
 	/**
