@@ -177,7 +177,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:46
 msgid "Reset text"
-msgstr "Text zurückgesetzen"
+msgstr "Text zurücksetzen"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
 #: httpdocs/src/Views/Creator.php:133 httpdocs/src/Views/Creator.php:135
