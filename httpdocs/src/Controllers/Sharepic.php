@@ -298,8 +298,8 @@ class Sharepic {
 
 		// $extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		// if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {
-		// 	$this->http_error( 'Could not load image (code 3)' );
-		// 	return;
+		// $this->http_error( 'Could not load image (code 3)' );
+		// return;
 		// }
 
 		if ( ! in_array( $image_type, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {

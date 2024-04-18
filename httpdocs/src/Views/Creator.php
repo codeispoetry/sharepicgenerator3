@@ -202,11 +202,6 @@
             'apikey': '<?php echo $pixabayapi; ?>'
         },
 		<?php } ?>
-		<?php if ( $unsplashapi = $this->env->config->get( 'Unsplash', 'apikey' ) ) { ?>
-		'unsplash': {
-            'apikey': '<?php echo $unsplashapi; ?>'
-        },
-		<?php } ?>
 		'url': '<?php echo$this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
 		'username': '<?php echo$this->env->user->get_username(); ?>',

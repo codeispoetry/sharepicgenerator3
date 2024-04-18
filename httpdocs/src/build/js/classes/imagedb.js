@@ -17,12 +17,9 @@ class ImageDB {
   search_unsplash() {
     const q = document.getElementById('imagedb_q').value
 
-    const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(q)}&per_page=30`
+    const url = `unsplash.php?u=https://api.unsplash.com/search/photos?query=${encodeURIComponent(q)}&per_page=30`
 
-    fetch(url,  {
-      headers: {
-          'Authorization': `Client-ID ${config.unsplash.apikey}`
-      }})
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         logger.log('searches unsplash for ' + q + ' and gets ' + data.results.length + ' results')
@@ -72,10 +69,7 @@ class ImageDB {
         document.getElementById('background').style.filter = 'grayscale(100%)'
 
         // get real image url
-        fetch(img.dataset.url,  {
-          headers: {
-              'Authorization': `Client-ID ${config.unsplash.apikey}`
-          }})
+        fetch('unsplash.php?u=' + img.dataset.url)
           .then(response => response.json())
           .then(data => {
             api.loadByUrl(data.url)
