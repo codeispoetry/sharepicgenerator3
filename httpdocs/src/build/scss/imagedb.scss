@@ -26,8 +26,11 @@
         .image{
             width: 200px;
             height: 130px;
-            background-size: cover;
+            background-size: contain;
             background-repeat: no-repeat;
+            background-position: center center;
+            border: 1px solid black;
+            background-color: beige;
             cursor: pointer;
         }
     }

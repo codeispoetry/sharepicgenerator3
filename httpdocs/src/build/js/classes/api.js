@@ -148,6 +148,18 @@ class API {
         rte.init()
         sg.init()
 
+        document.querySelector('[contenteditable]').addEventListener('paste', function(e) {
+          e.preventDefault();
+          const selection = window.getSelection();
+          if (!selection.rangeCount) return false;
+
+          const text = e.clipboardData.getData('text/plain');
+
+          selection.deleteFromDocument();
+          selection.getRangeAt(0).insertNode(document.createTextNode(text));
+
+        });
+
         // Execute script tags
         const parser = new DOMParser()
         const doc = parser.parseFromString(data, 'text/html')

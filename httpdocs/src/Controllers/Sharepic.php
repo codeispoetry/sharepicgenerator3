@@ -320,7 +320,11 @@ class Sharepic {
 			return;
 		}
 
-		$this->reduce_filesize( $upload_file );
+		if ( 'local' === $this->env->config->get( 'Main', 'env' ) ) {
+			$this->reduce_filesize( $upload_file, 800, 30 );
+		} else {
+			$this->reduce_filesize( $upload_file );
+		}
 
 		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=workspace/background.' . $extension ) );
 
@@ -563,6 +567,7 @@ class Sharepic {
 			(int) $max_filesize,
 			$file
 		);
+
 		exec( $cmd, $output, $return_code );
 		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 		if ( 0 !== $return_code ) {
