@@ -18,5 +18,4 @@ if ( empty( $url ) || parse_url( $url, PHP_URL_HOST ) !== 'api.unsplash.com' ) {
 	header( 'HTTP/1.0 400 No unsplash api url given' );
 	exit;
 }
-
 Unsplash::proxy( $url );

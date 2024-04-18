@@ -24,7 +24,6 @@ class Unsplash {
 	 * Proxy function
 	 *
 	 * @param string $url URL to proxy.
-	 * @return string
 	 */
 	public static function proxy( $url ) {
 		$curl = curl_init();

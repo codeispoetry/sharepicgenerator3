@@ -17,11 +17,12 @@ class ImageDB {
   search_unsplash() {
     const q = document.getElementById('imagedb_q').value
 
-    const url = `unsplash.php?u=https://api.unsplash.com/search/photos?query=${encodeURIComponent(q)}&per_page=30`
+    const url = 'unsplash.php?u=' + encodeURIComponent( 'https://api.unsplash.com/search/photos?lang=de&per_page=30&query=' + q) 
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         logger.log('searches unsplash for ' + q + ' and gets ' + data.results.length + ' results')
         this.show_results_unsplash(data)
       })
