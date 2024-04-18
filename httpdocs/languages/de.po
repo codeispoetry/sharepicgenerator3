@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 12:47+0200\n"
+"POT-Creation-Date: 2024-04-18 15:22+0200\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -64,6 +64,14 @@ msgstr "Bereits registriert?"
 #: httpdocs/src/Views/Home.php:36
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
+
+#: httpdocs/src/Views/ImageDB.php:5
+msgid ""
+"Single click on an image sets the image as background, double click sets "
+"image and closes results."
+msgstr ""
+"Ein Klick setzt das Bild als Hintergrund, ein Doppelklick setzt das Bild und "
+"schließt die Ergebnisse."
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
 #: httpdocs/src/Views/Creator.php:141 httpdocs/src/Views/Creator.php:143
@@ -494,7 +502,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Logs/Info.php:19
 #, php-format
-msgid "Clicks on image after pixabay search: %s"
+msgid "Clicks on image after imagedb search: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Log.php:5
@@ -760,18 +768,6 @@ msgstr ""
 "Die maximale Anzahl von Zeilen wurde erreicht. Für längeren Text nutze bitte "
 "das zusätzliche Textelement."
 
-#: httpdocs/src/Views/Pixabay.php:4
-msgid "All images are from"
-msgstr "Die Bilder stammen von"
-
-#: httpdocs/src/Views/Pixabay.php:6
-msgid ""
-"Single click on an image sets the image as background, double click sets "
-"image and closes results."
-msgstr ""
-"Ein Klick setzt das Bild als Hintergrund, ein Doppelklick setzt das Bild und "
-"schließt die Ergebnisse."
-
 #: httpdocs/src/Views/Homegreens.php:7
 msgid ""
 "Create sharepics for your social media channels in the layout of the German "
@@ -809,6 +805,9 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "All images are from"
+#~ msgstr "Die Bilder stammen von"
 
 #~ msgid "Account created"
 #~ msgstr "Account erstellt"

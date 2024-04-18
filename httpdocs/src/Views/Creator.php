@@ -182,7 +182,7 @@
 			</div>
 		</div>
 		<?php
-			include 'src/Views/Pixabay.php';
+			include 'src/Views/ImageDB.php';
 		?>
 	</div>
 </main>

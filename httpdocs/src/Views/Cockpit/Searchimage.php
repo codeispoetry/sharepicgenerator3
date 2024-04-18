@@ -14,13 +14,13 @@
        
     </section>
 
-    <section id="search_pixabay">
+    <section id="search_imagedb">
         <h3><?php  echo _('Search image');?></h3>
         <p><?php echo _('Search in an online image database');?></p>
         
         <div class="button-group">
-            <input type="text" style="width:100%;" name="pixabay_q" id="pixabay_q" placeholder="<?php  echo _('search in image database');?>">
-            <button onClick="pixabay.search()"><img src="assets/icons/search.svg"></button>   
+            <input type="text" style="width:100%;" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search in image database');?>">
+            <button onClick="imagedb.search()"><img src="assets/icons/search.svg"></button>   
         </div>
     </section>
 

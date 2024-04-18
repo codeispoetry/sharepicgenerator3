@@ -16,7 +16,7 @@
 				</li>
 				<li>
 					<?php
-						printf( _('Clicks on image after pixabay search: %s'), cmd( 'grep -c \'clicks on image after search for\' ../logfiles/usage.log' ) );
+						printf( _('Clicks on image after imagedb search: %s'), cmd( 'grep -c \'clicks on image after search for\' ../logfiles/usage.log' ) );
 					?>
 				</li>
             </ul>

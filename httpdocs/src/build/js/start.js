@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, no-unused-vars, no-var */
-var api, sg, cockpit, undo, pixabay, component, rte, logger, ui, background, debug
+var api, sg, cockpit, undo, imagedb, component, rte, logger, ui, background, debug
 
 window.onload = function () {
   api = new API()
@@ -7,7 +7,7 @@ window.onload = function () {
   sg = new Sharepic()
   cockpit = new Cockpit()
   undo = new Undo()
-  pixabay = new Pixabay()
+  imagedb = new ImageDB()
   component = new Component()
   ui = new UI()
   rte = new RichTextEditor()

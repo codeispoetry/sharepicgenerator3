@@ -33,7 +33,7 @@ test.beforeEach(async ({ page }) => {
 test('Overall test', async ({ page }) => {
   // Search and use image from pixabay
   await page.locator('#tab_btn_search').click()
-  await page.locator('#pixabay_q').fill('Berge')
+  await page.locator('#imagedb_q').fill('Berge')
   await page.locator('[onclick="pixabay.search()"]').click()
   await page.locator('#pixabay_results div.image:first-child').click()
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 12:47+0200\n"
+"POT-Creation-Date: 2024-04-18 15:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,6 +56,12 @@ msgstr ""
 
 #: httpdocs/src/Views/Home.php:36
 msgid "Password reset"
+msgstr ""
+
+#: httpdocs/src/Views/ImageDB.php:5
+msgid ""
+"Single click on an image sets the image as background, double click sets "
+"image and closes results."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
@@ -478,7 +484,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Logs/Info.php:19
 #, php-format
-msgid "Clicks on image after pixabay search: %s"
+msgid "Clicks on image after imagedb search: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Log.php:5
@@ -729,16 +735,6 @@ msgstr ""
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
-msgstr ""
-
-#: httpdocs/src/Views/Pixabay.php:4
-msgid "All images are from"
-msgstr ""
-
-#: httpdocs/src/Views/Pixabay.php:6
-msgid ""
-"Single click on an image sets the image as background, double click sets "
-"image and closes results."
 msgstr ""
 
 #: httpdocs/src/Views/Homegreens.php:7

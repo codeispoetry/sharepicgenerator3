@@ -1,8 +1,8 @@
 /* eslint-disable no-undef, no-unused-vars */
 
-class Pixabay {
+class ImageDB {
   constructor () {
-    document.getElementById('pixabay_q').addEventListener('keydown', (event) => {
+    document.getElementById('imagedb_q').addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
         this.search()
       }
@@ -10,7 +10,7 @@ class Pixabay {
   }
 
   search () {
-    const q = document.getElementById('pixabay_q').value
+    const q = document.getElementById('imagedb_q').value
 
     const page = 1
     const perPage = 80
@@ -19,6 +19,7 @@ class Pixabay {
     fetch(url)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         logger.log('searches for ' + q + ' and gets ' + data.hits.length + ' results')
         this.showResults(data)
       })
@@ -26,16 +27,16 @@ class Pixabay {
   }
 
   showResults (data) {
-    const page = document.getElementById('pixabay_page')
+    const page = document.getElementById('imagedb_page')
     page.classList.add('show')
     document.getElementById('cockpit').style.display = 'none'
 
-    const results = document.getElementById('pixabay_results')
+    const results = document.getElementById('imagedb_results')
     results.classList.add('show')
     results.innerHTML = ''
 
     if (data.hits === undefined || data.hits.length === 0) {
-      const q = document.getElementById('pixabay_q').value
+      const q = document.getElementById('imagedb_q').value
       results.innerHTML = `<div class="no_results">Für den Suchbegriff "${q}" wurden keine Bilder gefunden.</div>`
       return
     }
@@ -49,11 +50,11 @@ class Pixabay {
       img.setAttribute('data-pageurl', hit.pageURL)
 
       img.ondblclick = () => {
-        ui.close('#pixabay_page')
+        ui.close('#imagedb_page')
       }
 
       img.onclick = () => {
-        const q = document.getElementById('pixabay_q').value
+        const q = document.getElementById('imagedb_q').value
 
         logger.prepare_log_data({
           imagesrc: 'pixabay',
