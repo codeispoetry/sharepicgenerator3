@@ -1,7 +1,7 @@
 <section class="mainsection" id="cockpit_europe">
     <h2><?php  echo _('Europe');?></h2>
     <section>
-        <button onClick="component.add('machenwaszaehlt')"><?php  echo _('Add "Machen, was zählt"');?></button>
+        <button onClick="component.add('machenwaszaehlt')"><?php  echo _('Add "Do, what counts"');?></button>
     </section>
   
     <section class="selected_only">  

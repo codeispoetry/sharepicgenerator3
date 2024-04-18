@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-05 21:06+0200\n"
+"POT-Creation-Date: 2024-04-18 12:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: httpdocs/src/Controllers/User.php:487
-msgid "Account created"
-msgstr ""
-
-#: httpdocs/src/Controllers/User.php:512
-msgid "Password Reset"
-msgstr ""
 
 #: httpdocs/src/Views/Home.php:4 httpdocs/src/Views/Homegreens.php:4
 msgid "Sharepicgenerator"
@@ -79,6 +71,7 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Background.php:5
 #: httpdocs/src/Views/Cockpit/Logo.php:4
+#: httpdocs/src/Views/Cockpit/Europe.php:8
 #: httpdocs/src/Views/Cockpit/Copyright.php:9
 msgid "Size"
 msgstr ""
@@ -300,6 +293,14 @@ msgstr ""
 msgid "green"
 msgstr ""
 
+#: httpdocs/src/Views/Cockpit/Europe.php:2
+msgid "Europe"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Europe.php:4
+msgid "Add \"Do, what counts\""
+msgstr ""
+
 #: httpdocs/src/Views/Cockpit/Searchimage.php:2
 msgid "Create background "
 msgstr ""
@@ -341,7 +342,7 @@ msgid "Describe the image you want"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:35
-#: httpdocs/src/Views/Menumint.php:17 httpdocs/src/Views/Menugreens.php:17
+#: httpdocs/src/Views/Menumint.php:14 httpdocs/src/Views/Menugreens.php:17
 msgid "Create"
 msgstr ""
 
@@ -457,8 +458,27 @@ msgstr ""
 msgid "Click on the following link to reset your password: "
 msgstr ""
 
-#: httpdocs/src/Views/Logs/Sharepics.php:5
+#: httpdocs/src/Views/Logs/Sharepics.php:14
 msgid "Latest sharepics"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:5
+msgid "Usage Overview"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:9
+#, php-format
+msgid "Number of users: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:14
+#, php-format
+msgid "Number of sharepics: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:19
+#, php-format
+msgid "Clicks on image after pixabay search: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Log.php:5
@@ -477,53 +497,53 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:14 httpdocs/src/Views/Menugreens.php:14
-msgid "Support"
-msgstr ""
-
-#: httpdocs/src/Views/Menumint.php:20 httpdocs/src/Views/Menugreens.php:20
+#: httpdocs/src/Views/Menumint.php:17 httpdocs/src/Views/Menugreens.php:20
 #: httpdocs/src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:23 httpdocs/src/Views/Menugreens.php:23
+#: httpdocs/src/Views/Menumint.php:20 httpdocs/src/Views/Menugreens.php:23
 #: httpdocs/src/Views/Pages/Privacy.php:4
 msgid "Privacy"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:26 httpdocs/src/Views/Menugreens.php:26
+#: httpdocs/src/Views/Menumint.php:23 httpdocs/src/Views/Menugreens.php:26
 msgid "Logout"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:32
-msgid "Mint"
+#: httpdocs/src/Views/Menumint.php:29
+msgid "Sharepic"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:35
+#: httpdocs/src/Views/Menumint.php:32
 msgid "Create Sharepic"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:42 httpdocs/src/Views/Menugreens.php:94
+#: httpdocs/src/Views/Menumint.php:39 httpdocs/src/Views/Menugreens.php:94
 msgid "My Sharepics"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:45 httpdocs/src/Views/Menugreens.php:106
+#: httpdocs/src/Views/Menumint.php:42 httpdocs/src/Views/Menugreens.php:97
 msgid "Save"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:54 httpdocs/src/Views/Menugreens.php:115
+#: httpdocs/src/Views/Menumint.php:51 httpdocs/src/Views/Menugreens.php:106
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:16
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:17
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:18
 msgid "delete"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:123
+#: httpdocs/src/Views/Menumint.php:59 httpdocs/src/Views/Menugreens.php:114
 msgid "Time to logout:"
 msgstr ""
 
-#: httpdocs/src/Views/Menumint.php:62 httpdocs/src/Views/Menugreens.php:123
+#: httpdocs/src/Views/Menumint.php:59 httpdocs/src/Views/Menugreens.php:114
 msgid "minutes"
+msgstr ""
+
+#: httpdocs/src/Views/Menugreens.php:14
+msgid "Support"
 msgstr ""
 
 #: httpdocs/src/Views/Menugreens.php:32
@@ -643,61 +663,69 @@ msgstr ""
 msgid "Front picture"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:170
+#: httpdocs/src/Views/Creator.php:165 httpdocs/src/Views/Creator.php:167
+msgid "European Election"
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:178
 msgid "Logged in as"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:185
+#: httpdocs/src/Views/Creator.php:193
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:201
+#: httpdocs/src/Views/Creator.php:209
 msgid "Are you sure?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:202
+#: httpdocs/src/Views/Creator.php:210
+msgid "Do you want to log out?"
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:211
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:203
+#: httpdocs/src/Views/Creator.php:212
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:204
+#: httpdocs/src/Views/Creator.php:213
 msgid "Maximum number of elements reached"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:205
+#: httpdocs/src/Views/Creator.php:214
 msgid "Uploading your image ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:206
+#: httpdocs/src/Views/Creator.php:215
 msgid "Your image is being processed ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:207
+#: httpdocs/src/Views/Creator.php:216
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:208
+#: httpdocs/src/Views/Creator.php:217
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:209
+#: httpdocs/src/Views/Creator.php:218
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:210
+#: httpdocs/src/Views/Creator.php:219
 msgid "Please wait until the image is uploaded."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:211
+#: httpdocs/src/Views/Creator.php:220
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
