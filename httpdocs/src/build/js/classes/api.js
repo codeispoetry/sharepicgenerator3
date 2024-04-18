@@ -38,7 +38,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         // Create download link and click it
@@ -94,7 +93,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        // console.log(data)
         data = JSON.parse(data)
 
         try {

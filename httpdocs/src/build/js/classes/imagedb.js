@@ -2,27 +2,36 @@
 
 class ImageDB {
   constructor () {
-    document.getElementById('imagedb_q').addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        this.search()
-      }
+    document.querySelectorAll('[id^="imagedb_q"]').forEach( element => { 
+      element.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          this.search( event.target.value )
+        }
+      })
     })
   }
 
-  search () {
-    //this.search_pixabay()
-    this.search_unsplash()
+  search ( q ) {
+    document.getElementById('imagedb_q').value = q
+    document.getElementById('imagedb_q1').value = q
+    document.getElementById('imagedb_q1').focus()
+    document.getElementById('imagedb_q1').select()
+
+
+    if(q.length < 2 ) {
+      return
+    }
+
+    //this.search_pixabay( q )
+    this.search_unsplash( q )
   }
 
-  search_unsplash() {
-    const q = document.getElementById('imagedb_q').value
-
+  search_unsplash( q ) {
     const url = 'unsplash.php?u=' + encodeURIComponent( 'https://api.unsplash.com/search/photos?lang=de&per_page=30&query=' + q) 
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         logger.log('searches unsplash for ' + q + ' and gets ' + data.results.length + ' results')
         this.show_results_unsplash(data)
       })
@@ -91,9 +100,7 @@ class ImageDB {
     })
   }
 
-  search_pixabay() {
-    const q = document.getElementById('imagedb_q').value
-
+  search_pixabay( q ) {
     const page = 1
     const perPage = 80
     const url = `https://pixabay.com/api/?key=${config.pixabay.apikey}&q=${encodeURIComponent(q)}&image_type=photo&page=${page}&per_page=${perPage}&lang=de`

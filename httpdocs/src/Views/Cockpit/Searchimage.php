@@ -20,7 +20,7 @@
         
         <div class="button-group">
             <input type="text" style="width:100%;" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search in image database');?>">
-            <button onClick="imagedb.search()"><img src="assets/icons/search.svg"></button>   
+            <button onClick="imagedb.search( document.getElementById('imagedb_q').value )"><img src="assets/icons/search.svg"></button>   
         </div>
     </section>
 
