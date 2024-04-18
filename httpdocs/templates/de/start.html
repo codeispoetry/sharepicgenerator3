@@ -33,6 +33,7 @@
         data-cockpit="greentext"  
         onmousedown="component.startDrag(event)"
         ontouchstart="component.startDrag(event)"
+        ontouchend="this.focus()"
         oninput="cockpit.setup_greentext(this)"
         id="greentext"
         spellcheck="false"
@@ -72,6 +73,7 @@
     <div id="patterns">
 
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 
+            ontouchend="this.focus()"
             data-max="1" contenteditable="true" spellcheck="false"
             data-id="copyright"
             style="
@@ -83,7 +85,10 @@
         <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
         data-max="1" spellcheck="false"
         contenteditable="true" oninput="eyecatcher.makeSquare();"
-        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
+        onmousedown="component.startDrag(event)" 
+        ontouchstart="component.startDrag(event)" 
+        ontouchend="this.focus()"
+        style="
                     z-index:2; 
                     left: 5px; top: 5px; 
                     font-size: 20px; 
@@ -100,7 +105,9 @@
         <div data-id="greenaddtext" data-class="greenaddtext draggable selectable" data-cockpit="greenaddtext"
         data-max="10" spellcheck="false"
         contenteditable="true"
-        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
+        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" 
+        ontouchend="this.focus()"
+        style="
                     z-index:2; 
                     left: 5px; top: 5px; 
                     font-size: 20px; 
@@ -118,7 +125,7 @@
 
         <div data-id="machenwaszaehlt" data-class="machenwaszaehlt greentext draggable selectable" data-cockpit="europe"
             data-max="1" spellcheck="false"
-            contenteditable="true"
+            contenteditable="false"
             onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
                     z-index:2; 
                     left: 5px; top: 5px; 
@@ -146,7 +153,7 @@
             width: 100px; 
             height: 100px;
             border-radius: 50%;"></div>
-        <div class="ap_text" contenteditable="true" style="
+        <div class="ap_text" contenteditable="true" ontouchend="this.focus()" style="
             display: flex; 
             justify-content: center;
             color: #ffffff;
