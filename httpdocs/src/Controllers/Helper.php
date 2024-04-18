@@ -84,6 +84,7 @@ class Helper {
 	 * Checks, if a remote file is an image.
 	 *
 	 * @param string $url The url of the file.
+	 * @return string|bool The content type or false.
 	 */
 	public static function is_image_file_remote( $url ) {
 
@@ -100,7 +101,7 @@ class Helper {
 			return false;
 		}
 
-		return true;
+		return str_replace( 'image/', '', $ct );
 	}
 
 

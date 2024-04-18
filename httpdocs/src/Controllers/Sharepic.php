@@ -286,20 +286,29 @@ class Sharepic {
 		$url = filter_var( $data['url'], FILTER_VALIDATE_URL );
 
 		if ( ! $url ) {
-			$this->http_error( 'Could not load image' );
+			$this->http_error( 'Could not load image (code 1)' );
 			return;
 		}
 
-		if ( ! Helper::is_image_file_remote( $url ) ) {
-			$this->http_error( 'Could not load image' );
+		$image_type = Helper::is_image_file_remote( $url );
+		if ( ! $image_type ) {
+			$this->http_error( 'Could not load image (code 2)' );
 			return;
 		}
 
-		$extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
-		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {
-			$this->http_error( 'Could not load image' );
+		// $extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
+		// if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {
+		// 	$this->http_error( 'Could not load image (code 3)' );
+		// 	return;
+		// }
+
+		if ( ! in_array( $image_type, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {
+			$this->http_error( 'Could not load image (code 4)' );
 			return;
 		}
+
+		$extension = $image_type;
+
 		$upload_file = $this->env->user->get_dir() . 'workspace/background.' . $extension;
 
 		copy( $url, $upload_file );

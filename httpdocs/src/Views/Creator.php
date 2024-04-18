@@ -197,9 +197,16 @@
 
 <script>
     const config = {
+		<?php if ( $pixabayapi = $this->env->config->get( 'Pixabay', 'apikey' ) ) { ?>
         'pixabay': {
-            'apikey': '<?php echo$this->env->config->get( 'Pixabay', 'apikey' ); ?>'
+            'apikey': '<?php echo $pixabayapi; ?>'
         },
+		<?php } ?>
+		<?php if ( $unsplashapi = $this->env->config->get( 'Unsplash', 'apikey' ) ) { ?>
+		'unsplash': {
+            'apikey': '<?php echo $unsplashapi; ?>'
+        },
+		<?php } ?>
 		'url': '<?php echo$this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
 		'username': '<?php echo$this->env->user->get_username(); ?>',
