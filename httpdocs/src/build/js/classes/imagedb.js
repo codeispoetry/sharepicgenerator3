@@ -10,8 +10,8 @@ class ImageDB {
   }
 
   search () {
-    this.search_pixabay()
-    //this.search_unsplash()
+    //this.search_pixabay()
+    this.search_unsplash()
   }
 
   search_unsplash() {
@@ -28,7 +28,8 @@ class ImageDB {
         logger.log('searches unsplash for ' + q + ' and gets ' + data.results.length + ' results')
         this.show_results_unsplash(data)
       })
-      .catch(error => console.error('Error:', error))
+      .catch(error => console.error('Error:', error)
+    )
   }
 
   show_results_unsplash (data) {
@@ -50,7 +51,7 @@ class ImageDB {
       const img = document.createElement('div')
       img.style.backgroundImage = `url('${hit.urls.small}')`
       img.classList.add('image')
-      img.setAttribute('data-url', hit.urls.regular)
+      img.setAttribute('data-url', hit.links.download_location)
       img.setAttribute('data-user', hit.user.name)
       img.setAttribute('data-pageurl', hit.links.html)
 
@@ -70,14 +71,26 @@ class ImageDB {
         document.getElementById('background').style.backgroundImage = img.style.backgroundImage
         document.getElementById('background').style.filter = 'grayscale(100%)'
 
-        api.loadByUrl(img.dataset.url)
+        // get real image url
+        fetch(img.dataset.url,  {
+          headers: {
+              'Authorization': `Client-ID ${config.unsplash.apikey}`
+          }})
+          .then(response => response.json())
+          .then(data => {
+            api.loadByUrl(data.url)
+          })
+          .catch(error => console.error('Error:', error)
+        )
+
+       
 
         // is copyright already shown?
         const copyright = document.querySelector('#sharepic [id^=copyright_]')
         if (!copyright) {
           component.add('copyright')
         }
-        document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf unsplash.com`
+        document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf Unsplash.com`
       }
       results.appendChild(img)
     })
