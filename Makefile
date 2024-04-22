@@ -16,6 +16,7 @@ woff:
 	woff2_compress Pacifico.ttf 
 
 deploy-gruene:
+	ssh sharepic-verdigado 'sudo chown -R tr:tr /srv/sharepic'
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic-verdigado:/srv/sharepic || true
 	ssh sharepic-verdigado 'sudo chown -R www-data:www-data /srv/sharepic'
 

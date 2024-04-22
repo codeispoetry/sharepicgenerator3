@@ -59,6 +59,11 @@
             &:hover{
                 background-color: $theme-color;
             }
+
+            img{
+                width: 20px;
+                height: 20px;
+            }
         }
 
         &-column{
