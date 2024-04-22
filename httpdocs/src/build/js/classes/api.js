@@ -145,7 +145,6 @@ class API {
         })
 
         cockpit.setup_sharepic()
-        rte.init()
         sg.init()
 
         document.querySelector('[contenteditable]').addEventListener('paste', function(e) {

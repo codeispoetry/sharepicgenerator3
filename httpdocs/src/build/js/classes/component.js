@@ -59,7 +59,6 @@ class Component {
 
     document.querySelector('.selected')?.classList.remove('selected')
     cockpit.target = null
-    rte.hide()
   }
 
   delete () {

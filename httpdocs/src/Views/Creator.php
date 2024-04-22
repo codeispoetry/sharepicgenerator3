@@ -67,9 +67,6 @@
 
 				<div class="message"></div>
 			</div>
-			<?php
-				require 'src/Views/RTE.php';
-			?>
 		</div>
 		<div id="cockpit" class="cockpit">
 			<div id="tabs">
