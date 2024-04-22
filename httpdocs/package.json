@@ -7,7 +7,8 @@
     "postinstall": "npm run scss && npm run js",
     "scss": "node-sass --output-style compressed -o assets/ src/build/scss/styles.scss",
     "watch:scss": "node-sass --watch src/build/scss/styles.scss --output-style compressed -o assets",
-    "js": "uglifyjs src/build/js/**/*.js src/build/js/*.js node_modules/quill/dist/quill.js --beautify -o assets/script.js",
+    "js": "uglifyjs src/build/js/**/*.js src/build/js/*.js --beautify -o assets/script.js",
+    "watch:js": "chokidar 'src/build/js/**/*.js' -c 'npm run js'",
     "watch": "npm-run-all --parallel watch:scss watch:js",
     "lint:js": "standard",
     "lint:scss": "stylelint '**/*.scss'",
@@ -39,6 +40,6 @@
   "dependencies": {
     "fs-extra": "^11.2.0",
     "puppeteer": "^22.0.0",
-    "quill": "^2.0.0"
+    "tinymce": "^7.0.1"
   }
 }
