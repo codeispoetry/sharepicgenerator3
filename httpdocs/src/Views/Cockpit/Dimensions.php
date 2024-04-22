@@ -2,9 +2,9 @@
     <h2><?php  echo _('Dimensions');?></h2>
     <section>
         <h3><?php  echo _('Set dimensions manually');?></h3>
-        <input type="number" name="width" id="width" value="500" step="1" style="width: 25%;" onChange="sg.setSize()">
+        <input type="number" name="width" id="width" max="6000" value="500" step="1" style="width: 25%;" onChange="sg.setSize()">
         x
-        <input type="number" name="height" id="height" value="400" step="1" style="width: 25%;" onChange="sg.setSize()">       
+        <input type="number" name="height" id="height" max="6000" value="400" step="1" style="width: 25%;" onChange="sg.setSize()">       
     </section>
     <section>     
         <h3><?php echo _('Size presets');?></h3>
