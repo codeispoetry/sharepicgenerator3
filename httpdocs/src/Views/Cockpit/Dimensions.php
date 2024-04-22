@@ -29,12 +29,21 @@
             </button>   
         </div>
         <div class="dimensions dimensions-column">
-            <button data-sizepreset="1500:2102">Postkarte hockkant</button>
-            <button data-sizepreset="2102:1500">Postkarte quer</button>
-
-            <button data-sizepreset="3531:4984">Plakat DIN A3</button>
-            <button data-sizepreset="2492:3520">Plakat DIN A2</button>
-            <button data-sizepreset="3520:4972">Plakat DIN A1</button>
+            <?php
+                echo _('Presets for flyeralarm.de. Other print services may require different sizes.');
+            ?>
+            
+            <div style="display: flex">
+                Postkarte&nbsp;
+                <button data-sizepreset="1500:2102">hockkant</button>
+                <button data-sizepreset="2102:1500">quer</button>
+            </div>
+            <div style="display: flex">
+                Plakat&nbsp;
+                <button data-sizepreset="3531:4984">DIN A3</button>
+                <button data-sizepreset="2492:3520"> DIN A2</button>
+                <button data-sizepreset="3520:4972">DIN A1</button>
+            </div>
         </div>
         <div>
             <?php
