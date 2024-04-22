@@ -39,13 +39,6 @@
         </div>
         <?php } ?>
     </section>
-
-    <section>
-        <?php echo _('Sometimes the text is not displayed correctly. In this case, please reset the text.'); ?>
-        <button class="no-button" onClick="greentext.reset()">
-            <?php echo _("Reset text"); ?>
-        </button>  
-    </section>
     <?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
 </section>
@@ -75,11 +68,6 @@
             if( line == null ) return
             line.classList.remove('tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras')
             line.classList.add(input.value)
-        }
-
-        reset() {
-            const textContent = document.getElementById('greentext').textContent
-            document.getElementById('greentext').innerHTML = `<div class="s sandklee">${textContent}</div>`
         }
     }
     const greentext = new Greentext();
