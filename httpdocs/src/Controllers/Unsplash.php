@@ -58,5 +58,4 @@ class Unsplash {
 
 		echo $response;
 	}
-
 }

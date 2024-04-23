@@ -68,5 +68,4 @@ class Mailer {
 
 		return true;
 	}
-
 }

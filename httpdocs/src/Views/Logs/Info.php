@@ -6,6 +6,14 @@
 			<ul>
                 <li>
 					<?php
+						$now = new DateTime();
+						$beginning = new DateTime( cmd( 'head -n1 ../logfiles/usage.log | cut -f1' ) );
+						$since = $beginning->diff( $now )->format( '%a days, %h hours, %i minutes' );
+						printf( _('Logging since: %s'), $since );
+					?>
+				</li>
+				<li>
+					<?php
 						printf( _('Number of users: %s'), cmd( 'cut -f2 ../logfiles/usage.log | sort | uniq | wc -l' ) );
 					?>
 				</li>

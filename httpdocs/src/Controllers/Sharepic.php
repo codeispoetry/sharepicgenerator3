@@ -327,7 +327,6 @@ class Sharepic {
 		}
 
 		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=workspace/background.' . $extension ) );
-
 	}
 
 	/**
@@ -403,7 +402,6 @@ class Sharepic {
 			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not create thumbnail' );
 		}
-
 	}
 
 	/**
@@ -414,7 +412,7 @@ class Sharepic {
 	public function load() {
 		try {
 			$real_path    = realpath( $this->template );
-			$template_dir = realpath( dirname( __FILE__, 3 ) ) . '/templates/';
+			$template_dir = realpath( dirname( __DIR__, 2 ) ) . '/templates/';
 			$user_dir     = realpath( $this->env->user->get_dir() );
 
 			if ( ! $real_path ) {

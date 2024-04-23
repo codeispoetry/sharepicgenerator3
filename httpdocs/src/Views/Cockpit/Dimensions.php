@@ -18,7 +18,7 @@
             <button data-sizepreset="1200:630" title="Facebook">
                 <img src="assets/icons/brands/facebook.svg">
             </button>
-            <button data-sizepreset="1080:1350" title="Instagram">
+            <button data-sizepreset="900:1600" title="Instagram">
                 <img src="assets/icons/brands/instagram.svg">
             </button>
             <button data-sizepreset="1600:900" title="X">

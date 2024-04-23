@@ -197,7 +197,7 @@
 		<?php } ?>
 		'url': '<?php echo$this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
-		'username': '<?php echo$this->env->user->get_username(); ?>',
+		'username': '<?php echo $this->env->user->get_username(); ?>',
 	};
 	
 	const lang = {

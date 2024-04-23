@@ -71,7 +71,7 @@ class Frontend {
 
 		$pages = glob( './src/Views/Pages/*.php' );
 		$pages = array_map(
-			function( $filename ) {
+			function ( $filename ) {
 				return pathinfo( $filename, PATHINFO_FILENAME );
 			},
 			$pages

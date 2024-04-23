@@ -88,7 +88,5 @@ class Logger {
 		} catch ( \Exception $e ) {
 			throw new \Exception( $this->file . ' is not writable.' );
 		}
-
 	}
-
 }

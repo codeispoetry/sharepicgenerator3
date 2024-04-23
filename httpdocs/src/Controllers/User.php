@@ -104,6 +104,20 @@ class User {
 	}
 
 	/**
+	 * Returns if user may use openai.
+	 *
+	 * @return bool True if user may use openai.
+	 */
+	public function may_openai() {
+		$allowed_users = $this->config->get( 'OpenAI', 'users' );
+		if ( empty( $allowed_users ) ) {
+			return false;
+		}
+
+		return in_array( $this->username, explode( ',', $allowed_users ) );
+	}
+
+	/**
 	 * Get the users dir.
 	 *
 	 * @return string
@@ -148,7 +162,7 @@ class User {
 		$savings_dir = glob( $save_dir . '/*', GLOB_ONLYDIR );
 		usort(
 			$savings_dir,
-			function( $a, $b ) {
+			function ( $a, $b ) {
 				return filemtime( $a ) - filemtime( $b );
 			}
 		);
@@ -170,5 +184,4 @@ class User {
 
 		return $savings;
 	}
-
 }

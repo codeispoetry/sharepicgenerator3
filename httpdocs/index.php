@@ -49,7 +49,7 @@ if ( 'felogger' === $controller ) {
 }
 
 if ( 'openai' === $controller ) {
-	$openai = new Openai();
+	$openai = new Openai( $env );
 	$openai->{$method}();
 }
 

@@ -156,4 +156,3 @@ class Helper {
 		return false;
 	}
 }
-

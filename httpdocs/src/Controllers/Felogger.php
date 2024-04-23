@@ -100,5 +100,4 @@ class Felogger {
 		header( 'HTTP/1.0 404 No route.' );
 		die();
 	}
-
 }

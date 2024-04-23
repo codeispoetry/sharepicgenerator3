@@ -24,10 +24,16 @@
         </div>
     </section>
 
-    <?php if ( false ) { ?>
+    <?php if ( $this->env->user->may_openai() ) { ?>
     <section id="search_dalle">
         <h3><?php  echo _('Create image with AI');?></h3>
-        <p><?php echo _('Use artificial intelligence to create a unique image');?></p>
+        <p>
+            <?php 
+                echo _('Use artificial intelligence to create a unique image.');
+                echo _('Please keep in mind, that generated images may reproduce stereotypes or be inappropriate.');
+                echo _('Adjust your prompt accordingly.');
+            ?>
+        </p>
         <textarea placeholder="<?php  echo _('Describe the image you want');?>" 
                 id="dalle_prompt" spellcheck="false" rows="2"
                 oninput="this.rows=this.value.split('\n').length"></textarea>

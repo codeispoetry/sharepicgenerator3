@@ -1,8 +1,6 @@
 <?php
 namespace Sharepicgenerator\Controllers;
 
-use Sharepicgenerator\Controllers\User;
-
 /**
  * Open AI controller.
  */
@@ -14,22 +12,22 @@ class Openai {
 	 */
 	private $apikey;
 
+
 	/**
-	 * The user object.
+	 * Env variable like user, config, mailer, etc..
 	 *
-	 * @var User
+	 * @var object
 	 */
-	private $user;
+	private $env;
 
 	/**
 	 * The constructor.
+	 *
+	 * @param Env $env Environment with user, config, logger, mailer, etc.
 	 */
-	public function __construct() {
-		global $config;
-		$this->apikey = $config->get( 'OpenAI', 'apikey' );
-
-		$user       = new User();
-		$this->user = $user->get_user_by_token();
+	public function __construct( $env ) {
+		$this->env    = $env;
+		$this->apikey = $this->env->config->get( 'OpenAI', 'apikey' );
 	}
 
 	/**
@@ -56,7 +54,7 @@ class Openai {
 			die();
 		}
 		$remote_url = $json->data[0]->url;
-		$local_file = '../users/' . $this->user . '/workspace/background.png';
+		$local_file = '../users/' . $this->env->user->get_username() . '/workspace/background.png';
 		copy( $remote_url, $local_file );
 
 		if ( Helper::is_image_file_local( $local_file ) === false ) {
@@ -104,8 +102,17 @@ class Openai {
 		curl_setopt_array( $ch, $options );
 		$response = curl_exec( $ch );
 
-		if ( ! $response ) {
+		if ( ! $response || curl_errno( $ch ) ) {
 			die( 'Error: "' . curl_error( $ch ) . '" - Code: ' . curl_errno( $ch ) );
+		}
+
+		$info        = curl_getinfo( $ch );
+		$header_size = $info['header_size'];
+		$header      = substr( $response, 0, $header_size );
+		$body        = substr( $response, $header_size );
+		file_put_contents( 'ratelimit.txt', $header );
+		if ( preg_match( '/openai-ratelimit-remaining: (\d+)/i', $header, $matches ) ) {
+			file_put_contents( 'ratelimit.txt', $matches[1] );
 		}
 
 		curl_close( $ch );
@@ -124,5 +131,4 @@ class Openai {
 		header( 'HTTP/1.0 404 No route.' );
 		die();
 	}
-
 }

@@ -32,7 +32,7 @@ class Proxy {
 		// Check, if the requested file is in the tmp dir.
 		if ( ! $clearance ) {
 			$provided_path = realpath( '../' . $path );
-			$allowed_dir   = realpath( dirname( __FILE__, 4 ) . '/tmp/' );
+			$allowed_dir   = realpath( dirname( __DIR__, 3 ) . '/tmp/' );
 			if ( $provided_path && str_starts_with( $provided_path, $allowed_dir ) ) {
 				$clearance = true;
 			}

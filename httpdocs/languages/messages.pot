@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 15:22+0200\n"
+"POT-Creation-Date: 2024-04-23 18:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,14 +58,23 @@ msgstr ""
 msgid "Password reset"
 msgstr ""
 
-#: httpdocs/src/Views/ImageDB.php:5
+#: httpdocs/src/Views/ImageDB.php:6
+msgid "Images from Unsplash"
+msgstr ""
+
+#: httpdocs/src/Views/ImageDB.php:10
+#: httpdocs/src/Views/Cockpit/Searchimage.php:22
+msgid "search in image database"
+msgstr ""
+
+#: httpdocs/src/Views/ImageDB.php:14
 msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
-#: httpdocs/src/Views/Creator.php:141 httpdocs/src/Views/Creator.php:143
+#: httpdocs/src/Views/Creator.php:134 httpdocs/src/Views/Creator.php:136
 msgid "Eyecatcher"
 msgstr ""
 
@@ -101,7 +110,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
-#: httpdocs/src/Views/Cockpit/Freetext.php:10
+#: httpdocs/src/Views/Cockpit/Freetext.php:8
 #: httpdocs/src/Views/Cockpit/Addpicture.php:9
 msgid "Total size"
 msgstr ""
@@ -158,23 +167,13 @@ msgstr ""
 msgid "L"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:44
-msgid ""
-"Sometimes the text is not displayed correctly. In this case, please reset "
-"the text."
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Greentext.php:46
-msgid "Reset text"
-msgstr ""
-
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
-#: httpdocs/src/Views/Creator.php:133 httpdocs/src/Views/Creator.php:135
+#: httpdocs/src/Views/Creator.php:126 httpdocs/src/Views/Creator.php:128
 msgid "Additional text"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:4
-#: httpdocs/src/Views/Cockpit/Freetext.php:5
+#: httpdocs/src/Views/Cockpit/Freetext.php:4
 msgid "Add text"
 msgstr ""
 
@@ -185,7 +184,7 @@ msgid "Color"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Dimensions.php:2
-#: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:87
+#: httpdocs/src/Views/Creator.php:78 httpdocs/src/Views/Creator.php:80
 msgid "Dimensions"
 msgstr ""
 
@@ -205,28 +204,33 @@ msgstr ""
 msgid "square 16:9"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:41
+#: httpdocs/src/Views/Cockpit/Dimensions.php:33
+msgid ""
+"Presets for flyeralarm.de. Other print services may require different sizes."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:50
 msgid ""
 "You are missing a particular size? Please feel free to edit the sizes "
 "manually above."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:47
+#: httpdocs/src/Views/Cockpit/Dimensions.php:56
 msgid "QR-Code"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:50
+#: httpdocs/src/Views/Cockpit/Dimensions.php:59
 msgid ""
 "You can scan this QR-Code with your smartphone to open your sharepic on your "
 "mobile."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:52
+#: httpdocs/src/Views/Cockpit/Dimensions.php:61
 msgid "This link is valid for 5 minutes."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:2
-#: httpdocs/src/Views/Creator.php:101 httpdocs/src/Views/Creator.php:103
+#: httpdocs/src/Views/Creator.php:94 httpdocs/src/Views/Creator.php:96
 msgid "Edit background image"
 msgstr ""
 
@@ -263,7 +267,7 @@ msgid "Delete background image"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2 httpdocs/src/Views/Menugreens.php:86
-#: httpdocs/src/Views/Creator.php:157 httpdocs/src/Views/Creator.php:159
+#: httpdocs/src/Views/Creator.php:150 httpdocs/src/Views/Creator.php:152
 msgid "Vor Ort"
 msgstr ""
 
@@ -278,8 +282,8 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
 #: httpdocs/src/Views/Cockpit/Addpicture.php:34
-#: httpdocs/src/Views/Creator.php:117 httpdocs/src/Views/Creator.php:119
-#: httpdocs/src/Views/Creator.php:125 httpdocs/src/Views/Creator.php:127
+#: httpdocs/src/Views/Creator.php:110 httpdocs/src/Views/Creator.php:112
+#: httpdocs/src/Views/Creator.php:118 httpdocs/src/Views/Creator.php:120
 msgid "Text"
 msgstr ""
 
@@ -331,48 +335,54 @@ msgstr ""
 msgid "Search in an online image database"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:22
-msgid "search in image database"
-msgstr ""
-
 #: httpdocs/src/Views/Cockpit/Searchimage.php:29
 msgid "Create image with AI"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:30
-msgid "Use artificial intelligence to create a unique image"
+#: httpdocs/src/Views/Cockpit/Searchimage.php:32
+msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:31
+#: httpdocs/src/Views/Cockpit/Searchimage.php:33
+msgid ""
+"Please keep in mind, that generated images may reproduce stereotypes or be "
+"inappropriate."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:34
+msgid "Adjust your prompt accordingly."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:37
 msgid "Describe the image you want"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:35
+#: httpdocs/src/Views/Cockpit/Searchimage.php:41
 #: httpdocs/src/Views/Menumint.php:14 httpdocs/src/Views/Menugreens.php:17
 msgid "Create"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:44
+#: httpdocs/src/Views/Cockpit/Searchimage.php:50
 msgid "Please wait while AI generates your image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:45
+#: httpdocs/src/Views/Cockpit/Searchimage.php:51
 msgid "This can take up to one minute."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:49
+#: httpdocs/src/Views/Cockpit/Searchimage.php:55
 msgid "seconds"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:53
+#: httpdocs/src/Views/Cockpit/Searchimage.php:59
 msgid "Result"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:56
+#: httpdocs/src/Views/Cockpit/Searchimage.php:62
 msgid "Use this image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:59
+#: httpdocs/src/Views/Cockpit/Searchimage.php:65
 msgid "Try again"
 msgstr ""
 
@@ -384,12 +394,8 @@ msgstr ""
 msgid "Show green area"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Freetext.php:4
-msgid "For a text in your sharepic, edit it directly in the sharepic."
-msgstr ""
-
 #: httpdocs/src/Views/Cockpit/Copyright.php:2
-#: httpdocs/src/Views/Creator.php:109 httpdocs/src/Views/Creator.php:111
+#: httpdocs/src/Views/Creator.php:102 httpdocs/src/Views/Creator.php:104
 msgid "Copyright"
 msgstr ""
 
@@ -472,17 +478,22 @@ msgstr ""
 msgid "Usage Overview"
 msgstr ""
 
-#: httpdocs/src/Views/Logs/Info.php:9
+#: httpdocs/src/Views/Logs/Info.php:12
+#, php-format
+msgid "Logging since: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:17
 #, php-format
 msgid "Number of users: %s"
 msgstr ""
 
-#: httpdocs/src/Views/Logs/Info.php:14
+#: httpdocs/src/Views/Logs/Info.php:22
 #, php-format
 msgid "Number of sharepics: %s"
 msgstr ""
 
-#: httpdocs/src/Views/Logs/Info.php:19
+#: httpdocs/src/Views/Logs/Info.php:27
 #, php-format
 msgid "Clicks on image after imagedb search: %s"
 msgstr ""
@@ -641,97 +652,97 @@ msgstr ""
 msgid "to back"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:43
+#: httpdocs/src/Views/Creator.php:39
 msgid "Undo"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:46
+#: httpdocs/src/Views/Creator.php:42
 msgid ""
 "An error occurred. The sharepicgenerator might not behave as expected. This "
 "bug has been reported for further investigation."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:49
+#: httpdocs/src/Views/Creator.php:45
 msgid ""
 "Your are using a yet unsupported browser. If you encounter any problems, "
 "please try Chrome or Firefox instead."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:61
+#: httpdocs/src/Views/Creator.php:57
 msgid "Download"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:93 httpdocs/src/Views/Creator.php:95
+#: httpdocs/src/Views/Creator.php:86 httpdocs/src/Views/Creator.php:88
 msgid "Search or create image"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:149 httpdocs/src/Views/Creator.php:151
+#: httpdocs/src/Views/Creator.php:142 httpdocs/src/Views/Creator.php:144
 msgid "Front picture"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:165 httpdocs/src/Views/Creator.php:167
+#: httpdocs/src/Views/Creator.php:158 httpdocs/src/Views/Creator.php:160
 msgid "European Election"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:178
+#: httpdocs/src/Views/Creator.php:171
 msgid "Logged in as"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:193
+#: httpdocs/src/Views/Creator.php:186
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:209
+#: httpdocs/src/Views/Creator.php:204
 msgid "Are you sure?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:210
+#: httpdocs/src/Views/Creator.php:205
 msgid "Do you want to log out?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:211
+#: httpdocs/src/Views/Creator.php:206
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:212
+#: httpdocs/src/Views/Creator.php:207
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:213
+#: httpdocs/src/Views/Creator.php:208
 msgid "Maximum number of elements reached"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:214
+#: httpdocs/src/Views/Creator.php:209
 msgid "Uploading your image ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:215
+#: httpdocs/src/Views/Creator.php:210
 msgid "Your image is being processed ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:216
+#: httpdocs/src/Views/Creator.php:211
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:217
+#: httpdocs/src/Views/Creator.php:212
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:218
+#: httpdocs/src/Views/Creator.php:213
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:219
+#: httpdocs/src/Views/Creator.php:214
 msgid "Please wait until the image is uploaded."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:220
+#: httpdocs/src/Views/Creator.php:215
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."

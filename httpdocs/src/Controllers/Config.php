@@ -53,6 +53,4 @@ class Config {
 	public function set( $section, $key, $value ) {
 		$this->config[ $section ][ $key ] = $value;
 	}
-
-
 }
