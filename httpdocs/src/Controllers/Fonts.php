@@ -35,15 +35,18 @@ class Fonts {
 	 */
 	public static function write_css_file() {
 		$woffs   = self::get_fonts();
-		// The numbered arguments here a a real brainfuck.Have fun and grab a beer.
 		$pattern = "@font-face {
-	font-family: '%1\$s';
-	src: url('/assets/fonts/%1\$s.woff2') format('woff2');
+	font-family: '%s';
+	src: url('../../.%s') format('woff2');
 	font-weight: 300;
 }";
 		$css     = '';
 		foreach ( $woffs as $woff ) {
-			$css .= sprintf( $pattern, pathinfo( $woff, PATHINFO_FILENAME ) ) . "\n";
+			$css .= sprintf(
+				$pattern,
+				pathinfo( $woff, PATHINFO_FILENAME ),
+				$woff
+			) . "\n";
 		}
 
 		file_put_contents( self::CSS_FILE, $css ) || die( 'Could not write file' );
