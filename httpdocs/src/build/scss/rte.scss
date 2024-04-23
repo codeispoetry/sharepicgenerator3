@@ -1,9 +1,16 @@
 #rte-container{
-  
     position: relative;
-    margin-left: -600px;
+    margin-left: 0px;
+    transition: all 0.1s ease-in-out;
 
     .tox-promotion {
         display: none !important;
+    }
+
+
+    &.rte{
+        &-focus{
+            margin-left: -600px;
+        }
     }
 }

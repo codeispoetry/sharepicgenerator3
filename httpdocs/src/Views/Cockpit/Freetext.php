@@ -37,18 +37,22 @@
         menubar: 'tools',
         plugins: 'lists',
         skin: 'oxide-dark',
-        font_family_formats: 'DancingScript=DancingScript;SaunaPro=SaunaPro;Baloo2=Baloo2',
+        font_family_formats: '<?php echo Sharepicgenerator\Controllers\Fonts::get_font_family_formats(); ?>',
         font_size_formats: '8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt',
-        toolbar: 'undo redo | bold italic underline | fontfamily fontsize lineheight | forecolor | bullist numlist | removeformat',
+        toolbar: 'undo redo | bold italic underline | fontfamily fontsize lineheight | forecolor | removeformat',
         setup: function ( editor ) {
             editor.on('change keyup', function () {
                 cockpit.target.innerHTML = editor.getContent();
             });
+            editor.on('focus', function () {
+               document.getElementById('rte-container').classList.add('rte-focus');
+            });
+            editor.on('blur', function () {
+                document.getElementById('rte-container').classList.remove('rte-focus');
+            });
         },
         'license_key': 'gpl',
-        'branding': false,
-        content_style:
-            "@import url('assets/fonts/DancingScript.woff2');",
-        
+        'branding': false,    
+        'content_css': '/src/Views/rte/rte.css',
     });
  </script>

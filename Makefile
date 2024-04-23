@@ -15,6 +15,9 @@ shell:
 woff:
 	woff2_compress Pacifico.ttf 
 
+fonts_write_css_file:
+	cd httpdocs && php -r "require 'src/Controllers/Fonts.php'; sharepicgenerator\Controllers\Fonts::write_css_file();"
+
 deploy-gruene:
 	ssh sharepic-verdigado 'sudo chown -R tr:tr /srv/sharepic'
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic-verdigado:/srv/sharepic || true

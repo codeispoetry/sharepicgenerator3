@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharepicgenerator</title>
     <link rel="stylesheet" href="assets/styles.css?v=<?php echo filemtime('assets/styles.css');?>">
+    <link rel="stylesheet" href="<?php echo Sharepicgenerator\Controllers\Fonts::get_css_file(); ?>">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         #canvas{
@@ -30,11 +31,6 @@
 
 <main class="main">
 	<div class="row">
-			<!-- <div id="welcome">
-				<?php
-					//require 'src/Views/Message.php';
-				?>
-			</div> -->
 		<div id="workbench" class="workbench">
 			<div style="display: flex; justify-content: center;">
 				<div>

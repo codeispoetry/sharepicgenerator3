@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'Anton';
+	src: url('/assets/fonts/Anton.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Baloo2';
+	src: url('/assets/fonts/Baloo2.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Calibri';
+	src: url('/assets/fonts/Calibri.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'DancingScript';
+	src: url('/assets/fonts/DancingScript.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'GrueneType';
+	src: url('/assets/fonts/GrueneType.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Jacquard24-Regular';
+	src: url('/assets/fonts/Jacquard24-Regular.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Pacifico';
+	src: url('/assets/fonts/Pacifico.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Roboto-Light';
+	src: url('/assets/fonts/Roboto-Light.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'SaunaPro';
+	src: url('/assets/fonts/SaunaPro.woff2') format('woff2');
+	font-weight: 300;
+}

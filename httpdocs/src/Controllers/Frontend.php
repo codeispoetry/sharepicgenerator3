@@ -51,7 +51,7 @@ class Frontend {
 		$scope = ( ! empty( $_GET['scope'] ) ) ? Helper::sanitze_az09( $_GET['scope'] ) : 'Sharepics';
 		$pages = glob( './src/Views/Logs/*.php' );
 		$pages = array_map(
-			function( $filename ) {
+			function ( $filename ) {
 				return pathinfo( $filename, PATHINFO_FILENAME );
 			},
 			$pages
