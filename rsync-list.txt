@@ -8,3 +8,4 @@ httpdocs/index.php
 httpdocs/unsplash.php
 httpdocs/favicon.ico
 scripts/autodeletion.php
+httpdocs/node_modules/tinymce/

@@ -89,6 +89,13 @@
 }
 
 #sharepic{
+    background-size: cover;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     overflow: hidden;
 
     .selected{
