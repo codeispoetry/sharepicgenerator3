@@ -9,6 +9,18 @@
             <button onClick="ui.setLang('en')">
                 <?php echo _( 'English' ); ?>
             </button>
+            <?php if ( $this->env->user->is_admin() ) { ?>
+                <div class="divider"></div>
+                <a href="/index.php?c=frontend&m=log&scope=Info" class="menu-link">
+                    <?php  echo _('Log Info');?>
+                </a>
+                <a href="/index.php?c=frontend&m=log&scope=Sharepics" class="menu-link">
+                    <?php  echo _('Sharepics');?>
+                </a>
+                <a href="/index.php?c=frontend&m=log&scope=Log" class="menu-link">
+                    <?php  echo _('Logfile');?>
+                </a>
+            <?php } ?>
             <div class="divider"></div>
             <a href="index.php?c=frontend&m=create" class="menu-link">
                 <?php  echo _('Create');?>
