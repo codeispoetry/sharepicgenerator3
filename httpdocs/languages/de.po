@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 18:48+0200\n"
+"POT-Creation-Date: 2024-04-23 20:21+0200\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -355,7 +355,6 @@ msgid "Create image with AI"
 msgstr "Bild mit KI erstellen"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:32
-#, fuzzy
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 "Verwende künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
@@ -370,8 +369,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:34
 msgid "Adjust your prompt accordingly."
-msgstr ""
-"Passe Deinen Prompt ggf. entsprechend an."
+msgstr "Passe Deinen Prompt ggf. entsprechend an."
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:37
 msgid "Describe the image you want"
@@ -500,10 +498,13 @@ msgstr "Neueste Sharepics"
 msgid "Usage Overview"
 msgstr "Nutzung"
 
+#: httpdocs/src/Views/Logs/Info.php:11
+msgid "%a days, %h hours, %i minutes"
+msgstr "%a Tage, %h Stunden, %i Minuten"
+
 #: httpdocs/src/Views/Logs/Info.php:12
-#, fuzzy, php-format
 msgid "Logging since: %s"
-msgstr "Geloggt wird seit"
+msgstr "Geloggt wird: %s"
 
 #: httpdocs/src/Views/Logs/Info.php:17
 #, php-format
@@ -519,6 +520,11 @@ msgstr "Anzahl der Sharepics: %s"
 #, php-format
 msgid "Clicks on image after imagedb search: %s"
 msgstr "Klicks auf ein Bild nach einer Bildersuche: %s"
+
+#: httpdocs/src/Views/Logs/Info.php:32
+#, php-format
+msgid "Number of tmp-files: %s"
+msgstr "Anzahl der tmp-Dateien: %s"
 
 #: httpdocs/src/Views/Logs/Log.php:5
 msgid "Usage Log"

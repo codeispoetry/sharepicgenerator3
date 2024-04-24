@@ -8,7 +8,7 @@
 					<?php
 						$now = new DateTime();
 						$beginning = new DateTime( cmd( 'head -n1 ../logfiles/usage.log | cut -f1' ) );
-						$since = $beginning->diff( $now )->format( '%a days, %h hours, %i minutes' );
+						$since = $beginning->diff( $now )->format( _( '%a days, %h hours, %i minutes' ) );
 						printf( _('Logging since: %s'), $since );
 					?>
 				</li>
@@ -25,6 +25,11 @@
 				<li>
 					<?php
 						printf( _('Clicks on image after imagedb search: %s'), cmd( 'grep -c \'clicks on image after search for\' ../logfiles/usage.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
+						printf( _('Number of tmp-files: %s'), cmd( 'ls -l ../tmp/ | wc -l' ) );
 					?>
 				</li>
             </ul>

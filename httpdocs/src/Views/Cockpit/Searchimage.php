@@ -16,7 +16,12 @@
 
     <section id="search_imagedb">
         <h3><?php  echo _('Search image');?></h3>
-        <p><?php echo _('Search in an online image database');?></p>
+        <p>
+            <?php echo _('Search in  image database');?>
+            <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral " target="_blank">
+                <?php echo _('Unsplash'); ?>
+            </a>
+        </p>
         
         <div class="button-group">
             <input type="text" style="width:100%;" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search in image database');?>">

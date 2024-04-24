@@ -520,6 +520,9 @@ class API {
         return response.text()
       })
       .then(data => {
+        if ( config.debug ) {
+          console.log(data)
+        } 
         data = JSON.parse(data)
         config.uploading = false
 

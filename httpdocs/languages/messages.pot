@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-23 18:48+0200\n"
+"POT-Creation-Date: 2024-04-23 20:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -478,6 +478,10 @@ msgstr ""
 msgid "Usage Overview"
 msgstr ""
 
+#: httpdocs/src/Views/Logs/Info.php:11
+msgid "%a days, %h hours, %i minutes"
+msgstr ""
+
 #: httpdocs/src/Views/Logs/Info.php:12
 #, php-format
 msgid "Logging since: %s"
@@ -496,6 +500,11 @@ msgstr ""
 #: httpdocs/src/Views/Logs/Info.php:27
 #, php-format
 msgid "Clicks on image after imagedb search: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:32
+#, php-format
+msgid "Number of tmp-files: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Log.php:5

@@ -2,7 +2,7 @@
     <div style="display:flex;justify-content:space-between;">
         <div>
             <p>
-                <a href="https://unsplash.com" target="_blank">
+                <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral " target="_blank">
                     <?php echo _('Images from Unsplash'); ?>
                 </a>
             </p>

@@ -190,7 +190,7 @@
 
 <script>
     const config = {
-		<?php if ( $pixabayapi = $this->env->config->get( 'Pixabay', 'apikey' ) ) { ?>
+		<?php if ( false && $pixabayapi = $this->env->config->get( 'Pixabay', 'apikey' ) ) { ?>
         'pixabay': {
             'apikey': '<?php echo $pixabayapi; ?>'
         },
@@ -198,6 +198,8 @@
 		'url': '<?php echo$this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
 		'username': '<?php echo $this->env->user->get_username(); ?>',
+		'env': '<?php echo $this->env->config->get( 'Main', 'env' ); ?>',
+		'debug': '<?php echo ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'true' : 'false'; ?>',
 	};
 	
 	const lang = {
