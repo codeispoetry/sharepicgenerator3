@@ -50,8 +50,11 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
-            <button onClick="api.save()">
+            <button onClick="api.save('save','Autsave', 1);alert('Ok');">
                 <?php  echo _('Save');?>
+            </button>
+            <button onClick="api.save()">
+                <?php  echo _('Save as');?>
             </button>
             <div class="divider"></div>
             <?php
@@ -68,5 +71,5 @@
     </div>
     <?php } ?>
 
-    <span class="info-in-menu" style="display: none"><?php echo _( 'Time to logout:'); ?> <span id="time-to-logout">30:00</span><?php echo _('minutes'); ?></span>
+    <span class="info-in-menu" id="info-in-menu"></span>
 </nav>

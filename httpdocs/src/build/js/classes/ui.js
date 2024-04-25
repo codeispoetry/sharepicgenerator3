@@ -8,38 +8,38 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 
 class UI {
   constructor () {
-    document.getElementById('time-to-logout').innerHTML = '30:00'
-    config.startTime = new Date().getTime()
-    const logginPeriod = 30 * 60
-    setInterval(() => {
-      const currentTime = new Date().getTime()
-      const elapsedTime = Math.floor((currentTime - config.startTime) / 1000)
+    // document.getElementById('time-to-logout').innerHTML = '30:00'
+    // config.startTime = new Date().getTime()
+    // const logginPeriod = 30 * 60
+    // setInterval(() => {
+    //   const currentTime = new Date().getTime()
+    //   const elapsedTime = Math.floor((currentTime - config.startTime) / 1000)
 
-      const min = Math.floor((logginPeriod - elapsedTime) / 60)
-      const sec = Math.floor((logginPeriod - elapsedTime) % 60).toString().padStart(2, '0')
-      document.getElementById('time-to-logout').innerHTML = `${min}:${sec}`
+    //   const min = Math.floor((logginPeriod - elapsedTime) / 60)
+    //   const sec = Math.floor((logginPeriod - elapsedTime) % 60).toString().padStart(2, '0')
+    //   document.getElementById('time-to-logout').innerHTML = `${min}:${sec}`
 
-      if (min == 3) {
-        this.reminderToSave()
-      }
-    },
-    1000)
+    //   if (min == 3) {
+    //     this.reminderToSave()
+    //   }
+    // },
+    // 1000)
   }
 
-  resetLogoutTimer () {
-    config.startTime = new Date().getTime()
-    config.remindedToSave = false
-  }
+  // resetLogoutTimer () {
+  //   config.startTime = new Date().getTime()
+  //   config.remindedToSave = false
+  // }
 
-  reminderToSave () {
-    if (config.remindedToSave === true) {
-      return
-    }
+  // reminderToSave () {
+  //   if (config.remindedToSave === true) {
+  //     return
+  //   }
 
-    alert(lang['You will be logged out soon'])
+  //   alert(lang['You will be logged out soon'])
 
-    config.remindedToSave = true
-  }
+  //   config.remindedToSave = true
+  // }
 
   /*
     * @param {string} tab The tab to show.

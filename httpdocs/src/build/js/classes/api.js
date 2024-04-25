@@ -4,6 +4,18 @@ class API {
   constructor () {
     this.api = config.url + '/index.php?c=sharepic'
     this.ai = config.url + '/index.php?c=openai'
+
+    window.setInterval(() => {
+      const ct = new Date()
+      const t = ct.getHours() + ':' + ct.getMinutes()
+  
+      this.save('save','Autsave', 1)
+      
+      document.getElementById('info-in-menu').innerHTML = "Automatische Zwischenspeicherung des Sharepics."
+      window.setTimeout(() => {
+        document.getElementById('info-in-menu').innerHTML = ""
+      }, 10 * 1000 )
+    }, 3 * 60 * 1000)
   }
 
   create () {
@@ -61,20 +73,26 @@ class API {
         this.closeWaiting()
 
         logger.log('creates sharepic')
-
-        ui.resetLogoutTimer()
       })
       .catch(error => console.error('Error:', error))
   }
 
-  // mode=save or mode=publish
-  save (mode = 'save') {
-    const name = prompt('Name des Sharepics', 'Sharepic')
+  // mode = save or mode=publish
+  // name = name for the sharepic or prompted
+  // path = path to the sharepic on server. Must be integer.
+  save (mode = 'save', name = false, path = false) {
+    if( name === false ) {
+      name = prompt('Name des Sharepics', 'Sharepic')
+      if (name === null) {
+        return
+      }
+    }
 
     const data = {
       data: document.getElementById('canvas').innerHTML,
       name,
-      mode
+      mode,
+      path
     }
 
     const options = {
@@ -104,13 +122,16 @@ class API {
                 <img src="assets/icons/delete.svg">
               </button>
             </div>`
-          document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
+
+          // add button to menu only if path is ommited (no autosave)
+          if ( path === false ) {
+            document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
+          }
         } catch (e) {
           console.error(e)
         }
 
         logger.log('saves sharepic ' + name)
-        ui.resetLogoutTimer()
       })
       .catch(error => console.error('Error:', error))
   }

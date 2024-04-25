@@ -199,6 +199,7 @@
 		'starttemplate': '<?php echo $starttemplate; ?>',
 		'imagedb': '<?php echo $this->env->config->get( 'Main', 'imagedb' ); ?>',
 		'username': '<?php echo $this->env->user->get_username(); ?>',
+		'autosave': '<?php echo $this->env->user->get_autosave(); ?>',
 		'env': '<?php echo $this->env->config->get( 'Main', 'env' ); ?>',
 		'debug': '<?php echo ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'true' : 'false'; ?>',
 	};

@@ -13,5 +13,9 @@ window.onload = function () {
   logger = new Logger()
   debug = new Debug()
 
-  api.load('templates/' + config.starttemplate + '/start.html')
+  if ( config.autosave ) {
+    api.load( config.autosave )
+  } else {
+    api.load('templates/' + config.starttemplate + '/start.html')
+  }
 }

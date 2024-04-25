@@ -77,6 +77,13 @@ class Sharepic {
 	private $raw_data;
 
 	/**
+	 * Path to save sharepic
+	 *
+	 * @var string
+	 */
+	private $path;
+
+	/**
 	 * The body class.
 	 *
 	 * @var string
@@ -114,9 +121,10 @@ class Sharepic {
 		$this->size['width']  = (int) ( $data['size']['width'] ?? 100 );
 		$this->size['height'] = (int) ( $data['size']['height'] ?? 100 );
 		$this->size['zoom']   = (float) ( $data['size']['zoom'] ?? 1 );
+		$this->path           = (int) ( $data['path'] ?? false );
 		$this->jpg            = (bool) ( $data['jpg'] ?? 1 );
 		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
-		$this->info           = ( isset( $data['name'] ) ) ? Helper::sanitze_az09( $data['name'] ) : 'no-name';
+		$this->info           = ( isset( $data['name'] ) ) ? preg_replace( '/[^a-zA-Z0-9 äöüÄÖÜß:]/', ':', $data['name'] ) : 'no-name';
 		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish', 'bug' ) ) ) ? $data['mode'] : 'save';
 		$this->raw_data       = $data['data'] ?? '';
 		$this->body_class     = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
@@ -150,7 +158,7 @@ class Sharepic {
 			$save_dir = $this->env->user->get_dir() . 'bug/';
 		}
 
-		$id   = rand( 1000000, 9999999 );
+		$id   = $this->path ?? rand( 1000000, 9999999 );
 		$save = $save_dir . $id;
 
 		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );
@@ -162,8 +170,12 @@ class Sharepic {
 			mkdir( $save_dir );
 		}
 
+		$cmd = "rm -rf $save 2>&1";
+		exec( $cmd, $output, $return_code );
+
 		$cmd = "cp -R $workspace $save 2>&1";
 		exec( $cmd, $output, $return_code );
+		$this->env->logger->access( 'Execute command: ' . $cmd );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not save sharepic' );
@@ -173,8 +185,7 @@ class Sharepic {
 		file_put_contents( $save . '/sharepic.html', $this->raw_data );
 
 		// Write info file.
-		$name = preg_replace( '/[^a-zA-Z0-9\säöüßÄÖÜ]/', '-', $this->info );
-		file_put_contents( $save . '/info.json', json_encode( array( 'name' => $name ) ) );
+		file_put_contents( $save . '/info.json', json_encode( array( 'name' => $this->info ) ) );
 
 		echo json_encode(
 			array(
@@ -195,7 +206,7 @@ class Sharepic {
 		$sharepic = $data['saving'] ?? false;
 
 		if ( ! $sharepic ) {
-			$this->http_error( 'Could not delete sharepic' );
+			$this->http_error( 'Could not delete sharepic. (1)' );
 		}
 
 		// The casting to int is necessary to prevent directory traversal.
@@ -209,7 +220,7 @@ class Sharepic {
 		exec( $cmd, $output, $return_code );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
-			$this->http_error( 'Could not delete sharepic' );
+			$this->http_error( 'Could not delete sharepic (2)' );
 		}
 
 		echo json_encode( array( 'success' => true ) );
