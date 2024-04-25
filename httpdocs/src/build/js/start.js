@@ -13,8 +13,8 @@ window.onload = function () {
   logger = new Logger()
   debug = new Debug()
 
-  if ( config.autosave ) {
-    api.load( config.autosave )
+  if (config.autosave) {
+    api.load(config.autosave)
   } else {
     api.load('templates/' + config.starttemplate + '/start.html')
   }

@@ -123,4 +123,21 @@ class UI {
 
     return '#' + r + g + b
   }
+
+  addColorButtons () {
+    if (!config.palette) return
+
+    config.palette.forEach((color) => {
+      this.addColorButton(color)
+    })
+  }
+
+  addColorButton (color) {
+    const palettes = document.querySelectorAll('.palette')
+    palettes.forEach((palette) => {
+      const button = palette.querySelector('button').cloneNode(true)
+      button.style.backgroundColor = color
+      palette.appendChild(button)
+    })
+  }
 }

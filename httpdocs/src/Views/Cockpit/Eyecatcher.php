@@ -16,13 +16,27 @@
         <h3><?php echo _('Colors');?></h3>
        
         <div class="horizontal">
-            <input type="color" value="#ffffff" class="" id="eyecatcher_color" oninput="eyecatcher.setFontColor(this)">
             <h4><?php  echo _('Font');?></h4>
+            <?php
+                $color = new stdClass();
+                $color->value = "#ffffff";
+                $color->id = "eyecatcher_color";
+                $color->oninput = "eyecatcher.setFontColor(this.value)";
+                $color->onclick = "eyecatcher.setFontColor";
+                require ("./src/Views/Components/Color.php"); 
+            ?>
         </div>
 
         <div class="horizontal">
-            <input type="color" value="#ffffff" class="" id="eyecatcher_bgcolor" oninput="eyecatcher.setBgColor(this)">
-            <h4><?php  echo _('Background');?></h4>
+            <h4><?php echo _('Background');?></h4>
+            <?php
+                $color = new stdClass();
+                $color->value = "#ffffff";
+                $color->id = "eyecatcher_bgcolor";
+                $color->oninput = "eyecatcher.setBgColor(this.value)";
+                $color->onclick = "eyecatcher.setBgColor";
+                require ("./src/Views/Components/Color.php"); 
+            ?>
         </div>
     </section>
     
@@ -36,12 +50,12 @@
             //this.makeSquare();
         }
 
-        setBgColor(input) {  
-            cockpit.target.querySelector('#sticker_bg').style.fill = input.value;
+        setBgColor(color) {  
+            cockpit.target.querySelector('#sticker_bg').style.fill = color
         }
 
-        setFontColor(input) {      
-            cockpit.target.style.color = input.value;
+        setFontColor(color) {      
+            cockpit.target.style.color = color
         }
 
         rotate( input ) {

@@ -28,7 +28,7 @@ class Undo {
     commits.push(data)
 
     if (commits.length > 20) {
-      commits = commits.slice(-20);
+      commits = commits.slice(-20)
     }
 
     localStorage.setItem('commits', JSON.stringify(commits))

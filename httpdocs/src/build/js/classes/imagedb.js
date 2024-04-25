@@ -2,35 +2,34 @@
 
 class ImageDB {
   constructor () {
-    document.querySelectorAll('[id^="imagedb_q"]').forEach( element => { 
+    document.querySelectorAll('[id^="imagedb_q"]').forEach(element => {
       element.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
-          this.search( event.target.value )
+          this.search(event.target.value)
         }
       })
     })
   }
 
-  search ( q ) {
+  search (q) {
     document.getElementById('imagedb_q').value = q
     document.getElementById('imagedb_q1').value = q
     document.getElementById('imagedb_q1').focus()
     document.getElementById('imagedb_q1').select()
 
-
-    if(q.length < 2 ) {
+    if (q.length < 2) {
       return
     }
 
     if (config.imagedb === 'unsplash') {
-      this.search_unsplash( q )
+      this.search_unsplash(q)
     } else {
-      this.search_pixabay( q )
+      this.search_pixabay(q)
     }
   }
 
-  search_unsplash( q ) {
-    const url = 'unsplash.php?u=' + encodeURIComponent( 'https://api.unsplash.com/search/photos?lang=de&per_page=30&query=' + q) 
+  search_unsplash (q) {
+    const url = 'unsplash.php?u=' + encodeURIComponent('https://api.unsplash.com/search/photos?lang=de&per_page=30&query=' + q)
 
     fetch(url)
       .then(response => response.json())
@@ -39,7 +38,7 @@ class ImageDB {
         this.show_results_unsplash(data)
       })
       .catch(error => console.error('Error:', error)
-    )
+      )
   }
 
   show_results_unsplash (data) {
@@ -88,9 +87,7 @@ class ImageDB {
             api.loadByUrl(data.url)
           })
           .catch(error => console.error('Error:', error)
-        )
-
-       
+          )
 
         // is copyright already shown?
         const copyright = document.querySelector('#sharepic [id^=copyright_]')
@@ -103,7 +100,7 @@ class ImageDB {
     })
   }
 
-  search_pixabay( q ) {
+  search_pixabay (q) {
     const page = 1
     const perPage = 80
     const url = `https://pixabay.com/api/?key=${config.pixabay.apikey}&q=${encodeURIComponent(q)}&image_type=photo&page=${page}&per_page=${perPage}&lang=de`

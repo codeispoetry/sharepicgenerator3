@@ -23,7 +23,7 @@ class Cockpit {
 
     document.querySelectorAll('#greentext > div').forEach((div, i) => {
       const cockpitLine = document.querySelectorAll('.cockpit_greentext')[i]
-      if( !cockpitLine ) {
+      if (!cockpitLine) {
         return
       }
       cockpitLine.style.display = 'flex'
@@ -61,7 +61,7 @@ class Cockpit {
 
   setup_freetext (element) {
     document.getElementById('text_size').value = element.style.fontSize.replace('px', '')
-    freetext.setContent( cockpit.target.innerHTML )
+    freetext.setContent(cockpit.target.innerHTML)
   }
 
   setup_eyecatcher (element) {

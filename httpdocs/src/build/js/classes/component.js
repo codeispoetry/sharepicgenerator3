@@ -119,16 +119,16 @@ class Component {
     component.select(event.target.closest('.draggable'))
 
     if (event.touches) {
-      event.preventDefault();
-  
-      clientX = event.touches[0].clientX;
-      clientY = event.touches[0].clientY;
+      event.preventDefault()
+
+      clientX = event.touches[0].clientX
+      clientY = event.touches[0].clientY
     } else {
       if (event.button !== 0) {
         return
       }
-      clientX = event.clientX;
-      clientY = event.clientY;
+      clientX = event.clientX
+      clientY = event.clientY
     }
 
     cockpit.target = this.parentWithOnMouseDown(event.target) || console.error('No parent with onmousedown found')
@@ -147,14 +147,14 @@ class Component {
 
   dragging (e) {
     let clientX, clientY
-   // e.preventDefault()
+    // e.preventDefault()
 
     if (e.touches) {
-      clientX = e.touches[0].clientX;
-      clientY = e.touches[0].clientY;
+      clientX = e.touches[0].clientX
+      clientY = e.touches[0].clientY
     } else {
-      clientX = e.clientX;
-      clientY = e.clientY;
+      clientX = e.clientX
+      clientY = e.clientY
     }
 
     let x = clientX - component.dragInfo.xOffset

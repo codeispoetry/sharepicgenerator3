@@ -8,13 +8,13 @@ class API {
     window.setInterval(() => {
       const ct = new Date()
       const t = ct.getHours() + ':' + ct.getMinutes()
-  
-      this.save('save','Autsave', 1)
-      
-      document.getElementById('info-in-menu').innerHTML = "Automatische Zwischenspeicherung des Sharepics."
+
+      this.save('save', 'Autsave', 1)
+
+      document.getElementById('info-in-menu').innerHTML = 'Automatische Zwischenspeicherung des Sharepics.'
       window.setTimeout(() => {
-        document.getElementById('info-in-menu').innerHTML = ""
-      }, 10 * 1000 )
+        document.getElementById('info-in-menu').innerHTML = ''
+      }, 10 * 1000)
     }, 3 * 60 * 1000)
   }
 
@@ -81,7 +81,7 @@ class API {
   // name = name for the sharepic or prompted
   // path = path to the sharepic on server. Must be integer.
   save (mode = 'save', name = false, path = false) {
-    if( name === false ) {
+    if (name === false) {
       name = prompt('Name des Sharepics', 'Sharepic')
       if (name === null) {
         return
@@ -124,7 +124,7 @@ class API {
             </div>`
 
           // add button to menu only if path is ommited (no autosave)
-          if ( path === false ) {
+          if (path === false) {
             document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
           }
         } catch (e) {
@@ -168,17 +168,16 @@ class API {
         cockpit.setup_sharepic()
         sg.init()
 
-        document.querySelector('[contenteditable]').addEventListener('paste', function(e) {
-          e.preventDefault();
-          const selection = window.getSelection();
-          if (!selection.rangeCount) return false;
+        document.querySelector('[contenteditable]').addEventListener('paste', function (e) {
+          e.preventDefault()
+          const selection = window.getSelection()
+          if (!selection.rangeCount) return false
 
-          const text = e.clipboardData.getData('text/plain');
+          const text = e.clipboardData.getData('text/plain')
 
-          selection.deleteFromDocument();
-          selection.getRangeAt(0).insertNode(document.createTextNode(text));
-
-        });
+          selection.deleteFromDocument()
+          selection.getRangeAt(0).insertNode(document.createTextNode(text))
+        })
 
         // Execute script tags
         const parser = new DOMParser()
@@ -186,6 +185,7 @@ class API {
         const script = doc.querySelector('script').innerText
         // eslint-disable-next-line no-eval
         eval(script)
+        ui.addColorButtons()
         cockpit.render()
         logger.prepare_log_data({})
         logger.log('loads template ' + path)
@@ -210,7 +210,7 @@ class API {
       const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
       const params = new URLSearchParams(url.search)
       const p = params.get('p')
-      if ( p ) {
+      if (p) {
         const backgroundImage = p.replace(/"\)$/g, '')
         clonedCanvas.querySelector('#background').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
       }
@@ -224,7 +224,7 @@ class API {
         const url = new URL(bgImage, 'http://dummybase.com') // dummy base URL is needed because urlString is a relative URL
         const params = new URLSearchParams(url.search)
         const p = params.get('p')
-        if ( p  ) {
+        if (p) {
           const backgroundImage = p.replace(/"\)$/g, '')
           addPic.querySelector('.ap_image').style.backgroundImage = `url(../users/${config.username}/${backgroundImage})`
         }
@@ -541,9 +541,9 @@ class API {
         return response.text()
       })
       .then(data => {
-        if ( config.debug ) {
+        if (config.debug) {
           console.log(data)
-        } 
+        }
         data = JSON.parse(data)
         config.uploading = false
 
@@ -552,10 +552,10 @@ class API {
 
         logger.log('image loaded from ' + data.path)
       })
-      .catch(error =>{
+      .catch(error => {
         config.uploading = false
         console.error('Error:', error)
-      } )
+      })
   }
 
   showWaiting () {
