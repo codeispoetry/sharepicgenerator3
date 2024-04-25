@@ -12,7 +12,7 @@
         <input type="range" min="0" max="360" value="0" class="slider no-greens" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
     </section>
 
-    <section id="eyecatcher_colors" class="selected_only">
+    <section id="eyecatcher_colors" class="selected_only no-greens">
         <h3><?php echo _('Colors');?></h3>
        
         <div class="horizontal">
@@ -33,7 +33,7 @@
     class Eyecatcher{
         setSize(input){
             cockpit.target.style.fontSize = input.value + 'px';
-            this.makeSquare();
+            //this.makeSquare();
         }
 
         setBgColor(input) {  
@@ -49,6 +49,7 @@
         }
 
         makeSquare () {
+            return;
             if(cockpit.target === null) return
 
             const text = cockpit.target.querySelector('div')

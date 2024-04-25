@@ -190,13 +190,14 @@
 
 <script>
     const config = {
-		<?php if ( false && $pixabayapi = $this->env->config->get( 'Pixabay', 'apikey' ) ) { ?>
+		<?php if ( $pixabayapi = $this->env->config->get( 'Pixabay', 'apikey' ) ) { ?>
         'pixabay': {
             'apikey': '<?php echo $pixabayapi; ?>'
         },
 		<?php } ?>
-		'url': '<?php echo$this->env->config->get( 'Main', 'url' ); ?>',
+		'url': '<?php echo $this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
+		'imagedb': '<?php echo $this->env->config->get( 'Main', 'imagedb' ); ?>',
 		'username': '<?php echo $this->env->user->get_username(); ?>',
 		'env': '<?php echo $this->env->config->get( 'Main', 'env' ); ?>',
 		'debug': '<?php echo ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'true' : 'false'; ?>',

@@ -22,8 +22,11 @@ class ImageDB {
       return
     }
 
-    //this.search_pixabay( q )
-    this.search_unsplash( q )
+    if (config.imagedb === 'unsplash') {
+      this.search_unsplash( q )
+    } else {
+      this.search_pixabay( q )
+    }
   }
 
   search_unsplash( q ) {

@@ -18,9 +18,15 @@
         <h3><?php  echo _('Search image');?></h3>
         <p>
             <?php echo _('Search in  image database');?>
-            <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral " target="_blank">
-                <?php echo _('Unsplash'); ?>
-            </a>
+            <?php if ( $this->env->config->get( 'Main', 'imagedb') === 'unsplash' ) { ?>
+                <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">
+                    <?php echo _('Unsplash'); ?>
+                </a>
+            <?php } else { ?>
+                <a href="https://pixabay.com" target="_blank">
+                    <?php echo _('Pixabay'); ?>
+                </a>
+            <?php } ?>
         </p>
         
         <div class="button-group">

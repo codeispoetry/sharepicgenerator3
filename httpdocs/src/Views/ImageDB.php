@@ -2,9 +2,15 @@
     <div style="display:flex;justify-content:space-between;">
         <div>
             <p>
-                <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral " target="_blank">
-                    <?php echo _('Images from Unsplash'); ?>
-                </a>
+                <?php if ( $this->env->config->get( 'Main', 'imagedb') === 'unsplash' ) { ?>
+                    <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">
+                        <?php echo _('Images from Unsplash'); ?>
+                    </a>
+                <?php } else { ?>
+                    <a href="https://pixabay.com" target="_blank">
+                        <?php echo _('Images from Pixabay'); ?>
+                    </a>
+                <?php } ?>
             </p>
             <div class="button-group">
                 <input type="text" style="width:100%;" name="imagedb_q1" id="imagedb_q1" placeholder="<?php  echo _('search in image database');?>">
