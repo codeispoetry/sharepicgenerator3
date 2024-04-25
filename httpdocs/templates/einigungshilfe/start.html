@@ -37,8 +37,8 @@
         spellcheck="false"
         contenteditable="true"
         style="
-            left: 120px;
-            top: 100px;
+            left: 170px;
+            top: 280px;
             transform: scale(1.0);
             padding: 30px;
             z-index: 2;
@@ -50,16 +50,26 @@
     </div>
 
     <div id="bar"></div>
-    <div id="logo" 
-        class="draggable selectable"
-        data-cockpit="freetext"
-        onmousedown="component.startDrag(event)"  
-        onclick="component.select(this)
-    "></div>
-
+    <div class="draggable selectable" id="logo" 
+        onmousedown="component.startDrag(event)"
+        ontouchstart="component.startDrag(event)"
+        data-cockpit="logo" data-clipping="true"
+        contenteditable="false"
+        style="
+            width: 400px;
+            aspect-ratio: 195 / 33;
+            background-image: url('templates/einigungshilfe/logo.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 23px;
+            top: 44px;
+            position: absolute;
+            z-index: 3;
+            height: auto;
+        "
+    ></div>
 
     <div id="patterns">
-
         <div 
             data-class="draggable selectable freetext" 
             data-cockpit="freetext"  
@@ -81,8 +91,8 @@
         </div>
     
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 
+            ontouchend="this.focus()"
             data-max="1" contenteditable="true" spellcheck="false"
-            onclick="component.select(this)"
             data-id="copyright"
             style="
                 font-size: 14px;
@@ -94,20 +104,21 @@
         spellcheck="false"
         contenteditable="true" oninput="eyecatcher.makeSquare();" onclick="component.select(this)"
         onmousedown="component.startDrag(event)" style="
-                    z-index:2; 
+                    z-index: 2; 
                     left: 5px; top: 5px; 
                     font-size: 20px; 
                     color: #e9e9e9; 
                     background-color: none;
-                    width: 40px; height: 40px;
-                    font-family: SaunaPro;
-                    transform: rotate(351deg);
-                    text-align: center;
+                    aspect-ratio: 1 / 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 "
             >
             <svg style="
                 position: absolute;
                 width: 100%; height: 100%;
+                z-index: -1;
                 "
                 width="280" height="280" viewBox="0 0 74.083332 74.083333" version="1.1" id="svg1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
@@ -115,9 +126,9 @@
                     d="M 28.952854,0.40200885 C 35.932645,-1.4308193 44.036565,3.5671375 45.380381,4.1049773 46.723927,4.6428441 61.070749,11.359814 68.742171,17.313868 78.331512,24.756414 73.766987,35.183485 64.825338,57.782482 55.88395,80.38121 46.878507,77.040823 18.520613,62.575286 -11.237954,47.395627 2.5201489,31.733951 7.8298762,22.389858 13.139634,13.045832 21.972763,2.2348339 28.952854,0.40200885 Z"
                     id="sticker_bg" style="fill:#ffcf53;stroke-width:0.26513" />
             </svg>
-            <div style="position: relative;">
-                <p>Text</p>
-            </div>
+           <div>
+            Hier kommt der Eyecatcher hin
+           </div>
         </div>
 
 
@@ -147,8 +158,10 @@
     <script>
         undo.commit()
 
+        document.getElementById('logo_colors').style.display = 'none';
+
         config.cockpit = {
-            elements: ['dimensions','search','background','freetext','copyright', 'eyecatcher','addpicture']
+            elements: ['dimensions','search','background','freetext','copyright', 'logo', 'eyecatcher','addpicture']
         }
 
     </script>
@@ -171,11 +184,26 @@
     #logo{
       background-image: url('templates/einigungshilfe/logo.svg'); 
       background-repeat: no-repeat;
+      background-size: contain;
       z-index: 10; 
       width: 200px; 
       height: 30px;
       left: 29px; 
       top: 41px;
       position: absolute;
+    }
+
+   
+    
+    
+    .copyright{
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        font-family: sans-serif;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        padding: 0;
+        margin: 0;
     }
 </style>

@@ -3,13 +3,13 @@
     <section>
         <h3><?php  echo _('Size');?></h3>
         <label>
-            <input type="range" min="10" max="2000" value="400" class="slider" id="logo_size">
+            <input type="range" min="10" max="2000" value="400" class="slider" id="logo_size" oninput="logo.setSize(this)">
         </label>
     </section>
 
     <section id="logo_colors">
         <h3><?php echo _('Colors');?></h3>
-        <select id="logo_file">
+        <select id="logo_file" onchange="logo.setFile(this)">
             <option value="templates/de/logo.svg"><?php echo _('yellow'); ?></option>
             <option value="templates/de/logo-grashalm.svg"><?php echo _('green'); ?></option>
         </select>
@@ -20,23 +20,16 @@
 </section>
 
 <script>
-    document.getElementById('logo_size').addEventListener('input', function(event) {
-        var element = event.target;
+    class Logo{
+        setSize(input){
+            cockpit.target.style.width = input.value + 'px';
+        }
 
-        const target = document.getElementById('logo');
-
-        target.style.width = element.value + "px";
-        target.style.height = element.value + "px";
-
-    });
-
-    document.getElementById('logo_file').addEventListener('change', function(event) {
-        var element = event.target;
-
-        const target = document.getElementById('logo');
-
-        target.style.backgroundImage = "url(" + element.value + ")"
-    });
+        setFile(input){
+            cockpit.target.style.backgroundImage = "url(" + input.value + ")";
+        }
+    }
+    const logo = new Logo();
 
 </script>
 
