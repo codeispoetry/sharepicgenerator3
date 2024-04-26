@@ -25,12 +25,10 @@
 
             config.palette.push(color)
             ui.addColorButton(color)
-
-            alert( lang['Color added'])
         }
 
         removeColor ( color ) {
-            config.palette = config.palette.filter( c => c !== color )
+            config.palette = config.palette.filter( c => c !== ui.rgbToHex(color) )
             ui.removeColorButton(color)
         }
     }

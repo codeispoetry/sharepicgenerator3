@@ -139,6 +139,7 @@ class UI {
       button.style.backgroundColor = color
       palette.appendChild(button)
     })
+    this.setPaletteInHtml()
   }
 
   removeColorButton( color ) {
@@ -151,5 +152,18 @@ class UI {
         }
       })
     })
+    this.setPaletteInHtml()
+  }
+
+  // Sets the palette in the HTML, so that it can be saved.
+  setPaletteInHtml () {
+    let scriptElem = document.getElementById('canvas').querySelector('script')
+    let scriptContent = scriptElem.textContent
+    
+    let palette = config.palette.map((color) => `'${color}'`).join(',')
+
+    scriptContent = scriptContent.replace(/(config\.palette\s*=\s*).*/, `$1[${palette}]`);
+
+    scriptElem.textContent = scriptContent
   }
 }
