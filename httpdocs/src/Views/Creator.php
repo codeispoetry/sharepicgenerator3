@@ -161,6 +161,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_settings" onClick="ui.showTab('settings')">
+					<div>
+						<img src="assets/icons/settings.svg" title="<?php echo _('Settings'); ?>">
+						<div class="description">
+							<?php echo _('Settings') ?>
+						</div>
+					</div>
+				</button>
 
 				<button>
 					<div>
@@ -217,6 +225,7 @@
 		'You will be logged out soon': '<?php echo _( 'You will be automatically logged out soon. Please either save your work or download it and reload the page.') ?>',
 		'Please wait until the image is uploaded': '<?php echo _( 'Please wait until the image is uploaded.') ?>',
 		'Max number of lines reached': '<?php echo _( 'Maximum number of lines reached. For longer text, please use additional text element.') ?>',
+		'Color added': '<?php echo _( 'Color added') ?>',
    };
 </script>
 

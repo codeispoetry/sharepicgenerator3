@@ -140,4 +140,16 @@ class UI {
       palette.appendChild(button)
     })
   }
+
+  removeColorButton( color ) {
+    const palettes = document.querySelectorAll('.palette')
+    palettes.forEach((palette) => {
+      const buttons = palette.querySelectorAll('button')
+      buttons.forEach((button) => {
+        if (button.style.backgroundColor === color) {
+          button.remove()
+        }
+      })
+    })
+  }
 }

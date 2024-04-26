@@ -6,6 +6,6 @@
         oninput="<?php echo $color->oninput; ?>">
     
     <div class="palette">
-        <button class="no-button" style="background-color: #000000" onClick="<?php echo $color->onclick; ?>(this.style.backgroundColor);"></button>
+        <button class="no-button" style="background-color: #ffffff" onClick="<?php echo $color->onclick; ?>(this.style.backgroundColor);"></button>
     </div>
 </div>
