@@ -7,40 +7,6 @@ const mouseDownEvent = new MouseEvent('mousedown', {
 })
 
 class UI {
-  constructor () {
-    // document.getElementById('time-to-logout').innerHTML = '30:00'
-    // config.startTime = new Date().getTime()
-    // const logginPeriod = 30 * 60
-    // setInterval(() => {
-    //   const currentTime = new Date().getTime()
-    //   const elapsedTime = Math.floor((currentTime - config.startTime) / 1000)
-
-    //   const min = Math.floor((logginPeriod - elapsedTime) / 60)
-    //   const sec = Math.floor((logginPeriod - elapsedTime) % 60).toString().padStart(2, '0')
-    //   document.getElementById('time-to-logout').innerHTML = `${min}:${sec}`
-
-    //   if (min == 3) {
-    //     this.reminderToSave()
-    //   }
-    // },
-    // 1000)
-  }
-
-  // resetLogoutTimer () {
-  //   config.startTime = new Date().getTime()
-  //   config.remindedToSave = false
-  // }
-
-  // reminderToSave () {
-  //   if (config.remindedToSave === true) {
-  //     return
-  //   }
-
-  //   alert(lang['You will be logged out soon'])
-
-  //   config.remindedToSave = true
-  // }
-
   /*
     * @param {string} tab The tab to show.
     * @param {HTMLElement} element The element that was clicked.
@@ -142,7 +108,7 @@ class UI {
     this.setPaletteInHtml()
   }
 
-  removeColorButton( color ) {
+  removeColorButton (color) {
     const palettes = document.querySelectorAll('.palette')
     palettes.forEach((palette) => {
       const buttons = palette.querySelectorAll('button')
@@ -157,12 +123,12 @@ class UI {
 
   // Sets the palette in the HTML, so that it can be saved.
   setPaletteInHtml () {
-    let scriptElem = document.getElementById('canvas').querySelector('script')
+    const scriptElem = document.getElementById('canvas').querySelector('script')
     let scriptContent = scriptElem.textContent
-    
-    let palette = config.palette.map((color) => `'${color}'`).join(',')
 
-    scriptContent = scriptContent.replace(/(config\.palette\s*=\s*).*/, `$1[${palette}]`);
+    const palette = config.palette.map((color) => `'${color}'`).join(',')
+
+    scriptContent = scriptContent.replace(/(config\.palette\s*=\s*).*/, `$1[${palette}]`)
 
     scriptElem.textContent = scriptContent
   }

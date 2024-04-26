@@ -123,5 +123,5 @@
     </div>
     <?php } ?>
 
-    <span class="info-in-menu"><?php echo _( 'Time to logout:'); ?> <span id="time-to-logout">30:00</span><?php echo _('minutes'); ?></span>
+    <span class="info-in-menu" id="info-in-menu"></span>
 </nav>
