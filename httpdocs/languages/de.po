@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-26 13:53+0200\n"
+"POT-Creation-Date: 2024-04-26 14:04+0200\n"
 "PO-Revision-Date: 2023-12-08 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
@@ -126,9 +126,17 @@ msgstr "Hintergrund"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: httpdocs/src/Views/Cockpit/Settings.php:6
+#: httpdocs/src/Views/Cockpit/Settings.php:5
+msgid "Please select a color and add it to the palette."
+msgstr "Farbe auswählen und zur Palette hinzufügen."
+
+#: httpdocs/src/Views/Cockpit/Settings.php:10
 msgid "Add color"
 msgstr "Farbe hinzufügen"
+
+#: httpdocs/src/Views/Cockpit/Settings.php:19
+msgid "By clicking on a color below, you can remove it."
+msgstr "Mit einem Klick auf eine Farbe wird sie entfernt."
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
@@ -696,7 +704,7 @@ msgstr "Erstelle ein Sharepic"
 
 #: httpdocs/src/Views/Menu/Mint.php:57
 msgid "Save as"
-msgstr "Speicher als"
+msgstr "Speichern als"
 
 #: httpdocs/src/Views/Creator.php:39
 msgid "Undo"

@@ -93,6 +93,17 @@ class UI {
   addColorButtons () {
     if (!config.palette) return
 
+    // emppty all palettes
+    const palettes = document.querySelectorAll('.palette')
+    palettes.forEach((palette) => {
+      const buttons = palette.querySelectorAll('button')
+      buttons.forEach((button) => {
+        if (button.dataset.blueprint !== 'true') {
+          button.remove()
+        }
+      })
+    })
+
     config.palette.forEach((color) => {
       this.addColorButton(color)
     })
@@ -103,6 +114,7 @@ class UI {
     palettes.forEach((palette) => {
       const button = palette.querySelector('button').cloneNode(true)
       button.style.backgroundColor = color
+      button.dataset.blueprint = '';
       palette.appendChild(button)
     })
     this.setPaletteInHtml()
