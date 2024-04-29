@@ -38,8 +38,15 @@
         plugins: 'lists',
         skin: 'oxide-dark',
         font_family_formats: '<?php echo Sharepicgenerator\Controllers\Fonts::get_font_family_formats(); ?>',
-        font_size_formats: '8pt 10pt 12pt 14pt 16pt 18pt 24pt 36pt',
-        toolbar: 'undo redo | bold italic underline | fontfamily fontsize lineheight | forecolor | removeformat',
+        font_size_formats: '12pt 14pt 18pt 24pt 30pt 36pt 48pt 60pt 72pt 96pt',
+        toolbar: 'undo redo | bold italic underline | fontfamily fontsize fontsizeinput lineheight | forecolor | removeformat',
+        color_map: [
+            '000000', 'Black',
+            'FFFFFF', 'White',
+            'FF0000', 'Red',
+            '00FF00', 'Green',
+            '0000FF', 'Blue',
+        ],
         setup: function ( editor ) {
             editor.on('change keyup', function () {
                 cockpit.target.innerHTML = editor.getContent();

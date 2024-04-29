@@ -10,6 +10,9 @@
     
         <h3 class="no-greens"><?php  echo _('Rotation');?></h3>
         <input type="range" min="0" max="360" value="0" class="slider no-greens" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
+
+        <h3 class="no-greens"><?php  echo _('Padding');?></h3>
+        <input type="range" min="0" max="360" value="0" class="slider no-greens" id="eyecatcher_padding" oninput="eyecatcher.padding(this)">
     </section>
 
     <section id="eyecatcher_colors" class="selected_only no-greens">
@@ -47,7 +50,6 @@
     class Eyecatcher{
         setSize(input){
             cockpit.target.style.fontSize = input.value + 'px';
-            //this.makeSquare();
         }
 
         setBgColor(color) {  
@@ -62,24 +64,8 @@
             cockpit.target.style.transform = 'rotate(' + input.value + 'deg)';
         }
 
-        makeSquare () {
-            return;
-            if(cockpit.target === null) return
-
-            const text = cockpit.target.querySelector('div')
-            if (text === null) return
-            
-            text.style.width = 'auto'
-            text.style.height = 'auto'
-
-            const width = parseInt(window.getComputedStyle(text).getPropertyValue('width'), 10)
-            const height = parseInt(window.getComputedStyle(text).getPropertyValue('height'), 10)
-
-            cockpit.target.style.width = Math.max(width, height) + 'px'
-            cockpit.target.style.height = Math.max(width, height) + 'px'
-
-            text.style.width = '100%'
-            text.style.height = '100%'
+        padding( input ) {
+            cockpit.target.style.padding = input.value + 'px';
         }
 
     }
