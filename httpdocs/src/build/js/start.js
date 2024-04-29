@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, no-unused-vars, no-var */
-var api, sg, cockpit, undo, imagedb, component, logger, ui, background, debug
+var api, sg, cockpit, undo, imagedb, component, logger, ui, background, debug, rte
 
 window.onload = function () {
   api = new API()
@@ -12,6 +12,7 @@ window.onload = function () {
   ui = new UI()
   logger = new Logger()
   debug = new Debug()
+  rte = new RTE()
 
   if (config.autosave) {
     api.load(config.autosave)

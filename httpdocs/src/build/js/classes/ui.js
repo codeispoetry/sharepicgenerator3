@@ -118,6 +118,7 @@ class UI {
       palette.appendChild(button)
     })
     this.setPaletteInHtml()
+    rte.addColor(color)
   }
 
   removeColorButton (color) {
