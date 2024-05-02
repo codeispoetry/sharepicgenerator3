@@ -25,6 +25,8 @@
             const editor = tinymce.get('rte');
             editor.setContent( content );
         }
+
+        font_family_formats = '<?php echo Sharepicgenerator\Controllers\Fonts::get_font_family_formats(); ?>';
     }
     const freetext = new Freetext();
 </script>

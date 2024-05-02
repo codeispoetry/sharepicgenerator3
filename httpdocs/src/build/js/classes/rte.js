@@ -24,7 +24,7 @@ class RTE{
             menubar: 'tools',
             plugins: 'lists',
             skin: 'oxide-dark',
-            font_family_formats: '<?php echo Sharepicgenerator\Controllers\Fonts::get_font_family_formats(); ?>',
+            font_family_formats: freetext.font_family_formats,
             font_size_formats: '12pt 14pt 18pt 24pt 30pt 36pt 48pt 60pt 72pt 96pt',
             toolbar: 'undo redo | bold italic underline | fontfamily fontsize fontsizeinput lineheight | forecolor | removeformat',
             color_map: this.colorMap,
