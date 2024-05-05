@@ -156,6 +156,22 @@
         >
             <img src="templates/de/machenwaszaehlt.svg" style="width: 150px">           
         </div>
+
+        <div data-id="elements" data-class="elements draggable selectable" data-cockpit="elements"
+        data-max="5" spellcheck="false"
+        contenteditable="false"
+        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
+                z-index:2; 
+                left: 5px; top: 5px; 
+                font-size: 20px; 
+                color: #000000; 
+                font-family: 'PT Sans', sans-serif;
+                line-height: 1em;
+                padding: 20px;
+            "
+    >
+        <img src="templates/mv/elements/anfuehrungszeichen.png" style="width: 150px">           
+    </div>
     
         <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
         onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="
@@ -183,7 +199,7 @@
         undo.commit()
 
         config.cockpit = {
-            elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','addpicture'],
+            elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','elements','addpicture'],
             logos: [
                 'templates/mv/logos/HRO.png',
                 'templates/mv/logos/LRO.png',
@@ -195,6 +211,31 @@
                 'templates/mv/logos/VG.png',
                 'templates/mv/logos/VR.png',
             ],
+            'objects': [
+                'templates/mv/elements/anfuehrungszeichen.png',
+                'templates/mv/elements/welle1.png',
+                'templates/mv/elements/welle2.png',
+                'templates/mv/elements/welle3.png',
+                'templates/mv/elements/welle4.png',
+                'templates/mv/elements/welle5.png',
+                'templates/mv/elements/welle6.png',
+                'templates/mv/elements/welle7.png',
+                'templates/mv/elements/welle8.png',
+                'templates/mv/elements/welle9.png',
+                'templates/mv/elements/welle10.png',
+                'templates/mv/elements/welle11.png',
+                'templates/mv/elements/welle12.png',
+                'templates/mv/elements/welle13.png',
+                'templates/mv/elements/welle14.png',
+                'templates/mv/elements/welle15.png',
+                'templates/mv/elements/welle16.png',
+                'templates/mv/elements/welle17.png',
+                'templates/mv/elements/sprechblase1.png',
+                'templates/mv/elements/sprechblase2.png',
+                'templates/mv/elements/sprechblase3.png',
+                'templates/mv/elements/sprechblase4.png',
+            ]
+
         }
         config.palette = ['#ffffff', '#005437', '#008939', '#8abd24', '#f5f1e9', '#0ba1dd']
 

@@ -101,6 +101,32 @@ class Cockpit {
     }
   }
 
+  setup_elements (element) {
+    document.getElementById('elements_size').value = element.style.width.replace('px', '')
+
+    if( config.cockpit.objects && config.cockpit.objects.length > 0 ) {
+      // delete all options in this select
+      const select = document.getElementById('elements_file')
+
+      while (select.firstChild) {
+        select.removeChild(select.firstChild);
+      }
+
+      config.cockpit.objects.forEach((obj) => {
+        const option = document.createElement('option')
+          option.text = obj.split('/').pop().split('.').shift()
+          option.value = obj
+        select.add(option)
+      })
+    }
+
+    const imgSrc = cockpit.target.querySelector('img').src;
+    const url = new URL(imgSrc);
+
+    document.getElementById('elements_file').value = url.pathname.substring(1)
+
+  }
+
   setup_addpicture (element) {
     document.getElementById('addpic_color').value = ui.rgbToHex(element.querySelector('.ap_text').style.color)
     document.getElementById('addpicture_size').value = element.querySelector('.ap_image').style.width.replace('px', '')

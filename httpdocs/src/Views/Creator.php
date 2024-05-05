@@ -161,6 +161,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_elements" onClick="ui.showTab('elements')">
+					<div>
+						<img src="assets/icons/elements.svg" title="<?php echo _('Elements'); ?>">
+						<div class="description">
+							<?php echo _('Elements'); ?>
+						</div>
+					</div>
+				</button>
 				<button id="tab_btn_settings" onClick="ui.showTab('settings')">
 					<div>
 						<img src="assets/icons/settings.svg" title="<?php echo _('Settings'); ?>">
