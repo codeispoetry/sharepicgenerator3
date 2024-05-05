@@ -11,7 +11,7 @@
 
         <div>
             <button class="no-button" onClick="background.reset()">
-                <?php echo _("Fit automatically"); ?>
+                <?php echo _("fit automatically"); ?>
             </button>   
 
             <label>

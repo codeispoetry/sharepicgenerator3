@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_search">
-    <h2><?php  echo _('Create background ');?></h2>
+    <h2><?php  echo _('Create background');?></h2>
 
     <section>
         <h3><?php  echo _('Own image');?></h3>

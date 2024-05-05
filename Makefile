@@ -42,7 +42,7 @@ create-mo:
 	msgfmt httpdocs/languages/de.po -o httpdocs/languages/de_DE/LC_MESSAGES/sg.mo
 
 translation-prepare:
-	make create-pot update-po && code httpdocs/languages/de.po
+	make create-pot update-po && code httpdocs/languages/de.po && poedit httpdocs/languages/de.po
 
 translate:
 	make create-mo stop up
