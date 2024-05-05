@@ -34,6 +34,11 @@
 	font-weight: 300;
 }
 @font-face {
+	font-family: 'Poppins';
+	src: url('../../../assets/fonts/Poppins.woff2') format('woff2');
+	font-weight: 300;
+}
+@font-face {
 	font-family: 'Roboto-Light';
 	src: url('../../../assets/fonts/Roboto-Light.woff2') format('woff2');
 	font-weight: 300;
