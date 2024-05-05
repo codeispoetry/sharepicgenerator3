@@ -101,6 +101,15 @@
         </div>
     </div>
 
+    <div class="dropdown" id="menu_de">
+        <span><?php echo _( 'MV' ); ?></span>
+        <div class="dropdown-content">
+            <button onClick="api.load('templates/mv/start.html'); bwstory=false;">
+                <?php  echo _('Standardlayout');?>
+            </button> 
+        </div>
+    </div>
+
     <?php if( isset( $show_my_sharepics ) && $show_my_sharepics === true) { ?>
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>

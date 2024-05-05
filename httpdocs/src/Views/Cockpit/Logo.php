@@ -8,7 +8,7 @@
     </section>
 
     <section id="logo_colors">
-        <h3><?php echo _('Colors');?></h3>
+        <h3><?php echo _('Variants');?></h3>
         <select id="logo_file" onchange="logo.setFile(this)">
             <option value="templates/de/logo.svg"><?php echo _('yellow'); ?></option>
             <option value="templates/de/logo-grashalm.svg"><?php echo _('green'); ?></option>

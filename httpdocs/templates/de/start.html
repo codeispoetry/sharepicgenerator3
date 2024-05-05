@@ -61,7 +61,7 @@
             width: 400px;
             height: auto;
             aspect-ratio: 1 / 1;
-            background-image: url('templates/de/logo.svg');
+            background-image: url('templates/de/logos/gelb.svg');
             background-size: contain;
             background-repeat: no-repeat;
             left: -148px;
@@ -166,7 +166,11 @@
         undo.commit()
 
         config.cockpit = {
-            elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','addpicture','europe']
+            elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','addpicture','europe'],
+            logos: [
+                'templates/de/logos/gelb.svg',
+                'templates/de/logos/gras.svg',
+            ],
         }
         config.palette = ['#ffffff', '#005437', '#008939', '#8abd24', '#f5f1e9', '#0ba1dd']
 

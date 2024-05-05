@@ -83,6 +83,22 @@ class Cockpit {
     const file = document.getElementById('logo_file')
     const url = element.style.backgroundImage.replace(/url\("(\.\.\/)*/, '').replace('")', '')
     file.value = url
+
+    if( config.cockpit.logos && config.cockpit.logos.length > 0 ) {
+      // delete all options in this select
+      const select = document.getElementById('logo_file')
+
+      while (select.firstChild) {
+        select.removeChild(select.firstChild);
+      }
+
+      config.cockpit.logos.forEach((logo) => {
+        const option = document.createElement('option')
+          option.text = logo.split('/').pop().split('.').shift()
+          option.value = logo
+        select.add(option)
+      })
+    }
   }
 
   setup_addpicture (element) {
