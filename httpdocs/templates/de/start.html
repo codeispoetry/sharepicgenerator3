@@ -87,7 +87,8 @@
         data-max="1" spellcheck="false"
         contenteditable="true"
         onmousedown="component.startDrag(event)" 
-        ontouchstart="component.startDrag(event)" 
+        ontouchstart="component.startDrag(event)"
+        oninput="eyecatcher.makeSquare(this)"
         ontouchend="this.focus()"
         style="
                     z-index:2; 

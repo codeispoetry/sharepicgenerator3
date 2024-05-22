@@ -68,6 +68,14 @@
             cockpit.target.style.padding = input.value + 'px';
         }
 
+        makeSquare( target ){
+            const p = cockpit.target.querySelector('div').getBoundingClientRect();
+            const length = Math.max( p.width, p.height );
+            cockpit.target.style.width = length + 'px';
+            cockpit.target.style.height = length + 'px';
+
+        }
+
     }
     const eyecatcher = new Eyecatcher();
 </script>
