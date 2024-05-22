@@ -50,6 +50,9 @@
 							
 						</div>
 					</div>
+					<div id="image-credits">
+						
+					</div>
 				</div>
 			</div>
 			<div class="workbench-below">

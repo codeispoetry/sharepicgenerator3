@@ -58,6 +58,7 @@ class Background {
 
   delete () {
     document.getElementById('background').style.backgroundImage = null
+    background.setCredits('')
   }
 
   filter (key, value) {
@@ -77,5 +78,9 @@ class Background {
     }
 
     bg.style.filter = filters.join(' ')
+  }
+
+  setCredits( text ) {
+    document.querySelector('#image-credits').innerHTML = text
   }
 }

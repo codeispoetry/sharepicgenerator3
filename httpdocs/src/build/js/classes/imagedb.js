@@ -95,6 +95,8 @@ class ImageDB {
           component.add('copyright')
         }
         document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf Unsplash.com`
+        
+        background.setCredits( `Image by <a href="${img.dataset.pageurl}?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">${img.dataset.user}</a> auf Unsplash.com` )
       }
       results.appendChild(img)
     })

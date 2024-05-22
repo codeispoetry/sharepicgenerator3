@@ -9,7 +9,7 @@ class API {
       const ct = new Date()
       const t = ct.getHours() + ':' + ct.getMinutes()
 
-      this.save('save', 'Autsave', 1)
+      this.save('save', 'Autosave', 1)
 
       document.getElementById('info-in-menu').innerHTML = 'Automatische Zwischenspeicherung des Sharepics.'
       window.setTimeout(() => {
@@ -144,7 +144,7 @@ class API {
     config.template = path
 
     document.querySelector('#tabsbuttons button').click()
-
+    background.setCredits('' )
     const options = {
       method: 'POST',
       headers: {
