@@ -12,9 +12,6 @@
     </div>
     <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
-    <div id="rte-container">
-        <textarea id="rte"></textarea>
-    </div>
 </section>
 
 <script>
@@ -24,8 +21,8 @@
         }
 
         setContent(content) {
-            const editor = tinymce.get('rte');
-            editor.setContent( content );
+           // const editor = tinymce.get('rte');
+            //editor.setContent( content );
         }
 
         font_family_formats = '<?php echo Sharepicgenerator\Controllers\Fonts::get_font_family_formats(); ?>';

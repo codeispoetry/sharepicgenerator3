@@ -1,17 +1,33 @@
-#rte-container{
-    position: relative;
-    margin-left: 0px;
-    transition: all 0.1s ease-in-out;
-    z-index: 100;
+.tox{
+    .tox-editor-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
 
     .tox-promotion {
         display: none !important;
     }
 
+    &-tinymce{
+        border: 0 !important;
+        border-radius: 0 !important;
+    }
 
-    &.rte{
-        &-focus{
-            margin-left: -600px;
+    .tox-edit-area{
+        &::before{
+            border: 0 !important;
         }
+        width: 300px;
+    }
+
+    .tox-edit-area__iframe{
+        background: transparent !important;
+    }
+
+    .tox-statusbar{
+        display: none !important;
     }
 }

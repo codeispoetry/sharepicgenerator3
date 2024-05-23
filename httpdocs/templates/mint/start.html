@@ -31,6 +31,7 @@
         class="draggable selectable freetext" 
         data-cockpit="freetext"  
         onclick="component.select(this)"
+        ondblclick="rte.init('tinymce')"
         onmousedown="component.startDrag(event)"
         oninput="cockpit.setup_freetext(this)"
         id="freetext"
@@ -39,12 +40,10 @@
         style="
             left: 120px;
             top: 100px;
-            transform: scale(0.8);
-            padding: 30px;
             z-index: 2;
         "
     >
-        Mint
+        <div id="tinymce">MINT</div>
     </div>
 
 
@@ -84,11 +83,12 @@
         spellcheck="false"
         onclick="component.select(this)"
         onmousedown="component.startDrag(event)" style="
-                     z-index: 2; 
+                    z-index: 2; 
                     left: 5px; top: 5px; 
                     font-size: 20px; 
                     color: #222222; 
                     background-color: none;
+                    padding: 0;
                     aspect-ratio: 1 / 1;
                     display: flex;
                     justify-content: center;

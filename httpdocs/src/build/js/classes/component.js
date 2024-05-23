@@ -42,6 +42,10 @@ class Component {
   }
 
   select (element) {
+   if(!element.classList.contains('freetext')) {
+    rte.deinit();
+   }
+
     // do not reselect, if the element is already selected
     if (element.classList.contains('selected')) {
       return
