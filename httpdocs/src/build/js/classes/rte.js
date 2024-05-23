@@ -30,10 +30,12 @@ class RTE{
             color_map: this.colorMap,
             setup: function ( editor ) {
                 editor.on('change keyup', function () {
+                    if (cockpit.target === null) return;
+                    
                     cockpit.target.innerHTML = editor.getContent();
                 });
                 editor.on('focus', function () {
-                document.getElementById('rte-container').classList.add('rte-focus');
+                    document.getElementById('rte-container').classList.add('rte-focus');
                 });
                 editor.on('blur', function () {
                     document.getElementById('rte-container').classList.remove('rte-focus');

@@ -14,9 +14,5 @@ window.onload = function () {
   debug = new Debug()
   rte = new RTE()
 
-  if (config.autosave) {
-    api.load(config.autosave)
-  } else {
-    api.load('templates/' + config.starttemplate + '/start.html')
-  }
+  api.load('templates/' + config.starttemplate + '/start.html')
 }
