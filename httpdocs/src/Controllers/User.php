@@ -108,18 +108,6 @@ class User {
 	}
 
 	/**
-	 * Get the path to the autosave, if it exists.
-	 *
-	 * @return string|bool The path to the autosave or false.
-	 */
-	public function get_autosave() {
-		if ( file_exists( $this->get_dir() . '/save/1' ) ) {
-			return 'save/1/sharepic.html';
-		}
-		return false;
-	}
-
-	/**
 	 * Returns if user may use openai.
 	 *
 	 * @return bool True if user may use openai.
