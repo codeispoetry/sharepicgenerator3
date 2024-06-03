@@ -6,6 +6,10 @@ class Undo {
       if (event.ctrlKey && event.key === 'z') {
         this.undo()
       }
+
+      if(event.key === 'Delete' ) {
+        component.delete()
+      }
     }.bind(this))
 
     localStorage.setItem('commits', JSON.stringify([]))

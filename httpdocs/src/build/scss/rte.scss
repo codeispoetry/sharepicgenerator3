@@ -20,14 +20,24 @@
         &::before{
             border: 0 !important;
         }
-        width: 300px;
+        width: 2000px;
+        height: 2000px;
     }
 
     .tox-edit-area__iframe{
         background: transparent !important;
+        height: 2000px !important;
     }
 
     .tox-statusbar{
         display: none !important;
     }
+}
+
+.tox-tinymce.tox-edit-focus {
+    height: 2000px !important;
+}
+
+.freetext.selected:has(> .tox-tinymce) {
+    border: 0 !important;
 }

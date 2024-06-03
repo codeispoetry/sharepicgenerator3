@@ -36,11 +36,11 @@
         oninput="cockpit.setup_freetext(this)"
         id="freetext"
         spellcheck="false"
-        contenteditable="true"
         style="
             left: 120px;
             top: 100px;
             z-index: 2;
+            color: black;
         "
     >
         <div id="tinymce">MINT</div>
@@ -53,20 +53,20 @@
             data-class="draggable selectable freetext" 
             data-cockpit="freetext"  
             onclick="component.select(this)"
+            ondblclick="rte.init('tinymce')"
             onmousedown="component.startDrag(event)"
             oninput="cockpit.setup_freetext(this)"
             data-id="freetext"
             spellcheck="false"
             contenteditable="true"
             style="
-                left: 20px;
-                top: 20px;
-                transform: scale(0.8);
-                padding: 30px;
+                left: 120px;
+                top: 100px;
                 z-index: 2;
+                color: black;
             "
         >
-            Mint
+            <div id="tinymce">MINT</div>
         </div>
     
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 

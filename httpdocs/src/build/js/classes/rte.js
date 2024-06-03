@@ -29,17 +29,10 @@ class RTE{
             toolbar: 'undo redo | bold italic underline | fontfamily fontsize fontsizeinput lineheight | forecolor | removeformat',
             color_map: this.colorMap,
             setup: function ( editor ) {
-                editor.on('change keyup', function () {
-                    if (cockpit.target === null) return;
-                    
-                   // cockpit.target.innerHTML = editor.getContent();
+                editor.on('change keyup', function () {                
+                   // Silence is golden.
                 });
-                editor.on('focus', function () {
-                   // document.getElementById('rte-container').classList.add('rte-focus');
-                });
-                editor.on('blur', function () {
-                   // document.getElementById('rte-container').classList.remove('rte-focus');
-                });
+
             },
             'license_key': 'gpl',
             'branding': false,    

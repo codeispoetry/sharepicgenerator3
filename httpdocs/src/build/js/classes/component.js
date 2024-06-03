@@ -150,7 +150,6 @@ class Component {
   }
 
   dragging (e) {
-    console.log('dragging')
     let clientX, clientY
     // e.preventDefault()
 
