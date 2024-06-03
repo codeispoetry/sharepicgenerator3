@@ -378,7 +378,7 @@ class Sharepic {
 		copy( $path, 'qrcodes/' . $random_filename );
 
 		$qrcode_file = $this->env->user->get_dir() . 'qrcode.png';
-		$qrcode_url  = 'https://' . $_SERVER['HTTP_HOST'] . '/tmp/' . $random_filename;
+		$qrcode_url  = 'https://' . $_SERVER['HTTP_HOST'] . '/qrcodes/' . $random_filename;
 
 		$cmd = sprintf(
 			'qrencode -s 4 -o %s %s 2>&1',

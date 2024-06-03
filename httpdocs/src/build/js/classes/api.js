@@ -61,7 +61,7 @@ class API {
         document.body.removeChild(a)
 
         // Display qr code
-        // document.getElementById('qrcode-section').style.display = 'block'
+        document.getElementById('qrcode-section').style.display = 'block'
         const qrcontainer = document.getElementById('qrcode')
         qrcontainer.innerHTML = ''
         const qr = document.createElement('img')
