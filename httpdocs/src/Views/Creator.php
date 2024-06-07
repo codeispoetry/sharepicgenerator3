@@ -38,12 +38,6 @@
 						<button onClick="undo.undo()" id="undo" class="no-button">
 							<img src="assets/icons/undo.svg" title="<?php echo _('Undo'); ?>">	
 						</button>
-						<div class="bug-detected">
-							<?php echo _('An error occurred. The sharepicgenerator might not behave as expected. This bug has been reported for further investigation.'); ?>
-						</div>
-						<div class="browser-not-supported">
-							<?php echo _('Your are using a yet unsupported browser. If you encounter any problems, please try Chrome or Firefox instead.'); ?>
-						</div>
 					</div>
 					<div id="canvas" translate="no">
 						<div id="sharepic">

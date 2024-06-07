@@ -14,13 +14,9 @@ class RTE{
         //this.init();
     }
 
-    init ( id = 'tinymce' ){
-        if ( tinymce.get( id ) !== undefined ){
-            tinymce.remove('#' + id);
-        }
-
+    init (){
         tinymce.init({
-            selector: '#' + id,
+            selector: `#${cockpit.target.id} .tinymce`,
             menubar: 'tools',
             plugins: 'lists',
             skin: 'oxide-dark',
@@ -42,8 +38,8 @@ class RTE{
     }
 
     deinit ( id = 'tinymce' ){
-        if ( tinymce.get( id ) !== undefined ){
-            tinymce.remove('#' + id);
+        if (tinymce.activeEditor) {
+            tinymce.remove(tinymce.activeEditor);
         }
     }
 }

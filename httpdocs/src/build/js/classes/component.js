@@ -12,7 +12,6 @@ class Component {
       alert(lang['Max reached'])
       return
     }
-
     const clonedElement = pattern.cloneNode(true)
     const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
 

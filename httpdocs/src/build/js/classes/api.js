@@ -195,6 +195,7 @@ class API {
 
   prepare () {
     component.unselect()
+    rte.deinit();
     const canvas = document.getElementById('canvas')
 
     const clonedCanvas = canvas.cloneNode(true)

@@ -31,7 +31,7 @@
         class="draggable selectable freetext" 
         data-cockpit="freetext"  
         onclick="component.select(this)"
-        ondblclick="rte.init('tinymce')"
+        ondblclick="rte.init()"
         onmousedown="component.startDrag(event)"
         oninput="cockpit.setup_freetext(this)"
         id="freetext"
@@ -43,17 +43,16 @@
             color: black;
         "
     >
-        <div id="tinymce">MINT</div>
+        <div class="tinymce">Zum Ändern des Textes, bitte doppelklicken</div>
     </div>
 
 
     <div id="patterns">
-
         <div 
             data-class="draggable selectable freetext" 
             data-cockpit="freetext"  
             onclick="component.select(this)"
-            ondblclick="rte.init('tinymce')"
+            ondblclick="rte.init()"
             onmousedown="component.startDrag(event)"
             oninput="cockpit.setup_freetext(this)"
             data-id="freetext"
@@ -66,7 +65,7 @@
                 color: black;
             "
         >
-            <div id="tinymce">MINT</div>
+            <div class="tinymce">Text nach Doppelklick ändern</div>
         </div>
     
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 

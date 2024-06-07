@@ -10,14 +10,7 @@ class Debug {
       const bugDescription = 'Error: ' + message + ' in ' + source + ' at line ' + lineno + ' column ' + colno
       this.saveDebugInfo(bugDescription)
 
-      document.querySelector('.bug-detected').style.display = 'block'
-
       config.debug_logged = true
-    }
-
-    const supportedBrowsers = ['Chrome', 'Firefox']
-    if (!supportedBrowsers.includes(this.getBrowserInfo().name)) {
-      document.querySelector('.browser-not-supported').style.display = 'block'
     }
   }
 

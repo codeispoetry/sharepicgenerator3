@@ -2,6 +2,8 @@
     <h2><?php  echo _('Text');?></h2>
     <section>
         <button onClick="component.add('freetext')"><?php  echo _('Add text');?></button>
+        <button class="outline" onClick="rte.deinit();"><?php  echo _('Unselect text');?></button>
+
     </section> 
 
     <div style="display:none">
@@ -11,7 +13,6 @@
         </section>
     </div>
     <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
-
 </section>
 
 <script>
