@@ -5,13 +5,13 @@
     </section>
     <section class="selected_only">
         
-        <h3><?php  echo _('Size');?></h3>
+        <h3><?php  echo _('Text size');?></h3>
         <input type="range" min="10" max="90" value="20" step="1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
     
         <h3 class="no-greens"><?php  echo _('Rotation');?></h3>
         <input type="range" min="0" max="360" value="0" class="slider no-greens" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
 
-        <h3 class="no-greens"><?php  echo _('Padding');?></h3>
+        <h3 class="no-greens"><?php  echo _('Text padding');?></h3>
         <input type="range" min="0" max="360" value="0" class="slider no-greens" id="eyecatcher_padding" oninput="eyecatcher.padding(this)">
     </section>
 

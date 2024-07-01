@@ -38,10 +38,12 @@ class RTE{
                     width: sharepic.offsetWidth - text.offsetLeft,
                     height: sharepic.offsetHeight - text.offsetTop
                 }
-                // text.style.width = `${position.width}px`;
-                // text.style.height = `${position.height}px`;
+                text.style.width = `${position.width}px`;
+                //text.style.height = `${position.height}px`;
                 editArea.style.width = `${position.width}px`;
                 editArea.style.height = `${position.height}px`;
+
+                console.log(width, height)
             },
             'license_key': 'gpl',
             'branding': false,    

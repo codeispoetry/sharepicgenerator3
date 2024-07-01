@@ -4,11 +4,7 @@
     <section>
         <h3><?php  echo _('Size');?></h3>
         <input type="range" min="10" max="300" value="100" class="slider" id="background_size" oninput="background.zoom(this.value)">  
-    </section>
-
-    <section>
-        <h3><?php  echo _('Image crop');?></h3>
-
+    
         <div>
             <button class="no-button" onClick="background.reset()">
                 <?php echo _("fit automatically"); ?>
@@ -16,7 +12,7 @@
 
             <label>
                 <input type="checkbox" id="drag_background">
-                <?php echo _("Drag image"); ?>
+                <?php echo _("Make image draggable"); ?>
             </label>
         </div>
     </section>

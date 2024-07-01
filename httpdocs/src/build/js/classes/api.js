@@ -61,12 +61,14 @@ class API {
         document.body.removeChild(a)
 
         // Display qr code
-        document.getElementById('qrcode-section').style.display = 'block'
-        const qrcontainer = document.getElementById('qrcode')
-        qrcontainer.innerHTML = ''
-        const qr = document.createElement('img')
-        qr.src = 'index.php?c=proxy&r=' + Math.random() + '&p=qrcode.png'
-        qrcontainer.appendChild(qr)
+        if(config.qrcode === '1'){
+          document.getElementById('qrcode-section').style.display = 'block'
+          const qrcontainer = document.getElementById('qrcode')
+          qrcontainer.innerHTML = ''
+          const qr = document.createElement('img')
+          qr.src = 'index.php?c=proxy&r=' + Math.random() + '&p=qrcode.png'
+          qrcontainer.appendChild(qr)
+        }
 
         document.querySelector('.create').disabled = false
         document.querySelector('.create').classList.remove('waiting')

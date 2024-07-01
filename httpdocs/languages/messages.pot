@@ -278,7 +278,7 @@ msgid "fit automatically"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:19
-msgid "Drag image"
+msgid "Make image draggable"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:37

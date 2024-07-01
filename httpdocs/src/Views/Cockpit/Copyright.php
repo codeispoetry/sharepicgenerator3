@@ -24,7 +24,7 @@
 
     <section class="selected_only">
         <h3><?php  echo _('Position');?></h3>
-        <div style="display: flex;">
+        <div style="display: flex; justify-content:space-between;">
             <button class="no-button" onclick="copyright.setPostion(1);">
                 <?php  echo _('bottom left');?>
             </button>

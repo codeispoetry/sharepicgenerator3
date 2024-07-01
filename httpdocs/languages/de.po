@@ -293,8 +293,8 @@ msgid "fit automatically"
 msgstr "automatisch einpassen"
 
 #: httpdocs/src/Views/Cockpit/Background.php:19
-msgid "Drag image"
-msgstr "Bild verschieben"
+msgid "Make image draggable"
+msgstr "Bild verschiebbar machen"
 
 #: httpdocs/src/Views/Cockpit/Background.php:37
 msgid "Filter"
@@ -476,7 +476,7 @@ msgstr "Position"
 
 #: httpdocs/src/Views/Cockpit/Copyright.php:29
 msgid "bottom left"
-msgstr "linkt unten"
+msgstr "links unten"
 
 #: httpdocs/src/Views/Cockpit/Copyright.php:32
 msgid "bottom right"

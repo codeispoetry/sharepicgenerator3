@@ -214,6 +214,7 @@
 		'username': '<?php echo $this->env->user->get_username(); ?>',
 		'env': '<?php echo $this->env->config->get( 'Main', 'env' ); ?>',
 		'debug': '<?php echo ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'true' : 'false'; ?>',
+		'qrcode': '<?php echo $this->env->config->get( 'Main', 'qrcode' ); ?>',
 	};
 	
 	const lang = {
