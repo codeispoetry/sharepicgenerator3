@@ -20,8 +20,8 @@
         &::before{
             border: 0 !important;
         }
-        width: 2000px;
-        height: 2000px;
+        width: 400px;
+        height: 400px;
     }
 
     .tox-edit-area__iframe{
@@ -34,8 +34,13 @@
     }
 }
 
+.tinymce{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 .tox-tinymce.tox-edit-focus {
-    height: 2000px !important;
+    height: 400px;
 }
 
 .freetext.selected:has(> .tox-tinymce) {

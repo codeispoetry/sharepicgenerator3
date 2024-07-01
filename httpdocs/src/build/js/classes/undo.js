@@ -41,6 +41,11 @@ class Undo {
   }
 
   undo () {
+    if (tinymce.activeEditor) {
+      // use tinymce undo and not this global undo
+      return
+    }
+
     const commits = JSON.parse(localStorage.getItem('commits'))
 
     if (commits.length <= 1) {

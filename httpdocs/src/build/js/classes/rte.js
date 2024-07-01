@@ -15,6 +15,7 @@ class RTE{
     }
 
     init (){
+        document.getElementById('undo').style.opacity = 0;
         tinymce.init({
             selector: `#${cockpit.target.id} .tinymce`,
             menubar: 'tools',
@@ -28,7 +29,19 @@ class RTE{
                 editor.on('change keyup', function () {                
                    // Silence is golden.
                 });
-
+            },
+            init_instance_callback: function (editor) {
+                const sharepic = document.getElementById('sharepic');
+                const text = document.getElementById(cockpit.target.id);
+                const editArea = document.querySelector('.tox-edit-area');
+                const position={
+                    width: sharepic.offsetWidth - text.offsetLeft,
+                    height: sharepic.offsetHeight - text.offsetTop
+                }
+                // text.style.width = `${position.width}px`;
+                // text.style.height = `${position.height}px`;
+                editArea.style.width = `${position.width}px`;
+                editArea.style.height = `${position.height}px`;
             },
             'license_key': 'gpl',
             'branding': false,    
@@ -39,6 +52,7 @@ class RTE{
 
     deinit ( id = 'tinymce' ){
         if (tinymce.activeEditor) {
+            document.getElementById('undo').style.opacity = 0;
             tinymce.remove(tinymce.activeEditor);
         }
     }
