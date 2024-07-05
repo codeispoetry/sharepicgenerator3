@@ -49,6 +49,8 @@ class Fonts {
 			) . "\n";
 		}
 
+		$css .= '.mce-content-body { word-wrap: normal !important; }';
+
 		file_put_contents( self::CSS_FILE, $css ) || die( 'Could not write file' );
 	}
 

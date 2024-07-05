@@ -48,3 +48,7 @@
 	src: url('../../../assets/fonts/SaunaPro.woff2') format('woff2');
 	font-weight: 300;
 }
+
+.mce-content-body {
+    word-wrap: normal !important;
+};

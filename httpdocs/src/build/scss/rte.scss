@@ -20,27 +20,26 @@
         &::before{
             border: 0 !important;
         }
-        width: 400px;
-        height: 400px;
+        // width: 400px;
+        // height: 400px;
     }
 
     .tox-edit-area__iframe{
-        background: transparent !important;
-        height: 2000px !important;
+        background: rgba(150,150,150, 0.4) !important;
     }
 
     .tox-statusbar{
-        display: none !important;
+        //display: none !important;
     }
 }
 
 .tinymce{
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    // overflow-wrap: break-word;
+    // word-wrap: break-word;
 }
 
 .tox-tinymce.tox-edit-focus {
-    height: 400px;
+    //height: 400px;
 }
 
 .freetext.selected:has(> .tox-tinymce) {
