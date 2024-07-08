@@ -114,7 +114,7 @@ class UI {
     palettes.forEach((palette) => {
       const button = palette.querySelector('button').cloneNode(true)
       button.style.backgroundColor = color
-      button.dataset.blueprint = '';
+      button.dataset.blueprint = ''
       palette.appendChild(button)
     })
     this.setPaletteInHtml()

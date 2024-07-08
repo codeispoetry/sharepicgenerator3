@@ -74,7 +74,6 @@ class Cockpit {
     document.getElementById('eyecatcher_bgcolor').value = ui.rgbToHex(element.querySelector('#sticker_bg').style.fill)
     document.getElementById('eyecatcher_rotation').value = element.style.transform.replace('rotate(', '').replace('deg)', '')
     document.getElementById('eyecatcher_padding').value = element.style.padding.replace('px', '')
-
   }
 
   setup_logo (element) {
@@ -84,18 +83,18 @@ class Cockpit {
     const url = element.style.backgroundImage.replace(/url\("(\.\.\/)*/, '').replace('")', '')
     file.value = url
 
-    if( config.cockpit.logos && config.cockpit.logos.length > 0 ) {
+    if (config.cockpit.logos && config.cockpit.logos.length > 0) {
       // delete all options in this select
       const select = document.getElementById('logo_file')
 
       while (select.firstChild) {
-        select.removeChild(select.firstChild);
+        select.removeChild(select.firstChild)
       }
 
       config.cockpit.logos.forEach((logo) => {
         const option = document.createElement('option')
-          option.text = logo.split('/').pop().split('.').shift()
-          option.value = logo
+        option.text = logo.split('/').pop().split('.').shift()
+        option.value = logo
         select.add(option)
       })
     }
@@ -104,27 +103,26 @@ class Cockpit {
   setup_elements (element) {
     document.getElementById('elements_size').value = element.style.width.replace('px', '')
 
-    if( config.cockpit.objects && config.cockpit.objects.length > 0 ) {
+    if (config.cockpit.objects && config.cockpit.objects.length > 0) {
       // delete all options in this select
       const select = document.getElementById('elements_file')
 
       while (select.firstChild) {
-        select.removeChild(select.firstChild);
+        select.removeChild(select.firstChild)
       }
 
       config.cockpit.objects.forEach((obj) => {
         const option = document.createElement('option')
-          option.text = obj.split('/').pop().split('.').shift()
-          option.value = obj
+        option.text = obj.split('/').pop().split('.').shift()
+        option.value = obj
         select.add(option)
       })
     }
 
-    const imgSrc = cockpit.target.querySelector('img').src;
-    const url = new URL(imgSrc);
+    const imgSrc = cockpit.target.querySelector('img').src
+    const url = new URL(imgSrc)
 
     document.getElementById('elements_file').value = url.pathname.substring(1)
-
   }
 
   setup_addpicture (element) {

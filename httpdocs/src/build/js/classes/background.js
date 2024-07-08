@@ -80,7 +80,7 @@ class Background {
     bg.style.filter = filters.join(' ')
   }
 
-  setCredits( text ) {
+  setCredits (text) {
     document.querySelector('#image-credits').innerHTML = text
   }
 }

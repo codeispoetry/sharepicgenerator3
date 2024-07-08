@@ -61,7 +61,7 @@ class API {
         document.body.removeChild(a)
 
         // Display qr code
-        if(config.qrcode === '1'){
+        if (config.qrcode === '1') {
           document.getElementById('qrcode-section').style.display = 'block'
           const qrcontainer = document.getElementById('qrcode')
           qrcontainer.innerHTML = ''
@@ -146,7 +146,7 @@ class API {
     config.template = path
 
     document.querySelector('#tabsbuttons button').click()
-    background.setCredits('' )
+    background.setCredits('')
     const options = {
       method: 'POST',
       headers: {
@@ -197,7 +197,7 @@ class API {
 
   prepare () {
     component.unselect()
-    rte.deinit();
+    rte.deinit()
     const canvas = document.getElementById('canvas')
 
     const clonedCanvas = canvas.cloneNode(true)

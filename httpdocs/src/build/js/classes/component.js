@@ -41,9 +41,9 @@ class Component {
   }
 
   select (element) {
-   if(!element.classList.contains('freetext')) {
-    rte.deinit();
-   }
+    if (!element.classList.contains('freetext')) {
+      rte.deinit()
+    }
 
     // do not reselect, if the element is already selected
     if (element.classList.contains('selected')) {
@@ -169,12 +169,11 @@ class Component {
       const maxTop = document.getElementById('canvas').offsetHeight - cockpit.target.offsetHeight
       x = Math.min(Math.max(x, 0), maxLeft)
       y = Math.min(Math.max(y, 0), maxTop)
-     
+
       cockpit.target.style.borderColor = 'black'
-      if( x === 0 || x === maxLeft || y === 0 || y === maxTop) {
+      if (x === 0 || x === maxLeft || y === 0 || y === maxTop) {
         cockpit.target.style.borderColor = 'red'
       }
-      
     }
 
     cockpit.target.style.top = `${y}px`

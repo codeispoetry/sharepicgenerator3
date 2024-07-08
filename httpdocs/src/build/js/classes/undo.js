@@ -7,7 +7,7 @@ class Undo {
         this.undo()
       }
 
-      if(event.key === 'Delete' ) {
+      if (event.key === 'Delete') {
         component.delete()
       }
     }.bind(this))
