@@ -246,30 +246,32 @@ class Sharepic {
 		$scaffold = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body class="%s">%s</body></html>';
 		file_put_contents( $this->file, sprintf( $scaffold, $this->body_class, $this->html ) );
 
-		$cmd_preprend = ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
+		$cmd_prepend = ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'sudo' : '';
 
 		$cmd = sprintf(
 			'%s google-chrome --no-sandbox --headless --disable-gpu --screenshot=%s --hide-scrollbars --window-size=%d,%d %s 2>/dev/null',
-			$cmd_preprend,
+			$cmd_prepend,
 			$path,
 			(int) $this->size['width'],
-			(int) $this->size['height'],
+			(int) $this->size['height'] + 87, // Add height for google chrome toolbar (since chrome 128).
 			escapeshellarg( $this->file )
 		);
 
-		if ( $config->get( 'Main', 'engine' ) === 'puppeteer' ) {
-			$cmd = sprintf(
-				'%s xvfb-run --auto-servernum --server-num=1 node puppeteer.js %s %d %d file:///var/www/html/%s 2>&1',
-				$cmd_preprend,
-				$path,
-				(int) $this->size['width'],
-				(int) $this->size['height'],
-				escapeshellarg( $this->file )
-			);
+		exec( $cmd, $output, $return_code );
+		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+
+		if ( 0 !== $return_code ) {
+			$this->env->logger->error( implode( "\n", $output ) );
+			$this->http_error( 'Could not create file' );
 		}
 
+		// Remove the toolbar added by google chrome since version 128.
+		$cmd = sprintf(
+			'%1$s convert %2$s -gravity South -chop 0x87 %2$s 2>&1',
+			$cmd_prepend,
+			$path
+		);
 		exec( $cmd, $output, $return_code );
-
 		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		if ( 0 !== $return_code ) {
