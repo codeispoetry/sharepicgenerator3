@@ -121,7 +121,7 @@ class Sharepic {
 		$this->size['width']  = (int) ( $data['size']['width'] ?? 100 );
 		$this->size['height'] = (int) ( $data['size']['height'] ?? 100 );
 		$this->size['zoom']   = (float) ( $data['size']['zoom'] ?? 1 );
-		$this->path           = (int) ( $data['path'] ?? false );
+		$this->path           = (int) ( $data['path'] ?? 0 );
 		$this->jpg            = (bool) ( $data['jpg'] ?? 1 );
 		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
 		$this->info           = ( isset( $data['name'] ) ) ? preg_replace( '/[^a-zA-Z0-9 äöüÄÖÜß:]/', ':', $data['name'] ) : 'no-name';
@@ -158,7 +158,7 @@ class Sharepic {
 			$save_dir = $this->env->user->get_dir() . 'bug/';
 		}
 
-		$id   = $this->path ?? rand( 1000000, 9999999 );
+		$id   = ( $this->path > 0 ) ? $this->path : rand( 1000000, 9999999 );
 		$save = $save_dir . $id;
 
 		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );

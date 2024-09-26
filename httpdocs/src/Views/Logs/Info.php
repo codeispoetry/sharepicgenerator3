@@ -32,6 +32,11 @@
 						printf( _('Number of tmp-files: %s'), cmd( 'ls -l ../tmp/ | wc -l' ) );
 					?>
 				</li>
+				<li>
+					<?php
+						printf( _('Chrome version: %s'), cmd( 'google-chrome --version' ) );
+					?>
+				</li>
             </ul>
 		</div>
 		
