@@ -32,6 +32,7 @@ class RTE {
       toolbar: 'undo redo | bold italic underline | fontfamily fontsize fontsizeinput lineheight | forecolor | removeformat',
       color_map: this.colorMap,
       width: `${w}px`,
+      min_width: 100,
       height: `${h}px`,
       license_key: 'gpl',
       branding: false,

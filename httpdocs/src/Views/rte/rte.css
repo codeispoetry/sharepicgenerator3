@@ -51,4 +51,8 @@
 
 .mce-content-body {
     word-wrap: normal !important;
-};
+}
+
+.tox .tox-statusbar__path{
+	display: none;
+}
