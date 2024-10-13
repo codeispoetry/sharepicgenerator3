@@ -44,7 +44,7 @@ class RTE {
 
   deinit () {
     if (tinymce.activeEditor) {
-      document.getElementById('undo').style.opacity = 0
+      document.getElementById('undo').style.opacity = 1
       // const maxWidth = rte.getLargestChildOf(tinymce.activeEditor.getBody())
       // const id = tinymce.activeEditor.id
 
