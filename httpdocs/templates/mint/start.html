@@ -84,41 +84,6 @@
                 color: #000000;
             ">Copyright-Hinweis
         </div>
-
-        <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
-        spellcheck="false"
-        onclick="component.select(this)"
-        onmousedown="component.startDrag(event)" style="
-                    z-index: 2; 
-                    left: 5px; top: 5px; 
-                    font-size: 20px; 
-                    color: #222222; 
-                    background-color: none;
-                    padding: 0;
-                    aspect-ratio: 1 / 1;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    transform: rotate(0deg);
-                "
-            >
-            <svg style="
-                position: absolute;
-                width: 100%; height: 100%;
-                z-index: -1;
-                "
-                width="280" height="280" viewBox="0 0 74.083332 74.083333" version="1.1" id="svg1"
-                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                <path
-                    d="M 28.952854,0.40200885 C 35.932645,-1.4308193 44.036565,3.5671375 45.380381,4.1049773 46.723927,4.6428441 61.070749,11.359814 68.742171,17.313868 78.331512,24.756414 73.766987,35.183485 64.825338,57.782482 55.88395,80.38121 46.878507,77.040823 18.520613,62.575286 -11.237954,47.395627 2.5201489,31.733951 7.8298762,22.389858 13.139634,13.045832 21.972763,2.2348339 28.952854,0.40200885 Z"
-                    id="sticker_bg" style="fill:#ffcf53;stroke-width:0.26513" />
-            </svg>
-            <div contenteditable="true" style="margin: 30px; text-align: center;white-space: nowrap;">
-                Sticker
-            </div>
-        </div>
-
-
     
         <div data-class="addpicture draggable selectable" data-cockpit="addpicture" data-id="addpicture"
         onclick="component.select(this)" onmousedown="component.startDrag(event)" style="
@@ -146,7 +111,7 @@
     <script>
         undo.commit()
         config.cockpit = {
-            elements: ['dimensions','search','background','freetext','copyright', 'eyecatcher','addpicture','settings']
+            elements: ['dimensions','search','background','freetext','copyright','addpicture','settings']
         }
        // config.palette = ['#ff0000', '#00ff00' ]
 
