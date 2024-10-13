@@ -36,6 +36,8 @@ class RTE {
       height: `${h}px`,
       license_key: 'gpl',
       branding: false,
+      language: 'de', 
+      language_url: '/assets/tinymce/lang/de.js',
       content_css: '/src/Views/rte/rte.css',
       content_style: 'body, p { margin: 0; padding: 0; }',
       resize: 'both'
