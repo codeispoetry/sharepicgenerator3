@@ -16,6 +16,8 @@ window.onload = function () {
   settings = new Settings();
 
   api.load('templates/' + config.starttemplate + '/start.html')
+
+  api.load('save/1/sharepic.html')
 }
 
 window.addEventListener('beforeunload', function (event) {
