@@ -588,6 +588,13 @@ class Sharepic {
 	}
 
 	/**
+	 * Just says hello, to check if the user is still logged in.
+	 */
+	public function is_logged_in() {
+		echo json_encode( [ 'status' => 200 ] );
+	}
+
+	/**
 	 * Saves user config.
 	 * Might be in User class, but user class is hidden
 	 * from the public for security reasons.

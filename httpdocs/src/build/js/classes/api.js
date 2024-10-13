@@ -6,9 +6,7 @@ class API {
     this.ai = config.url + '/index.php?c=openai'
 
     window.setInterval(() => {
-      const ct = new Date()
-      const t = ct.getHours() + ':' + ct.getMinutes()
-
+      this.is_logged_in()
       this.save('save', 'Autosave', 1)
 
       document.getElementById('info-in-menu').innerHTML = 'Automatische Zwischenspeicherung des Sharepics.'
@@ -77,6 +75,28 @@ class API {
         logger.log('creates sharepic')
       })
       .catch(error => console.error('Error:', error))
+  }
+
+  is_logged_in () {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify('hello')
+    }
+
+    fetch(this.api + '&m=is_logged_in', options)
+    .then(response => {
+      if (response.status !== 200) {
+        if (confirm(lang['logged out'])) {
+          location.reload()
+        }
+        throw new Error(response.status + ' ' + response.statusText)
+      }
+    })
+    .catch(error => console.error('Error:', error))
+
   }
 
   // mode = save or mode=publish

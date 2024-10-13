@@ -90,7 +90,12 @@ class Frontend {
 	 * welcome page here at index.
 	 */
 	public function index() {
-		$this->create();
+
+		if ( 'mint' === $this->env->config->get( 'Main', 'tenant' ) ) {
+			include_once './src/Views/Homemint.php';
+		} else {
+			$this->create();
+		}
 	}
 
 	/**
