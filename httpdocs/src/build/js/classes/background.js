@@ -21,7 +21,9 @@ class Background {
       return
     }
 
-    document.getElementById('background').addEventListener('mousemove', this.drag)
+    const bg = document.getElementById('background')
+ 
+    bg.addEventListener('mousemove', this.drag)
     background.start = undefined
   }
 

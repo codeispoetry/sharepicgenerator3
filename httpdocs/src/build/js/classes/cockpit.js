@@ -12,7 +12,7 @@ class Cockpit {
 
     const backgroundSize = document.getElementById('sharepic').style.backgroundSize
 
-    document.getElementById('background_size').value = (backgroundSize === 'cover') ? 100 : backgroundSize.replace('%', '')
+    document.getElementById('background_size').value = (backgroundSize === 'cover' || backgroundSize === '') ? 100 : backgroundSize.replace('%', '')
     document.getElementById('background_color').value = ui.rgbToHex(document.getElementById('sharepic').style.backgroundColor)
   }
 
