@@ -195,10 +195,21 @@ class User {
 	 * due to security concerns.
 	 *
 	 * @return string The palette.
+	 * @throws \Exception On missing config file.
 	 */
 	public function get_palette() {
-		$config_file = $this->get_dir() . 'config.json';
-		$data = json_decode( file_get_contents( $config_file ) );
-		return '["' . join('","', $data->palette ) . '"]';
+		try {
+			$config_file = $this->get_dir() . 'config.json';
+			if ( ! file_exists( $config_file ) ) {
+				throw new \Exception( 'Config file does not exist.' );
+			}
+			$data = json_decode( file_get_contents( $config_file ) );
+			if ( null === $data ) {
+				throw new \Exception( 'Failed to decode JSON.' );
+			}
+		} catch ( \Exception $e ) {
+			return '[]';
+		}
+		return '["' . join( '","', $data->palette ) . '"]';
 	}
 }
