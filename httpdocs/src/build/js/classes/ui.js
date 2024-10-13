@@ -93,7 +93,7 @@ class UI {
   addColorButtons () {
     if (!config.palette) return
 
-    // emppty all palettes
+    // empty all palettes
     const palettes = document.querySelectorAll('.palette')
     palettes.forEach((palette) => {
       const buttons = palette.querySelectorAll('button')
