@@ -16,3 +16,7 @@ window.onload = function () {
 
   api.load('templates/' + config.starttemplate + '/start.html')
 }
+
+window.addEventListener('beforeunload', function (event) {
+    api.save('save', 'Autosave', 1);
+});

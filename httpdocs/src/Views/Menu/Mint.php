@@ -2,11 +2,13 @@
     <div class="dropdown" id="menu_mint">
         <span><?php echo _( 'File' ); ?></span>
         <div class="dropdown-content">
-           
-            <button onClick="ui.setLang('de')">
+            <button onClick="api.load('templates/' + config.starttemplate + '/start.html')">
+                <?php  echo _('New');?>
+            </button>
+            <button style="display:none" onClick="ui.setLang('de')">
                 <?php echo _( 'German' ); ?>
             </button>
-            <button onClick="ui.setLang('en')">
+            <button style="display:none" onClick="ui.setLang('en')">
                 <?php echo _( 'English' ); ?>
             </button>
             <?php if ( $this->env->user->is_admin() ) { ?>
@@ -50,11 +52,14 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
-            <button onClick="api.save('save','Autosave', 1);alert('Ok');">
+            <button style="display:none" onClick="api.save('save','Autosave', 1);alert('Ok');">
                 <?php  echo _('Save');?>
             </button>
             <button onClick="api.save()">
                 <?php  echo _('Save as');?>
+            </button>
+            <button onClick="api.load('templates/' + config.starttemplate + '/start.html')">
+                <?php  echo _('Template');?>
             </button>
             <div class="divider"></div>
             <?php
