@@ -188,4 +188,17 @@ class User {
 
 		return $savings;
 	}
+
+	/**
+	 * Return the users saved palette.
+	 * The saving of this palette is handled in Sharepic-class
+	 * due to security concerns.
+	 *
+	 * @return string The palette.
+	 */
+	public function get_palette() {
+		$config_file = $this->get_dir() . 'config.json';
+		$data = json_decode( file_get_contents( $config_file ) );
+		return '["' . join('","', $data->palette ) . '"]';
+	}
 }

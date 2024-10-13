@@ -588,6 +588,27 @@ class Sharepic {
 	}
 
 	/**
+	 * Saves user config.
+	 * Might be in User class, but user class is hidden
+	 * from the public for security reasons.
+	 */
+	public function save_config() {
+		$data = json_decode( file_get_contents( 'php://input' ), true );
+
+		if ( empty( $data ) ) {
+			return;
+		}
+
+		$config_file = $this->env->user->get_dir() . 'config.json';
+		$new_config = ['palette' => $data['palette'] ];
+
+		$config_data = json_encode( $new_config );
+		file_put_contents( $config_file, $config_data );
+
+		echo json_encode( [ 'status' => 200 ] );
+	}
+
+	/**
 	 * Fail gracefully.
 	 *
 	 * @param string $message The error message.

@@ -215,8 +215,8 @@
 		'env': '<?php echo $this->env->config->get( 'Main', 'env' ); ?>',
 		'debug': '<?php echo ( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'true' : 'false'; ?>',
 		'qrcode': '<?php echo $this->env->config->get( 'Main', 'qrcode' ); ?>',
+		'palette':  <?php echo $this->env->user->get_palette(); ?>
 	};
-	
 	const lang = {
 		'Are you sure?': '<?php echo _( 'Are you sure?') ?>',
 		'Want to log out?': '<?php echo _( 'Do you want to log out?') ?>',
@@ -231,6 +231,7 @@
 		'Please wait until the image is uploaded': '<?php echo _( 'Please wait until the image is uploaded.') ?>',
 		'Max number of lines reached': '<?php echo _( 'Maximum number of lines reached. For longer text, please use additional text element.') ?>',
 		'Color added': '<?php echo _( 'Color added') ?>',
+		'Please choose a new color first': '<?php echo _('Please choose a new color first'); ?>',
    };
 </script>
 

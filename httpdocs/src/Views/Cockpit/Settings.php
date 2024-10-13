@@ -26,22 +26,3 @@
         ?>
     </section>
 </section>
-
-<script>
-
-    class Settings {
-        addColor ( color ) {
-            if (config.palette.includes(color)) return
-
-            config.palette.push(color)
-            ui.addColorButton(color)
-        }
-
-        removeColor ( color ) {
-            config.palette = config.palette.filter( c => c !== ui.rgbToHex(color) )
-            ui.removeColorButton(color)
-        }
-    }
-
-    const settings = new Settings();
-</script>

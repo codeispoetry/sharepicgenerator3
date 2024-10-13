@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, no-unused-vars, no-var */
-var api, sg, cockpit, undo, imagedb, component, logger, ui, background, debug, rte
+var api, sg, cockpit, undo, imagedb, component, logger, ui, background, debug, rte, settings
 
 window.onload = function () {
   api = new API()
@@ -13,6 +13,7 @@ window.onload = function () {
   logger = new Logger()
   debug = new Debug()
   rte = new RTE()
+  settings = new Settings();
 
   api.load('templates/' + config.starttemplate + '/start.html')
 }
