@@ -13,7 +13,28 @@ class Background {
       bg.style.backgroundSize = '100%'
     }
 
+    const before = {
+      width: bg.offsetWidth * (bg.style.backgroundSize.replace('%', '') / 100),
+      height: bg.offsetHeight * (bg.style.backgroundSize.replace('%', '') / 100),
+    }
+
     bg.style.backgroundSize = percentage + '%'
+
+    const after = {
+      width: bg.offsetWidth * (percentage / 100),
+      height: bg.offsetHeight * (percentage / 100),
+    }
+
+    const diff = {
+      x: (after.width - before.width) / 2,
+      y: (after.height - before.height) / 2,
+    }
+   
+   
+    bg.style.backgroundPositionX = parseInt(bg.style.backgroundPositionX.replace('px', '')) - diff.x + 'px'
+    bg.style.backgroundPositionY = parseInt(bg.style.backgroundPositionY.replace('px', '')) - diff.y + 'px'
+
+
   }
 
   startDrag () {
