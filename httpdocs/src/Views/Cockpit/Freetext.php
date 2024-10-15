@@ -2,16 +2,18 @@
     <h2><?php  echo _('Text');?></h2>
     <section>
         <button onClick="component.add('freetext')"><?php  echo _('Add text');?></button>
-        <button class="outline" onClick="rte.deinit();"><?php  echo _('Unselect text');?></button>
-
+        <button class="outline" onClick="rte.deinit();"><?php  echo _('Close text editor');?></button>
     </section> 
 
-    <div style="display:none">
-        <section class="selected_only">
-            <h3><?php  echo _('Total size');?></h3>
-            <input type="range" min="0" max="100" value="50" class="slider" id="text_size" oninput="freetext.setSize(this)">      
-        </section>
-    </div>
+    <section> 
+        <div style="">
+            <section class="selected_only">
+                <h3><?php  echo _('Rotation');?></h3>
+                <input type="range" min="-180" max="180" value="0" class="slider" id="text_rotation" oninput="freetext.setRotation(this.value)">      
+            </section>
+        </div>
+    </section>
+
     <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 </section>
 
@@ -24,6 +26,10 @@
         setContent(content) {
            // const editor = tinymce.get('rte');
             //editor.setContent( content );
+        }
+
+        setRotation(value){
+            document.getElementById(cockpit.target.id).style.rotate = `${value}deg`
         }
 
         font_family_formats = '<?php echo Sharepicgenerator\Controllers\Fonts::get_font_family_formats(); ?>';

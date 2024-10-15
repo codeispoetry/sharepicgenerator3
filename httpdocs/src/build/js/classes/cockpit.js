@@ -60,8 +60,7 @@ class Cockpit {
   }
 
   setup_freetext (element) {
-    document.getElementById('text_size').value = element.style.fontSize.replace('px', '')
-    freetext.setContent(cockpit.target.innerHTML)
+    document.getElementById('text_rotation').value = element.style.rotate.replace('deg', '')
   }
 
   setup_eyecatcher (element) {

@@ -6,9 +6,6 @@
             <?php  echo _('Show green area');?>
         </label>
     </section>
-
-   
-
 </section>
 
 <script>

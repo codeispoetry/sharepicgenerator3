@@ -21,6 +21,8 @@ class RTE {
     const w = document.getElementById(cockpit.target.id).offsetWidth
     const h = document.getElementById(cockpit.target.id).offsetHeight
     document.getElementById(cockpit.target.id).style.removeProperty('width')
+    this.rotate = document.getElementById(cockpit.target.id).style.rotate
+    document.getElementById(cockpit.target.id).style.removeProperty('rotate')
 
     tinymce.init({
       selector: `#${cockpit.target.id} .tinymce`,
@@ -45,19 +47,22 @@ class RTE {
   }
 
   deinit () {
-    if (tinymce.activeEditor) {
-      document.getElementById('undo').style.opacity = 1
-      // const maxWidth = rte.getLargestChildOf(tinymce.activeEditor.getBody())
-      // const id = tinymce.activeEditor.id
-
-      const editorContainer = tinymce.activeEditor.getContainer()
-      const width = editorContainer.offsetWidth
-      const height = editorContainer.offsetHeight
-
-      tinymce.remove(tinymce.activeEditor)
-      document.getElementById(cockpit.target.id).style.width = `${width}px`
-      document.getElementById(cockpit.target.id).style.height = `${height}px`
+    if (!tinymce.activeEditor) {
+      return
     }
+
+    document.getElementById('undo').style.opacity = 1
+    // const maxWidth = rte.getLargestChildOf(tinymce.activeEditor.getBody())
+    // const id = tinymce.activeEditor.id
+
+    const editorContainer = tinymce.activeEditor.getContainer()
+    const width = editorContainer.offsetWidth
+    const height = editorContainer.offsetHeight
+
+    tinymce.remove(tinymce.activeEditor)
+    document.getElementById(cockpit.target.id).style.width = `${width}px`
+    document.getElementById(cockpit.target.id).style.height = `${height}px`
+    document.getElementById(cockpit.target.id).style.rotate =  this.rotate
   }
 
   getLargestChildOf (element) {
