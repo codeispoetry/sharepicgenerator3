@@ -30,11 +30,8 @@ class Background {
       y: (after.height - before.height) / 2,
     }
    
-   
     bg.style.backgroundPositionX = parseInt(bg.style.backgroundPositionX.replace('px', '')) - diff.x + 'px'
     bg.style.backgroundPositionY = parseInt(bg.style.backgroundPositionY.replace('px', '')) - diff.y + 'px'
-
-
   }
 
   startDrag () {
