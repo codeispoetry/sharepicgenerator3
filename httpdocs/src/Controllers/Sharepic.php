@@ -311,7 +311,7 @@ class Sharepic {
 
 		// $extension = strtolower( pathinfo( $url, PATHINFO_EXTENSION ) );
 		// if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png', 'gif' ) ) ) {
-		// $this->http_error( 'Could not load image (code 3)' );
+		// $this->http_error( 'Could not load image (code 5)' );
 		// return;
 		// }
 
@@ -491,7 +491,7 @@ class Sharepic {
 
 		if ( ! Helper::is_image_file_local( $upload_file ) ) {
 			unlink( $upload_file );
-			$this->http_error( 'Could not upload image. Code 2.' );
+			$this->http_error( 'Could not upload image. Code 4.' );
 			return;
 		}
 
@@ -525,7 +525,7 @@ class Sharepic {
 
 		if ( ! Helper::is_image_file_local( $upload_file ) ) {
 			unlink( $upload_file );
-			$this->http_error( 'Could not upload image. Code 2.' );
+			$this->http_error( 'Could not upload image. Code 3.' );
 			return;
 		}
 

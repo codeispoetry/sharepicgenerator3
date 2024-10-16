@@ -113,7 +113,7 @@ class Helper {
 	public static function is_image_file_local( $path ) {
 
 		$extension = strtolower( pathinfo( $path, PATHINFO_EXTENSION ) );
-		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png' ) ) ) {
+		if ( ! in_array( $extension, array( 'jpg', 'jpeg', 'png', 'svg' ) ) ) {
 			return false;
 		}
 
