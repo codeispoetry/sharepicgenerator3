@@ -100,6 +100,9 @@ class API {
   }
 
   autosave() {
+    if (tinymce.activeEditor) {
+      return
+    }
     const date = new Date()
     const day = date.getDate()
     const year = date.getFullYear()
