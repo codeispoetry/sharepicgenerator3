@@ -7,7 +7,7 @@ class API {
 
     window.setInterval(() => {
       this.is_logged_in()
-      this.save('save', 'Autosave', 1)
+      this.autosave()
 
       document.getElementById('info-in-menu').innerHTML = 'Automatische Zwischenspeicherung des Sharepics.'
       window.setTimeout(() => {
@@ -97,6 +97,25 @@ class API {
     })
     .catch(error => console.error('Error:', error))
 
+  }
+
+  autosave() {
+    const date = new Date()
+    const day = date.getDate()
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    const seconds = date.getSeconds()
+    const dayF = ('0' + day).slice(-2)
+    const monthF = ('0' + month).slice(-2)
+    const hoursF = ('0' + hours).slice(-2)
+    const minutesF = ('0' + minutes).slice(-2)
+    const secondsF = ('0' + seconds).slice(-2)
+    // erzeuge den String
+    const dateString = year + '-' + monthF + '-' + dayF + ' ' + hoursF + ':' + minutesF
+    const name = 'Auto-Speicherung ' + dateString
+    this.save('save', name, 1) 
   }
 
   // mode = save or mode=publish

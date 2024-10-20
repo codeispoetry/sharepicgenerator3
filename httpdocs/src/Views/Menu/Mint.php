@@ -52,7 +52,7 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'My Sharepics' ); ?></span>
         <div id="my-sharepics" class="dropdown-content">
-            <button style="display:none" onClick="api.save('save','Autosave', 1);alert('Ok');">
+            <button style="display:none" onClick="api.autosave();alert('Ok');">
                 <?php  echo _('Save');?>
             </button>
             <button onClick="api.save()">

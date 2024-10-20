@@ -21,5 +21,5 @@ window.onload = function () {
 }
 
 window.addEventListener('beforeunload', function (event) {
-    api.save('save', 'Autosave', 1);
+    api.autosave()
 });

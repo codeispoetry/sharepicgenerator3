@@ -124,7 +124,7 @@ class Sharepic {
 		$this->path           = (int) ( $data['path'] ?? 0 );
 		$this->jpg            = (bool) ( $data['jpg'] ?? 1 );
 		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
-		$this->info           = ( isset( $data['name'] ) ) ? preg_replace( '/[^a-zA-Z0-9 äöüÄÖÜß:]/', ':', $data['name'] ) : 'no-name';
+		$this->info           = ( isset( $data['name'] ) ) ? preg_replace( '/[^a-zA-Z0-9 äöüÄÖÜß:\-\.]/', ':', $data['name'] ) : 'no-name';
 		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish', 'bug' ) ) ) ? $data['mode'] : 'save';
 		$this->raw_data       = $data['data'] ?? '';
 		$this->body_class     = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
@@ -162,7 +162,7 @@ class Sharepic {
 		$save = $save_dir . $id;
 
 		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );
-		if ( $save_count > 10 ) {
+		if ( $save_count > 30 ) {
 			$this->http_error( 'Too many files' );
 		}
 
