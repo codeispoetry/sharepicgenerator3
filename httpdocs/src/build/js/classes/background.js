@@ -55,6 +55,13 @@ class Background {
     const x = e.clientX - bg.getBoundingClientRect().left
     const y = e.clientY - bg.getBoundingClientRect().top
 
+    const sharepicWidth = parseInt(document.getElementById('sharepic').style.width.replace('px', ''))
+    const sharepicHeight = parseInt(document.getElementById('sharepic').style.height.replace('px', ''))
+    if (x + 5 > sharepicWidth || y + 5  > sharepicHeight || x  < 0 || y < 0) {
+      background.stopDrag()
+      return
+    }
+
     if (background.start === undefined) {
       const left = bg.style.backgroundPositionX
       const top = bg.style.backgroundPositionY
