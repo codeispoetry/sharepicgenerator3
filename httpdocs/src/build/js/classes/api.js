@@ -116,8 +116,8 @@ class API {
     const minutesF = ('0' + minutes).slice(-2)
     const secondsF = ('0' + seconds).slice(-2)
     // erzeuge den String
-    const dateString = year + '-' + monthF + '-' + dayF + ' ' + hoursF + ':' + minutesF
-    const name = 'Auto-Speicherung ' + dateString
+    const dateString = year + '-' + monthF + '-' + dayF + ' ' + hoursF + ':' + minutesF + ':' + secondsF
+    const name = 'Automatische Speicherung ' + dateString
     this.save('save', name, 1) 
   }
 
