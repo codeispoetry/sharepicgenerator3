@@ -626,7 +626,7 @@ msgstr "Anordnung"
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:5
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:6
 msgid "to front"
-msgstr "nach vorne"
+msgstr "nach vorn"
 
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:8
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:9
