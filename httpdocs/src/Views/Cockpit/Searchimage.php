@@ -36,7 +36,7 @@
     </section>
 
     <?php if ( $this->env->user->may_openai() ) { ?>
-    <section id="search_dalle">
+    <section id="search_dalle" style="display: none">
         <h3><?php  echo _('Create image with AI');?></h3>
         <p>
             <?php 
