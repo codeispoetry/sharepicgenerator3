@@ -175,7 +175,7 @@
 					</div>
 				</button>
 
-				<button>
+				<button class="no-mint">
 					<div>
 						<a href="index.php?c=frontend&m=logout" class="link">
 							<img src="assets/icons/logout.svg">

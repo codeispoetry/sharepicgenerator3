@@ -33,8 +33,6 @@
             </button>
         </div>
     </section>
-
-    <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 </section>
 
 <script>

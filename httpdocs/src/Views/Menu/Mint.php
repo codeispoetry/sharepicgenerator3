@@ -1,4 +1,7 @@
 <nav>
+<a href="index.php">
+    <img src="/assets/images/mint.svg" style="height: 56px; width: 56px; margin-right: 0;">
+</a>
 <div class="dropdown" id="menu_mint">
         <span>MINT Sharepic-Generator</span>
         <div class="dropdown-content"> 
@@ -8,9 +11,6 @@
             <a href="index.php?c=frontend&m=view&view=Privacy" class="menu-link">
                 <?php  echo _('Privacy');?>
 			</a>    
-            <a href="index.php?c=frontend&m=logout" class="menu-link">
-                <?php  echo _('Logout');?>
-			</a>
         </div>
     </div>
 
@@ -21,15 +21,8 @@
             <button onClick="api.load('templates/' + config.starttemplate + '/start.html')">
                 <?php  echo _('New');?>
             </button>
-
-            <button style="display:none" onClick="api.autosave();alert('Ok');">
-                <?php  echo _('Save');?>
-            </button>
             <button onClick="api.save()">
                 <?php  echo _('Save as');?>
-            </button>
-            <button onClick="api.load('templates/' + config.starttemplate + '/start.html')">
-                <?php  echo _('Template');?>
             </button>
             <div class="divider"></div>
             <?php

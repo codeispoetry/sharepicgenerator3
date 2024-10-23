@@ -28,6 +28,12 @@ body{
     margin: 0;
     display: flex;
     flex-direction: column;
+
+    &.mint{
+        .no-mint{
+            display: none !important;
+        }
+    }
 }
 
 a, a:visited{

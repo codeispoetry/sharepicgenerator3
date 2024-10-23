@@ -30,7 +30,7 @@
         </div>
         </section>
 
-    <section class="selected_only">
+    <section class="selected_only no-mint">
         <h3><?php echo _("Text"); ?></h3>
         <div class="horizontal">
             <button id="addpic_text_right" onclick="addpicture.textRight()" class="no-button" title="<?php  echo _('text floats right');?>"><img src="assets/icons/text-right.svg"></button>

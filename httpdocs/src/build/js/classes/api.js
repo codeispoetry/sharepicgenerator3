@@ -541,6 +541,8 @@ class API {
         config.uploadAddPic = null
         config.uploading = false
 
+        addpicture.picOriginal()
+        
         logger.prepare_log_data({
           path_on_server: resp.path
         }, true)
