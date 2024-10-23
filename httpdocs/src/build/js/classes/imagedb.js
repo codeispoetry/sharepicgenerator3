@@ -21,11 +21,97 @@ class ImageDB {
       return
     }
 
-    if (config.imagedb === 'unsplash') {
-      this.search_unsplash(q)
-    } else {
-      this.search_pixabay(q)
+    switch (config.imagedb) {
+      case 'unsplash':
+        this.search_unsplash(q)
+        break
+      case 'mint':
+        this.search_mint(q)
+        break
+      default:
+        this.search_pixabay(q)
     }
+  }
+
+  search_mint (q) {
+    const url = `https://media-tool.mint-vernetzt.de/wp-json/media-api/v1/media/search?api_key&q=${encodeURIComponent(q)}`
+    const body = JSON.stringify({ query: q })
+
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body
+    })
+      .then(response => response.json())
+      .then(data => {
+        logger.log('searches mint for ' + q + ' and gets ' + data.length + ' results')
+        this.show_results_mint(data)
+      })
+      .catch(error => console.error('Error:', error)
+      )
+  }
+
+  show_results_mint (data) {
+    const page = document.getElementById('imagedb_page')
+    page.classList.add('show')
+    document.getElementById('cockpit').style.display = 'none'
+
+    const results = document.getElementById('imagedb_results')
+    results.classList.add('show')
+    results.innerHTML = ''
+
+    if (data === undefined || data.length === 0) {
+      const q = document.getElementById('imagedb_q').value
+      results.innerHTML = `<div class="no_results">Für den Suchbegriff "${q}" wurden keine Bilder gefunden.</div>`
+      return
+    }
+
+    data.forEach(hit => {
+      const img = document.createElement('div')
+      img.style.backgroundImage = `url('${hit.attachment_thumbnail}')`
+      img.classList.add('image')
+      img.setAttribute('data-url', hit.attachment_id)
+      img.setAttribute('data-user', 'Mint')
+      img.setAttribute('data-pageurl', 'Mint')
+
+      img.ondblclick = () => {
+        ui.close('#imagedb_page')
+      }
+
+      img.onclick = () => {
+        const q = document.getElementById('imagedb_q').value
+
+        logger.prepare_log_data({
+          imagesrc: 'mint',
+          q
+        })
+        logger.log('clicks on image after search for ' + q)
+
+        document.getElementById('background').style.backgroundImage = img.style.backgroundImage
+        document.getElementById('background').style.filter = 'grayscale(100%)'
+
+        // get real image url
+        fetch('https://media-tool.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key')
+          .then(response => response.json())
+          .then(data => {
+            api.loadByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + data.attachment_meta.file)
+          })
+          .catch(error => console.error('Error:', error)
+          )
+
+        // is copyright already shown?
+        const copyright = document.querySelector('#sharepic [id^=copyright_]')
+        if (!copyright) {
+          component.add('copyright')
+        }
+        document.querySelector('#sharepic [id^=copyright_]').innerHTML = 'Bild aus der Mint-Datenbank'
+
+        // background.setCredits(`Image by <a href="${img.dataset.pageurl}?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">${img.dataset.user}</a> auf Unsplash.com`)
+      }
+      results.appendChild(img)
+    })
   }
 
   search_unsplash (q) {

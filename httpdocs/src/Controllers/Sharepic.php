@@ -334,7 +334,7 @@ class Sharepic {
 		}
 
 		if ( 'local' === $this->env->config->get( 'Main', 'env' ) ) {
-			$this->reduce_filesize( $upload_file, 800, 30 );
+			$this->reduce_filesize( $upload_file, 800, 90 );
 		} else {
 			$this->reduce_filesize( $upload_file );
 		}
