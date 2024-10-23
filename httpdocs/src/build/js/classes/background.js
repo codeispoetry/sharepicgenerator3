@@ -15,21 +15,21 @@ class Background {
 
     const before = {
       width: bg.offsetWidth * (bg.style.backgroundSize.replace('%', '') / 100),
-      height: bg.offsetHeight * (bg.style.backgroundSize.replace('%', '') / 100),
+      height: bg.offsetHeight * (bg.style.backgroundSize.replace('%', '') / 100)
     }
 
     bg.style.backgroundSize = percentage + '%'
 
     const after = {
       width: bg.offsetWidth * (percentage / 100),
-      height: bg.offsetHeight * (percentage / 100),
+      height: bg.offsetHeight * (percentage / 100)
     }
 
     const diff = {
       x: (after.width - before.width) / 2,
-      y: (after.height - before.height) / 2,
+      y: (after.height - before.height) / 2
     }
-   
+
     bg.style.backgroundPositionX = parseInt(bg.style.backgroundPositionX.replace('px', '')) - diff.x + 'px'
     bg.style.backgroundPositionY = parseInt(bg.style.backgroundPositionY.replace('px', '')) - diff.y + 'px'
   }
@@ -40,7 +40,7 @@ class Background {
     }
 
     const bg = document.getElementById('background')
- 
+
     bg.addEventListener('mousemove', this.drag)
     background.start = undefined
   }
@@ -57,7 +57,7 @@ class Background {
 
     const sharepicWidth = parseInt(document.getElementById('sharepic').style.width.replace('px', ''))
     const sharepicHeight = parseInt(document.getElementById('sharepic').style.height.replace('px', ''))
-    if (x + 5 > sharepicWidth || y + 5  > sharepicHeight || x  < 0 || y < 0) {
+    if (x + 5 > sharepicWidth || y + 5 > sharepicHeight || x < 0 || y < 0) {
       background.stopDrag()
       return
     }

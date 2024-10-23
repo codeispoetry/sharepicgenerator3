@@ -13,7 +13,7 @@ window.onload = function () {
   logger = new Logger()
   debug = new Debug()
   rte = new RTE()
-  settings = new Settings();
+  settings = new Settings()
 
   api.load('templates/' + config.starttemplate + '/start.html')
 
@@ -21,5 +21,5 @@ window.onload = function () {
 }
 
 window.addEventListener('beforeunload', function (event) {
-    api.autosave()
-});
+  api.autosave()
+})

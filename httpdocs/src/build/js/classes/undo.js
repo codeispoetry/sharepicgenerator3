@@ -8,8 +8,8 @@ class Undo {
       }
 
       if (event.key === 'Delete') {
-        if(cockpit.target.id === 'greentext' ) {
-          return;
+        if (cockpit.target.id === 'greentext') {
+          return
         }
         component.delete()
       }

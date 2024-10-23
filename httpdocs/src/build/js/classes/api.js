@@ -87,19 +87,18 @@ class API {
     }
 
     fetch(this.api + '&m=is_logged_in', options)
-    .then(response => {
-      if (response.status !== 200) {
-        if (confirm(lang['logged out'])) {
-          location.reload()
+      .then(response => {
+        if (response.status !== 200) {
+          if (confirm(lang['logged out'])) {
+            location.reload()
+          }
+          throw new Error(response.status + ' ' + response.statusText)
         }
-        throw new Error(response.status + ' ' + response.statusText)
-      }
-    })
-    .catch(error => console.error('Error:', error))
-
+      })
+      .catch(error => console.error('Error:', error))
   }
 
-  autosave() {
+  autosave () {
     if (tinymce.activeEditor) {
       return
     }
@@ -118,7 +117,7 @@ class API {
     // erzeuge den String
     const dateString = year + '-' + monthF + '-' + dayF + ' ' + hoursF + ':' + minutesF + ':' + secondsF
     const name = 'Automatische Speicherung ' + dateString
-    this.save('save', name, 1) 
+    this.save('save', name, 1)
   }
 
   // mode = save or mode=publish
@@ -542,7 +541,7 @@ class API {
         config.uploading = false
 
         addpicture.picOriginal()
-        
+
         logger.prepare_log_data({
           path_on_server: resp.path
         }, true)

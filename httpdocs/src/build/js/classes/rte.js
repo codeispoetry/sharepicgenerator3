@@ -38,7 +38,7 @@ class RTE {
       height: `${h}px`,
       license_key: 'gpl',
       branding: false,
-      language: 'de', 
+      language: 'de',
       language_url: '/assets/tinymce/lang/de.js',
       content_css: '/src/Views/rte/rte.css',
       content_style: 'body, p { margin: 0; padding: 0; }',
@@ -62,7 +62,7 @@ class RTE {
     tinymce.remove(tinymce.activeEditor)
     document.getElementById(cockpit.target.id).style.width = `${width}px`
     document.getElementById(cockpit.target.id).style.height = `${height}px`
-    document.getElementById(cockpit.target.id).style.rotate =  this.rotate
+    document.getElementById(cockpit.target.id).style.rotate = this.rotate
   }
 
   getLargestChildOf (element) {
