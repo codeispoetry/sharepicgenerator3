@@ -1,4 +1,7 @@
 <section class="mainsection" id="cockpit_search">
+    <a href="#" onClick="ui.showTab('background')">
+        <
+    </a>
     <h2><?php  echo _('Create background');?></h2>
 
     <section>
@@ -29,6 +32,13 @@
             <?php } ?>
         </p>
         
+        <div>
+            <?php echo _('Image DB Source');?>
+            <select name="image_db_source" id="image_db_source">
+                <option value="pixabay">Pixabay</option>
+                <option value="mint">MINT-Mediendatebank</option>
+            </select>
+            
         <div class="button-group">
             <input type="text" style="width:100%;" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search in image database');?>">
             <button onClick="imagedb.search( document.getElementById('imagedb_q').value )"><img src="assets/icons/search.svg"></button>   

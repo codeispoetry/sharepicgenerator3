@@ -1,4 +1,7 @@
 <section class="mainsection" id="cockpit_copyright">
+    <a href="#" onClick="ui.showTab('background')">
+        <
+    </a>
     <h2><?php  echo _('Copyright');?></h2>
 
     <section>

@@ -21,7 +21,9 @@ class ImageDB {
       return
     }
 
-    switch (config.imagedb) {
+    const img_db_source = document.getElementById('image_db_source').value
+    document.getElementById('image_db_source_name').innerHTML = img_db_source
+    switch (img_db_source) {
       case 'unsplash':
         this.search_unsplash(q)
         break

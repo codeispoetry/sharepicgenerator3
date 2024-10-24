@@ -72,17 +72,17 @@
 			<div id="tabsbuttons">
 				<button id="tab_btn_dimensions" onClick="ui.showTab('dimensions')">
 					<div>
-						<img src="assets/icons/resize.svg" title="<?php echo _('Dimensions'); ?>">
+						<img src="assets/icons/resize.svg" title="<?php echo _('Canvas'); ?>">
 						<div class="description">
-							<?php echo _('Dimensions'); ?>
+							<?php echo _('Canvas'); ?>
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_search"  onClick="ui.showTab('search')">
+				<button id="tab_btn_search" class="no-mint" onClick="ui.showTab('search')">
 					<div>
 						<img src="assets/icons/search_image.svg" title="<?php echo _('Search or create image'); ?>">
 						<div class="description">
-							<?php echo _('Search or create image'); ?>
+							<?php echo _('Background image'); ?>
 						</div>
 					</div>
 				</button>
@@ -90,23 +90,15 @@
 					<div>
 						<img src="assets/icons/wallpaper.svg" title="<?php echo _('Edit background image'); ?>">
 						<div class="description">
-							<?php echo _('Edit background image'); ?>
+							<?php echo _('Background image'); ?>
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_copyright" onClick="ui.showTab('copyright')">
+				<button id="tab_btn_copyright" class="no-mint" onClick="ui.showTab('copyright')">
 					<div>
 						<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
 						<div class="description">
 							<?php echo _('Copyright'); ?>
-						</div>
-					</div>
-				</button>
-				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
-					<div>
-						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
-						<div class="description">
-							<?php echo _('Text'); ?>
 						</div>
 					</div>
 				</button>
@@ -138,7 +130,15 @@
 					<div>
 						<img src="assets/icons/add_image.svg" title="<?php echo _('Front picture'); ?>">
 						<div class="description">
-							<?php echo _('Front picture'); ?>
+							<?php echo _('Graphics and foreground pictures'); ?>
+						</div>
+					</div>
+				</button>
+				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+						<div class="description">
+							<?php echo _('Text'); ?>
 						</div>
 					</div>
 				</button>
@@ -170,7 +170,7 @@
 					<div>
 						<img src="assets/icons/settings.svg" title="<?php echo _('Settings'); ?>">
 						<div class="description">
-							<?php echo _('Settings') ?>
+							<?php echo _('Design settings') ?>
 						</div>
 					</div>
 				</button>

@@ -45,11 +45,19 @@
                 <button data-sizepreset="3520:4972">DIN A1</button>
             </div>
         </div>
-        <div>
-            <?php
-                echo _('You are missing a particular size? Please feel free to edit the sizes manually above.');
-            ?>
-        </div>
+
+    </section>
+
+    <section>  
+        <h3><?php  echo _('Color');?></h3>   
+        <?php
+            $color = new stdClass();
+            $color->value = "#ffffff";
+            $color->id = "background_color";
+            $color->oninput = "background.color(this.value)";
+            $color->onclick = "background.color";
+            require ("./src/Views/Components/Color.php"); 
+        ?>
     </section>
 
    <section id="qrcode-section" style="display:none">

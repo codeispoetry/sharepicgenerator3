@@ -145,4 +145,10 @@ class UI {
 
     scriptElem.textContent = scriptContent
   }
+
+  unfold( button, target ) {
+    document.getElementById(target).classList.toggle('folded')
+    button.classList.toggle('active')
+
+  }
 }

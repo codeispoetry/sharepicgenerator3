@@ -79,6 +79,30 @@
             }
         }
     }
+
+    .folder-button{
+        cursor: pointer;
+
+        &::after{
+            content: '>';
+            margin-left: 0.3em;
+            display: inline-block;
+        }
+
+        &.active{
+            &::after{
+                content: 'v';
+            }
+        }
+    }
+    .foldable{
+        overflow: hidden;
+        height: auto;
+    }
+
+    .folded{
+        height: 0;
+    }
 }
 
 #welcome{
