@@ -50,9 +50,10 @@ class Fonts {
 			$parts = explode( '-', pathinfo( $woff, PATHINFO_FILENAME ) );
 
 			$family  = self::get_font_family_from_filename( $woff );
-			$charset = $parts[1];
-			$weight  = $parts[2];
-			$style   = $parts[3];
+			$l       = count( $parts );
+			$charset = $parts[ $l - 3 ];
+			$weight  = $parts[ $l - 2 ];
+			$style   = $parts[ $l - 1 ];
 
 			$css .= sprintf(
 				$pattern,
@@ -76,6 +77,11 @@ class Fonts {
 	 */
 	private static function get_font_family_from_filename( $filename ) {
 		$parts = explode( '-', pathinfo( $filename, PATHINFO_FILENAME ) );
+
+		if ( count( $parts ) === 5 ) {
+			return ucFirst( $parts[0] ) . ' ' . ucFirst( $parts[1] );
+		}
+
 		return ucFirst( $parts[0] );
 	}
 
