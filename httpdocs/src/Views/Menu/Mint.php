@@ -8,7 +8,7 @@
             <a href="index.php?c=frontend&m=view&view=Imprint" class="menu-link">
                 <?php  echo _('Imprint');?>
 			</a>
-            <a href="index.php?c=frontend&m=view&view=Privacy" class="menu-link">
+            <a href="https://www.mint-vernetzt.de/privacy-policy-community-platform/" target="_blank" class="menu-link">
                 <?php  echo _('Privacy');?>
 			</a>    
         </div>
