@@ -1,8 +1,10 @@
 <section class="mainsection" id="cockpit_copyright">
-    <a href="#" onClick="ui.showTab('background')">
-        <
-    </a>
-    <h2><?php  echo _('Copyright');?></h2>
+    <h2>
+        <a href="#" onClick="ui.showTab('background')" style="text-decoration:none;">
+            <
+        </a>
+        <?php  echo _('Copyright');?>
+    </h2>
 
     <section>
         <button onClick="component.add('copyright')" id="add_copyright"><?php  echo _('Add copyright');?></button>

@@ -99,16 +99,17 @@ class ImageDB {
           .then(response => response.json())
           .then(data => {
             api.loadByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + data.attachment_meta.file)
+
+            // is copyright already shown?
+            const copyright = document.querySelector('#sharepic [id^=copyright_]')
+            if (!copyright) {
+              component.add('copyright')
+            }
+            document.querySelector('#sharepic [id^=copyright_]').innerHTML = data.attachment_meta?.image_meta?.copyright
+
           })
           .catch(error => console.error('Error:', error)
           )
-
-        // is copyright already shown?
-        const copyright = document.querySelector('#sharepic [id^=copyright_]')
-        if (!copyright) {
-          component.add('copyright')
-        }
-        document.querySelector('#sharepic [id^=copyright_]').innerHTML = 'Bild aus der Mint-Datenbank'
 
         // background.setCredits(`Image by <a href="${img.dataset.pageurl}?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">${img.dataset.user}</a> auf Unsplash.com`)
       }

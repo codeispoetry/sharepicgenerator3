@@ -86,6 +86,7 @@ class Background {
   delete () {
     document.getElementById('background').style.backgroundImage = null
     background.setCredits('')
+    ui.showTab('search')
   }
 
   filter (key, value) {

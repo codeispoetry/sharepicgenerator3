@@ -1,13 +1,10 @@
 <section class="mainsection" id="cockpit_background">
-    <h2><?php  echo _('Edit background image');?></h2>
-
-    <button onClick="ui.showTab('search')">
-        <?php echo _('Search or create image'); ?>
-    </button>
-
-    <button onClick="ui.showTab('copyright')">
-        <?php echo _('Copyright'); ?>
-    </button>
+    <h2>
+        <a href="#" onClick="ui.showTab('search')" style="text-decoration: none;">
+            <
+        </a>
+        <?php  echo _('Background image');?>
+    </h2>
 
     <section>
         <h3><?php  echo _('Size');?></h3>
@@ -43,6 +40,10 @@
         </button>   
     </section>
     
+    <button onClick="ui.showTab('copyright')">
+        <?php echo _('Copyright'); ?>
+    </button>
+
 </section>
 
 

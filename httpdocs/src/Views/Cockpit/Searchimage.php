@@ -1,8 +1,10 @@
 <section class="mainsection" id="cockpit_search">
-    <a href="#" onClick="ui.showTab('background')">
-        <
-    </a>
-    <h2><?php  echo _('Create background');?></h2>
+    <h2>
+        <a href="#" onClick="ui.showTab('background')" style="text-decoration: none;">
+            <
+        </a>
+        <?php  echo _('Background image');?>
+    </h2>
 
     <section>
         <h3><?php  echo _('Own image');?></h3>
@@ -35,8 +37,8 @@
         <div>
             <?php echo _('Image DB Source');?>
             <select name="image_db_source" id="image_db_source">
-                <option value="pixabay">Pixabay</option>
                 <option value="mint">MINT-Mediendatebank</option>
+                <option value="pixabay">Pixabay</option>
             </select>
             
         <div class="button-group">

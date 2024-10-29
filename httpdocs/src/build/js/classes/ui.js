@@ -32,6 +32,7 @@ class UI {
       }
     }
 
+
     // Show elements that are only visible when an element is selected.
     document.querySelectorAll('.selected_only').forEach(element => {
       element.style.display = (cockpit.target === null) ? 'none' : 'block'
@@ -44,6 +45,16 @@ class UI {
     document.getElementById('tab_btn_' + tab)?.classList.add('active')
 
     document.getElementById('drag_background').checked = false
+  }
+
+  showImageTab() {
+    // show image tab, depending on wheter an background image is set or not
+    if( document.getElementById('background').style.backgroundImage === '' ) {
+      this.showTab('search')
+      return
+    }
+
+    this.showTab('background')
   }
 
   setLang (language) {
