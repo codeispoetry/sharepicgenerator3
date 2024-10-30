@@ -110,5 +110,9 @@ class Background {
 
   setCredits (text) {
     document.querySelector('#image-credits').innerHTML = text
+    const copyright = document.querySelector('#sharepic [id^=copyright_]')
+    if(copyright) {
+      copyright.innerHTML = text
+    }
   }
 }

@@ -28,6 +28,10 @@
 
     .tox-statusbar{
         cursor: move;
+
+        &__path{
+            opacity: 0;
+        }
     }
 }
 

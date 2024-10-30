@@ -602,6 +602,8 @@ class API {
         config.uploading = false
         console.error('Error:', error)
       })
+
+      ui.showTab('background')
   }
 
   showWaiting () {
