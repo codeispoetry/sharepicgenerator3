@@ -55,8 +55,25 @@ class Cockpit {
     const slider = document.getElementById('copyright_size')
     slider.value = element.style.fontSize.replace('px', '')
 
-    document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
-    cockpit.target = document.getElementById('copyright')
+    const sharepic = document.getElementById('sharepic')
+    const targets = sharepic.querySelector('[id^="copyright_"]');
+    if( targets.length === 0 ) {
+      document.getElementById('add_copyright_section').style.display = 'block'
+      document.querySelectorAll('.with_copyright').forEach((element) => {
+        element.classList.add('d-none')
+      })
+    } else {
+      document.getElementById('add_copyright_section').style.display = 'none'
+
+      document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
+      document.getElementById('copyright_size').value = element.style.fontSize.replace('px', '')
+      document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
+      // loop over all elements having the class with_copyright
+      document.querySelectorAll('.with_copyright').forEach((element) => {
+        element.classList.remove('d-none')
+      })
+      document.getElementById('add_copyright_section').style.display = 'none'
+    }
   }
 
   setup_freetext (element) {
@@ -127,13 +144,6 @@ class Cockpit {
   setup_addpicture (element) {
     document.getElementById('addpic_color').value = ui.rgbToHex(element.querySelector('.ap_text').style.color)
     document.getElementById('addpicture_size').value = element.querySelector('.ap_image').style.width.replace('px', '')
-  }
-
-  setup_copyright (element) {
-    document.getElementById('copyright_size').value = element.style.fontSize.replace('px', '')
-    document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
-
-    document.getElementById('add_copyright').style.display = 'none'
   }
 
   render () {

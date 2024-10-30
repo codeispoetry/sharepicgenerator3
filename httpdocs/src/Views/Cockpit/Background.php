@@ -40,12 +40,81 @@
         </button>   
     </section>
     
-    <button onClick="ui.showTab('copyright')">
-        <?php echo _('Copyright'); ?>
-    </button>
+    <h2>
+        <?php  echo _('Copyright');?>
+    </h2>
+    <section id="add_copyright_section">
+        <button onClick="component.add('copyright')" id="add_copyright"><?php  echo _('Add copyright');?></button>
+    </section>
+    
+    <section class="with_copyright d-none">
+        <h3><?php  echo _('Size');?></h3>
+        <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size" oninput="copyright.setSize(this)">
+    </section>
 
+    <section class="with_copyright d-none">
+        <h3><?php  echo _('Color');?></h3>
+        <?php
+            $color = new stdClass();
+            $color->value = "#ffffff";
+            $color->id = "copyright_color";
+            $color->oninput = "copyright.setFontColor(this.value)";
+            $color->onclick = "copyright.setFontColor";
+            require ("./src/Views/Components/Color.php"); 
+        ?>
+    </section>
+
+    <section class="with_copyright d-none">
+        <h3><?php  echo _('Position');?></h3>
+        <div style="display: flex; justify-content:space-between;">
+            <button class="no-button" onclick="copyright.setPostion(1);">
+                <?php  echo _('bottom left');?>
+            </button>
+            <button class="no-button" onclick="copyright.setPostion(2);">
+                <?php  echo _('bottom right');?>
+            </button>
+        </div>
+    </section>
 </section>
 
+<script>
+    class Copyright{
 
+        setSize(input){
+            const sharepic = document.getElementById('sharepic')
+            const target = sharepic.querySelector('[id^="copyright_"]');
+            target.style.fontSize = input.value + 'px';
+            undo.commit()
+        }
 
+        setFontColor(color) { 
+            const sharepic = document.getElementById('sharepic')     
+            const target = sharepic.querySelector('[id^="copyright_"]');
+            document.getElementById('copyright_color').value = color
+            target.style.color = color
+            undo.commit()
+        }
 
+        setPostion( pos ) {
+            const sharepic = document.getElementById('sharepic')
+            const target = sharepic.querySelector('[id^="copyright_"]');
+
+            switch( pos ) {
+                case 2:
+                    target.style.bottom = '8px';
+                    target.style.left = 'auto';
+                    target.style.right = '10px';
+                    target.style.transform = 'rotate(0deg)';
+                    break;
+                default:
+                    target.style.bottom = '0';
+                    target.style.right = 'auto'
+                    target.style.left = '10px';
+                    target.style.transform = 'rotate(-90deg)';
+                    break;
+            }    
+            undo.commit()
+        }
+    }
+    const copyright = new Copyright();
+</script>
