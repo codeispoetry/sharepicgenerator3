@@ -375,7 +375,7 @@ class API {
           component.add('copyright')
         }
         document.querySelector('#sharepic [id^=copyright_]').innerHTML = 'Bild generiert von DALL-E'
-        ui.showTab('search')
+        ui.showSearchImageTab()
         config.dalle = {
           url
         }
@@ -563,6 +563,16 @@ class API {
     xhr.send(formData)
   }
 
+  loadAddPicByUrl (url) {
+    component.add('addpicture')
+
+    const imgElement = cockpit.target.querySelector('.ap_image')
+
+    imgElement.style.backgroundImage = `url('${url}')`
+
+    addpicture.picOriginal()
+  }
+
   loadByUrl (url) {
     const data = {
       url
@@ -602,7 +612,7 @@ class API {
         console.error('Error:', error)
       })
 
-      ui.showTab('background')
+    ui.showTab('background')
   }
 
   showWaiting () {

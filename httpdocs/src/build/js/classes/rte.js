@@ -60,8 +60,8 @@ class RTE {
     const height = editorContainer.offsetHeight
 
     tinymce.remove(tinymce.activeEditor)
-    if(cockpit.target === null) {
-      return;
+    if (cockpit.target === null) {
+      return
     }
 
     document.getElementById(cockpit.target.id).style.width = `${width}px`

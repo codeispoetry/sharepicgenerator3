@@ -56,8 +56,8 @@ class Cockpit {
     slider.value = element.style.fontSize.replace('px', '')
 
     const sharepic = document.getElementById('sharepic')
-    const targets = sharepic.querySelector('[id^="copyright_"]');
-    if( targets && targets.length === 0 ) {
+    const targets = sharepic.querySelector('[id^="copyright_"]')
+    if (targets && targets.length === 0) {
       document.getElementById('add_copyright_section').style.display = 'block'
       document.querySelectorAll('.with_copyright').forEach((element) => {
         element.classList.add('d-none')

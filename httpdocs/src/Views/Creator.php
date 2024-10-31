@@ -78,7 +78,7 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_search" class="no-mint" onClick="ui.showTab('search')">
+				<button id="tab_btn_search" class="no-mint" onClick="ui.showSearchImageTab('addpic');">
 					<div>
 						<img src="assets/icons/search_image.svg" title="<?php echo _('Search or create image'); ?>">
 						<div class="description">

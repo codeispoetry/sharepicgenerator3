@@ -86,7 +86,7 @@ class Background {
   delete () {
     document.getElementById('background').style.backgroundImage = null
     background.setCredits('')
-    ui.showTab('search')
+    ui.showSearchImageTab('background')
   }
 
   filter (key, value) {
@@ -111,7 +111,7 @@ class Background {
   setCredits (text) {
     document.querySelector('#image-credits').innerHTML = text
     const copyright = document.querySelector('#sharepic [id^=copyright_]')
-    if(copyright) {
+    if (copyright) {
       copyright.innerHTML = text
     }
   }

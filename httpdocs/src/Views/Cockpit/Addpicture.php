@@ -2,7 +2,7 @@
     <h2><?php  echo _('Foreground pictures');?></h2>
 
     <section>
-        <button onClick="component.add('addpicture'); document.getElementById('addAddPicture').click();"><?php  echo _('New picture');?></button>
+        <button onClick="ui.showSearchImageTab('addpic');"><?php  echo _('New picture');?></button>
     </section>
 
     <section class="selected_only">
@@ -10,16 +10,8 @@
         <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size" oninput="addpicture.setSize(this.value)">
     </section>
 
-    <section class="selected_only">
-        <h3><?php echo _("Upload image"); ?></h3>
-
-        <button onClick="document.getElementById('addAddPicture').click()">
-            <img src="assets/icons/upload.svg">
-            <?php  echo _('upload new image');?>
-        </button>
-
-        <input type="file" id="addAddPicture" name="upload" onChange="api.uploadAddPic(this)" style="display: none";>
-    </section>
+ 
+    <input type="file" id="addAddPicture" name="upload" onChange="api.uploadAddPic(this)" style="display: none";>
 
     <section class="selected_only">
         <h3><?php echo _("Image"); ?></h3>

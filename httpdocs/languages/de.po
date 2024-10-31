@@ -476,7 +476,7 @@ msgstr "Textauswahl aufheben"
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground pictures"
-msgstr "Vordergrundbild hinzufügen"
+msgstr "Vordergrundbild"
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:5
 msgid "New picture"

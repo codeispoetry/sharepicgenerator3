@@ -1,6 +1,6 @@
 <section class="mainsection" id="cockpit_background">
     <h2>
-        <a href="#" onClick="ui.showTab('search')" style="text-decoration: none;">
+        <a href="#" onClick="ui.showSearchImageTab('addpic');" style="text-decoration: none;">
             <
         </a>
         <?php  echo _('Background image');?>

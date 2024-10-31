@@ -21,9 +21,9 @@ class ImageDB {
       return
     }
 
-    const img_db_source = document.getElementById('image_db_source').value
-    document.getElementById('image_db_source_name').innerHTML = img_db_source
-    switch (img_db_source) {
+    const imgDBSource = document.getElementById('image_db_source').value
+    document.getElementById('image_db_source_name').innerHTML = imgDBSource
+    switch (imgDBSource) {
       case 'unsplash':
         this.search_unsplash(q)
         break
@@ -91,22 +91,27 @@ class ImageDB {
         })
         logger.log('clicks on image after search for ' + q)
 
-        document.getElementById('background').style.backgroundImage = img.style.backgroundImage
-        document.getElementById('background').style.filter = 'grayscale(100%)'
+        if (config.imageTarget === 'background') {
+          document.getElementById('background').style.backgroundImage = img.style.backgroundImage
+          document.getElementById('background').style.filter = 'grayscale(100%)'
+        }
 
         // get real image url
         fetch('https://media-tool.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key')
           .then(response => response.json())
           .then(data => {
-            api.loadByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + data.attachment_meta.file)
+            if (config.imageTarget === 'addpic') {
+              api.loadAddPicByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + data.attachment_meta.file)
+            } else {
+              api.loadByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + data.attachment_meta.file)
 
-            // is copyright already shown?
-            const copyright = document.querySelector('#sharepic [id^=copyright_]')
-            if (!copyright) {
-              component.add('copyright')
+              // is copyright already shown?
+              const copyright = document.querySelector('#sharepic [id^=copyright_]')
+              if (!copyright) {
+                component.add('copyright')
+              }
+              document.querySelector('#sharepic [id^=copyright_]').innerHTML = data.attachment_meta?.image_meta?.copyright
             }
-            document.querySelector('#sharepic [id^=copyright_]').innerHTML = data.attachment_meta?.image_meta?.copyright
-
           })
           .catch(error => console.error('Error:', error)
           )
@@ -241,17 +246,20 @@ class ImageDB {
         })
         logger.log('clicks on image after search for ' + q)
 
-        document.getElementById('background').style.backgroundImage = img.style.backgroundImage
-        document.getElementById('background').style.filter = 'grayscale(100%)'
+        if (config.imageTarget === 'background') {
+          document.getElementById('background').style.backgroundImage = img.style.backgroundImage
+          document.getElementById('background').style.filter = 'grayscale(100%)'
+          api.loadByUrl(img.dataset.url)
 
-        api.loadByUrl(img.dataset.url)
-
-        // is copyright already shown?
-        const copyright = document.querySelector('#sharepic [id^=copyright_]')
-        if (!copyright) {
-          component.add('copyright')
+          // is copyright already shown?
+          const copyright = document.querySelector('#sharepic [id^=copyright_]')
+          if (!copyright) {
+            component.add('copyright')
+          }
+          document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
+        } else {
+          api.loadAddPicByUrl(img.dataset.url)
         }
-        document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf pixabay.com`
       }
       results.appendChild(img)
     })

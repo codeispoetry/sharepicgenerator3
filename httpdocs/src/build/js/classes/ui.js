@@ -32,7 +32,6 @@ class UI {
       }
     }
 
-
     // Show elements that are only visible when an element is selected.
     document.querySelectorAll('.selected_only').forEach(element => {
       element.style.display = (cockpit.target === null) ? 'none' : 'block'
@@ -47,14 +46,28 @@ class UI {
     document.getElementById('drag_background').checked = false
   }
 
-  showImageTab() {
+  showImageTab () {
     // show image tab, depending on wheter an background image is set or not
-    if( document.getElementById('background').style.backgroundImage === '' ) {
-      this.showTab('search')
+    if (document.getElementById('background').style.backgroundImage === '') {
+      config.imageTarget = 'background'
+      this.showSearchImageTab()
       return
     }
 
     this.showTab('background')
+  }
+
+  showSearchImageTab (target = 'background') {
+    config.imageTarget = target
+
+    document.querySelectorAll('[data-target').forEach((element) => {
+      element.style.display = 'none'
+    })
+
+    document.querySelectorAll('[data-target="' + target + '"]').forEach((element) => {
+      element.style.display = 'block'
+    })
+    this.showTab('search')
   }
 
   setLang (language) {
@@ -157,9 +170,8 @@ class UI {
     scriptElem.textContent = scriptContent
   }
 
-  unfold( button, target ) {
+  unfold (button, target) {
     document.getElementById(target).classList.toggle('folded')
     button.classList.toggle('active')
-
   }
 }

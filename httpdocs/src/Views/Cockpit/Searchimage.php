@@ -1,19 +1,27 @@
 <section class="mainsection" id="cockpit_search">
     <h2>
-        <a href="#" onClick="ui.showTab('background')" style="text-decoration: none;">
-            <
-        </a>
-        <?php  echo _('Background image');?>
+        <?php  echo _('Image');?>
     </h2>
+
+
 
     <section>
         <h3><?php  echo _('Own image');?></h3>
         <p><?php echo _('Upload an image from your local computer');?></p>
 
-        <button onClick="document.getElementById('upload').click()">
-            <img src="assets/icons/upload.svg">
-            <?php  echo _('upload image');?>
-        </button>
+        <div class="set-target" data-target="background">
+            <button onClick="document.getElementById('upload').click()">
+                <img src="assets/icons/upload.svg">
+                <?php  echo _('upload image');?>
+            </button>
+        </div>
+
+        <div class="set-target" data-target="addpic">
+            <button onClick="component.add('addpicture'); document.getElementById('addAddPicture').click();">
+                <img src="assets/icons/upload.svg">
+                <?php  echo _('upload image');?>
+            </button>
+        </div>
 
         <input type="file" name="upload" id="upload" onChange="api.upload(this)" style="display:none">
        
@@ -37,7 +45,7 @@
         <div>
             <?php echo _('Choose an image database');?>
             <select name="image_db_source" id="image_db_source">
-                <option value="mint">MINT-Mediendatebank</option>
+                <option value="mint">MINT-Mediendatenbank</option>
                 <option value="pixabay">Pixabay</option>
             </select>
             
