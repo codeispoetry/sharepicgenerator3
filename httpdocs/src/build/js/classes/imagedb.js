@@ -100,10 +100,14 @@ class ImageDB {
         fetch('https://media-tool.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key')
           .then(response => response.json())
           .then(data => {
+            const lIo = data.attachment_meta.file.lastIndexOf('/')
+            const folder = data.attachment_meta.file.substring(0, lIo)
+            const file = folder + '/' + data.attachment_meta.sizes.large.file
+            
             if (config.imageTarget === 'addpic') {
-              api.loadAddPicByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + data.attachment_meta.file)
+              api.loadAddPicByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + file)
             } else {
-              api.loadByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + data.attachment_meta.file)
+              api.loadByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + file)
 
               // is copyright already shown?
               const copyright = document.querySelector('#sharepic [id^=copyright_]')
