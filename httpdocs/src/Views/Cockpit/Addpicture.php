@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_addpicture">
-    <h2><?php  echo _('Foreground pictures');?></h2>
+    <h2><?php  echo _('Foreground image');?></h2>
 
     <section>
         <button onClick="ui.showSearchImageTab('addpic');"><?php  echo _('New picture');?></button>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-31 10:32+0100\n"
+"POT-Creation-Date: 2024-10-31 19:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgid "Images from"
 msgstr ""
 
 #: httpdocs/src/Views/ImageDB.php:11
-#: httpdocs/src/Views/Cockpit/Searchimage.php:45
+#: httpdocs/src/Views/Cockpit/Searchimage.php:58
 msgid "search in image database"
 msgstr ""
 
@@ -258,7 +258,7 @@ msgid "This link is valid for 5 minutes."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:6
-#: httpdocs/src/Views/Cockpit/Searchimage.php:6
+#: httpdocs/src/Views/Cockpit/Searchimage.php:4
 #: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:91
 #: httpdocs/src/Views/Creator.php:93
 msgid "Background image"
@@ -329,7 +329,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
-#: httpdocs/src/Views/Cockpit/Addpicture.php:34
+#: httpdocs/src/Views/Cockpit/Addpicture.php:26
 #: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
 #: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
 msgid "Text"
@@ -363,86 +363,91 @@ msgstr ""
 msgid "Add \"Do, what counts\""
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:10
+#: httpdocs/src/Views/Cockpit/Searchimage.php:7
+msgid "Foreground image"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:14
 msgid "Own image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:11
+#: httpdocs/src/Views/Cockpit/Searchimage.php:15
 msgid "Upload an image from your local computer"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:15
+#: httpdocs/src/Views/Cockpit/Searchimage.php:20
+#: httpdocs/src/Views/Cockpit/Searchimage.php:27
 msgid "upload image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:23
+#: httpdocs/src/Views/Cockpit/Searchimage.php:36
 msgid "Search image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:25
+#: httpdocs/src/Views/Cockpit/Searchimage.php:38
 msgid "Search in  image database"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:28
+#: httpdocs/src/Views/Cockpit/Searchimage.php:41
 msgid "Unsplash"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:32
+#: httpdocs/src/Views/Cockpit/Searchimage.php:45
 msgid "Pixabay"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:38
+#: httpdocs/src/Views/Cockpit/Searchimage.php:51
 msgid "Choose an image database"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:52
+#: httpdocs/src/Views/Cockpit/Searchimage.php:65
 msgid "Create image with AI"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:55
+#: httpdocs/src/Views/Cockpit/Searchimage.php:68
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:56
+#: httpdocs/src/Views/Cockpit/Searchimage.php:69
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:57
+#: httpdocs/src/Views/Cockpit/Searchimage.php:70
 msgid "Adjust your prompt accordingly."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:60
+#: httpdocs/src/Views/Cockpit/Searchimage.php:73
 msgid "Describe the image you want"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:64
+#: httpdocs/src/Views/Cockpit/Searchimage.php:77
 #: httpdocs/src/Views/Menu/Greens.php:29 httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:73
+#: httpdocs/src/Views/Cockpit/Searchimage.php:86
 msgid "Please wait while AI generates your image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:74
+#: httpdocs/src/Views/Cockpit/Searchimage.php:87
 msgid "This can take up to one minute."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:78
+#: httpdocs/src/Views/Cockpit/Searchimage.php:91
 msgid "seconds"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:82
+#: httpdocs/src/Views/Cockpit/Searchimage.php:95
 msgid "Result"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:85
+#: httpdocs/src/Views/Cockpit/Searchimage.php:98
 msgid "Use this image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:88
+#: httpdocs/src/Views/Cockpit/Searchimage.php:101
 msgid "Try again"
 msgstr ""
 
@@ -459,42 +464,34 @@ msgid "Close text editor"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:2
-msgid "Foreground pictures"
+msgid "Foreground picture"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:5
 msgid "New picture"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:14
-msgid "Upload image"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Addpicture.php:18
-msgid "upload new image"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Addpicture.php:25
+#: httpdocs/src/Views/Cockpit/Addpicture.php:17
 msgid "Image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:27
+#: httpdocs/src/Views/Cockpit/Addpicture.php:19
 msgid "round"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:28
+#: httpdocs/src/Views/Cockpit/Addpicture.php:20
 msgid "angular"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:29
+#: httpdocs/src/Views/Cockpit/Addpicture.php:21
 msgid "original"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:36
+#: httpdocs/src/Views/Cockpit/Addpicture.php:28
 msgid "text floats right"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:37
+#: httpdocs/src/Views/Cockpit/Addpicture.php:29
 msgid "text below"
 msgstr ""
 

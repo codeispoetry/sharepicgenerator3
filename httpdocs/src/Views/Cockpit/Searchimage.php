@@ -1,6 +1,11 @@
 <section class="mainsection" id="cockpit_search">
     <h2>
-        <?php  echo _('Image');?>
+        <div class="set-target" data-target="background">
+            <?php  echo _('Background image');?>
+        </div>
+        <div class="set-target" data-target="addpic">
+            <?php  echo _('Foreground image');?>
+        </div>
     </h2>
 
 
