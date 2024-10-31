@@ -5,7 +5,7 @@
 <div class="dropdown" id="menu_mint">
         <span>MINT Sharepic-Generator</span>
         <div class="dropdown-content"> 
-            <a href="index.php?c=frontend&m=view&view=Imprint" class="menu-link">
+            <a href="index.php?c=frontend&m=view&view=ImprintMint" class="menu-link">
                 <?php  echo _('Imprint');?>
 			</a>
             <a href="https://www.mint-vernetzt.de/privacy-policy-community-platform/" target="_blank" class="menu-link">

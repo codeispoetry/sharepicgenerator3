@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 16:33+0200\n"
-"PO-Revision-Date: 2024-10-23 16:34+0200\n"
+"POT-Creation-Date: 2024-10-31 10:32+0100\n"
+"PO-Revision-Date: 2024-10-31 10:32+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -67,20 +67,16 @@ msgstr "Bereits registriert?"
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: httpdocs/src/Views/ImageDB.php:7
-msgid "Images from Unsplash"
-msgstr "Bilder von Unsplash"
+#: httpdocs/src/Views/ImageDB.php:6
+msgid "Images from"
+msgstr "Bilder von"
 
 #: httpdocs/src/Views/ImageDB.php:11
-msgid "Images from Pixabay"
-msgstr "Bilder von Pixabay"
-
-#: httpdocs/src/Views/ImageDB.php:16
-#: httpdocs/src/Views/Cockpit/Searchimage.php:33
+#: httpdocs/src/Views/Cockpit/Searchimage.php:45
 msgid "search in image database"
 msgstr "Suche in Bilddatenbank"
 
-#: httpdocs/src/Views/ImageDB.php:20
+#: httpdocs/src/Views/ImageDB.php:15
 msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
@@ -100,10 +96,10 @@ msgstr "Element hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
-#: httpdocs/src/Views/Cockpit/Background.php:13
+#: httpdocs/src/Views/Cockpit/Background.php:10
+#: httpdocs/src/Views/Cockpit/Background.php:51
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
-#: httpdocs/src/Views/Cockpit/Copyright.php:9
 msgid "Size"
 msgstr "Größe"
 
@@ -227,7 +223,7 @@ msgstr "Text hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
 #: httpdocs/src/Views/Cockpit/Dimensions.php:52
-#: httpdocs/src/Views/Cockpit/Copyright.php:14
+#: httpdocs/src/Views/Cockpit/Background.php:56
 msgid "Color"
 msgstr "Farbe"
 
@@ -274,49 +270,61 @@ msgstr ""
 msgid "This link is valid for 5 minutes."
 msgstr "Dieser Link ist 5 Minuten gültig."
 
-#: httpdocs/src/Views/Cockpit/Background.php:2
-#: httpdocs/src/Views/Creator.php:91
-msgid "Edit background image"
-msgstr "Hintergrundbild einstellen"
+#: httpdocs/src/Views/Cockpit/Background.php:6
+#: httpdocs/src/Views/Cockpit/Searchimage.php:6
+#: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:91
+#: httpdocs/src/Views/Creator.php:93
+msgid "Background image"
+msgstr "Hintergrundbild"
 
-#: httpdocs/src/Views/Cockpit/Background.php:5
-#: httpdocs/src/Views/Creator.php:83
-msgid "Search or create image"
-msgstr "Bild suchen oder erstellen"
-
-#: httpdocs/src/Views/Cockpit/Background.php:9
-#: httpdocs/src/Views/Cockpit/Copyright.php:2 httpdocs/src/Views/Creator.php:99
-#: httpdocs/src/Views/Creator.php:101
-msgid "Copyright"
-msgstr "Urheberrechts&shy;hinweis"
-
-#: httpdocs/src/Views/Cockpit/Background.php:18
+#: httpdocs/src/Views/Cockpit/Background.php:15
 msgid "fit automatically"
 msgstr "automatisch einpassen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:23
+#: httpdocs/src/Views/Cockpit/Background.php:20
 msgid "Make image draggable"
 msgstr "Bild verschiebbar machen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:29
+#: httpdocs/src/Views/Cockpit/Background.php:26
 msgid "Filter"
 msgstr "Filter"
 
-#: httpdocs/src/Views/Cockpit/Background.php:30
+#: httpdocs/src/Views/Cockpit/Background.php:28
 msgid "Brightness"
 msgstr "Helligkeit"
 
-#: httpdocs/src/Views/Cockpit/Background.php:32
+#: httpdocs/src/Views/Cockpit/Background.php:30
 msgid "Saturate"
 msgstr "Sättigung"
 
-#: httpdocs/src/Views/Cockpit/Background.php:34
+#: httpdocs/src/Views/Cockpit/Background.php:32
 msgid "Blur"
 msgstr "Unschärfe"
 
-#: httpdocs/src/Views/Cockpit/Background.php:40
+#: httpdocs/src/Views/Cockpit/Background.php:39
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
+
+#: httpdocs/src/Views/Cockpit/Background.php:44
+#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
+msgid "Copyright"
+msgstr "Urheberrechts&shy;hinweis"
+
+#: httpdocs/src/Views/Cockpit/Background.php:47
+msgid "Add copyright"
+msgstr "Urheberrechts&shy;hinweis hinzufügen"
+
+#: httpdocs/src/Views/Cockpit/Background.php:68
+msgid "Position"
+msgstr "Position"
+
+#: httpdocs/src/Views/Cockpit/Background.php:71
+msgid "bottom left"
+msgstr "links unten"
+
+#: httpdocs/src/Views/Cockpit/Background.php:74
+msgid "bottom right"
+msgstr "rechts unten"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2
 #: httpdocs/src/Views/Menu/Greens.php:98 httpdocs/src/Views/Creator.php:147
@@ -368,48 +376,48 @@ msgstr "Europa"
 msgid "Add \"Do, what counts\""
 msgstr "Europaclaim hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:2
-msgid "Create background"
-msgstr "Hintergrund erstellen"
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:5
+#: httpdocs/src/Views/Cockpit/Searchimage.php:10
 msgid "Own image"
 msgstr "Eigenes Bild"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:6
+#: httpdocs/src/Views/Cockpit/Searchimage.php:11
 msgid "Upload an image from your local computer"
 msgstr "Eigenes Bild hochladen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:10
+#: httpdocs/src/Views/Cockpit/Searchimage.php:15
 msgid "upload image"
 msgstr "Bild hochladen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:18
+#: httpdocs/src/Views/Cockpit/Searchimage.php:23
 msgid "Search image"
 msgstr "Bild suchen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:20
+#: httpdocs/src/Views/Cockpit/Searchimage.php:25
 msgid "Search in  image database"
 msgstr "Suche in Bilddatenbank"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:23
+#: httpdocs/src/Views/Cockpit/Searchimage.php:28
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:27
+#: httpdocs/src/Views/Cockpit/Searchimage.php:32
 msgid "Pixabay"
 msgstr "Pixabay"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:40
+#: httpdocs/src/Views/Cockpit/Searchimage.php:38
+msgid "Choose an image database"
+msgstr "Wähle eine Datenbank"
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:52
 msgid "Create image with AI"
 msgstr "Bild mit KI erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:43
+#: httpdocs/src/Views/Cockpit/Searchimage.php:55
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 "Nutzen Sie künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:44
+#: httpdocs/src/Views/Cockpit/Searchimage.php:56
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
@@ -417,40 +425,40 @@ msgstr ""
 "Bitte beachte, dass generierte Bilder Stereotypen reproduzieren oder "
 "unangemessen sein können."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:45
+#: httpdocs/src/Views/Cockpit/Searchimage.php:57
 msgid "Adjust your prompt accordingly."
 msgstr "Passe Deinen Prompt ggf. entsprechend an."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:48
+#: httpdocs/src/Views/Cockpit/Searchimage.php:60
 msgid "Describe the image you want"
 msgstr "Beschreibe das Bild, das Du möchtest"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:52
+#: httpdocs/src/Views/Cockpit/Searchimage.php:64
 #: httpdocs/src/Views/Menu/Greens.php:29 httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr "Erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:61
+#: httpdocs/src/Views/Cockpit/Searchimage.php:73
 msgid "Please wait while AI generates your image."
 msgstr "Bitte warte, während die KI Dein Bild generiert."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:62
+#: httpdocs/src/Views/Cockpit/Searchimage.php:74
 msgid "This can take up to one minute."
 msgstr "Dies kann bis zu einer Minute dauern."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:66
+#: httpdocs/src/Views/Cockpit/Searchimage.php:78
 msgid "seconds"
 msgstr "Sekunden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:70
+#: httpdocs/src/Views/Cockpit/Searchimage.php:82
 msgid "Result"
 msgstr "Ergebnis"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:73
+#: httpdocs/src/Views/Cockpit/Searchimage.php:85
 msgid "Use this image"
 msgstr "Dieses Bild verwenden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:76
+#: httpdocs/src/Views/Cockpit/Searchimage.php:88
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
@@ -465,22 +473,6 @@ msgstr "Grüne Fläche anzeigen"
 #: httpdocs/src/Views/Cockpit/Freetext.php:5
 msgid "Close text editor"
 msgstr "Textauswahl aufheben"
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:5
-msgid "Add copyright"
-msgstr "Urheberrechts&shy;hinweis hinzufügen"
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:26
-msgid "Position"
-msgstr "Position"
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:29
-msgid "bottom left"
-msgstr "links unten"
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:32
-msgid "bottom right"
-msgstr "rechts unten"
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground pictures"
@@ -676,7 +668,9 @@ msgid "Support"
 msgstr "Hilfe"
 
 #: httpdocs/src/Views/Menu/Greens.php:32 httpdocs/src/Views/Menu/Open.php:29
-#: httpdocs/src/Views/Menu/Mint.php:9 httpdocs/src/Views/Pages/Imprint.php:4
+#: httpdocs/src/Views/Menu/Mint.php:9
+#: httpdocs/src/Views/Pages/ImprintMint.php:4
+#: httpdocs/src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr "Impressum"
 
@@ -749,9 +743,9 @@ msgstr "Herunterladen"
 msgid "Canvas"
 msgstr "Leinwand"
 
-#: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:93
-msgid "Background image"
-msgstr "Hintergrundbild"
+#: httpdocs/src/Views/Creator.php:83
+msgid "Search or create image"
+msgstr "Bild suchen oder erstellen"
 
 #: httpdocs/src/Views/Creator.php:131
 msgid "Front picture"
@@ -759,7 +753,7 @@ msgstr "Vordergrundbild"
 
 #: httpdocs/src/Views/Creator.php:133
 msgid "Graphics and foreground pictures"
-msgstr "Grafiken & Vordergrundbilder "
+msgstr "Grafiken & Vordergrundbilder"
 
 #: httpdocs/src/Views/Creator.php:155 httpdocs/src/Views/Creator.php:157
 msgid "European Election"
@@ -888,6 +882,18 @@ msgstr "Quelltext"
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
 
+#~ msgid "Images from Unsplash"
+#~ msgstr "Bilder von Unsplash"
+
+#~ msgid "Images from Pixabay"
+#~ msgstr "Bilder von Pixabay"
+
+#~ msgid "Edit background image"
+#~ msgstr "Hintergrundbild einstellen"
+
+#~ msgid "Create background"
+#~ msgstr "Hintergrund erstellen"
+
 #~ msgid ""
 #~ "You are missing a particular size? Please feel free to edit the sizes "
 #~ "manually above."
@@ -897,9 +903,6 @@ msgstr "Rich Text Editor"
 
 #~ msgid "Template"
 #~ msgstr "Vorlage"
-
-#~ msgid "Image crop"
-#~ msgstr "Bildausschnitt"
 
 #~ msgid ""
 #~ "An error occurred. The sharepicgenerator might not behave as expected. "

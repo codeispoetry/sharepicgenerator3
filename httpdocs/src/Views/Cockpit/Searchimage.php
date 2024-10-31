@@ -21,7 +21,7 @@
 
     <section id="search_imagedb">
         <h3><?php  echo _('Search image');?></h3>
-        <p>
+        <p class="no-mint">
             <?php echo _('Search in  image database');?>
             <?php if ( $this->env->config->get( 'Main', 'imagedb') === 'unsplash' ) { ?>
                 <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">
@@ -35,7 +35,7 @@
         </p>
         
         <div>
-            <?php echo _('Image DB Source');?>
+            <?php echo _('Choose an image database');?>
             <select name="image_db_source" id="image_db_source">
                 <option value="mint">MINT-Mediendatebank</option>
                 <option value="pixabay">Pixabay</option>

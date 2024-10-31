@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-23 16:33+0200\n"
+"POT-Creation-Date: 2024-10-31 10:32+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,20 +60,16 @@ msgstr ""
 msgid "Password reset"
 msgstr ""
 
-#: httpdocs/src/Views/ImageDB.php:7
-msgid "Images from Unsplash"
+#: httpdocs/src/Views/ImageDB.php:6
+msgid "Images from"
 msgstr ""
 
 #: httpdocs/src/Views/ImageDB.php:11
-msgid "Images from Pixabay"
-msgstr ""
-
-#: httpdocs/src/Views/ImageDB.php:16
-#: httpdocs/src/Views/Cockpit/Searchimage.php:33
+#: httpdocs/src/Views/Cockpit/Searchimage.php:45
 msgid "search in image database"
 msgstr ""
 
-#: httpdocs/src/Views/ImageDB.php:20
+#: httpdocs/src/Views/ImageDB.php:15
 msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
@@ -91,10 +87,10 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
-#: httpdocs/src/Views/Cockpit/Background.php:13
+#: httpdocs/src/Views/Cockpit/Background.php:10
+#: httpdocs/src/Views/Cockpit/Background.php:51
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
-#: httpdocs/src/Views/Cockpit/Copyright.php:9
 msgid "Size"
 msgstr ""
 
@@ -218,7 +214,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
 #: httpdocs/src/Views/Cockpit/Dimensions.php:52
-#: httpdocs/src/Views/Cockpit/Copyright.php:14
+#: httpdocs/src/Views/Cockpit/Background.php:56
 msgid "Color"
 msgstr ""
 
@@ -261,48 +257,60 @@ msgstr ""
 msgid "This link is valid for 5 minutes."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:2
-#: httpdocs/src/Views/Creator.php:91
-msgid "Edit background image"
+#: httpdocs/src/Views/Cockpit/Background.php:6
+#: httpdocs/src/Views/Cockpit/Searchimage.php:6
+#: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:91
+#: httpdocs/src/Views/Creator.php:93
+msgid "Background image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:5
-#: httpdocs/src/Views/Creator.php:83
-msgid "Search or create image"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Background.php:9
-#: httpdocs/src/Views/Cockpit/Copyright.php:2 httpdocs/src/Views/Creator.php:99
-#: httpdocs/src/Views/Creator.php:101
-msgid "Copyright"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Background.php:18
+#: httpdocs/src/Views/Cockpit/Background.php:15
 msgid "fit automatically"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:23
+#: httpdocs/src/Views/Cockpit/Background.php:20
 msgid "Make image draggable"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:29
+#: httpdocs/src/Views/Cockpit/Background.php:26
 msgid "Filter"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:30
+#: httpdocs/src/Views/Cockpit/Background.php:28
 msgid "Brightness"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:32
+#: httpdocs/src/Views/Cockpit/Background.php:30
 msgid "Saturate"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:34
+#: httpdocs/src/Views/Cockpit/Background.php:32
 msgid "Blur"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:40
+#: httpdocs/src/Views/Cockpit/Background.php:39
 msgid "Delete background image"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:44
+#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
+msgid "Copyright"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:47
+msgid "Add copyright"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:68
+msgid "Position"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:71
+msgid "bottom left"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:74
+msgid "bottom right"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2
@@ -355,86 +363,86 @@ msgstr ""
 msgid "Add \"Do, what counts\""
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:2
-msgid "Create background"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:5
+#: httpdocs/src/Views/Cockpit/Searchimage.php:10
 msgid "Own image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:6
+#: httpdocs/src/Views/Cockpit/Searchimage.php:11
 msgid "Upload an image from your local computer"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:10
+#: httpdocs/src/Views/Cockpit/Searchimage.php:15
 msgid "upload image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:18
+#: httpdocs/src/Views/Cockpit/Searchimage.php:23
 msgid "Search image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:20
+#: httpdocs/src/Views/Cockpit/Searchimage.php:25
 msgid "Search in  image database"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:23
+#: httpdocs/src/Views/Cockpit/Searchimage.php:28
 msgid "Unsplash"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:27
+#: httpdocs/src/Views/Cockpit/Searchimage.php:32
 msgid "Pixabay"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:40
+#: httpdocs/src/Views/Cockpit/Searchimage.php:38
+msgid "Choose an image database"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:52
 msgid "Create image with AI"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:43
+#: httpdocs/src/Views/Cockpit/Searchimage.php:55
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:44
+#: httpdocs/src/Views/Cockpit/Searchimage.php:56
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:45
+#: httpdocs/src/Views/Cockpit/Searchimage.php:57
 msgid "Adjust your prompt accordingly."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:48
+#: httpdocs/src/Views/Cockpit/Searchimage.php:60
 msgid "Describe the image you want"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:52
+#: httpdocs/src/Views/Cockpit/Searchimage.php:64
 #: httpdocs/src/Views/Menu/Greens.php:29 httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:61
+#: httpdocs/src/Views/Cockpit/Searchimage.php:73
 msgid "Please wait while AI generates your image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:62
+#: httpdocs/src/Views/Cockpit/Searchimage.php:74
 msgid "This can take up to one minute."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:66
+#: httpdocs/src/Views/Cockpit/Searchimage.php:78
 msgid "seconds"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:70
+#: httpdocs/src/Views/Cockpit/Searchimage.php:82
 msgid "Result"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:73
+#: httpdocs/src/Views/Cockpit/Searchimage.php:85
 msgid "Use this image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:76
+#: httpdocs/src/Views/Cockpit/Searchimage.php:88
 msgid "Try again"
 msgstr ""
 
@@ -448,22 +456,6 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Freetext.php:5
 msgid "Close text editor"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:5
-msgid "Add copyright"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:26
-msgid "Position"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:29
-msgid "bottom left"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Copyright.php:32
-msgid "bottom right"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:2
@@ -658,7 +650,9 @@ msgid "Support"
 msgstr ""
 
 #: httpdocs/src/Views/Menu/Greens.php:32 httpdocs/src/Views/Menu/Open.php:29
-#: httpdocs/src/Views/Menu/Mint.php:9 httpdocs/src/Views/Pages/Imprint.php:4
+#: httpdocs/src/Views/Menu/Mint.php:9
+#: httpdocs/src/Views/Pages/ImprintMint.php:4
+#: httpdocs/src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr ""
 
@@ -731,8 +725,8 @@ msgstr ""
 msgid "Canvas"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:93
-msgid "Background image"
+#: httpdocs/src/Views/Creator.php:83
+msgid "Search or create image"
 msgstr ""
 
 #: httpdocs/src/Views/Creator.php:131

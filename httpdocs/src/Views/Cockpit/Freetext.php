@@ -29,6 +29,7 @@
         }
 
         setRotation(value){
+            rte.deinit();
             document.getElementById(cockpit.target.id).style.rotate = `${value}deg`
         }
 
