@@ -18,6 +18,10 @@ window.onload = function () {
   api.load('templates/' + config.starttemplate + '/start.html')
 
   api.load('save/1/sharepic.html')
+
+  window.setTimeout(function () {
+    ui.addColorButtons()
+  }, 2000)
 }
 
 window.addEventListener('beforeunload', function (event) {

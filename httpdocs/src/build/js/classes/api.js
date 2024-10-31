@@ -228,7 +228,6 @@ class API {
         const script = doc.querySelector('script').innerText
         // eslint-disable-next-line no-eval
         eval(script)
-        ui.addColorButtons()
         cockpit.render()
         logger.prepare_log_data({})
         logger.log('loads template ' + path)
