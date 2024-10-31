@@ -232,6 +232,7 @@
 		'Max number of lines reached': '<?php echo _( 'Maximum number of lines reached. For longer text, please use additional text element.') ?>',
 		'Color added': '<?php echo _( 'Color added') ?>',
 		'Please choose a new color first': '<?php echo _('Please choose a new color first'); ?>',
+		'One moment': '<?php echo _('One moment please'); ?>',
    };
 </script>
 

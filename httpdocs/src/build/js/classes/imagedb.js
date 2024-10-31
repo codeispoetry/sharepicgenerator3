@@ -91,6 +91,8 @@ class ImageDB {
         })
         logger.log('clicks on image after search for ' + q)
 
+        document.querySelector('.workbench-below .message').innerHTML = lang['One moment']
+
         if (config.imageTarget === 'background') {
           document.getElementById('background').style.backgroundImage = img.style.backgroundImage
           document.getElementById('background').style.filter = 'grayscale(100%)'
@@ -104,6 +106,8 @@ class ImageDB {
             const folder = data.attachment_meta.file.substring(0, lIo)
             const file = folder + '/' + data.attachment_meta.sizes.large.file
             
+            document.querySelector('.workbench-below .message').innerHTML = ''
+
             if (config.imageTarget === 'addpic') {
               api.loadAddPicByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + file)
             } else {
