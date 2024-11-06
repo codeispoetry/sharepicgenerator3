@@ -42,7 +42,7 @@
 		<p>
 			Wenn Ihr generell Fragen zum Sharepic habt, meldet Euch gerne direkt unter 
 				<a href="MAILTO:sharepic@mint-vernetzt.de">
-					sharepic@min-vernetzt.de
+					sharepic@mint-vernetzt.de
 				</a>
 		</p>
 

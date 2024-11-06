@@ -479,7 +479,7 @@ class API {
     const formData = new FormData()
     formData.append('file', file)
 
-    if (file.size > 15 * 1024 * 1024 || file.size < 1000) {
+    if (file.size > 15 * 1024 * 1024 || file.size < 10) {
       logger.log('tried to upload file that is too big ', Math.round(file.size / 1024) + ' kb')
       alert(lang['Image too big'])
       return
