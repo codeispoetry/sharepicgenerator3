@@ -21,7 +21,11 @@ window.onload = function () {
 
   window.setTimeout(function () {
     ui.addColorButtons()
-  }, 2000)
+
+    const w = document.getElementById('sharepic').dataset.width
+    const h = document.getElementById('sharepic').dataset.height
+    sg.setPreset('Custom', 'Custom', w, h)
+  }, 1000)
 }
 
 window.addEventListener('beforeunload', function (event) {

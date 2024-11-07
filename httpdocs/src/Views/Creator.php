@@ -70,7 +70,7 @@
 				?>
 			</div>
 			<div id="tabsbuttons">
-				<button id="tab_btn_dimensions" onClick="ui.showTab('dimensions')">
+				<button id="tab_btn_canvas" onClick="ui.showTab('canvas')">
 					<div>
 						<img src="assets/icons/resize.svg" title="<?php echo _('Canvas'); ?>">
 						<div class="description">

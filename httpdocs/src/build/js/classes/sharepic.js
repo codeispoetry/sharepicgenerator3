@@ -14,6 +14,19 @@ class Sharepic {
     })
   }
 
+  setPreset (format, title, width, height) {
+    document.getElementById('width').value = width
+    document.getElementById('height').value = height
+
+    const event = new Event('change')
+    document.getElementById('height').dispatchEvent(event)
+
+    const btn = document.getElementById('size-preset')
+    btn.querySelector('.format').innerText = format
+    btn.querySelector('.title').innerText = title
+    btn.querySelector('.description').innerText = `${width} x ${height} px`
+  }
+
   init () {
     const sg = document.getElementById('sharepic')
 
