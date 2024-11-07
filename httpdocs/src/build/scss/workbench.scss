@@ -6,6 +6,7 @@
     flex-grow: 1;
     margin: 0;
     border: 1px solid $light;
+    border-top: 0;
     flex-direction: column;
 
     &-below{

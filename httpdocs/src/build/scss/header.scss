@@ -1,11 +1,17 @@
 header {
     padding: 10px 15px;
+    z-index: 100;
+    width: 100%;
+    position: fixed;
+    background-color: inherit;
+    border-bottom: 1px solid $light;
 }
 
 nav {
     color: $white;
     display: flex;
     align-items: center;
+    height: 60px;
 
     a,
     a:visited {
