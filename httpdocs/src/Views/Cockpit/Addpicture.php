@@ -3,6 +3,8 @@
 
     <section>
         <button onClick="ui.showSearchImageTab('addpic');"><?php  echo _('New picture');?></button>
+        <button onClick="component.add('eyecatcher')"><?php  echo _('New grafic');?></button>
+
     </section>
 
     <section class="selected_only">

@@ -85,11 +85,8 @@ class Cockpit {
       return
     }
 
-    document.getElementById('eyecatcher_size').value = element.style.fontSize.replace('px', '')
-    document.getElementById('eyecatcher_color').value = ui.rgbToHex(element.style.color)
     document.getElementById('eyecatcher_bgcolor').value = ui.rgbToHex(element.querySelector('#sticker_bg').style.fill)
     document.getElementById('eyecatcher_rotation').value = element.style.transform.replace('rotate(', '').replace('deg)', '')
-    document.getElementById('eyecatcher_padding').value = element.style.padding.replace('px', '')
   }
 
   setup_logo (element) {
