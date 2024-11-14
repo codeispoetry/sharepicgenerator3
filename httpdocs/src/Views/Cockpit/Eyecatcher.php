@@ -22,7 +22,7 @@
     <section id="eyecatcher_colors" class="selected_only no-greens">
         <h3><?php echo _('Colors');?></h3>
 
-        <div class="horizontal">
+        <div class="">
             <h4><?php echo _('Background');?></h4>
             <?php
                 $color = new stdClass();

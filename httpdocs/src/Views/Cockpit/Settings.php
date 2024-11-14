@@ -14,6 +14,9 @@
             #settings_remove_color_picker {
                 display: none;
             }
+            #settings_remove_color_picker>button {
+                display: none;
+            }
         </style>
         <?php
             echo _('By clicking on a color below, you can remove it.');

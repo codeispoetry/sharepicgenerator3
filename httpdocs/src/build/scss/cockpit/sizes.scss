@@ -6,7 +6,7 @@
     border: 1px solid $light;
     border-radius: 3px;
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 0.4em !important;
 
     .left{
         flex: 1 1 100%;
@@ -35,5 +35,11 @@
 
     .description{
         font-size: 0.8em;
+    }
+}
+
+#cockpit_dimensions{
+    h4{
+        margin-bottom: 0.4em !important;
     }
 }

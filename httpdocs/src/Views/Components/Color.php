@@ -1,6 +1,11 @@
 <div class="color" id="<?php echo $color->id; ?>">   
     <div class="palette">
-        <button class="no-button" data-blueprint="true" style="background-color: #ffffff" onClick="<?php echo $color->onclick; ?>(this.style.backgroundColor);"></button>
+        <button 
+            class="no-button" 
+            data-blueprint="true" 
+            style="background-color: #ffffff" 
+            onClick="<?php echo $color->onclick; ?>(this.style.backgroundColor);">
+        </button>
     </div>
     
     <input type="color" 
