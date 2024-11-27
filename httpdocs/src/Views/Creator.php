@@ -208,6 +208,11 @@
             'apikey': '<?php echo $pixabayapi; ?>'
         },
 		<?php } ?>
+		<?php if ( $mintmediadatabase = $this->env->config->get( 'Mintmediadatabase', 'apikey' ) ) { ?>
+		'mintmediadatabase': {
+			'apikey': '<?php echo $mintmediadatabase; ?>'
+		},
+		<?php } ?>
 		'url': '<?php echo $this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
 		'imagedb': '<?php echo $this->env->config->get( 'Main', 'imagedb' ); ?>',

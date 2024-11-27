@@ -36,7 +36,7 @@ class ImageDB {
   }
 
   search_mint (q) {
-    const url = `https://media-tool.mint-vernetzt.de/wp-json/media-api/v1/media/search?api_key&q=${encodeURIComponent(q)}`
+    const url = `https://mediendatenbank.mint-vernetzt.de/wp-json/media-api/v1/media/search?api_key=${config.mintmediadatabase.apikey}&q=${encodeURIComponent(q)}`
     const body = JSON.stringify({ query: q })
 
     fetch(url, {
@@ -99,7 +99,7 @@ class ImageDB {
         }
 
         // get real image url
-        fetch('https://media-tool.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key')
+        fetch('https://mediendatenbank.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key=' + config.mintmediadatabase.apikey) 
           .then(response => response.json())
           .then(data => {
             const lIo = data.attachment_meta.file.lastIndexOf('/')
@@ -109,9 +109,9 @@ class ImageDB {
             document.querySelector('.workbench-below .message').innerHTML = ''
 
             if (config.imageTarget === 'addpic') {
-              api.loadAddPicByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + file)
+              api.loadAddPicByUrl('https://mediendatenbank.mint-vernetzt.de/wp-content/uploads/' + file)
             } else {
-              api.loadByUrl('https://media-tool.mint-vernetzt.de/wp-content/uploads/' + file)
+              api.loadByUrl('https://mediendatenbank.mint-vernetzt.de/wp-content/uploads/' + file)
 
               // is copyright already shown?
               const copyright = document.querySelector('#sharepic [id^=copyright_]')
