@@ -11,13 +11,12 @@
 
 
     <section>
-        <h3><?php  echo _('Own image');?></h3>
         <p><?php echo _('Upload an image from your local computer');?></p>
 
         <div class="set-target" data-target="background">
             <button onClick="document.getElementById('upload').click()">
                 <img src="assets/icons/upload.svg">
-                <?php  echo _('upload image');?>
+                <?php  echo _('upload own image');?>
             </button>
         </div>
 
@@ -33,7 +32,7 @@
     </section>
 
     <section id="search_imagedb">
-        <h3><?php  echo _('Search image');?></h3>
+        <h3><?php  echo _('Image from database');?></h3>
         <p class="no-mint">
             <?php echo _('Search in  image database');?>
             <?php if ( $this->env->config->get( 'Main', 'imagedb') === 'unsplash' ) { ?>

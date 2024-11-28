@@ -5,6 +5,10 @@ header {
     position: fixed;
     background-color: inherit;
     border-bottom: 1px solid $light;
+
+    &:hover {
+        z-index:10;
+    }
 }
 
 nav {

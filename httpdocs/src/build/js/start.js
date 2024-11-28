@@ -24,7 +24,6 @@ window.onload = function () {
 
     const w = document.getElementById('sharepic').dataset.width
     const h = document.getElementById('sharepic').dataset.height
-    sg.setPreset('Custom', 'Custom', w, h)
   }, 1000)
 }
 

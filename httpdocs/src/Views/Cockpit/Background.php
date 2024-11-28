@@ -1,10 +1,10 @@
 <section class="mainsection" id="cockpit_background">
     <h2>
-        <?php  echo _('Background image');?>
+        <?php  echo _('Edit background image');?>
     </h2>
 
     <section>
-        <h3><?php  echo _('Size');?></h3>
+        <h3><?php  echo _('Image size');?></h3>
         <input type="range" min="10" max="300" value="100" class="slider" id="background_size" oninput="background.zoom(this.value)">  
     
         <div>
@@ -30,47 +30,46 @@
             <input type="range" min="0" max="10" step="0.05" value="0" class="slider" id="background_blur" oninput="background.filter('blur', this.value)">   
         </div>
         </section>
+    
+    <h3 onClick="ui.unfold(this,'copyright-section');" class="folder-button"><?php  echo _('Copyright');?></h3>
+    <div id="copyright-section" class="foldable folded">
+        <section id="add_copyright_section">
+            <button onClick="component.add('copyright')" id="add_copyright"><?php  echo _('Add copyright');?></button>
+        </section>
+        
+        <section class="with_copyright d-none">
+            <h3><?php  echo _('Size');?></h3>
+            <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size" oninput="copyright.setSize(this)">
+        </section>
+
+        <section class="with_copyright d-none">
+            <?php
+                $color = new stdClass();
+                $color->value = "#ffffff";
+                $color->id = "copyright_color";
+                $color->oninput = "copyright.setFontColor(this.value)";
+                $color->onclick = "copyright.setFontColor";
+                require ("./src/Views/Components/Color.php"); 
+            ?>
+        </section>
+
+        <section class="with_copyright d-none">
+            <h3><?php  echo _('Position');?></h3>
+            <div style="display: flex; justify-content:space-between;">
+                <button class="no-button" onclick="copyright.setPostion(1);">
+                    <?php  echo _('bottom left');?>
+                </button>
+                <button class="no-button" onclick="copyright.setPostion(2);">
+                    <?php  echo _('bottom right');?>
+                </button>
+            </div>
+        </section>
+    </div>
 
     <section>
         <button class="outline" onClick="background.delete()">
             <?php echo _("Delete background image"); ?>
         </button>   
-    </section>
-    
-    <h2>
-        <?php  echo _('Copyright');?>
-    </h2>
-    <section id="add_copyright_section">
-        <button onClick="component.add('copyright')" id="add_copyright"><?php  echo _('Add copyright');?></button>
-    </section>
-    
-    <section class="with_copyright d-none">
-        <h3><?php  echo _('Size');?></h3>
-        <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size" oninput="copyright.setSize(this)">
-    </section>
-
-    <section class="with_copyright d-none">
-        <h3><?php  echo _('Color');?></h3>
-        <?php
-            $color = new stdClass();
-            $color->value = "#ffffff";
-            $color->id = "copyright_color";
-            $color->oninput = "copyright.setFontColor(this.value)";
-            $color->onclick = "copyright.setFontColor";
-            require ("./src/Views/Components/Color.php"); 
-        ?>
-    </section>
-
-    <section class="with_copyright d-none">
-        <h3><?php  echo _('Position');?></h3>
-        <div style="display: flex; justify-content:space-between;">
-            <button class="no-button" onclick="copyright.setPostion(1);">
-                <?php  echo _('bottom left');?>
-            </button>
-            <button class="no-button" onclick="copyright.setPostion(2);">
-                <?php  echo _('bottom right');?>
-            </button>
-        </div>
     </section>
 </section>
 

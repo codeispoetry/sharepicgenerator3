@@ -102,11 +102,17 @@ class ImageDB {
         fetch('https://mediendatenbank.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key=' + config.mintmediadatabase.apikey) 
           .then(response => response.json())
           .then(data => {
+
+            document.querySelector('.workbench-below .message').innerHTML = ''
+
+            if(data.attachment_meta.file === undefined) {
+              console.log("Error: No file found in mint database")
+              return;
+            }
+
             const lIo = data.attachment_meta.file.lastIndexOf('/')
             const folder = data.attachment_meta.file.substring(0, lIo)
             const file = folder + '/' + data.attachment_meta.sizes.large.file
-            
-            document.querySelector('.workbench-below .message').innerHTML = ''
 
             if (config.imageTarget === 'addpic') {
               api.loadAddPicByUrl('https://mediendatenbank.mint-vernetzt.de/wp-content/uploads/' + file)

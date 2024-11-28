@@ -1,5 +1,6 @@
 <div class="color" id="<?php echo $color->id; ?>">   
     
+    <h3><?php echo _('Colors');?></h3>
     <div class="standard-palette">
         <?php
         $standard_colors = array(
@@ -20,7 +21,8 @@
        
     </div>
 
-    <div style="margin-top:30px;display:flex;justify-content:space-between;width:100%">
+    <h3 style="margin-top:30px;"><?php echo _('My colors');?></h3>
+    <div style="display:flex;justify-content:space-between;width:100%">
         <div class="palette">
             <button 
                 class="no-button" 
@@ -41,5 +43,11 @@
                 onclick="this.previousElementSibling.click();">
             </button>
         </div>
+    </div>
+
+    <div onclick="ui.showTab('settings')">
+        <?php
+            printf(_("Colors can be edited in settings %s."), '<img src="assets/icons/settings.svg">');
+        ?>
     </div>
 </div>
