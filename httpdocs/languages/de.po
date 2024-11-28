@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-28 14:07+0100\n"
-"PO-Revision-Date: 2024-11-28 14:08+0100\n"
+"POT-Creation-Date: 2024-11-28 14:29+0100\n"
+"PO-Revision-Date: 2024-11-28 14:29+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -98,16 +98,15 @@ msgstr "Element hinzufügen"
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:48
+#: httpdocs/src/Views/Cockpit/Background.php:41
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
 msgstr "Größe"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
-#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
-msgid "Eyecatcher"
-msgstr "Sticker"
+msgid "Edit form"
+msgstr "Form bearbeiten"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:4
 msgid "Add sticker"
@@ -226,7 +225,6 @@ msgid "Add text"
 msgstr "Text hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
-#: httpdocs/src/Views/Cockpit/Background.php:53
 msgid "Color"
 msgstr "Farbe"
 
@@ -275,30 +273,30 @@ msgstr "Sättigung"
 msgid "Blur"
 msgstr "Unschärfe"
 
-#: httpdocs/src/Views/Cockpit/Background.php:36
-msgid "Delete background image"
-msgstr "Hintergrundbild löschen"
-
-#: httpdocs/src/Views/Cockpit/Background.php:41
+#: httpdocs/src/Views/Cockpit/Background.php:34
 #: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
 msgid "Copyright"
 msgstr "Urheberrechts&shy;hinweis"
 
-#: httpdocs/src/Views/Cockpit/Background.php:44
+#: httpdocs/src/Views/Cockpit/Background.php:37
 msgid "Add copyright"
 msgstr "Urheberrechts&shy;hinweis hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:65
+#: httpdocs/src/Views/Cockpit/Background.php:57
 msgid "Position"
 msgstr "Position"
 
-#: httpdocs/src/Views/Cockpit/Background.php:68
+#: httpdocs/src/Views/Cockpit/Background.php:60
 msgid "bottom left"
 msgstr "links unten"
 
-#: httpdocs/src/Views/Cockpit/Background.php:71
+#: httpdocs/src/Views/Cockpit/Background.php:63
 msgid "bottom right"
 msgstr "rechts unten"
+
+#: httpdocs/src/Views/Cockpit/Background.php:71
+msgid "Delete background image"
+msgstr "Hintergrundbild löschen"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2
 #: httpdocs/src/Views/Menu/Greens.php:98 httpdocs/src/Views/Creator.php:147
@@ -357,7 +355,6 @@ msgid "Background image"
 msgstr "Hintergrundbild"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:7
-#: httpdocs/src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground image"
 msgstr "Vordergrundbild"
 
@@ -458,6 +455,10 @@ msgstr "Grüne Fläche anzeigen"
 #: httpdocs/src/Views/Cockpit/Freetext.php:5
 msgid "Close text editor"
 msgstr "Textauswahl aufheben"
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:2
+msgid "Edit foreground image"
+msgstr "Vordergrundbild bearbeiten"
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:5
 msgid "New picture"
@@ -729,6 +730,10 @@ msgstr "Herunterladen"
 #: httpdocs/src/Views/Creator.php:83
 msgid "Search or create image"
 msgstr "Bild suchen oder erstellen"
+
+#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
+msgid "Eyecatcher"
+msgstr "Sticker"
 
 #: httpdocs/src/Views/Creator.php:131
 msgid "Front picture"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-28 14:07+0100\n"
+"POT-Creation-Date: 2024-11-28 14:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,15 +89,14 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:48
+#: httpdocs/src/Views/Cockpit/Background.php:41
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
-#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
-msgid "Eyecatcher"
+msgid "Edit form"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:4
@@ -215,7 +214,6 @@ msgid "Add text"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
-#: httpdocs/src/Views/Cockpit/Background.php:53
 msgid "Color"
 msgstr ""
 
@@ -264,29 +262,29 @@ msgstr ""
 msgid "Blur"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:36
-msgid "Delete background image"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Background.php:41
+#: httpdocs/src/Views/Cockpit/Background.php:34
 #: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
 msgid "Copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:44
+#: httpdocs/src/Views/Cockpit/Background.php:37
 msgid "Add copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:65
+#: httpdocs/src/Views/Cockpit/Background.php:57
 msgid "Position"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:68
+#: httpdocs/src/Views/Cockpit/Background.php:60
 msgid "bottom left"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:71
+#: httpdocs/src/Views/Cockpit/Background.php:63
 msgid "bottom right"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:71
+msgid "Delete background image"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:2
@@ -346,7 +344,6 @@ msgid "Background image"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:7
-#: httpdocs/src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground image"
 msgstr ""
 
@@ -443,6 +440,10 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Freetext.php:5
 msgid "Close text editor"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:2
+msgid "Edit foreground image"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:5
@@ -711,6 +712,10 @@ msgstr ""
 
 #: httpdocs/src/Views/Creator.php:83
 msgid "Search or create image"
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
+msgid "Eyecatcher"
 msgstr ""
 
 #: httpdocs/src/Views/Creator.php:131
