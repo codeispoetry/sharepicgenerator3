@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-31 19:21+0100\n"
+"POT-Creation-Date: 2024-11-28 13:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,9 +86,10 @@ msgid "Add element"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
-#: httpdocs/src/Views/Cockpit/Background.php:10
-#: httpdocs/src/Views/Cockpit/Background.php:51
+#: httpdocs/src/Views/Cockpit/Background.php:7
+#: httpdocs/src/Views/Cockpit/Background.php:48
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -103,28 +104,28 @@ msgstr ""
 msgid "Add sticker"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
-msgid "Text size"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:11
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:12
 #: httpdocs/src/Views/Cockpit/Freetext.php:11
 msgid "Rotation"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:14
-msgid "Text padding"
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:17
+msgid "Circle"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:18
+msgid "Square"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:19
+msgid "Rect 16:9"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:23
 msgid "Colors"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:22
-msgid "Font"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:34
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:26
 msgid "Background"
 msgstr ""
 
@@ -140,13 +141,13 @@ msgstr ""
 msgid "Add color"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Settings.php:19
+#: httpdocs/src/Views/Cockpit/Settings.php:22
 msgid "By clicking on a color below, you can remove it."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
-#: httpdocs/src/Views/Cockpit/Addpicture.php:9
+#: httpdocs/src/Views/Cockpit/Addpicture.php:11
 msgid "Total size"
 msgstr ""
 
@@ -213,103 +214,77 @@ msgid "Add text"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
-#: httpdocs/src/Views/Cockpit/Dimensions.php:52
-#: httpdocs/src/Views/Cockpit/Background.php:56
+#: httpdocs/src/Views/Cockpit/Canvas.php:16
+#: httpdocs/src/Views/Cockpit/Background.php:53
 msgid "Color"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:2
-msgid "Dimensions"
+#: httpdocs/src/Views/Cockpit/Canvas.php:2 httpdocs/src/Views/Creator.php:75
+#: httpdocs/src/Views/Creator.php:77
+msgid "Canvas"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:4
+#: httpdocs/src/Views/Cockpit/Dimensions.php:6
+msgid "Change size"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:8
 msgid "Set dimensions manually"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:10
-msgid "Size presets"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:12
-msgid "square 1:1"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:15
-msgid "square 16:9"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:33
-msgid ""
-"Presets for flyeralarm.de. Other print services may require different sizes."
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:64
-msgid "QR-Code"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:67
-msgid ""
-"You can scan this QR-Code with your smartphone to open your sharepic on your "
-"mobile."
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:69
-msgid "This link is valid for 5 minutes."
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Background.php:6
+#: httpdocs/src/Views/Cockpit/Background.php:3
 #: httpdocs/src/Views/Cockpit/Searchimage.php:4
 #: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:91
 #: httpdocs/src/Views/Creator.php:93
 msgid "Background image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:15
+#: httpdocs/src/Views/Cockpit/Background.php:12
 msgid "fit automatically"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:20
+#: httpdocs/src/Views/Cockpit/Background.php:17
 msgid "Make image draggable"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:26
+#: httpdocs/src/Views/Cockpit/Background.php:23
 msgid "Filter"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:28
+#: httpdocs/src/Views/Cockpit/Background.php:25
 msgid "Brightness"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:30
+#: httpdocs/src/Views/Cockpit/Background.php:27
 msgid "Saturate"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:32
+#: httpdocs/src/Views/Cockpit/Background.php:29
 msgid "Blur"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:39
+#: httpdocs/src/Views/Cockpit/Background.php:36
 msgid "Delete background image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:44
+#: httpdocs/src/Views/Cockpit/Background.php:41
 #: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
 msgid "Copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:47
+#: httpdocs/src/Views/Cockpit/Background.php:44
 msgid "Add copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:68
+#: httpdocs/src/Views/Cockpit/Background.php:65
 msgid "Position"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:71
+#: httpdocs/src/Views/Cockpit/Background.php:68
 msgid "bottom left"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:74
+#: httpdocs/src/Views/Cockpit/Background.php:71
 msgid "bottom right"
 msgstr ""
 
@@ -329,7 +304,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
-#: httpdocs/src/Views/Cockpit/Addpicture.php:26
+#: httpdocs/src/Views/Cockpit/Addpicture.php:28
 #: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
 #: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
 msgid "Text"
@@ -364,6 +339,7 @@ msgid "Add \"Do, what counts\""
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:7
+#: httpdocs/src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground image"
 msgstr ""
 
@@ -463,35 +439,35 @@ msgstr ""
 msgid "Close text editor"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:2
-msgid "Foreground picture"
-msgstr ""
-
 #: httpdocs/src/Views/Cockpit/Addpicture.php:5
 msgid "New picture"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:17
-msgid "Image"
+#: httpdocs/src/Views/Cockpit/Addpicture.php:6
+msgid "New grafic"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:19
-msgid "round"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Addpicture.php:20
-msgid "angular"
+msgid "Image"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Addpicture.php:21
+msgid "round"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:22
+msgid "angular"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:23
 msgid "original"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:28
+#: httpdocs/src/Views/Cockpit/Addpicture.php:30
 msgid "text floats right"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:29
+#: httpdocs/src/Views/Cockpit/Addpicture.php:31
 msgid "text below"
 msgstr ""
 
@@ -648,7 +624,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Menu/Greens.php:32 httpdocs/src/Views/Menu/Open.php:29
 #: httpdocs/src/Views/Menu/Mint.php:9
-#: httpdocs/src/Views/Pages/ImprintMint.php:4
+#: httpdocs/src/Views/Pages/ImprintMint.php:9
 #: httpdocs/src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr ""
@@ -718,10 +694,6 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:75 httpdocs/src/Views/Creator.php:77
-msgid "Canvas"
-msgstr ""
-
 #: httpdocs/src/Views/Creator.php:83
 msgid "Search or create image"
 msgstr ""
@@ -752,72 +724,80 @@ msgid ""
 "seconds."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:221
+#: httpdocs/src/Views/Creator.php:226
 msgid "Are you sure?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:222
+#: httpdocs/src/Views/Creator.php:227
 msgid "Do you want to log out?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:223
+#: httpdocs/src/Views/Creator.php:228
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:224
+#: httpdocs/src/Views/Creator.php:229
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:225
+#: httpdocs/src/Views/Creator.php:230
 msgid "Maximum number of elements reached"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:226
+#: httpdocs/src/Views/Creator.php:231
 msgid "Uploading your image ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:227
+#: httpdocs/src/Views/Creator.php:232
 msgid "Your image is being processed ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:228
+#: httpdocs/src/Views/Creator.php:233
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:229
+#: httpdocs/src/Views/Creator.php:234
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:230
+#: httpdocs/src/Views/Creator.php:235
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:231
+#: httpdocs/src/Views/Creator.php:236
 msgid "Please wait until the image is uploaded."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:232
+#: httpdocs/src/Views/Creator.php:237
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:233
+#: httpdocs/src/Views/Creator.php:238
 msgid "Color added"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:234
+#: httpdocs/src/Views/Creator.php:239
 msgid "Please choose a new color first"
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:240
+msgid "One moment please"
 msgstr ""
 
 #: httpdocs/src/Views/Homegreens.php:7
 msgid ""
 "Create sharepics for your social media channels in the layout of the German "
 "Green Party."
+msgstr ""
+
+#: httpdocs/src/Views/Pages/ImprintMint.php:5
+msgid "back"
 msgstr ""
 
 #: httpdocs/src/Views/RTE.php:4

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-31 19:21+0100\n"
-"PO-Revision-Date: 2024-10-31 19:21+0100\n"
+"POT-Creation-Date: 2024-11-28 13:10+0100\n"
+"PO-Revision-Date: 2024-11-28 13:10+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -95,9 +95,10 @@ msgid "Add element"
 msgstr "Element hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
-#: httpdocs/src/Views/Cockpit/Background.php:10
-#: httpdocs/src/Views/Cockpit/Background.php:51
+#: httpdocs/src/Views/Cockpit/Background.php:7
+#: httpdocs/src/Views/Cockpit/Background.php:48
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -112,28 +113,30 @@ msgstr "Sticker"
 msgid "Add sticker"
 msgstr "Sticker hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
-msgid "Text size"
-msgstr "Textgröße"
-
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:11
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:12
 #: httpdocs/src/Views/Cockpit/Freetext.php:11
 msgid "Rotation"
 msgstr "Drehung"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:14
-msgid "Text padding"
-msgstr "Abstand"
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:17
+msgid "Circle"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:18
+#, fuzzy
+msgid "Square"
+msgstr "Quadratisch 1:1"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:19
+#, fuzzy
+msgid "Rect 16:9"
+msgstr "16:9"
+
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:23
 msgid "Colors"
 msgstr "Farben"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:22
-msgid "Font"
-msgstr "Schrift"
-
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:34
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:26
 msgid "Background"
 msgstr "Hintergrund"
 
@@ -149,13 +152,13 @@ msgstr "Farbe auswählen und zur Palette hinzufügen."
 msgid "Add color"
 msgstr "Farbe hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Settings.php:19
+#: httpdocs/src/Views/Cockpit/Settings.php:22
 msgid "By clicking on a color below, you can remove it."
 msgstr "Mit einem Klick auf eine Farbe wird sie entfernt."
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
-#: httpdocs/src/Views/Cockpit/Addpicture.php:9
+#: httpdocs/src/Views/Cockpit/Addpicture.php:11
 msgid "Total size"
 msgstr "Gesamtgröße"
 
@@ -222,107 +225,77 @@ msgid "Add text"
 msgstr "Text hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
-#: httpdocs/src/Views/Cockpit/Dimensions.php:52
-#: httpdocs/src/Views/Cockpit/Background.php:56
+#: httpdocs/src/Views/Cockpit/Canvas.php:16
+#: httpdocs/src/Views/Cockpit/Background.php:53
 msgid "Color"
 msgstr "Farbe"
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:2
-msgid "Dimensions"
-msgstr "Abmessungen"
+#: httpdocs/src/Views/Cockpit/Canvas.php:2 httpdocs/src/Views/Creator.php:75
+#: httpdocs/src/Views/Creator.php:77
+msgid "Canvas"
+msgstr "Leinwand"
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:4
+#: httpdocs/src/Views/Cockpit/Dimensions.php:6
+msgid "Change size"
+msgstr "Größe ändern"
+
+#: httpdocs/src/Views/Cockpit/Dimensions.php:8
 msgid "Set dimensions manually"
 msgstr "Größe manuell einstellen"
 
-#: httpdocs/src/Views/Cockpit/Dimensions.php:10
-msgid "Size presets"
-msgstr "Voreinstellungen"
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:12
-msgid "square 1:1"
-msgstr "Quadratisch 1:1"
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:15
-msgid "square 16:9"
-msgstr "16:9"
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:33
-msgid ""
-"Presets for flyeralarm.de. Other print services may require different sizes."
-msgstr ""
-"Voreinstellungen für Flyeralarm. Andere Druckereien benötigen evtl. andere "
-"Größen."
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:64
-msgid "QR-Code"
-msgstr "QR-Code"
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:67
-msgid ""
-"You can scan this QR-Code with your smartphone to open your sharepic on your "
-"mobile."
-msgstr ""
-"Du kannst diesen QR-Code mit Deinem Smartphone scannen, um Dein Sharepic auf "
-"Deinem Handy zu öffnen."
-
-#: httpdocs/src/Views/Cockpit/Dimensions.php:69
-msgid "This link is valid for 5 minutes."
-msgstr "Dieser Link ist 5 Minuten gültig."
-
-#: httpdocs/src/Views/Cockpit/Background.php:6
+#: httpdocs/src/Views/Cockpit/Background.php:3
 #: httpdocs/src/Views/Cockpit/Searchimage.php:4
 #: httpdocs/src/Views/Creator.php:85 httpdocs/src/Views/Creator.php:91
 #: httpdocs/src/Views/Creator.php:93
 msgid "Background image"
 msgstr "Hintergrundbild"
 
-#: httpdocs/src/Views/Cockpit/Background.php:15
+#: httpdocs/src/Views/Cockpit/Background.php:12
 msgid "fit automatically"
 msgstr "automatisch einpassen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:20
+#: httpdocs/src/Views/Cockpit/Background.php:17
 msgid "Make image draggable"
 msgstr "Bild verschiebbar machen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:26
+#: httpdocs/src/Views/Cockpit/Background.php:23
 msgid "Filter"
 msgstr "Filter"
 
-#: httpdocs/src/Views/Cockpit/Background.php:28
+#: httpdocs/src/Views/Cockpit/Background.php:25
 msgid "Brightness"
 msgstr "Helligkeit"
 
-#: httpdocs/src/Views/Cockpit/Background.php:30
+#: httpdocs/src/Views/Cockpit/Background.php:27
 msgid "Saturate"
 msgstr "Sättigung"
 
-#: httpdocs/src/Views/Cockpit/Background.php:32
+#: httpdocs/src/Views/Cockpit/Background.php:29
 msgid "Blur"
 msgstr "Unschärfe"
 
-#: httpdocs/src/Views/Cockpit/Background.php:39
+#: httpdocs/src/Views/Cockpit/Background.php:36
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:44
+#: httpdocs/src/Views/Cockpit/Background.php:41
 #: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
 msgid "Copyright"
 msgstr "Urheberrechts&shy;hinweis"
 
-#: httpdocs/src/Views/Cockpit/Background.php:47
+#: httpdocs/src/Views/Cockpit/Background.php:44
 msgid "Add copyright"
 msgstr "Urheberrechts&shy;hinweis hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:68
+#: httpdocs/src/Views/Cockpit/Background.php:65
 msgid "Position"
 msgstr "Position"
 
-#: httpdocs/src/Views/Cockpit/Background.php:71
+#: httpdocs/src/Views/Cockpit/Background.php:68
 msgid "bottom left"
 msgstr "links unten"
 
-#: httpdocs/src/Views/Cockpit/Background.php:74
+#: httpdocs/src/Views/Cockpit/Background.php:71
 msgid "bottom right"
 msgstr "rechts unten"
 
@@ -342,7 +315,7 @@ msgstr "bitte wählen"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
-#: httpdocs/src/Views/Cockpit/Addpicture.php:26
+#: httpdocs/src/Views/Cockpit/Addpicture.php:28
 #: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
 #: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
 msgid "Text"
@@ -377,6 +350,7 @@ msgid "Add \"Do, what counts\""
 msgstr "Europaclaim hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:7
+#: httpdocs/src/Views/Cockpit/Addpicture.php:2
 msgid "Foreground image"
 msgstr "Vordergrundbild"
 
@@ -479,36 +453,35 @@ msgstr "Grüne Fläche anzeigen"
 msgid "Close text editor"
 msgstr "Textauswahl aufheben"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:2
-#, fuzzy
-msgid "Foreground picture"
-msgstr "Vordergrundbild"
-
 #: httpdocs/src/Views/Cockpit/Addpicture.php:5
 msgid "New picture"
 msgstr "Weiteres Bild"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:17
+#: httpdocs/src/Views/Cockpit/Addpicture.php:6
+msgid "New grafic"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:19
 msgid "Image"
 msgstr "Bild"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:19
+#: httpdocs/src/Views/Cockpit/Addpicture.php:21
 msgid "round"
 msgstr "rund"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:20
+#: httpdocs/src/Views/Cockpit/Addpicture.php:22
 msgid "angular"
 msgstr "rechteckig"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:21
+#: httpdocs/src/Views/Cockpit/Addpicture.php:23
 msgid "original"
 msgstr "original"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:28
+#: httpdocs/src/Views/Cockpit/Addpicture.php:30
 msgid "text floats right"
 msgstr "Text rechts"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:29
+#: httpdocs/src/Views/Cockpit/Addpicture.php:31
 msgid "text below"
 msgstr "Text darunter"
 
@@ -667,7 +640,7 @@ msgstr "Hilfe"
 
 #: httpdocs/src/Views/Menu/Greens.php:32 httpdocs/src/Views/Menu/Open.php:29
 #: httpdocs/src/Views/Menu/Mint.php:9
-#: httpdocs/src/Views/Pages/ImprintMint.php:4
+#: httpdocs/src/Views/Pages/ImprintMint.php:9
 #: httpdocs/src/Views/Pages/Imprint.php:4
 msgid "Imprint"
 msgstr "Impressum"
@@ -737,10 +710,6 @@ msgstr "Rückgängig"
 msgid "Download"
 msgstr "Herunterladen"
 
-#: httpdocs/src/Views/Creator.php:75 httpdocs/src/Views/Creator.php:77
-msgid "Canvas"
-msgstr "Leinwand"
-
 #: httpdocs/src/Views/Creator.php:83
 msgid "Search or create image"
 msgstr "Bild suchen oder erstellen"
@@ -773,40 +742,40 @@ msgstr ""
 "Bitte warte, während Dein Sharepic erstellt wird. Dies kann einige Sekunden "
 "dauern."
 
-#: httpdocs/src/Views/Creator.php:221
+#: httpdocs/src/Views/Creator.php:226
 msgid "Are you sure?"
 msgstr "Bist Du sicher?"
 
-#: httpdocs/src/Views/Creator.php:222
+#: httpdocs/src/Views/Creator.php:227
 msgid "Do you want to log out?"
 msgstr "Möchtest Du Dich ausloggen?"
 
-#: httpdocs/src/Views/Creator.php:223
+#: httpdocs/src/Views/Creator.php:228
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: httpdocs/src/Views/Creator.php:224
+#: httpdocs/src/Views/Creator.php:229
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Creator.php:225
+#: httpdocs/src/Views/Creator.php:230
 msgid "Maximum number of elements reached"
 msgstr "Maximale Anzahl von Elementen erreicht"
 
-#: httpdocs/src/Views/Creator.php:226
+#: httpdocs/src/Views/Creator.php:231
 msgid "Uploading your image ..."
 msgstr "Das Bild wird hochladen ..."
 
-#: httpdocs/src/Views/Creator.php:227
+#: httpdocs/src/Views/Creator.php:232
 msgid "Your image is being processed ..."
 msgstr "Dein Bild wird vorbereitet ..."
 
-#: httpdocs/src/Views/Creator.php:228
+#: httpdocs/src/Views/Creator.php:233
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr "Das Bild ist zu groß. Es sind maximal 15 MB erlaubt."
 
-#: httpdocs/src/Views/Creator.php:229
+#: httpdocs/src/Views/Creator.php:234
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
@@ -814,7 +783,7 @@ msgstr ""
 "Du wurdest automatisch ausgeloggt. Bitte lade die Seite neu, um Dich erneut "
 "einzuloggen."
 
-#: httpdocs/src/Views/Creator.php:230
+#: httpdocs/src/Views/Creator.php:235
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
@@ -822,11 +791,11 @@ msgstr ""
 "Du wirst in Kürze automatisch ausgeloggt. Bitte speichere Deine Arbeit oder "
 "lade sie herunter und lade die Seite neu."
 
-#: httpdocs/src/Views/Creator.php:231
+#: httpdocs/src/Views/Creator.php:236
 msgid "Please wait until the image is uploaded."
 msgstr "Bitte warte, bis das Bild hochgeladen ist."
 
-#: httpdocs/src/Views/Creator.php:232
+#: httpdocs/src/Views/Creator.php:237
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
@@ -834,19 +803,27 @@ msgstr ""
 "Die maximale Anzahl von Zeilen wurde erreicht. Für längeren Text nutze bitte "
 "das zusätzliche Textelement."
 
-#: httpdocs/src/Views/Creator.php:233
+#: httpdocs/src/Views/Creator.php:238
 msgid "Color added"
 msgstr "Farbe hinzugefügt"
 
-#: httpdocs/src/Views/Creator.php:234
+#: httpdocs/src/Views/Creator.php:239
 msgid "Please choose a new color first"
 msgstr "Bitte wähle zunächst eine neue Farbe"
+
+#: httpdocs/src/Views/Creator.php:240
+msgid "One moment please"
+msgstr "Augenblick bitte"
 
 #: httpdocs/src/Views/Homegreens.php:7
 msgid ""
 "Create sharepics for your social media channels in the layout of the German "
 "Green Party."
 msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen."
+
+#: httpdocs/src/Views/Pages/ImprintMint.php:5
+msgid "back"
+msgstr "zurück"
 
 #: httpdocs/src/Views/RTE.php:4
 msgid "color"
@@ -879,6 +856,42 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Text padding"
+#~ msgstr "Abstand"
+
+#~ msgid "Font"
+#~ msgstr "Schrift"
+
+#~ msgid "Dimensions"
+#~ msgstr "Abmessungen"
+
+#~ msgid "Size presets"
+#~ msgstr "Voreinstellungen"
+
+#~ msgid ""
+#~ "Presets for flyeralarm.de. Other print services may require different "
+#~ "sizes."
+#~ msgstr ""
+#~ "Voreinstellungen für Flyeralarm. Andere Druckereien benötigen evtl. "
+#~ "andere Größen."
+
+#~ msgid "QR-Code"
+#~ msgstr "QR-Code"
+
+#~ msgid ""
+#~ "You can scan this QR-Code with your smartphone to open your sharepic on "
+#~ "your mobile."
+#~ msgstr ""
+#~ "Du kannst diesen QR-Code mit Deinem Smartphone scannen, um Dein Sharepic "
+#~ "auf Deinem Handy zu öffnen."
+
+#~ msgid "This link is valid for 5 minutes."
+#~ msgstr "Dieser Link ist 5 Minuten gültig."
+
+#, fuzzy
+#~ msgid "Foreground picture"
+#~ msgstr "Vordergrundbild"
 
 #~ msgid "Upload image"
 #~ msgstr "Bild hochladen"

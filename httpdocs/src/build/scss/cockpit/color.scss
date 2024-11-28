@@ -1,26 +1,28 @@
 #cockpit{
     .color{
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
 
         $size: 38px;
-
 
         &picker{
             width: $size;
             height: $size;
             border-radius: 50%;
+            margin: 2px;
             background: white url('icons/eyedropper.svg') no-repeat center center;
             background-size: 60%;
             border: 1px solid $light;
         }
 
 
+        .standard-palette,
         .palette{
             display: flex;
+            flex-wrap: wrap;
 
-            
             button{
                 width: $size;
                 height: $size;
