@@ -41,6 +41,15 @@ class RTE {
       content_style: 'body, p { margin: 0; padding: 0; }',
       resize: 'both'
     })
+
+    // there are some elements created by tinymce that we need to remove
+    // cannot find the origin, why they are created and by whom
+    window.setTimeout(() => {
+      document.querySelector('div[aria-label="#D114EF"]')?.remove()
+      document.querySelector('div[aria-label="#F8E7E7"]')?.remove()
+
+    }, 1500)
+
   }
 
   deinit () {
@@ -49,8 +58,6 @@ class RTE {
     }
 
     document.getElementById('undo').style.opacity = 1
-    // const maxWidth = rte.getLargestChildOf(tinymce.activeEditor.getBody())
-    // const id = tinymce.activeEditor.id
 
     const editorContainer = tinymce.activeEditor.getContainer()
     const width = editorContainer.offsetWidth
@@ -66,20 +73,4 @@ class RTE {
     document.getElementById(cockpit.target.id).style.rotate = this.rotate
   }
 
-  getLargestChildOf (element) {
-    let maxWidth = 0
-    const children = element.children
-    for (const child of children) {
-      child.style.display = 'inline'
-      const width = child.offsetWidth
-
-      if (width > maxWidth) {
-        maxWidth = width
-      }
-
-      child.style.display = 'block'
-    }
-
-    return maxWidth
-  }
 }
