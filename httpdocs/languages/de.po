@@ -552,7 +552,7 @@ msgstr "Meine Farben"
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
-"Farbvorlagen können in den Design-Eintstellungen %s konfiguriert werden."
+"Farbvorlagen können in den Design-Einstellungen %s konfiguriert werden."
 
 #: httpdocs/src/Views/Components/Forms/Login.php:2
 #: httpdocs/src/Views/Components/Forms/RequestPassword.php:2
