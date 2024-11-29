@@ -3,17 +3,14 @@
 class RTE {
   constructor () {
     this.colorMap = []
-    // this.init();
   }
 
   setColors () {
     this.colorMap = config.palette.map(colorCode => [colorCode, 'Color']).flat()
-    // this.init();
   }
 
   addColor (colorCode) {
     this.colorMap.push(colorCode, 'Color')
-    // this.init();
   }
 
   init () {
