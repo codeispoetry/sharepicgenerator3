@@ -63,9 +63,53 @@
         <p>
             <?php echo _('Choose a form and colorize later.'); ?>
         </p>
-        <button onClick="component.add('eyecatcher'); eyecatcher.setForm('sticker_circle')">Kreis hinzufügen</button>
-        <button onClick="component.add('eyecatcher'); eyecatcher.setForm('sticker_square')">4eck hinzufügen</button>
 
+        <div id="forms">
+        <?php
+            $forms = scandir( 'assets/forms' );
+            foreach ( $forms as $form ) {
+                if ( $form[0] === '.' ) continue;
+        
+                printf(
+                    "<button class=\"no-button\" onClick=\"component.add('eyecatcher'); eyecatcher.setForm('sticker_%s')\">%s</button>",
+                    preg_replace( '/\.svg/', '', $form ),
+                    '<img src="/assets/forms/' . $form . '">'
+                );
+            }
+        ?>
+        </div>
+
+        <svg id="sticker_star" style="position: absolute;width: 100%; height: 100%;" width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="sticker_bg" d="M41.4749 0L31.3436 31H0L25.9614 50.3333L15.5135 82L41.4749 62.6667L67.4363 82L56.9884 50.3333L82 31H51.2896L41.4749 0Z" fill="#ff0000"/>
+        </svg>
+
+        <svg id="sticker_speech_bubble" style="position: absolute;width: 100%; height: 100%;" width="83" height="66" viewBox="0 0 83 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="sticker_bg" d="M82.0541 0H0V50.3953H16.7264V66L47.0233 50.3953H82.0541V0Z" fill="#D9D9D9"/>
+        </svg>
+
+        <svg id="sticker_button" style="position: absolute;width: 100%; height: 100%;" width="110" height="48" viewBox="0 0 110 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="sticker_bg"  d="M0 8C0 3.58172 3.58172 0 8 0H102C106.418 0 110 3.58172 110 8V40C110 44.4183 106.418 48 102 48H8C3.58172 48 0 44.4183 0 40V8Z" fill="#D9D9D9"/>
+        </svg>
+
+        <svg id="sticker_circle" style="position: absolute;width: 100%; height: 100%;" width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect id="sticker_bg" width="82" height="82" rx="41" fill="#D9D9D9"/>
+        </svg>
+
+        <svg id="sticker_pill" style="position: absolute;width: 100%; height: 100%;" width="110" height="48" viewBox="0 0 110 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect id="sticker_bg" width="110" height="48" rx="24" fill="#D9D9D9"/>
+        </svg>   
+        
+        <svg id="sticker_rectangle" style="position: absolute;width: 100%; height: 100%;" width="110" height="70" viewBox="0 0 110 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="sticker_bg" d="M0 0H110V70H0V0Z" fill="#D9D9D9"/>
+        </svg>
+
+        <svg id="sticker_square" style="position: absolute;width: 100%; height: 100%;"  width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect id="sticker_bg" width="82" height="82" fill="#D9D9D9"/>
+        </svg>
+
+        <svg id="sticker_star_2" style="position: absolute;width: 100%; height: 100%;" width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path id="sticker_bg" d="M40.8429 0L32.9885 11.3103L20.4215 5.341L19.4789 19.7931L5.341 20.7356L11.3103 32.9885L0 41.1571L11.3103 48.6973L5.341 61.5785L19.4789 62.5211L20.4215 76.9732L32.9885 70.3755L40.8429 82L49.0115 70.3755L61.5785 76.9732L62.5211 62.5211L76.659 61.5785L70.6897 48.6973L82 41.1571L70.6897 32.9885L76.659 20.7356L62.5211 19.7931L61.5785 5.341L49.0115 11.3103L40.8429 0Z" fill="#D9D9D9"/>
+        </svg>
 
     </section>
 

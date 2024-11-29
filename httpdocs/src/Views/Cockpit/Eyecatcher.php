@@ -61,6 +61,8 @@
 
             const new_form = document.getElementById(id).cloneNode(true);
             svg.parentNode.replaceChild(new_form, svg)
+
+            cockpit.target.querySelector('#sticker_bg').style.fill = '#ff0000'
         }
 
     }

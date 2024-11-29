@@ -112,3 +112,19 @@
     padding: 20px;
     flex-grow: 1;
 }
+
+#forms{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 1em;
+
+    button{
+        margin-bottom: 50px;
+        width: 80px;
+    }
+    
+    img{
+        width: 70px;
+    }
+}
