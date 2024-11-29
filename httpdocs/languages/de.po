@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-28 14:29+0100\n"
-"PO-Revision-Date: 2024-11-28 14:29+0100\n"
+"POT-Creation-Date: 2024-11-29 07:44+0100\n"
+"PO-Revision-Date: 2024-11-29 07:45+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -72,7 +72,7 @@ msgid "Images from"
 msgstr "Bilder von"
 
 #: httpdocs/src/Views/ImageDB.php:11
-#: httpdocs/src/Views/Cockpit/Searchimage.php:57
+#: httpdocs/src/Views/Cockpit/Searchimage.php:55
 msgid "search in image database"
 msgstr "Suche in Bilddatenbank"
 
@@ -95,7 +95,7 @@ msgid "Add element"
 msgstr "Element hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:8
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
 #: httpdocs/src/Views/Cockpit/Background.php:41
@@ -104,41 +104,26 @@ msgstr "Element hinzufügen"
 msgid "Size"
 msgstr "Größe"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:2
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:6
 msgid "Edit form"
 msgstr "Form bearbeiten"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:4
-msgid "Add sticker"
-msgstr "Sticker hinzufügen"
-
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:12
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:17
 #: httpdocs/src/Views/Cockpit/Freetext.php:11
 msgid "Rotation"
 msgstr "Drehung"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:17
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:22
 msgid "Circle"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:18
-#, fuzzy
-msgid "Square"
-msgstr "Quadratisch 1:1"
-
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:19
-#, fuzzy
-msgid "Rect 16:9"
-msgstr "16:9"
+msgstr "Kreis"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:23
-#: httpdocs/src/Views/Components/Color.php:3
-msgid "Colors"
-msgstr "Farben"
+msgid "Square"
+msgstr "Quadrat"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:26
-msgid "Background"
-msgstr "Hintergrund"
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:24
+msgid "Rect 16:9"
+msgstr "Rechteck 16:9"
 
 #: httpdocs/src/Views/Cockpit/Settings.php:2 httpdocs/src/Views/Creator.php:171
 msgid "Settings"
@@ -158,7 +143,7 @@ msgstr "Mit einem Klick auf eine Farbe wird sie entfernt."
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
-#: httpdocs/src/Views/Cockpit/Addpicture.php:11
+#: httpdocs/src/Views/Cockpit/Addpicture.php:10
 msgid "Total size"
 msgstr "Gesamtgröße"
 
@@ -314,7 +299,7 @@ msgstr "bitte wählen"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
-#: httpdocs/src/Views/Cockpit/Addpicture.php:28
+#: httpdocs/src/Views/Cockpit/Addpicture.php:27
 #: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
 #: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
 msgid "Text"
@@ -355,51 +340,59 @@ msgid "Background image"
 msgstr "Hintergrundbild"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:7
-msgid "Foreground image"
-msgstr "Vordergrundbild"
+msgid "Foreground image or graphic"
+msgstr "Vordergrundbild oder Form"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:14
+#: httpdocs/src/Views/Cockpit/Searchimage.php:12
 msgid "Upload an image from your local computer"
 msgstr "Eigenes Bild hochladen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:19
+#: httpdocs/src/Views/Cockpit/Searchimage.php:17
 msgid "upload own image"
 msgstr "Eigenes Bild hochladen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:26
+#: httpdocs/src/Views/Cockpit/Searchimage.php:24
 msgid "upload image"
 msgstr "Bild hochladen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:35
+#: httpdocs/src/Views/Cockpit/Searchimage.php:33
 msgid "Image from database"
 msgstr "Bild aus Datenbank"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:37
+#: httpdocs/src/Views/Cockpit/Searchimage.php:35
 msgid "Search in  image database"
 msgstr "Suche in Bilddatenbank"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:40
+#: httpdocs/src/Views/Cockpit/Searchimage.php:38
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:44
+#: httpdocs/src/Views/Cockpit/Searchimage.php:42
 msgid "Pixabay"
 msgstr "Pixabay"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:50
+#: httpdocs/src/Views/Cockpit/Searchimage.php:48
 msgid "Choose an image database"
 msgstr "Wähle eine Datenbank"
 
+#: httpdocs/src/Views/Cockpit/Searchimage.php:62
+msgid "Add from"
+msgstr "Form hinzufügen"
+
 #: httpdocs/src/Views/Cockpit/Searchimage.php:64
+msgid "Choose a form and colorize later."
+msgstr "Wähle eine Form und färbe sie anschließend ein"
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:74
 msgid "Create image with AI"
 msgstr "Bild mit KI erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:67
+#: httpdocs/src/Views/Cockpit/Searchimage.php:77
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 "Nutzen Sie künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:68
+#: httpdocs/src/Views/Cockpit/Searchimage.php:78
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
@@ -407,40 +400,40 @@ msgstr ""
 "Bitte beachte, dass generierte Bilder Stereotypen reproduzieren oder "
 "unangemessen sein können."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:69
+#: httpdocs/src/Views/Cockpit/Searchimage.php:79
 msgid "Adjust your prompt accordingly."
 msgstr "Passe Deinen Prompt ggf. entsprechend an."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:72
+#: httpdocs/src/Views/Cockpit/Searchimage.php:82
 msgid "Describe the image you want"
 msgstr "Beschreibe das Bild, das Du möchtest"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:76
+#: httpdocs/src/Views/Cockpit/Searchimage.php:86
 #: httpdocs/src/Views/Menu/Greens.php:29 httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr "Erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:85
+#: httpdocs/src/Views/Cockpit/Searchimage.php:95
 msgid "Please wait while AI generates your image."
 msgstr "Bitte warte, während die KI Dein Bild generiert."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:86
+#: httpdocs/src/Views/Cockpit/Searchimage.php:96
 msgid "This can take up to one minute."
 msgstr "Dies kann bis zu einer Minute dauern."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:90
+#: httpdocs/src/Views/Cockpit/Searchimage.php:100
 msgid "seconds"
 msgstr "Sekunden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:94
+#: httpdocs/src/Views/Cockpit/Searchimage.php:104
 msgid "Result"
 msgstr "Ergebnis"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:97
+#: httpdocs/src/Views/Cockpit/Searchimage.php:107
 msgid "Use this image"
 msgstr "Dieses Bild verwenden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:100
+#: httpdocs/src/Views/Cockpit/Searchimage.php:110
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
@@ -456,39 +449,31 @@ msgstr "Grüne Fläche anzeigen"
 msgid "Close text editor"
 msgstr "Textauswahl aufheben"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:2
+#: httpdocs/src/Views/Cockpit/Addpicture.php:6
 msgid "Edit foreground image"
 msgstr "Vordergrundbild bearbeiten"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:5
-msgid "New picture"
-msgstr "Weiteres Bild"
-
-#: httpdocs/src/Views/Cockpit/Addpicture.php:6
-msgid "New grafic"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Addpicture.php:19
+#: httpdocs/src/Views/Cockpit/Addpicture.php:18
 msgid "Image"
 msgstr "Bild"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:21
+#: httpdocs/src/Views/Cockpit/Addpicture.php:20
 msgid "round"
 msgstr "rund"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:22
+#: httpdocs/src/Views/Cockpit/Addpicture.php:21
 msgid "angular"
 msgstr "rechteckig"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:23
+#: httpdocs/src/Views/Cockpit/Addpicture.php:22
 msgid "original"
 msgstr "original"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:30
+#: httpdocs/src/Views/Cockpit/Addpicture.php:29
 msgid "text floats right"
 msgstr "Text rechts"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:31
+#: httpdocs/src/Views/Cockpit/Addpicture.php:30
 msgid "text below"
 msgstr "Text darunter"
 
@@ -554,6 +539,10 @@ msgstr "Chrome-Version: %s"
 #: httpdocs/src/Views/Logs/Log.php:5
 msgid "Usage Log"
 msgstr "Nutzungs-Log"
+
+#: httpdocs/src/Views/Components/Color.php:3
+msgid "Colors"
+msgstr "Farben"
 
 #: httpdocs/src/Views/Components/Color.php:24
 msgid "My colors"
@@ -877,6 +866,15 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Add sticker"
+#~ msgstr "Sticker hinzufügen"
+
+#~ msgid "Background"
+#~ msgstr "Hintergrund"
+
+#~ msgid "New picture"
+#~ msgstr "Weiteres Bild"
 
 #~ msgid "Own image"
 #~ msgstr "Eigenes Bild"

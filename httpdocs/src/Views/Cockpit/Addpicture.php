@@ -1,11 +1,10 @@
 <section class="mainsection" id="cockpit_addpicture">
-    <h2><?php  echo _('Foreground image');?></h2>
-
-    <section>
-        <button onClick="ui.showSearchImageTab('addpic');"><?php  echo _('New picture');?></button>
-        <button onClick="component.add('eyecatcher')"><?php  echo _('New grafic');?></button>
-
-    </section>
+    <h2>
+        <a href="#" onClick="ui.showSearchImageTab('addpic');" style="text-decoration: none;">
+            <
+        </a>
+    <?php  echo _('Edit foreground image');?>
+</h2>
 
     <section class="selected_only">
         <h3><?php  echo _('Total size');?></h3>

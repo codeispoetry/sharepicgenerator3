@@ -126,7 +126,7 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_addpicture"  onClick="ui.showTab('addpicture')">
+				<button id="tab_btn_addpicture"  onClick="ui.showSearchImageTab('addpic');">
 					<div>
 						<img src="assets/icons/add_image.svg" title="<?php echo _('Front picture'); ?>">
 						<div class="description">

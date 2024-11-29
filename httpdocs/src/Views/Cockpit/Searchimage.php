@@ -4,11 +4,9 @@
             <?php  echo _('Background image');?>
         </div>
         <div class="set-target" data-target="addpic">
-            <?php  echo _('Foreground image');?>
+            <?php  echo _('Foreground image or graphic');?>
         </div>
     </h2>
-
-
 
     <section>
         <p><?php echo _('Upload an image from your local computer');?></p>
@@ -57,6 +55,18 @@
             <input type="text" style="width:100%;" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search in image database');?>">
             <button onClick="imagedb.search( document.getElementById('imagedb_q').value )"><img src="assets/icons/search.svg"></button>   
         </div>
+    </section>
+
+
+    <section id="add_new_from" class="set-target" data-target="addpic">
+        <h3><?php  echo _('Add from');?></h3>
+        <p>
+            <?php echo _('Choose a form and colorize later.'); ?>
+        </p>
+        <button onClick="component.add('eyecatcher'); eyecatcher.setForm('sticker_circle')">Kreis hinzufügen</button>
+        <button onClick="component.add('eyecatcher'); eyecatcher.setForm('sticker_square')">4eck hinzufügen</button>
+
+
     </section>
 
     <?php if ( $this->env->user->may_openai() ) { ?>
