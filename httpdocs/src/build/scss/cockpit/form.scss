@@ -31,6 +31,7 @@ button{
         background-color: unset;
         color: $default-font-color;
         border: 1px solid $light-gray;
+        justify-content: flex-start;
 
         .icon{
             width: 42px;
@@ -89,9 +90,9 @@ select{
     }
 
     input, textarea{
-        background-color: $verydark;
-        color: white;
-        border-radius: 5px;
+        background-color: $light-gray;
+        color: $default-font-color;
+        border-radius: 8px;
 
         &::placeholder{
             color: $light;

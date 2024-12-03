@@ -149,7 +149,7 @@ class Cockpit {
     const elements = document.querySelectorAll('[id^="tab_btn_"]')
     elements.forEach((element) => {
       const id = element.id.replace('tab_btn_', '')
-      element.style.display = (config.cockpit.elements.includes(id)) ? 'block' : 'none'
+      element.style.display = (config.cockpit.elements.includes(id)) ? 'flex' : 'none'
     })
   }
 }

@@ -1,13 +1,13 @@
 #tabs{
     flex-grow: 1;
-    width: 400px;
+    width: 348px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc( 100% - 80px);
+    height: calc( 100% - 0px);
 
     &buttons{
         border-left: 1px solid $light;
-        width: 80px;
+        width: 96px;
         display: flex;
         flex-direction: column;
         padding: 0 $section-gap;
@@ -20,7 +20,7 @@
             padding: 0;
             border-bottom: 1px solid $light;
             width: 100%;
-            height: 60px;
+            height: 96px;
             position: relative;
             border-radius: 0;
 
@@ -33,9 +33,9 @@
             .description{
                 color: white;
                 position: absolute;
-                top: 6px;
+                top: 15px;
                 left: 0;
-                height: 47px;
+                height: 65px;
                 margin-left: -135px;
                 display: none;
                 width: 139px;
@@ -48,23 +48,31 @@
 
             > div{
                 margin: 0;
-                padding: 10px;
+                padding: 0;
                 border-radius: $button-border-radius;
+                height: 64px;
+                width: 64px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img{
+                    height: 24px;
+                }
+            }
+
+            &:hover,
+            &.active{
+                div{
+                    background-color: $light-gray;
+                    color: $default-font-color;
+                }
             }
 
             &:hover{
-                div{
-                    background-color: $verydark-transparent;
-                }
-
                 .description{
                     display: flex;
                 }
-            }
-
-            &.active{
-                background-color: $button-active-bg;
-                margin-left: -1px;
             }
         }
     }

@@ -16,16 +16,30 @@
 
     <section class="selected_only">
         <h3><?php echo _("Image"); ?></h3>
-        <div class="horizontal">
-            <button id="addpic_pic_round" onclick="addpicture.picRound()" class="no-button" title="<?php  echo _('round');?>"><img src="assets/icons/circle.svg"></button>
-            <button id="addpic_pic_angular" onclick="addpicture.picAngular()" class="no-button" title="<?php  echo _('angular');?>"><img src="assets/icons/square.svg"></button>      
-            <button id="addpic_pic_original" onclick="addpicture.picOriginal()" class="no-button" title="<?php  echo _('original');?>"><img src="assets/icons/rectangle.svg"></button>      
+        <div class="">
+            <button id="addpic_pic_round" onclick="addpicture.picRound()" class="with-icon" title="<?php  echo _('round');?>">
+                <div class="icon">
+                    <img src="assets/icons/circle.svg">
+                </div><?php  echo _('image as round');?>
+            </button>
+            <button id="addpic_pic_angular" onclick="addpicture.picAngular()" class="with-icon" title="<?php  echo _('angular');?>">
+                <div class="icon">
+                    <img src="assets/icons/square.svg">
+                </div>
+                <?php  echo _('image as angular');?>
+            </button>      
+            <button id="addpic_pic_original" onclick="addpicture.picOriginal()" class="with-icon" title="<?php  echo _('original');?>">
+                <div class="icon">
+                    <img src="assets/icons/rectangle.svg">
+                </div>
+                <?php  echo _('Image original');?>
+            </button>      
         </div>
         </section>
 
     <section class="selected_only no-mint">
         <h3><?php echo _("Text"); ?></h3>
-        <div class="horizontal">
+        <div class="">
             <button id="addpic_text_right" onclick="addpicture.textRight()" class="no-button" title="<?php  echo _('text floats right');?>"><img src="assets/icons/text-right.svg"></button>
             <button id="addpic_text_below" onclick="addpicture.textBelow()" class="no-button"  title="<?php  echo _('text below');?>"><img src="assets/icons/text-below.svg"></button>
             

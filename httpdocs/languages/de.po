@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-29 07:44+0100\n"
-"PO-Revision-Date: 2024-11-29 07:45+0100\n"
+"POT-Creation-Date: 2024-12-03 17:48+0100\n"
+"PO-Revision-Date: 2024-12-03 17:48+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -299,7 +299,7 @@ msgstr "bitte wählen"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
-#: httpdocs/src/Views/Cockpit/Addpicture.php:27
+#: httpdocs/src/Views/Cockpit/Addpicture.php:41
 #: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
 #: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
 msgid "Text"
@@ -381,18 +381,18 @@ msgstr "Form hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:64
 msgid "Choose a form and colorize later."
-msgstr "Wähle eine Form und färbe sie anschließend ein"
+msgstr "Wähle eine Form und färbe sie anschließend ein."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:74
+#: httpdocs/src/Views/Cockpit/Searchimage.php:120
 msgid "Create image with AI"
 msgstr "Bild mit KI erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:77
+#: httpdocs/src/Views/Cockpit/Searchimage.php:123
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 "Nutzen Sie künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:78
+#: httpdocs/src/Views/Cockpit/Searchimage.php:124
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
@@ -400,40 +400,40 @@ msgstr ""
 "Bitte beachte, dass generierte Bilder Stereotypen reproduzieren oder "
 "unangemessen sein können."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:79
+#: httpdocs/src/Views/Cockpit/Searchimage.php:125
 msgid "Adjust your prompt accordingly."
 msgstr "Passe Deinen Prompt ggf. entsprechend an."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:82
+#: httpdocs/src/Views/Cockpit/Searchimage.php:128
 msgid "Describe the image you want"
 msgstr "Beschreibe das Bild, das Du möchtest"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:86
+#: httpdocs/src/Views/Cockpit/Searchimage.php:132
 #: httpdocs/src/Views/Menu/Greens.php:29 httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr "Erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:95
+#: httpdocs/src/Views/Cockpit/Searchimage.php:141
 msgid "Please wait while AI generates your image."
 msgstr "Bitte warte, während die KI Dein Bild generiert."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:96
+#: httpdocs/src/Views/Cockpit/Searchimage.php:142
 msgid "This can take up to one minute."
 msgstr "Dies kann bis zu einer Minute dauern."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:100
+#: httpdocs/src/Views/Cockpit/Searchimage.php:146
 msgid "seconds"
 msgstr "Sekunden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:104
+#: httpdocs/src/Views/Cockpit/Searchimage.php:150
 msgid "Result"
 msgstr "Ergebnis"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:107
+#: httpdocs/src/Views/Cockpit/Searchimage.php:153
 msgid "Use this image"
 msgstr "Dieses Bild verwenden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:110
+#: httpdocs/src/Views/Cockpit/Searchimage.php:156
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
@@ -461,19 +461,31 @@ msgstr "Bild"
 msgid "round"
 msgstr "rund"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:21
+#: httpdocs/src/Views/Cockpit/Addpicture.php:23
+msgid "image as round"
+msgstr "Bild als Kreis"
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:25
 msgid "angular"
 msgstr "rechteckig"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:22
+#: httpdocs/src/Views/Cockpit/Addpicture.php:29
+msgid "image as angular"
+msgstr "Bild als Quadrat"
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:31
 msgid "original"
 msgstr "original"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:29
+#: httpdocs/src/Views/Cockpit/Addpicture.php:35
+msgid "Image original"
+msgstr "Bild im Originalformat"
+
+#: httpdocs/src/Views/Cockpit/Addpicture.php:43
 msgid "text floats right"
 msgstr "Text rechts"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:30
+#: httpdocs/src/Views/Cockpit/Addpicture.php:44
 msgid "text below"
 msgstr "Text darunter"
 
@@ -544,11 +556,11 @@ msgstr "Nutzungs-Log"
 msgid "Colors"
 msgstr "Farben"
 
-#: httpdocs/src/Views/Components/Color.php:24
+#: httpdocs/src/Views/Components/Color.php:26
 msgid "My colors"
 msgstr "Meine Farben"
 
-#: httpdocs/src/Views/Components/Color.php:50
+#: httpdocs/src/Views/Components/Color.php:52
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
@@ -598,18 +610,19 @@ msgid "Order"
 msgstr "Anordnung"
 
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:5
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:6
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:7
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:9
 msgid "to front"
 msgstr "nach vorn"
 
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:8
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:9
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:11
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:13
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:15
 msgid "to back"
 msgstr "nach hinten"
 
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:16
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:17
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:18
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:22
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:23
 #: httpdocs/src/Views/Menu/Greens.php:127 httpdocs/src/Views/Menu/Open.php:63
 #: httpdocs/src/Views/Menu/Mint.php:34
 msgid "delete"
