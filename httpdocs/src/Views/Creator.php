@@ -72,7 +72,7 @@
 			<div id="tabsbuttons">
 				<button id="tab_btn_canvas" onClick="ui.showTab('canvas')">
 					<div>
-						<img src="assets/icons/resize.svg" title="<?php echo _('Canvas'); ?>">
+						<img src="assets/icons/canvas.svg" title="<?php echo _('Canvas'); ?>">
 						<div class="description">
 							<?php echo _('Canvas'); ?>
 						</div>
@@ -88,7 +88,7 @@
 				</button>
 				<button id="tab_btn_background" onClick="ui.showImageTab();" class="active">
 					<div>
-						<img src="assets/icons/wallpaper.svg" title="<?php echo _('Background image'); ?>">
+						<img src="assets/icons/picture.svg" title="<?php echo _('Background image'); ?>">
 						<div class="description">
 							<?php echo _('Background image'); ?>
 						</div>
@@ -128,7 +128,7 @@
 				</button>
 				<button id="tab_btn_addpicture"  onClick="ui.showSearchImageTab('addpic');">
 					<div>
-						<img src="assets/icons/add_image.svg" title="<?php echo _('Front picture'); ?>">
+						<img src="assets/icons/grafics.svg" title="<?php echo _('Front picture'); ?>">
 						<div class="description">
 							<?php echo _('Graphics and foreground pictures'); ?>
 						</div>

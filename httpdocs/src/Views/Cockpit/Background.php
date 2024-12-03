@@ -67,7 +67,7 @@
     </div>
 
     <section>
-        <button class="outline" onClick="background.delete()">
+        <button class="delete" onClick="background.delete()">
             <?php echo _("Delete background image"); ?>
         </button>   
     </section>

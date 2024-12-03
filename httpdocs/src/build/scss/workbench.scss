@@ -8,7 +8,8 @@
     border: 1px solid $light;
     border-top: 0;
     flex-direction: column;
-
+    background-color: $workbench-color;
+    
     &-below{
         margin-top: 20px;
         display: flex;

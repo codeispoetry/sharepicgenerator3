@@ -4,7 +4,9 @@
     <div class="standard-palette">
         <?php
         $standard_colors = array(
-            "#ffffff", "#000000", "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"
+            "#000000","#ffffff","#E6E8EC","#FC5555","#FFBDF2","#FF9900",
+            "#FFDA46","#5A4101","#9D7265","#7DC605","#66CBAF","#5F94F9",
+            "#7B61FF"
         );
 
         foreach($standard_colors as $standard_color){

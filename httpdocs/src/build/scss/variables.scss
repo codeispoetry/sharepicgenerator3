@@ -8,7 +8,7 @@ $dark: #333;
 $verydark: rgb(34, 31, 31);
 $verydark-transparent: rgba(34, 31, 31, 0.8);
 
-$light: #ababab;
+
 $white: #ffffff;
 
 $red: #ad3636;
@@ -16,6 +16,14 @@ $red: #ad3636;
 $theme-color: #2D6BE1;
 $theme-color-dark: #043143;
 
-$button-border-radius: 10px;
+$button-border-radius: 8px;
 $section-gap: 20px;
 
+$light-gray: #E6E8EC;
+$light: $light-gray;
+$workbench-color: $light-gray;
+$default-bg: #FCFCFD;
+$default-font-color: #3C4658;
+$button-active-bg: $light-gray;
+
+$delete-button-bg: #F35F5F;
