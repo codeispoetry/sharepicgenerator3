@@ -1,7 +1,7 @@
 <section class="mainsection" id="cockpit_dimensions">
     <h2>
         <a href="#" onClick="ui.showTab('canvas');" style="text-decoration: none;">
-            <
+            <img src="assets/icons/back-arrow.svg">
         </a>
         <?php  echo _('Change size');?></h2>
     <section>
@@ -32,8 +32,8 @@
 
         
         function setPreset( $entry ) {
-            $pattern = '<button class="size-preset" onClick="sg.setPreset(\'%1$s\', \'%2$s\', %3$s,%4$s)">
-                <div class="left format">%1$s</div>
+            $pattern = '<button class="size-preset with-icon" onClick="sg.setPreset(\'%1$s\', \'%2$s\', %3$s,%4$s)">
+                <div class="icon left format">%1$s</div>
                 <div class="right">
                     <div class="title">%2$s</div>
                     <div class="description">%3$s x %4$s px</div>

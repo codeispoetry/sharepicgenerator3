@@ -8,7 +8,7 @@
         <input type="range" min="10" max="300" value="100" class="slider" id="background_size" oninput="background.zoom(this.value)">  
     
         <div>
-            <button class="no-button" onClick="background.reset()">
+            <button class="outline" onClick="background.reset()">
                 <?php echo _("fit automatically"); ?>
             </button>   
 

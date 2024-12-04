@@ -13,6 +13,7 @@
         }
         >section{
             padding: $section-gap 0;
+            position: relative;
             
             &:not(:first-of-type) {
                 border-top: 1px solid $light;
@@ -82,16 +83,21 @@
 
     .folder-button{
         cursor: pointer;
+        position: relative;
 
         &::after{
-            content: '>';
-            margin-left: 0.3em;
-            display: inline-block;
+            content: url(icons/chevron-up.svg);
+            right: 0;
+            position: absolute;
+            transform-origin: center center;
+            transition-duration: 0.2s;
+            transform: rotate(180deg);
+            height: 30px;
         }
 
         &.active{
             &::after{
-                content: 'v';
+                transform: rotate(0deg);
             }
         }
     }

@@ -27,12 +27,16 @@
                 width: $size;
                 height: $size;
                 margin: 2px;
-                border: none;
+                border: 1px solid transparent;
                 border-radius: 50%;
                 cursor: pointer;
 
                 &[data-blueprint="true"]{
                     display:none;
+                }
+
+                &[style="background-color: #ffffff"]{
+                    border: 1px solid $light-gray;
                 }
             }
         }

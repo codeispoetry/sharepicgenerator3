@@ -30,20 +30,31 @@
                 margin-top: auto;
             }
 
-            .description{
+            div.description{
                 color: white;
+                background-color: $tab-description-bg;
                 position: absolute;
-                top: 15px;
-                left: 0;
-                height: 65px;
+                top: 30px;
+                right: 95px;
+                height: auto;
                 margin-left: -135px;
                 display: none;
-                width: 139px;
+                width: auto;
                 align-content: center;
                 align-items: center;
-                padding-left: 10px;
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
+                padding: 10px 10px 10px 10px;
+                border-radius: $button-border-radius;
+                white-space: nowrap;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    right: -20px;
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-left: 10px solid $tab-description-bg;
+                }
             }
 
             > div{
@@ -63,7 +74,7 @@
 
             &:hover,
             &.active{
-                div{
+                div:not(.description){
                     background-color: $light-gray;
                     color: $default-font-color;
                 }

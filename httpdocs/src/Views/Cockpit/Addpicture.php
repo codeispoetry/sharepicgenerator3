@@ -1,7 +1,7 @@
 <section class="mainsection" id="cockpit_addpicture">
     <h2>
         <a href="#" onClick="ui.showSearchImageTab('addpic');" style="text-decoration: none;">
-            <
+            <img src="assets/icons/back-arrow.svg">
         </a>
     <?php  echo _('Edit foreground image');?>
 </h2>

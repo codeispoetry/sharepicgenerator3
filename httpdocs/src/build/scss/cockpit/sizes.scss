@@ -9,13 +9,14 @@
     margin-bottom: 0.4em !important;
     color: $default-font-color;
 
-    .left{
-        flex: 1 1 100%;
-        max-width: 25%;
-        height: 100%;
-        display: flex;
+    &:hover{
+        background-color: $light-gray;
+        color: $default-font-color;
+    }
+
+    .left{   
         align-items: center;
-        justify-content: center;
+        margin-left: 10px;
     }
 
     .right {
