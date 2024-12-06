@@ -28,6 +28,15 @@
         }
     }
 
+    .info{
+        display: flex;
+        align-items: flex-start;
+
+        img{
+            margin-right: 10px;
+        }
+    }
+
     .horizontal{
         display: flex;
         align-items: center;

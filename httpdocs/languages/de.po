@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 17:48+0100\n"
-"PO-Revision-Date: 2024-12-03 17:48+0100\n"
+"POT-Creation-Date: 2024-12-06 09:29+0100\n"
+"PO-Revision-Date: 2024-12-06 09:29+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -98,7 +98,7 @@ msgstr "Element hinzufügen"
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:41
+#: httpdocs/src/Views/Cockpit/Background.php:45
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -267,19 +267,28 @@ msgstr "Urheberrechts&shy;hinweis"
 msgid "Add copyright"
 msgstr "Urheberrechts&shy;hinweis hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:57
+#: httpdocs/src/Views/Cockpit/Background.php:41
+msgid "The copyright is placed automatically from the database."
+msgstr ""
+"Der Urheberrechtshinweis wird automatisch mit dem Bild aus der Bilddatenbank "
+"eingefügt. Bei einem von Dir hochgeladenem Bild er-scheint ein Platzhalter-"
+"Text, den Du ändern kannst."
+
+#: httpdocs/src/Views/Cockpit/Background.php:50
 msgid "Position"
 msgstr "Position"
 
-#: httpdocs/src/Views/Cockpit/Background.php:60
-msgid "bottom left"
-msgstr "links unten"
+#: httpdocs/src/Views/Cockpit/Background.php:52
+#: httpdocs/src/Views/Cockpit/Background.php:55
+msgid "side left"
+msgstr "seitlich links"
 
-#: httpdocs/src/Views/Cockpit/Background.php:63
+#: httpdocs/src/Views/Cockpit/Background.php:57
+#: httpdocs/src/Views/Cockpit/Background.php:60
 msgid "bottom right"
 msgstr "rechts unten"
 
-#: httpdocs/src/Views/Cockpit/Background.php:71
+#: httpdocs/src/Views/Cockpit/Background.php:79
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
@@ -556,11 +565,11 @@ msgstr "Nutzungs-Log"
 msgid "Colors"
 msgstr "Farben"
 
-#: httpdocs/src/Views/Components/Color.php:26
+#: httpdocs/src/Views/Components/Color.php:25
 msgid "My colors"
 msgstr "Meine Farben"
 
-#: httpdocs/src/Views/Components/Color.php:52
+#: httpdocs/src/Views/Components/Color.php:51
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
@@ -879,6 +888,9 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "bottom left"
+#~ msgstr "links unten"
 
 #~ msgid "Add sticker"
 #~ msgstr "Sticker hinzufügen"

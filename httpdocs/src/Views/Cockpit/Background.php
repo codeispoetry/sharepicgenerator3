@@ -36,13 +36,34 @@
         <section id="add_copyright_section">
             <button onClick="component.add('copyright')" id="add_copyright"><?php  echo _('Add copyright');?></button>
         </section>
+
+        <p class="info">
+            <img src="/assets/icons/info.svg" alt="info">
+            <?php  echo _('The copyright is placed automatically from the database.');?>
+        </p>
         
-        <section class="with_copyright d-none">
+        <section class="">
             <h3><?php  echo _('Size');?></h3>
             <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size" oninput="copyright.setSize(this)">
         </section>
 
-        <section class="with_copyright d-none">
+        <section class="">
+            <h3><?php  echo _('Position');?></h3>
+            <div>
+                <button onclick="copyright.setPostion(1);" class="with-icon" title="<?php  echo _('side left');?>">
+                    <div class="icon">
+                        <img src="assets/icons/side_left.svg">
+                    </div><?php  echo _('side left');?>
+                </button>
+                <button onclick="copyright.setPostion(2);" class="with-icon" title="<?php  echo _('bottom right');?>">
+                    <div class="icon">
+                        <img src="assets/icons/bottom_right.svg">
+                    </div><?php  echo _('bottom right');?>
+                </button>
+            </div>
+        </section>
+
+        <section class="">
             <?php
                 $color = new stdClass();
                 $color->value = "#ffffff";
@@ -51,18 +72,6 @@
                 $color->onclick = "copyright.setFontColor";
                 require ("./src/Views/Components/Color.php"); 
             ?>
-        </section>
-
-        <section class="with_copyright d-none">
-            <h3><?php  echo _('Position');?></h3>
-            <div style="display: flex; justify-content:space-between;">
-                <button class="no-button" onclick="copyright.setPostion(1);">
-                    <?php  echo _('bottom left');?>
-                </button>
-                <button class="no-button" onclick="copyright.setPostion(2);">
-                    <?php  echo _('bottom right');?>
-                </button>
-            </div>
         </section>
     </div>
 

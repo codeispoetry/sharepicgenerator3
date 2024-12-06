@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 17:48+0100\n"
+"POT-Creation-Date: 2024-12-06 09:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,7 +89,7 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:41
+#: httpdocs/src/Views/Cockpit/Background.php:45
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -258,19 +258,25 @@ msgstr ""
 msgid "Add copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:57
+#: httpdocs/src/Views/Cockpit/Background.php:41
+msgid "The copyright is placed automatically from the database."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:50
 msgid "Position"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:60
-msgid "bottom left"
+#: httpdocs/src/Views/Cockpit/Background.php:52
+#: httpdocs/src/Views/Cockpit/Background.php:55
+msgid "side left"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:63
+#: httpdocs/src/Views/Cockpit/Background.php:57
+#: httpdocs/src/Views/Cockpit/Background.php:60
 msgid "bottom right"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:71
+#: httpdocs/src/Views/Cockpit/Background.php:79
 msgid "Delete background image"
 msgstr ""
 
@@ -542,11 +548,11 @@ msgstr ""
 msgid "Colors"
 msgstr ""
 
-#: httpdocs/src/Views/Components/Color.php:26
+#: httpdocs/src/Views/Components/Color.php:25
 msgid "My colors"
 msgstr ""
 
-#: httpdocs/src/Views/Components/Color.php:52
+#: httpdocs/src/Views/Components/Color.php:51
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
