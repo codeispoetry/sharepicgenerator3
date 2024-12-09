@@ -20,17 +20,17 @@
     },
     {
       "format": "1.91:1",
-      "title": "Landscape, quer",
+      "title": "Landscape",
       "width": 1080,
       "height": 566
     }
   ],
   "MINTvernetzt": [
     {
-      "format": "1:1",
+      "format": "3:1",
       "title": "Profil Header",
-      "width": 1080,
-      "height": 1080
+      "width": 2976,
+      "height": 960
     },
     {
       "format": "3:2",
@@ -48,7 +48,7 @@
     },
     {
       "format": "4:3",
-      "title": "Landscape quer",
+      "title": "Landscape",
       "width": 1200,
       "height": 627
     }
