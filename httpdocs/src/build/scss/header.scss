@@ -65,11 +65,10 @@ nav {
 
     .did-1 {
         flex-grow: 1;
-
+        width: 180px;
     }
 
     .did-2 {
-        background-color: $red;
         width: 75px;
         display: flex;
         justify-content: center;
@@ -129,10 +128,11 @@ nav {
             border-radius: 0;
             height: 50px;
             justify-content: flex-start;
+            border-bottom: 1px solid $light-gray;
+            margin: 0;
 
             &:hover {
-                background-color: $theme-color;
-                color: #ffffff;
+                background-color: $light-gray;
             }
         }
     }
@@ -143,13 +143,17 @@ nav {
 }
 
 .submenu {
-    color: blue;
     display: flex;
     width: 100%;
 
+    button{
+        margin: 0;
+    }
+
     &>button {
         &::after {
-            content: '>';
+            content: url(icons/chevron-up.svg);
+            transform: rotate(90deg);
             position: absolute;
             color: black;
             right: 1em;
@@ -162,7 +166,7 @@ nav {
 
         button {
             &::after {
-                transform: rotate(45deg);
+                transform: rotate(135deg);
                 color: $theme-color;
             }
 

@@ -24,17 +24,23 @@
             <button onClick="api.save()">
                 <?php  echo _('Save as');?>
             </button>
-            <div class="divider"></div>
-            <?php
-                // Saved
-                $savings = $this->env->user->get_savings();
-                foreach( $savings as $dir => $name ){
-                        echo '<div class="dropdown-item-double">';
-                            printf( '<button class="did-1" onClick="api.load(\'save/%s/sharepic.html\')">%s</button>', $dir, $name );
-                            printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\')" title="%s"><img src="assets/icons/delete.svg"></button>', $dir, _( 'delete' ) );
-                        echo '</div>';
-                }
-            ?>
+
+            <div class="submenu">
+                <button>
+                    <?php  echo _('Open my temmplates');?>
+                </button>
+                <div class="submenu-content">
+                    <?php
+                        $savings = $this->env->user->get_savings();
+                        foreach( $savings as $dir => $name ){
+                                echo '<div class="dropdown-item-double">';
+                                    printf( '<button class="did-1" onClick="api.load(\'save/%s/sharepic.html\')">%s</button>', $dir, $name );
+                                    printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\')" title="%s"><img src="assets/icons/delete.svg"></button>', $dir, _( 'delete' ) );
+                                echo '</div>';
+                        }
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
     <?php } ?>
