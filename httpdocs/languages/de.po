@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-10 21:24+0100\n"
-"PO-Revision-Date: 2024-12-10 21:25+0100\n"
+"POT-Creation-Date: 2024-12-10 22:02+0100\n"
+"PO-Revision-Date: 2024-12-10 22:03+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -642,7 +642,7 @@ msgstr "nach hinten"
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:22
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:23
 #: httpdocs/src/Views/Menu/Greens.php:127 httpdocs/src/Views/Menu/Open.php:63
-#: httpdocs/src/Views/Menu/Mint.php:34
+#: httpdocs/src/Views/Menu/Mint.php:38
 msgid "delete"
 msgstr "löschen"
 
@@ -730,6 +730,10 @@ msgstr "Neu"
 #: httpdocs/src/Views/Menu/Mint.php:25
 msgid "Save as"
 msgstr "Zwischenspeichern"
+
+#: httpdocs/src/Views/Menu/Mint.php:30
+msgid "Open my temmplates"
+msgstr "Meine Vorlagen öffnen"
 
 #: httpdocs/src/Views/Homemint.php:18
 msgid "Create sharepics for your social media channels."
