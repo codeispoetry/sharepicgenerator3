@@ -14,7 +14,7 @@
         
     
         <?php
-            $presets = json_decode( file_get_contents("templates/mint/dimensions.json" ) );
+            $presets = json_decode( file_get_contents('templates/' . $this->env->config->get( 'Main', 'tenant' ) . '/dimensions.json' ) );
 
             foreach( $presets as $title => $entries ) {
                 setTitle($title);

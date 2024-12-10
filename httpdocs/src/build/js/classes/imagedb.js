@@ -210,26 +210,31 @@ class ImageDB {
         })
         logger.log('clicks on image after search for ' + q)
 
-        document.getElementById('background').style.backgroundImage = img.style.backgroundImage
-        document.getElementById('background').style.filter = 'grayscale(100%)'
-
+        if (config.imageTarget === 'background') {
+          document.getElementById('background').style.backgroundImage = img.style.backgroundImage
+          document.getElementById('background').style.filter = 'grayscale(100%)'
+        }
+        
         // get real image url
         fetch('unsplash.php?u=' + img.dataset.url)
           .then(response => response.json())
           .then(data => {
-            api.loadByUrl(data.url)
+            if (config.imageTarget === 'addpic') {
+              api.loadAddPicByUrl(data.url)
+            } else {
+              api.loadByUrl(data.url)
+              // is copyright already shown?
+              const copyright = document.querySelector('#sharepic [id^=copyright_]')
+              if (!copyright) {
+                component.add('copyright')
+              }
+              document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf Unsplash.com`
+
+              background.setCredits(`Image by <a href="${img.dataset.pageurl}?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">${img.dataset.user}</a> auf Unsplash.com`)
+            }
           })
           .catch(error => console.error('Error:', error)
           )
-
-        // is copyright already shown?
-        const copyright = document.querySelector('#sharepic [id^=copyright_]')
-        if (!copyright) {
-          component.add('copyright')
-        }
-        document.querySelector('#sharepic [id^=copyright_]').innerHTML = `Bild von ${img.dataset.user} auf Unsplash.com`
-
-        background.setCredits(`Image by <a href="${img.dataset.pageurl}?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">${img.dataset.user}</a> auf Unsplash.com`)
       }
       results.appendChild(img)
     })

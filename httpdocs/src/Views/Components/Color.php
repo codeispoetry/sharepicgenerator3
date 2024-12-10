@@ -8,6 +8,12 @@
             "#5A4101","#9D7265","#7DC605","#66CBAF","#5F94F9","#7B61FF"
         );
 
+        if($this->env->config->get( 'Main', 'tenant' ) === 'greens' ) {
+            $standard_colors = array(
+                "#000000","#ffffff","#005437","#008939","#8abd24","#f5f1e9","#0ba1dd",
+            );
+        }
+
         foreach($standard_colors as $standard_color){
             printf('<button 
                         class="no-button" 
@@ -22,8 +28,8 @@
        
     </div>
 
-    <h3 style="margin-top:30px;"><?php echo _('My colors');?></h3>
-    <div style="display:flex;justify-content:space-between;width:100%">
+    <h3 style="margin-top:30px;" class="no-greens"><?php echo _('My colors');?></h3>
+    <div style="display:flex;justify-content:space-between;width:100%" class="no-greens">
         <div class="palette">
             <button 
                 class="no-button" 
@@ -46,7 +52,7 @@
         </div>
     </div>
 
-    <div onclick="ui.showTab('settings')">
+    <div onclick="ui.showTab('settings')" class="no-greens">
         <?php
             printf(_("Colors can be edited in settings %s."), '<img src="assets/icons/settings.svg">');
         ?>

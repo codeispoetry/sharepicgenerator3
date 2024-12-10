@@ -78,27 +78,11 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_search" class="no-mint" onClick="ui.showSearchImageTab('addpic');">
-					<div>
-						<img src="assets/icons/search_image.svg" title="<?php echo _('Search or create image'); ?>">
-						<div class="description">
-							<?php echo _('Background image'); ?>
-						</div>
-					</div>
-				</button>
 				<button id="tab_btn_background" onClick="ui.showImageTab();" class="active">
 					<div>
 						<img src="assets/icons/picture.svg" title="<?php echo _('Background image'); ?>">
 						<div class="description">
 							<?php echo _('Background image'); ?>
-						</div>
-					</div>
-				</button>
-				<button id="tab_btn_copyright" class="no-mint" onClick="ui.showTab('copyright')">
-					<div>
-						<img src="assets/icons/attribution.svg" title="<?php echo _('Copyright'); ?>">
-						<div class="description">
-							<?php echo _('Copyright'); ?>
 						</div>
 					</div>
 				</button>
@@ -166,7 +150,7 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_settings" onClick="ui.showTab('settings')">
+				<button id="tab_btn_settings" onClick="ui.showTab('settings')" class="no-greens">
 					<div>
 						<img src="assets/icons/settings.svg" title="<?php echo _('Settings'); ?>">
 						<div class="description">

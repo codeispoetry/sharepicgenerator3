@@ -1,0 +1,56 @@
+{
+  "Instagram": [
+    {
+      "format": "1:1",
+      "title": "Post quadratisch",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "format": "4:5",
+      "title": "Post Hochformat",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "format": "9:16",
+      "title": "Story",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "format": "1.91:1",
+      "title": "Landscape",
+      "width": 1080,
+      "height": 566
+    }
+  ],
+  "LinkedIn": [
+    {
+      "format": "1:1",
+      "title": "Post quadratisch",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "format": "4:3",
+      "title": "Landscape",
+      "width": 1200,
+      "height": 627
+    }
+  ],
+  "Facebook": [
+    {
+      "format": "1:1",
+      "title": "Post quadratisch",
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "format": "4:5",
+      "title": "Feedpost",
+      "width": 1080,
+      "height": 566
+    }
+  ]
+}

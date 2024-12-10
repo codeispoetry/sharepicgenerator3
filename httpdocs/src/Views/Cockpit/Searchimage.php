@@ -31,27 +31,22 @@
 
     <section id="search_imagedb">
         <h3><?php  echo _('Image from database');?></h3>
-        <p class="no-mint">
-            <?php echo _('Search in  image database');?>
-            <?php if ( $this->env->config->get( 'Main', 'imagedb') === 'unsplash' ) { ?>
-                <a href="https://unsplash.com?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">
-                    <?php echo _('Unsplash'); ?>
-                </a>
-            <?php } else { ?>
-                <a href="https://pixabay.com" target="_blank">
-                    <?php echo _('Pixabay'); ?>
-                </a>
-            <?php } ?>
-        </p>
         
         <div class="imagesearch">
-            <?php echo _('Choose an image database');?>
-            <select name="image_db_source" id="image_db_source">
-                <option value="mint">
-                    MINT-Mediendatenbank
-                </option>
-                <option value="pixabay">Pixabay</option>
-            </select>
+            
+                
+                <?php if( $this->env->config->get( 'Main', 'tenant' ) === 'mint' ) { ?>
+                    <?php echo _('Choose an image database');?>
+                        <select name="image_db_source" id="image_db_source">
+                            <option value="mint">
+                                MINT-Mediendatenbank
+                            </option>
+                            <option value="pixabay">Pixabay</option>
+                        </select>
+                <?php } else { ?>
+                    <input type="hidden" name="image_db_source" id="image_db_source" value="unsplash">
+                <?php } ?>
+           
             
         <div class="button-group" style="display:flex">
             <input type="text" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search ...');?>">
