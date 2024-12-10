@@ -28,13 +28,14 @@
     </div>
 
     <div 
-        class="draggable selectable freetext" 
-        data-cockpit="freetext"
+        class="draggable selectable greentext" 
+        data-cockpit="greentext"
         onclick="component.select(this)"
         ondblclick="rte.init()"
         onmousedown="component.startDrag(event)"
         oninput="cockpit.setup_freetext(this)"
-        id="freetext"
+        id="greentext"
+        contenteditable="true"
         spellcheck="false"
         style="
             left: 120px;
@@ -42,14 +43,31 @@
             z-index: 2;
             color: black;
             rotate: 0deg;
+            font-size: 80px;
         "
     >
-        <div class="tinymce">
-            <p>
-                <span style="font-family: Lato;">Grüne</span>
-            </p>    
-        </div>
+        <p>Hallo</p>
+        <p>Welt</p>
     </div>
+
+    <div class="draggable selectable" id="logo" 
+        onmousedown="component.startDrag(event)"
+        ontouchstart="component.startDrag(event)"
+        data-cockpit="logo" data-clipping="true"
+        contenteditable="false"
+        style="
+            width: 400px;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            background-image: url('templates/de/logos/gelb.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: -148px;
+            top: 359px;
+            position: absolute;
+            z-index: 3;
+        "
+    ></div>
 
 
     <div id="patterns">
@@ -136,7 +154,7 @@
     <script>
         undo.commit()
         config.cockpit = {
-            elements: ['canvas','search','background','freetext','copyright','addpicture','settings']
+            elements: ['canvas','search','background','greentext','addpicture','settings']
         }
        
         sg.setPreset('1:1', 'Post quadratisch', 1080,1080)
@@ -145,7 +163,10 @@
 
 <link rel="stylesheet" href="src/Views/rte/rte.css">
 <style>
-    .freetext p{
+    .greentext{
+        font-family: 'Gotham XNarrow';
+    }
+    .greentext p{
         margin: 0;
     }
 

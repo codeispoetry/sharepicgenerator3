@@ -86,14 +86,6 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_greentext" onClick="ui.showTab('greentext')">
-					<div>
-						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
-						<div class="description">
-							<?php echo _('Text'); ?>
-						</div>
-					</div>
-				</button>
 				<button id="tab_btn_greenaddtext" onClick="ui.showTab('greenaddtext')">
 					<div>
 						<img src="assets/icons/text-add.svg" title="<?php echo _('Additional text'); ?>">
@@ -119,6 +111,14 @@
 					</div>
 				</button>
 				<button id="tab_btn_freetext" onClick="ui.showTab('freetext')">
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+						<div class="description">
+							<?php echo _('Text'); ?>
+						</div>
+					</div>
+				</button>
+				<button id="tab_btn_greentext" onClick="ui.showTab('greentext')">
 					<div>
 						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 						<div class="description">
