@@ -68,5 +68,20 @@
                 }
             } 
         }
+
+        .add-color{
+            button{
+                &:hover{
+                    &::after{
+                        content: 'x';
+                        font-size: 20px;
+                        color: $delete-button-bg;
+                    } 
+
+                    border: 1px solid $delete-button-bg;
+                    opacity: 0.6;
+                }
+            }
+        }
     }
 }

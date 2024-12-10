@@ -4,28 +4,38 @@
         <?php
             echo _('Please select a color and add it to the palette.');
         ?>
-        <div class="horizontal">
-            <input type="color" id="addColor">
-            <button id="addColor" onClick="settings.addColor(document.getElementById('addColor').value)">
-                <?php echo _('Add color'); ?>
-            </button>
-        </div>
-        <style>
-            #settings_remove_color_picker {
-                display: none;
-            }
-            #settings_remove_color_picker>button {
-                display: none;
-            }
-        </style>
+
+        <h3 style="margin-top:30px;"><?php echo _('Add color');?></h3>
         <?php
-            echo _('By clicking on a color below, you can remove it.');
-            $color = new stdClass(); 
-            $color->value = "#ffffff";
-            $color->id = "settings_remove_color_picker";
-            $color->oninput = "settings.removeColor(this.value)";
-            $color->onclick = "settings.removeColor";
-            require ("./src/Views/Components/Color.php"); 
+            echo _('Select a color and add it to the palette.');
+            echo _('To remove a color, click on the color in the palette.');
         ?>
+
+        <div style="display:flex;flex-direction:row;justify-content:space-between;width:100%" class="color">
+            <div class="palette add-color">
+                <button 
+                    class="no-button" 
+                    data-blueprint="true" 
+                    style="background-color: #ffffff" 
+                    title="<?php echo _('Remove color');?>"
+                    onClick="settings.removeColor(this.style.backgroundColor);">
+                </button>
+            </div>
+            <div style="display:flex;flex-direction:column;justify-content:flex-end">
+                <input type="color" 
+                    value="#FFFFFF" 
+                    class="" 
+                    id="settings_remove_color_picker" 
+                    onchange="settings.addColor(this.value)">
+
+                <button 
+                    class="colorpicker" 
+                    title="<?php echo _('Add color');?>"
+                    onclick="this.previousElementSibling.click();">
+                </button>
+            </div>
+     </div>
+
+        
     </section>
 </section>

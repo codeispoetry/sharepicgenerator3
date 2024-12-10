@@ -28,7 +28,7 @@
             <button 
                 class="no-button" 
                 data-blueprint="true" 
-                style="background-color: #ffffff" 
+                style="background-color: #123456" 
                 onClick="<?php echo $color->onclick; ?>(this.style.backgroundColor);">
             </button>
         </div>
