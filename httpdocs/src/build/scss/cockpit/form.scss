@@ -208,6 +208,19 @@ select{
         select{
             border-top-left-radius: $button-border-radius;
             border-top-right-radius: $button-border-radius;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            background-image: none;
+            background-repeat: no-repeat;
+            height: 54px;
+            background-position-x: 8px;
+            background-position-y: center;
+            background-size: 30px;
+        }
+
+        select.mint{
+            background-image: url(/assets/images/mint.svg);
+            padding-left: 71px;
         }
 
         input{

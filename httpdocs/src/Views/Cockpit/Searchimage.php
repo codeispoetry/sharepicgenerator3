@@ -167,3 +167,16 @@
     
 </section>
 
+<script>
+    const select_element = document.getElementById('image_db_source')
+    
+    select_element.addEventListener('change', function() {
+
+        const options = select_element.options;
+        Array.from(options).forEach(option => {
+            select_element.classList.remove(option.value);
+        });
+        
+        select_element.classList.add(this.value);
+    });
+</script>

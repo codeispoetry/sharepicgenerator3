@@ -88,7 +88,6 @@ class Cockpit {
     document.getElementById('eyecatcher_bgcolor').value = ui.rgbToHex(element.querySelector('#sticker_bg').style.fill)
     document.getElementById('eyecatcher_rotation').value = element.style.transform.replace('rotate(', '').replace('deg)', '')
     document.getElementById('eyecatcher_size').value = element.style.width.replace('px', '')
-
   }
 
   setup_logo (element) {

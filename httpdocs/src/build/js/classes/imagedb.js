@@ -11,28 +11,27 @@ class ImageDB {
     })
 
     const dropbox = document.getElementById('cockpit_search')
-    dropbox.addEventListener('dragenter', this.noopHandler, false);
-    dropbox.addEventListener('dragexit', this.noopHandler, false);
-    dropbox.addEventListener('dragover', this.noopHandler, false);
-    dropbox.addEventListener('drop', this.drop, false);
-
+    dropbox.addEventListener('dragenter', this.noopHandler, false)
+    dropbox.addEventListener('dragexit', this.noopHandler, false)
+    dropbox.addEventListener('dragover', this.noopHandler, false)
+    dropbox.addEventListener('drop', this.drop, false)
   }
 
-  noopHandler(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
+  noopHandler (evt) {
+    evt.stopPropagation()
+    evt.preventDefault()
   }
-  drop(evt) {
-    evt.stopPropagation();
-    evt.preventDefault(); 
+
+  drop (evt) {
+    evt.stopPropagation()
+    evt.preventDefault()
 
     // Load addpic
-    if(config.imageTarget === 'addpic') {
-      component.add('addpicture');
+    if (config.imageTarget === 'addpic') {
+      component.add('addpicture')
       api.uploadAddPic(evt.dataTransfer)
       return
     }
-    
 
     // Load Backgroundimage
     api.upload(evt.dataTransfer)
@@ -126,15 +125,14 @@ class ImageDB {
         }
 
         // get real image url
-        fetch('https://mediendatenbank.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key=' + config.mintmediadatabase.apikey) 
+        fetch('https://mediendatenbank.mint-vernetzt.de/wp-json/media-api/v1/media/' + img.dataset.url + '?api_key=' + config.mintmediadatabase.apikey)
           .then(response => response.json())
           .then(data => {
-
             document.querySelector('.workbench-below .message').innerHTML = ''
 
-            if(data.attachment_meta.file === undefined) {
-              console.log("Error: No file found in mint database")
-              return;
+            if (data.attachment_meta.file === undefined) {
+              console.log('Error: No file found in mint database')
+              return
             }
 
             const lIo = data.attachment_meta.file.lastIndexOf('/')

@@ -47,9 +47,7 @@ class RTE {
     window.setTimeout(() => {
       document.querySelector('div[aria-label="#D114EF"]')?.remove()
       document.querySelector('div[aria-label="#F8E7E7"]')?.remove()
-
     }, 1500)
-
   }
 
   deinit () {
@@ -72,5 +70,4 @@ class RTE {
     document.getElementById(cockpit.target.id).style.height = `${height}px`
     document.getElementById(cockpit.target.id).style.rotate = this.rotate
   }
-
 }
