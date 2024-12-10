@@ -11,17 +11,17 @@
     <section>
         <p><?php echo _('Upload an image from your local computer');?></p>
 
-        <div class="set-target" data-target="background">
+        <div class="set-target image-uploader" data-target="background">
             <button onClick="document.getElementById('upload').click()">
                 <img src="assets/icons/upload.svg">
-                <?php  echo _('upload own image');?>
+                <?php echo _('Drop an image or chooseit to upload from your computer');?>
             </button>
         </div>
 
-        <div class="set-target" data-target="addpic">
+        <div class="set-target image-uploader" data-target="addpic">
             <button onClick="component.add('addpicture'); document.getElementById('addAddPicture').click();">
                 <img src="assets/icons/upload.svg">
-                <?php  echo _('upload image');?>
+                <?php echo _('Drop an image or chooseit to upload from your computer');?>
             </button>
         </div>
 
@@ -44,15 +44,17 @@
             <?php } ?>
         </p>
         
-        <div>
+        <div class="imagesearch">
             <?php echo _('Choose an image database');?>
             <select name="image_db_source" id="image_db_source">
-                <option value="mint">MINT-Mediendatenbank</option>
+                <option value="mint">
+                    MINT-Mediendatenbank
+                </option>
                 <option value="pixabay">Pixabay</option>
             </select>
             
-        <div class="button-group">
-            <input type="text" style="width:100%;" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search in image database');?>">
+        <div class="button-group" style="display:flex">
+            <input type="text" name="imagedb_q" id="imagedb_q" placeholder="<?php  echo _('search ...');?>">
             <button onClick="imagedb.search( document.getElementById('imagedb_q').value )"><img src="assets/icons/search.svg"></button>   
         </div>
     </section>

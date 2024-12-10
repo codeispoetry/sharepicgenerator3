@@ -183,20 +183,54 @@ select{
           
         }
     }
-    
-    .button-group{
-        display: flex;
+
+    .image-uploader{
+ 
+        button{
+            display: flex;
+            flex-direction: column;
+            background-color: $light-blue;
+            color: $default-font-color;
+            border: 1px solid $light-gray;
+            padding: 40px 40px 50px 40px;
+
+            img{
+                margin: 10px;
+            }
+
+            &:hover{
+                background-color: $light-gray;
+            }
+        }
+    }
+
+    .imagesearch{
+        select{
+            border-top-left-radius: $button-border-radius;
+            border-top-right-radius: $button-border-radius;
+        }
 
         input{
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            border: 1px solid $light-gray;
+            border-radius: 0;
+            border-bottom-left-radius: $button-border-radius;
+            padding: 0 0 0 5px;
+            height: 44px;
+            width: 100%;
+            background-color: $bg-gray;
+
+            &::placeholder{
+                color: $placeholder-gray;
+            }
         }
 
         button{
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            width: 5em;
+            border-radius: 0;
+            border-bottom-right-radius: $button-border-radius;
+            width: 56px;
+            height: 46px; 
         }
+    
     }
 
     textarea{

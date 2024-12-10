@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-06 09:29+0100\n"
+"POT-Creation-Date: 2024-12-10 21:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,6 @@ msgid "Images from"
 msgstr ""
 
 #: httpdocs/src/Views/ImageDB.php:11
-#: httpdocs/src/Views/Cockpit/Searchimage.php:55
 msgid "search in image database"
 msgstr ""
 
@@ -89,7 +88,7 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:45
+#: httpdocs/src/Views/Cockpit/Background.php:46
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -124,12 +123,21 @@ msgstr ""
 msgid "Please select a color and add it to the palette."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Settings.php:10
+#: httpdocs/src/Views/Cockpit/Settings.php:8
+#: httpdocs/src/Views/Cockpit/Settings.php:33
 msgid "Add color"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Settings.php:22
-msgid "By clicking on a color below, you can remove it."
+#: httpdocs/src/Views/Cockpit/Settings.php:10
+msgid "Select a color and add it to the palette."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Settings.php:11
+msgid "To remove a color, click on the color in the palette."
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Settings.php:20
+msgid "Remove color"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
@@ -258,25 +266,25 @@ msgstr ""
 msgid "Add copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:41
+#: httpdocs/src/Views/Cockpit/Background.php:42
 msgid "The copyright is placed automatically from the database."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:50
+#: httpdocs/src/Views/Cockpit/Background.php:51
 msgid "Position"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:52
-#: httpdocs/src/Views/Cockpit/Background.php:55
+#: httpdocs/src/Views/Cockpit/Background.php:53
+#: httpdocs/src/Views/Cockpit/Background.php:56
 msgid "side left"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:57
-#: httpdocs/src/Views/Cockpit/Background.php:60
+#: httpdocs/src/Views/Cockpit/Background.php:58
+#: httpdocs/src/Views/Cockpit/Background.php:61
 msgid "bottom right"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:79
+#: httpdocs/src/Views/Cockpit/Background.php:80
 msgid "Delete background image"
 msgstr ""
 
@@ -345,11 +353,8 @@ msgid "Upload an image from your local computer"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:17
-msgid "upload own image"
-msgstr ""
-
 #: httpdocs/src/Views/Cockpit/Searchimage.php:24
-msgid "upload image"
+msgid "Drop an image or chooseit to upload from your computer"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:33
@@ -372,62 +377,66 @@ msgstr ""
 msgid "Choose an image database"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:62
-msgid "Add from"
+#: httpdocs/src/Views/Cockpit/Searchimage.php:57
+msgid "search ..."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:64
+msgid "Add from"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:66
 msgid "Choose a form and colorize later."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:120
+#: httpdocs/src/Views/Cockpit/Searchimage.php:122
 msgid "Create image with AI"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:123
+#: httpdocs/src/Views/Cockpit/Searchimage.php:125
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:124
+#: httpdocs/src/Views/Cockpit/Searchimage.php:126
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:125
+#: httpdocs/src/Views/Cockpit/Searchimage.php:127
 msgid "Adjust your prompt accordingly."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:128
+#: httpdocs/src/Views/Cockpit/Searchimage.php:130
 msgid "Describe the image you want"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:132
+#: httpdocs/src/Views/Cockpit/Searchimage.php:134
 #: httpdocs/src/Views/Menu/Greens.php:29 httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:141
+#: httpdocs/src/Views/Cockpit/Searchimage.php:143
 msgid "Please wait while AI generates your image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:142
+#: httpdocs/src/Views/Cockpit/Searchimage.php:144
 msgid "This can take up to one minute."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:146
+#: httpdocs/src/Views/Cockpit/Searchimage.php:148
 msgid "seconds"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:150
+#: httpdocs/src/Views/Cockpit/Searchimage.php:152
 msgid "Result"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:153
+#: httpdocs/src/Views/Cockpit/Searchimage.php:155
 msgid "Use this image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:156
+#: httpdocs/src/Views/Cockpit/Searchimage.php:158
 msgid "Try again"
 msgstr ""
 

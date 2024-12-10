@@ -9,6 +9,33 @@ class ImageDB {
         }
       })
     })
+
+    const dropbox = document.getElementById('cockpit_search')
+    dropbox.addEventListener('dragenter', this.noopHandler, false);
+    dropbox.addEventListener('dragexit', this.noopHandler, false);
+    dropbox.addEventListener('dragover', this.noopHandler, false);
+    dropbox.addEventListener('drop', this.drop, false);
+
+  }
+
+  noopHandler(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+  }
+  drop(evt) {
+    evt.stopPropagation();
+    evt.preventDefault(); 
+
+    // Load addpic
+    if(config.imageTarget === 'addpic') {
+      component.add('addpicture');
+      api.uploadAddPic(evt.dataTransfer)
+      return
+    }
+    
+
+    // Load Backgroundimage
+    api.upload(evt.dataTransfer)
   }
 
   search (q) {

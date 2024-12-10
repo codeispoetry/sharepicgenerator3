@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-06 09:29+0100\n"
-"PO-Revision-Date: 2024-12-06 09:29+0100\n"
+"POT-Creation-Date: 2024-12-10 21:24+0100\n"
+"PO-Revision-Date: 2024-12-10 21:25+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -72,7 +72,6 @@ msgid "Images from"
 msgstr "Bilder von"
 
 #: httpdocs/src/Views/ImageDB.php:11
-#: httpdocs/src/Views/Cockpit/Searchimage.php:55
 msgid "search in image database"
 msgstr "Suche in Bilddatenbank"
 
@@ -98,7 +97,7 @@ msgstr "Element hinzufügen"
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
 #: httpdocs/src/Views/Cockpit/Greentext.php:15
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:45
+#: httpdocs/src/Views/Cockpit/Background.php:46
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -133,13 +132,22 @@ msgstr "Einstellungen"
 msgid "Please select a color and add it to the palette."
 msgstr "Farbe auswählen und zur Palette hinzufügen."
 
-#: httpdocs/src/Views/Cockpit/Settings.php:10
+#: httpdocs/src/Views/Cockpit/Settings.php:8
+#: httpdocs/src/Views/Cockpit/Settings.php:33
 msgid "Add color"
 msgstr "Farbe hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Settings.php:22
-msgid "By clicking on a color below, you can remove it."
-msgstr "Mit einem Klick auf eine Farbe wird sie entfernt."
+#: httpdocs/src/Views/Cockpit/Settings.php:10
+msgid "Select a color and add it to the palette."
+msgstr "Wählen Sie eine Farbe aus und fügen Sie sie der Palette hinzu."
+
+#: httpdocs/src/Views/Cockpit/Settings.php:11
+msgid "To remove a color, click on the color in the palette."
+msgstr "Um eine Farbe zu entfernen, klicken Sie auf die Farbe in der Palette."
+
+#: httpdocs/src/Views/Cockpit/Settings.php:20
+msgid "Remove color"
+msgstr "Farbe entfernen"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:4
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
@@ -267,28 +275,28 @@ msgstr "Urheberrechts&shy;hinweis"
 msgid "Add copyright"
 msgstr "Urheberrechts&shy;hinweis hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:41
+#: httpdocs/src/Views/Cockpit/Background.php:42
 msgid "The copyright is placed automatically from the database."
 msgstr ""
 "Der Urheberrechtshinweis wird automatisch mit dem Bild aus der Bilddatenbank "
 "eingefügt. Bei einem von Dir hochgeladenem Bild er-scheint ein Platzhalter-"
 "Text, den Du ändern kannst."
 
-#: httpdocs/src/Views/Cockpit/Background.php:50
+#: httpdocs/src/Views/Cockpit/Background.php:51
 msgid "Position"
 msgstr "Position"
 
-#: httpdocs/src/Views/Cockpit/Background.php:52
-#: httpdocs/src/Views/Cockpit/Background.php:55
+#: httpdocs/src/Views/Cockpit/Background.php:53
+#: httpdocs/src/Views/Cockpit/Background.php:56
 msgid "side left"
 msgstr "seitlich links"
 
-#: httpdocs/src/Views/Cockpit/Background.php:57
-#: httpdocs/src/Views/Cockpit/Background.php:60
+#: httpdocs/src/Views/Cockpit/Background.php:58
+#: httpdocs/src/Views/Cockpit/Background.php:61
 msgid "bottom right"
 msgstr "rechts unten"
 
-#: httpdocs/src/Views/Cockpit/Background.php:79
+#: httpdocs/src/Views/Cockpit/Background.php:80
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
@@ -357,12 +365,9 @@ msgid "Upload an image from your local computer"
 msgstr "Eigenes Bild hochladen"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:17
-msgid "upload own image"
-msgstr "Eigenes Bild hochladen"
-
 #: httpdocs/src/Views/Cockpit/Searchimage.php:24
-msgid "upload image"
-msgstr "Bild hochladen"
+msgid "Drop an image or chooseit to upload from your computer"
+msgstr "Drag and Drop oder wähle ein Bild zum Upload von deinem Computer aus"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:33
 msgid "Image from database"
@@ -384,24 +389,28 @@ msgstr "Pixabay"
 msgid "Choose an image database"
 msgstr "Wähle eine Datenbank"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:62
+#: httpdocs/src/Views/Cockpit/Searchimage.php:57
+msgid "search ..."
+msgstr "suche ..."
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:64
 msgid "Add from"
 msgstr "Form hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:64
+#: httpdocs/src/Views/Cockpit/Searchimage.php:66
 msgid "Choose a form and colorize later."
 msgstr "Wähle eine Form und färbe sie anschließend ein."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:120
+#: httpdocs/src/Views/Cockpit/Searchimage.php:122
 msgid "Create image with AI"
 msgstr "Bild mit KI erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:123
+#: httpdocs/src/Views/Cockpit/Searchimage.php:125
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 "Nutzen Sie künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:124
+#: httpdocs/src/Views/Cockpit/Searchimage.php:126
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
@@ -409,40 +418,40 @@ msgstr ""
 "Bitte beachte, dass generierte Bilder Stereotypen reproduzieren oder "
 "unangemessen sein können."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:125
+#: httpdocs/src/Views/Cockpit/Searchimage.php:127
 msgid "Adjust your prompt accordingly."
 msgstr "Passe Deinen Prompt ggf. entsprechend an."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:128
+#: httpdocs/src/Views/Cockpit/Searchimage.php:130
 msgid "Describe the image you want"
 msgstr "Beschreibe das Bild, das Du möchtest"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:132
+#: httpdocs/src/Views/Cockpit/Searchimage.php:134
 #: httpdocs/src/Views/Menu/Greens.php:29 httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr "Erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:141
+#: httpdocs/src/Views/Cockpit/Searchimage.php:143
 msgid "Please wait while AI generates your image."
 msgstr "Bitte warte, während die KI Dein Bild generiert."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:142
+#: httpdocs/src/Views/Cockpit/Searchimage.php:144
 msgid "This can take up to one minute."
 msgstr "Dies kann bis zu einer Minute dauern."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:146
+#: httpdocs/src/Views/Cockpit/Searchimage.php:148
 msgid "seconds"
 msgstr "Sekunden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:150
+#: httpdocs/src/Views/Cockpit/Searchimage.php:152
 msgid "Result"
 msgstr "Ergebnis"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:153
+#: httpdocs/src/Views/Cockpit/Searchimage.php:155
 msgid "Use this image"
 msgstr "Dieses Bild verwenden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:156
+#: httpdocs/src/Views/Cockpit/Searchimage.php:158
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
@@ -888,6 +897,15 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "By clicking on a color below, you can remove it."
+#~ msgstr "Mit einem Klick auf eine Farbe wird sie entfernt."
+
+#~ msgid "upload own image"
+#~ msgstr "Eigenes Bild hochladen"
+
+#~ msgid "upload image"
+#~ msgstr "Bild hochladen"
 
 #~ msgid "bottom left"
 #~ msgstr "links unten"
