@@ -4,18 +4,21 @@
     </h2>
 
     <section>
+        <h3><?php  echo _('set image');?></h3>
+        <label>
+            <input type="checkbox" id="drag_background">
+            <?php echo _("Make image draggable"); ?>
+        </label>
+    </section>
+    <section>
         <h3><?php  echo _('Image size');?></h3>
         <input type="range" min="10" max="300" value="100" class="slider" id="background_size" oninput="background.zoom(this.value)">  
     
         <div>
             <button class="outline" onClick="background.reset()">
                 <?php echo _("fit automatically"); ?>
-            </button>   
-
-            <label>
-                <input type="checkbox" id="drag_background">
-                <?php echo _("Make image draggable"); ?>
-            </label>
+            </button>  
+           
         </div>
     </section>
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-11 13:10+0100\n"
-"PO-Revision-Date: 2024-12-11 13:10+0100\n"
+"POT-Creation-Date: 2024-12-11 13:59+0100\n"
+"PO-Revision-Date: 2024-12-11 13:59+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -96,7 +96,7 @@ msgstr "Element hinzufügen"
 #: httpdocs/src/Views/Cockpit/Elements.php:15
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:46
+#: httpdocs/src/Views/Cockpit/Background.php:49
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -208,63 +208,67 @@ msgid "Edit background image"
 msgstr "Hintergrundbild bearbeiten"
 
 #: httpdocs/src/Views/Cockpit/Background.php:7
-msgid "Image size"
-msgstr "Bildgröße"
+msgid "set image"
+msgstr "Bild einstellen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:12
-msgid "fit automatically"
-msgstr "automatisch einpassen"
-
-#: httpdocs/src/Views/Cockpit/Background.php:17
+#: httpdocs/src/Views/Cockpit/Background.php:10
 msgid "Make image draggable"
 msgstr "Bild verschiebbar machen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:23
+#: httpdocs/src/Views/Cockpit/Background.php:14
+msgid "Image size"
+msgstr "Bildgröße"
+
+#: httpdocs/src/Views/Cockpit/Background.php:19
+msgid "fit automatically"
+msgstr "automatisch einpassen"
+
+#: httpdocs/src/Views/Cockpit/Background.php:26
 msgid "Filter"
 msgstr "Filter"
 
-#: httpdocs/src/Views/Cockpit/Background.php:25
+#: httpdocs/src/Views/Cockpit/Background.php:28
 msgid "Brightness"
 msgstr "Helligkeit"
 
-#: httpdocs/src/Views/Cockpit/Background.php:27
+#: httpdocs/src/Views/Cockpit/Background.php:30
 msgid "Saturate"
 msgstr "Sättigung"
 
-#: httpdocs/src/Views/Cockpit/Background.php:29
+#: httpdocs/src/Views/Cockpit/Background.php:32
 msgid "Blur"
 msgstr "Unschärfe"
 
-#: httpdocs/src/Views/Cockpit/Background.php:34
+#: httpdocs/src/Views/Cockpit/Background.php:37
 msgid "Copyright"
 msgstr "Urheberrechts&shy;hinweis"
 
-#: httpdocs/src/Views/Cockpit/Background.php:37
+#: httpdocs/src/Views/Cockpit/Background.php:40
 msgid "Add copyright"
 msgstr "Urheberrechts&shy;hinweis hinzufügen"
 
-#: httpdocs/src/Views/Cockpit/Background.php:42
+#: httpdocs/src/Views/Cockpit/Background.php:45
 msgid "The copyright is placed automatically from the database."
 msgstr ""
 "Der Urheberrechtshinweis wird automatisch mit dem Bild aus der Bilddatenbank "
 "eingefügt. Bei einem von Dir hochgeladenem Bild er-scheint ein Platzhalter-"
 "Text, den Du ändern kannst."
 
-#: httpdocs/src/Views/Cockpit/Background.php:51
+#: httpdocs/src/Views/Cockpit/Background.php:54
 msgid "Position"
 msgstr "Position"
 
-#: httpdocs/src/Views/Cockpit/Background.php:53
 #: httpdocs/src/Views/Cockpit/Background.php:56
+#: httpdocs/src/Views/Cockpit/Background.php:59
 msgid "side left"
 msgstr "seitlich links"
 
-#: httpdocs/src/Views/Cockpit/Background.php:58
 #: httpdocs/src/Views/Cockpit/Background.php:61
+#: httpdocs/src/Views/Cockpit/Background.php:64
 msgid "bottom right"
 msgstr "rechts unten"
 
-#: httpdocs/src/Views/Cockpit/Background.php:80
+#: httpdocs/src/Views/Cockpit/Background.php:83
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
@@ -606,7 +610,7 @@ msgid "Imprint"
 msgstr "Impressum"
 
 #: httpdocs/src/Views/Menu/Greens.php:15 httpdocs/src/Views/Menu/Open.php:32
-#: httpdocs/src/Views/Menu/Mint.php:12 httpdocs/src/Views/Pages/Privacy.php:4
+#: httpdocs/src/Views/Menu/Mint.php:12 httpdocs/src/Views/Pages/Privacy.php:9
 msgid "Privacy"
 msgstr "Datenschutz"
 
@@ -795,6 +799,7 @@ msgid ""
 msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle im Layout der Grünen."
 
 #: httpdocs/src/Views/Pages/ImprintMint.php:5
+#: httpdocs/src/Views/Pages/Privacy.php:5
 #: httpdocs/src/Views/Pages/Imprint.php:5
 msgid "back"
 msgstr "zurück"

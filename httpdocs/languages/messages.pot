@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-11 13:10+0100\n"
+"POT-Creation-Date: 2024-12-11 13:59+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Elements.php:15
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
-#: httpdocs/src/Views/Cockpit/Background.php:46
+#: httpdocs/src/Views/Cockpit/Background.php:49
 #: httpdocs/src/Views/Cockpit/Logo.php:4
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
@@ -199,60 +199,64 @@ msgid "Edit background image"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:7
-msgid "Image size"
+msgid "set image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:12
-msgid "fit automatically"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Background.php:17
+#: httpdocs/src/Views/Cockpit/Background.php:10
 msgid "Make image draggable"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:23
+#: httpdocs/src/Views/Cockpit/Background.php:14
+msgid "Image size"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:19
+msgid "fit automatically"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:26
 msgid "Filter"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:25
+#: httpdocs/src/Views/Cockpit/Background.php:28
 msgid "Brightness"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:27
+#: httpdocs/src/Views/Cockpit/Background.php:30
 msgid "Saturate"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:29
+#: httpdocs/src/Views/Cockpit/Background.php:32
 msgid "Blur"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:34
+#: httpdocs/src/Views/Cockpit/Background.php:37
 msgid "Copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:37
+#: httpdocs/src/Views/Cockpit/Background.php:40
 msgid "Add copyright"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:42
+#: httpdocs/src/Views/Cockpit/Background.php:45
 msgid "The copyright is placed automatically from the database."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:51
+#: httpdocs/src/Views/Cockpit/Background.php:54
 msgid "Position"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:53
 #: httpdocs/src/Views/Cockpit/Background.php:56
+#: httpdocs/src/Views/Cockpit/Background.php:59
 msgid "side left"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:58
 #: httpdocs/src/Views/Cockpit/Background.php:61
+#: httpdocs/src/Views/Cockpit/Background.php:64
 msgid "bottom right"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:80
+#: httpdocs/src/Views/Cockpit/Background.php:83
 msgid "Delete background image"
 msgstr ""
 
@@ -588,7 +592,7 @@ msgid "Imprint"
 msgstr ""
 
 #: httpdocs/src/Views/Menu/Greens.php:15 httpdocs/src/Views/Menu/Open.php:32
-#: httpdocs/src/Views/Menu/Mint.php:12 httpdocs/src/Views/Pages/Privacy.php:4
+#: httpdocs/src/Views/Menu/Mint.php:12 httpdocs/src/Views/Pages/Privacy.php:9
 msgid "Privacy"
 msgstr ""
 
@@ -768,6 +772,7 @@ msgid ""
 msgstr ""
 
 #: httpdocs/src/Views/Pages/ImprintMint.php:5
+#: httpdocs/src/Views/Pages/Privacy.php:5
 #: httpdocs/src/Views/Pages/Imprint.php:5
 msgid "back"
 msgstr ""
