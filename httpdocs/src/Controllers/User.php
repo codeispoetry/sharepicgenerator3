@@ -34,6 +34,10 @@ class User {
 			$_SERVER['OIDC_CLAIM_preferred_username'] = 'open';
 		}
 
+		if ( 'develop.sharepicgenerator.de' === $_SERVER['HTTP_HOST'] ) {
+			$_SERVER['OIDC_CLAIM_preferred_username'] = 'robert';
+		}
+
 		$this->username = $_SERVER['OIDC_CLAIM_preferred_username'];
 
 		if ( empty( $this->username ) ) {

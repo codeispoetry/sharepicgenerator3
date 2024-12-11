@@ -1,6 +1,6 @@
 <nav>
 <a href="index.php">
-    
+    <img src="/assets/images/sunflower.svg" style="height: 56px; width: 56px; margin-right: 0;">
 </a>
 <div class="dropdown" id="menu_mint">
         <span>Sharepic-Generator</span>

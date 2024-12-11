@@ -29,6 +29,9 @@ deploy-mint:
 deploy-open:
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic:/var/www/vhosts/sharepicgenerator.de/open.sharepicgenerator.de
 
+deploy-develop:
+	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic:/var/www/vhosts/sharepicgenerator.de/develop.sharepicgenerator.de
+
 create-pot:
 	find httpdocs/src -name '*.php' | xargs xgettext --language=PHP -o httpdocs/languages/messages.pot
 

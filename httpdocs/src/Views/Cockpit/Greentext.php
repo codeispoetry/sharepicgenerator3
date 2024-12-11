@@ -7,6 +7,26 @@
         </label>
     </section>
 
+    <section class="selected_only">
+        <h3><?php  echo _('Style');?></h3>
+
+        <div class="">
+            <button class="with-icon" onClick="greentext.sameWidth()" title="<?php  echo _('to front');?>">
+                <div class="icon">
+                    <img src="assets/icons/align-justify.svg" alt="<?php  echo _('to front');?>" />
+                </div>
+                <?php  echo _('same width');?>
+            </button>
+            <button class="with-icon" onClick="greentext.sameSize()" title="<?php  echo _('to front');?>">
+                <div class="icon">
+                    <img src="assets/icons/align-left.svg" alt="<?php  echo _('to front');?>" />
+                </div>
+                <?php  echo _('same size');?>
+            </button>
+    
+        </div>
+    </section>
+
     <section>  
         <?php
             $color = new stdClass();
@@ -30,8 +50,42 @@
         }
 
         setFontColor(color) { 
-            cockpit.target.style.color = color
+            this.getSelectionParentElement().style.color = color
+            //cockpit.target.style.color = color
             undo.commit()
+        }
+
+        getSelectionParentElement() {
+            const selection = window.getSelection();
+            if (selection.rangeCount > 0) {
+                const range = selection.getRangeAt(0);
+                const parentElement = range.commonAncestorContainer.nodeType === 1
+                    ? range.commonAncestorContainer
+                    : range.commonAncestorContainer.parentNode;
+                return parentElement;
+            }
+            return null;
+        }
+
+        sameWidth(){
+            const lines = cockpit.target.querySelectorAll('p');
+            let totalWidth = cockpit.target.offsetWidth + 1;
+            lines.forEach(line => {
+                console.log(line.offsetWidth)
+                let i = 0;
+                while(line.offsetWidth < totalWidth && i < 300){
+                    line.style.fontSize = i + "px";
+                    i++
+                }
+                
+            }); 
+        }
+
+        sameSize(){
+            const lines = cockpit.target.querySelectorAll('p');
+            lines.forEach(line => {
+                line.style.fontSize = "1em";
+            }); 
         }
     }
     const greentext = new Greentext();

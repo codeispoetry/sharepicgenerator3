@@ -49,7 +49,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="workbench-below">
+			<div class="workbench-below" <?php if( 'robert' === $this->env->user->get_username() ) echo 'style="display:none;"';?>>
 				<button class="create" style="border-top-right-radius: 0; border-bottom-right-radius:0;" onClick="api.create()">
 					<img src="assets/icons/download.svg"> <?php  echo _('Download');?>
 				</button>

@@ -1,5 +1,10 @@
 <?php include_once './src/Views/Header.php'; ?>
 <main class="main" style="padding: 40px">
+
+	<a href="/index.php">
+		<?php echo _('back'); ?>
+	</a>
+
 	<div id="">
 		<h1><?php  echo _('Privacy');?></h1>
 		<div id="description" style="padding-bottom: 4em">
@@ -20,5 +25,10 @@
 		background: none;
 	}
 </style>
+
+
+<script>
+	document.getElementById('menu_sharepics').remove();
+</script>
 
 <?php include_once './src/Views/Footer.php'; ?>

@@ -35,8 +35,13 @@ body.greens{
         display: flex;
         position: absolute;
         flex-direction: column;
-        transform-origin: bottom right;
+        transform-origin: center center;
+        font-family: 'Gotham XNarrow';
+        align-items: flex-start;
     
+        p{
+            margin: 0;
+        }
 
         &.longtext{
             div{
