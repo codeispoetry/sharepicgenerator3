@@ -14,8 +14,8 @@
     <div style="display:none">
        
         <section class="selected_only">
-            <h3 class="no-greens"><?php  echo _('Rotation');?></h3>
-            <input type="range" min="0" max="360" value="0" class="slider no-greens" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
+            <h3 class=""><?php  echo _('Rotation');?></h3>
+            <input type="range" min="0" max="360" value="0" class="slider" id="eyecatcher_rotation" oninput="eyecatcher.rotate(this)">
         </section>
 
         <section class="selected_only">
@@ -24,7 +24,7 @@
             <button onClick="eyecatcher.setForm('sticker_rect169')"><?php  echo _('Rect 16:9');?></button>
         </section>
     </div>
-    <section id="eyecatcher_colors" class="selected_only no-greens">
+    <section id="eyecatcher_colors" class="selected_only">
         <div class="">
             <?php
                 $color = new stdClass();
