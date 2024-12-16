@@ -34,7 +34,6 @@
         onclick="component.select(this)"
         ondblclick="rte.init()"
         onmousedown="component.startDrag(event)"
-        oninput="cockpit.setup_freetext(this)"
         id="greentext"
         contenteditable="true"
         spellcheck="false"
@@ -156,6 +155,15 @@
         }
        
         sg.setPreset('1:1', 'Post quadratisch', 1080,1080)
+
+        document.getElementById('greentext').addEventListener('keyup', function(e){
+            const greentext = document.getElementById('greentext');
+            
+           if( greentext.childNodes.length === 0 ) {
+                greentext.innerHTML = '<p>Tippe hier</p><p>Deinen Text ein</p>';
+            }
+           
+        });
     </script>
 </div>
 
