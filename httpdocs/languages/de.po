@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-11 13:59+0100\n"
-"PO-Revision-Date: 2024-12-11 13:59+0100\n"
+"POT-Creation-Date: 2024-12-16 10:01+0100\n"
+"PO-Revision-Date: 2024-12-16 10:01+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -155,24 +155,40 @@ msgid "Total size"
 msgstr "Gesamtgröße"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:11
-msgid "Style"
-msgstr "Stil"
+msgid "Font"
+msgstr "Schrift"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:14
 #: httpdocs/src/Views/Cockpit/Greentext.php:16
+#: httpdocs/src/Views/Cockpit/Greentext.php:18
+msgid "toggle capitalization"
+msgstr "Groß- /Kleinbuchstaben umschalten"
+
 #: httpdocs/src/Views/Cockpit/Greentext.php:20
 #: httpdocs/src/Views/Cockpit/Greentext.php:22
+#: httpdocs/src/Views/Cockpit/Greentext.php:24
+msgid "toggle alignment"
+msgstr "links oder zentriert"
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:31
+msgid "Style"
+msgstr "Stil"
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:34
+#: httpdocs/src/Views/Cockpit/Greentext.php:36
+#: httpdocs/src/Views/Cockpit/Greentext.php:40
+#: httpdocs/src/Views/Cockpit/Greentext.php:42
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:5
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:7
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:9
 msgid "to front"
 msgstr "nach vorn"
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:18
+#: httpdocs/src/Views/Cockpit/Greentext.php:38
 msgid "same width"
 msgstr "Alle Zeilen gleich breit"
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:24
+#: httpdocs/src/Views/Cockpit/Greentext.php:44
 msgid "same size"
 msgstr "Schriftgröße gleich"
 
@@ -301,17 +317,10 @@ msgstr "Bitte ändere Deinen Text direkt im Bild links."
 msgid "Logo"
 msgstr "Logo"
 
-#: httpdocs/src/Views/Cockpit/Logo.php:11
-msgid "Variants"
-msgstr "Varianten"
-
-#: httpdocs/src/Views/Cockpit/Logo.php:13
-msgid "yellow"
-msgstr "gelb"
-
-#: httpdocs/src/Views/Cockpit/Logo.php:14
-msgid "green"
-msgstr "grün"
+#: httpdocs/src/Views/Cockpit/Logo.php:12
+#: httpdocs/src/Views/Components/Color.php:3
+msgid "Colors"
+msgstr "Farben"
 
 #: httpdocs/src/Views/Cockpit/Europe.php:2
 msgid "Europe"
@@ -527,10 +536,6 @@ msgstr "Chrome-Version: %s"
 #: httpdocs/src/Views/Logs/Log.php:5
 msgid "Usage Log"
 msgstr "Nutzungs-Log"
-
-#: httpdocs/src/Views/Components/Color.php:3
-msgid "Colors"
-msgstr "Farben"
 
 #: httpdocs/src/Views/Components/Color.php:31
 msgid "My colors"
@@ -836,6 +841,15 @@ msgstr "Quelltext"
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
 
+#~ msgid "Variants"
+#~ msgstr "Varianten"
+
+#~ msgid "yellow"
+#~ msgstr "gelb"
+
+#~ msgid "green"
+#~ msgstr "grün"
+
 #~ msgid "Appearance"
 #~ msgstr "Aussehen"
 
@@ -928,9 +942,6 @@ msgstr "Rich Text Editor"
 
 #~ msgid "Text padding"
 #~ msgstr "Abstand"
-
-#~ msgid "Font"
-#~ msgstr "Schrift"
 
 #~ msgid "Dimensions"
 #~ msgstr "Abmessungen"

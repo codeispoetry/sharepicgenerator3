@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-11 13:59+0100\n"
+"POT-Creation-Date: 2024-12-16 10:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -146,24 +146,40 @@ msgid "Total size"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:11
-msgid "Style"
+msgid "Font"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:14
 #: httpdocs/src/Views/Cockpit/Greentext.php:16
+#: httpdocs/src/Views/Cockpit/Greentext.php:18
+msgid "toggle capitalization"
+msgstr ""
+
 #: httpdocs/src/Views/Cockpit/Greentext.php:20
 #: httpdocs/src/Views/Cockpit/Greentext.php:22
+#: httpdocs/src/Views/Cockpit/Greentext.php:24
+msgid "toggle alignment"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:31
+msgid "Style"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:34
+#: httpdocs/src/Views/Cockpit/Greentext.php:36
+#: httpdocs/src/Views/Cockpit/Greentext.php:40
+#: httpdocs/src/Views/Cockpit/Greentext.php:42
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:5
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:7
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:9
 msgid "to front"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:18
+#: httpdocs/src/Views/Cockpit/Greentext.php:38
 msgid "same width"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:24
+#: httpdocs/src/Views/Cockpit/Greentext.php:44
 msgid "same size"
 msgstr ""
 
@@ -289,16 +305,9 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Logo.php:11
-msgid "Variants"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Logo.php:13
-msgid "yellow"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Logo.php:14
-msgid "green"
+#: httpdocs/src/Views/Cockpit/Logo.php:12
+#: httpdocs/src/Views/Components/Color.php:3
+msgid "Colors"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Europe.php:2
@@ -509,10 +518,6 @@ msgstr ""
 
 #: httpdocs/src/Views/Logs/Log.php:5
 msgid "Usage Log"
-msgstr ""
-
-#: httpdocs/src/Views/Components/Color.php:3
-msgid "Colors"
 msgstr ""
 
 #: httpdocs/src/Views/Components/Color.php:31

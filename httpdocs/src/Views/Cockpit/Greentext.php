@@ -8,6 +8,26 @@
     </section>
 
     <section class="selected_only">
+        <h3><?php  echo _('Font');?></h3>
+
+        <div class="">
+            <button class="with-icon" onClick="greentext.toogleCapitalization()" title="<?php  echo _('toggle capitalization');?>">
+                <div class="icon">
+                    <img src="assets/icons/align-justify.svg" alt="<?php  echo _('toggle capitalization');?>" />
+                </div>
+                <?php  echo _('toggle capitalization');?>
+            </button> 
+            <button class="with-icon" onClick="greentext.toggleAlignment()" title="<?php  echo _('toggle alignment');?>">
+                <div class="icon">
+                    <img src="assets/icons/align-left.svg" alt="<?php  echo _('toggle alignment');?>" />
+                </div>
+                <?php  echo _('toggle alignment');?>
+            </button>  
+        </div>
+    </section>
+
+
+    <section class="selected_only">
         <h3><?php  echo _('Style');?></h3>
 
         <div class="">
@@ -53,6 +73,24 @@
             this.getSelectionParentElement().style.color = color
             //cockpit.target.style.color = color
             undo.commit()
+        }
+
+        toggleAlignment(){
+            if( 'flex-start' === cockpit.target.style.alignItems){
+                cockpit.target.style.alignItems = 'center';
+            }else{
+                cockpit.target.style.alignItems = 'flex-start';
+            }
+            undo.commit()
+        }
+
+        toogleCapitalization(){
+            if( 'uppercase' === cockpit.target.style.textTransform){
+                cockpit.target.style.textTransform = "none"; 
+            }else{
+               cockpit.target.style.textTransform = "uppercase"; 
+            }
+            undo.commit();
         }
 
         getSelectionParentElement() {
