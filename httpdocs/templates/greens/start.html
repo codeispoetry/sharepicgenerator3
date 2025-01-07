@@ -4,6 +4,7 @@
 			background-position: 0px 0px; 
 			width: 800px; height:800px;
 			border:0;
+            background-image: url('templates/greens/bg.jpg');
 			overflow:hidden;"
     		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
 
@@ -17,8 +18,6 @@
                 background-position-x: 0px;
                 background-position-y: 0px;
                 background-repeat: no-repeat;
-                background-color: #ffffff;
-                background-image: url('/templates/greens/bg.jpg');
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -127,22 +126,40 @@
         </div>
 
         <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
-        spellcheck="false"
-        contenteditable="true" onclick="component.select(this)"
-        onmousedown="component.startDrag(event)" style="
-                    z-index:2; 
-                    left: 5px; top: 5px; 
-                    font-size: 20px; 
-                    color: #e9e9e9; 
-                    background-color: none;
-                    width: 40px; height: 40px;
-                "
+            spellcheck="false"
+            contenteditable="true"
+            onmousedown="component.startDrag(event)" 
+            ontouchstart="component.startDrag(event)"
+            ontouchend="this.focus()"
+            style="
+                        z-index:2; 
+                        left: 5px; top: 5px;
+                    "
             >
+            <div style="
+                z-index:2; 
+                left: 5px; top: 5px; 
+                font-size: 20px; 
+                color: #e9e9e9; 
+                background-color: #E6007E;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                flex-direction: column;
+                font-family: 'GrueneType';
+            ">
+                <p>Text</p>
+                <p>über mehrere Zeilen</p>
+            </div>
+
             <svg style="
                 position: absolute;
-                width: 100%; height: 100%;
+                width: 0; height: 0;
                 "
-                width="280" height="280" viewBox="0 0 74.083332 74.083333" version="1.1" id="svg1"
+                width="0" height="0" viewBox="0 0 74.083332 74.083333" version="1.1" id="svg1"
                 xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
                 <path
                     d="M 28.952854,0.40200885 C 35.932645,-1.4308193 44.036565,3.5671375 45.380381,4.1049773 46.723927,4.6428441 61.070749,11.359814 68.742171,17.313868 78.331512,24.756414 73.766987,35.183485 64.825338,57.782482 55.88395,80.38121 46.878507,77.040823 18.520613,62.575286 -11.237954,47.395627 2.5201489,31.733951 7.8298762,22.389858 13.139634,13.045832 21.972763,2.2348339 28.952854,0.40200885 Z"
@@ -174,7 +191,7 @@
     <script>
         undo.commit()
         config.cockpit = {
-            elements: ['canvas','search','background','greentext','addpicture','settings']
+            elements: ['canvas','search','background','greentext','eyecatcher','addpicture']
         }
        
         sg.setPreset('1:1', 'Post quadratisch', 1080,1080)
@@ -204,5 +221,13 @@
         transform-origin: left top;
         padding: 0;
         margin: 0;
+    }
+
+    .eyecatcher{
+        rotate: -12deg;
+    }
+    .eyecatcher p{
+        margin: 0 1em;
+        line-height: 1em;
     }
 </style>

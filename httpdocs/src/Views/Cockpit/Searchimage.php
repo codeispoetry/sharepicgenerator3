@@ -55,7 +55,7 @@
     </section>
 
 
-    <section id="add_new_from" class="set-target" data-target="addpic">
+    <section id="add_new_from" class="set-target no-greens" data-target="addpic">
         <h3><?php  echo _('Add from');?></h3>
         <p>
             <?php echo _('Choose a form and colorize later.'); ?>
