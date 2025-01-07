@@ -48,5 +48,17 @@
     </div>
     <?php } ?>
 
+    <div>
+        <span onClick="api.load('templates/greens/start.html')" style="cursor: pointer;">
+            Bundestagswahl
+        </span>  
+    </div>
+
+    <div>
+        <span onClick="api.load('templates/de/start.html')" style="cursor: pointer;">
+            Klassisches Desgin
+        </span>  
+    </div>
+
     <span class="info-in-menu" id="info-in-menu"></span>
 </nav>

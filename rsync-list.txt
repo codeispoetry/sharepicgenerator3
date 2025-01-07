@@ -5,7 +5,6 @@ httpdocs/src/Controllers
 httpdocs/src/Views
 httpdocs/templates
 httpdocs/index.php
-httpdocs/index.html
 httpdocs/unsplash.php
 httpdocs/favicon.ico
 httpdocs/node_modules/tinymce/
