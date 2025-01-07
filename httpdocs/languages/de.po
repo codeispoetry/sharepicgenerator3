@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 16:35+0100\n"
-"PO-Revision-Date: 2024-12-17 16:36+0100\n"
+"POT-Creation-Date: 2025-01-07 11:34+0100\n"
+"PO-Revision-Date: 2025-01-07 11:35+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -94,7 +94,7 @@ msgid "Add element"
 msgstr "Element hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:12
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
 #: httpdocs/src/Views/Cockpit/Background.php:49
 #: httpdocs/src/Views/Cockpit/Logo.php:4
@@ -102,24 +102,29 @@ msgstr "Element hinzufügen"
 msgid "Size"
 msgstr "Größe"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:6
-msgid "Edit form"
-msgstr "Form bearbeiten"
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:3
+#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
+msgid "Eyecatcher"
+msgstr "Störer"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:17
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:7
+msgid "Add eyecatcher"
+msgstr "Störer hinzufügen"
+
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:19
 #: httpdocs/src/Views/Cockpit/Freetext.php:11
 msgid "Rotation"
 msgstr "Drehung"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:22
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:24
 msgid "Circle"
 msgstr "Kreis"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:23
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:25
 msgid "Square"
 msgstr "Quadrat"
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:24
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:26
 msgid "Rect 16:9"
 msgstr "Rechteck 16:9"
 
@@ -528,11 +533,11 @@ msgstr "Chrome-Version: %s"
 msgid "Usage Log"
 msgstr "Nutzungs-Log"
 
-#: httpdocs/src/Views/Components/Color.php:31
+#: httpdocs/src/Views/Components/Color.php:32
 msgid "My colors"
 msgstr "Meine Farben"
 
-#: httpdocs/src/Views/Components/Color.php:57
+#: httpdocs/src/Views/Components/Color.php:58
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
@@ -689,10 +694,6 @@ msgstr "Rückgängig"
 msgid "Download"
 msgstr "Herunterladen"
 
-#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
-msgid "Eyecatcher"
-msgstr "Sticker"
-
 #: httpdocs/src/Views/Creator.php:107
 msgid "Front picture"
 msgstr "Vordergrundbild"
@@ -837,6 +838,9 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Edit form"
+#~ msgstr "Form bearbeiten"
 
 #~ msgid "Style"
 #~ msgstr "Stil"

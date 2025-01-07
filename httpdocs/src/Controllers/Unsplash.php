@@ -24,8 +24,9 @@ class Unsplash {
 	 * Proxy function
 	 *
 	 * @param string $url URL to proxy.
+	 * @param Logger $logger Logger object.
 	 */
-	public static function proxy( $url ) {
+	public static function proxy( $url, $logger ) {
 		$curl = curl_init();
 
 		curl_setopt_array(
@@ -35,7 +36,7 @@ class Unsplash {
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_ENCODING       => '',
 				CURLOPT_MAXREDIRS      => 10,
-				CURLOPT_TIMEOUT        => 30,
+				CURLOPT_TIMEOUT        => 5,
 				CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
 				CURLOPT_CUSTOMREQUEST  => 'GET',
 				CURLOPT_HTTPHEADER     => array(
@@ -52,6 +53,7 @@ class Unsplash {
 		curl_close( $curl );
 
 		if ( $err ) {
+			$logger->error( 'cURL Error #:' . $err );
 			header( 'HTTP/1.0 500 Could not connect to unsplash' );
 			exit;
 		}

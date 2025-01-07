@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 16:35+0100\n"
+"POT-Creation-Date: 2025-01-07 11:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,7 +85,7 @@ msgid "Add element"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:10
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:12
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
 #: httpdocs/src/Views/Cockpit/Background.php:49
 #: httpdocs/src/Views/Cockpit/Logo.php:4
@@ -93,24 +93,29 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:6
-msgid "Edit form"
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:3
+#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
+msgid "Eyecatcher"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:17
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:7
+msgid "Add eyecatcher"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:19
 #: httpdocs/src/Views/Cockpit/Freetext.php:11
 msgid "Rotation"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:22
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:24
 msgid "Circle"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:23
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:25
 msgid "Square"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Eyecatcher.php:24
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:26
 msgid "Rect 16:9"
 msgstr ""
 
@@ -511,11 +516,11 @@ msgstr ""
 msgid "Usage Log"
 msgstr ""
 
-#: httpdocs/src/Views/Components/Color.php:31
+#: httpdocs/src/Views/Components/Color.php:32
 msgid "My colors"
 msgstr ""
 
-#: httpdocs/src/Views/Components/Color.php:57
+#: httpdocs/src/Views/Components/Color.php:58
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
@@ -669,10 +674,6 @@ msgstr ""
 
 #: httpdocs/src/Views/Creator.php:54
 msgid "Download"
-msgstr ""
-
-#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
-msgid "Eyecatcher"
 msgstr ""
 
 #: httpdocs/src/Views/Creator.php:107

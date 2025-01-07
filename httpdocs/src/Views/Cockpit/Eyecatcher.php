@@ -10,7 +10,7 @@
     
     <section class="selected_only">
         <h3><?php  echo _('Size');?></h3>
-        <input type="range" min="0.5" max="2" value="1" step="0.1" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
+        <input type="range" min="0.5" max="2" value="1" step="0.025" class="slider" id="eyecatcher_size" oninput="eyecatcher.setSize(this)">
     </section>
 
     <div style="display:none">
