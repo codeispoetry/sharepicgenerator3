@@ -1,5 +1,10 @@
 <section class="mainsection" id="cockpit_greentext">
     <h2>Text</h2>
+
+    <section>
+        <button onClick="component.add('greentext')"><?php  echo _('Add text');?></button>
+    </section>
+
     <section>
         <h3><?php echo _('Total size'); ?></h3>
         <label>
@@ -13,37 +18,28 @@
         <div class="">
             <button class="with-icon" onClick="greentext.toogleCapitalization()" title="<?php  echo _('toggle capitalization');?>">
                 <div class="icon">
-                    <img src="assets/icons/align-justify.svg" alt="<?php  echo _('toggle capitalization');?>" />
+                    <img src="assets/icons/text.svg" alt="<?php  echo _('toggle capitalization');?>" />
                 </div>
                 <?php  echo _('toggle capitalization');?>
             </button> 
             <button class="with-icon" onClick="greentext.toggleAlignment()" title="<?php  echo _('toggle alignment');?>">
                 <div class="icon">
-                    <img src="assets/icons/align-left.svg" alt="<?php  echo _('toggle alignment');?>" />
+                    <img src="assets/icons/text.svg" alt="<?php  echo _('toggle alignment');?>" />
                 </div>
                 <?php  echo _('toggle alignment');?>
             </button>  
-        </div>
-    </section>
-
-
-    <section class="selected_only">
-        <h3><?php  echo _('Style');?></h3>
-
-        <div class="">
-            <button class="with-icon" onClick="greentext.sameWidth()" title="<?php  echo _('to front');?>">
+            <button class="with-icon" onClick="greentext.toggleFontFamily()" title="<?php  echo _('toggle font family');?>">
                 <div class="icon">
-                    <img src="assets/icons/align-justify.svg" alt="<?php  echo _('to front');?>" />
+                    <img src="assets/icons/text.svg" alt="<?php  echo _('toggle font family');?>" />
                 </div>
-                <?php  echo _('same width');?>
-            </button>
-            <button class="with-icon" onClick="greentext.sameSize()" title="<?php  echo _('to front');?>">
+                <?php  echo _('toggle font family');?>
+            </button>  
+            <button class="with-icon" onClick="greentext.toggleStyle()" title="<?php  echo _('toggle style');?>">
                 <div class="icon">
-                    <img src="assets/icons/align-left.svg" alt="<?php  echo _('to front');?>" />
+                    <img src="assets/icons/text.svg" alt="<?php  echo _('toggle style');?>" />
                 </div>
-                <?php  echo _('same size');?>
+                <?php  echo _('toggle style');?>
             </button>
-    
         </div>
     </section>
 
@@ -75,6 +71,15 @@
             undo.commit()
         }
 
+        toggleFontFamily(){
+            if( 'GrueneType' === cockpit.target.style.fontFamily){
+                cockpit.target.style.fontFamily = 'Gotham XNarrow';
+            }else{
+                cockpit.target.style.fontFamily = 'GrueneType';
+            }
+            undo.commit()
+        }
+
         toggleAlignment(){
             if( 'flex-start' === cockpit.target.style.alignItems){
                 cockpit.target.style.alignItems = 'center';
@@ -91,6 +96,14 @@
                cockpit.target.style.textTransform = "uppercase"; 
             }
             undo.commit();
+        }
+
+        toggleStyle(){
+            if( cockpit.target.dataset.style === 'samewidth'){
+                this.sameSize();
+            }else{
+                this.sameWidth();
+            }
         }
 
         getSelectionParentElement() {
@@ -115,8 +128,8 @@
                     line.style.fontSize = i + "px";
                     i++
                 }
-                
             }); 
+            cockpit.target.dataset.style = 'samewidth';
         }
 
         sameSize(){
@@ -124,6 +137,7 @@
             lines.forEach(line => {
                 line.style.fontSize = "1em";
             }); 
+            cockpit.target.dataset.style = 'samesize';
         }
     }
     const greentext = new Greentext();

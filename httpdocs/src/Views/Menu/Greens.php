@@ -3,7 +3,7 @@
     <img src="/assets/images/sunflower.svg" style="height: 56px; width: 56px; margin-right: 0;">
 </a>
 <div class="dropdown" id="menu_mint">
-        <span>Sharepic-Generator</span>
+        <span>Sharepicgenerator</span>
         <div class="dropdown-content">
             <a href="https://chatbegruenung.de/channel/sharepicgenerator" target="_blank" class="menu-link">
                 <?php  echo _('Support');?>

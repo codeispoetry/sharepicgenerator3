@@ -45,6 +45,7 @@
             rotate: 0deg;
             font-size: 80px;
             line-height: 1.01em;
+            font-family: 'Gotham XNarrow';
         "
     >
         <p>Tippe hier</p>
@@ -91,11 +92,33 @@
                 </p>    
             </div>
         </div>
+
+        <div 
+            data-class="draggable selectable greentext" 
+            data-cockpit="greentext"
+            onclick="component.select(this)"
+            ondblclick="rte.init()"
+            onmousedown="component.startDrag(event)"
+            data-id="greentext"
+            contenteditable="true"
+            spellcheck="false"
+            style="
+                left: 43px;
+                top: 111px;
+                z-index: 2;
+                color: #ffffff;
+                rotate: 0deg;
+                font-size: 80px;
+                line-height: 1.01em;
+                font-family: 'GrueneType';
+            "
+        >
+        <p>Neuer Text</p>
+    </div>
     
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="background" 
             data-max="1" contenteditable="true" spellcheck="false"
             onclick="component.select(this)"
-            data-id="copyright"
             style="
                 font-size: 14px;
                 color: #000000;
@@ -155,6 +178,8 @@
         }
        
         sg.setPreset('1:1', 'Post quadratisch', 1080,1080)
+
+        document.getElementById('background_color').style.display = 'none';
 
         document.getElementById('greentext').addEventListener('keyup', function(e){
             const greentext = document.getElementById('greentext');

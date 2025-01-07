@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-16 10:01+0100\n"
-"PO-Revision-Date: 2024-12-16 10:01+0100\n"
+"POT-Creation-Date: 2024-12-17 16:35+0100\n"
+"PO-Revision-Date: 2024-12-17 16:36+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -148,59 +148,50 @@ msgstr "Um eine Farbe zu entfernen, klicken Sie auf die Farbe in der Palette."
 msgid "Remove color"
 msgstr "Farbe entfernen"
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:4
+#: httpdocs/src/Views/Cockpit/Greentext.php:5
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:4
+#: httpdocs/src/Views/Cockpit/Freetext.php:4
+msgid "Add text"
+msgstr "Text hinzufügen"
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:9
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
 #: httpdocs/src/Views/Cockpit/Addpicture.php:10
 msgid "Total size"
 msgstr "Gesamtgröße"
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:11
+#: httpdocs/src/Views/Cockpit/Greentext.php:16
 msgid "Font"
 msgstr "Schrift"
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:14
-#: httpdocs/src/Views/Cockpit/Greentext.php:16
-#: httpdocs/src/Views/Cockpit/Greentext.php:18
+#: httpdocs/src/Views/Cockpit/Greentext.php:19
+#: httpdocs/src/Views/Cockpit/Greentext.php:21
+#: httpdocs/src/Views/Cockpit/Greentext.php:23
 msgid "toggle capitalization"
 msgstr "Groß- /Kleinbuchstaben umschalten"
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:20
-#: httpdocs/src/Views/Cockpit/Greentext.php:22
-#: httpdocs/src/Views/Cockpit/Greentext.php:24
+#: httpdocs/src/Views/Cockpit/Greentext.php:25
+#: httpdocs/src/Views/Cockpit/Greentext.php:27
+#: httpdocs/src/Views/Cockpit/Greentext.php:29
 msgid "toggle alignment"
 msgstr "links oder zentriert"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:31
-msgid "Style"
-msgstr "Stil"
+#: httpdocs/src/Views/Cockpit/Greentext.php:33
+#: httpdocs/src/Views/Cockpit/Greentext.php:35
+msgid "toggle font family"
+msgstr "Schriftart ändern"
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:34
-#: httpdocs/src/Views/Cockpit/Greentext.php:36
-#: httpdocs/src/Views/Cockpit/Greentext.php:40
-#: httpdocs/src/Views/Cockpit/Greentext.php:42
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:5
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:7
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:9
-msgid "to front"
-msgstr "nach vorn"
-
-#: httpdocs/src/Views/Cockpit/Greentext.php:38
-msgid "same width"
-msgstr "Alle Zeilen gleich breit"
-
-#: httpdocs/src/Views/Cockpit/Greentext.php:44
-msgid "same size"
-msgstr "Schriftgröße gleich"
+#: httpdocs/src/Views/Cockpit/Greentext.php:37
+#: httpdocs/src/Views/Cockpit/Greentext.php:39
+#: httpdocs/src/Views/Cockpit/Greentext.php:41
+msgid "toggle style"
+msgstr "Schriftstil ändern"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
 #: httpdocs/src/Views/Creator.php:91 httpdocs/src/Views/Creator.php:93
 msgid "Additional text"
 msgstr "Zusatztext"
-
-#: httpdocs/src/Views/Cockpit/Greenaddtext.php:4
-#: httpdocs/src/Views/Cockpit/Freetext.php:4
-msgid "Add text"
-msgstr "Text hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
 msgid "Color"
@@ -590,6 +581,12 @@ msgstr "schließen"
 msgid "Order"
 msgstr "Anordnung"
 
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:5
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:7
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:9
+msgid "to front"
+msgstr "nach vorn"
+
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:11
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:13
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:15
@@ -840,6 +837,15 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Style"
+#~ msgstr "Stil"
+
+#~ msgid "same width"
+#~ msgstr "Alle Zeilen gleich breit"
+
+#~ msgid "same size"
+#~ msgstr "Schriftgröße gleich"
 
 #~ msgid "Variants"
 #~ msgstr "Varianten"

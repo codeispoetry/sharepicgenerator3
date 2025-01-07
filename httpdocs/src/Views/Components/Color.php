@@ -10,7 +10,8 @@
 
         if($this->env->config->get( 'Main', 'tenant' ) === 'greens' ) {
             $standard_colors = array(
-                "#000000","#ffffff","#005437","#008939","#8abd24","#f5f1e9","#0ba1dd","#fff17a"
+                //"#000000","#ffffff","#005437","#008939","#8abd24","#f5f1e9","#0ba1dd","#fff17a"
+                  "#ffffff","#fff17a"
             );
         }
 

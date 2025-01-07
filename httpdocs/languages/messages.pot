@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-16 10:01+0100\n"
+"POT-Creation-Date: 2024-12-17 16:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,58 +139,49 @@ msgstr ""
 msgid "Remove color"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:4
+#: httpdocs/src/Views/Cockpit/Greentext.php:5
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:4
+#: httpdocs/src/Views/Cockpit/Freetext.php:4
+msgid "Add text"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Greentext.php:9
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
 #: httpdocs/src/Views/Cockpit/Addpicture.php:10
 msgid "Total size"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:11
+#: httpdocs/src/Views/Cockpit/Greentext.php:16
 msgid "Font"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:14
-#: httpdocs/src/Views/Cockpit/Greentext.php:16
-#: httpdocs/src/Views/Cockpit/Greentext.php:18
+#: httpdocs/src/Views/Cockpit/Greentext.php:19
+#: httpdocs/src/Views/Cockpit/Greentext.php:21
+#: httpdocs/src/Views/Cockpit/Greentext.php:23
 msgid "toggle capitalization"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:20
-#: httpdocs/src/Views/Cockpit/Greentext.php:22
-#: httpdocs/src/Views/Cockpit/Greentext.php:24
+#: httpdocs/src/Views/Cockpit/Greentext.php:25
+#: httpdocs/src/Views/Cockpit/Greentext.php:27
+#: httpdocs/src/Views/Cockpit/Greentext.php:29
 msgid "toggle alignment"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:31
-msgid "Style"
+#: httpdocs/src/Views/Cockpit/Greentext.php:33
+#: httpdocs/src/Views/Cockpit/Greentext.php:35
+msgid "toggle font family"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Greentext.php:34
-#: httpdocs/src/Views/Cockpit/Greentext.php:36
-#: httpdocs/src/Views/Cockpit/Greentext.php:40
-#: httpdocs/src/Views/Cockpit/Greentext.php:42
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:5
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:7
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:9
-msgid "to front"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Greentext.php:38
-msgid "same width"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Greentext.php:44
-msgid "same size"
+#: httpdocs/src/Views/Cockpit/Greentext.php:37
+#: httpdocs/src/Views/Cockpit/Greentext.php:39
+#: httpdocs/src/Views/Cockpit/Greentext.php:41
+msgid "toggle style"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
 #: httpdocs/src/Views/Creator.php:91 httpdocs/src/Views/Creator.php:93
 msgid "Additional text"
-msgstr ""
-
-#: httpdocs/src/Views/Cockpit/Greenaddtext.php:4
-#: httpdocs/src/Views/Cockpit/Freetext.php:4
-msgid "Add text"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
@@ -570,6 +561,12 @@ msgstr ""
 
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:2
 msgid "Order"
+msgstr ""
+
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:5
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:7
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:9
+msgid "to front"
 msgstr ""
 
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:11
