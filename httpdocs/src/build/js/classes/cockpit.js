@@ -89,7 +89,7 @@ class Cockpit {
   }
 
   setup_logo (element) {
-    
+    document.getElementById('logo_size').value = element.style.width.replace('px', '')
   }
 
   setup_elements (element) {

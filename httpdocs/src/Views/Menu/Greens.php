@@ -2,7 +2,7 @@
 <a href="index.php">
     <img src="/assets/images/sunflower.svg" style="height: 56px; width: 56px; margin-right: 0;">
 </a>
-<div class="dropdown" id="menu_mint">
+    <div class="dropdown" id="menu_mint">
         <span>Sharepicgenerator</span>
         <div class="dropdown-content">
             <a href="https://chatbegruenung.de/channel/sharepicgenerator" target="_blank" class="menu-link">
@@ -48,16 +48,17 @@
     </div>
     <?php } ?>
 
-    <div>
-        <span onClick="api.load('templates/greens/start.html')" style="cursor: pointer;">
-            Bundestagswahl
-        </span>  
-    </div>
 
-    <div>
-        <span onClick="api.load('templates/de/start.html')" style="cursor: pointer;">
-            Klassisches Desgin
-        </span>  
+    <div class="dropdown" id="menu_mint">
+        <span>Design</span>
+        <div class="dropdown-content">
+            <button onClick="if(confirm('Alle Änderungen gehen verloren. Weiter?')) api.load('templates/greens/start.html')">
+                <?php  echo _('Bundestagswahl');?>
+            </button>
+            <button onClick="if(confirm('Alle Änderungen gehen verloren. Weiter?')) api.load('templates/de/start.html')">
+               Klassisch
+            </button>
+        </div>
     </div>
 
     <span class="info-in-menu" id="info-in-menu"></span>

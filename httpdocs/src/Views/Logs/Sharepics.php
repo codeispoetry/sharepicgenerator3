@@ -1,6 +1,16 @@
 <?php include_once './src/Views/Header.php'; ?>
 <?php
+
+use Sharepicgenerator\Controllers\Helper;
+
+Helper::clean_up_dir( '../tmp/*.png', 3 * 24 * 60 );
+
 $files = glob( '../tmp/*.png' );
+
+usort($files, function($a, $b) {
+    return filemtime($b) - filemtime($a);
+});
+
 $files = array_map(
 	function( $filename ) {
 		return substr( $filename, 3, );

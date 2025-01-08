@@ -17,7 +17,7 @@ window.onload = function () {
 
   api.load('templates/' + config.starttemplate + '/start.html')
 
-  api.load('save/1/sharepic.html')
+  //api.load('save/1/sharepic.html')
 
   window.setTimeout(function () {
     ui.addColorButtons()
