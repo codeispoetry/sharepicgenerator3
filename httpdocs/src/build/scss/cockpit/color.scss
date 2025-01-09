@@ -27,6 +27,10 @@
             display: flex;
             flex-wrap: wrap;
 
+            .palette-button-wrapper{
+                display: flex;
+                flex-wrap: wrap;
+            }
             button{
                 width: $size;
                 height: $size;
@@ -45,6 +49,20 @@
 
                 &:hover{
                     border: 2px solid $paletter-blue;
+                }
+            }
+
+            .colorpicker{
+                width: $size;
+                height: $size;
+                border-radius: 50%;
+                margin: 2px;
+                background: white url('icons/eyedropper.svg') no-repeat center center;
+                background-size: 60%;
+                border: 1px solid $default-font-color;
+    
+                &:hover{
+                    background-color: $light-gray;
                 }
             }
         }

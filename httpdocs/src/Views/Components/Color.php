@@ -1,7 +1,9 @@
 <div class="color" id="<?php echo $color->id; ?>">   
     
     <h3><?php echo _('Colors');?></h3>
+    
     <div class="standard-palette">
+        <div class="palette-button-wrapper">
         <?php
         $standard_colors = array(
             "#000000","#ffffff","#BFC6D3","#FC5555","#FFBDF2","#FF9900","#FFDA46",
@@ -26,6 +28,21 @@
                 );
             }
         ?>
+        
+
+        <div style="display:flex;flex-direction:column;justify-content:flex-end">
+            <input type="color" 
+                value="<?php echo $color->value; ?>" 
+                class="" 
+                id="<?php echo $color->id; ?>" 
+                oninput="<?php echo $color->oninput; ?>">
+
+            <button 
+                class="colorpicker" 
+                onclick="this.previousElementSibling.click();">
+            </button>
+        </div>
+    </div>
        
     </div>
 
@@ -37,18 +54,6 @@
                 data-blueprint="true" 
                 style="background-color: #123456" 
                 onClick="<?php echo $color->onclick; ?>(this.style.backgroundColor);">
-            </button>
-        </div>
-        <div style="display:flex;flex-direction:column;justify-content:flex-end">
-            <input type="color" 
-                value="<?php echo $color->value; ?>" 
-                class="" 
-                id="<?php echo $color->id; ?>" 
-                oninput="<?php echo $color->oninput; ?>">
-
-            <button 
-                class="colorpicker" 
-                onclick="this.previousElementSibling.click();">
             </button>
         </div>
     </div>
