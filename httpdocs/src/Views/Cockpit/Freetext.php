@@ -14,7 +14,10 @@
         </div>
     </section>
 
-    <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
+    <?php 
+        $delete_button_text = _('Text');
+        require ("./src/Views/Components/ToFrontAndBack.php"); 
+    ?>
 </section>
 
 <script>

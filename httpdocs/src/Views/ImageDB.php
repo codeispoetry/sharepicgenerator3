@@ -1,12 +1,12 @@
 <div id="imagedb_page" class="imagedb_page">
     <div style="display:flex;justify-content:space-between;">
         <div>
-            <p>
+            <h3>
                 <?php
                     echo _('Images from') . '';
                 ?>
                 <span id="image_db_source_name">ImageDB</span>
-            </p>
+            </h3>
             <div class="button-group">
                 <input type="text" style="width:100%;" name="imagedb_q1" id="imagedb_q1" placeholder="<?php  echo _('search in image database');?>">
                 <button onClick="imagedb.search( document.getElementById('imagedb_q1').value )"><img src="assets/icons/search.svg"></button> 

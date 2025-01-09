@@ -1,6 +1,6 @@
 #tabs{
     flex-grow: 1;
-    width: 348px;
+    width: 370px;
     overflow-y: auto;
     overflow-x: hidden;
     height: calc( 100% - 0px);
@@ -10,7 +10,7 @@
         width: 96px;
         display: flex;
         flex-direction: column;
-        padding: 0 $section-gap;
+        padding: 0;
 
         button{
             background-color: unset;

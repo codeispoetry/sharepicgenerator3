@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_settings">
-    <h2><?php  echo _('Settings');?></h2>
+    <h2><?php  echo _('Design settings');?></h2>
     <section>
         <?php
             echo _('Please select a color and add it to the palette.');

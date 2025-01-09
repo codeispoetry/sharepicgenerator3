@@ -24,6 +24,12 @@
     src: url('systemfonts/GrueneType.woff2') format('woff2');
     font-weight: 700;
 }
+
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('systemfonts/SourceSansPro-Semibold.woff2') format('woff2');
+    font-weight: 700;
+}
 html{
     margin: 0;
     padding: 0;

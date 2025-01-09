@@ -20,7 +20,10 @@
 <?php if (!isset($nodelete)) {?>
 <section class="selected_only btn_delete">
     <button class="delete" onClick="component.delete()" title="<?php  echo _('delete');?>">
-        <?php  echo _('delete');?>
+        <?php  
+        echo $delete_button_text . ' ' .  _('delete');
+        $delete_button_text = '';
+        ?>
     </button>
 </section>
 <?php } ?>

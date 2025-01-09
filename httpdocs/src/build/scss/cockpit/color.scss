@@ -14,7 +14,11 @@
             margin: 2px;
             background: white url('icons/eyedropper.svg') no-repeat center center;
             background-size: 60%;
-            border: 1px solid $light;
+            border: 1px solid $default-font-color;
+
+            &:hover{
+                background-color: $light-gray;
+            }
         }
 
 
@@ -37,6 +41,10 @@
 
                 &[style="background-color: #ffffff"]{
                     border: 1px solid $light-gray;
+                }
+
+                &:hover{
+                    border: 2px solid $paletter-blue;
                 }
             }
         }

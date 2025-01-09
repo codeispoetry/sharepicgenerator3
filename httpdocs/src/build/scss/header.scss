@@ -82,15 +82,16 @@ nav {
 
     span {
         margin-right: 10px;
-    }
-
-    &::after {
-        content: url('icons/arrow_drop_down.svg');
-        width: 10px;
-        position: absolute;
-        margin-left: -2em;
-        top: -0.2em;
-        right: 0;
+    
+        &::after {
+            content: url(icons/chevron-up.svg);
+            transform: rotate(180deg);
+            position: absolute;
+            color: black;
+            right: -9px;
+            top: 3px;
+            transition: all 0.2s;
+        }
     }
 
     &:hover {
@@ -166,7 +167,6 @@ nav {
 
         button {
             &::after {
-                transform: rotate(135deg);
                 color: $theme-color;
             }
 

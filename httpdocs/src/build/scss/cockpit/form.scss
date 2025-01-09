@@ -192,7 +192,7 @@ select{
             background-color: $light-blue;
             color: $default-font-color;
             border: 1px solid $light-gray;
-            padding: 40px 40px 50px 40px;
+            padding: 40px 30px 50px 30px;
 
             img{
                 margin: 10px;
@@ -220,7 +220,8 @@ select{
 
         select.mint{
             background-image: url(/assets/images/mint.svg);
-            padding-left: 71px;
+            padding-left: 50px;
+            background-color: $default-bg;
         }
 
         input{
@@ -230,7 +231,7 @@ select{
             padding: 0 0 0 5px;
             height: 44px;
             width: 100%;
-            background-color: $bg-gray;
+            background-color: $default-bg;
 
             &::placeholder{
                 color: $placeholder-gray;

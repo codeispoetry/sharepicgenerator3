@@ -329,7 +329,7 @@ msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:17
 #: httpdocs/src/Views/Cockpit/Searchimage.php:24
-msgid "Drop an image or chooseit to upload from your computer"
+msgid "Drop an image or choose it to upload from your computer"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:33

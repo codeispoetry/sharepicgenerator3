@@ -14,14 +14,14 @@
         <div class="set-target image-uploader" data-target="background">
             <button onClick="document.getElementById('upload').click()">
                 <img src="assets/icons/upload.svg">
-                <?php echo _('Drop an image or chooseit to upload from your computer');?>
+                <?php echo _('Drop an image or choose it to upload from your computer');?>
             </button>
         </div>
 
         <div class="set-target image-uploader" data-target="addpic">
             <button onClick="component.add('addpicture'); document.getElementById('addAddPicture').click();">
                 <img src="assets/icons/upload.svg">
-                <?php echo _('Drop an image or chooseit to upload from your computer');?>
+                <?php echo _('Drop an image or choose it to upload from your computer');?>
             </button>
         </div>
 

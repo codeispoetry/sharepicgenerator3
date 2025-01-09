@@ -263,7 +263,7 @@ msgstr "Urheberrechts&shy;hinweis hinzufügen"
 msgid "The copyright is placed automatically from the database."
 msgstr ""
 "Der Urheberrechtshinweis wird automatisch mit dem Bild aus der Bilddatenbank "
-"eingefügt. Bei einem von Dir hochgeladenem Bild er-scheint ein Platzhalter-"
+"eingefügt. Bei einem von Dir hochgeladenem Bild erscheint ein Platzhalter-"
 "Text, den Du ändern kannst."
 
 #: httpdocs/src/Views/Cockpit/Background.php:54
@@ -341,7 +341,7 @@ msgstr "Eigenes Bild hochladen"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:17
 #: httpdocs/src/Views/Cockpit/Searchimage.php:24
-msgid "Drop an image or chooseit to upload from your computer"
+msgid "Drop an image or choose it to upload from your computer"
 msgstr "Drag and Drop oder wähle ein Bild zum Upload von deinem Computer aus"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:33
@@ -354,7 +354,7 @@ msgstr "Wähle eine Datenbank"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:52
 msgid "search ..."
-msgstr "suche ..."
+msgstr "Suche ..."
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:59
 msgid "Add from"

@@ -9,7 +9,7 @@
                 <div class="title"></div>
                 <div class="description"></div>
             </div>
-            <div> >&nbsp;</div>
+            <div> <img src="assets/icons/chevron-up.svg" style="rotate:90deg;"></div>
         </button>
 
     </section> 
