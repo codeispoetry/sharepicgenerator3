@@ -452,10 +452,12 @@ class API {
       document.getElementById('background').style.filter = ''
       document.querySelector('.workbench-below .message').innerHTML = ''
 
+
       const copyright = document.querySelector('#sharepic [id^=copyright_]')
-      if (copyright) {
-        copyright.innerHTML = ''
+      if (!copyright) {
+        component.add('copyright')
       }
+      document.querySelector('#sharepic [id^=copyright_]').innerHTML = 'Hier kann ein Urheberrechtshinweis eingetragen werden'
 
       ui.showTab('background')
       config.uploading = false
