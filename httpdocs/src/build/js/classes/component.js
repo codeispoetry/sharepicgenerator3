@@ -136,9 +136,14 @@ class Component {
 
     cockpit.target = this.parentWithOnMouseDown(event.target) || console.error('No parent with onmousedown found')
 
-    component.dragInfo = {
-      xOffset: clientX - cockpit.target.getBoundingClientRect().left + document.getElementById('canvas').getBoundingClientRect().left,
-      yOffset: clientY - cockpit.target.getBoundingClientRect().top + document.getElementById('canvas').getBoundingClientRect().top
+    const scale = cockpit.target.style.transform.match(/scale\((\d+\.\d+)\)/)
+    const zoom = scale ? parseFloat(scale[1]) : 1
+
+    component.dragStart = {
+      x: clientX,
+      y: clientY,
+      top: parseFloat(cockpit.target.style.top) || 0,
+      left: parseFloat(cockpit.target.style.left) || 0
     }
 
     document.addEventListener('mousemove', component.dragging)
@@ -160,9 +165,10 @@ class Component {
       clientY = e.clientY
     }
 
-    let x = clientX - component.dragInfo.xOffset
-    let y = clientY - component.dragInfo.yOffset
+    let x = clientX - component.dragStart.x + component.dragStart.left
+    let y = clientY - component.dragStart.y + component.dragStart.top
 
+    
     // Do not allow to drag the element outside the canvas
     if (cockpit.target.dataset.dragconstraint === 'true') {
       const maxLeft = document.getElementById('canvas').offsetWidth - cockpit.target.offsetWidth
