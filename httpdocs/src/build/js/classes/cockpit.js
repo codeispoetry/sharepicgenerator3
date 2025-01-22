@@ -68,6 +68,14 @@ class Cockpit {
       document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
       document.getElementById('copyright_size').value = element.style.fontSize.replace('px', '')
       document.getElementById('copyright_color').value = ui.rgbToHex(element.style.color)
+
+      if(element.style.filter) {  
+        document.getElementById('background_brightness').value = element.style.filter.split(' ').find((filter) => filter.startsWith('brightness'))?.replace('brightness(', '')?.replace(')', '') || 1
+        document.getElementById('background_saturate').value = element.style.filter.split(' ').find((filter) => filter.startsWith('saturate'))?.replace('saturate(', '').replace(')', '') || 1
+        document.getElementById('background_blur').value = element.style.filter.split(' ').find((filter) => filter.startsWith('blur'))?.replace('blur(', '')?.replace('px)', '') || 0
+
+      }
+
       // loop over all elements having the class with_copyright
       document.querySelectorAll('.with_copyright').forEach((element) => {
         element.classList.remove('d-none')

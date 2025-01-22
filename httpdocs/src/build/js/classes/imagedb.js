@@ -48,12 +48,13 @@ class ImageDB {
     }
 
     const imgDBSource = document.getElementById('image_db_source').value
-    document.getElementById('image_db_source_name').innerHTML = imgDBSource
+    document.getElementById('image_db_source_name').innerHTML = 'Images from ' + imgDBSource
     switch (imgDBSource) {
       case 'unsplash':
         this.search_unsplash(q)
         break
       case 'mint':
+        document.getElementById('image_db_source_name').innerHTML = 'Bilder der MINT-Mediendatenbank'
         this.search_mint(q)
         break
       default:

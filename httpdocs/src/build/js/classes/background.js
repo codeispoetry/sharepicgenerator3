@@ -87,6 +87,9 @@ class Background {
     document.getElementById('background').style.backgroundImage = null
     background.setCredits('')
     ui.showSearchImageTab('background')
+    this.filter('blur', 0)
+    this.filter('brightness', 1)
+    this.filter('saturate', 1)
   }
 
   filter (key, value) {

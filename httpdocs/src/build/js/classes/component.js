@@ -68,6 +68,10 @@ class Component {
     document.getElementById('add_copyright').style.display = 'flex'
     logger.log('deletes component ' + cockpit.target.id)
 
+    if(cockpit.target.dataset.cockpit == 'addpicture' ){
+      ui.showSearchImageTab('addpic');
+    }
+
     cockpit.target.remove()
     this.unselect()
   }

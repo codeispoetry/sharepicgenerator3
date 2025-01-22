@@ -81,6 +81,19 @@ button{
     }
 }
 
+.button-group{
+    input{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    button{
+        margin-bottom: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        width: 80px;
+    }
+}
+
 select{
     &.button-dropdown{
         background-color: $theme-color;
@@ -100,7 +113,6 @@ select{
     input, textarea{
         background-color: $light-gray;
         color: $default-font-color;
-        border-radius: 8px;
 
         &::placeholder{
             color: $light;
