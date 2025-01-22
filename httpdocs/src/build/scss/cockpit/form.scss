@@ -14,7 +14,7 @@ button{
     justify-content: center;
 
     &:hover{
-        background-color: $light-gray;
+        background-color: $theme-hover-color;
     }
 
     &.no-button{

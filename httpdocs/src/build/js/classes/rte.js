@@ -27,7 +27,7 @@ class RTE {
       plugins: 'lists',
       skin: 'oxide-dark',
       font_family_formats: freetext.font_family_formats,
-      font_size_formats: '12pt 14pt 18pt 24pt 30pt 36pt 48pt 60pt 72pt 96pt',
+      font_size_formats: '12px 14px 18px 24px 30px 36px 48px 60px 72px 96px',
       toolbar: 'undo redo | bold italic underline | fontfamily fontsize fontsizeinput lineheight | forecolor | removeformat',
       color_map: this.colorMap,
       width: `${w}px`,
