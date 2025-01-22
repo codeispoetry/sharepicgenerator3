@@ -68,7 +68,7 @@
                 if ( $form[0] === '.' ) continue;
         
                 printf(
-                    "<button class=\"no-button\" onClick=\"component.add('eyecatcher'); eyecatcher.setForm('sticker_%s')\">%s</button>",
+                    "<button class=\"no-button\" onClick=\"component.add('myform'); myform.setForm('sticker_%s')\">%s</button>",
                     preg_replace( '/\.svg/', '', $form ),
                     '<img src="/assets/forms/' . $form . '">'
                 );

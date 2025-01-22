@@ -72,6 +72,10 @@ class Component {
       ui.showSearchImageTab('addpic');
     }
 
+    if(cockpit.target.dataset.cockpit == 'myform' ){
+      ui.showSearchImageTab('addpic');
+    }
+
     cockpit.target.remove()
     this.unselect()
   }
