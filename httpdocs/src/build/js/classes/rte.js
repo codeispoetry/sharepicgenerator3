@@ -32,6 +32,7 @@ class RTE {
       color_map: this.colorMap,
       width: `${w}px`,
       min_width: 100,
+      min_height: 50,
       height: `${h}px`,
       license_key: 'gpl',
       branding: false,
@@ -67,7 +68,7 @@ class RTE {
     }
 
     document.getElementById(cockpit.target.id).style.width = `${width}px`
-    document.getElementById(cockpit.target.id).style.height = `${height}px`
+    document.getElementById(cockpit.target.id).style.height = `${height- 20}px`
     document.getElementById(cockpit.target.id).style.rotate = this.rotate
   }
 }
