@@ -69,10 +69,12 @@ class Component {
     logger.log('deletes component ' + cockpit.target.id)
 
     if(cockpit.target.dataset.cockpit == 'addpicture' ){
+      cockpit.target.remove()
       ui.showSearchImageTab('addpic');
     }
 
     if(cockpit.target.dataset.cockpit == 'myform' ){
+      cockpit.target.remove()
       ui.showSearchImageTab('addpic');
     }
 

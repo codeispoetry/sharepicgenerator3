@@ -21,6 +21,8 @@ class RTE {
     this.rotate = document.getElementById(cockpit.target.id).style.rotate
     document.getElementById(cockpit.target.id).style.removeProperty('rotate')
 
+    document.getElementsByTagName('header')[0].style.zIndex = 0
+
     tinymce.init({
       selector: `#${cockpit.target.id} .tinymce`,
       menubar: 'tools',
@@ -70,5 +72,7 @@ class RTE {
     document.getElementById(cockpit.target.id).style.width = `${width}px`
     document.getElementById(cockpit.target.id).style.height = `${height- 20}px`
     document.getElementById(cockpit.target.id).style.rotate = this.rotate
+
+    document.getElementsByTagName('header')[0].style.zIndex = 10
   }
 }
