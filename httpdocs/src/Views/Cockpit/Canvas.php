@@ -18,6 +18,7 @@
         <?php
             $color = new stdClass();
             $color->value = "#ffffff";
+            $color->colorset= ["#000000","#ffffff","#005437","#008939","#8abd24","#f5f1e9","#0ba1dd","#fff17a"];
             $color->id = "background_color";
             $color->oninput = "background.color(this.value)";
             $color->onclick = "background.color";

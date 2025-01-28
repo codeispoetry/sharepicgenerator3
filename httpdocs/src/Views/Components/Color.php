@@ -5,6 +5,7 @@
     <div class="standard-palette">
         <div class="palette-button-wrapper">
         <?php
+
         $standard_colors = array(
             "#000000","#ffffff","#BFC6D3","#FC5555","#FFBDF2","#FF9900","#FFDA46",
             "#5A4101","#9D7265","#7DC605","#66CBAF","#5F94F9","#7B61FF"
@@ -15,6 +16,10 @@
                 //"#000000","#ffffff","#005437","#008939","#8abd24","#f5f1e9","#0ba1dd","#fff17a"
                   "#ffffff","#fff17a"
             );
+        }
+
+        if(isset($color->colorset)){
+            $standard_colors = $color->colorset;
         }
 
         foreach($standard_colors as $standard_color){
