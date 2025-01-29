@@ -89,14 +89,7 @@
 						</div>
 					</div>
 				</button>
-				<button id="tab_btn_greenaddtext" onClick="ui.showTab('greenaddtext')">
-					<div>
-						<img src="assets/icons/text-add.svg" title="<?php echo _('Additional text'); ?>">
-						<div class="description">
-							<?php echo _('Additional text'); ?>
-						</div>
-					</div>
-				</button>
+				
 				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
 					<div>
 						<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
@@ -121,11 +114,19 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_greenclassictext" onClick="ui.showTab('greenclassictext')">
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+						<div class="description">
+							<?php echo _('Main Text'); ?>
+						</div>
+					</div>
+				</button>
 				<button id="tab_btn_greentext" onClick="ui.showTab('greentext')">
 					<div>
 						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
 						<div class="description">
-							<?php echo _('Text'); ?>
+							<?php echo _('Add Text'); ?>
 						</div>
 					</div>
 				</button>
@@ -134,6 +135,14 @@
 						<img src="assets/icons/resize.svg" title="<?php echo _('Vor Ort'); ?>">
 						<div class="description">
 							<?php echo _('Vor Ort'); ?>
+						</div>
+					</div>
+				</button>
+				<button id="tab_btn_greenaddtext" onClick="ui.showTab('greenaddtext')">
+					<div>
+						<img src="assets/icons/asterisk.svg" title="<?php echo _('Additional text'); ?>">
+						<div class="description">
+							<?php echo _('Additional text'); ?>
 						</div>
 					</div>
 				</button>
