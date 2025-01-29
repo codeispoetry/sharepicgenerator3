@@ -46,3 +46,36 @@
 .freetext.selected:has(> .tox-tinymce) {
     border: 0 !important;
 }
+
+$rte_background_color: #FCFCFD;
+$rte_icon_color: #3C4658;
+$rte_hover_color: #E6E8EC;
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header,
+.tox .tox-menubar,
+.tox .tox-toolbar-overlord,
+.tox .tox-toolbar__primary,
+.tox .tox-tbtn,
+.tox .tox-number-input {
+    background-color: $rte_background_color !important;
+}
+
+.tox .tox-tbtn,
+.tox .tox-number-input,
+.tox .tox-number-input button,
+.tox .tox-number-input input {
+    background-color: $rte_background_color !important;
+    &:hover{
+        background-color: $rte_hover_color !important;
+    }
+}
+
+.tox svg,
+.tox .tox-number-input input,
+.tox .tox-tbtn--bespoke .tox-tbtn__select-label  {
+    fill: $rte_icon_color !important;
+}
+.tox .tox-tbtn--bespoke .tox-tbtn__select-label,
+.tox .tox-number-input input {
+    color: $rte_icon_color !important;
+}
