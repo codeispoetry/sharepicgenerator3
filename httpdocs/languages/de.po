@@ -3,13 +3,12 @@
 # Copyright (C) 2023 THE sharepicgenerator'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the sharepicgenerator package.
 # Thomas Rose <tom@lxka-4134mg3.fritz.box>, 2023.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-07 11:34+0100\n"
-"PO-Revision-Date: 2025-01-07 11:35+0100\n"
+"POT-Creation-Date: 2025-02-05 20:09+0100\n"
+"PO-Revision-Date: 2025-02-05 20:10+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -67,15 +66,11 @@ msgstr "Bereits registriert?"
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: httpdocs/src/Views/ImageDB.php:6
-msgid "Images from"
-msgstr "Bilder von"
-
-#: httpdocs/src/Views/ImageDB.php:11
+#: httpdocs/src/Views/ImageDB.php:8
 msgid "search in image database"
 msgstr "Suche in Bilddatenbank"
 
-#: httpdocs/src/Views/ImageDB.php:15
+#: httpdocs/src/Views/ImageDB.php:13
 msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
@@ -84,8 +79,8 @@ msgstr ""
 "schließt die Ergebnisse."
 
 #: httpdocs/src/Views/Cockpit/Elements.php:2
-#: httpdocs/src/Views/Cockpit/Elements.php:8 httpdocs/src/Views/Creator.php:147
-#: httpdocs/src/Views/Creator.php:149
+#: httpdocs/src/Views/Cockpit/Elements.php:8 httpdocs/src/Views/Creator.php:159
+#: httpdocs/src/Views/Creator.php:161
 msgid "Elements"
 msgstr "Elemente"
 
@@ -97,13 +92,15 @@ msgstr "Element hinzufügen"
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:12
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
 #: httpdocs/src/Views/Cockpit/Background.php:49
-#: httpdocs/src/Views/Cockpit/Logo.php:4
+#: httpdocs/src/Views/Cockpit/Form.php:10 httpdocs/src/Views/Cockpit/Logo.php:4
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:15
 #: httpdocs/src/Views/Cockpit/Europe.php:8
 msgid "Size"
 msgstr "Größe"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:3
-#: httpdocs/src/Views/Creator.php:99 httpdocs/src/Views/Creator.php:101
+#: httpdocs/src/Views/Cockpit/Eyecatcher.php:31
+#: httpdocs/src/Views/Creator.php:95 httpdocs/src/Views/Creator.php:97
 msgid "Eyecatcher"
 msgstr "Störer"
 
@@ -112,25 +109,29 @@ msgid "Add eyecatcher"
 msgstr "Störer hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:19
+#: httpdocs/src/Views/Cockpit/Form.php:17
 #: httpdocs/src/Views/Cockpit/Freetext.php:11
 msgid "Rotation"
 msgstr "Drehung"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:24
+#: httpdocs/src/Views/Cockpit/Form.php:22
 msgid "Circle"
 msgstr "Kreis"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:25
+#: httpdocs/src/Views/Cockpit/Form.php:23
 msgid "Square"
 msgstr "Quadrat"
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:26
+#: httpdocs/src/Views/Cockpit/Form.php:24
 msgid "Rect 16:9"
 msgstr "Rechteck 16:9"
 
-#: httpdocs/src/Views/Cockpit/Settings.php:2 httpdocs/src/Views/Creator.php:155
-msgid "Settings"
-msgstr "Einstellungen"
+#: httpdocs/src/Views/Cockpit/Settings.php:2 httpdocs/src/Views/Creator.php:169
+msgid "Design settings"
+msgstr "Design-Einstellungen"
 
 #: httpdocs/src/Views/Cockpit/Settings.php:5
 msgid "Please select a color and add it to the palette."
@@ -161,6 +162,7 @@ msgstr "Text hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:9
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:4
 #: httpdocs/src/Views/Cockpit/Addpicture.php:10
 msgid "Total size"
 msgstr "Gesamtgröße"
@@ -194,7 +196,7 @@ msgid "toggle style"
 msgstr "Schriftstil ändern"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
-#: httpdocs/src/Views/Creator.php:91 httpdocs/src/Views/Creator.php:93
+#: httpdocs/src/Views/Creator.php:143 httpdocs/src/Views/Creator.php:145
 msgid "Additional text"
 msgstr "Zusatztext"
 
@@ -202,8 +204,8 @@ msgstr "Zusatztext"
 msgid "Color"
 msgstr "Farbe"
 
-#: httpdocs/src/Views/Cockpit/Canvas.php:2 httpdocs/src/Views/Creator.php:75
-#: httpdocs/src/Views/Creator.php:77
+#: httpdocs/src/Views/Cockpit/Canvas.php:2 httpdocs/src/Views/Creator.php:78
+#: httpdocs/src/Views/Creator.php:80
 msgid "Canvas"
 msgstr "Leinwand"
 
@@ -284,8 +286,16 @@ msgstr "rechts unten"
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
-#: httpdocs/src/Views/Cockpit/Vorort.php:2 httpdocs/src/Views/Creator.php:131
-#: httpdocs/src/Views/Creator.php:133
+#: httpdocs/src/Views/Cockpit/Form.php:6
+msgid "Edit form"
+msgstr "Form bearbeiten"
+
+#: httpdocs/src/Views/Cockpit/Form.php:41
+msgid "Form"
+msgstr "Form"
+
+#: httpdocs/src/Views/Cockpit/Vorort.php:2 httpdocs/src/Views/Creator.php:135
+#: httpdocs/src/Views/Creator.php:137
 msgid "Vor Ort"
 msgstr "Vor Ort"
 
@@ -299,9 +309,10 @@ msgstr "bitte wählen"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
+#: httpdocs/src/Views/Cockpit/Freetext.php:18
 #: httpdocs/src/Views/Cockpit/Addpicture.php:41
-#: httpdocs/src/Views/Creator.php:115 httpdocs/src/Views/Creator.php:117
-#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
+#: httpdocs/src/Views/Creator.php:111 httpdocs/src/Views/Creator.php:113
+#: httpdocs/src/Views/Creator.php:119 httpdocs/src/Views/Creator.php:127
 msgid "Text"
 msgstr "Text"
 
@@ -318,6 +329,58 @@ msgstr "Logo"
 msgid "Colors"
 msgstr "Farben"
 
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:11
+msgid "Appearance"
+msgstr "Aussehen"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:13
+msgid "Line"
+msgstr "Zeile"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:14
+msgid "Colorset"
+msgstr "Farbschema"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:16
+msgid "Indent"
+msgstr "Einrückung"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:22
+msgid "tanne/sand"
+msgstr "tanne/sand"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:23
+msgid "sand/tanne"
+msgstr "sand/tanne"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:25
+msgid "klee/sand"
+msgstr "klee/sand"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:26
+msgid "sand/klee"
+msgstr "sand/klee"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:28
+msgid "gras/tanne"
+msgstr "gras/tanne"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:29
+msgid "tanne/gras"
+msgstr "tanne/gras"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:32
+msgid "S"
+msgstr "S"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:33
+msgid "M"
+msgstr "M"
+
+#: httpdocs/src/Views/Cockpit/Greenclassictext.php:34
+msgid "L"
+msgstr "L"
+
 #: httpdocs/src/Views/Cockpit/Europe.php:2
 msgid "Europe"
 msgstr "Europa"
@@ -327,7 +390,7 @@ msgid "Add \"Do, what counts\""
 msgstr "Europaclaim hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Searchimage.php:4
-#: httpdocs/src/Views/Creator.php:83 httpdocs/src/Views/Creator.php:85
+#: httpdocs/src/Views/Creator.php:86 httpdocs/src/Views/Creator.php:88
 msgid "Background image"
 msgstr "Hintergrundbild"
 
@@ -470,6 +533,10 @@ msgstr "Text rechts"
 msgid "text below"
 msgstr "Text darunter"
 
+#: httpdocs/src/Views/Cockpit/Addpicture.php:58
+msgid "Foreground image"
+msgstr "Vordergrundbild"
+
 #: httpdocs/src/Views/Mail/Account_Creation.php:3
 #: httpdocs/src/Views/Mail/Password_Link.php:3
 msgid "Hello"
@@ -487,7 +554,7 @@ msgstr ""
 msgid "Click on the following link to reset your password: "
 msgstr "Klicke auf den folgenden Link, um dein Passwort zurückzusetzen: "
 
-#: httpdocs/src/Views/Logs/Sharepics.php:14
+#: httpdocs/src/Views/Logs/Sharepics.php:24
 msgid "Latest sharepics"
 msgstr "Neueste Sharepics"
 
@@ -533,11 +600,11 @@ msgstr "Chrome-Version: %s"
 msgid "Usage Log"
 msgstr "Nutzungs-Log"
 
-#: httpdocs/src/Views/Components/Color.php:32
+#: httpdocs/src/Views/Components/Color.php:54
 msgid "My colors"
 msgstr "Meine Farben"
 
-#: httpdocs/src/Views/Components/Color.php:58
+#: httpdocs/src/Views/Components/Color.php:68
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
@@ -599,9 +666,9 @@ msgid "to back"
 msgstr "nach hinten"
 
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:22
-#: httpdocs/src/Views/Components/ToFrontAndBack.php:23
+#: httpdocs/src/Views/Components/ToFrontAndBack.php:24
 #: httpdocs/src/Views/Menu/Greens.php:41 httpdocs/src/Views/Menu/Open.php:63
-#: httpdocs/src/Views/Menu/Mint.php:38
+#: httpdocs/src/Views/Menu/Mint.php:42
 msgid "delete"
 msgstr "löschen"
 
@@ -610,33 +677,37 @@ msgid "Support"
 msgstr "Hilfe"
 
 #: httpdocs/src/Views/Menu/Greens.php:12 httpdocs/src/Views/Menu/Open.php:29
-#: httpdocs/src/Views/Menu/Mint.php:9
+#: httpdocs/src/Views/Menu/Mint.php:13
 #: httpdocs/src/Views/Pages/ImprintMint.php:9
 #: httpdocs/src/Views/Pages/Imprint.php:9
 msgid "Imprint"
 msgstr "Impressum"
 
 #: httpdocs/src/Views/Menu/Greens.php:15 httpdocs/src/Views/Menu/Open.php:32
-#: httpdocs/src/Views/Menu/Mint.php:12 httpdocs/src/Views/Pages/Privacy.php:9
+#: httpdocs/src/Views/Menu/Mint.php:16 httpdocs/src/Views/Pages/Privacy.php:9
 msgid "Privacy"
 msgstr "Datenschutz"
 
 #: httpdocs/src/Views/Menu/Greens.php:22 httpdocs/src/Views/Menu/Open.php:3
-#: httpdocs/src/Views/Menu/Mint.php:19
+#: httpdocs/src/Views/Menu/Mint.php:23
 msgid "File"
 msgstr "Datei"
 
-#: httpdocs/src/Views/Menu/Greens.php:25 httpdocs/src/Views/Menu/Mint.php:22
+#: httpdocs/src/Views/Menu/Greens.php:25 httpdocs/src/Views/Menu/Mint.php:26
 msgid "New"
 msgstr "Neu"
 
-#: httpdocs/src/Views/Menu/Greens.php:28 httpdocs/src/Views/Menu/Mint.php:25
+#: httpdocs/src/Views/Menu/Greens.php:28 httpdocs/src/Views/Menu/Mint.php:29
 msgid "Save as"
 msgstr "Zwischenspeichern"
 
-#: httpdocs/src/Views/Menu/Greens.php:33 httpdocs/src/Views/Menu/Mint.php:30
-msgid "Open my temmplates"
+#: httpdocs/src/Views/Menu/Greens.php:33
+msgid "Open my templates"
 msgstr "Meine Vorlagen öffnen"
+
+#: httpdocs/src/Views/Menu/Greens.php:56
+msgid "Bundestagswahl"
+msgstr "Zwischengespeicherte Datei öffnen"
 
 #: httpdocs/src/Views/Menu/Open.php:7
 msgid "German"
@@ -678,6 +749,14 @@ msgstr "Meine Sharepics"
 msgid "Save"
 msgstr "Zwischenpeichern"
 
+#: httpdocs/src/Views/Menu/Mint.php:9
+msgid "Beta"
+msgstr "Beta"
+
+#: httpdocs/src/Views/Menu/Mint.php:34
+msgid "Open saved sharepics"
+msgstr "Zwischengespeicherte Datei öffnen"
+
 #: httpdocs/src/Views/Homemint.php:18
 msgid "Create sharepics for your social media channels."
 msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle."
@@ -686,35 +765,43 @@ msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle."
 msgid "login with Mint ID"
 msgstr "Mit MINT.ID einloggen"
 
-#: httpdocs/src/Views/Creator.php:39
+#: httpdocs/src/Views/Creator.php:42
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: httpdocs/src/Views/Creator.php:54
+#: httpdocs/src/Views/Creator.php:57
 msgid "Download"
 msgstr "Herunterladen"
 
-#: httpdocs/src/Views/Creator.php:107
+#: httpdocs/src/Views/Creator.php:103
 msgid "Front picture"
 msgstr "Vordergrundbild"
 
-#: httpdocs/src/Views/Creator.php:109
+#: httpdocs/src/Views/Creator.php:105
 msgid "Graphics and foreground pictures"
 msgstr "Grafiken & Vordergrundbilder"
 
-#: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
+#: httpdocs/src/Views/Creator.php:121
+msgid "Main Text"
+msgstr "Text"
+
+#: httpdocs/src/Views/Creator.php:129
+msgid "Add Text"
+msgstr "Text hinzufügen"
+
+#: httpdocs/src/Views/Creator.php:151 httpdocs/src/Views/Creator.php:153
 msgid "European Election"
 msgstr "Europawahl"
 
-#: httpdocs/src/Views/Creator.php:157
-msgid "Design settings"
-msgstr "Design-Einstellungen"
+#: httpdocs/src/Views/Creator.php:167
+msgid "Settings"
+msgstr "Einstellungen"
 
-#: httpdocs/src/Views/Creator.php:168
+#: httpdocs/src/Views/Creator.php:180
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: httpdocs/src/Views/Creator.php:183
+#: httpdocs/src/Views/Creator.php:195
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
@@ -722,40 +809,40 @@ msgstr ""
 "Bitte warte, während Dein Sharepic erstellt wird. Dies kann einige Sekunden "
 "dauern."
 
-#: httpdocs/src/Views/Creator.php:210
-msgid "Are you sure?"
-msgstr "Bist Du sicher?"
+#: httpdocs/src/Views/Creator.php:222
+msgid "Are you sure, that you want to delete your sharepic?"
+msgstr "Bist du sicher, dass du Dein gespeichertes Sharepic löschen möchtest?"
 
-#: httpdocs/src/Views/Creator.php:211
+#: httpdocs/src/Views/Creator.php:223
 msgid "Do you want to log out?"
 msgstr "Möchtest Du Dich ausloggen?"
 
-#: httpdocs/src/Views/Creator.php:212
+#: httpdocs/src/Views/Creator.php:224
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: httpdocs/src/Views/Creator.php:213
+#: httpdocs/src/Views/Creator.php:225
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Creator.php:214
+#: httpdocs/src/Views/Creator.php:226
 msgid "Maximum number of elements reached"
 msgstr "Maximale Anzahl von Elementen erreicht"
 
-#: httpdocs/src/Views/Creator.php:215
+#: httpdocs/src/Views/Creator.php:227
 msgid "Uploading your image ..."
 msgstr "Das Bild wird hochladen ..."
 
-#: httpdocs/src/Views/Creator.php:216
+#: httpdocs/src/Views/Creator.php:228
 msgid "Your image is being processed ..."
 msgstr "Dein Bild wird vorbereitet ..."
 
-#: httpdocs/src/Views/Creator.php:217
+#: httpdocs/src/Views/Creator.php:229
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr "Das Bild ist zu groß. Es sind maximal 15 MB erlaubt."
 
-#: httpdocs/src/Views/Creator.php:218
+#: httpdocs/src/Views/Creator.php:230
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
@@ -763,7 +850,7 @@ msgstr ""
 "Du wurdest automatisch ausgeloggt. Bitte lade die Seite neu, um Dich erneut "
 "einzuloggen."
 
-#: httpdocs/src/Views/Creator.php:219
+#: httpdocs/src/Views/Creator.php:231
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
@@ -771,11 +858,11 @@ msgstr ""
 "Du wirst in Kürze automatisch ausgeloggt. Bitte speichere Deine Arbeit oder "
 "lade sie herunter und lade die Seite neu."
 
-#: httpdocs/src/Views/Creator.php:220
+#: httpdocs/src/Views/Creator.php:232
 msgid "Please wait until the image is uploaded."
 msgstr "Bitte warte, bis das Bild hochgeladen ist."
 
-#: httpdocs/src/Views/Creator.php:221
+#: httpdocs/src/Views/Creator.php:233
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
@@ -783,15 +870,15 @@ msgstr ""
 "Die maximale Anzahl von Zeilen wurde erreicht. Für längeren Text nutze bitte "
 "das zusätzliche Textelement."
 
-#: httpdocs/src/Views/Creator.php:222
+#: httpdocs/src/Views/Creator.php:234
 msgid "Color added"
 msgstr "Farbe hinzugefügt"
 
-#: httpdocs/src/Views/Creator.php:223
+#: httpdocs/src/Views/Creator.php:235
 msgid "Please choose a new color first"
 msgstr "Bitte wähle zunächst eine neue Farbe"
 
-#: httpdocs/src/Views/Creator.php:224
+#: httpdocs/src/Views/Creator.php:236
 msgid "One moment please"
 msgstr "Augenblick bitte"
 
@@ -839,8 +926,11 @@ msgstr "Quelltext"
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
 
-#~ msgid "Edit form"
-#~ msgstr "Form bearbeiten"
+#~ msgid "Are you sure?"
+#~ msgstr "Bist Du sicher?"
+
+#~ msgid "Images from"
+#~ msgstr "Bilder von"
 
 #~ msgid "Style"
 #~ msgstr "Stil"
@@ -859,45 +949,6 @@ msgstr "Rich Text Editor"
 
 #~ msgid "green"
 #~ msgstr "grün"
-
-#~ msgid "Appearance"
-#~ msgstr "Aussehen"
-
-#~ msgid "Line"
-#~ msgstr "Zeile"
-
-#~ msgid "Colorset"
-#~ msgstr "Farbschema"
-
-#~ msgid "Indent"
-#~ msgstr "Einrückung"
-
-#~ msgid "tanne/sand"
-#~ msgstr "tanne/sand"
-
-#~ msgid "sand/tanne"
-#~ msgstr "sand/tanne"
-
-#~ msgid "klee/sand"
-#~ msgstr "klee/sand"
-
-#~ msgid "sand/klee"
-#~ msgstr "sand/klee"
-
-#~ msgid "gras/tanne"
-#~ msgstr "gras/tanne"
-
-#~ msgid "tanne/gras"
-#~ msgstr "tanne/gras"
-
-#~ msgid "S"
-#~ msgstr "S"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "L"
-#~ msgstr "L"
 
 #~ msgid "Search in  image database"
 #~ msgstr "Suche in Bilddatenbank"

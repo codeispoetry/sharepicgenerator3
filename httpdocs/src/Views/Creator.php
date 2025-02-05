@@ -219,7 +219,7 @@
 		'palette':  <?php echo $this->env->user->get_palette(); ?>
 	};
 	const lang = {
-		'Are you sure?': '<?php echo _( 'Are you sure?') ?>',
+		'Are you sure to delete?': '<?php echo _( 'Are you sure, that you want to delete your sharepic?') ?>',
 		'Want to log out?': '<?php echo _( 'Do you want to log out?') ?>',
 		'All changes lost': '<?php echo _( 'Please save your sharepic. All changes will be lost.') ?>',
 		'Enter prompt for image': '<?php echo _( 'Please enter a text describing your desired image.') ?>',
@@ -237,5 +237,10 @@
    };
 </script>
 
+<?php 
+if(  $this->env->config->get( 'Main', 'tenant' ) === 'mint' ) { 
+	require 'Helpbar.php';
+} 
+?>
 </body>
 </html>

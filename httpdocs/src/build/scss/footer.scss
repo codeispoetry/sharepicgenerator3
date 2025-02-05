@@ -1,0 +1,16 @@
+#helpbar{
+    background-color: $theme-color;
+    height: 48px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    a{
+        color: white;
+        text-decoration: underline;
+    }
+}

@@ -3,7 +3,11 @@
     <img src="/assets/images/mint.svg" style="height: 56px; width: 56px; margin-right: 0;">
 </a>
 <div class="dropdown" id="menu_mint">
-        <span>MINT-Sharepic Generator</span>
+        <span>
+            MINT-Sharepic Generator
+            <span class="hint">
+                <?php echo _('Beta');?>
+        </span>
         <div class="dropdown-content"> 
             <a href="index.php?c=frontend&m=view&view=ImprintMint" class="menu-link">
                 <?php  echo _('Imprint');?>
@@ -27,7 +31,7 @@
 
             <div class="submenu">
                 <button>
-                    <?php  echo _('Open my temmplates');?>
+                    <?php  echo _('Open saved sharepics');?>
                 </button>
                 <div id="my-sharepics" class="submenu-content">
                     <?php

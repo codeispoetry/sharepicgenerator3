@@ -30,7 +30,7 @@
 
             <div class="submenu">
                 <button>
-                    <?php  echo _('Open my temmplates');?>
+                    <?php  echo _('Open my templates');?>
                 </button>
                 <div class="submenu-content">
                     <?php
