@@ -58,6 +58,7 @@ class ImageDB {
         this.search_mint(q)
         break
       default:
+        document.getElementById('image_db_source_name').innerHTML = 'Bilder von Pixabay'
         this.search_pixabay(q)
     }
   }
@@ -83,18 +84,23 @@ class ImageDB {
   }
 
   show_results_mint (data) {
+   
     const page = document.getElementById('imagedb_page')
     page.classList.add('show')
     document.getElementById('cockpit').style.display = 'none'
+    document.getElementById('no_results').innerHTML = ''
 
     const results = document.getElementById('imagedb_results')
     results.classList.add('show')
     results.innerHTML = ''
 
-    if (data === undefined || data.length === 0) {
+
+    const hasRandomAddedMedia = data.some(item => item.random_added_media === true);
+    if (data === undefined || data.length === 0 || hasRandomAddedMedia) {
       const q = document.getElementById('imagedb_q').value
-      results.innerHTML = `<div class="no_results">Für den Suchbegriff "${q}" wurden keine Bilder gefunden.</div>`
-      return
+
+      document.getElementById('no_results').innerHTML = `Für den Suchbegriff "${q}" wurden keine Bilder gefunden. Hier siehst Du einige zufällig ausgewählte Bilder aus der MINT-Mediendatenbank:`;
+
     }
 
     data.forEach(hit => {

@@ -32,9 +32,7 @@
     <section id="search_imagedb">
         <h3><?php  echo _('Image from database');?></h3>
         
-        <div class="imagesearch">
-            
-                
+        <div class="imagesearch"> 
                 <?php if( $this->env->config->get( 'Main', 'tenant' ) === 'mint' ) { ?>
                     <?php echo _('Choose an image database');?>
                         <select name="image_db_source" id="image_db_source">
