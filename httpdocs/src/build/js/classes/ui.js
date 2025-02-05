@@ -86,7 +86,7 @@ class UI {
   }
 
   deleteSavedSharepic (origin, target) {
-    if (!window.confirm(lang['Are you sur to delete?'])) {
+    if (!window.confirm(lang['Are you sure to delete?'])) {
       return false
     }
 

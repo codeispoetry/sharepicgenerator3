@@ -144,11 +144,11 @@ msgstr "Farbe hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Settings.php:10
 msgid "Select a color and add it to the palette."
-msgstr "Wählen Sie eine Farbe aus und fügen Sie sie der Palette hinzu."
+msgstr "Wähle mit der Pipette Farben aus."
 
 #: httpdocs/src/Views/Cockpit/Settings.php:11
 msgid "To remove a color, click on the color in the palette."
-msgstr "Um eine Farbe zu entfernen, klicken Sie auf die Farbe in der Palette."
+msgstr "Wenn du mit dem Mauszeiger über eine Farbe gehst, erscheint ein Löschen-Symbol. So kannst du die Farbe wieder entfernen."
 
 #: httpdocs/src/Views/Cockpit/Settings.php:20
 msgid "Remove color"
@@ -608,7 +608,7 @@ msgstr "Meine Farben"
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""
-"Farbvorlagen können in den Design-Einstellungen %s konfiguriert werden."
+"Du kannst Deine Farben in den Design-Einstellungen %s anlegen."
 
 #: httpdocs/src/Views/Components/Forms/Login.php:2
 #: httpdocs/src/Views/Components/Forms/RequestPassword.php:2

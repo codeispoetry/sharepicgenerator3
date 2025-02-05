@@ -79,3 +79,8 @@ $rte_hover_color: #E6E8EC;
 .tox .tox-number-input input {
     color: $rte_icon_color !important;
 }
+
+.tox .tox-swatches__picker-btn svg,
+.tox .tox-statusbar__resize-handle svg{
+    fill: #FFFFFF !important;
+}

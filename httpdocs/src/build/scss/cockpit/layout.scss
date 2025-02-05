@@ -40,6 +40,10 @@
     .info{
         display: flex;
         align-items: flex-start;
+        border: 1px solid $light;
+        border-radius: $button-border-radius;
+        padding: 1em;
+        font-size: 14px;
 
         img{
             margin-right: 10px;

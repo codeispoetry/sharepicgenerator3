@@ -63,9 +63,12 @@
         </div>
     </div>
 
-    <div onclick="ui.showTab('settings')" class="no-greens">
+    <div onclick="ui.showTab('settings')" class="no-greens info" style="margin-top: 25px;">
+        <img src="/assets/icons/info.svg" alt="info">
+        <div>
         <?php
-            printf(_("Colors can be edited in settings %s."), '<img src="assets/icons/settings.svg">');
+            printf(_("Colors can be edited in settings %s."), '<img src="assets/icons/settings.svg" style="margin: 0 5px 0 0;height: 16px;">');
         ?>
+        </div>
     </div>
 </div>

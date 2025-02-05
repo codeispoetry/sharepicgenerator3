@@ -6,11 +6,13 @@
         ?>
 
         <h3 style="margin-top:30px;"><?php echo _('Add color');?></h3>
+        <div class="info">
+        <img src="/assets/icons/info.svg" alt="info">
         <?php
             echo _('Select a color and add it to the palette.');
             echo _('To remove a color, click on the color in the palette.');
         ?>
-
+        </div>
         <div style="display:flex;flex-direction:row;justify-content:space-between;width:100%" class="color">
             <div class="palette add-color">
                 <button 
