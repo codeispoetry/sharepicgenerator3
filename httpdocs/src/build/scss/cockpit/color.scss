@@ -99,13 +99,14 @@
             button{
                 &:hover{
                     &::after{
-                        content: 'x';
+                        content: url(icons/close_white.svg);
                         font-size: 14px;
                         background-color: $delete-button-bg;
-                        content: 'x';
                         color: white;
                         width: 20px;
                         height: 20px;
+                        padding: 11px;
+                        transform:scale(0.5);
                         border-radius: 50%;
                         position: relative;
                         top: -14px;

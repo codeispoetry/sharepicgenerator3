@@ -217,6 +217,8 @@ select{
     }
 
     .imagesearch{
+        position: relative;
+
         select{
             border-top-left-radius: $button-border-radius;
             border-top-right-radius: $button-border-radius;
@@ -228,6 +230,15 @@ select{
             background-position-x: 8px;
             background-position-y: center;
             background-size: 30px;
+            appearance: none;
+        }
+
+        &::after{
+            content: url(icons/chevron-up.svg);
+            transform: rotate(180deg);
+            position: absolute;
+            top: calc( 1em + 24px);
+            right: 15px;
         }
 
         select.mint{

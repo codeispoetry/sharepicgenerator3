@@ -28,7 +28,7 @@ nav {
     }
 
     * {
-        margin-right: 2em;
+        margin-right: 32px;
     }
 
     .info-in-menu {
@@ -45,7 +45,10 @@ nav {
         color: white;
         border-radius: 4px;
         padding: 5px 8px;
-        font-weight: 300 !important;
+        text-transform: uppercase;
+        height: 14x;
+        display: inline-block;
+        font-size: 12px;
     }
 }
 

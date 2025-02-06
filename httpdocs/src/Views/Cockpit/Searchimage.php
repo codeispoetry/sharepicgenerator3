@@ -9,9 +9,9 @@
     </h2>
 
     <section>
-        <p><?php echo _('Upload an image from your local computer');?></p>
+        <h3><?php echo _('Upload an image from your local computer');?></h3>
 
-        <div class="set-target image-uploader" data-target="background">
+        <div class="set-target image-uploader" style="margin-bottom:0" data-target="background">
             <button onClick="document.getElementById('upload').click()">
                 <img src="assets/icons/upload.svg">
                 <?php echo _('Drop an image or choose it to upload from your computer');?>
@@ -34,8 +34,8 @@
         
         <div class="imagesearch"> 
                 <?php if( $this->env->config->get( 'Main', 'tenant' ) === 'mint' ) { ?>
-                    <?php echo _('Choose an image database');?>
-                        <select name="image_db_source" id="image_db_source">
+                    <div style="margin-bottom: 10px;"><?php echo _('Choose an image database');?></div>
+                        <select name="image_db_source" class="mint" id="image_db_source">
                             <option value="mint">
                                 MINT-Mediendatenbank
                             </option>
