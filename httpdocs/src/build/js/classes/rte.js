@@ -14,6 +14,10 @@ class RTE {
   }
 
   init () {
+    if (tinymce.activeEditor) {
+      rte.deinit()
+    }
+
     document.getElementById('undo').style.opacity = 0
     const w = document.getElementById(cockpit.target.id).offsetWidth
     const h = document.getElementById(cockpit.target.id).offsetHeight
