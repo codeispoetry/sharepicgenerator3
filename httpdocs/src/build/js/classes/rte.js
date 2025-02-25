@@ -30,7 +30,7 @@ class RTE {
       skin: 'oxide-dark',
       font_family_formats: freetext.font_family_formats,
       font_size_formats: '12px 14px 18px 24px 30px 36px 48px 60px 72px 96px',
-      toolbar: 'undo redo | bold italic underline | fontfamily fontsize fontsizeinput lineheight | forecolor | removeformat',
+      toolbar: 'undo redo | bold italic underline | fontfamily fontsize fontsizeinput lineheight alignleft aligncenter alignright | forecolor | removeformat',
       color_map: this.colorMap,
       width: `${w}px`,
       min_width: 100,

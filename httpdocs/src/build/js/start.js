@@ -30,3 +30,10 @@ window.onload = function () {
 window.addEventListener('beforeunload', function (event) {
   api.autosave()
 })
+
+window.addEventListener('keydown', function (event) {
+  if (cockpit.target !== null && cockpit.target.id !== 'background' && tinymce.activeEditor === null && event.key === 'Backspace') {
+    event.preventDefault()
+    component.delete()
+  }
+})
