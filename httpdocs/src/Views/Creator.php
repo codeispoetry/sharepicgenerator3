@@ -237,10 +237,5 @@
    };
 </script>
 
-<?php 
-if(  $this->env->config->get( 'Main', 'tenant' ) === 'mint' ) { 
-	require 'Helpbar.php';
-} 
-?>
 </body>
 </html>

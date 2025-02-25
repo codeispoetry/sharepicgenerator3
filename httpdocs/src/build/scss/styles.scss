@@ -57,6 +57,13 @@ body{
 
 a, a:visited{
     color: $default-font-color;
+
+    &.extern{
+        &::after{
+            content: url('icons/box-arrow-up-right.svg');
+            margin-left: 14px;
+        }
+    }
 }
 
 .row{

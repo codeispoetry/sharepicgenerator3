@@ -237,7 +237,7 @@ select{
             content: url(icons/chevron-up.svg);
             transform: rotate(180deg);
             position: absolute;
-            top: calc( 1em + 24px);
+            top: calc( 1em + 34px);
             right: 15px;
         }
 
@@ -298,4 +298,8 @@ select{
         transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     }
     
+}
+
+button#undo{
+    height: 30px;
 }

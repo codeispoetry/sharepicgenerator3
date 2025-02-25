@@ -40,7 +40,7 @@
 }
 
 .tinymce{
-    overflow: hidden;
+    overflow: visible;
 }
 
 .freetext.selected:has(> .tox-tinymce) {

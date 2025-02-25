@@ -9,10 +9,13 @@
                 <?php echo _('Beta');?>
         </span>
         <div class="dropdown-content"> 
+            <a href="#" class="menu-link extern">
+                <?php  echo _('Help and FAQ');?>
+			</a>
             <a href="index.php?c=frontend&m=view&view=ImprintMint" class="menu-link">
                 <?php  echo _('Imprint');?>
 			</a>
-            <a href="https://www.mint-vernetzt.de/privacy-policy-community-platform/" target="_blank" class="menu-link">
+            <a href="https://www.mint-vernetzt.de/privacy-policy-community-platform/" target="_blank" class="menu-link extern">
                 <?php  echo _('Privacy');?>
 			</a>    
         </div>

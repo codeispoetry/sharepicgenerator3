@@ -11,12 +11,12 @@
     background-color: $workbench-color;
     
     &-below{
-        margin-top: 20px;
+        margin-top: 10px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        min-height: 100px;
+        min-height: 60px;
 
         button{
             width: auto;
