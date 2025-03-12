@@ -75,7 +75,7 @@ msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
 msgstr ""
-"Ein Klick setzt das Bild als Hintergrund, ein <strong>Doppelklick</strong> setzt das Bild und "
+"Klicke auf ein Bild um es einzufügen bzw. auszuwechseln. Ein <strong>Doppelklick</strong> setzt das Bild und "
 "<strong>schließt die Ergebnisse</strong>."
 
 #: httpdocs/src/Views/Cockpit/Elements.php:2
