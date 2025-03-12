@@ -51,6 +51,32 @@
                     ?>
                 </div>
             </div>
+
+            <button onClick="api.create('true');api.save('publish')">
+                <?php  echo _('Publish');?>
+            </button>
+            <div class="submenu">
+                <button>
+                    <?php  echo _('Open my public templates');?>
+                </button>
+                <div id="my-public-sharepics" class="submenu-content">
+                    <?php
+                        $templates = $this->env->user->get_public_savings();
+
+                        foreach( $templates as $dir ){
+                                $id = basename($dir);
+                                $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
+                                echo '<div class="dropdown-item-double">';
+                                    printf( '<button class="did-1" onClick="api.load(\'%s/sharepic.html\')">%s</button>', $dir, $name );
+                                    printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
+                                echo '</div>';
+                        }
+                    ?>
+                </div>
+            </div>
+            <button onClick="document.getElementById('public_sharepics').classList.add('show')">
+                <?php  echo _('Show all public sharepics');?>
+            </button>
         </div>
     </div>
     <?php } ?>

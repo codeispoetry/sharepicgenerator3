@@ -151,7 +151,7 @@ class Sharepic {
 		$save_dir  = $this->env->user->get_dir() . 'save/';
 
 		if ( 'publish' === $this->mode ) {
-			$save_dir = 'templates/mint/community/';
+			$save_dir = 'public_savings/';
 		}
 
 		if ( 'bug' === $this->mode ) {
@@ -162,7 +162,7 @@ class Sharepic {
 		$save = $save_dir . $id;
 
 		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );
-		if ( $save_count > 30 ) {
+		if ( 'save' === $this->mode && $save_count > 30 ) {
 			$this->http_error( 'Too many files' );
 		}
 
@@ -185,7 +185,15 @@ class Sharepic {
 		file_put_contents( $save . '/sharepic.html', $this->raw_data );
 
 		// Write info file.
-		file_put_contents( $save . '/info.json', json_encode( array( 'name' => $this->info ) ) );
+		file_put_contents(
+			$save . '/info.json',
+			json_encode(
+				array(
+					'name'  => $this->info,
+					'owner' => $this->env->user->get_username(),
+				)
+			)
+		);
 
 		echo json_encode(
 			array(
@@ -210,10 +218,18 @@ class Sharepic {
 		}
 
 		// The casting to int is necessary to prevent directory traversal.
-		$save_dir = $this->env->user->get_dir() . '/save/' . (int) $sharepic;
+		if ( '1' == $data['publicSharepic'] ) {
+			$save_dir = 'public_savings/' . (int) $sharepic;
+
+			if ( $this->env->user->get_username() !== json_decode( file_get_contents( $save_dir . '/info.json' ) )->owner ) {
+				$this->http_error( 'Could not delete sharepic (3)' );
+			}
+		} else {
+			$save_dir = $this->env->user->get_dir() . '/save/' . (int) $sharepic;
+		}
 
 		if ( ! file_exists( $save_dir ) ) {
-			$this->http_error( 'Could not find sharepic' );
+			$this->http_error( 'Could not find sharepic: ' . $save_dir );
 		}
 
 		$cmd = sprintf( 'rm -rf %s 2>&1', escapeshellarg( $save_dir ) );
@@ -286,7 +302,6 @@ class Sharepic {
 
 		$this->create_thumbnail( $path );
 		$this->create_qrcode( $path );
-
 		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $output_file ) );
 	}
 
@@ -397,7 +412,7 @@ class Sharepic {
 	}
 
 	/**
-	 * Creates a thumbnail and saves it to the tmp folder.
+	 * Creates a thumbnail and saves it to the tmp folder and workspace.
 	 *
 	 * @param string $path The path to the image.
 	 */
@@ -410,10 +425,22 @@ class Sharepic {
 		);
 
 		exec( $cmd, $output, $return_code );
-
+		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not create thumbnail' );
+		}
+
+		$cmd = sprintf(
+			'cp ../tmp/%s %s 2>&1',
+			$thumbnail,
+			$this->env->user->get_dir() . 'workspace/thumbnail.png'
+		);
+		exec( $cmd, $output, $return_code );
+		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		if ( 0 !== $return_code ) {
+			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
+			$this->http_error( 'Could not copy thumbnail' );
 		}
 	}
 
@@ -426,6 +453,7 @@ class Sharepic {
 		try {
 			$real_path    = realpath( $this->template );
 			$template_dir = realpath( dirname( __DIR__, 2 ) ) . '/templates/';
+			$public_dir   = realpath( dirname( __DIR__, 2 ) ) . '/public_savings/';
 			$user_dir     = realpath( $this->env->user->get_dir() );
 
 			if ( ! $real_path ) {
@@ -433,12 +461,12 @@ class Sharepic {
 			}
 
 			// Do only load from template or user directory.
-			if ( ! str_starts_with( $real_path, $template_dir ) && ! str_starts_with( $real_path, $user_dir ) ) {
-				throw new \Exception( 'File may not be serverd' );
+			if ( ! str_starts_with( $real_path, $template_dir ) && ! str_starts_with( $real_path, $public_dir ) && ! str_starts_with( $real_path, $user_dir ) ) {
+				throw new \Exception( 'File may not be served' );
 			}
 
-			// If the file is in the user directory (it is saved), copy all files to workspace.
-			if ( str_starts_with( $real_path, $user_dir ) ) {
+			// If the file is in the user directory or in public sharepics (it is saved), copy all files to workspace.
+			if ( str_starts_with( $real_path, $user_dir ) || str_starts_with( $real_path, $public_dir ) ) {
 				$workspace = $user_dir . '/workspace';
 
 				$cmd = sprintf(
@@ -591,7 +619,7 @@ class Sharepic {
 	 * Just says hello, to check if the user is still logged in.
 	 */
 	public function is_logged_in() {
-		echo json_encode( [ 'status' => 200 ] );
+		echo json_encode( array( 'status' => 200 ) );
 	}
 
 	/**
@@ -607,12 +635,12 @@ class Sharepic {
 		}
 
 		$config_file = $this->env->user->get_dir() . 'config.json';
-		$new_config = ['palette' => $data['palette'] ];
+		$new_config  = array( 'palette' => $data['palette'] );
 
 		$config_data = json_encode( $new_config );
 		file_put_contents( $config_file, $config_data );
 
-		echo json_encode( [ 'status' => 200 ] );
+		echo json_encode( array( 'status' => 200 ) );
 	}
 
 	/**

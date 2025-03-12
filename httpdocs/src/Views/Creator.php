@@ -185,6 +185,7 @@
 		</div>
 		<?php
 			include 'src/Views/ImageDB.php';
+			include 'src/Views/PublicSharepics.php';
 		?>
 	</div>
 </main>

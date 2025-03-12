@@ -16,7 +16,7 @@ class API {
     }, 3 * 60 * 1000)
   }
 
-  create () {
+  create (silent = false) {
     if (config.uploading) {
       alert(lang['Please wait until the image is uploaded'])
       return
@@ -36,7 +36,7 @@ class API {
     }
 
     this.showWaiting()
-
+    
     fetch(this.api + '&m=create', options)
       .then(response => {
         if (response.status !== 200) {
@@ -51,12 +51,14 @@ class API {
         data = JSON.parse(data)
 
         // Create download link and click it
-        const a = document.createElement('a')
-        a.href = config.url + '/' + data.path
-        a.download = 'sharepic.' + data.path.slice(-3)
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
+        if(!silent) {
+          const a = document.createElement('a')
+          a.href = config.url + '/' + data.path
+          a.download = 'sharepic.' + data.path.slice(-3)
+          document.body.appendChild(a)
+          a.click()
+          document.body.removeChild(a)
+        }
 
         // Display qr code
         if (config.qrcode === '1') {
@@ -168,7 +170,8 @@ class API {
 
           // add button to menu only if path is ommited (no autosave)
           if (path === false) {
-            document.getElementById('my-sharepics').insertAdjacentHTML('afterbegin', html)
+            const id = (mode == 'save' ) ? 'my-sharepics' : 'my-public-sharepics'
+            document.getElementById(id).insertAdjacentHTML('afterbegin', html)
           }
         } catch (e) {
           console.error(e)
@@ -288,9 +291,10 @@ class API {
     return data
   }
 
-  delete (saving) {
+  delete (saving, publicSharepic) {
     const payload = {
-      saving
+      saving,
+      publicSharepic
     }
 
     fetch(this.api + '&m=delete', {

@@ -1,0 +1,14 @@
+#public_sharepics{
+    width: 0;
+    overflow:hidden;
+    transition: width ease-out 0.5s;
+    
+    &.show{
+        width: 90%;
+        padding: 0 0 0 20px;
+        margin-right: 20px;
+        max-width: 850px;
+    }
+}
+
+  

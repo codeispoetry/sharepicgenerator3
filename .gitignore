@@ -2,6 +2,7 @@ vendor/
 node_modules/
 httpdocs/assets/script.js
 httpdocs/assets/styles.css
+httpdocs/public_savings/*
 users/
 users.db
 config.ini

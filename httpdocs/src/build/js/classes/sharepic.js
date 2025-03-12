@@ -45,7 +45,6 @@ class Sharepic {
     const sg = document.getElementById('sharepic')
     const width = parseInt(document.getElementById('width').value)
     const height = parseInt(document.getElementById('height').value)
-
     const ratio = width / height
     const maxWidth = 800
     const maxHeight = 600

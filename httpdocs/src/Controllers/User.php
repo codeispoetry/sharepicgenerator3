@@ -194,6 +194,30 @@ class User {
 	}
 
 	/**
+	 * Get the public savings.
+	 *
+	 * @return array
+	 */
+	public function get_public_savings() {
+		$public_savings = glob( 'public_savings/*' );
+		foreach ( $public_savings as $key => $dir ) {
+			if ( ! file_exists( $dir . '/info.json' ) ) {
+				unset( $public_savings[ $key ] );
+				continue;
+			}
+
+			$info = file_get_contents( $dir . '/info.json' );
+			$data = json_decode( $info, true );
+
+			if ( ! isset( $data['owner'] ) || $data['owner'] !== $this->get_username() ) {
+				unset( $public_savings[ $key ] );
+				continue;
+			}
+		}
+		return $public_savings;
+	}
+
+	/**
 	 * Return the users saved palette.
 	 * The saving of this palette is handled in Sharepic-class
 	 * due to security concerns.
