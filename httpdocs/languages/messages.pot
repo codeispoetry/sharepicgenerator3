@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-25 15:54+0100\n"
+"POT-Creation-Date: 2025-03-12 14:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,11 +60,11 @@ msgstr ""
 msgid "Password reset"
 msgstr ""
 
-#: httpdocs/src/Views/ImageDB.php:8
+#: httpdocs/src/Views/ImageDB.php:9
 msgid "search in image database"
 msgstr ""
 
-#: httpdocs/src/Views/ImageDB.php:13
+#: httpdocs/src/Views/ImageDB.php:14
 msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
@@ -416,54 +416,54 @@ msgstr ""
 msgid "Choose a form and colorize later."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:115
+#: httpdocs/src/Views/Cockpit/Searchimage.php:131
 msgid "Create image with AI"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:118
+#: httpdocs/src/Views/Cockpit/Searchimage.php:134
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:119
+#: httpdocs/src/Views/Cockpit/Searchimage.php:135
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:120
+#: httpdocs/src/Views/Cockpit/Searchimage.php:136
 msgid "Adjust your prompt accordingly."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:123
+#: httpdocs/src/Views/Cockpit/Searchimage.php:139
 msgid "Describe the image you want"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:127
+#: httpdocs/src/Views/Cockpit/Searchimage.php:143
 #: httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:136
+#: httpdocs/src/Views/Cockpit/Searchimage.php:152
 msgid "Please wait while AI generates your image."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:137
+#: httpdocs/src/Views/Cockpit/Searchimage.php:153
 msgid "This can take up to one minute."
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:141
+#: httpdocs/src/Views/Cockpit/Searchimage.php:157
 msgid "seconds"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:145
+#: httpdocs/src/Views/Cockpit/Searchimage.php:161
 msgid "Result"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:148
+#: httpdocs/src/Views/Cockpit/Searchimage.php:164
 msgid "Use this image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:151
+#: httpdocs/src/Views/Cockpit/Searchimage.php:167
 msgid "Try again"
 msgstr ""
 
@@ -651,7 +651,7 @@ msgstr ""
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:22
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:24
 #: httpdocs/src/Views/Menu/Greens.php:41 httpdocs/src/Views/Menu/Open.php:63
-#: httpdocs/src/Views/Menu/Mint.php:45
+#: httpdocs/src/Views/Menu/Mint.php:48
 msgid "delete"
 msgstr ""
 
@@ -660,7 +660,7 @@ msgid "Support"
 msgstr ""
 
 #: httpdocs/src/Views/Menu/Greens.php:12 httpdocs/src/Views/Menu/Open.php:29
-#: httpdocs/src/Views/Menu/Mint.php:16
+#: httpdocs/src/Views/Menu/Mint.php:22
 #: httpdocs/src/Views/Pages/ImprintMint.php:9
 #: httpdocs/src/Views/Pages/Imprint.php:9
 msgid "Imprint"
@@ -672,15 +672,15 @@ msgid "Privacy"
 msgstr ""
 
 #: httpdocs/src/Views/Menu/Greens.php:22 httpdocs/src/Views/Menu/Open.php:3
-#: httpdocs/src/Views/Menu/Mint.php:26
+#: httpdocs/src/Views/Menu/Mint.php:29
 msgid "File"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:25 httpdocs/src/Views/Menu/Mint.php:29
+#: httpdocs/src/Views/Menu/Greens.php:25 httpdocs/src/Views/Menu/Mint.php:32
 msgid "New"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:28 httpdocs/src/Views/Menu/Mint.php:32
+#: httpdocs/src/Views/Menu/Greens.php:28 httpdocs/src/Views/Menu/Mint.php:35
 msgid "Save as"
 msgstr ""
 
@@ -740,7 +740,11 @@ msgstr ""
 msgid "Help and FAQ"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:37
+#: httpdocs/src/Views/Menu/Mint.php:16
+msgid "Sourcecode"
+msgstr ""
+
+#: httpdocs/src/Views/Menu/Mint.php:40
 msgid "Open saved sharepics"
 msgstr ""
 

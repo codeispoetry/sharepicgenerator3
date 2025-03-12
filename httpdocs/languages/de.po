@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-25 15:54+0100\n"
-"PO-Revision-Date: 2025-02-25 15:54+0100\n"
+"POT-Creation-Date: 2025-03-12 14:31+0100\n"
+"PO-Revision-Date: 2025-03-12 14:31+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -66,17 +66,18 @@ msgstr "Bereits registriert?"
 msgid "Password reset"
 msgstr "Passwort zurücksetzen"
 
-#: httpdocs/src/Views/ImageDB.php:8
+#: httpdocs/src/Views/ImageDB.php:9
 msgid "search in image database"
 msgstr "Suche in Bilddatenbank"
 
-#: httpdocs/src/Views/ImageDB.php:13
+#: httpdocs/src/Views/ImageDB.php:14
 msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
 msgstr ""
-"Klicke auf ein Bild um es einzufügen bzw. auszuwechseln. Ein <strong>Doppelklick</strong> setzt das Bild und "
-"<strong>schließt die Ergebnisse</strong>."
+"Klicke auf ein Bild um es einzufügen bzw. auszuwechseln. Ein "
+"<strong>Doppelklick</strong> setzt das Bild und <strong>schließt die "
+"Ergebnisse</strong>."
 
 #: httpdocs/src/Views/Cockpit/Elements.php:2
 #: httpdocs/src/Views/Cockpit/Elements.php:8 httpdocs/src/Views/Creator.php:159
@@ -266,9 +267,9 @@ msgstr "Urheberrechts&shy;hinweis hinzufügen"
 #: httpdocs/src/Views/Cockpit/Background.php:45
 msgid "The copyright is placed automatically from the database."
 msgstr ""
-"Der Urheberrechtshinweis wird automa&shy;tisch mit dem Bild aus der Bilddatenbank "
-"ein&shy;gefügt. Bei einem von Dir hochgeladenem Bild erscheint ein "
-"Platzhaltertext, den Du än&shy;dern kannst."
+"Der Urheberrechtshinweis wird automa&shy;tisch mit dem Bild aus der "
+"Bilddatenbank ein&shy;gefügt. Bei einem von Dir hochgeladenem Bild erscheint "
+"ein Platzhaltertext, den Du än&shy;dern kannst."
 
 #: httpdocs/src/Views/Cockpit/Background.php:54
 msgid "Position"
@@ -429,16 +430,16 @@ msgstr "Form hinzufügen"
 msgid "Choose a form and colorize later."
 msgstr "Wähle eine Form und färbe sie anschließend ein."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:115
+#: httpdocs/src/Views/Cockpit/Searchimage.php:131
 msgid "Create image with AI"
 msgstr "Bild mit KI erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:118
+#: httpdocs/src/Views/Cockpit/Searchimage.php:134
 msgid "Use artificial intelligence to create a unique image."
 msgstr ""
 "Nutzen Sie künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:119
+#: httpdocs/src/Views/Cockpit/Searchimage.php:135
 msgid ""
 "Please keep in mind, that generated images may reproduce stereotypes or be "
 "inappropriate."
@@ -446,40 +447,40 @@ msgstr ""
 "Bitte beachte, dass generierte Bilder Stereotypen reproduzieren oder "
 "unangemessen sein können."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:120
+#: httpdocs/src/Views/Cockpit/Searchimage.php:136
 msgid "Adjust your prompt accordingly."
 msgstr "Passe Deinen Prompt ggf. entsprechend an."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:123
+#: httpdocs/src/Views/Cockpit/Searchimage.php:139
 msgid "Describe the image you want"
 msgstr "Beschreibe das Bild, das Du möchtest"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:127
+#: httpdocs/src/Views/Cockpit/Searchimage.php:143
 #: httpdocs/src/Views/Menu/Open.php:26
 msgid "Create"
 msgstr "Erstellen"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:136
+#: httpdocs/src/Views/Cockpit/Searchimage.php:152
 msgid "Please wait while AI generates your image."
 msgstr "Bitte warte, während die KI Dein Bild generiert."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:137
+#: httpdocs/src/Views/Cockpit/Searchimage.php:153
 msgid "This can take up to one minute."
 msgstr "Dies kann bis zu einer Minute dauern."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:141
+#: httpdocs/src/Views/Cockpit/Searchimage.php:157
 msgid "seconds"
 msgstr "Sekunden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:145
+#: httpdocs/src/Views/Cockpit/Searchimage.php:161
 msgid "Result"
 msgstr "Ergebnis"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:148
+#: httpdocs/src/Views/Cockpit/Searchimage.php:164
 msgid "Use this image"
 msgstr "Dieses Bild verwenden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:151
+#: httpdocs/src/Views/Cockpit/Searchimage.php:167
 msgid "Try again"
 msgstr "Nochmal versuchen"
 
@@ -669,7 +670,7 @@ msgstr "nach hinten"
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:22
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:24
 #: httpdocs/src/Views/Menu/Greens.php:41 httpdocs/src/Views/Menu/Open.php:63
-#: httpdocs/src/Views/Menu/Mint.php:45
+#: httpdocs/src/Views/Menu/Mint.php:48
 msgid "delete"
 msgstr "löschen"
 
@@ -678,7 +679,7 @@ msgid "Support"
 msgstr "Hilfe"
 
 #: httpdocs/src/Views/Menu/Greens.php:12 httpdocs/src/Views/Menu/Open.php:29
-#: httpdocs/src/Views/Menu/Mint.php:16
+#: httpdocs/src/Views/Menu/Mint.php:22
 #: httpdocs/src/Views/Pages/ImprintMint.php:9
 #: httpdocs/src/Views/Pages/Imprint.php:9
 msgid "Imprint"
@@ -690,15 +691,15 @@ msgid "Privacy"
 msgstr "Datenschutz"
 
 #: httpdocs/src/Views/Menu/Greens.php:22 httpdocs/src/Views/Menu/Open.php:3
-#: httpdocs/src/Views/Menu/Mint.php:26
+#: httpdocs/src/Views/Menu/Mint.php:29
 msgid "File"
 msgstr "Datei"
 
-#: httpdocs/src/Views/Menu/Greens.php:25 httpdocs/src/Views/Menu/Mint.php:29
+#: httpdocs/src/Views/Menu/Greens.php:25 httpdocs/src/Views/Menu/Mint.php:32
 msgid "New"
 msgstr "Neu"
 
-#: httpdocs/src/Views/Menu/Greens.php:28 httpdocs/src/Views/Menu/Mint.php:32
+#: httpdocs/src/Views/Menu/Greens.php:28 httpdocs/src/Views/Menu/Mint.php:35
 msgid "Save as"
 msgstr "Zwischenspeichern"
 
@@ -758,7 +759,11 @@ msgstr "Beta"
 msgid "Help and FAQ"
 msgstr "Hilfe und FAQ"
 
-#: httpdocs/src/Views/Menu/Mint.php:37
+#: httpdocs/src/Views/Menu/Mint.php:16
+msgid "Sourcecode"
+msgstr "Quelltext"
+
+#: httpdocs/src/Views/Menu/Mint.php:40
 msgid "Open saved sharepics"
 msgstr "Zwischengespeicherte Datei öffnen"
 

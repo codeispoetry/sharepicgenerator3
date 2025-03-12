@@ -12,12 +12,15 @@
             <a href="https://community.mint-vernetzt.de/help#sharepic-generator" class="menu-link extern">
                 <?php  echo _('Help and FAQ');?>
 			</a>
-            <a href="index.php?c=frontend&m=view&view=ImprintMint" class="menu-link">
-                <?php  echo _('Imprint');?>
+            <a href="https://github.com/codeispoetry/sharepicgenerator3" class="menu-link extern">
+                <?php  echo _('Sourcecode');?>
 			</a>
             <a href="https://www.mint-vernetzt.de/privacy-policy-community-platform/" target="_blank" class="menu-link extern">
                 <?php  echo _('Privacy');?>
-			</a>    
+			</a>
+            <a href="index.php?c=frontend&m=view&view=ImprintMint" class="menu-link">
+                <?php  echo _('Imprint');?>
+			</a>
         </div>
     </div>
 
