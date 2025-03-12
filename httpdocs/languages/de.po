@@ -266,9 +266,9 @@ msgstr "Urheberrechts&shy;hinweis hinzufügen"
 #: httpdocs/src/Views/Cockpit/Background.php:45
 msgid "The copyright is placed automatically from the database."
 msgstr ""
-"Der Urheberrechtshinweis wird automatisch mit dem Bild aus der Bilddatenbank "
-"eingefügt. Bei einem von Dir hochgeladenem Bild erscheint ein "
-"Platzhaltertext, den Du ändern kannst."
+"Der Urheberrechtshinweis wird automa&shy;tisch mit dem Bild aus der Bilddatenbank "
+"ein&shy;gefügt. Bei einem von Dir hochgeladenem Bild erscheint ein "
+"Platzhaltertext, den Du än&shy;dern kannst."
 
 #: httpdocs/src/Views/Cockpit/Background.php:54
 msgid "Position"

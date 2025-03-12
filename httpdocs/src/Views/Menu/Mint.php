@@ -9,7 +9,7 @@
                 <?php echo _('Beta');?>
         </span>
         <div class="dropdown-content"> 
-            <a href="#" class="menu-link extern">
+            <a href="https://community.mint-vernetzt.de/help#sharepic-generator" class="menu-link extern">
                 <?php  echo _('Help and FAQ');?>
 			</a>
             <a href="index.php?c=frontend&m=view&view=ImprintMint" class="menu-link">
