@@ -50,6 +50,24 @@
             <input type="range" min="10" max="50" value="20" class="slider" id="copyright_size" oninput="copyright.setSize(this)">
         </section>
 
+        <section class="copyright_bg">
+            <h3><?php  echo _('Copyright with ');?></h3>
+            <div style="display:flex;flex-direction:column;margin-bottom:1em;">
+                <label>
+                    <input type="radio" name="copyright_bg" checked onClick="copyright.setBGColor('#ffffff')">
+                    <?php echo _("white background"); ?>
+                </label>
+                <label>
+                    <input type="radio" name="copyright_bg" onClick="copyright.setBGColor('#000000')">
+                    <?php echo _("black background"); ?>
+                </label>
+                <label>
+                    <input type="radio" name="copyright_bg" onClick="copyright.setBGColor('transparent')">
+                    <?php echo _("transparent background"); ?>
+                </label>
+            </div>
+        </section>
+
         <section class="">
             <h3><?php  echo _('Position');?></h3>
             <div>
@@ -70,6 +88,7 @@
             <?php
                 $color = new stdClass();
                 $color->value = "#ffffff";
+                $color->title = _('Font color');
                 $color->id = "copyright_color";
                 $color->oninput = "copyright.setFontColor(this.value)";
                 $color->onclick = "copyright.setFontColor";
@@ -100,6 +119,16 @@
             const target = sharepic.querySelector('[id^="copyright_"]');
             document.getElementById('copyright_color').value = color
             target.style.color = color
+            undo.commit()
+        }
+
+        setBGColor(color) { 
+            const sharepic = document.getElementById('sharepic')     
+            const target = sharepic.querySelector('[id^="copyright_"]');
+            target.style.backgroundColor = color
+            if( target.style.color ===  target.style.backgroundColor ){
+                target.style.color = ( color === '#000000' ) ? '#ffffff' : '#000000'
+            }
             undo.commit()
         }
 

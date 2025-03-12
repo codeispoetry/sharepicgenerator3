@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 14:31+0100\n"
-"PO-Revision-Date: 2025-03-12 14:31+0100\n"
+"POT-Creation-Date: 2025-03-12 15:02+0100\n"
+"PO-Revision-Date: 2025-03-12 15:03+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -272,20 +272,40 @@ msgstr ""
 "ein Platzhaltertext, den Du än&shy;dern kannst."
 
 #: httpdocs/src/Views/Cockpit/Background.php:54
+msgid "Copyright with "
+msgstr "Hinweis hervorheben"
+
+#: httpdocs/src/Views/Cockpit/Background.php:58
+msgid "white background"
+msgstr "Hinweis auf weißem Balken"
+
+#: httpdocs/src/Views/Cockpit/Background.php:62
+msgid "black background"
+msgstr "Hinweis auf schwarzem Balken"
+
+#: httpdocs/src/Views/Cockpit/Background.php:66
+msgid "transparent background"
+msgstr "Hinweis ohne Hintergrundfarbe"
+
+#: httpdocs/src/Views/Cockpit/Background.php:72
 msgid "Position"
 msgstr "Position"
 
-#: httpdocs/src/Views/Cockpit/Background.php:56
-#: httpdocs/src/Views/Cockpit/Background.php:59
+#: httpdocs/src/Views/Cockpit/Background.php:74
+#: httpdocs/src/Views/Cockpit/Background.php:77
 msgid "side left"
 msgstr "seitlich links"
 
-#: httpdocs/src/Views/Cockpit/Background.php:61
-#: httpdocs/src/Views/Cockpit/Background.php:64
+#: httpdocs/src/Views/Cockpit/Background.php:79
+#: httpdocs/src/Views/Cockpit/Background.php:82
 msgid "bottom right"
 msgstr "rechts unten"
 
-#: httpdocs/src/Views/Cockpit/Background.php:83
+#: httpdocs/src/Views/Cockpit/Background.php:91
+msgid "Font color"
+msgstr "Schriftfarbe"
+
+#: httpdocs/src/Views/Cockpit/Background.php:102
 msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
@@ -328,7 +348,7 @@ msgid "Logo"
 msgstr "Logo"
 
 #: httpdocs/src/Views/Cockpit/Logo.php:12
-#: httpdocs/src/Views/Components/Color.php:3
+#: httpdocs/src/Views/Components/Color.php:5
 msgid "Colors"
 msgstr "Farben"
 
@@ -603,11 +623,11 @@ msgstr "Chrome-Version: %s"
 msgid "Usage Log"
 msgstr "Nutzungs-Log"
 
-#: httpdocs/src/Views/Components/Color.php:54
+#: httpdocs/src/Views/Components/Color.php:58
 msgid "My colors"
 msgstr "Meine Farben"
 
-#: httpdocs/src/Views/Components/Color.php:70
+#: httpdocs/src/Views/Components/Color.php:74
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr "Du kannst Deine Farben in den Design-Einstellungen %s anlegen."
@@ -1049,9 +1069,6 @@ msgstr "Rich Text Editor"
 
 #~ msgid "Images from Unsplash"
 #~ msgstr "Bilder von Unsplash"
-
-#~ msgid "Create background"
-#~ msgstr "Hintergrund erstellen"
 
 #~ msgid ""
 #~ "You are missing a particular size? Please feel free to edit the sizes "

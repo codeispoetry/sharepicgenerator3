@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 14:31+0100\n"
+"POT-Creation-Date: 2025-03-12 15:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -258,20 +258,40 @@ msgid "The copyright is placed automatically from the database."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:54
+msgid "Copyright with "
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:58
+msgid "white background"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:62
+msgid "black background"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:66
+msgid "transparent background"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:72
 msgid "Position"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:56
-#: httpdocs/src/Views/Cockpit/Background.php:59
+#: httpdocs/src/Views/Cockpit/Background.php:74
+#: httpdocs/src/Views/Cockpit/Background.php:77
 msgid "side left"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:61
-#: httpdocs/src/Views/Cockpit/Background.php:64
+#: httpdocs/src/Views/Cockpit/Background.php:79
+#: httpdocs/src/Views/Cockpit/Background.php:82
 msgid "bottom right"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Background.php:83
+#: httpdocs/src/Views/Cockpit/Background.php:91
+msgid "Font color"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Background.php:102
 msgid "Delete background image"
 msgstr ""
 
@@ -314,7 +334,7 @@ msgid "Logo"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Logo.php:12
-#: httpdocs/src/Views/Components/Color.php:3
+#: httpdocs/src/Views/Components/Color.php:5
 msgid "Colors"
 msgstr ""
 
@@ -584,11 +604,11 @@ msgstr ""
 msgid "Usage Log"
 msgstr ""
 
-#: httpdocs/src/Views/Components/Color.php:54
+#: httpdocs/src/Views/Components/Color.php:58
 msgid "My colors"
 msgstr ""
 
-#: httpdocs/src/Views/Components/Color.php:70
+#: httpdocs/src/Views/Components/Color.php:74
 #, php-format
 msgid "Colors can be edited in settings %s."
 msgstr ""

@@ -1,6 +1,10 @@
 <div class="color" id="<?php echo $color->id; ?>">   
     
-    <h3><?php echo _('Colors');?></h3>
+    <h3>
+        <?php 
+            echo (isset($color->title)) ? $color->title : _('Colors');
+        ?>
+    </h3>
     
     <div class="standard-palette">
         <div class="palette-button-wrapper">
