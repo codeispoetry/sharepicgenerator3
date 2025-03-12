@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 15:02+0100\n"
-"PO-Revision-Date: 2025-03-12 15:03+0100\n"
+"POT-Creation-Date: 2025-03-12 23:52+0100\n"
+"PO-Revision-Date: 2025-03-12 23:53+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -78,6 +78,16 @@ msgstr ""
 "Klicke auf ein Bild um es einzufügen bzw. auszuwechseln. Ein "
 "<strong>Doppelklick</strong> setzt das Bild und <strong>schließt die "
 "Ergebnisse</strong>."
+
+#: httpdocs/src/Views/PublicSharepics.php:4
+msgid "Public Sharepics"
+msgstr "Öffentliche Sharepics"
+
+#: httpdocs/src/Views/PublicSharepics.php:12
+msgid ""
+"Choose from public templates. Manage your own public templates in the the "
+"menu."
+msgstr "Wähle ein öffentliches Sharepic als Vorlage aus."
 
 #: httpdocs/src/Views/Cockpit/Elements.php:2
 #: httpdocs/src/Views/Cockpit/Elements.php:8 httpdocs/src/Views/Creator.php:159
@@ -272,7 +282,7 @@ msgstr ""
 "ein Platzhaltertext, den Du än&shy;dern kannst."
 
 #: httpdocs/src/Views/Cockpit/Background.php:54
-msgid "Copyright with "
+msgid "Copyright with"
 msgstr "Hinweis hervorheben"
 
 #: httpdocs/src/Views/Cockpit/Background.php:58
@@ -690,7 +700,7 @@ msgstr "nach hinten"
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:22
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:24
 #: httpdocs/src/Views/Menu/Greens.php:41 httpdocs/src/Views/Menu/Open.php:63
-#: httpdocs/src/Views/Menu/Mint.php:48
+#: httpdocs/src/Views/Menu/Mint.php:48 httpdocs/src/Views/Menu/Mint.php:76
 msgid "delete"
 msgstr "löschen"
 
@@ -787,6 +797,22 @@ msgstr "Quelltext"
 msgid "Open saved sharepics"
 msgstr "Zwischengespeicherte Datei öffnen"
 
+#: httpdocs/src/Views/Menu/Mint.php:58
+msgid "Public sharepics"
+msgstr "Öffentliche Sharepics"
+
+#: httpdocs/src/Views/Menu/Mint.php:61
+msgid "Publish this sharepic"
+msgstr "Dieses Sharepic veröffentlichen"
+
+#: httpdocs/src/Views/Menu/Mint.php:65
+msgid "My public sharepics"
+msgstr "Meine öffentlichen Sharepics"
+
+#: httpdocs/src/Views/Menu/Mint.php:83
+msgid "Show all public sharepics"
+msgstr "Alle öffentlichen Sharepics"
+
 #: httpdocs/src/Views/Homemint.php:18
 msgid "Create sharepics for your social media channels."
 msgstr "Erstelle Sharepics für Deine Social-Media-Kanäle."
@@ -831,7 +857,7 @@ msgstr "Einstellungen"
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: httpdocs/src/Views/Creator.php:195
+#: httpdocs/src/Views/Creator.php:196
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
@@ -839,40 +865,40 @@ msgstr ""
 "Bitte warte, während Dein Sharepic erstellt wird. Dies kann einige Sekunden "
 "dauern."
 
-#: httpdocs/src/Views/Creator.php:222
+#: httpdocs/src/Views/Creator.php:223
 msgid "Are you sure, that you want to delete your sharepic?"
 msgstr "Bist Du sicher, dass du Dein gespeichertes Sharepic löschen möchtest?"
 
-#: httpdocs/src/Views/Creator.php:223
+#: httpdocs/src/Views/Creator.php:224
 msgid "Do you want to log out?"
 msgstr "Möchtest Du Dich ausloggen?"
 
-#: httpdocs/src/Views/Creator.php:224
+#: httpdocs/src/Views/Creator.php:225
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: httpdocs/src/Views/Creator.php:225
+#: httpdocs/src/Views/Creator.php:226
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Creator.php:226
+#: httpdocs/src/Views/Creator.php:227
 msgid "Maximum number of elements reached"
 msgstr "Maximale Anzahl von Elementen erreicht"
 
-#: httpdocs/src/Views/Creator.php:227
+#: httpdocs/src/Views/Creator.php:228
 msgid "Uploading your image ..."
 msgstr "Das Bild wird hochladen ..."
 
-#: httpdocs/src/Views/Creator.php:228
+#: httpdocs/src/Views/Creator.php:229
 msgid "Your image is being processed ..."
 msgstr "Dein Bild wird vorbereitet ..."
 
-#: httpdocs/src/Views/Creator.php:229
+#: httpdocs/src/Views/Creator.php:230
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr "Das Bild ist zu groß. Es sind maximal 15 MB erlaubt."
 
-#: httpdocs/src/Views/Creator.php:230
+#: httpdocs/src/Views/Creator.php:231
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
@@ -880,7 +906,7 @@ msgstr ""
 "Du wurdest automatisch ausgeloggt. Bitte lade die Seite neu, um Dich erneut "
 "einzuloggen."
 
-#: httpdocs/src/Views/Creator.php:231
+#: httpdocs/src/Views/Creator.php:232
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
@@ -888,11 +914,11 @@ msgstr ""
 "Du wirst in Kürze automatisch ausgeloggt. Bitte speichere Deine Arbeit oder "
 "lade sie herunter und lade die Seite neu."
 
-#: httpdocs/src/Views/Creator.php:232
+#: httpdocs/src/Views/Creator.php:233
 msgid "Please wait until the image is uploaded."
 msgstr "Bitte warte, bis das Bild hochgeladen ist."
 
-#: httpdocs/src/Views/Creator.php:233
+#: httpdocs/src/Views/Creator.php:234
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
@@ -900,15 +926,15 @@ msgstr ""
 "Die maximale Anzahl von Zeilen wurde erreicht. Für längeren Text nutze bitte "
 "das zusätzliche Textelement."
 
-#: httpdocs/src/Views/Creator.php:234
+#: httpdocs/src/Views/Creator.php:235
 msgid "Color added"
 msgstr "Farbe hinzugefügt"
 
-#: httpdocs/src/Views/Creator.php:235
+#: httpdocs/src/Views/Creator.php:236
 msgid "Please choose a new color first"
 msgstr "Bitte wähle zunächst eine neue Farbe"
 
-#: httpdocs/src/Views/Creator.php:236
+#: httpdocs/src/Views/Creator.php:237
 msgid "One moment please"
 msgstr "Augenblick bitte"
 
@@ -955,6 +981,10 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#, fuzzy
+#~ msgid "Open my public sharepic"
+#~ msgstr "Zwischengespeicherte Datei öffnen"
 
 #~ msgid "Are you sure?"
 #~ msgstr "Bist Du sicher?"

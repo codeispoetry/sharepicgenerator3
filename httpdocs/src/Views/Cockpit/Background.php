@@ -51,7 +51,7 @@
         </section>
 
         <section class="copyright_bg">
-            <h3><?php  echo _('Copyright with ');?></h3>
+            <h3><?php  echo _('Copyright with');?></h3>
             <div style="display:flex;flex-direction:column;margin-bottom:1em;">
                 <label>
                     <input type="radio" name="copyright_bg" checked onClick="copyright.setBGColor('#ffffff')">

@@ -51,13 +51,18 @@
                     ?>
                 </div>
             </div>
+        </div>
+    </div>
 
+    <div class="dropdown" id="menu_sharepics">
+        <span><?php echo _( 'Public sharepics' ); ?></span>
+        <div class="dropdown-content">
             <button onClick="api.create('true');api.save('publish')">
-                <?php  echo _('Publish');?>
+                <?php  echo _('Publish this sharepic');?>
             </button>
             <div class="submenu">
                 <button>
-                    <?php  echo _('Open my public templates');?>
+                    <?php  echo _('My public sharepics');?>
                 </button>
                 <div id="my-public-sharepics" class="submenu-content">
                     <?php

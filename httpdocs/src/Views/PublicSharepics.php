@@ -9,7 +9,7 @@
     </h3>
     
     <p>
-        <?php echo _('Public sharepics'); ?>
+        <?php echo _('Choose from public templates. Manage your own public templates in the the menu.'); ?>
     </p>
     <div id="imagedb_results" class="imagedb_results">
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 15:02+0100\n"
+"POT-Creation-Date: 2025-03-12 23:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,6 +68,16 @@ msgstr ""
 msgid ""
 "Single click on an image sets the image as background, double click sets "
 "image and closes results."
+msgstr ""
+
+#: httpdocs/src/Views/PublicSharepics.php:4
+msgid "Public Sharepics"
+msgstr ""
+
+#: httpdocs/src/Views/PublicSharepics.php:12
+msgid ""
+"Choose from public templates. Manage your own public templates in the the "
+"menu."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Elements.php:2
@@ -258,7 +268,7 @@ msgid "The copyright is placed automatically from the database."
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:54
-msgid "Copyright with "
+msgid "Copyright with"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Background.php:58
@@ -671,7 +681,7 @@ msgstr ""
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:22
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:24
 #: httpdocs/src/Views/Menu/Greens.php:41 httpdocs/src/Views/Menu/Open.php:63
-#: httpdocs/src/Views/Menu/Mint.php:48
+#: httpdocs/src/Views/Menu/Mint.php:48 httpdocs/src/Views/Menu/Mint.php:76
 msgid "delete"
 msgstr ""
 
@@ -768,6 +778,22 @@ msgstr ""
 msgid "Open saved sharepics"
 msgstr ""
 
+#: httpdocs/src/Views/Menu/Mint.php:58
+msgid "Public sharepics"
+msgstr ""
+
+#: httpdocs/src/Views/Menu/Mint.php:61
+msgid "Publish this sharepic"
+msgstr ""
+
+#: httpdocs/src/Views/Menu/Mint.php:65
+msgid "My public sharepics"
+msgstr ""
+
+#: httpdocs/src/Views/Menu/Mint.php:83
+msgid "Show all public sharepics"
+msgstr ""
+
 #: httpdocs/src/Views/Homemint.php:18
 msgid "Create sharepics for your social media channels."
 msgstr ""
@@ -812,75 +838,75 @@ msgstr ""
 msgid "Logged in as"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:195
+#: httpdocs/src/Views/Creator.php:196
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:222
+#: httpdocs/src/Views/Creator.php:223
 msgid "Are you sure, that you want to delete your sharepic?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:223
+#: httpdocs/src/Views/Creator.php:224
 msgid "Do you want to log out?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:224
+#: httpdocs/src/Views/Creator.php:225
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:225
+#: httpdocs/src/Views/Creator.php:226
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:226
+#: httpdocs/src/Views/Creator.php:227
 msgid "Maximum number of elements reached"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:227
+#: httpdocs/src/Views/Creator.php:228
 msgid "Uploading your image ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:228
+#: httpdocs/src/Views/Creator.php:229
 msgid "Your image is being processed ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:229
+#: httpdocs/src/Views/Creator.php:230
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:230
+#: httpdocs/src/Views/Creator.php:231
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:231
+#: httpdocs/src/Views/Creator.php:232
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:232
+#: httpdocs/src/Views/Creator.php:233
 msgid "Please wait until the image is uploaded."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:233
+#: httpdocs/src/Views/Creator.php:234
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:234
+#: httpdocs/src/Views/Creator.php:235
 msgid "Color added"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:235
+#: httpdocs/src/Views/Creator.php:236
 msgid "Please choose a new color first"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:236
+#: httpdocs/src/Views/Creator.php:237
 msgid "One moment please"
 msgstr ""
 
