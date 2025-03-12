@@ -168,7 +168,7 @@ class API {
 
           // add button to menu only if path is ommited (no autosave)
           if (path === false) {
-            document.getElementById('my-sharepics').insertAdjacentHTML('beforeend', html)
+            document.getElementById('my-sharepics').insertAdjacentHTML('afterbegin', html)
           }
         } catch (e) {
           console.error(e)

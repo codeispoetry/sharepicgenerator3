@@ -171,7 +171,7 @@ class User {
 		usort(
 			$savings_dir,
 			function ( $a, $b ) {
-				return filemtime( $a ) - filemtime( $b );
+				return filemtime( $b ) - filemtime( $a );
 			}
 		);
 
