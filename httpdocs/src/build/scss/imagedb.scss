@@ -3,6 +3,7 @@
         width: 0;
         overflow:hidden;
         transition: width ease-out 0.5s;
+        max-height: 750px;
         
         &.show{
             width: 90%;
