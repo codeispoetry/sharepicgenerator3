@@ -644,6 +644,28 @@ class Sharepic {
 	}
 
 	/**
+	 * Loads public sharepics
+	 */
+	public function load_public_sharepics() {
+		$templates = glob( 'public_savings/*' );
+
+		$return = array( 'status' => 200, 'images' => [] );
+		foreach ( $templates as $dir ) {
+			$id        = basename( $dir );
+			$name      = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
+			$thumbnail = $dir . '/thumbnail.png';
+
+			$return['images'][] = array(
+				'id'        => $id,
+				'name'      => $name,
+				'thumbnail' => $thumbnail,
+			);
+		}
+
+		echo json_encode( $return );
+	}
+
+	/**
 	 * Fail gracefully.
 	 *
 	 * @param string $message The error message.

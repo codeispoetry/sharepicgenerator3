@@ -1,5 +1,5 @@
 /* eslint-disable no-undef, no-unused-vars, no-var */
-var api, sg, cockpit, undo, imagedb, component, logger, ui, background, debug, rte, settings
+var api, sg, cockpit, undo, imagedb, component, logger, ui, background, debug, rte, settings, publics
 
 window.onload = function () {
   api = new API()
@@ -14,6 +14,7 @@ window.onload = function () {
   debug = new Debug()
   rte = new RTE()
   settings = new Settings()
+  publics = new Public_Sharepics()
 
   api.load('templates/' + config.starttemplate + '/start.html')
 
@@ -24,7 +25,7 @@ window.onload = function () {
 
     const w = document.getElementById('sharepic').dataset.width
     const h = document.getElementById('sharepic').dataset.height
-
+publics.show()
     sg.setPreset('1:1', 'Post quadratisch', 1080, 1080)
   }, 1000)
 }

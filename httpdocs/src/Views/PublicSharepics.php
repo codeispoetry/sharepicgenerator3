@@ -11,17 +11,16 @@
     <p>
         <?php echo _('Choose from public templates. Manage your own public templates in the the menu.'); ?>
     </p>
-    <div id="imagedb_results" class="imagedb_results">
+    <div id="public_sharepic_results" class="imagedb_results">
 
     <?php
         $templates = glob( 'public_savings/*' );
-
         foreach( $templates as $dir ){
                 $id = basename($dir);
                 $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
                 $thumbnail = $dir . '/thumbnail.png';
                 
-                printf(
+                sprintf(
                     '<div class="image" style="background-image: url(%s)" onClick="api.load(\'public_savings/%s/sharepic.html\')")></div>', 
                     $thumbnail,
                     $id 

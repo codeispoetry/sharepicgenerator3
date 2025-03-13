@@ -621,6 +621,35 @@ class API {
     ui.showTab('background')
   }
 
+  loadPublicSharepics (query = 'no-query') {
+    const data = {
+      query
+    }
+    return new Promise((resolve, reject) => {
+      const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/html'
+      },
+      body: JSON.stringify(data)
+      }
+      fetch(this.api + '&r=' + Math.random() + '&m=load_public_sharepics', options)
+      .then(response => {
+        if (response.status !== 200) {
+        throw new Error(response.status + ' ' + response.statusText)
+        }
+        return response.json()
+      })
+      .then(data => {
+        resolve(data.images)
+      })
+      .catch(error => {
+        console.error('Error:', error)
+        reject(error)
+      })
+    })
+  }
+
   showWaiting () {
     document.getElementsByTagName('body')[0].style.opacity = 0.3
     document.getElementById('waiting').showModal()

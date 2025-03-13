@@ -57,7 +57,7 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'Public sharepics' ); ?></span>
         <div class="dropdown-content">
-            <button onClick="api.create('true');api.save('publish')">
+            <button onClick="publics.publish()">
                 <?php  echo _('Publish this sharepic');?>
             </button>
             <div class="submenu">
@@ -73,13 +73,13 @@
                                 $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
                                 echo '<div class="dropdown-item-double">';
                                     printf( '<button class="did-1" onClick="api.load(\'%s/sharepic.html\')">%s</button>', $dir, $name );
-                                    printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
+                                    printf( '<button class="did-2" onClick="publics.delete(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
                                 echo '</div>';
                         }
                     ?>
                 </div>
             </div>
-            <button onClick="document.getElementById('public_sharepics').classList.add('show')">
+            <button onClick="publics.show()">
                 <?php  echo _('Show all public sharepics');?>
             </button>
         </div>

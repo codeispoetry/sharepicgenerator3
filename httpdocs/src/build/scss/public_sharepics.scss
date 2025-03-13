@@ -9,6 +9,29 @@
         margin-right: 20px;
         max-width: 850px;
     }
+
+    .image{
+        width: 200px;
+        height: 130px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border: 1px solid black;
+        background-color: beige;
+        cursor: pointer;
+    } 
+}
+
+#public_sharepic_results{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+    max-height: 700px;
+    height: 100%;
+    overflow-y: scroll;
 }
 
   

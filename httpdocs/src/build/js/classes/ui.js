@@ -85,15 +85,6 @@ class UI {
     window.document.location.reload()
   }
 
-  deleteSavedSharepic (origin, target, publicSarepic = false) {
-    if (!window.confirm(lang['Are you sure to delete?'])) {
-      return false
-    }
-
-    api.delete(target, publicSarepic)
-    origin.parentElement.remove()
-  }
-
   close (target) {
     document.getElementById('cockpit').style.display = 'flex'
     document.querySelector(target).classList.remove('show')
