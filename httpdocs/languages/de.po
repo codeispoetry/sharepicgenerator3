@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-12 23:52+0100\n"
-"PO-Revision-Date: 2025-03-12 23:53+0100\n"
+"POT-Creation-Date: 2025-03-14 22:32+0100\n"
+"PO-Revision-Date: 2025-03-14 22:33+0100\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -88,6 +88,10 @@ msgid ""
 "Choose from public templates. Manage your own public templates in the the "
 "menu."
 msgstr "Wähle ein öffentliches Sharepic als Vorlage aus."
+
+#: httpdocs/src/Views/PublicSharepics.php:16
+msgid "Filter ny name or owner"
+msgstr "Filter nach Name oder Person"
 
 #: httpdocs/src/Views/Cockpit/Elements.php:2
 #: httpdocs/src/Views/Cockpit/Elements.php:8 httpdocs/src/Views/Creator.php:159

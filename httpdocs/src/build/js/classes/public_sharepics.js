@@ -16,7 +16,7 @@ class Public_Sharepics {
 
   filter(query) {
     query = query.toLowerCase()
-    if (query.length < 3) {
+    if (query.length <= 1) {
         const images = document.getElementById('public_sharepic_results').children
         for (let i = 0; i < images.length; i++) {
             images[i].style.display = 'block'

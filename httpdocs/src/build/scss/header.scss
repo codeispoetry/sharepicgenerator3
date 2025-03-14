@@ -78,7 +78,22 @@ nav {
 
     .did-1 {
         flex-grow: 1;
-        width: 180px;
+        width: 230px;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 0;
+    
+        &:hover .thumb{
+            filter: grayscale(0%);
+        }
+
+        .thumb{
+            height: 50px;
+            width: 50px;
+            filter: grayscale(80%);
+            background-size: cover;
+            background-position: center;
+        }
     }
 
     .did-2 {

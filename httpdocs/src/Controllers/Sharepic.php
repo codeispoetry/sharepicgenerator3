@@ -161,6 +161,11 @@ class Sharepic {
 		$id   = ( $this->path > 0 ) ? $this->path : rand( 1000000, 9999999 );
 		$save = $save_dir . $id;
 
+		// Autosaved sharepics do not have a real thumbnail. Provide a dummy thumbnail.
+		if ( $id === 1 ) {
+			copy( 'assets/transparent.png', $workspace . 'thumbnail.png' );
+		}
+
 		$save_count = count( glob( $save_dir . '/*', GLOB_ONLYDIR ) );
 		if ( 'save' === $this->mode && $save_count > 30 ) {
 			$this->http_error( 'Too many files' );

@@ -44,7 +44,7 @@
                         $savings = $this->env->user->get_savings();
                         foreach( $savings as $dir => $name ){
                                 echo '<div class="dropdown-item-double">';
-                                    printf( '<button class="did-1" onClick="api.load(\'save/%s/sharepic.html\')">%s</button>', $dir, $name );
+                                    printf( '<button class="did-1" onClick="api.load(\'save/%1$s/sharepic.html\')"><div>%2$s</div><div class="thumb" style="background-image:url(index.php?c=proxy&r=%3$d&p=save/%1$s/thumbnail.png)"></button>', $dir, $name, rand() );
                                     printf( '<button class="did-2" onClick="ui.deleteSavedSharepic(this, \'%s\')" title="%s"><img src="assets/icons/delete.svg"></button>', $dir, _( 'delete' ) );
                                 echo '</div>';
                         }
@@ -72,7 +72,7 @@
                                 $id = basename($dir);
                                 $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
                                 echo '<div class="dropdown-item-double">';
-                                    printf( '<button class="did-1" onClick="api.load(\'%s/sharepic.html\')">%s</button>', $dir, $name );
+                                    printf( '<button class="did-1" onClick="api.load(\'%1$s/sharepic.html\')"><div>%2$s</div><div class="thumb" style="background-image:url(%1$s/thumbnail.png)"></button>', $dir, $name );
                                     printf( '<button class="did-2" onClick="publics.delete(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
                                 echo '</div>';
                         }

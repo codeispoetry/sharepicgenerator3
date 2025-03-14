@@ -31,7 +31,7 @@ class Helper {
 
 		foreach ( $files as $file ) {
 			if ( is_file( $file ) && $now - filemtime( $file ) >= $minutes * 60 ) {
-				unlink( $file );
+				@unlink( $file );
 			}
 		}
 	}
