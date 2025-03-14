@@ -126,6 +126,7 @@ class API {
   // name = name for the sharepic or prompted
   // path = path to the sharepic on server. Must be integer.
   save (mode = 'save', name = false, path = false) {
+    api.create('true'); // maybe this is not the best place for this, as it might not be fast enough. Consider a promise.
     if (name === false) {
       name = prompt('Name des Sharepics', 'Sharepic')
       if (name === null) {
@@ -156,6 +157,7 @@ class API {
         return response.text()
       })
       .then(data => {
+        console.log(data)
         data = JSON.parse(data)
 
         try {

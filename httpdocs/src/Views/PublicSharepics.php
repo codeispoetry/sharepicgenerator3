@@ -11,6 +11,12 @@
     <p>
         <?php echo _('Choose from public templates. Manage your own public templates in the the menu.'); ?>
     </p>
+
+    <div class="button-group" style="display:flex;margin-bottom: 1em;">
+        <input type="text" style="width:100%;" name="publics_filter" id="publics_filter" placeholder="<?php echo _('Filter ny name or owner'); ?>" oninput="publics.filter(this.value)">
+        <button onclick="publics.filter( document.getElementById('publics_filter').value )"><img src="assets/icons/search.svg"></button> 
+    </div>
+
     <div id="public_sharepic_results" class="imagedb_results">
 
     <?php
