@@ -651,13 +651,14 @@ class Sharepic {
 
 		$return = array( 'status' => 200, 'images' => [] );
 		foreach ( $templates as $dir ) {
+			$info      = json_decode( file_get_contents( $dir . '/info.json' ) );
 			$id        = basename( $dir );
-			$name      = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
 			$thumbnail = $dir . '/thumbnail.png';
 
 			$return['images'][] = array(
 				'id'        => $id,
-				'name'      => $name,
+				'name'      => $info->name,
+				'owner'     => $info->owner,
 				'thumbnail' => $thumbnail,
 			);
 		}

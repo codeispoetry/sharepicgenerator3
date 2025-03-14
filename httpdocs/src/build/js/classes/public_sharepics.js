@@ -30,6 +30,11 @@ class Public_Sharepics {
             img.style.backgroundImage = `url('${hit.thumbnail}')`
             img.classList.add('image')
 
+            const description = document.createElement('div')
+            description.classList.add('description')
+            description.innerHTML = `<b>${hit.name}</b><br>von ${hit.owner}`
+            img.appendChild(description)
+
             img.onclick = () => {
                 api.load('public_savings/' + hit.id + '/sharepic.html')
             }

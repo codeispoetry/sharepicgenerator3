@@ -25,7 +25,6 @@ window.onload = function () {
 
     const w = document.getElementById('sharepic').dataset.width
     const h = document.getElementById('sharepic').dataset.height
-publics.show()
     sg.setPreset('1:1', 'Post quadratisch', 1080, 1080)
   }, 1000)
 }
