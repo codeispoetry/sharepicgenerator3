@@ -38,7 +38,6 @@ class Public_Sharepics {
   }
 
   publish() {
-    api.create('true');
     api.save('publish')
   }
 

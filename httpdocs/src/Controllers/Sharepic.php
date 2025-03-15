@@ -283,7 +283,7 @@ class Sharepic {
 
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
-			$this->http_error( 'Could not create file' );
+			$this->http_error( 'Could not create file 1' );
 		}
 
 		// Remove the toolbar added by google chrome since version 128.
@@ -297,7 +297,7 @@ class Sharepic {
 
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
-			$this->http_error( 'Could not create file' );
+			$this->http_error( 'Could not create file 2' );
 		}
 
 		if ( $this->jpg ) {
