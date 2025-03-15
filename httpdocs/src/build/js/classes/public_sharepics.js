@@ -48,6 +48,13 @@ class Public_Sharepics {
     api.loadPublicSharepics().then(images => {
         const results = document.getElementById('public_sharepic_results')
         images.forEach(hit => {
+            const container = document.createElement('div')
+            container.classList.add('image_container')
+
+            const container_background = document.createElement('div')
+            container_background.classList.add('image_container_background')
+            container_background.style.backgroundImage = `url('${hit.thumbnail}')`
+
             const img = document.createElement('div')
             img.style.backgroundImage = `url('${hit.thumbnail}')`
             img.classList.add('image')
@@ -63,7 +70,10 @@ class Public_Sharepics {
                 api.load('public_savings/' + hit.id + '/sharepic.html')
             }
 
-            results.appendChild(img)
+            container.appendChild(container_background)
+            container.appendChild(img)
+
+            results.appendChild(container)
         });
     })
     

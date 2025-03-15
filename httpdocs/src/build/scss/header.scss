@@ -84,13 +84,13 @@ nav {
         padding-right: 0;
     
         &:hover .thumb{
-            filter: grayscale(0%);
+            opacity: 1;
         }
 
         .thumb{
             height: 50px;
             width: 50px;
-            filter: grayscale(80%);
+            opacity: 0.5;
             background-size: cover;
             background-position: center;
         }

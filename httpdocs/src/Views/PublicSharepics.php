@@ -17,23 +17,5 @@
         <button onclick="publics.filter( document.getElementById('publics_filter').value )"><img src="assets/icons/search.svg"></button> 
     </div>
 
-    <div id="public_sharepic_results" class="imagedb_results">
-
-    <?php
-        $templates = glob( 'public_savings/*' );
-        foreach( $templates as $dir ){
-                $id = basename($dir);
-                $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
-                $thumbnail = $dir . '/thumbnail.png';
-                
-                sprintf(
-                    '<div class="image" style="background-image: url(%s)" onClick="api.load(\'public_savings/%s/sharepic.html\')")></div>', 
-                    $thumbnail,
-                    $id 
-                );
-
-        }
-    ?>
-
-    </div>
+    <div id="public_sharepic_results" class="imagedb_results"></div>
 </div>
