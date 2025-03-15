@@ -247,6 +247,12 @@ select{
             background-color: $default-bg;
         }
 
+        select.pixabay{
+            background-image: url(/assets/images/pixabay.svg);
+            padding-left: 50px;
+            background-color: $default-bg;
+        }
+
         input{
             border: 1px solid $light-gray;
             border-radius: 0;
