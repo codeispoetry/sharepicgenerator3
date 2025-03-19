@@ -56,9 +56,10 @@
 				<button class="create" style="border-top-right-radius: 0; border-bottom-right-radius:0;" onClick="api.create()">
 					<img src="assets/icons/download.svg"> <?php  echo _('Download');?>
 				</button>
-				<select class="button-dropdown" id="jpg">
-					<option value="false">png</option>
-					<option value="true">jpg</option>
+				<select class="button-dropdown" id="format">
+					<option value="png" title="<?php echo _('smaller file size');?>">png</option>
+					<option value="jpg" title="<?php echo _('smaller file size');?>">jpg</option>
+					<option value="spg" title="<?php echo _('editable');?>">spg</option>
 				</select>
 
 				<div class="message"></div>

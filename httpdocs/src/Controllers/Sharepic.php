@@ -91,11 +91,11 @@ class Sharepic {
 	private $body_class;
 
 	/**
-	 * Should the output image be a jpg?
+	 * The format of the output.
 	 *
-	 * @var bool
+	 * @var string
 	 */
-	private $jpg;
+	private $format;
 
 
 	/**
@@ -122,7 +122,10 @@ class Sharepic {
 		$this->size['height'] = (int) ( $data['size']['height'] ?? 100 );
 		$this->size['zoom']   = (float) ( $data['size']['zoom'] ?? 1 );
 		$this->path           = (int) ( $data['path'] ?? 0 );
-		$this->jpg            = (bool) ( $data['jpg'] ?? 1 );
+		$this->format         = (string) ( $data['format'] ?? 'png' );
+		if ( ! in_array( $this->format, array( 'png', 'jpg', 'spg' ) ) ) {
+			$this->format = 'png';
+		}
 		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
 		$this->info           = ( isset( $data['name'] ) ) ? preg_replace( '/[^a-zA-Z0-9 äöüÄÖÜß:\-\.]/', ':', $data['name'] ) : 'no-name';
 		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish', 'bug' ) ) ) ? $data['mode'] : 'save';
@@ -300,13 +303,35 @@ class Sharepic {
 			$this->http_error( 'Could not create file 2' );
 		}
 
-		if ( $this->jpg ) {
+		if ( 'jpg' === $this->format ) {
 			$this->convert_to_jpg( $path );
 			$output_file = substr( $output_file, 0, -3 ) . 'jpg';
 		}
 
-		$this->create_thumbnail( $path );
-		$this->create_qrcode( $path );
+		if ( 'spg' === $this->format ) {
+			$this->env->logger->access( 'Creating SPG' );
+
+			$output_file = substr( $output_file, 0, -3 ) . 'spg';
+
+			$cmd = sprintf(
+				'%s zip %s %s -x */info.json */thumbnail.png 2>&1',
+				$cmd_prepend,
+				$this->env->user->get_dir() . $output_file,
+				$this->env->user->get_dir() . 'workspace/*',
+				$output_file
+			);
+
+			exec( $cmd, $output, $return_code );
+			if ( 0 !== $return_code ) {
+				$this->env->logger->error( implode( "\n", $output ) . $return_code );
+			}
+			$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+
+		} else {
+			// thumbnail and qrcode are only created for png and jpg.
+			$this->create_thumbnail( $path );
+			$this->create_qrcode( $path );
+		}
 		echo json_encode( array( 'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $output_file ) );
 	}
 

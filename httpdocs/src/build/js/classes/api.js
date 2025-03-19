@@ -282,7 +282,7 @@ class API {
 
     const data = {
       data: clonedCanvas.innerHTML,
-      jpg: (document.getElementById('jpg').value === 'true'),
+      format: document.getElementById('format').value,
       size: {
         width: document.getElementById('width').value,
         height: document.getElementById('height').value,
