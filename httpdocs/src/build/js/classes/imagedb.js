@@ -104,6 +104,13 @@ class ImageDB {
     }
 
     data.forEach(hit => {
+      const container = document.createElement('div')
+      container.classList.add('image_container')
+
+      const container_background = document.createElement('div')
+      container_background.classList.add('image_container_background')
+      container_background.style.backgroundImage = `url('${hit.attachment_thumbnail}')`
+
       const img = document.createElement('div')
       img.style.backgroundImage = `url('${hit.attachment_thumbnail}')`
       img.classList.add('image')
@@ -164,7 +171,11 @@ class ImageDB {
 
         // background.setCredits(`Image by <a href="${img.dataset.pageurl}?utm_source=sharepicgenerator&utm_medium=referral" target="_blank">${img.dataset.user}</a> auf Unsplash.com`)
       }
-      results.appendChild(img)
+      
+      container.appendChild(container_background)
+      container.appendChild(img)
+
+      results.appendChild(container)
     })
   }
 
@@ -277,6 +288,13 @@ class ImageDB {
     }
 
     data.hits.forEach(hit => {
+      const container = document.createElement('div')
+      container.classList.add('image_container')
+
+      const container_background = document.createElement('div')
+      container_background.classList.add('image_container_background')
+      container_background.style.backgroundImage = `url('${hit.previewURL}')`
+
       const img = document.createElement('div')
       img.style.backgroundImage = `url('${hit.previewURL}')`
       img.classList.add('image')
@@ -312,7 +330,11 @@ class ImageDB {
           api.loadAddPicByUrl(img.dataset.url)
         }
       }
-      results.appendChild(img)
+
+      container.appendChild(container_background)
+      container.appendChild(img)
+
+      results.appendChild(container)
     })
   }
 }

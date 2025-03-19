@@ -16,15 +16,15 @@ class Public_Sharepics {
 
   filter(query) {
     query = query.toLowerCase()
+    const images = document.getElementById('public_sharepic_results').children
+
     if (query.length <= 1) {
-        const images = document.getElementById('public_sharepic_results').children
         for (let i = 0; i < images.length; i++) {
             images[i].style.display = 'block'
         }
         return
     }
 
-    const images = document.getElementById('public_sharepic_results').children
     for (let i = 0; i < images.length; i++) {
         const image = images[i]
         const name = image.getAttribute('data-name').toLowerCase()
@@ -50,6 +50,8 @@ class Public_Sharepics {
         images.forEach(hit => {
             const container = document.createElement('div')
             container.classList.add('image_container')
+            container.setAttribute('data-owner', hit.owner)
+            container.setAttribute('data-name', hit.name)
 
             const container_background = document.createElement('div')
             container_background.classList.add('image_container_background')
@@ -58,8 +60,6 @@ class Public_Sharepics {
             const img = document.createElement('div')
             img.style.backgroundImage = `url('${hit.thumbnail}')`
             img.classList.add('image')
-            img.setAttribute('data-owner', hit.owner)
-            img.setAttribute('data-name', hit.name)
 
             const description = document.createElement('div')
             description.classList.add('description')

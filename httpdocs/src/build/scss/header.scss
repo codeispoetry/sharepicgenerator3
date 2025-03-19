@@ -80,8 +80,10 @@ nav {
         flex-grow: 1;
         width: 230px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         padding-right: 0;
+        flex-direction: row-reverse;
+        padding-left: 0;
     
         &:hover .thumb{
             opacity: 1;
@@ -93,6 +95,10 @@ nav {
             opacity: 0.5;
             background-size: cover;
             background-position: center;
+        }
+
+        .description{
+            padding-left: 10px;
         }
     }
 

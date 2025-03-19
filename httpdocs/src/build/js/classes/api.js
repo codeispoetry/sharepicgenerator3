@@ -164,7 +164,7 @@ class API {
           const thumbnail = (mode=='save') ? `index.php?c=proxy&r=12345$d&p=save/${data.id}/thumbnail.png` : `public_savings/${data.id}/thumbnail.png`
           const html = `<div class="dropdown-item-double">
               <button class="did-1" onclick="api.load('${data.full_path}')">
-                <div>${name}</div><div class="thumb" style="background-image:url(${thumbnail})">
+                <div class="description">${name}</div><div class="thumb" style="background-image:url(${thumbnail})">
               </button>
               <button class="did-2" onclick="ui.deleteSavedSharepic(this, '${data.id}')">
                 <img src="assets/icons/delete.svg">
