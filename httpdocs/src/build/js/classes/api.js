@@ -35,7 +35,9 @@ class API {
       body: JSON.stringify(this.prepare())
     }
 
-    this.showWaiting()
+    if( !silent) {
+      this.showWaiting()
+    }
     
     fetch(this.api + '&m=create', options)
       .then(response => {

@@ -18,7 +18,7 @@
             <a href="https://www.mint-vernetzt.de/privacy-policy-community-platform/" target="_blank" class="menu-link extern">
                 <?php  echo _('Privacy');?>
 			</a>
-            <a href="index.php?c=frontend&m=view&view=ImprintMint" class="menu-link">
+            <a href="imprint.html" class="menu-link">
                 <?php  echo _('Imprint');?>
 			</a>
         </div>
