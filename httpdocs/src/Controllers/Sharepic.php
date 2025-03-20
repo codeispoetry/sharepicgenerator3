@@ -317,7 +317,7 @@ class Sharepic {
 				'%s zip %s %s -x */info.json */thumbnail.png 2>&1',
 				$cmd_prepend,
 				$this->env->user->get_dir() . $output_file,
-				$this->env->user->get_dir() . 'workspace/*',
+				$this->env->user->get_dir() . 'save/2/*',
 				$output_file
 			);
 
@@ -546,6 +546,41 @@ class Sharepic {
 		}
 
 		$this->env->logger->access( 'Uploaded image to ' . $upload_file );
+
+		if ( Helper::is_spg_file( $upload_file ) ) {
+
+			$cmd = sprintf(
+				'%s unzip -j -o %s/background.spg -d %s2',
+				( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'sudo' : '',
+				$this->env->user->get_dir() . 'workspace/',
+				$this->env->user->get_dir() . 'save/'
+			);
+
+			exec( $cmd, $output, $return_code );
+			$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+
+			if ( 0 !== $return_code ) {
+				$this->env->logger->error( implode( "\n", $output ) );
+				$this->http_error( 'Error. Code 6.' );
+			}
+
+			$cmd = sprintf(
+				'%s rm %s/background.spg',
+				( 'local' === $this->env->config->get( 'Main', 'env' ) ) ? 'sudo' : '',
+				$this->env->user->get_dir() . 'workspace/',
+			);
+
+			exec( $cmd, $output, $return_code );
+			$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+
+			if ( 0 !== $return_code ) {
+				$this->env->logger->error( implode( "\n", $output ) );
+				$this->http_error( 'Error. Code 7.' );
+			}
+
+			echo json_encode( array( 'spg' => '1' ) );
+			return;
+		}
 
 		if ( ! Helper::is_image_file_local( $upload_file ) ) {
 			unlink( $upload_file );

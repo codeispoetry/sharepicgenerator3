@@ -63,7 +63,8 @@ class Public_Sharepics {
 
             const description = document.createElement('div')
             description.classList.add('description')
-            description.innerHTML = `<b>${hit.name}</b><br>von ${hit.owner}`
+            //description.innerHTML = `<b>${hit.name}</b><br>von ${hit.owner}`
+            description.innerHTML = `<b>${hit.name}</b>`
             img.appendChild(description)
 
             img.onclick = () => {

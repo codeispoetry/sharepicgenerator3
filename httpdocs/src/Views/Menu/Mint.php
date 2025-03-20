@@ -31,6 +31,9 @@
             <button onClick="api.load('templates/' + config.starttemplate + '/start.html')">
                 <?php  echo _('New');?>
             </button>
+            <button onClick="document.getElementById('upload').click()">
+                <?php  echo _('Upload');?>
+            </button>
             <button onClick="api.save()">
                 <?php  echo _('Save as');?>
             </button>

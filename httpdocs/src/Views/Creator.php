@@ -53,13 +53,13 @@
 				</div>
 			</div>
 			<div class="workbench-below" <?php if( 'robert' === $this->env->user->get_username() ) echo 'style="display:none;"';?>>
-				<button class="create" style="border-top-right-radius: 0; border-bottom-right-radius:0;" onClick="api.create()">
+				<button class="create" style="border-top-right-radius: 0; border-bottom-right-radius:0;" onClick="ui.downloadButton()">
 					<img src="assets/icons/download.svg"> <?php  echo _('Download');?>
 				</button>
 				<select class="button-dropdown" id="format">
-					<option value="png" title="<?php echo _('smaller file size');?>">png</option>
+					<option value="png" title="<?php echo _('best quality');?>">png</option>
 					<option value="jpg" title="<?php echo _('smaller file size');?>">jpg</option>
-					<option value="spg" title="<?php echo _('editable');?>">spg</option>
+					<option value="spg" title="<?php echo _('editable file');?>">spg</option>
 				</select>
 
 				<div class="message"></div>

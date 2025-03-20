@@ -174,4 +174,12 @@ class UI {
     document.getElementById(target).classList.toggle('folded')
     button.classList.toggle('active')
   }
+
+  downloadButton(){
+    if( document.getElementById('format').value === 'spg' ) {
+      api.save('save', 'editable', 2)
+    }
+
+    api.create();
+  }
 }

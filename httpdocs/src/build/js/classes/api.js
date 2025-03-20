@@ -448,10 +448,16 @@ class API {
     xhr.onload = function () {
       if (this.status === 200) {
         const resp = JSON.parse(this.response)
-        document.getElementById('background').style.backgroundImage = `url('${resp.path}')`
-        logger.prepare_log_data({
-          path: resp.path
-        }, true)
+
+        if( resp.spg ) {
+          // This is a sharepic editable
+          api.load('save/2/sharepic.html')
+        } else {
+          document.getElementById('background').style.backgroundImage = `url('${resp.path}')`
+          logger.prepare_log_data({
+            path: resp.path
+          }, true)
+        }
       } else {
         console.error('Error:', this.status, this.statusText)
       }

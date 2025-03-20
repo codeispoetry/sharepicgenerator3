@@ -127,6 +127,26 @@ class Helper {
 		return true;
 	}
 
+	/**
+	 * Checks, if a file is an spg file.
+	 *
+	 * @param string $path The path of the file.
+	 */
+	public static function is_spg_file( $path ) {
+		$extension = strtolower( pathinfo( $path, PATHINFO_EXTENSION ) );
+		if ( 'spg' !== $extension ) {
+			return false;
+		}
+
+		$ct = mime_content_type( $path );
+		if ( empty( $ct ) || 'application/zip' !== $ct ) {
+			$logger = new Logger( 'Helper' );
+			$logger->error( self::sanitize_log( $path ) . ' has Content-Type: ' . $ct );
+			return false;
+		}
+
+		return true;
+	}
 
 	/**
 	 * Load the textdomain.
