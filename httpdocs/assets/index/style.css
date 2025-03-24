@@ -219,6 +219,10 @@ footer{
     font-size: 10px;
 }
 
+img#gefoerdert{
+    height: 139px;
+}
+
 
 @media (max-width: 768px) {
     header a.button{
