@@ -9,6 +9,8 @@
     border-top: 0;
     flex-direction: column;
     background-color: $workbench-color;
+    max-height: 100%;
+    overflow: auto;
     
     &-below{
         margin-top: 10px;

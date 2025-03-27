@@ -3,8 +3,7 @@
     width: 370px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc( 100% - 0px);
-    max-height: 740px;
+    max-height: 100%;
 
     &buttons{
         border-left: 1px solid $light;
@@ -12,6 +11,8 @@
         display: flex;
         flex-direction: column;
         padding: 0;
+        max-height: 100%;
+        overflow: auto;
 
         button{
             background-color: unset;
