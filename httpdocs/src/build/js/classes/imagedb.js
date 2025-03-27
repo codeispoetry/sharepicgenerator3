@@ -208,6 +208,13 @@ class ImageDB {
     }
 
     data.results.forEach(hit => {
+      const container = document.createElement('div')
+      container.classList.add('image_container')
+
+      const container_background = document.createElement('div')
+      container_background.classList.add('image_container_background')
+      container_background.style.backgroundImage = `url('${hit.urls.small}')`
+
       const img = document.createElement('div')
       img.style.backgroundImage = `url('${hit.urls.small}')`
       img.classList.add('image')
@@ -254,7 +261,11 @@ class ImageDB {
           .catch(error => console.error('Error:', error)
           )
       }
-      results.appendChild(img)
+      
+      container.appendChild(container_background)
+      container.appendChild(img)
+
+      results.appendChild(container)
     })
   }
 

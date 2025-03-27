@@ -40,7 +40,7 @@
                                 MINT-Mediendatenbank
                             </option>
                             <option value="pixabay">Pixabay</option>
-                        </select>
+                        </select>  
                 <?php } else { ?>
                     <input type="hidden" name="image_db_source" id="image_db_source" value="unsplash">
                 <?php } ?>

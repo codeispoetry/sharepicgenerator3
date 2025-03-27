@@ -269,21 +269,6 @@ body.greens{
         margin: 0;
     }
 
-    .dropdown {
-        &-content {   
-            button,
-            a.menu-link{   
-                height: 40px;
-
-                &.story{
-                   padding-left: 40px;
-                   font-style: italic;
-                }
-            }
-        }
-      
-    }
-
     #cockpit{
         .cockpit_greentext{
             margin: 0;
@@ -315,6 +300,10 @@ body.greens{
                 }
             }
         }
+    }
+
+    #cockpit .imagesearch::after, .imagedb_page .imagesearch::after{
+        content: '';
     }
 }
 

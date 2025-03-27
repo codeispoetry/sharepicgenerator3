@@ -4,7 +4,7 @@
 </a>
 <div class="dropdown" id="menu_mint">
         <span>
-            MINT-Sharepic Generator
+            MINT-Sharepic-Generator
             <span class="hint">
                 <?php echo _('Beta');?>
         </span>
