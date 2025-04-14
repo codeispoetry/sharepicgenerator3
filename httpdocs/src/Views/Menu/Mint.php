@@ -1,5 +1,5 @@
 <nav>
-<a href="index.php">
+<a href="index.php" style="margin-right: 10px;">
     <img src="/assets/images/mint.svg" style="height: 56px; width: 56px; margin-right: 0;">
 </a>
 <div class="dropdown" id="menu_mint">

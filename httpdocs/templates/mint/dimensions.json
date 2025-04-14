@@ -1,12 +1,6 @@
 {
   "Instagram": [
     {
-      "format": "1:1",
-      "title": "Post quadratisch",
-      "width": 1080,
-      "height": 1080
-    },
-    {
       "format": "4:5",
       "title": "Post Hochformat",
       "width": 1080,
