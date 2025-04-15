@@ -13,7 +13,7 @@ class Component {
       return
     }
     const clonedElement = pattern.cloneNode(true)
-    const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 100)
+    const newId = pattern.dataset.id + '_' + Math.round(Math.random() * 1000000)
 
     clonedElement.setAttribute('id', newId)
     clonedElement.removeAttribute('data-id')
@@ -33,6 +33,7 @@ class Component {
     // and select it (the click event is not enough to select it, because the input event is not yet processed)
     component.select(newElement)
 
+    console.log('selects new element ' + newId)
     this.toFront(newElement)
 
     logger.log('adds component ' + item)
