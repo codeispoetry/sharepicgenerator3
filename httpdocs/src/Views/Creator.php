@@ -6,10 +6,13 @@
     <title>Sharepicgenerator</title>
 	<?php if( $body_classes === 'greens') { ?>
 		<meta name="apple-itunes-app" content="app-id=6738736776">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<?php } else { ?>
+		<link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
 	<?php } ?>
     <link rel="stylesheet" href="assets/styles.css?v=<?php echo filemtime('assets/styles.css');?>">
     <link rel="stylesheet" href="<?php echo Sharepicgenerator\Controllers\Fonts::get_css_file(); ?>">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <style>
         #canvas{
             zoom: 1 !important;
