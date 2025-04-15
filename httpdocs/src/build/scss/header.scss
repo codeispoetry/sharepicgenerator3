@@ -1,14 +1,10 @@
 header {
     padding: 10px 15px;
-    z-index: 10;
+    z-index: 5000;
     width: 100%;
     position: fixed;
     background-color: inherit;
     border-bottom: 1px solid $light;
-
-    &:hover {
-        z-index:10;
-    }
 }
 
 nav {
