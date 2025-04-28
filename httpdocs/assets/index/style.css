@@ -11,6 +11,8 @@
     src: url('../systemfonts/SourceSansPro-Regular.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -18,6 +20,8 @@
     src: url('../systemfonts/SourceSansPro-Semibold.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -25,6 +29,8 @@
     src: url('../systemfonts/SourceSansPro-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body{

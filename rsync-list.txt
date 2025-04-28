@@ -8,6 +8,6 @@ httpdocs/index.php
 httpdocs/index.html
 httpdocs/imprint.html
 httpdocs/unsplash.php
-httpdocs/favicon.ico
+httpdocs/favicon.png
 httpdocs/node_modules/tinymce/
 scripts/
