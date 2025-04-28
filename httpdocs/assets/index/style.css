@@ -8,13 +8,28 @@
 
 @font-face {
     font-family: 'SourceSansPro';
+    src: url('../systemfonts/SourceSansPro-Regular.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro';
     src: url('../systemfonts/SourceSansPro-Semibold.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceSansPro';
+    src: url('../systemfonts/SourceSansPro-Bold.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
 }
 
 body{
     font-family: 'SourceSansPro', sans-serif;
+    font-weight: 300;
     color: var(--gray);
     margin: 0;
     padding: 0;
@@ -27,13 +42,15 @@ header{
     padding: 20px;
     background-color: white;
     z-index: 10;
+}
 
-    .logo{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--dark-blue);
-    }
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark-blue);
+    flex-direction: row;
+    font-size: 1em;
 }
 
 h1{
@@ -43,6 +60,17 @@ h1{
     max-width: 750px;
     font-weight: bold;
     text-align: center;
+}
+
+a, a:visited{
+    color: inherit;
+}
+
+h2{
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
 }
 
 
@@ -111,6 +139,17 @@ section{
 
     div{
         max-width: 650px;
+    }
+
+    .description{
+        h3{
+
+            margin-bottom: 8px;
+        }
+
+        p{
+            margin-top: 0;
+        }
     }
 
     .row{
@@ -187,6 +226,14 @@ section{
         transform-origin: top;
         height: 0;
         width: 700px;
+
+        p{
+            a{
+                text-decoration: underline;
+                font-weight: semibold;
+                color: inherit;
+            }
+        }
     }
 }
 
@@ -212,18 +259,6 @@ footer{
     gap: 70px;
     padding: 40px 0;
     max-width: 1200px;
-
-    .logo{ 
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        color: var(--dark-blue);
-        gap: 10px;
-
-        img{
-            height: 30px;
-        }
-    }
 
     h4{
         color: var(--dark-blue);
@@ -257,12 +292,12 @@ footer{
 }
 
 img#gefoerdert{
-    height: 85px;
+    height: 120px;
 }
 
 .blue-bg{
     background-color: var(--light-blue);
-    padding: 30px;
+    padding: 30px 0 30px 0;
     margin-top: 2em;
     width: 100%;
     text-align: center;
