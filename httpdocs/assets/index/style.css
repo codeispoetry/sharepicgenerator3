@@ -166,6 +166,45 @@ section{
     }
 }
 
+
+.qa{
+    .question{
+        position: relative;
+        cursor: pointer;
+    }
+
+    .question::after{
+        content: url(/assets/icons/chevron-up.svg);
+        transform: rotate(180deg);
+        position: absolute;
+        color: black;
+        right: -9px;
+        top: 3px;
+    }
+
+    .answer{
+        transform: scaleY(0);
+        transform-origin: top;
+        height: 0;
+        width: 700px;
+    }
+}
+
+.qa.active{
+
+    .question::after{
+        transform: rotate(0deg);
+    }
+
+    .answer{
+        transform: scaleY(1);
+        height: auto;
+        transition: all 0.2s;
+    }
+}
+
+
+
 footer{
     display: flex;
     flex-wrap: wrap;
@@ -218,7 +257,20 @@ footer{
 }
 
 img#gefoerdert{
-    height: 139px;
+    height: 85px;
+}
+
+.blue-bg{
+    background-color: var(--light-blue);
+    padding: 30px;
+    margin-top: 2em;
+    width: 100%;
+    text-align: center;
+    color: var(--dark-blue);
+
+    a{
+        color: var(--dark-blue);
+    }
 }
 
 
