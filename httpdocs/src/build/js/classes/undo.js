@@ -8,9 +8,11 @@ class Undo {
       }
 
       if (event.key === 'Delete') {
-        if (cockpit.target.id === 'greentext') {
+        if (cockpit.target.id === 'greentext'  || (cockpit.target.id.startsWith('eyecatcher_') ) ) {
           return
         }
+
+        console.log('Delete key pressed', cockpit.target.id)
         component.delete()
       }
     }.bind(this))

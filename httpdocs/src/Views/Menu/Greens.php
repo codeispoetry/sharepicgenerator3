@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <div class="dropdown" id="menu_sharepics">
+    <div class="dropdown" id="menu_sharepics" style="display: none;">
         <span><?php echo _( 'Public sharepics' ); ?></span>
         <div class="dropdown-content">
             <button onClick="publics.publish()">
