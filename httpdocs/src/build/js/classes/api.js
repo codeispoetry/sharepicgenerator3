@@ -118,7 +118,7 @@ class API {
     const hoursF = ('0' + hours).slice(-2)
     const minutesF = ('0' + minutes).slice(-2)
     const secondsF = ('0' + seconds).slice(-2)
-    // erzeuge den String
+    
     const dateString = year + '-' + monthF + '-' + dayF + ' ' + hoursF + ':' + minutesF + ':' + secondsF
     const name = 'Automatische Speicherung ' + dateString
     this.save('save', name, 1)
@@ -159,7 +159,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         try {
@@ -366,7 +365,6 @@ class API {
         return response.text()
       })
       .then(data => {
-        console.log(data)
         data = JSON.parse(data)
 
         const hint = data.data[0].revised_prompt

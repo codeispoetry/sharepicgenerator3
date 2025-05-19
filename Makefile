@@ -23,8 +23,11 @@ deploy-gruene:
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic-verdigado:/srv/sharepic || true
 	ssh sharepic-verdigado 'sudo chown -R www-data:www-data /srv/sharepic'
 
-deploy-mint:
+deploy-mint-develop:
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic:/var/www/vhosts/sharepicgenerator.de/mint.sharepicgenerator.de
+
+deploy-mint-live:
+	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ mint:/var/www/vhosts/mint-vernetzt.de/sharepic.mint-vernetzt.de
 
 deploy-open:
 	rsync -avzr --no-o --no-g --no-p --delete --progress --files-from=rsync-list.txt ./ sharepic:/var/www/vhosts/sharepicgenerator.de/open.sharepicgenerator.de

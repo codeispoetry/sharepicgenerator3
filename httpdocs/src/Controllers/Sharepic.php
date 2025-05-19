@@ -323,7 +323,7 @@ class Sharepic {
 
 			exec( $cmd, $output, $return_code );
 			if ( 0 !== $return_code ) {
-				$this->env->logger->error( implode( "\n", $output ) . $return_code );
+				$this->env->logger->error( 'ZIP ERROR@@@@@' . implode( "\n", $output ) . $return_code );
 			}
 			$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
 

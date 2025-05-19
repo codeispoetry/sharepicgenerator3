@@ -122,7 +122,6 @@
             const lines = cockpit.target.querySelectorAll('p');
             let totalWidth = cockpit.target.offsetWidth + 1;
             lines.forEach(line => {
-                console.log(line.offsetWidth)
                 let i = 0;
                 while(line.offsetWidth < totalWidth && i < 300){
                     line.style.fontSize = i + "px";

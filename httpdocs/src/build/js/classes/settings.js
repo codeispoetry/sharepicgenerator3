@@ -38,7 +38,6 @@ class Settings {
           console.log(data)
         }
         data = JSON.parse(data)
-        console.log(data)
       })
       .catch(error => {
         console.error('Error:', error)
