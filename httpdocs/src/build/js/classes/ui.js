@@ -178,6 +178,13 @@ class UI {
   downloadButton(){
     if( document.getElementById('format').value === 'spg' ) {
       api.save('save', 'editable', 2)
+
+      // to prevent race condition
+      window.setTimeout(() => {
+        api.create();
+      }
+      , 1000)
+      return
     }
 
     api.create();
