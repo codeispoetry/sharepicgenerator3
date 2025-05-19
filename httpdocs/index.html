@@ -22,7 +22,7 @@
     </header>
 
     <section id="a">
-        <h1>Gestalte Grafiken für Deine Öffentlichkeitsarbeit</h1>
+        <h1>Gestalte Grafiken<span class="soft-break"> </span>für Deine Öffentlichkeitsarbeit</h1>
         <p>
             In wenigen Schritten zum eigenen Sharepic.
         </p>
@@ -346,7 +346,7 @@
             </div>   
         </div> 
 
-        <a href="https://community.mint-vernetzt.de/help#sharepicAndMediaDatabase-sharepicGeneratorNotWorking"  target="_blank" class="button button-outline">
+        <a href="https://community.mint-vernetzt.de/help#sharepicAndMediaDatabase-sharepicGeneratorNotWorking"  target="_blank" class="button button-outline" style="margin: 40px 0;">
             <img src="assets/icons/box-arrow-up-right.svg">
             Weitere Fragen
         </a>
@@ -358,7 +358,13 @@
         </div>
     </section>
 
+    <div id="desktop-only-hint">
+        Öffne den Link am Desktop-Computer, um den<br>Sharepic-Generator nutzen zu können.
 
+        <button id="desktop-only-hint-close">
+            OK. Verstanden
+        </button>
+    </div>
 
     <footer>
         <div>
@@ -396,15 +402,25 @@
         const qas = document.querySelectorAll('.qa');
         qas.forEach(qa => {
             qa.querySelector('.question').addEventListener('click', () => {
-                const allActives = document.querySelectorAll('.qa.active');
-                allActives.forEach(active => {
-                    if (active !== qa) {
-                        active.classList.remove('active');
-                    }
-                });
+                // const allActives = document.querySelectorAll('.qa.active');
+                // allActives.forEach(active => {
+                //     if (active !== qa) {
+                //         active.classList.remove('active');
+                //     }
+                // });
                 qa.classList.toggle('active');
              
             });
+        });
+
+        document.getElementById('desktop-only-hint-close').addEventListener('click', () => {
+            document.getElementById('desktop-only-hint').style.display = 'none';
+        });
+
+        window.addEventListener('load', () => {
+            window.setTimeout(() => {
+                document.getElementById('desktop-only-hint').style.bottom = '0';
+            }, 1000);
         });
     </script>
 </body>

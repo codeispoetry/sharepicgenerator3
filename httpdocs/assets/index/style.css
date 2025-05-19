@@ -57,6 +57,7 @@ header{
     color: var(--dark-blue);
     flex-direction: row;
     font-size: 1em;
+    font-weight: bold;
 }
 
 h1{
@@ -87,6 +88,10 @@ a.button{
     text-decoration: none;
     border-radius: var(--border-radius);
     border: 2px solid var(--dark-blue);
+
+    img{
+        border-radius: 0;
+    }
 }
 a.button:hover{
     background-color: var(--darker-blue);
@@ -224,6 +229,10 @@ section{
 
 
 .qa{
+
+    border-bottom: 2px solid #E6E8EC;
+    padding: 30px 30px 30px 0;
+
     .question{
         position: relative;
         cursor: pointer;
@@ -234,7 +243,7 @@ section{
         transform: rotate(180deg);
         position: absolute;
         color: black;
-        right: -9px;
+        right: -30px;
         top: 3px;
     }
 
@@ -325,6 +334,10 @@ img#gefoerdert{
     }
 }
 
+#desktop-only-hint{
+    display: none;
+}
+
 
 @media (max-width: 768px) {
     body{
@@ -341,20 +354,79 @@ img#gefoerdert{
     footer{
         flex-direction: column;
         padding-left: 20px;
+        gap: 20px;
 
         img{
             width: 100px;
         }
     }
 
+    #b,#d,.blue-bg{
+        margin-inline: -20px;
+        padding-inline: 20px;
+    }
+
+    #c img{
+        width: 95%;
+    }
+
     #d{
         h2{
             padding-left: 0;
+            margin-bottom: 40px;
         }
+
+        .row{
+            gap: 0;
+        }
+    }
+
+    #e .image{
+        height: auto;
+        aspect-ratio: 1/1;
     }
 
     .answer{
         width: 100%;
+    }
+
+    .soft-break::after{
+        content: "\A";
+        white-space: pre;
+    }
+
+    footer .logo{
+        transform: scale(0.5);
+        transform-origin: left;
+    }
+
+    #gefoerdert{
+        height: auto;
+        width: 190px;
+    }
+
+    #desktop-only-hint{
+        display: flex;
+        transition: all 0.5s;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        bottom: -200px;
+        left: 0;
+        width: 100vw;
+        background: var(--dark-blue);
+        color: white;
+        padding: 25px;
+        z-index: 1000;
+    }
+
+    #desktop-only-hint-close{
+        margin-top: 20px;
+        width: calc( 100% - 40px);
+        background: white;
+        color: var(--dark-blue);
+        padding: 10px;
+        border: 0;
     }
 }
 
