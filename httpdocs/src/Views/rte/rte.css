@@ -1,4 +1,76 @@
 @font-face {
+	font-family: 'DMSans';
+	src: url('../../../assets/fonts/DMSans-latin-300-italic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'DMSans';
+	src: url('../../../assets/fonts/DMSans-latin-300-normal.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'DMSans';
+	src: url('../../../assets/fonts/DMSans-latin-700-italic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'DMSans';
+	src: url('../../../assets/fonts/DMSans-latin-700-normal.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'GlacialIndifference';
+	src: url('../../../assets/fonts/GlacialIndifference-latin-300-normal.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'GlacialIndifference';
+	src: url('../../../assets/fonts/GlacialIndifference-latin-700-normal.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'LexendDeca';
+	src: url('../../../assets/fonts/LexendDeca-latin-300-normal.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'LexendDeca';
+	src: url('../../../assets/fonts/LexendDeca-latin-700-normal.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../../../assets/fonts/Montserrat-latin-300-italic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../../../assets/fonts/Montserrat-latin-300-normal.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../../../assets/fonts/Montserrat-latin-700-italic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../../../assets/fonts/Montserrat-latin-700-normal.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
 	font-family: 'Baloo 2';
 	src: url('../../../assets/fonts/baloo-2-latin-400-normal.woff2') format('woff2');
 	font-weight: 400;
@@ -152,6 +224,30 @@
 	font-family: 'Indie Flower';
 	src: url('../../../assets/fonts/indie-flower-latin-400-normal.woff2') format('woff2');
 	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../../../assets/fonts/inter-latin-300-italic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../../../assets/fonts/inter-latin-300-normal.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../../../assets/fonts/inter-latin-700-italic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Inter';
+	src: url('../../../assets/fonts/inter-latin-700-normal.woff2') format('woff2');
+	font-weight: 700;
 	font-style: normal;
 }
 @font-face {
