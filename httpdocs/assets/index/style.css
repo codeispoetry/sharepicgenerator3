@@ -179,8 +179,9 @@ section{
         color: inherit;
     }
 
-    h2{
-        padding-left: 110px;
+    img{
+        height: 86px;
+        width: auto;
     }
 }
 
@@ -442,6 +443,7 @@ img#gefoerdert{
 
        img{
         max-width: 40px;
+        height: 40px;
        }
 
        .description{
