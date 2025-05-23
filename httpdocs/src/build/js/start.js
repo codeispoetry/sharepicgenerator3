@@ -18,8 +18,6 @@ window.onload = function () {
 
   api.load('templates/' + config.starttemplate + '/start.html')
 
-  //api.load('save/1/sharepic.html')
-
   window.setTimeout(function () {
     ui.addColorButtons()
 
@@ -36,7 +34,7 @@ window.addEventListener('beforeunload', function (event) {
 window.addEventListener('keydown', function (event) {
   if (cockpit.target !== null && cockpit.target.id !== 'background' && tinymce.activeEditor === null && event.key === 'Backspace') {
 
-    if (cockpit.target.id.startsWith('eyecatcher_')) {
+    if (cockpit.target.id.startsWith('eyecatcher_') || cockpit.target.id.startsWith('greentext')) {
       return
     }
     event.preventDefault()

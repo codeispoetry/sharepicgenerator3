@@ -11,9 +11,9 @@
         <h3><?php echo _('Appearance'); ?></h3>
         <div style="display: flex;font-size: 75%;margin-bottom: 0;justify-content:space-between;">
             <span><?php echo _('Line'); ?></span>
-            <span><?php echo _('Colorset'); ?></span>
+            <span class="no-nrw"><?php echo _('Colorset'); ?></span>
             <span><?php echo _('Size'); ?></span>
-            <span><?php echo _('Indent'); ?></span>
+            <span class="no-nrw"><?php echo _('Indent'); ?></span>
         </div>
         <?php for( $i = 1; $i <= 12; $i++ ) { ?>
         <div class="cockpit_greentext">

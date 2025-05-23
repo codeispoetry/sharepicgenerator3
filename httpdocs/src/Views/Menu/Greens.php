@@ -84,5 +84,14 @@
     </div>
     <?php } ?>
 
+    <style>
+        #menu_nrw span::after{
+            content: "";
+        }
+    </style>
+    <div class="dropdown" id="menu_nrw">
+        <span onclick="api.load('templates/nrw/start.html')">NRW</span>
+    </div> 
+
     <span class="info-in-menu" id="info-in-menu"></span>
 </nav>
