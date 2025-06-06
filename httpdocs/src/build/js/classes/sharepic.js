@@ -63,8 +63,30 @@ class Sharepic {
 
     this.putBackOnCanvas()
 
+    this.repositionLogo();
+
     document.getElementById('sharepic').classList.toggle('small', newWidth < 400)
   }
+
+  repositionLogo () {
+    const logo = document.getElementById('logo')
+
+    if (!logo) {
+      return
+    }
+    
+    const sharepic = document.getElementById('sharepic')
+    const sharepicWidth = parseInt(sharepic.style.width.replace('px', ''))
+    const sharepicHeight = parseInt(sharepic.style.height.replace('px', ''))
+
+    const x = (sharepicWidth - logo.offsetWidth) - 80
+    const y = 25
+
+    logo.style.left = x + 'px'
+    logo.style.top =  y + 'px'
+  }
+
+
 
   /*
     Put all draggable elements back on canvas, in case they are

@@ -84,14 +84,16 @@
     </div>
     <?php } ?>
 
-    <style>
-        #menu_nrw span::after{
-            content: "";
-        }
-    </style>
-    <div class="dropdown" id="menu_nrw">
-        <span onclick="api.load('templates/nrw/start.html')">NRW</span>
-    </div> 
-
+    <?php
+    if( isset( $_GET['nrw'] )) { ?>
+        <style>
+            #menu_nrw span::after{
+                content: "";
+            }
+        </style>
+        <div class="dropdown" id="menu_nrw">
+            <span onclick="api.load('templates/nrw/start.html')">NRW</span>
+        </div> 
+    <?php } ?>
     <span class="info-in-menu" id="info-in-menu"></span>
 </nav>

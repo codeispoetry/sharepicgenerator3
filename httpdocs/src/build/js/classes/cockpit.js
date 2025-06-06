@@ -44,6 +44,26 @@ class Cockpit {
     })
   }
 
+  setup_textnrw (element) {
+    document.querySelectorAll('.cockpit_textnrw').forEach((div) => {
+      div.style.display = 'none'
+    })
+
+    document.querySelectorAll('#greentext > div').forEach((div, i) => {
+      const cockpitLine = document.querySelectorAll('.cockpit_textnrw')[i]
+      if (!cockpitLine) {
+        return
+      }
+      cockpitLine.style.display = 'flex'
+
+      cockpitLine.querySelectorAll('.linesize option').forEach((option) => {
+        if (div.classList.contains(option.value)) {
+          option.selected = true
+        }
+      })
+    })
+  }
+
   setup_greenaddtext (element) {
     const slider = document.getElementById('greenaddtext_size')
     slider.value = element.style.fontSize.replace('px', '')

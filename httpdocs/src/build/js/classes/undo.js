@@ -8,7 +8,7 @@ class Undo {
       }
 
       if (event.key === 'Delete') {
-        if (cockpit.target.id === 'greentext'  || (cockpit.target.id.startsWith('eyecatcher_') ) ) {
+        if (config.tenant === 'greens'  || (cockpit.target.id.startsWith('eyecatcher_') ) ) {
           return
         }
 

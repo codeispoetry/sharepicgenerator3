@@ -214,6 +214,7 @@
 			'apikey': '<?php echo $mintmediadatabase; ?>'
 		},
 		<?php } ?>
+		'tenant': '<?php echo $this->env->config->get( 'Main', 'tenant' ); ?>',
 		'url': '<?php echo $this->env->config->get( 'Main', 'url' ); ?>',
 		'starttemplate': '<?php echo $starttemplate; ?>',
 		'imagedb': '<?php echo $this->env->config->get( 'Main', 'imagedb' ); ?>',

@@ -34,7 +34,7 @@ window.addEventListener('beforeunload', function (event) {
 window.addEventListener('keydown', function (event) {
   if (cockpit.target !== null && cockpit.target.id !== 'background' && tinymce.activeEditor === null && event.key === 'Backspace') {
 
-    if (cockpit.target.id.startsWith('eyecatcher_') || cockpit.target.id.startsWith('greentext')) {
+    if (cockpit.target.id.startsWith('eyecatcher_') || config.tenant === 'greens') {
       return
     }
     event.preventDefault()

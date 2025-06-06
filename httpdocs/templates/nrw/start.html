@@ -4,6 +4,7 @@
 			background-position: 0px 0px; 
 			width: 800px; height:800px;
 			border: 30px solid #e6007e;
+            box-sizing: border-box;
 			overflow:hidden;"
     		data-width="800" data-height="800" data-zoom="1" class="selectable" data-cockpit="background">
     <link rel="stylesheet" type="text/css" href="templates/nrw/styles.css?r=7">
@@ -19,6 +20,7 @@
                 background-position-y: 0px;
                 background-repeat: no-repeat;
                 background-color: #005437;
+                background-image: url('templates/nrw/start.jpg');
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -30,7 +32,7 @@
 
     <div 
         class="draggable selectable nrwtext" 
-        data-cockpit="greenclassictext"  
+        data-cockpit="textnrw"  
         onmousedown="component.startDrag(event)"
         ontouchstart="component.startDrag(event)"
         ontouchend="this.focus()"
@@ -55,13 +57,28 @@
 
     </div>
 
+    <div id="nrwclaim"
+        style="
+            width: 100%;
+            text-align: center;
+            bottom: 10px;
+            z-index: 5;
+            font-style: italic;
+            font-weight: 300;   
+            font-family: Gotham;
+            color: white;
+            position: absolute;
+            ">
+        MACHT FÜR DAS MORGEN.
+    </div>
+
     <div data-cockpit="logo" 
          spellcheck="false" 
          contenteditable="true" 
          onclick="component.select(this)" 
          onmousedown="component.startDrag(event)" 
-         style="z-index: 6; left: 450px; top: 50px; font-size: 20px; color: rgb(233, 233, 233); width: 50px; height: 50px;" 
-         id="eyecatcher_2358" 
+         style="z-index: 6; left: 400px; top: 50px; font-size: 20px; color: rgb(233, 233, 233); width: 50px; height: 50px;" 
+         id="logo" 
          class="eyecatcher draggable selectable">
         <svg id="sticker_circle" style="position: absolute;width: 100%; height: 100%;" width="3022" height="3000" viewBox="0 0 3022 3000" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -110,7 +127,7 @@
             font-family: 'GrueneType';
         ">
             <p>Am</p>
-            <p style="font-size:150%;">14.09</p>
+            <p style="font-size:150%;">14.09.</p>
             <p>GRÜN</p>
             <p>wählen.</p>
         </div>
@@ -214,13 +231,13 @@
         undo.commit()
 
         config.cockpit = {
-            elements: ['canvas','search','background','greenclassictext','greenaddtext','eyecatcher','addpicture'],
+            elements: ['canvas','search','background','textnrw','greenaddtext','eyecatcher','addpicture'],
             logos: [
                 'templates/de/logos/gelb.svg',
                 'templates/de/logos/gras.svg',
             ],
         }
-        config.palette = ['#ffffff', '#005437', '#008939', '#8abd24', '#f5f1e9', '#0ba1dd']
+        config.palette = ['#ffffff', '#2b8554', '#6fbc85', '#26007e']
 
         /*
         *  Remove empty lines
