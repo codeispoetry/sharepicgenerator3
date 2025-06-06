@@ -140,6 +140,7 @@ class UI {
       button.style.backgroundColor = color
       button.dataset.blueprint = ''
       palette.appendChild(button)
+      console.log("adding color " + color + ' to ' + palette)
     })
     this.setPaletteInHtml()
     rte.addColor(color)

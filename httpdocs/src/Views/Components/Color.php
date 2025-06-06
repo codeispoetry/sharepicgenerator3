@@ -18,7 +18,7 @@
         if($this->env->config->get( 'Main', 'tenant' ) === 'greens' ) {
             $standard_colors = array(
                 //"#000000","#ffffff","#005437","#008939","#8abd24","#f5f1e9","#0ba1dd","#fff17a"
-                  "#ffffff","#fff17a"
+                  "#ffffff","#000000"
             );
         }
 
@@ -56,7 +56,7 @@
     </div>
 
     <h3 style="margin-top:30px;" class="no-greens"><?php echo _('My colors');?></h3>
-    <div style="display:flex;justify-content:space-between;width:100%" class="no-greens">
+    <div style="display:flex;justify-content:space-between;width:100%" class="">
         <div class="palette">
             <button 
                 class="no-button" 

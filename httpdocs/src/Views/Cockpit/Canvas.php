@@ -14,7 +14,7 @@
 
     </section> 
 
-    <section>  
+    <section class="no-greens">  
         <?php
             $color = new stdClass();
             $color->value = "#ffffff";
