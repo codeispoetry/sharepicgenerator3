@@ -218,5 +218,8 @@ nav {
         overflow-y: auto;
         max-height: 400px;
     }
+}
 
+.no-arrow span::after{
+    content: "";
 }
