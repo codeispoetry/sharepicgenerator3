@@ -48,7 +48,8 @@ class UI {
 
   showImageTab () {
     // show image tab, depending on wheter an background image is set or not
-    if (document.getElementById('background').style.backgroundImage === '') {
+    const bgImage = document.getElementById('background').style.backgroundImage
+    if (bgImage === '' || bgImage.includes('templates')) {
       config.imageTarget = 'background'
       this.showSearchImageTab()
       return
