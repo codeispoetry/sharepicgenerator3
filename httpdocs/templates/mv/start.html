@@ -45,6 +45,7 @@
             font-size: 50px;
             padding: 30px;
             z-index: 2;
+            color: white;
             font-family: Poppins;
         "
     >
@@ -55,7 +56,7 @@
     <div class="draggable selectable" id="logo" 
         onmousedown="component.startDrag(event)"
         ontouchstart="component.startDrag(event)"
-        data-cockpit="logo" data-clipping="true"
+        data-cockpit="logomv" data-clipping="true"
         contenteditable="false"
         style="
             width: 165px;
@@ -199,7 +200,7 @@
         undo.commit()
 
         config.cockpit = {
-            elements: ['dimensions','search','background','copyright','greentext','greenaddtext', 'eyecatcher','elements','addpicture'],
+            elements: ['dimensions','search','background','logomv','copyright','greentext','greenaddtext', 'eyecatcher','elements','addpicture'],
             logos: [
                 'templates/mv/logos/HRO.png',
                 'templates/mv/logos/LRO.png',

@@ -86,5 +86,8 @@
     <div class="dropdown no-arrow" id="menu_nrw">
         <span onclick="api.load('templates/nrw/start.html')">NRW</span>
     </div> 
+    <div class="dropdown no-arrow" id="menu_mv">
+        <span onclick="api.load('templates/mv/start.html')">MV</span>
+    </div> 
     <span class="info-in-menu" id="info-in-menu"></span>
 </nav>

@@ -158,6 +158,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_logomv" onClick="ui.showTab('logomv')">
+					<div>
+						<img src="assets/icons/europe.svg" title="<?php echo _('Logo'); ?>">
+						<div class="description">
+							<?php echo _('Logo'); ?>
+						</div>
+					</div>
+				</button>
 				<button id="tab_btn_elements" onClick="ui.showTab('elements')">
 					<div>
 						<img src="assets/icons/elements.svg" title="<?php echo _('Elements'); ?>">
