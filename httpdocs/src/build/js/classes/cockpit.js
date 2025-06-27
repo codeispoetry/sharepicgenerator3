@@ -120,6 +120,9 @@ class Cockpit {
     document.getElementById('logo_size').value = element.style.width.replace('px', '')
   }
 
+  setup_logomv (element) {
+    document.getElementById('logo_size').value = element.style.width.replace('px', '')
+  }
   setup_elements (element) {
     document.getElementById('elements_size').value = element.style.width.replace('px', '')
 

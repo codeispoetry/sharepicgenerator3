@@ -160,7 +160,7 @@
 				</button>
 				<button id="tab_btn_logomv" onClick="ui.showTab('logomv')">
 					<div>
-						<img src="assets/icons/europe.svg" title="<?php echo _('Logo'); ?>">
+						<img src="assets/icons/sunflower.svg" title="<?php echo _('Logo'); ?>">
 						<div class="description">
 							<?php echo _('Logo'); ?>
 						</div>
