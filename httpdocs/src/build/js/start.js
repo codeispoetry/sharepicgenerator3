@@ -41,3 +41,15 @@ window.addEventListener('keydown', function (event) {
     component.delete()
   }
 })
+
+document.getElementById('accept_terms')?.addEventListener('change', function (event) {
+  const button = document.querySelector('dialog.full-modal button')
+  button.disabled = !event.target.checked
+})
+
+document.querySelector('dialog.full-modal button')?.addEventListener('click', function (event) {
+  const dialog = document.querySelector('#terms-of-use')
+  config.terms_accepted = true
+  settings.save()
+  dialog.close()
+})

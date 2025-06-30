@@ -240,4 +240,19 @@ class User {
 		}
 		return '["' . join( '","', $data->palette ) . '"]';
 	}
+
+	public function get_settings( $key ) {
+		$config_file = $this->get_dir() . 'config.json';
+
+		$data = @file_get_contents( $config_file );
+		if ( empty( $data ) ) {
+			return null;
+		}
+		$config = json_decode( $data, true );
+		if ( null === $config ) {
+			return null;
+		}
+
+		return $config[ $key ] ?? null;
+	}
 }

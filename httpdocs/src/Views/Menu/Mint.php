@@ -12,6 +12,9 @@
             <a href="https://community.mint-vernetzt.de/help#sharepic-generator" class="menu-link extern">
                 <?php  echo _('Help and FAQ');?>
 			</a>
+             <a href="https://mediendatenbank.mint-vernetzt.de/nutzungsbedingungen/" class="menu-link extern">
+               Nutzungsbedingungen
+			</a>
             <a href="https://github.com/codeispoetry/sharepicgenerator3" class="menu-link extern">
                 <?php  echo _('Sourcecode');?>
 			</a>

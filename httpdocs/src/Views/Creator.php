@@ -210,6 +210,12 @@
   </p>
 </dialog>
 
+<?php
+if($this->env->config->get( 'Main', 'tenant' ) === 'mint' && !$this->env->user->get_settings('terms_accepted')) {
+	require_once 'src/Views/TermsOfUse.php';
+}
+?>
+
 <script>
     const config = {
 		<?php if ( $pixabayapi = $this->env->config->get( 'Pixabay', 'apikey' ) ) { ?>

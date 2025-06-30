@@ -84,21 +84,59 @@ a, a:visited{
 }
 
 .full-modal{
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
+    padding: 0;
     border: 0;
-    background: rgba(250, 250, 250, 0.95);
+    background: rgba(88, 88, 88, 0.7);
+    z-index: 20000;
 
-    &>div{
+    h3{
+        color: $theme-color;
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    .modal-content{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: 0;
         display: flex;
+    }
+    .modal-box{
+        display: flex;
+        margin: auto;
+        width: 400px;
+        height: 250px;
+        padding: 20px;
         flex-direction: column;
         align-content: center;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        background: white;
+        color: $default-font-color;
+        border-radius: $button-border-radius;
+
+        label{
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 1em;
+
+            a{
+                color: $theme-color;
+                text-decoration: underline;
+            }
+        }
     }
 }
 
 .d-none{
     display: none !important;
+}
+
+button[disabled]{
+    background: $light-gray;
+    color: black;
+    cursor: not-allowed;
 }

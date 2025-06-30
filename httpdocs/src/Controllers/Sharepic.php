@@ -700,7 +700,7 @@ class Sharepic {
 		}
 
 		$config_file = $this->env->user->get_dir() . 'config.json';
-		$new_config  = array( 'palette' => $data['palette'] );
+		$new_config  = array( 'palette' => $data['palette'], 'terms_accepted' => $data['terms_accepted'] );
 
 		$config_data = json_encode( $new_config );
 		file_put_contents( $config_file, $config_data );
