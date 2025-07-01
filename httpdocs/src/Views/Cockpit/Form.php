@@ -11,14 +11,13 @@
         <input type="range" min="0" max="500" value="50" class="slider" id="myform_size" oninput="myform.setSize(this)">
     </section>
 
-    <div style="display:none">
-       
+    <div style="">
         <section class="selected_only">
             <h3 class=""><?php  echo _('Rotation');?></h3>
             <input type="range" min="0" max="360" value="0" class="slider" id="myform_rotation" oninput="myform.rotate(this)">
         </section>
 
-        <section class="selected_only">
+        <section class="" style="display: none;">
             <button onClick="myform.setForm('sticker_circle')"><?php  echo _('Circle');?></button>
             <button onClick="myform.setForm('sticker_square')"><?php  echo _('Square');?></button>
             <button onClick="myform.setForm('sticker_rect169')"><?php  echo _('Rect 16:9');?></button>

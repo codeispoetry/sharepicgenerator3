@@ -63,28 +63,30 @@
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'Public sharepics' ); ?></span>
         <div class="dropdown-content">
-            <button onClick="publics.publish()">
-                <?php  echo _('Publish this sharepic');?>
-            </button>
-            <div class="submenu">
-                <button>
-                    <?php  echo _('My public sharepics');?>
+            <?php if($this->env->user->is_staff()) { ?>
+                <button onClick="publics.publish()">
+                    <?php  echo _('Publish this sharepic');?>
                 </button>
-                <div id="my-public-sharepics" class="submenu-content">
-                    <?php
-                        $templates = $this->env->user->get_public_savings();
+                <div class="submenu">
+                    <button>
+                        <?php  echo _('My public sharepics');?>
+                    </button>
+                    <div id="my-public-sharepics" class="submenu-content">
+                        <?php
+                            $templates = $this->env->user->get_public_savings();
 
-                        foreach( $templates as $dir ){
-                                $id = basename($dir);
-                                $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
-                                echo '<div class="dropdown-item-double">';
-                                    printf( '<button class="did-1" onClick="api.load(\'%1$s/sharepic.html\')"><div class="description">%2$s</div><div class="thumb" style="background-image:url(%1$s/thumbnail.png)"></div></button>', $dir, $name );
-                                    printf( '<button class="did-2" onClick="publics.delete(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
-                                echo '</div>';
-                        }
-                    ?>
+                            foreach( $templates as $dir ){
+                                    $id = basename($dir);
+                                    $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
+                                    echo '<div class="dropdown-item-double">';
+                                        printf( '<button class="did-1" onClick="api.load(\'%1$s/sharepic.html\')"><div class="description">%2$s</div><div class="thumb" style="background-image:url(%1$s/thumbnail.png)"></div></button>', $dir, $name );
+                                        printf( '<button class="did-2" onClick="publics.delete(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
+                                    echo '</div>';
+                            }
+                        ?>
+                    </div>
                 </div>
-            </div>
+            <?php } ?>
             <button onClick="publics.show()">
                 <?php  echo _('Show all public sharepics');?>
             </button>

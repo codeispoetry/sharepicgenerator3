@@ -241,6 +241,12 @@ class User {
 		return '["' . join( '","', $data->palette ) . '"]';
 	}
 
+	/**
+	 * Get a setting from the config file.
+	 *
+	 * @param string $key The key to get.
+	 * @return mixed|null The value or null if not found.
+	 */
 	public function get_settings( $key ) {
 		$config_file = $this->get_dir() . 'config.json';
 
@@ -254,5 +260,14 @@ class User {
 		}
 
 		return $config[ $key ] ?? null;
+	}
+
+	/**
+	 * Check if the user is a staff member.
+	 *
+	 * @return bool True if the user is a staff member.
+	 */
+	public function is_staff() {
+		return str_ends_with( $this->username, '@matrix-gruppe.de' ) || str_ends_with( $this->username, '@tom-rose.de' );
 	}
 }
