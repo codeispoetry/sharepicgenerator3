@@ -152,15 +152,52 @@ class Component {
     component.dragStart = {
       x: clientX,
       y: clientY,
+      width: cockpit.target.style.width ? parseFloat(cockpit.target.style.width) : cockpit.target.offsetWidth,
+      height: cockpit.target.style.height ? parseFloat(cockpit.target.style.height) : cockpit.target.offsetHeight,
       top: parseFloat(cockpit.target.style.top) || 0,
       left: parseFloat(cockpit.target.style.left) || 0
     }
+    // Determine if the click was in the bottom right corner (within 10x10 px)
+    const rect = cockpit.target.getBoundingClientRect()
+    const offsetX = clientX - rect.left
+    const offsetY = clientY - rect.top
+    const inBottomRightCorner = (offsetX >= rect.width - 30) && (offsetY >= rect.height - 30)
+    
+    if (inBottomRightCorner) {
+      cockpit.target.style.cursor = 'nwse-resize'
+      document.addEventListener('mousemove', component.resizing)
+      document.addEventListener('touchmove', component.resizing)
+    } else {
+      cockpit.target.style.cursor = 'move'
+      document.addEventListener('touchmove', component.dragging)
+      document.addEventListener('mousemove', component.dragging)
+    }
 
-    document.addEventListener('mousemove', component.dragging)
     document.addEventListener('mouseup', component.stopDrag)
-
-    document.addEventListener('touchmove', component.dragging)
     document.addEventListener('touchend', component.stopDrag)
+  }
+
+  resizing (e) {
+    let clientX, clientY
+    
+    if (e.touches) {
+      clientX = e.touches[0].clientX
+      clientY = e.touches[0].clientY
+    } else {
+      clientX = e.clientX
+      clientY = e.clientY
+    }
+
+    let delta_x = clientX - component.dragStart.x 
+    let delta_y = clientY - component.dragStart.y
+
+    let newWidth = component.dragStart.width + delta_x
+    let newHeight = component.dragStart.height + delta_y
+
+    cockpit.target.style.width = `${newWidth}px`
+    cockpit.target.style.height = `${newHeight}px`
+    cockpit.target.querySelector('.ap_image')?.style.setProperty('width', `${newWidth}px`, 'important')
+    cockpit.target.querySelector('.ap_image')?.style.setProperty('height', `${newHeight}px`, 'important')
   }
 
   dragging (e) {
@@ -201,6 +238,11 @@ class Component {
     document.removeEventListener('mouseup', component.stopDrag)
     document.removeEventListener('touchmove', component.dragging)
     document.removeEventListener('touchend', component.stopDrag)
+
+    document.removeEventListener('mousemove', component.resizing)
+    document.removeEventListener('touchmove', component.resizing)
+
+    cockpit.target.style.cursor = ''
     sg.putBackOnCanvas()
     undo.commit()
   }
