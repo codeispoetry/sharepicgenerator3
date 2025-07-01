@@ -9,6 +9,9 @@
     <section class="selected_only">
         <h3><?php  echo _('Total size');?></h3>
         <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size" oninput="addpicture.setSize(this.value)">
+
+        <h3 class=""><?php  echo _('Rotation');?></h3>
+        <input type="range" min="0" max="360" value="0" class="slider" id="myform_rotation" oninput="myform.rotate(this)">
     </section>
 
  
