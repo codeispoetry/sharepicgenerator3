@@ -17,3 +17,4 @@ tmp/*
 de.po~
 .vscode
 httpdocs/qrcodes/*.png
+usage.db

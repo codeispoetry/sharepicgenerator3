@@ -38,6 +38,10 @@ class User {
 			$_SERVER['OIDC_CLAIM_preferred_username'] = 'robert';
 		}
 
+		if ( 'mint.sharepicgenerator.de' === $_SERVER['HTTP_HOST'] ) {
+			$_SERVER['OIDC_CLAIM_preferred_username'] = 'heike';
+		}
+
 		$this->username = $_SERVER['OIDC_CLAIM_preferred_username'];
 
 		if ( empty( $this->username ) ) {
@@ -268,6 +272,6 @@ class User {
 	 * @return bool True if the user is a staff member.
 	 */
 	public function is_staff() {
-		return str_ends_with( $this->username, '@mint-vernetzt.de' ) || str_ends_with( $this->username, '@matrix-ggmbh.de' ) || str_ends_with( $this->username, '@matrix-gruppe.de' ) || str_ends_with( $this->username, '@matrix-gmbh.de' ) || str_ends_with( $this->username, '@tom-rose.de' );
+		return str_ends_with( $this->username, '@mint-vernetzt.de' ) || str_ends_with( $this->username, '@matrix-ggmbh.de' ) || str_ends_with( $this->username, '@matrix-gruppe.de' ) || str_ends_with( $this->username, '@matrix-gmbh.de' ) || str_ends_with( $this->username, '@tom-rose.de' ) || in_array( $this->username, [ 'robert', 'heike', 'localhorst', 'open', 'develop' ], true) ;
 	}
 }

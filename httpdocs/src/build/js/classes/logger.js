@@ -13,8 +13,10 @@ class Logger {
     }
   }
 
-  log (data, type = 'normal') {
+  log (data, type = 'normal', short='') {
+
     const payload = {
+      short,
       data,
       ...this.log_data
     }

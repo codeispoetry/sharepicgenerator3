@@ -34,6 +34,9 @@ class Felogger {
 			return;
 		}
 
+		$short = $data['short'];
+		unset( $data['short'] );
+
 		$data = Helper::sanitize_log( join( ' ', $data ) );
 
 		$infos = array(
@@ -45,6 +48,23 @@ class Felogger {
 		if ( ! file_put_contents( $file, join( "\t", $infos ) . "\n", FILE_APPEND | LOCK_EX ) ) {
 			$this->env->logger->error( 'FrontendLogger error: ' . $file . ' could not be written.' );
 			$this->http_error( 'Could not log normal behaviour.' );
+		}
+
+		if ( empty( $short ) ) {
+			return;
+		}
+		try {
+			$db = new \SQLite3( '../logfiles/usage.db' );
+			$db->exec( 'CREATE TABLE IF NOT EXISTS logs (time DATETIME, user TEXT, short TEXT, data TEXT)' );
+			$stmt = $db->prepare( 'INSERT INTO logs (time, user, short, data) VALUES (:time, :user, :short, :data)' );
+			$stmt->bindValue( ':time', $infos['time'], SQLITE3_TEXT );
+			$stmt->bindValue( ':user', $infos['user'], SQLITE3_TEXT );
+			$stmt->bindValue( ':short', $short, SQLITE3_TEXT );
+			$stmt->bindValue( ':data', $infos['data'], SQLITE3_TEXT );
+			$stmt->execute();
+			$db->close();
+		} catch ( \Exception $e ) {
+			$this->env->logger->error( 'SQLite3 logging error: ' . $e->getMessage() );
 		}
 	}
 

@@ -24,6 +24,8 @@ window.onload = function () {
     const w = document.getElementById('sharepic').dataset.width
     const h = document.getElementById('sharepic').dataset.height
     sg.setPreset('1:1', 'Post quadratisch', 1080, 1080)
+
+    logger.log('logs in', 'normal', 'logs in')
   }, 1000)
 }
 

@@ -27,6 +27,25 @@
         </div>
     </div>
 
+    <?php if($this->env->user->is_staff()) { ?>
+        <div class="dropdown" id="menu_sharepics">
+            <span>
+                Statistiken
+            </span>
+            <div class="dropdown-content"> 
+                <a href="/index.php?c=frontend&m=log&scope=Info" class="menu-link">
+                   Info
+                </a>
+                 <a href="/index.php?c=frontend&m=log&scope=Log" class="menu-link">
+                   Log
+                </a>
+                 <a href="/index.php?c=frontend&m=log&scope=Sharepics" class="menu-link">
+                   Sharepics
+                </a>
+            </div>
+        </div>
+    <?php } ?>
+
     <?php if( isset( $show_my_sharepics ) && $show_my_sharepics === true) { ?>
     <div class="dropdown" id="menu_sharepics">
         <span><?php echo _( 'File' ); ?></span>

@@ -76,7 +76,7 @@ class API {
         document.querySelector('.create').classList.remove('waiting')
         this.closeWaiting()
 
-        logger.log('creates sharepic')
+        logger.log('creates sharepic', 'normal', 'creates')
       })
       .catch(error => console.error('Error:', error))
   }
