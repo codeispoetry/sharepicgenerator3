@@ -35,5 +35,4 @@
 	</div>	
 </main>
 
-</body>
-</html>
+<?php include_once './src/Views/Footer.php'; ?>

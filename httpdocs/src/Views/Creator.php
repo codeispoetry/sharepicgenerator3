@@ -257,5 +257,4 @@ if($this->env->config->get( 'Main', 'tenant' ) === 'mint' && !$this->env->user->
    };
 </script>
 
-</body>
-</html>
+<?php include_once './src/Views/Footer.php'; ?>
