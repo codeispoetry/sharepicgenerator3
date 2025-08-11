@@ -17,6 +17,7 @@ woff:
 
 clean-up:
 	sudo rm httpdocs/public_savings/* -rf
+	sudo rm users/localhorst -rf
 	rm logfiles/* -rf
 	rm tmp/* -rf
 

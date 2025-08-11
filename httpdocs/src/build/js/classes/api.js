@@ -16,7 +16,7 @@ class API {
     }, 3 * 60 * 1000)
   }
 
-  create (silent = false) {
+  create (silent = false, mode = false, name = false) {
     if (config.uploading) {
       alert(lang['Please wait until the image is uploaded'])
       return
@@ -51,7 +51,6 @@ class API {
       })
       .then(data => {
         data = JSON.parse(data)
-
         // Create download link and click it
         if(!silent) {
           const a = document.createElement('a')
@@ -77,6 +76,11 @@ class API {
         this.closeWaiting()
 
         logger.log('creates sharepic', 'normal', 'creates')
+
+        if( name !== false) {
+          console.log('Saving sharepic with name:', name)
+          this.save(mode, name)
+        }
       })
       .catch(error => console.error('Error:', error))
   }
@@ -128,12 +132,15 @@ class API {
   // name = name for the sharepic or prompted
   // path = path to the sharepic on server. Must be integer.
   save (mode = 'save', name = false, path = false) {
-    api.create('true'); // maybe this is not the best place for this, as it might not be fast enough. Consider a promise.
+
     if (name === false) {
       name = prompt('Name des Sharepics', 'Sharepic')
       if (name === null) {
         return
       }
+
+       api.create('true', mode, name); 
+       return;
     }
 
     const data = {
@@ -160,7 +167,7 @@ class API {
       })
       .then(data => {
         data = JSON.parse(data)
-
+console.log('Sharepic saved:', data)
         try {
           const thumbnail = (mode=='save') ? `index.php?c=proxy&r=12345$d&p=save/${data.id}/thumbnail.png` : `public_savings/${data.id}/thumbnail.png`
           const html = `<div class="dropdown-item-double">

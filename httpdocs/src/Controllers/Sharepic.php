@@ -183,7 +183,7 @@ class Sharepic {
 
 		$cmd = "cp -R $workspace $save 2>&1";
 		exec( $cmd, $output, $return_code );
-		$this->env->logger->access( 'Execute command: ' . $cmd );
+		$this->env->logger->access( 'Copy workspace to save: ' . $cmd );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could not save sharepic' );
