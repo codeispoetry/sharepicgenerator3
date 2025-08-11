@@ -190,4 +190,14 @@ class UI {
 
     api.create();
   }
+
+  setAddPictureByUrl ( event) {
+    api.loadAddPicByUrl(event.target.getAttribute('src')); // do not use event.target.src, because it resolves to the full URL with domain and protocol
+    cockpit.target.style.opacity = 0.5
+    window.setTimeout(() => {
+      addpicture.picRound()
+      cockpit.target.querySelector('.ap_text').innerHTML=event.target.alt || event.target.title
+      cockpit.target.style.opacity = 1
+    }, 50)
+  }
 }

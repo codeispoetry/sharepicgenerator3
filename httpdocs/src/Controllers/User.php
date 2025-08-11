@@ -144,9 +144,20 @@ class User {
 	 * @return bool
 	 */
 	public function is_admin() {
-		$admins = explode( ',', $this->config->get( 'Main', 'admins' ) );
+		$users = explode( ',', $this->config->get( 'Main', 'admins' ) );
 
-		return in_array( $this->username, $admins );
+		return in_array( $this->username, $users );
+	}
+
+	/**
+	 * Check if user is staff and may publish sharepics (for all tenants).
+	 *
+	 * @return bool
+	 */
+	public function may_publish() {
+		$users = explode( ',', $this->config->get( 'Publish', 'users' ) );
+
+		return in_array( $this->username, $users );
 	}
 
 	/**

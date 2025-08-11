@@ -123,7 +123,6 @@
                 <path id="sticker_bg" fill-rule="evenodd" clip-rule="evenodd" d="M-0.000976342 18.5317C-0.000976328 19.6689 0.920903 20.5908 2.0581 20.5908L91.171 20.5908L78.2134 33.5483C77.4093 34.3524 77.4093 35.6561 78.2134 36.4603C79.0175 37.2644 80.3213 37.2644 81.1254 36.4603L97.598 19.9877C98.4021 19.1835 98.4021 17.8798 97.598 17.0757L81.1254 0.603088C80.3213 -0.201031 79.0175 -0.201031 78.2134 0.603088C77.4093 1.40721 77.4093 2.71094 78.2134 3.51506L91.171 16.4726L2.0581 16.4726C0.920903 16.4726 -0.000976355 17.3945 -0.000976342 18.5317Z" fill="#D9D9D9"/>
             </svg>
         </div>
-
     </section>
 
     <?php if ( $this->env->user->may_openai() ) { ?>
@@ -174,6 +173,13 @@
         </style>
     </section>
     
+    <section id="frontelements" style="">
+        <h3><?php  echo _('Portraits');?></h3>
+        <div class="frontelements">
+            <img src="assets/tenants/bavaria/schulze.jpg" alt="Katharina Schulze" onClick="ui.setAddPictureByUrl(event)">
+        </div>
+    </section>
+       
 </section>
 
 <script>

@@ -144,7 +144,8 @@ nav {
         }
 
         button,
-        a.menu-link {
+        a.menu-link,
+        .divider {
             background-color: unset;
             color: #000;
             text-align: left;
@@ -168,6 +169,16 @@ nav {
                 color: #000;
             }
         }
+
+        .divider{
+            font-weight: bold;
+            height: 30px;
+            margin-top: 50px;
+
+            &:hover {
+                background-color: inherit;
+            }
+            }
     }
 
     &:hover .dropdown-content {

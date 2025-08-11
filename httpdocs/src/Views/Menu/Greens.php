@@ -51,14 +51,26 @@
             </div>
         </div>
     </div>
+    <?php } ?>
+   
 
-    <div class="dropdown" id="menu_sharepics" style="">
-        <span><?php echo _( 'Public sharepics' ); ?></span>
+     <div class="dropdown" id="bavaria" style="">
+        <span>Bayern</span>
         <div class="dropdown-content">
-            <button onClick="publics.publish()">
+            <button onClick="api.load('templates/by/start.html')">
+                <?php  echo _('Create your own');?>
+            </button>
+            <button onClick="publics.show()">
+                <?php  echo _('Show templates');?>
+            </button>
+
+
+            <?php if( $this->env->user->may_publish() ) { ?>
+            <div class="divider"><?php  echo _('Staff only'); ?></div>
+            <button onClick="publics.publish()" class="staff_menu">
                 <?php  echo _('Publish this sharepic');?>
             </button>
-            <div class="submenu">
+            <div class="submenu staff_menu">
                 <button>
                     <?php  echo _('My public sharepics');?>
                 </button>
@@ -77,17 +89,17 @@
                     ?>
                 </div>
             </div>
-            <button onClick="publics.show()">
-                <?php  echo _('Show all public sharepics');?>
-            </button>
+            <?php } ?>
+
         </div>
     </div>
-    <?php } ?>
-    <div class="dropdown no-arrow" id="menu_nrw">
-        <span onclick="api.load('templates/nrw/start.html')">NRW</span>
-    </div> 
+
+
     <div class="dropdown no-arrow" id="menu_mv">
         <span onclick="api.load('templates/mv/start.html')">MV</span>
+    </div> 
+    <div class="dropdown no-arrow" id="menu_nrw">
+        <span onclick="api.load('templates/nrw/start.html')">NRW</span>
     </div> 
     <span class="info-in-menu" id="info-in-menu"></span>
 </nav>

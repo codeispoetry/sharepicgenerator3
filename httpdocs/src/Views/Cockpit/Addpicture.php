@@ -56,7 +56,6 @@
             ?>
         </div>
     </section>
-
     <?php 
         $delete_button_text = _('Foreground image');
         require ("./src/Views/Components/ToFrontAndBack.php"); 

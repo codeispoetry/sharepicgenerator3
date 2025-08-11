@@ -167,7 +167,6 @@ class API {
       })
       .then(data => {
         data = JSON.parse(data)
-console.log('Sharepic saved:', data)
         try {
           const thumbnail = (mode=='save') ? `index.php?c=proxy&r=12345$d&p=save/${data.id}/thumbnail.png` : `public_savings/${data.id}/thumbnail.png`
           const html = `<div class="dropdown-item-double">
