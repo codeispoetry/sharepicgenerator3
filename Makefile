@@ -15,6 +15,12 @@ shell:
 woff:
 	woff2_compress Pacifico.ttf 
 
+clean-up:
+	sudo rm httpdocs/public_savings/* -rf
+	rm logfiles/* -rf
+	rm tmp/* -rf
+
+
 fonts_write_css_file:
 	cd httpdocs && php -r "require 'src/Controllers/Fonts.php'; sharepicgenerator\Controllers\Fonts::write_css_file();"
 

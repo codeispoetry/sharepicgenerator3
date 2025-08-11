@@ -282,7 +282,7 @@ class Sharepic {
 		);
 
 		exec( $cmd, $output, $return_code );
-		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Make screenshot: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
@@ -296,7 +296,7 @@ class Sharepic {
 			$path
 		);
 		exec( $cmd, $output, $return_code );
-		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Remove toolbar: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
@@ -325,7 +325,7 @@ class Sharepic {
 			if ( 0 !== $return_code ) {
 				$this->env->logger->error( 'ZIP ERROR@@@@@' . implode( "\n", $output ) . $return_code );
 			}
-			$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+			$this->env->logger->access( 'Create SPG: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		} else {
 			// thumbnail and qrcode are only created for png and jpg.
@@ -406,7 +406,7 @@ class Sharepic {
 		);
 
 		exec( $cmd, $output, $return_code );
-		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Convert to JPG: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
@@ -435,7 +435,7 @@ class Sharepic {
 
 		exec( $cmd, $output, $return_code );
 
-		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Create qrcode: ' . $cmd . ' ' . implode( "\n", $output ) );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
 		}
@@ -455,7 +455,7 @@ class Sharepic {
 		);
 
 		exec( $cmd, $output, $return_code );
-		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Create thumbnail: ' . $cmd . ' ' . implode( "\n", $output ) );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not create thumbnail' );
@@ -467,7 +467,7 @@ class Sharepic {
 			$this->env->user->get_dir() . 'workspace/thumbnail.png'
 		);
 		exec( $cmd, $output, $return_code );
-		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Copy thumbnail to workspace: ' . $cmd . ' ' . implode( "\n", $output ) );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
 			$this->http_error( 'Could not copy thumbnail' );
@@ -506,7 +506,7 @@ class Sharepic {
 				);
 
 				exec( $cmd, $output, $return_code );
-				$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+				$this->env->logger->access( 'Copy files to workspace: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 				if ( 0 !== $return_code ) {
 					$this->env->logger->alarm( $cmd . ' OUTPUT=' . implode( "\n", $output ) );
@@ -557,7 +557,7 @@ class Sharepic {
 			);
 
 			exec( $cmd, $output, $return_code );
-			$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+			$this->env->logger->access( 'Unzip spg file: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 			if ( 0 !== $return_code ) {
 				$this->env->logger->error( implode( "\n", $output ) );
@@ -571,7 +571,7 @@ class Sharepic {
 			);
 
 			exec( $cmd, $output, $return_code );
-			$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+			$this->env->logger->access( 'Remove spg file: ' . $cmd . ' ' . implode( "\n", $output ) );
 
 			if ( 0 !== $return_code ) {
 				$this->env->logger->error( implode( "\n", $output ) );
@@ -673,7 +673,7 @@ class Sharepic {
 		);
 
 		exec( $cmd, $output, $return_code );
-		$this->env->logger->access( 'Command executed: ' . $cmd . ' ' . implode( "\n", $output ) );
+		$this->env->logger->access( 'Reduce filesize: ' . $cmd . ' ' . implode( "\n", $output ) );
 		if ( 0 !== $return_code ) {
 			$this->env->logger->error( implode( "\n", $output ) );
 			$this->http_error( 'Could convert image' );
