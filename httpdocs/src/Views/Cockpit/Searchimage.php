@@ -125,25 +125,6 @@
         </div>
     </section>
 
-    <?php if ( $this->env->user->may_openai() ) { ?>
-    <section id="search_dalle" style="display: none">
-        <h3><?php  echo _('Create image with AI');?></h3>
-        <p>
-            <?php 
-                echo _('Use artificial intelligence to create a unique image.');
-                echo _('Please keep in mind, that generated images may reproduce stereotypes or be inappropriate.');
-                echo _('Adjust your prompt accordingly.');
-            ?>
-        </p>
-        <textarea placeholder="<?php  echo _('Describe the image you want');?>" 
-                id="dalle_prompt" spellcheck="false" rows="2"
-                oninput="this.rows=this.value.split('\n').length"></textarea>
-        <button class="create" onClick="api.dalle()">
-            <?php  echo _('Create');?>
-        </button>
-    </section>
-    <?php } ?>
-
     <section id="dalle_result" style="display: none";>
         <div id="dalle_result_waiting" style="display: none">
             <img src="assets/icons/waiting.svg" style="width: 50px; margin: 0 10px 30px 0; float:left;">
@@ -175,8 +156,14 @@
     
     <section id="frontelements" style="">
         <h3><?php  echo _('Portraits');?></h3>
+          <div class="frontelements round">
+            <img src="assets/tenants/bavaria/schulze.jpg" alt="Katharina Schulze" title="Katharina Schulze" onClick="ui.setAddPictureByUrl(event, {round:true})">
+        </div>
+        <h3><?php  echo _('Elements');?></h3>
         <div class="frontelements">
-            <img src="assets/tenants/bavaria/schulze.jpg" alt="Katharina Schulze" onClick="ui.setAddPictureByUrl(event)">
+            <img src="assets/tenants/bavaria/hfw_gruen.svg" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'hfw'})" style="background: #ebebeb;padding: 0 8px;">
+            <img src="assets/tenants/bavaria/hfw_weiss.svg" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'hfw'})" style="background: #ebebeb;padding: 0 8px;">
+            <img src="assets/tenants/bavaria/gruenewaehlen.svg" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'gruenewaehlen'})" style="background: #a4a3a3ff;padding: 0 8px;">
         </div>
     </section>
        

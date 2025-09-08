@@ -150,6 +150,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_bavariantext" onClick="ui.showTab('greenaddtext')">
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Bavarian text'); ?>">
+						<div class="description">
+							<?php echo _('Bavarian text'); ?>
+						</div>
+					</div>
+				</button>
 				<button id="tab_btn_europe" onClick="ui.showTab('europe')">
 					<div>
 						<img src="assets/icons/europe.svg" title="<?php echo _('European Election'); ?>">

@@ -191,13 +191,55 @@ class UI {
     api.create();
   }
 
-  setAddPictureByUrl ( event) {
+  setAddPictureByUrl ( event, args = {} ) {
     api.loadAddPicByUrl(event.target.getAttribute('src')); // do not use event.target.src, because it resolves to the full URL with domain and protocol
     cockpit.target.style.opacity = 0.5
     window.setTimeout(() => {
-      addpicture.picRound()
-      cockpit.target.querySelector('.ap_text').innerHTML=event.target.alt || event.target.title
+      if(args.round) {
+        addpicture.picRound()
+      }
+      cockpit.target.querySelector('.ap_text').innerHTML=event.target.title || ''
+      
       cockpit.target.style.opacity = 1
+
+      if(args.prevent_change) {
+        cockpit.target.dataset.prevent_change = 'true'
+        document.getElementById('tabs').classList.add('prevent_change')
+      }
+
+      if(args.size) {
+        document.querySelector('#addpicture_size').value = args.size
+        document.querySelector('#addpicture_size').dispatchEvent(new Event('input', { bubbles: true }))
+      }
+    
+      if(args.hide_aptext){
+        cockpit.target.querySelector('.ap_text').style.display = 'none'
+      }
+
+      if(args.delete_all_with_name) {
+        document.querySelectorAll(`[data-name="${args.delete_all_with_name}"]`).forEach((element) => {
+          if(element !== cockpit.target) {
+            element.remove()
+          }
+        })
+        cockpit.target.dataset.name = args.delete_all_with_name
+      }
+
+
+      switch(args.position) {
+        case 'bottom_left':
+          cockpit.target.style.left = '0'
+          cockpit.target.style.top = document.getElementById('sharepic').clientHeight - cockpit.target.offsetHeight + 'px'
+          break
+        case 'bottom_right':
+          cockpit.target.style.left = document.getElementById('sharepic').clientWidth - cockpit.target.offsetWidth + 'px'
+          cockpit.target.style.top = document.getElementById('sharepic').clientHeight - cockpit.target.offsetHeight + 'px'
+          break
+      
+      }
+
+      component.select(cockpit.target)  
+
     }, 50)
   }
 }

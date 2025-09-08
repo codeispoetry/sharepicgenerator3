@@ -149,6 +149,8 @@ class Cockpit {
   }
 
   setup_addpicture (element) {
+    document.getElementById('tabs').classList.toggle('prevent_change', element.dataset.prevent_change === 'true')
+   
     document.getElementById('addpic_color').value = ui.rgbToHex(element.querySelector('.ap_text').style.color)
     document.getElementById('addpicture_size').value = element.querySelector('.ap_image').style.width.replace('px', '')
   }

@@ -15,9 +15,17 @@
 
 .frontelements{
     img{
-        border-radius: 50%;
         width: 100px;
         height: 100px;
         cursor: pointer;
+    }
+    &.round img{
+        border-radius: 50%;
+    }
+}
+
+#tabs.prevent_change{ 
+    .may_be_hidden {
+        display: none;
     }
 }

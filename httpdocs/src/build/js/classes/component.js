@@ -71,6 +71,8 @@ class Component {
     if(cockpit.target.dataset.cockpit == 'addpicture' ){
       cockpit.target.remove()
       ui.showSearchImageTab('addpic');
+      this.unselect()
+      return
     }
 
     if(cockpit.target.dataset.cockpit == 'myform' ){

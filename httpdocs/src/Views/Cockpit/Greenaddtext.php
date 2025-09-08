@@ -6,7 +6,7 @@
     <section class="selected_only">
         <h3><?php echo _('Total size'); ?></h3>
         <label>
-            <input type="range" min="8" max="30" value="12" class="slider" step="0.5" id="greenaddtext_size"  oninput="greenaddtext.setSize(this)">
+            <input type="range" min="8" max="250" value="12" class="slider" step="0.5" id="greenaddtext_size"  oninput="greenaddtext.setSize(this)">
         </label>
     </section>
 
