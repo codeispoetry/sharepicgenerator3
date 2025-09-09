@@ -69,6 +69,14 @@ class Cockpit {
     slider.value = element.style.fontSize.replace('px', '')
 
     document.getElementById('greenaddtext_color').value = ui.rgbToHex(element.style.color)
+
+    document.querySelectorAll('input[name="greenaddtext_fontface"]').forEach((input) => {
+      input.checked = element.style.fontFamily.includes(input.value)
+    });
+
+    document.querySelectorAll('input[name="greenaddtext_fontweight"]').forEach((input) => {
+      input.checked = (input.value === element.style.fontWeight)
+    });
   }
 
   setup_background (element) {

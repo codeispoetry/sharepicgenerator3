@@ -157,7 +157,7 @@ class User {
 	public function may_publish() {
 		$users = explode( ',', $this->config->get( 'Publish', 'users' ) );
 
-		return in_array( $this->username, $users );
+		return in_array( strToLower( $this->username ), $users );
 	}
 
 	/**
