@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sharepicgenerator 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 15:53+0200\n"
-"PO-Revision-Date: 2025-08-11 15:53+0200\n"
+"POT-Creation-Date: 2025-09-09 19:12+0200\n"
+"PO-Revision-Date: 2025-09-09 19:13+0200\n"
 "Last-Translator: Thomas Rose <tom@lxka-4134mg3.fritz.box>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: httpdocs/src/Views/Home.php:4 httpdocs/src/Views/Homemint.php:15
 #: httpdocs/src/Views/Homegreens.php:4
@@ -94,8 +94,9 @@ msgid "Search for name of sharepic"
 msgstr "Nach Sharepic suchen"
 
 #: httpdocs/src/Views/Cockpit/Elements.php:2
-#: httpdocs/src/Views/Cockpit/Elements.php:8 httpdocs/src/Views/Creator.php:171
-#: httpdocs/src/Views/Creator.php:173
+#: httpdocs/src/Views/Cockpit/Elements.php:8
+#: httpdocs/src/Views/Cockpit/Searchimage.php:164
+#: httpdocs/src/Views/Creator.php:179 httpdocs/src/Views/Creator.php:181
 msgid "Elements"
 msgstr "Elemente"
 
@@ -105,6 +106,7 @@ msgstr "Element hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Elements.php:15
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:12
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
 #: httpdocs/src/Views/Cockpit/Canvas.php:5
 #: httpdocs/src/Views/Cockpit/Background.php:49
 #: httpdocs/src/Views/Cockpit/LogoMV.php:4
@@ -128,7 +130,7 @@ msgstr "Störer hinzufügen"
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:19
 #: httpdocs/src/Views/Cockpit/Form.php:16
 #: httpdocs/src/Views/Cockpit/Freetext.php:11
-#: httpdocs/src/Views/Cockpit/Addpicture.php:13
+#: httpdocs/src/Views/Cockpit/Addpicture.php:14
 msgid "Rotation"
 msgstr "Drehung"
 
@@ -147,7 +149,7 @@ msgstr "Quadrat"
 msgid "Rect 16:9"
 msgstr "Rechteck 16:9"
 
-#: httpdocs/src/Views/Cockpit/Settings.php:2 httpdocs/src/Views/Creator.php:181
+#: httpdocs/src/Views/Cockpit/Settings.php:2 httpdocs/src/Views/Creator.php:189
 msgid "Design settings"
 msgstr "Design-Einstellungen"
 
@@ -181,7 +183,6 @@ msgid "Add text"
 msgstr "Text hinzufügen"
 
 #: httpdocs/src/Views/Cockpit/Greentext.php:9
-#: httpdocs/src/Views/Cockpit/Greenaddtext.php:7
 #: httpdocs/src/Views/Cockpit/Greenclassictext.php:4
 #: httpdocs/src/Views/Cockpit/Addpicture.php:10
 #: httpdocs/src/Views/Cockpit/TextNRW.php:4
@@ -217,11 +218,32 @@ msgid "toggle style"
 msgstr "Schriftstil ändern"
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:2
-#: httpdocs/src/Views/Creator.php:147 httpdocs/src/Views/Creator.php:149
-msgid "Additional text"
-msgstr "Zusatztext"
+#: httpdocs/src/Views/Cockpit/Vorort.php:15
+#: httpdocs/src/Views/Cockpit/Freetext.php:2
+#: httpdocs/src/Views/Cockpit/Freetext.php:18
+#: httpdocs/src/Views/Cockpit/Addpicture.php:46
+#: httpdocs/src/Views/Creator.php:115 httpdocs/src/Views/Creator.php:117
+#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:131
+msgid "Text"
+msgstr "Text"
 
-#: httpdocs/src/Views/Cockpit/Greenaddtext.php:14
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:12
+msgid "Font face"
+msgstr "Schriftart"
+
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:22
+msgid "Font weight"
+msgstr "Schriftstärke"
+
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:25
+msgid "normal"
+msgstr "normal"
+
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:29
+msgid "bold"
+msgstr "fett"
+
+#: httpdocs/src/Views/Cockpit/Greenaddtext.php:34
 msgid "Color"
 msgstr "Farbe"
 
@@ -328,8 +350,8 @@ msgid "Delete background image"
 msgstr "Hintergrundbild löschen"
 
 #: httpdocs/src/Views/Cockpit/LogoMV.php:2
-#: httpdocs/src/Views/Cockpit/Logo.php:2 httpdocs/src/Views/Creator.php:163
-#: httpdocs/src/Views/Creator.php:165
+#: httpdocs/src/Views/Cockpit/Logo.php:2 httpdocs/src/Views/Creator.php:171
+#: httpdocs/src/Views/Creator.php:173
 msgid "Logo"
 msgstr "Logo"
 
@@ -353,15 +375,6 @@ msgstr "Gast"
 #: httpdocs/src/Views/Cockpit/Vorort.php:6
 msgid "please choose"
 msgstr "bitte wählen"
-
-#: httpdocs/src/Views/Cockpit/Vorort.php:15
-#: httpdocs/src/Views/Cockpit/Freetext.php:2
-#: httpdocs/src/Views/Cockpit/Freetext.php:18
-#: httpdocs/src/Views/Cockpit/Addpicture.php:44
-#: httpdocs/src/Views/Creator.php:115 httpdocs/src/Views/Creator.php:117
-#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:131
-msgid "Text"
-msgstr "Text"
 
 #: httpdocs/src/Views/Cockpit/Vorort.php:18
 msgid "Please edit the text directly in the image."
@@ -472,59 +485,33 @@ msgstr "Form hinzufügen"
 msgid "Choose a form and colorize later."
 msgstr "Wähle eine Form und färbe sie anschließend ein."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:131
-msgid "Create image with AI"
-msgstr "Bild mit KI erstellen"
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:134
-msgid "Use artificial intelligence to create a unique image."
-msgstr ""
-"Nutzen Sie künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:135
-msgid ""
-"Please keep in mind, that generated images may reproduce stereotypes or be "
-"inappropriate."
-msgstr ""
-"Bitte beachte, dass generierte Bilder Stereotypen reproduzieren oder "
-"unangemessen sein können."
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:136
-msgid "Adjust your prompt accordingly."
-msgstr "Passe Deinen Prompt ggf. entsprechend an."
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:139
-msgid "Describe the image you want"
-msgstr "Beschreibe das Bild, das Du möchtest"
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:143
-#: httpdocs/src/Views/Menu/Open.php:26
-msgid "Create"
-msgstr "Erstellen"
-
-#: httpdocs/src/Views/Cockpit/Searchimage.php:152
+#: httpdocs/src/Views/Cockpit/Searchimage.php:132
 msgid "Please wait while AI generates your image."
 msgstr "Bitte warte, während die KI Dein Bild generiert."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:153
+#: httpdocs/src/Views/Cockpit/Searchimage.php:133
 msgid "This can take up to one minute."
 msgstr "Dies kann bis zu einer Minute dauern."
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:157
+#: httpdocs/src/Views/Cockpit/Searchimage.php:137
 msgid "seconds"
 msgstr "Sekunden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:161
+#: httpdocs/src/Views/Cockpit/Searchimage.php:141
 msgid "Result"
 msgstr "Ergebnis"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:164
+#: httpdocs/src/Views/Cockpit/Searchimage.php:144
 msgid "Use this image"
 msgstr "Dieses Bild verwenden"
 
-#: httpdocs/src/Views/Cockpit/Searchimage.php:167
+#: httpdocs/src/Views/Cockpit/Searchimage.php:147
 msgid "Try again"
 msgstr "Nochmal versuchen"
+
+#: httpdocs/src/Views/Cockpit/Searchimage.php:158
+msgid "Portraits"
+msgstr "Portraits"
 
 #: httpdocs/src/Views/Cockpit/Area.php:2
 msgid "Area"
@@ -542,43 +529,43 @@ msgstr "Textauswahl aufheben"
 msgid "Edit foreground image"
 msgstr "Vordergrundbild bearbeiten"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:21
+#: httpdocs/src/Views/Cockpit/Addpicture.php:23
 msgid "Image"
 msgstr "Bild"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:23
+#: httpdocs/src/Views/Cockpit/Addpicture.php:25
 msgid "round"
 msgstr "rund"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:26
+#: httpdocs/src/Views/Cockpit/Addpicture.php:28
 msgid "image as round"
 msgstr "Bild als Kreis"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:28
+#: httpdocs/src/Views/Cockpit/Addpicture.php:30
 msgid "angular"
 msgstr "rechteckig"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:32
+#: httpdocs/src/Views/Cockpit/Addpicture.php:34
 msgid "image as angular"
 msgstr "Bild als Quadrat"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:34
+#: httpdocs/src/Views/Cockpit/Addpicture.php:36
 msgid "original"
 msgstr "original"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:38
+#: httpdocs/src/Views/Cockpit/Addpicture.php:40
 msgid "Image original"
 msgstr "Bild im Originalformat"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:46
+#: httpdocs/src/Views/Cockpit/Addpicture.php:48
 msgid "text floats right"
 msgstr "Text rechts"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:47
+#: httpdocs/src/Views/Cockpit/Addpicture.php:49
 msgid "text below"
 msgstr "Text darunter"
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:61
+#: httpdocs/src/Views/Cockpit/Addpicture.php:62
 msgid "Foreground image"
 msgstr "Vordergrundbild"
 
@@ -812,6 +799,10 @@ msgstr "Sharepics"
 msgid "Logfile"
 msgstr "Logdatei"
 
+#: httpdocs/src/Views/Menu/Open.php:26
+msgid "Create"
+msgstr "Erstellen"
+
 #: httpdocs/src/Views/Menu/Open.php:35
 msgid "Logout"
 msgstr "Ausloggen"
@@ -876,19 +867,27 @@ msgstr "Text"
 msgid "Add Text"
 msgstr "Text hinzufügen"
 
+#: httpdocs/src/Views/Creator.php:147 httpdocs/src/Views/Creator.php:149
+msgid "Additional text"
+msgstr "Zusatztext"
+
 #: httpdocs/src/Views/Creator.php:155 httpdocs/src/Views/Creator.php:157
+msgid "Bavarian text"
+msgstr "Bayerntext"
+
+#: httpdocs/src/Views/Creator.php:163 httpdocs/src/Views/Creator.php:165
 msgid "European Election"
 msgstr "Europawahl"
 
-#: httpdocs/src/Views/Creator.php:179
+#: httpdocs/src/Views/Creator.php:187
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: httpdocs/src/Views/Creator.php:192
+#: httpdocs/src/Views/Creator.php:200
 msgid "Logged in as"
 msgstr "Eingeloggt als"
 
-#: httpdocs/src/Views/Creator.php:208
+#: httpdocs/src/Views/Creator.php:216
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
@@ -896,40 +895,40 @@ msgstr ""
 "Bitte warte, während Dein Sharepic erstellt wird. Dies kann einige Sekunden "
 "dauern."
 
-#: httpdocs/src/Views/Creator.php:242
+#: httpdocs/src/Views/Creator.php:250
 msgid "Are you sure, that you want to delete your sharepic?"
 msgstr "Bist Du sicher, dass du Dein gespeichertes Sharepic löschen möchtest?"
 
-#: httpdocs/src/Views/Creator.php:243
+#: httpdocs/src/Views/Creator.php:251
 msgid "Do you want to log out?"
 msgstr "Möchtest Du Dich ausloggen?"
 
-#: httpdocs/src/Views/Creator.php:244
+#: httpdocs/src/Views/Creator.php:252
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 "Bitte speichere Dein Sharepic, ansonsten gehen alle Änderungen verloren."
 
-#: httpdocs/src/Views/Creator.php:245
+#: httpdocs/src/Views/Creator.php:253
 msgid "Please enter a text describing your desired image."
 msgstr "Bitte ändere Deinen Text direkt im Bild links."
 
-#: httpdocs/src/Views/Creator.php:246
+#: httpdocs/src/Views/Creator.php:254
 msgid "Maximum number of elements reached"
 msgstr "Maximale Anzahl von Elementen erreicht"
 
-#: httpdocs/src/Views/Creator.php:247
+#: httpdocs/src/Views/Creator.php:255
 msgid "Uploading your image ..."
 msgstr "Das Bild wird hochladen ..."
 
-#: httpdocs/src/Views/Creator.php:248
+#: httpdocs/src/Views/Creator.php:256
 msgid "Your image is being processed ..."
 msgstr "Dein Bild wird vorbereitet ..."
 
-#: httpdocs/src/Views/Creator.php:249
+#: httpdocs/src/Views/Creator.php:257
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr "Das Bild ist zu groß. Es sind maximal 15 MB erlaubt."
 
-#: httpdocs/src/Views/Creator.php:250
+#: httpdocs/src/Views/Creator.php:258
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
@@ -937,7 +936,7 @@ msgstr ""
 "Du wurdest automatisch ausgeloggt. Bitte lade die Seite neu, um Dich erneut "
 "einzuloggen."
 
-#: httpdocs/src/Views/Creator.php:251
+#: httpdocs/src/Views/Creator.php:259
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
@@ -945,11 +944,11 @@ msgstr ""
 "Du wirst in Kürze automatisch ausgeloggt. Bitte speichere Deine Arbeit oder "
 "lade sie herunter und lade die Seite neu."
 
-#: httpdocs/src/Views/Creator.php:252
+#: httpdocs/src/Views/Creator.php:260
 msgid "Please wait until the image is uploaded."
 msgstr "Bitte warte, bis das Bild hochgeladen ist."
 
-#: httpdocs/src/Views/Creator.php:253
+#: httpdocs/src/Views/Creator.php:261
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
@@ -957,15 +956,15 @@ msgstr ""
 "Die maximale Anzahl von Zeilen wurde erreicht. Für längeren Text nutze bitte "
 "das zusätzliche Textelement."
 
-#: httpdocs/src/Views/Creator.php:254
+#: httpdocs/src/Views/Creator.php:262
 msgid "Color added"
 msgstr "Farbe hinzugefügt"
 
-#: httpdocs/src/Views/Creator.php:255
+#: httpdocs/src/Views/Creator.php:263
 msgid "Please choose a new color first"
 msgstr "Bitte wähle zunächst eine neue Farbe"
 
-#: httpdocs/src/Views/Creator.php:256
+#: httpdocs/src/Views/Creator.php:264
 msgid "One moment please"
 msgstr "Augenblick bitte"
 
@@ -1011,6 +1010,26 @@ msgstr "Quelltext"
 #: httpdocs/src/Views/RTE.php:44
 msgid "show richt text editor"
 msgstr "Rich Text Editor"
+
+#~ msgid "Create image with AI"
+#~ msgstr "Bild mit KI erstellen"
+
+#~ msgid "Use artificial intelligence to create a unique image."
+#~ msgstr ""
+#~ "Nutzen Sie künstliche Intelligenz, um ein einzigartiges Bild zu erstellen."
+
+#~ msgid ""
+#~ "Please keep in mind, that generated images may reproduce stereotypes or "
+#~ "be inappropriate."
+#~ msgstr ""
+#~ "Bitte beachte, dass generierte Bilder Stereotypen reproduzieren oder "
+#~ "unangemessen sein können."
+
+#~ msgid "Adjust your prompt accordingly."
+#~ msgstr "Passe Deinen Prompt ggf. entsprechend an."
+
+#~ msgid "Describe the image you want"
+#~ msgstr "Beschreibe das Bild, das Du möchtest"
 
 #~ msgid "Bundestagswahl"
 #~ msgstr "Zwischengespeicherte Datei öffnen"

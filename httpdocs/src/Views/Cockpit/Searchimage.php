@@ -154,7 +154,7 @@
         </style>
     </section>
     
-    <section id="frontelements" style="">
+    <section id="frontelements" class="bavaria-only" style="">
         <h3><?php  echo _('Portraits');?></h3>
           <div class="frontelements round">
             <img src="assets/tenants/bavaria/schulze.jpg" alt="Katharina Schulze" title="Katharina Schulze" onClick="ui.setAddPictureByUrl(event, {round:true})">

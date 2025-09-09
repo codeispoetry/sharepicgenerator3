@@ -162,6 +162,16 @@
     }
 }
 
+.bavaria-only{
+    display: none;
+}
+
+body[data-template="bavaria"]{
+    .bavaria-only{
+        display: block;
+    }
+}
+
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
     width: 12px;

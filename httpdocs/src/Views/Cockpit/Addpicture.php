@@ -19,7 +19,7 @@
  
     <input type="file" id="addAddPicture" name="upload" onChange="api.uploadAddPic(this)" style="display: none";>
 
-    <section class=" may_be_hidden">
+    <section class="may_be_hidden">
         <h3><?php echo _("Image"); ?></h3>
         <div class="">
             <button id="addpic_pic_round" onclick="addpicture.picRound()" class="with-icon" title="<?php  echo _('round');?>">
