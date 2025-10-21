@@ -146,7 +146,7 @@ class User {
 	public function is_admin() {
 		$users = explode( ',', $this->config->get( 'Main', 'admins' ) );
 
-		return in_array( $this->username, $users );
+		return in_array( strToLower( $this->username ), $users );
 	}
 
 	/**

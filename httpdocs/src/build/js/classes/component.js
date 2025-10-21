@@ -196,6 +196,9 @@ class Component {
 
     cockpit.target.style.top = `${y}px`
     cockpit.target.style.left = `${x}px`
+
+    document.getElementById('greenaddtext_x').value = Math.round(x)
+    document.getElementById('greenaddtext_y').value = Math.round(y)
   }
 
   stopDrag () {

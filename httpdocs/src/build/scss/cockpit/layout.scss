@@ -172,6 +172,20 @@ body[data-template="bavaria"]{
     }
 }
 
+.rangeandnumber{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    input[type="number"]{
+        width: 40px;
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid $light;
+        border-radius: 3px;
+    }
+}
+
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
     width: 12px;

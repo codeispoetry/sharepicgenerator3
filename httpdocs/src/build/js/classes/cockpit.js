@@ -68,7 +68,11 @@ class Cockpit {
     const slider = document.getElementById('greenaddtext_size')
     slider.value = element.style.fontSize.replace('px', '')
 
+    document.getElementById('greenaddtext_size_number').value = element.style.fontSize.replace('px', '')
+
     document.getElementById('greenaddtext_color').value = ui.rgbToHex(element.style.color)
+    document.getElementById('greenaddtext_x').value = Math.round(element.offsetLeft)
+    document.getElementById('greenaddtext_y').value = Math.round(element.offsetTop)
 
     document.querySelectorAll('input[name="greenaddtext_fontface"]').forEach((input) => {
       input.checked = element.style.fontFamily.includes(input.value)

@@ -166,6 +166,7 @@
             <img src="assets/tenants/bavaria/hfw_gruen.svg" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'hfw'})" style="background: #ebebeb;padding: 0 8px;">
             <img src="assets/tenants/bavaria/hfw_weiss.svg" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'hfw'})" style="background: #ebebeb;padding: 0 8px;">
             <img src="assets/tenants/bavaria/gruenewaehlen.svg" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'gruenewaehlen'})" style="background: #a4a3a3ff;padding: 0 8px;">
+             <img src="assets/tenants/bavaria/brezn.png" alt="Brezn" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'brezn'})" style="background: #a4a3a3ff;padding: 0 8px;">
         </div>
     </section>
        

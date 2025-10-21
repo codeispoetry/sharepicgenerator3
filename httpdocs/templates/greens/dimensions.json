@@ -7,6 +7,12 @@
       "height": 1080
     },
     {
+      "format": "3:4",
+      "title": "Post Hochformat",
+      "width": 1080,
+      "height": 1440
+    },
+    {
       "format": "4:5",
       "title": "Post Hochformat",
       "width": 1080,
