@@ -53,7 +53,7 @@
     </div>
     <?php } ?>
    
-    <?php if( $this->env->user->may_publish() ) { ?>
+    <?php if(true ) { ?>
      <div class="dropdown" id="bavaria" style="">
         <span>Bayern</span>
         <div class="dropdown-content">

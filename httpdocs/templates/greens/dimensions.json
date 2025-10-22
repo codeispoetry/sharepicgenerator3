@@ -58,5 +58,38 @@
       "width": 1080,
       "height": 566
     }
+  ],
+  "Druck (Flyeralarm)": [
+    {
+      "format": "A6",
+      "title": "A6 quer",
+      "width": 1772,
+      "height": 1264
+    },
+    {
+      "format": "A6",
+      "title": "A6 hoch",
+      "width": 1264,
+      "height": 1772
+    },
+    {
+      "format": "A3",
+      "title": "Plakat A3",
+      "width": 3531,
+      "height": 4984
+    },
+    {
+      "format": "A2",
+      "title": "Plakat A2",
+      "width": 2492,
+      "height": 3520
+    },
+    {
+      "format": "A1",
+      "title": "Plakat A1",
+      "width": 3520,
+      "height": 4972
+    }
+    
   ]
 }
