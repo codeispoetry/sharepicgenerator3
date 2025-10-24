@@ -32,6 +32,16 @@
     src: url('systemfonts/SourceSansPro-Semibold.woff2') format('woff2');
     font-weight: 700;
 }
+@font-face {
+    font-family: 'PT Sans';
+    src: url('systemfonts/PTSans-Regular.woff2') format('woff2');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'PT Sans';
+    src: url('systemfonts/PTSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+}
 html{
     margin: 0;
     padding: 0;
