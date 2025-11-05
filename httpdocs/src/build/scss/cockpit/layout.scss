@@ -162,12 +162,17 @@
     }
 }
 
-.bavaria-only{
+.bavaria-only, .hessen-only{
     display: none;
 }
 
 body[data-template="bavaria"]{
     .bavaria-only{
+        display: block;
+    }
+}
+body[data-template="hessen"]{
+    .hessen-only{
         display: block;
     }
 }

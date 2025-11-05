@@ -1,0 +1,110 @@
+#greentext,
+.greentext {
+  top: 130px;
+  left: 72px;
+  display: flex;
+  position: absolute;
+  flex-direction: column; }
+  #greentext div,
+  .greentext div {
+    position: relative;
+    font-family: "GrueneType", sans-serif;
+    z-index: 3;
+    padding: 0;
+    white-space: nowrap; }
+
+.sandtanne {
+  color: #f5f1e9 !important; }
+  .sandtanne::before {
+    background-color: #005437 !important; }
+
+.tannesand {
+  color: #005437; }
+  .tannesand::before {
+    background-color: #f5f1e9; }
+
+.kleesand {
+  color: #008939; }
+  .kleesand::before {
+    background-color: #f5f1e9; }
+
+.sandklee {
+  color: #f5f1e9; }
+  .sandklee::before {
+    background-color: #008939; }
+
+.grastanne {
+  color: #8abd24; }
+  .grastanne::before {
+    background-color: #005437; }
+
+.tannegras {
+  color: #005437; }
+  .tannegras::before {
+    background-color: #8abd24; }
+
+.s::before,
+.m::before,
+.l::before {
+  content: "";
+  position: absolute;
+  transform: skew(-9deg, 0);
+  z-index: -1; }
+
+.s {
+  font-size: 33px;
+  line-height: 33px;
+  margin: 6.6px 0; }
+  .s::before {
+    top: -6.6px;
+    left: -13.2px;
+    width: calc(100% + 26.4px);
+    height: 46.2px; }
+
+.m {
+  font-size: 50px;
+  line-height: 50px;
+  margin: 10px 0; }
+  .m::before {
+    top: -10px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: 70px; }
+
+.l {
+  font-size: 75px;
+  line-height: 75px;
+  margin: 15px 0; }
+  .l::before {
+    top: -15px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: 105px; }
+
+#sharepic {
+  background-size: cover;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "GrueneType", sans-serif; }
+
+.eyecatcher {
+  border-radius: 50%;
+  rotate: -9deg;
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap; }
+  .eyecatcher p {
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+    text-align: center; }
+
+/*# sourceMappingURL=styles.css.map */
