@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_textnrw">
-    <h2>Text NRW</h2>
+    <h2>Überschrift</h2>
     <section>
         <h3><?php echo _('Total size'); ?></h3>
         <label>

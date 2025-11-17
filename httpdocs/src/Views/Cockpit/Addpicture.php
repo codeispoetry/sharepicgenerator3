@@ -8,7 +8,7 @@
 
     <section class="selected_only">
         <h3><?php  echo _('Total size');?></h3>
-        <input type="range" min="0" max="500" value="50" class="slider" id="addpicture_size" oninput="addpicture.setSize(this.value)">
+        <input type="range" min="0" max="1500" value="50" class="slider" id="addpicture_size" oninput="addpicture.setSize(this.value)">
 
         <div class="may_be_hidden">
             <h3 class=""><?php  echo _('Rotation');?></h3>

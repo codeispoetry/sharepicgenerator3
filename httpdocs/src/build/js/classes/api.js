@@ -636,9 +636,9 @@ class API {
     ui.showTab('background')
   }
 
-  loadPublicSharepics (query = 'no-query') {
+  loadPublicSharepics (query = 'no-query', tenant = null) {
     const data = {
-      query
+      query, tenant
     }
     return new Promise((resolve, reject) => {
       const options = {
@@ -651,7 +651,7 @@ class API {
       fetch(this.api + '&r=' + Math.random() + '&m=load_public_sharepics', options)
       .then(response => {
         if (response.status !== 200) {
-        throw new Error(response.status + ' ' + response.statusText)
+          throw new Error(response.status + ' ' + response.statusText)
         }
         return response.json()
       })

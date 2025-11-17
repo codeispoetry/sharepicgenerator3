@@ -15,7 +15,7 @@
                 $standard_colors = array(
                    "#ffffff","#fff17a"
                 );
-
+                
                 foreach($standard_colors as $standard_color){
                     printf('<button 
                                 class="no-button" 

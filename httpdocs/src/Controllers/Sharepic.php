@@ -197,8 +197,9 @@ class Sharepic {
 			$save . '/info.json',
 			json_encode(
 				array(
-					'name'  => $this->info,
-					'owner' => $this->env->user->get_username(),
+					'name'   => $this->info,
+					'owner'  => $this->env->user->get_username(),
+					'tenant' => $this->env->user->get_subtenant(),
 				)
 			)
 		);
@@ -713,10 +714,14 @@ class Sharepic {
 	 */
 	public function load_public_sharepics() {
 		$templates = glob( 'public_savings/*' );
+		$data      = json_decode( file_get_contents( 'php://input' ), true );
 
 		$return = array( 'status' => 200, 'images' => [] );
 		foreach ( $templates as $dir ) {
 			$info      = json_decode( file_get_contents( $dir . '/info.json' ) );
+			if ( isset( $info->tenant ) && $info->tenant !== $data['tenant'] ) {
+				continue;
+			}
 			$id        = basename( $dir );
 			$thumbnail = $dir . '/thumbnail.png';
 

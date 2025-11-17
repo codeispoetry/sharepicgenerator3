@@ -174,6 +174,26 @@ class User {
 		exit( 0 );
 	}
 
+
+	/**
+	 * Get the subtenant for the user.
+	 *
+	 * @return string The subtenant or null if not found.
+	 */
+	public function get_subtenant() {
+		$subtenants = $this->config->get( 'Subtenants' );
+		if ( empty( $subtenants ) ) {
+			return '';
+		}
+
+		foreach ( $subtenants as $subtenant => $tenant_users ) {
+			if ( in_array( $this->username, explode( ',', $tenant_users ) ) ) {
+				return $subtenant;
+			}
+		}
+		return '';
+	}
+
 	/**
 	 * Get the savings.
 	 *

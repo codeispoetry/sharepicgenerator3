@@ -60,12 +60,12 @@
             <button onClick="api.load('templates/by/start.html')">
                 <?php  echo _('Create your own');?>
             </button>
-            <button onClick="publics.show()">
+            <button onClick="publics.show( 'bavaria')">
                 <?php  echo _('Show templates');?>
             </button>
 
 
-            <?php if( $this->env->user->may_publish() ) { ?>
+            <?php if( $this->env->user->get_subtenant() === 'bavaria' ) { ?>
             <div class="divider"><?php  echo _('Staff only'); ?></div>
             <button onClick="publics.publish()" class="staff_menu">
                 <?php  echo _('Publish this sharepic');?>
@@ -103,8 +103,48 @@
         <span onclick="api.load('templates/nrw/start.html')">NRW</span>
     </div> 
 
-    <div class="dropdown no-arrow" id="menu_hessen">
-        <span onclick="api.load('templates/hessen/start.html')">Hessen</span>
-    </div> 
+    <?php if( $this->env->user->get_subtenant() === 'hessen' OR time() > strtotime('2025-11-18 12:00:00')) { ?>
+     <div class="dropdown" id="hessen" style="">
+        <span>Hessen</span>
+        <div class="dropdown-content">
+            <button onClick="api.load('templates/hessen/start.html')">
+                <?php  echo _('Create your own');?>
+            </button>
+            <button onClick="publics.show( 'hessen')">
+                <?php  echo _('Show templates');?>
+            </button>
+
+
+            <?php if( $this->env->user->get_subtenant() === 'hessen' ) { ?>
+            <div class="divider"><?php  echo _('Staff only'); ?></div>
+            <button onClick="publics.publish()" class="staff_menu">
+                <?php  echo _('Publish this sharepic');?>
+            </button>
+            <div class="submenu staff_menu">
+                <button>
+                    <?php  echo _('My public sharepics');?>
+                </button>
+                <div id="my-public-sharepics" class="submenu-content">
+                    <?php
+                        $templates = $this->env->user->get_public_savings();
+
+                        foreach( $templates as $dir ){
+                                $id = basename($dir);
+                                $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
+                                echo '<div class="dropdown-item-double">';
+                                    printf( '<button class="did-1" onClick="api.load(\'%1$s/sharepic.html\')"><div class="description">%2$s</div><div class="thumb" style="background-image:url(%1$s/thumbnail.png)"></div></button>', $dir, $name );
+                                    printf( '<button class="did-2" onClick="publics.delete(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
+                                echo '</div>';
+                        }
+                    ?>
+                </div>
+            </div>
+            <?php } ?>
+
+        </div>
+    </div>
+    <?php } ?>
+
+
     <span class="info-in-menu" id="info-in-menu"></span>
 </nav>

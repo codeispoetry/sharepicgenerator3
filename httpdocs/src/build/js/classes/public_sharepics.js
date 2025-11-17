@@ -41,11 +41,11 @@ class Public_Sharepics {
     api.save('publish')
   }
 
-  async show() {
+  async show( tenant = null ) {
 
     document.getElementById('public_sharepic_results').innerHTML = ''
 
-    api.loadPublicSharepics().then(images => {
+    api.loadPublicSharepics( null, tenant ).then(images => {
         const results = document.getElementById('public_sharepic_results')
         images.forEach(hit => {
             const container = document.createElement('div')
