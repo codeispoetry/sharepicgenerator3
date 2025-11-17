@@ -173,13 +173,19 @@
     <section id="frontelements" class="hessen-only" style="">
         <h3><?php  echo _('Elements');?></h3>
         <div class="frontelements">           
-            <img src="assets/tenants/hessen/kita-kind.svg" alt="Kind" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'illustration'})" style="background: #a4a3a3ff;padding: 0 8px;">
-            <img src="assets/tenants/hessen/key.svg" alt="Schlüssel" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'illustration'})" style="background: #a4a3a3ff;padding: 0 8px;">
-            <img src="assets/tenants/hessen/tuer.svg" alt="Tür" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'illustration'})" style="background: #a4a3a3ff;padding: 0 8px;">
-            <img src="assets/tenants/hessen/solar.svg" alt="Solar" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'illustration'})" style="background: #a4a3a3ff;padding: 0 8px;">
-            <img src="assets/tenants/hessen/verkehr.svg" alt="Verkehr" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: 'bottom_right', delete_all_with_name: 'illustration'})" style="background: #a4a3a3ff;padding: 0 8px;">
-
             <img src="assets/tenants/hessen/gj-logo.svg" alt="Logo" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left'})" style="background: #6ab08eff;padding: 0 8px;">
+            <?php
+            $piktograms = glob('assets/tenants/hessen/*.svg');
+            foreach($piktograms as $piktogram){
+                $name = basename($piktogram, '.svg');
+
+                if( in_array( $name, [ 'gj-logo', 'claim' ] ) ) continue;
+        
+                echo '<img src="' . $piktogram . '" alt="Verkehr" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: \'bottom_right\', delete_all_with_name: \'illustration\'})" style="background: #a4a3a3ff;padding: 0 8px;">'."\n";
+            }
+            ?>
+
+            
         </div>
     </section>
 </section>
