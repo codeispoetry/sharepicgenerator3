@@ -146,5 +146,11 @@
     <?php } ?>
 
 
-    <span class="info-in-menu" id="info-in-menu"></span>
+    <span class="info-in-menu" id="info-in-menu" style="color: #a20478ff; font-weight: bold; cursor: pointer;">
+    <span onclick="ui.showSearchImageTab('addpic');">
+		Jetzt neu: Portraits freistellen!<br>
+        Anhaken und Bild hochladen.
+    </span>
+
+    </span>
 </nav>

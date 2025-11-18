@@ -126,11 +126,11 @@ class Sharepic {
 		if ( ! in_array( $this->format, array( 'png', 'jpg', 'spg' ) ) ) {
 			$this->format = 'png';
 		}
-		$this->template       = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
-		$this->info           = ( isset( $data['name'] ) ) ? preg_replace( '/[^a-zA-Z0-9 äöüÄÖÜß:\-\.]/', ':', $data['name'] ) : 'no-name';
-		$this->mode           = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish', 'bug' ) ) ) ? $data['mode'] : 'save';
-		$this->raw_data       = $data['data'] ?? '';
-		$this->body_class     = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
+		$this->template   = ( isset( $data['template'] ) ) ? $data['template'] : $this->file;
+		$this->info       = ( isset( $data['name'] ) ) ? preg_replace( '/[^a-zA-Z0-9 äöüÄÖÜß:\-\.]/', ':', $data['name'] ) : 'no-name';
+		$this->mode       = ( isset( $data['mode'] ) && in_array( $data['mode'], array( 'save', 'publish', 'bug' ) ) ) ? $data['mode'] : 'save';
+		$this->raw_data   = $data['data'] ?? '';
+		$this->body_class = ( isset( $data['body_class'] ) ) ? Helper::sanitze_az09( $data['body_class'] ) : '';
 
 		if ( str_starts_with( $this->template, 'save' ) ) {
 			$this->template = $this->env->user->get_dir() . $this->template;
@@ -595,6 +595,54 @@ class Sharepic {
 	}
 
 	/**
+	 * Removes the background from an image.
+	 *
+	 * @param string $file_path The path to the image.
+	 */
+	private function rembg( $file_path ) {
+		$api_key = $this->env->config->get( 'Rembg', 'apikey' );
+
+		$ch = curl_init();
+		curl_setopt( $ch, CURLOPT_URL, 'https://api.remove.bg/v1.0/removebg' );
+		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $ch, CURLOPT_POST, 1 );
+		curl_setopt(
+			$ch,
+			CURLOPT_POSTFIELDS,
+			array(
+				'image_file' => new \CURLFile( $file_path ),
+				'size'       => 'auto',
+			)
+		);
+		curl_setopt(
+			$ch,
+			CURLOPT_HTTPHEADER,
+			array(
+				"x-api-key: $api_key",
+			)
+		);
+		curl_setopt( $ch, CURLOPT_HEADER, 1 );
+
+		$response = curl_exec( $ch );
+
+		$http_code   = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+		$header_size = curl_getinfo( $ch, CURLINFO_HEADER_SIZE );
+		$headers     = substr( $response, 0, $header_size );
+		$response    = substr( $response, $header_size );
+
+		file_put_contents( '../logfiles/rembg.log', $headers );
+
+		if(json_decode( $response ) && isset(json_decode($response)->errors) ) {
+			$this->env->logger->error( 'Rembg API error: ' . $response );
+			return false;
+		}
+
+		curl_close( $ch );
+
+		file_put_contents( $file_path, $response );
+	}
+
+	/**
 	 * Uploads an addpic
 	 */
 	public function upload_addpic() {
@@ -625,6 +673,10 @@ class Sharepic {
 
 		$this->reduce_filesize( $upload_file, 2000, 1000 );
 
+		if ( ( isset( $_POST['rembg'] ) && $_POST['rembg'] ) ) {
+			$this->rembg( $upload_file );
+		}
+
 		$return = array(
 			'path' => 'index.php?c=proxy&r=' . rand( 1, 999999 ) . '&p=' . $raw_file_path,
 		);
@@ -633,6 +685,39 @@ class Sharepic {
 
 		echo json_encode( $return );
 	}
+
+	/**
+	 * Gets the rate limit for rembg API.
+	 */
+	public function get_rate_limit() {
+		$file = '../logfiles/rembg.log';
+		if ( ! file_exists( $file ) ) {
+			echo json_encode( array( 'ratelimit' => 50, 'reset' => 60 ) );
+			return;
+		}
+		$lines = file_get_contents( '../logfiles/rembg.log' );
+		$limit = 50;
+		$reset_in_minutes = 60;
+		foreach ( explode( "\n", $lines ) as $line ) {
+			if ( str_starts_with( $line, 'x-ratelimit-remaining:' ) ) {
+				$parts = explode( ':', $line );
+				$limit = (int) trim( $parts[1] );
+			}
+			if ( str_starts_with( $line, 'x-ratelimit-reset:' ) ) {
+				$parts = explode( ':', $line );
+				$reset_in_minutes = 60 + ceil( ( (int) trim( $parts[1] ) - time() ) / 60 );
+			}
+		}
+
+		if ( $reset_in_minutes < 0 ) {
+			unlink( $file );
+			$limit = 50;
+			$reset_in_minutes = 60;
+		}
+
+		echo json_encode( array( 'ratelimit' => $limit, 'reset' => $reset_in_minutes ) );
+	}
+
 
 	/**
 	 * Deletes unused files from workspace.
@@ -701,7 +786,10 @@ class Sharepic {
 		}
 
 		$config_file = $this->env->user->get_dir() . 'config.json';
-		$new_config  = array( 'palette' => $data['palette'], 'terms_accepted' => $data['terms_accepted'] );
+		$new_config  = array(
+			'palette'        => $data['palette'],
+			'terms_accepted' => $data['terms_accepted'],
+		);
 
 		$config_data = json_encode( $new_config );
 		file_put_contents( $config_file, $config_data );
@@ -716,9 +804,12 @@ class Sharepic {
 		$templates = glob( 'public_savings/*' );
 		$data      = json_decode( file_get_contents( 'php://input' ), true );
 
-		$return = array( 'status' => 200, 'images' => [] );
+		$return = array(
+			'status' => 200,
+			'images' => array(),
+		);
 		foreach ( $templates as $dir ) {
-			$info      = json_decode( file_get_contents( $dir . '/info.json' ) );
+			$info = json_decode( file_get_contents( $dir . '/info.json' ) );
 			if ( isset( $info->tenant ) && $info->tenant !== $data['tenant'] ) {
 				continue;
 			}

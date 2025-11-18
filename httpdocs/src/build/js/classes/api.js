@@ -75,7 +75,7 @@ class API {
         document.querySelector('.create').classList.remove('waiting')
         this.closeWaiting()
 
-        logger.log('creates sharepic', 'normal', 'creates')
+        logger.log('creates sharepic from template ' + config.template, 'normal', 'creates')
 
         if( name !== false) {
           console.log('Saving sharepic with name:', name)
@@ -499,6 +499,7 @@ class API {
 
     const formData = new FormData()
     formData.append('file', file)
+    formData.append('rembg', document.getElementById('addpicture_rembg').checked ? '1' : '0');
 
     if (file.size > 15 * 1024 * 1024 || file.size < 10) {
       logger.log('tried to upload file that is too big ', Math.round(file.size / 1024) + ' kb')
@@ -562,12 +563,18 @@ class API {
 
         addpicture.picOriginal()
 
+        if(document.getElementById('addpicture_rembg').checked === true) {
+          cockpit.target.querySelector(".ap_text").innerHTML = ''
+        }
+
         logger.prepare_log_data({
           path_on_server: resp.path
         }, true)
       } else {
         console.error('Error:', this.status, this.statusText)
       }
+
+      document.getElementById('addpicture_rembg').checked = false;
 
       logger.log('uploads addpic')
     }
@@ -663,6 +670,32 @@ class API {
         reject(error)
       })
     })
+  }
+
+  getRateLimit () {
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'text/html'
+      },
+      body: JSON.stringify()
+    }
+
+    return fetch(this.api + '&r=' + Math.random() + '&m=get_rate_limit', options)
+    .then(response => {
+      if (response.status !== 200) {
+        throw new Error(response.status + ' ' + response.statusText)
+      }
+      return response.json()
+    })
+    .then(data => {
+      return data;
+    })
+    .catch(error => {
+      console.error('Error:', error)
+      throw error
+    })
+
   }
 
   showWaiting () {

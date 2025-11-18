@@ -23,6 +23,12 @@
                 <img src="assets/icons/upload.svg">
                 <?php echo _('Drop an image or choose it to upload from your computer');?>
             </button>
+
+            <?php if( !empty($this->env->config->get( 'Rembg', 'apikey' ) ) ) { ?>
+                <label>
+                    <input type="checkbox" id="addpicture_rembg"><?php echo _("Remove background from image");?>
+                </label>
+            <?php } ?>
         </div>
 
         <input type="file" name="upload" id="upload" onChange="api.upload(this)" style="display:none">
@@ -201,5 +207,16 @@
         });
         
         select_element.classList.add(this.value);
+    });
+
+
+    const crop_element= document.getElementById('addpicture_rembg');
+    crop_element.addEventListener('change', async function() {
+        const info = await api.getRateLimit();
+        if(!this.checked || info.ratelimit > 1) { 
+            return;
+        }
+        crop_element.checked = false;
+        alert("Die maximale Anzahl an Freistellungen pro Stunde ist erreicht. Bitte versuche es in " + info.reset + " Minuten erneut.");
     });
 </script>

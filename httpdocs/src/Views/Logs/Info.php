@@ -34,6 +34,31 @@
 				</li>
 				<li>
 					<?php
+						printf( _('Number of sharepics for de: %s'), cmd( 'grep -c \'creates sharepic from template templates/de/start.html\' ../logfiles/usage.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
+						printf( _('Number of sharepics for hessen: %s'), cmd( 'grep -c \'creates sharepic from template templates/hessen/start.html\' ../logfiles/usage.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
+						printf( _('Number of sharepics for bavaria: %s'), cmd( 'grep -c \'creates sharepic from template templates/by/start.html\' ../logfiles/usage.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
+						printf( _('Number of sharepics for NRW: %s'), cmd( 'grep -c \'creates sharepic from template templates/nrw/start.html\' ../logfiles/usage.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
+						printf( _('Number of sharepics for mv: %s'), cmd( 'grep -c \'creates sharepic from template templates/mv/start.html\' ../logfiles/usage.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
 						printf( _('Chrome version: %s'), cmd( 'google-chrome --version' ) );
 					?>
 				</li>
