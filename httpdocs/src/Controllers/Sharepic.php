@@ -595,12 +595,65 @@ class Sharepic {
 	}
 
 	/**
-	 * Removes the background from an image.
+	 * Removes the background from an image via rembg.com
 	 *
 	 * @param string $file_path The path to the image.
 	 */
 	private function rembg( $file_path ) {
 		$api_key = $this->env->config->get( 'Rembg', 'apikey' );
+
+		$ch = curl_init();
+		curl_setopt( $ch, CURLOPT_URL, 'https://api.rembg.com/rmbg' );
+		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+		curl_setopt( $ch, CURLOPT_POST, 1 );
+		curl_setopt(
+			$ch,
+			CURLOPT_POSTFIELDS,
+			array(
+				'image'        => new \CURLFile( $file_path ),
+				'w'            => '800',
+				'format'       => 'png',
+				'h'            => '600',
+				'exact_resize' => 'false',
+			)
+		);
+		curl_setopt(
+			$ch,
+			CURLOPT_HTTPHEADER,
+			array(
+				"x-api-key: $api_key",
+			)
+		);
+		curl_setopt( $ch, CURLOPT_HEADER, 1 );
+
+		$response = curl_exec( $ch );
+
+		$http_code   = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+		$header_size = curl_getinfo( $ch, CURLINFO_HEADER_SIZE );
+		$headers     = substr( $response, 0, $header_size );
+		$response    = substr( $response, $header_size );
+
+		file_put_contents( '../logfiles/rembg.log', $headers );
+
+		if ( json_decode( $response ) && isset( json_decode( $response )->errors ) ) {
+			$this->env->logger->error( 'Rembg API error: ' . $response );
+			return false;
+		}
+
+		curl_close( $ch );
+
+		$this->env->logger->access( 'Rembg API success' );
+
+		file_put_contents( $file_path, $response );
+	}
+
+	/**
+	 * Removes the background from an image via remove.bg
+	 *
+	 * @param string $file_path The path to the image.
+	 */
+	private function remove_bg( $file_path ) {
+		$api_key = $this->env->config->get( 'Removebg', 'apikey' );
 
 		$ch = curl_init();
 		curl_setopt( $ch, CURLOPT_URL, 'https://api.remove.bg/v1.0/removebg' );
@@ -632,12 +685,14 @@ class Sharepic {
 
 		file_put_contents( '../logfiles/rembg.log', $headers );
 
-		if(json_decode( $response ) && isset(json_decode($response)->errors) ) {
-			$this->env->logger->error( 'Rembg API error: ' . $response );
+		if ( json_decode( $response ) && isset( json_decode( $response )->errors ) ) {
+			$this->env->logger->error( 'Remove.bg API error: ' . $response );
 			return false;
 		}
 
 		curl_close( $ch );
+
+		$this->env->logger->access( 'Remove.bg API success' );
 
 		file_put_contents( $file_path, $response );
 	}
@@ -692,11 +747,16 @@ class Sharepic {
 	public function get_rate_limit() {
 		$file = '../logfiles/rembg.log';
 		if ( ! file_exists( $file ) ) {
-			echo json_encode( array( 'ratelimit' => 50, 'reset' => 60 ) );
+			echo json_encode(
+				array(
+					'ratelimit' => 50,
+					'reset'     => 60,
+				)
+			);
 			return;
 		}
-		$lines = file_get_contents( '../logfiles/rembg.log' );
-		$limit = 50;
+		$lines            = file_get_contents( '../logfiles/rembg.log' );
+		$limit            = 50;
 		$reset_in_minutes = 60;
 		foreach ( explode( "\n", $lines ) as $line ) {
 			if ( str_starts_with( $line, 'x-ratelimit-remaining:' ) ) {
@@ -704,18 +764,23 @@ class Sharepic {
 				$limit = (int) trim( $parts[1] );
 			}
 			if ( str_starts_with( $line, 'x-ratelimit-reset:' ) ) {
-				$parts = explode( ':', $line );
+				$parts            = explode( ':', $line );
 				$reset_in_minutes = 60 + ceil( ( (int) trim( $parts[1] ) - time() ) / 60 );
 			}
 		}
 
 		if ( $reset_in_minutes < 0 ) {
 			unlink( $file );
-			$limit = 50;
+			$limit            = 50;
 			$reset_in_minutes = 60;
 		}
 
-		echo json_encode( array( 'ratelimit' => $limit, 'reset' => $reset_in_minutes ) );
+		echo json_encode(
+			array(
+				'ratelimit' => $limit,
+				'reset'     => $reset_in_minutes,
+			)
+		);
 	}
 
 

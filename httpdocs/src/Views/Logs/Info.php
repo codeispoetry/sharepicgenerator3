@@ -59,6 +59,11 @@
 				</li>
 				<li>
 					<?php
+						printf( _('Number of Rembg usages: %s'), cmd( 'grep -c \'Rembg API success\' ../logfiles/access.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
 						printf( _('Chrome version: %s'), cmd( 'google-chrome --version' ) );
 					?>
 				</li>

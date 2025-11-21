@@ -17,6 +17,23 @@
         </div>
     </div>
 
+    <?php if( in_array($this->env->user->get_username(), ['localhorst', 'thomaspf']) ) { ?>
+    <div class="dropdown" id="menu_mint">
+        <span>Logfiles</span>
+        <div class="dropdown-content">
+            <a href="index.php?c=frontend&m=log&scope=Info" target="_blank" class="menu-link">
+                Info
+			</a>
+            <a href="index.php?c=frontend&m=log&scope=Sharepics" target="_blank" class="menu-link">
+                Sharepics
+			</a>
+            <a href="index.php?c=frontend&m=log&scope=Log" target="_blank" class="menu-link">
+                Log
+			</a>
+             
+        </div>
+    </div>
+    <?php } ?>
     
 
     <?php if( isset( $show_my_sharepics ) && $show_my_sharepics === true) { ?>
