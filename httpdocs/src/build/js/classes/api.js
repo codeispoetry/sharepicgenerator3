@@ -567,6 +567,10 @@ class API {
           cockpit.target.querySelector(".ap_text").innerHTML = ''
         }
 
+        if(config.template.includes('hessen-profile')) {
+          api.set_addpic_big_and_center()
+        }
+        
         logger.prepare_log_data({
           path_on_server: resp.path
         }, true)
@@ -589,6 +593,15 @@ class API {
       config.uploading = false
     }
     xhr.send(formData)
+  }
+
+  set_addpic_big_and_center() {
+    cockpit.target.style.left='10px'
+    cockpit.target.style.top='10px'
+    window.setTimeout( () => {
+      document.getElementById('addpicture_size').value = 600
+      document.getElementById('addpicture_size').dispatchEvent(new Event('input'))
+    }, 100);
   }
 
   loadAddPicByUrl (url) {

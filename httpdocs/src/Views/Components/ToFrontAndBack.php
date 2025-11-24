@@ -1,4 +1,4 @@
-<section class="selected_only">
+<section id="cockpit_tofrontandback" class="selected_only">
     <h3><?php  echo _('Order');?></h3>
 
     <div class="">

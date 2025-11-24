@@ -120,13 +120,21 @@
         <span onclick="api.load('templates/nrw/start.html')">NRW</span>
     </div> 
 
-    <?php if( $this->env->user->get_subtenant() === 'hessen' OR time() > strtotime('2025-11-18 12:00:00')) { ?>
      <div class="dropdown" id="hessen" style="">
         <span>Hessen</span>
         <div class="dropdown-content">
             <button onClick="api.load('templates/hessen/start.html')">
                 <?php  echo _('Create your own');?>
             </button>
+            <?php
+            if( $this->env->user->get_subtenant() === 'hessen' ) {
+                ?>
+                <button onClick="api.load('templates/hessen-profile/start.html')">
+                    <?php  echo _('Profile pic');?>
+                </button>
+                <?php
+            }
+            ?>
             <button onClick="publics.show( 'hessen')">
                 <?php  echo _('Show templates');?>
             </button>
@@ -160,7 +168,6 @@
 
         </div>
     </div>
-    <?php } ?>
 
 
     <span class="info-in-menu" id="info-in-menu" style="color: #a20478ff; font-weight: bold; cursor: pointer;">
