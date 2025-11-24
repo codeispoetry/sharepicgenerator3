@@ -120,6 +120,9 @@ class Cockpit {
     document.getElementById('text_rotation').value = element.style.rotate.replace('deg', '')
   }
 
+  setup_bwtext (element) {
+  }
+
   setup_eyecatcher (element) {
     if (config.starttemplate === 'de') {
       return

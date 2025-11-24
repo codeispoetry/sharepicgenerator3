@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-17 15:19+0100\n"
+"POT-Creation-Date: 2025-11-24 14:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -211,7 +211,7 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Vorort.php:15
 #: httpdocs/src/Views/Cockpit/Freetext.php:2
 #: httpdocs/src/Views/Cockpit/Freetext.php:18
-#: httpdocs/src/Views/Cockpit/Addpicture.php:47
+#: httpdocs/src/Views/Cockpit/Addpicture.php:46
 #: httpdocs/src/Views/Creator.php:115 httpdocs/src/Views/Creator.php:117
 #: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:131
 msgid "Text"
@@ -521,43 +521,43 @@ msgstr ""
 msgid "Edit foreground image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:24
+#: httpdocs/src/Views/Cockpit/Addpicture.php:23
 msgid "Image"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:26
+#: httpdocs/src/Views/Cockpit/Addpicture.php:25
 msgid "round"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:29
+#: httpdocs/src/Views/Cockpit/Addpicture.php:28
 msgid "image as round"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:31
+#: httpdocs/src/Views/Cockpit/Addpicture.php:30
 msgid "angular"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:35
+#: httpdocs/src/Views/Cockpit/Addpicture.php:34
 msgid "image as angular"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:37
+#: httpdocs/src/Views/Cockpit/Addpicture.php:36
 msgid "original"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:41
+#: httpdocs/src/Views/Cockpit/Addpicture.php:40
 msgid "Image original"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:49
+#: httpdocs/src/Views/Cockpit/Addpicture.php:48
 msgid "text floats right"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:50
+#: httpdocs/src/Views/Cockpit/Addpicture.php:49
 msgid "text below"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Addpicture.php:63
+#: httpdocs/src/Views/Cockpit/Addpicture.php:62
 msgid "Foreground image"
 msgstr ""
 
@@ -614,6 +614,36 @@ msgid "Number of tmp-files: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Info.php:37
+#, php-format
+msgid "Number of sharepics for de: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:42
+#, php-format
+msgid "Number of sharepics for hessen: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:47
+#, php-format
+msgid "Number of sharepics for bavaria: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:52
+#, php-format
+msgid "Number of sharepics for NRW: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:57
+#, php-format
+msgid "Number of sharepics for mv: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:62
+#, php-format
+msgid "Number of Rembg usages: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:67
 #, php-format
 msgid "Chrome version: %s"
 msgstr ""
@@ -689,8 +719,8 @@ msgstr ""
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:22
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:24
 #: httpdocs/src/Views/Menu/Mint.php:73 httpdocs/src/Views/Menu/Mint.php:102
-#: httpdocs/src/Views/Menu/Greens.php:46 httpdocs/src/Views/Menu/Greens.php:86
-#: httpdocs/src/Views/Menu/Greens.php:136 httpdocs/src/Views/Menu/Open.php:63
+#: httpdocs/src/Views/Menu/Greens.php:63 httpdocs/src/Views/Menu/Greens.php:103
+#: httpdocs/src/Views/Menu/Greens.php:161 httpdocs/src/Views/Menu/Open.php:63
 msgid "delete"
 msgstr ""
 
@@ -716,24 +746,24 @@ msgstr ""
 msgid "Imprint"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:51 httpdocs/src/Views/Menu/Greens.php:24
+#: httpdocs/src/Views/Menu/Mint.php:51 httpdocs/src/Views/Menu/Greens.php:41
 #: httpdocs/src/Views/Menu/Open.php:3
 msgid "File"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:54 httpdocs/src/Views/Menu/Greens.php:27
+#: httpdocs/src/Views/Menu/Mint.php:54 httpdocs/src/Views/Menu/Greens.php:44
 msgid "New"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:57 httpdocs/src/Views/Menu/Greens.php:30
+#: httpdocs/src/Views/Menu/Mint.php:57 httpdocs/src/Views/Menu/Greens.php:47
 msgid "Upload"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:60 httpdocs/src/Views/Menu/Greens.php:33
+#: httpdocs/src/Views/Menu/Mint.php:60 httpdocs/src/Views/Menu/Greens.php:50
 msgid "Save as"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:65 httpdocs/src/Views/Menu/Greens.php:38
+#: httpdocs/src/Views/Menu/Mint.php:65 httpdocs/src/Views/Menu/Greens.php:55
 msgid "Open saved sharepics"
 msgstr ""
 
@@ -741,13 +771,13 @@ msgstr ""
 msgid "Public sharepics"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:87 httpdocs/src/Views/Menu/Greens.php:71
-#: httpdocs/src/Views/Menu/Greens.php:121
+#: httpdocs/src/Views/Menu/Mint.php:87 httpdocs/src/Views/Menu/Greens.php:88
+#: httpdocs/src/Views/Menu/Greens.php:146
 msgid "Publish this sharepic"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Mint.php:91 httpdocs/src/Views/Menu/Greens.php:75
-#: httpdocs/src/Views/Menu/Greens.php:125
+#: httpdocs/src/Views/Menu/Mint.php:91 httpdocs/src/Views/Menu/Greens.php:92
+#: httpdocs/src/Views/Menu/Greens.php:150
 msgid "My public sharepics"
 msgstr ""
 
@@ -759,16 +789,20 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:61 httpdocs/src/Views/Menu/Greens.php:111
+#: httpdocs/src/Views/Menu/Greens.php:78 httpdocs/src/Views/Menu/Greens.php:127
 msgid "Create your own"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:64 httpdocs/src/Views/Menu/Greens.php:114
+#: httpdocs/src/Views/Menu/Greens.php:81 httpdocs/src/Views/Menu/Greens.php:139
 msgid "Show templates"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:69 httpdocs/src/Views/Menu/Greens.php:119
+#: httpdocs/src/Views/Menu/Greens.php:86 httpdocs/src/Views/Menu/Greens.php:144
 msgid "Staff only"
+msgstr ""
+
+#: httpdocs/src/Views/Menu/Greens.php:133
+msgid "Profile pic"
 msgstr ""
 
 #: httpdocs/src/Views/Menu/Open.php:7

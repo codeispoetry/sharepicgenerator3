@@ -35,6 +35,12 @@
 	font-style: normal;
 }
 @font-face {
+	font-family: 'GrueneTypeNeue';
+	src: url('../../../assets/fonts/GrueneTypeNeue-latin-300-normal.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
 	font-family: 'LexendDeca';
 	src: url('../../../assets/fonts/LexendDeca-latin-300-normal.woff2') format('woff2');
 	font-weight: 300;

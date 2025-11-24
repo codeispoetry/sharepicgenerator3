@@ -93,6 +93,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_bwtext" onClick="ui.showTab('bwtext')">
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+						<div class="description">
+							<?php echo _('Text'); ?>
+						</div>
+					</div>
+				</button>
 				
 				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
 					<div>

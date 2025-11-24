@@ -13,6 +13,7 @@ window.onload = function () {
   logger = new Logger()
   debug = new Debug()
   rte = new RTE()
+  rtebw = new RTEBW()
   settings = new Settings()
   publics = new Public_Sharepics()
 
