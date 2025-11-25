@@ -172,6 +172,19 @@ class Cockpit {
   }
 
   render () {
+
+    // Setup logo color palette
+    document.querySelector('#logo_bgcolor .standard-palette').innerHTML = '';
+    const logopalette = config.logo_palette || config.palette;
+    for (const color of logopalette) {
+        const btn = document.createElement('button');
+        btn.className = 'no-button';
+        btn.style.backgroundColor = color;
+        btn.onclick = function() { logo.setBgColor(this.style.backgroundColor); };
+        document.querySelector('#logo_bgcolor .standard-palette').appendChild(btn);
+    }
+
+
     const elements = document.querySelectorAll('[id^="tab_btn_"]')
     elements.forEach((element) => {
       const id = element.id.replace('tab_btn_', '')

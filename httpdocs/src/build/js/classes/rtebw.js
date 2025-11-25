@@ -22,7 +22,7 @@ class RTEBW {
       skin: 'oxide-dark',
       font_family_formats: 'GrueneTypeNeue;PT Sans',
       font_size_formats: '1em 1.2em 1.4em 1.6em',
-      toolbar: 'undo redo | fontfamily fontsize | forecolor | removeformat',
+      toolbar: 'undo redo | fontfamily | forecolor | removeformat',
       color_map: [
         '#000000', 'Schwarz',
         '#f5f1e9', 'Sand',

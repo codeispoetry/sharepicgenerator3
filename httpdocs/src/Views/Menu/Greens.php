@@ -69,8 +69,58 @@
         </div>
     </div>
     <?php } ?>
+
+    <?php if( $this->env->user->get_subtenant() === 'bw' ) { ?>
+    <div class="dropdown" id="bw" style="">
+        <span>BaWü</span>
+        <div class="dropdown-content">
+            <button onClick="api.load('templates/bw/start.html')">
+                <?php  echo _('Create your own');?>
+            </button>
+            <?php
+            if( $this->env->user->get_subtenant() === 'bw' ) {
+                ?>
+                <button onClick="api.load('templates/bw-profile/start.html')">
+                    <?php  echo _('Profile pic');?>
+                </button>
+                <?php
+            }
+            ?>
+            <button onClick="publics.show( 'bw')">
+                <?php  echo _('Show templates');?>
+            </button>
+
+
+            <?php if( $this->env->user->get_subtenant() === 'bw' ) { ?>
+            <div class="divider"><?php  echo _('Staff only'); ?></div>
+            <button onClick="publics.publish()" class="staff_menu">
+                <?php  echo _('Publish this sharepic');?>
+            </button>
+            <div class="submenu staff_menu">
+                <button>
+                    <?php  echo _('My public sharepics');?>
+                </button>
+                <div id="my-public-sharepics" class="submenu-content">
+                    <?php
+                        $templates = $this->env->user->get_public_savings();
+
+                        foreach( $templates as $dir ){
+                                $id = basename($dir);
+                                $name = json_decode( file_get_contents( $dir . '/info.json' ) )->name;
+                                echo '<div class="dropdown-item-double">';
+                                    printf( '<button class="did-1" onClick="api.load(\'%1$s/sharepic.html\')"><div class="description">%2$s</div><div class="thumb" style="background-image:url(%1$s/thumbnail.png)"></div></button>', $dir, $name );
+                                    printf( '<button class="did-2" onClick="publics.delete(this, \'%s\', true)" title="%s"><img src="assets/icons/delete.svg"></button>', $id, _( 'delete' ) );
+                                echo '</div>';
+                        }
+                    ?>
+                </div>
+            </div>
+            <?php } ?>
+
+        </div>
+    </div>
+<?php } ?>
    
-    <?php if(true ) { ?>
      <div class="dropdown" id="bavaria" style="">
         <span>Bayern</span>
         <div class="dropdown-content">
@@ -110,15 +160,6 @@
 
         </div>
     </div>
-    <?php } ?>
-
-
-    <div class="dropdown no-arrow" id="menu_mv">
-        <span onclick="api.load('templates/mv/start.html')">MV</span>
-    </div> 
-    <div class="dropdown no-arrow" id="menu_nrw">
-        <span onclick="api.load('templates/nrw/start.html')">NRW</span>
-    </div> 
 
      <div class="dropdown" id="hessen" style="">
         <span>Hessen</span>
@@ -168,6 +209,13 @@
 
         </div>
     </div>
+
+    <div class="dropdown no-arrow" id="menu_mv">
+        <span onclick="api.load('templates/mv/start.html')">MV</span>
+    </div> 
+    <div class="dropdown no-arrow" id="menu_nrw">
+        <span onclick="api.load('templates/nrw/start.html')">NRW</span>
+    </div> 
 
 
     <span class="info-in-menu" id="info-in-menu" style="color: #a20478ff; font-weight: bold; cursor: pointer;">
