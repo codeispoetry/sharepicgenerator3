@@ -33,7 +33,6 @@
         onclick="component.select(this)"
         ondblclick="rtebw.init()"
         onmousedown="component.startDrag(event)"
-        oninput="cockpit.setup_bwtext(this)"
         id="bwtext"
         spellcheck="false"
         style="
@@ -41,11 +40,12 @@
             top: 100px;
             z-index: 2;
             color: black;
+            font-size: 30px;
         "
     >
         <div class="tinymce">
             <p>
-                <span style="font-family: GrueneTypeNeue;font-weight:300;font-size:1em;">Textfeld - Team Ö</span>
+                <span style="font-family: GrueneTypeNeue;font-weight:300;font-size:1em;line-height: 0em;">Textfeld - Team Ö</span>
             </p>    
         </div>
     </div>
@@ -56,9 +56,8 @@
             data-class="draggable selectable freetext" 
             data-cockpit="bwtext"  
             onclick="component.select(this)"
-            ondblclick="rte.init()"
+            ondblclick="rtebw.init()"
             onmousedown="component.startDrag(event)"
-            oninput="cockpit.setup_bwtext(this)"
             data-id="bwtext"
             spellcheck="false"
             style="
@@ -66,12 +65,12 @@
                 top: 200px;
                 z-index: 2;
                 color: black;
-                rotate: 0deg;
+                font-size: 30px;
             "
         >
             <div class="tinymce">
                 <p>
-                    <span style="font-family: GrueneTypeNeue;">Weiteres Textfeld</span>
+                    <span style="font-family: GrueneTypeNeue;font-weight:300;font-size:1em;font-size:30px;">Weiteres Textfeld</span>
                 </p>    
             </div>
         </div>

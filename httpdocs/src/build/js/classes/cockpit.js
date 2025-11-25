@@ -121,6 +121,7 @@ class Cockpit {
   }
 
   setup_bwtext (element) {
+    document.getElementById('text_size').value = element.style.fontSize.replace('px', '')
   }
 
   setup_eyecatcher (element) {

@@ -5,7 +5,7 @@ class RTEBW {
   init () {
     if (tinymce.activeEditor) {
       rtebw.deinit()
-    }
+   }
 
     document.getElementById('undo').style.opacity = 0
     const w = document.getElementById(cockpit.target.id).offsetWidth
@@ -21,7 +21,7 @@ class RTEBW {
       plugins: 'lists',
       skin: 'oxide-dark',
       font_family_formats: 'GrueneTypeNeue;PT Sans',
-      font_size_formats: '1em 2em 3em',
+      font_size_formats: '1em 1.2em 1.4em 1.6em',
       toolbar: 'undo redo | fontfamily fontsize | forecolor | removeformat',
       color_map: [
         '#000000', 'Schwarz',
@@ -40,7 +40,14 @@ class RTEBW {
       language_url: '/assets/tinymce/lang/de.js',
       content_css: '/src/Views/rte/rte.css',
       content_style: 'body, p { margin: 0; padding: 0; }',
-      resize: 'both'
+      resize: 'both',
+      setup: function(editor) {
+        editor.on('init', function() {
+          const size = document.getElementById('text_size').value
+          document.querySelector('iframe').contentWindow.document.body.style.fontSize = size + 'px'
+          cockpit.target.style.fontSize = size + 'px'
+        })
+      }
     })
 
     // there are some elements created by tinymce that we need to remove
