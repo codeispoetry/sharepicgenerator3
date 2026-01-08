@@ -47,6 +47,12 @@ class Public_Sharepics {
 
     api.loadPublicSharepics( null, tenant ).then(images => {
         const results = document.getElementById('public_sharepic_results')
+
+        if( images.length === 0 ) {
+            results.innerHTML = `<div class="no_results">${lang['No public sharepics found.']}</div>`
+            return
+        }
+        
         images.forEach(hit => {
             const container = document.createElement('div')
             container.classList.add('image_container')

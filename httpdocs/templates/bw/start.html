@@ -17,7 +17,7 @@
                 background-position-x: 0px;
                 background-position-y: 0px;
                 background-repeat: no-repeat;
-                background-color: #78a08c;
+                background-color: #1c302a;
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -27,35 +27,26 @@
             ">
     </div>
 
-    <div 
-        class="draggable selectable freetext" 
-        data-cockpit="bwtext"
-        onclick="component.select(this)"
-        ondblclick="rtebw.init()"
-        onmousedown="component.startDrag(event)"
-        id="bwtext"
-        spellcheck="false"
-        style="
-            left: 120px;
-            top: 100px;
-            z-index: 2;
-            color: black;
-            font-size: 30px;
-        "
-    >
-        <div class="tinymce">
-            <p>
-                <span style="font-family: GrueneTypeNeue;font-weight:300;font-size:1em;line-height: 0em;">Textfeld - Team Ö</span>
-            </p>    
+    <div data-cockpit="greenaddtext" data-max="10" spellcheck="false" contenteditable="true" onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" ontouchend="this.focus()" style="
+    z-index:2; 
+                    left: 45px; top: 345px; 
+                    font-size: 20px; 
+                    color: #ffffff; 
+                    font-family: 'GrueneTypeNeue';
+                    line-height: 1em;
+                    padding: 10px;
+                    " id="greenaddtext" class="greenaddtext draggable selectable">
+            <div>
+                Klicke doppelt auf diesen Text, um ihn zu bearbeiten.
+            </div>
         </div>
-    </div>
 
         <div data-cockpit="logo" 
          spellcheck="false" 
          contenteditable="true" 
          onclick="component.select(this)" 
          onmousedown="component.startDrag(event)" 
-         style="z-index: 6; left: 80px; top: 50px; font-size: 20px; color: rgb(233, 233, 233); width: 120px; height: 120px;" 
+         style="z-index: 6; left: 450px; top:20px; font-size: 20px; color: rgb(233, 233, 233); width: 120px; height: 120px;" 
          id="logo" 
          class="draggable selectable">
         <svg id="sticker_circle" style="position: absolute;width: 100%; height: 100%;" width="3022" height="3000" viewBox="0 0 3022 3000" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,29 +56,31 @@
                 id="sticker_bg" />
         </svg>
     </div>
+        <div data-cockpit="addpicture" onclick="component.select(this)" onmousedown="component.startDrag(event)" style="align-items: center; position: absolute; left: 416px; top: 475px; padding: 20px; display: flex; gap: 10px; z-index: 7; opacity: 1;" id="addpicture_719305" class="addpicture draggable selectable selected" data-prevent_change="true">
+        <div class="ap_image" data-aspect-ratio="1.7331334332833583" style="background-image: url(&quot;assets/tenants/bw/claim.svg&quot;); background-size: cover; width: 140px; height: 80.7785px; border-radius: 0px;"></div>
+        <div class="ap_text" contenteditable="true" style="color: rgb(245, 241, 233); font-size: 18px; display: none;"></div>
+    </div>
+ 
 
 
     <div id="patterns">
-        <div 
-            data-class="draggable selectable freetext" 
-            data-cockpit="bwtext"  
-            onclick="component.select(this)"
-            ondblclick="rtebw.init()"
-            onmousedown="component.startDrag(event)"
-            data-id="bwtext"
-            spellcheck="false"
-            style="
-                left: 120px;
-                top: 200px;
-                z-index: 2;
-                color: black;
-                font-size: 30px;
-            "
+        <div data-id="greenaddtext" data-class="greenaddtext draggable selectable" data-cockpit="greenaddtext"
+        data-max="10" spellcheck="false"
+        contenteditable="true"
+        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" 
+        ontouchend="this.focus()"
+        style="
+                    z-index:2; 
+                    left: 5px; top: 5px; 
+                    font-size: 20px; 
+                    color: #000000; 
+                    font-family: 'GrueneTypeNeue';
+                    line-height: 1em;
+                    padding: 10px;
+                "
         >
-            <div class="tinymce">
-                <p>
-                    <span style="font-family: GrueneTypeNeue;font-weight:300;font-size:1em;font-size:30px;">Weiteres Textfeld</span>
-                </p>    
+            <div>
+                Tippe hier Deinen Text
             </div>
         </div>
     
@@ -102,7 +95,7 @@
            Copyright-Hinweis
         </div>
 
-          <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcher"
+          <div data-id="eyecatcher" data-class="eyecatcher draggable selectable" data-cockpit="eyecatcherbw"
         spellcheck="false"
         contenteditable="true"
         onmousedown="component.startDrag(event)" 
@@ -117,8 +110,8 @@
             z-index:2; 
             left: 5px; top: 5px; 
             font-size: 20px; 
-            color: #e9e9e9; 
-            background-color: #1c302a;
+            color: #1c302a; 
+            background-color: #e6fd53;
             aspect-ratio: 1;
             border-radius: 50%;
             display: flex;
@@ -166,6 +159,8 @@
                 left:300px; 
                 top:290px;
                 padding: 20px;
+                display: flex;
+                gap: 10px;
             ">
         <div class="ap_image" data-aspect-ratio="1" style="
             background-image: url('assets/transparent.png');
@@ -174,21 +169,25 @@
             height: 100px;
             border-radius: 0px;"></div>
         <div class="ap_text" contenteditable="true" style="
-            display: none;
-            color: #ffffff;
-        "></div>
+            color: #f5f1e9;
+        ">
+        <div style="font-size:1.4em; color: #e6fd53">Vorname Nachname</div>
+        Funktion
+    </div>
     </div>
     </div>
 
     <script>
         undo.commit()
         config.cockpit = {
-            elements: ['canvas','search','background','bwtext','copyright','addpicture','eyecatcher']
+            elements: ['canvas','search','background','bwtext','copyright','addpicture','eyecatcherbw']
         }
 
         config.palette = ['#f5f1e9', '#78a08c', '#1c302a', '#e6fd53']
         config.logo_palette = ['#f5f1e9', '#78a08c', '#1c302a', '#e6fd53']
-      
+        ui.addColorButtons()
+
+      document.querySelector('body').dataset.template = 'bw';
     </script>
 </div>
 

@@ -194,6 +194,13 @@
             
         </div>
     </section>
+
+    <section id="frontelements" class="bw-only" style="">
+        <h3><?php  echo _('Elements');?></h3>
+        <div class="frontelements">           
+            <img src="assets/tenants/bw/claim.svg" alt="Logo" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 140, position: 'bottom_right'})" style="background: #6ab08eff;padding: 0 8px;">            
+        </div>
+    </section>
 </section>
 
 <script>

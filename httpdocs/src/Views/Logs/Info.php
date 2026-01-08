@@ -49,6 +49,11 @@
 				</li>
 				<li>
 					<?php
+						printf( _('Number of sharepics for BaWü: %s'), cmd( 'grep -c \'creates sharepic from template templates/bw/start.html\' ../logfiles/usage.log' ) );
+					?>
+				</li>
+				<li>
+					<?php
 						printf( _('Number of sharepics for NRW: %s'), cmd( 'grep -c \'creates sharepic from template templates/nrw/start.html\' ../logfiles/usage.log' ) );
 					?>
 				</li>

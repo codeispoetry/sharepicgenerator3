@@ -70,22 +70,14 @@
     </div>
     <?php } ?>
 
-    <?php if( $this->env->user->get_subtenant() === 'bw' ) { ?>
+    <?php 
+    if( true ) { ?>
     <div class="dropdown" id="bw" style="">
         <span>BaWü</span>
         <div class="dropdown-content">
             <button onClick="api.load('templates/bw/start.html')">
                 <?php  echo _('Create your own');?>
             </button>
-            <?php
-            if( $this->env->user->get_subtenant() === 'bw' ) {
-                ?>
-                <button onClick="api.load('templates/bw-profile/start.html')">
-                    <?php  echo _('Profile pic');?>
-                </button>
-                <?php
-            }
-            ?>
             <button onClick="publics.show( 'bw')">
                 <?php  echo _('Show templates');?>
             </button>
@@ -167,15 +159,10 @@
             <button onClick="api.load('templates/hessen/start.html')">
                 <?php  echo _('Create your own');?>
             </button>
-            <?php
-            if( $this->env->user->get_subtenant() === 'hessen' ) {
-                ?>
-                <button onClick="api.load('templates/hessen-profile/start.html')">
-                    <?php  echo _('Profile pic');?>
-                </button>
-                <?php
-            }
-            ?>
+            <button onClick="api.load('templates/hessen-profile/start.html')">
+                <?php  echo _('Profile pic');?>
+            </button>
+
             <button onClick="publics.show( 'hessen')">
                 <?php  echo _('Show templates');?>
             </button>
@@ -215,14 +202,7 @@
     </div> 
     <div class="dropdown no-arrow" id="menu_nrw">
         <span onclick="api.load('templates/nrw/start.html')">NRW</span>
-    </div> 
-
-
-    <span class="info-in-menu" id="info-in-menu" style="color: #a20478ff; font-weight: bold; cursor: pointer;">
-    <span onclick="ui.showSearchImageTab('addpic');">
-		Jetzt neu: Portraits freistellen!<br>
-        Anhaken und Bild hochladen.
-    </span>
+    </div>     
 
     </span>
 </nav>

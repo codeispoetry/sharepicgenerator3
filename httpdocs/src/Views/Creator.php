@@ -110,6 +110,14 @@
 						</div>
 					</div>
 				</button>
+					<button id="tab_btn_eyecatcherbw" onClick="ui.showTab('eyecatcherbw')">
+					<div>
+						<img src="assets/icons/eye.svg" title="<?php echo _('Eyecatcher'); ?>">
+						<div class="description">
+							<?php echo _('Eyecatcher'); ?>
+						</div>
+					</div>
+				</button>
 				<button id="tab_btn_addpicture"  onClick="ui.showSearchImageTab('addpic');">
 					<div>
 						<img src="assets/icons/grafics.svg" title="<?php echo _('Front picture'); ?>">
@@ -270,6 +278,7 @@ if($this->env->config->get( 'Main', 'tenant' ) === 'mint' && !$this->env->user->
 		'Color added': '<?php echo _( 'Color added') ?>',
 		'Please choose a new color first': '<?php echo _('Please choose a new color first'); ?>',
 		'One moment': '<?php echo _('One moment please'); ?>',
+		'No public sharepics found.': '<?php echo _('No public sharepics found.'); ?>'
    };
 </script>
 

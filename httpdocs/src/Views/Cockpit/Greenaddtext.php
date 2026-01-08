@@ -34,6 +34,18 @@
             <input type="radio" name="greenaddtext_fontweight" value="bold"  oninput="greenaddtext.setFontWeight(this)">
             <?php echo _('bold'); ?>
         </label>
+
+        <h4>Hervorheben</h4>
+        Um ein Wort zu betonen, klicke im Vorschaubereich doppelt darauf und wähle dann <br>
+        
+        <div style="">
+            <button onclick="greenaddtext.setEmphasis(this)" class="btn-small">
+                Markierten Text hervorheben
+            </button>
+            <button class="delete btn-small" onclick="greenaddtext.deleteEmphasis()">
+                Alle Hervorhebungen entfernen
+            </button>
+        </div>
     </section>
 
     <section class="selected_only">
@@ -96,6 +108,44 @@
             const y = parseInt(element.value, 10)
             cockpit.target.style.top = `${y}px`
             undo.commit()
+        }
+
+        deleteEmphasis(){
+            cockpit.target.innerHTML = '<div>' + cockpit.target.innerText + '</div>';
+
+            undo.commit();
+        }
+
+        setEmphasis(element){
+            const selection = window.getSelection();
+
+            if (selection.rangeCount == 0) {
+                alert("Bitte doppelklicke zuerst einen Text im Vorschaubereich, um ihn hervorzuheben.");
+                return;
+            }
+
+            const selectedText = selection.toString();
+            if (!selectedText) {
+                return;
+            }
+
+            // Apply emphasis to selected text
+            const range = selection.getRangeAt(0);
+            const span = document.createElement('span');
+            
+            span.style.color = 'yellow';
+            
+            try {
+                range.surroundContents(span);
+            } catch (e) {
+                // Fallback if range spans multiple elements
+                span.innerHTML = range.extractContents();
+                range.insertNode(span);
+            }
+            
+            selection.removeAllRanges();
+    
+            undo.commit();
         }
     }
     const greenaddtext = new Greenaddtext();
