@@ -101,6 +101,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_ndstext" onClick="ui.showTab('greenNDStext')">
+					<div>
+						<img src="assets/icons/text.svg" title="<?php echo _('Text'); ?>">
+						<div class="description">
+							<?php echo _('Text'); ?>NDS
+						</div>
+					</div>
+				</button>
 				
 				<button id="tab_btn_eyecatcher" onClick="ui.showTab('eyecatcher')">
 					<div>

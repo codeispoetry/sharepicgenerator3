@@ -139,7 +139,7 @@
                 range.surroundContents(span);
             } catch (e) {
                 // Fallback if range spans multiple elements
-                span.innerHTML = range.extractContents();
+                span.appendChild(range.extractContents());
                 range.insertNode(span);
             }
             

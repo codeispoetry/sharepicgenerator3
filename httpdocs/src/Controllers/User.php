@@ -185,12 +185,12 @@ class User {
 		if ( empty( $subtenants ) ) {
 			return '';
 		}
-
 		foreach ( $subtenants as $subtenant => $tenant_users ) {
 			if ( in_array( $this->username, explode( ',', $tenant_users ) ) ) {
 				return $subtenant;
 			}
 		}
+
 		return '';
 	}
 
