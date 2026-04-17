@@ -214,6 +214,14 @@
 						</div>
 					</div>
 				</button>
+				<button id="tab_btn_frame" onClick="cockpit.setup_frame();ui.showTab('frame')">
+					<div>
+						<img src="assets/icons/square.svg" title="<?php echo _('Frame'); ?>">
+						<div class="description">
+							<?php echo _('Frame settings') ?>
+						</div>
+					</div>
+				</button>
 
 				<button class="no-mint">
 					<div>
@@ -225,6 +233,7 @@
 						</div>
 					</div>
 				</button>
+
 			</div>
 		</div>
 		<?php

@@ -23,7 +23,8 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                border: 0 !important;
+                box-sizing: border-box;
+                border: 0px solid #8abd24;
             ">
     </div>
 
@@ -35,9 +36,8 @@
                     font-family: 'Barlow';
                     font-weight: 700;
                     line-height: 1em;
-                    padding: 10px;
-                    transform: skewY(-12deg);
-                    " id="greenNDStext" class="greenNDStext draggable selectable nds-text">
+                    padding: 10px; " 
+                    id="greenNDStext" class="greenNDStext draggable selectable nds-text">
             <div class="nds-line">
                 Niedersachsen
             </div>
@@ -64,9 +64,20 @@
        
  
 
+        <div data-cockpit="claim" 
+         spellcheck="false" 
+         contenteditable="true" 
+        
+         style="z-index: 6;position: absolute; bottom: 10px;" 
+         id="claim" 
+         class="">
+       
+        <img src="assets/tenants/nds/claim/machsgruen_tanne.svg" style="width:150px;" /> 
+        
+    </div>
 
     <div id="patterns">
-        <div data-id="greenNDStext" data-class="greenNDStext draggable selectable" data-cockpit="greenNDStext"
+        <div data-id="greenNDStext" data-class="greenNDStext draggable nds-text selectable" data-cockpit="greenNDStext"
         data-max="10" spellcheck="false"
         contenteditable="true"
         onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" 
@@ -182,7 +193,7 @@
     <script>
         undo.commit()
         config.cockpit = {
-            elements: ['canvas','search','background','ndstext','copyright','addpicture']
+            elements: ['canvas','search','background','ndstext','copyright','addpicture','frame']
         }
 
         config.palette = ['#f5f1e9', '#78a08c', '#1c302a', '#e6fd53']
@@ -228,24 +239,27 @@
         display: flex;
         flex-direction: column;
         white-space: nowrap;
+        transform: skewY(-12deg);
 
-        div, .emphasis{
+        &.straight{
+            transform: none;
+        }
+
+        div{
             display: inline-block;
             color: #f5f1e9;
             background: #005437;
             width: fit-content;
             padding: 8px;
             margin-bottom: -1px;
+        }
 
-            &:nth-child(2){
-                margin-left: 12px;
+        &.small{
+            div{
+                background: #008939;
+                font-size: 60%;
+                padding: 2px 5px;
             }
-        }
-
-        .emphasis{
-            background: #008939;
-            font-size: 60%;
-            padding: 2px 5px;
-        }
+        }       
     }
 </style>

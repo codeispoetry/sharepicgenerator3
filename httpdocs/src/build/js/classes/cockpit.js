@@ -16,6 +16,12 @@ class Cockpit {
     document.getElementById('background_color').value = ui.rgbToHex(document.getElementById('sharepic').style.backgroundColor)
   }
 
+  setup_frame () {
+    // const sharepic = document.getElementById('sharepic')
+    // const borderWidth = parseInt(sharepic.style.borderWidth) || 0
+    // document.getElementById('frame_thickness').value = borderWidth
+  }
+
   setup_greentext (element) {
     document.querySelectorAll('.cockpit_greentext').forEach((div) => {
       div.style.display = 'none'
