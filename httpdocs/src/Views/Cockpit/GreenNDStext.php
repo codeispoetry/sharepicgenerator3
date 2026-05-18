@@ -32,11 +32,17 @@
 
        
     </section>
-
-  
-
     
 <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
+
+<section class="selected_only btn_delete">
+    <button class="delete" onClick="component.delete()" title="<?php  echo _('delete');?>">
+        <?php  
+        echo $delete_button_text . ' ' .  _('delete');
+        $delete_button_text = '';
+        ?>
+    </button>
+</section>
 
 </section>
 
