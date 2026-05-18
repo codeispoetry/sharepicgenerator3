@@ -205,6 +205,12 @@
     <section id="frontelements" class="nds-only" style="">
         <h3><?php  echo _('Elements');?></h3>
         <div class="frontelements"> 
+        <img src="assets/tenants/nds/themenplakat.png" alt="Hintergrund Themenplakat" onClick="  document.getElementById('background').style.backgroundImage = `url('assets/tenants/nds/themenplakat.png')`
+        document.getElementById('background').style.filter = '';" style="padding: 0 8px;">
+        <img src="assets/tenants/nds/hg_kopf.jpg" alt="Hintergrund Kopfplakat" onClick="  document.getElementById('background').style.backgroundImage = `url('assets/tenants/nds/hg_kopf.jpg')`
+        document.getElementById('background').style.filter = '';" style="padding: 0 8px;">
+
+
             
          <img src="assets/tenants/nds/cross.svg" alt="Störer" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'stoerer'})" style="padding: 0 8px;">
         <img src="assets/tenants/nds/vote.svg" alt="Störer" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'stoerer'})" style="padding: 0 8px;">

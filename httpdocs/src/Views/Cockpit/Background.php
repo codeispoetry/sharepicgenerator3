@@ -2,7 +2,6 @@
     <h2>
         <?php  echo _('Edit background image');?>
     </h2>
-
     <section>
         <h3><?php  echo _('set image');?></h3>
         <label>
