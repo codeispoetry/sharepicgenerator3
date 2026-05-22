@@ -29,6 +29,10 @@
             <input type="radio" name="greenNDStext_style" value="straight"  oninput="greenNDStext.setStyle(this.value)">
             gerade
         </label>
+         <label>
+            <input type="radio" name="greenNDStext_style" value="normal"  oninput="greenNDStext.setStyle(this.value)">
+            Fließtext
+        </label>
 
        
     </section>
@@ -57,7 +61,7 @@
 
         setStyle(cssclass) {      
             
-            cockpit.target.classList.remove('big', 'small', 'straight')
+            cockpit.target.classList.remove('big', 'small', 'straight', 'normal')
             cockpit.target.classList.add(cssclass)
            
             undo.commit()

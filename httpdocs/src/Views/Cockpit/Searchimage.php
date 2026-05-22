@@ -226,7 +226,7 @@
 
                 if( in_array( $name, [ 'gj-logo', 'claim' ] ) ) continue;
         
-                echo '<img src="' . $piktogram . '" alt="Verkehr" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: \'bottom_right\', delete_all_with_name: \'illustration\'})" style="background: #a4a3a3ff;padding: 0 8px;">'."\n";
+                echo '<img src="' . $piktogram . '" alt="Verkehr" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: \'bottom_right\'})" style="background: #a4a3a3ff;padding: 0 8px;">'."\n";
             }
         ?>
     </section>
