@@ -18,12 +18,16 @@
 
         <h4>Textvariante</h4>
         <label>
-            <input type="radio" name="greenNDStext_style" value="big"  oninput="greenNDStext.setStyle(this.value)">
-            groß
+            <input type="radio" name="greenNDStext_style" value="sand-tanne"  oninput="greenNDStext.setStyle(this.value)">
+            sand/tanne
         </label>
         <label>
-            <input type="radio" name="greenNDStext_style" value="small"  oninput="greenNDStext.setStyle(this.value)">
-            klein
+            <input type="radio" name="greenNDStext_style" value="sand-gras"  oninput="greenNDStext.setStyle(this.value)">
+            sand/gras
+        </label>
+        <label>
+            <input type="radio" name="greenNDStext_style" value="tanne-gras"  oninput="greenNDStext.setStyle(this.value)">
+            tanne/gras
         </label>
         <label>
             <input type="radio" name="greenNDStext_style" value="straight"  oninput="greenNDStext.setStyle(this.value)">
@@ -61,7 +65,7 @@
 
         setStyle(cssclass) {      
             
-            cockpit.target.classList.remove('big', 'small', 'straight', 'normal')
+            cockpit.target.classList.remove('sand-tanne', 'sand-gras', 'tanne-gras', 'straight', 'normal')
             cockpit.target.classList.add(cssclass)
            
             undo.commit()
