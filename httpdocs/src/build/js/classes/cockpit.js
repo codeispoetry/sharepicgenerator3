@@ -50,6 +50,14 @@ class Cockpit {
     })
   }
 
+  setup_greenNDStext (element) {
+    document.getElementById('greenNDStext_x').value = Math.round(element.offsetLeft)
+    document.getElementById('greenNDStext_y').value = Math.round(element.offsetTop)
+    document.getElementById('greenNDStext_size').value = element.style.fontSize.replace('px', '')
+    document.getElementById('greenNDStext_size_number').value = element.style.fontSize.replace('px', '')
+    document.getElementById('greenNDStext_style').value = element.dataset.style || 'sand/tanne'
+  }
+
   setup_textnrw (element) {
     document.querySelectorAll('.cockpit_textnrw').forEach((div) => {
       div.style.display = 'none'

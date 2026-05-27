@@ -206,9 +206,9 @@
         <h3><?php  echo _('Elements');?></h3>
         <div class="frontelements"> 
         <img src="assets/tenants/nds/themenplakat.png" alt="Hintergrund Themenplakat" onClick="  document.getElementById('background').style.backgroundImage = `url('assets/tenants/nds/themenplakat.png')`
-        document.getElementById('background').style.filter = '';" style="padding: 0 8px;">
+        document.getElementById('background').style.filter = '';ndsClaim.setBgColor('#005538');" style="padding: 0 8px;">
         <img src="assets/tenants/nds/hg_kopf.jpg" alt="Hintergrund Kopfplakat" onClick="  document.getElementById('background').style.backgroundImage = `url('assets/tenants/nds/hg_kopf.jpg')`
-        document.getElementById('background').style.filter = '';" style="padding: 0 8px;">
+        document.getElementById('background').style.filter = '';ndsClaim.setBgColor('#f5f1e9')" style="padding: 0 8px;">
 
 
             
