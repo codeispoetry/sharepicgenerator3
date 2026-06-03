@@ -9,7 +9,7 @@
             <div class="standard-palette">
                 <?php
                 $standard_colors = array(
-                   '#f5f1e9', '#8abd24', '#1c302a', '#e6fd53'
+                   '#f5f1e9', '#8abd24', '#005538', '#fff17a'
                 );
                 
                 foreach($standard_colors as $standard_color){

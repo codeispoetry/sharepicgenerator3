@@ -11,7 +11,7 @@
                 <input type="radio" name="frame_thickness" value="0" oninput="frame.setThickness(0)" checked> ohne Rahmen
             </label>
             <label>
-                <input type="radio" name="frame_thickness" value="1" oninput="frame.setThickness(30)"> mit Rahmen
+               <input type="radio" name="frame_thickness" value="1" oninput="frame.setThickness(30)"> mit Rahmen
             </label>
         </div> 
     </section>
@@ -41,6 +41,15 @@
             element.style.borderWidth = size + 'px';
             element.style.borderBottomWidth = ( 3 * size ) + 'px';
             undo.commit()
+
+            if(config.template === 'templates/nds/start.html') {
+                ndsClaim.setBgColor('#1c302a');
+                const bgColor = document.getElementById('background').style.backgroundColor;
+                if(bgColor+"" == 'rgb(138, 189, 36)') {
+                    document.getElementById('background').style.backgroundColor ='#1c302a';
+                } 
+
+            }
         }
 
       
