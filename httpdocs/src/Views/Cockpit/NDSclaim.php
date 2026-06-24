@@ -9,8 +9,8 @@
             <div class="standard-palette">
                 <?php
                 $standard_colors = array(
-                   '#f5f1e9', '#8abd24', '#005538', '#fff17a'
-                );
+                   '#8abd24', '#005538'                
+                   );
                 
                 foreach($standard_colors as $standard_color){
                     printf('<button 
