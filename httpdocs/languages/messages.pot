@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-08 15:40+0100\n"
+"POT-Creation-Date: 2026-04-17 16:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,7 +89,8 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Searchimage.php:170
 #: httpdocs/src/Views/Cockpit/Searchimage.php:180
 #: httpdocs/src/Views/Cockpit/Searchimage.php:199
-#: httpdocs/src/Views/Creator.php:195 httpdocs/src/Views/Creator.php:197
+#: httpdocs/src/Views/Cockpit/Searchimage.php:206
+#: httpdocs/src/Views/Creator.php:203 httpdocs/src/Views/Creator.php:205
 msgid "Elements"
 msgstr ""
 
@@ -109,15 +110,32 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/TextBW.php:11
 #: httpdocs/src/Views/Cockpit/EyecatcherBW.php:12
 #: httpdocs/src/Views/Cockpit/TextNRW.php:14
+#: httpdocs/src/Views/Cockpit/GreenNDStext.php:7
 msgid "Size"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Frame.php:3
+msgid "Edit frame"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Frame.php:7
+msgid "Frame thickness"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Frame.php:11
+msgid "None"
+msgstr ""
+
+#: httpdocs/src/Views/Cockpit/Frame.php:14
+msgid "With frame"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:3
 #: httpdocs/src/Views/Cockpit/Eyecatcher.php:31
 #: httpdocs/src/Views/Cockpit/EyecatcherBW.php:3
 #: httpdocs/src/Views/Cockpit/EyecatcherBW.php:44
-#: httpdocs/src/Views/Creator.php:107 httpdocs/src/Views/Creator.php:109
 #: httpdocs/src/Views/Creator.php:115 httpdocs/src/Views/Creator.php:117
+#: httpdocs/src/Views/Creator.php:123 httpdocs/src/Views/Creator.php:125
 msgid "Eyecatcher"
 msgstr ""
 
@@ -152,7 +170,7 @@ msgstr ""
 msgid "Rect 16:9"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Settings.php:2 httpdocs/src/Views/Creator.php:205
+#: httpdocs/src/Views/Cockpit/Settings.php:2 httpdocs/src/Views/Creator.php:213
 msgid "Design settings"
 msgstr ""
 
@@ -181,6 +199,7 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:4
 #: httpdocs/src/Views/Cockpit/Freetext.php:4
 #: httpdocs/src/Views/Cockpit/TextBW.php:4
+#: httpdocs/src/Views/Cockpit/GreenNDStext.php:4
 msgid "Add text"
 msgstr ""
 
@@ -226,14 +245,17 @@ msgstr ""
 #: httpdocs/src/Views/Cockpit/TextBW.php:2
 #: httpdocs/src/Views/Cockpit/TextBW.php:19
 #: httpdocs/src/Views/Cockpit/Addpicture.php:46
+#: httpdocs/src/Views/Cockpit/GreenNDStext.php:2
 #: httpdocs/src/Views/Creator.php:98 httpdocs/src/Views/Creator.php:100
-#: httpdocs/src/Views/Creator.php:131 httpdocs/src/Views/Creator.php:133
-#: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:147
+#: httpdocs/src/Views/Creator.php:106 httpdocs/src/Views/Creator.php:108
+#: httpdocs/src/Views/Creator.php:139 httpdocs/src/Views/Creator.php:141
+#: httpdocs/src/Views/Creator.php:147 httpdocs/src/Views/Creator.php:155
 msgid "Text"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/Greenaddtext.php:13
 #: httpdocs/src/Views/Cockpit/Background.php:72
+#: httpdocs/src/Views/Cockpit/GreenNDStext.php:13
 msgid "Position"
 msgstr ""
 
@@ -354,8 +376,8 @@ msgid "Delete background image"
 msgstr ""
 
 #: httpdocs/src/Views/Cockpit/LogoMV.php:2
-#: httpdocs/src/Views/Cockpit/Logo.php:2 httpdocs/src/Views/Creator.php:187
-#: httpdocs/src/Views/Creator.php:189
+#: httpdocs/src/Views/Cockpit/Logo.php:2 httpdocs/src/Views/Creator.php:195
+#: httpdocs/src/Views/Creator.php:197
 msgid "Logo"
 msgstr ""
 
@@ -367,8 +389,8 @@ msgstr ""
 msgid "Form"
 msgstr ""
 
-#: httpdocs/src/Views/Cockpit/Vorort.php:2 httpdocs/src/Views/Creator.php:155
-#: httpdocs/src/Views/Creator.php:157
+#: httpdocs/src/Views/Cockpit/Vorort.php:2 httpdocs/src/Views/Creator.php:163
+#: httpdocs/src/Views/Creator.php:165
 msgid "Vor Ort"
 msgstr ""
 
@@ -647,20 +669,25 @@ msgstr ""
 
 #: httpdocs/src/Views/Logs/Info.php:52
 #, php-format
-msgid "Number of sharepics for NRW: %s"
+msgid "Number of sharepics for BaWue: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Info.php:57
 #, php-format
-msgid "Number of sharepics for mv: %s"
+msgid "Number of sharepics for NRW: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Info.php:62
 #, php-format
-msgid "Number of Rembg usages: %s"
+msgid "Number of sharepics for mv: %s"
 msgstr ""
 
 #: httpdocs/src/Views/Logs/Info.php:67
+#, php-format
+msgid "Number of Rembg usages: %s"
+msgstr ""
+
+#: httpdocs/src/Views/Logs/Info.php:72
 #, php-format
 msgid "Chrome version: %s"
 msgstr ""
@@ -737,8 +764,9 @@ msgstr ""
 #: httpdocs/src/Views/Components/ToFrontAndBack.php:24
 #: httpdocs/src/Views/Menu/Mint.php:73 httpdocs/src/Views/Menu/Mint.php:102
 #: httpdocs/src/Views/Menu/Greens.php:63 httpdocs/src/Views/Menu/Greens.php:104
-#: httpdocs/src/Views/Menu/Greens.php:145
-#: httpdocs/src/Views/Menu/Greens.php:189 httpdocs/src/Views/Menu/Open.php:63
+#: httpdocs/src/Views/Menu/Greens.php:147
+#: httpdocs/src/Views/Menu/Greens.php:188
+#: httpdocs/src/Views/Menu/Greens.php:232 httpdocs/src/Views/Menu/Open.php:63
 msgid "delete"
 msgstr ""
 
@@ -790,14 +818,16 @@ msgid "Public sharepics"
 msgstr ""
 
 #: httpdocs/src/Views/Menu/Mint.php:87 httpdocs/src/Views/Menu/Greens.php:89
-#: httpdocs/src/Views/Menu/Greens.php:130
-#: httpdocs/src/Views/Menu/Greens.php:174
+#: httpdocs/src/Views/Menu/Greens.php:132
+#: httpdocs/src/Views/Menu/Greens.php:173
+#: httpdocs/src/Views/Menu/Greens.php:217
 msgid "Publish this sharepic"
 msgstr ""
 
 #: httpdocs/src/Views/Menu/Mint.php:91 httpdocs/src/Views/Menu/Greens.php:93
-#: httpdocs/src/Views/Menu/Greens.php:134
-#: httpdocs/src/Views/Menu/Greens.php:178
+#: httpdocs/src/Views/Menu/Greens.php:136
+#: httpdocs/src/Views/Menu/Greens.php:177
+#: httpdocs/src/Views/Menu/Greens.php:221
 msgid "My public sharepics"
 msgstr ""
 
@@ -809,22 +839,25 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:79 httpdocs/src/Views/Menu/Greens.php:120
-#: httpdocs/src/Views/Menu/Greens.php:160
+#: httpdocs/src/Views/Menu/Greens.php:79 httpdocs/src/Views/Menu/Greens.php:122
+#: httpdocs/src/Views/Menu/Greens.php:163
+#: httpdocs/src/Views/Menu/Greens.php:203
 msgid "Create your own"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:82 httpdocs/src/Views/Menu/Greens.php:123
-#: httpdocs/src/Views/Menu/Greens.php:167
+#: httpdocs/src/Views/Menu/Greens.php:82 httpdocs/src/Views/Menu/Greens.php:125
+#: httpdocs/src/Views/Menu/Greens.php:166
+#: httpdocs/src/Views/Menu/Greens.php:210
 msgid "Show templates"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:87 httpdocs/src/Views/Menu/Greens.php:128
-#: httpdocs/src/Views/Menu/Greens.php:172
+#: httpdocs/src/Views/Menu/Greens.php:87 httpdocs/src/Views/Menu/Greens.php:130
+#: httpdocs/src/Views/Menu/Greens.php:171
+#: httpdocs/src/Views/Menu/Greens.php:215
 msgid "Staff only"
 msgstr ""
 
-#: httpdocs/src/Views/Menu/Greens.php:163
+#: httpdocs/src/Views/Menu/Greens.php:206
 msgid "Profile pic"
 msgstr ""
 
@@ -900,115 +933,123 @@ msgstr ""
 msgid "editable file"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:123
+#: httpdocs/src/Views/Creator.php:131
 msgid "Front picture"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:125
+#: httpdocs/src/Views/Creator.php:133
 msgid "Graphics and foreground pictures"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:141
+#: httpdocs/src/Views/Creator.php:149
 msgid "Main Text"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:149
+#: httpdocs/src/Views/Creator.php:157
 msgid "Add Text"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:163 httpdocs/src/Views/Creator.php:165
+#: httpdocs/src/Views/Creator.php:171 httpdocs/src/Views/Creator.php:173
 msgid "Additional text"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:171 httpdocs/src/Views/Creator.php:173
+#: httpdocs/src/Views/Creator.php:179 httpdocs/src/Views/Creator.php:181
 msgid "Bavarian text"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:179 httpdocs/src/Views/Creator.php:181
+#: httpdocs/src/Views/Creator.php:187 httpdocs/src/Views/Creator.php:189
 msgid "European Election"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:203
+#: httpdocs/src/Views/Creator.php:211
 msgid "Settings"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:216
-msgid "Logged in as"
+#: httpdocs/src/Views/Creator.php:219
+msgid "Frame"
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:221
+msgid "Frame settings"
 msgstr ""
 
 #: httpdocs/src/Views/Creator.php:232
+msgid "Logged in as"
+msgstr ""
+
+#: httpdocs/src/Views/Creator.php:249
 msgid ""
 "Please wait, while your sharepic is being created. This may take a few "
 "seconds."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:266
+#: httpdocs/src/Views/Creator.php:283
 msgid "Are you sure, that you want to delete your sharepic?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:267
+#: httpdocs/src/Views/Creator.php:284
 msgid "Do you want to log out?"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:268
+#: httpdocs/src/Views/Creator.php:285
 msgid "Please save your sharepic. All changes will be lost."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:269
+#: httpdocs/src/Views/Creator.php:286
 msgid "Please enter a text describing your desired image."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:270
+#: httpdocs/src/Views/Creator.php:287
 msgid "Maximum number of elements reached"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:271
+#: httpdocs/src/Views/Creator.php:288
 msgid "Uploading your image ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:272
+#: httpdocs/src/Views/Creator.php:289
 msgid "Your image is being processed ..."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:273
+#: httpdocs/src/Views/Creator.php:290
 msgid "The image is too big. Max. 15 MB are allowed."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:274
+#: httpdocs/src/Views/Creator.php:291
 msgid ""
 "You have automatically been logged out. Please reload the page and log in "
 "again."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:275
+#: httpdocs/src/Views/Creator.php:292
 msgid ""
 "You will be automatically logged out soon. Please either save your work or "
 "download it and reload the page."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:276
+#: httpdocs/src/Views/Creator.php:293
 msgid "Please wait until the image is uploaded."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:277
+#: httpdocs/src/Views/Creator.php:294
 msgid ""
 "Maximum number of lines reached. For longer text, please use additional text "
 "element."
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:278
+#: httpdocs/src/Views/Creator.php:295
 msgid "Color added"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:279
+#: httpdocs/src/Views/Creator.php:296
 msgid "Please choose a new color first"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:280
+#: httpdocs/src/Views/Creator.php:297
 msgid "One moment please"
 msgstr ""
 
-#: httpdocs/src/Views/Creator.php:281
+#: httpdocs/src/Views/Creator.php:298
 msgid "No public sharepics found."
 msgstr ""
 

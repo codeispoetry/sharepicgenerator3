@@ -16,6 +16,12 @@ class Cockpit {
     document.getElementById('background_color').value = ui.rgbToHex(document.getElementById('sharepic').style.backgroundColor)
   }
 
+  setup_frame () {
+    // const sharepic = document.getElementById('sharepic')
+    // const borderWidth = parseInt(sharepic.style.borderWidth) || 0
+    // document.getElementById('frame_thickness').value = borderWidth
+  }
+
   setup_greentext (element) {
     document.querySelectorAll('.cockpit_greentext').forEach((div) => {
       div.style.display = 'none'
@@ -42,6 +48,14 @@ class Cockpit {
 
       cockpitLine.querySelector('.lineindent').value = div.style.marginLeft.replace('px', '')
     })
+  }
+
+  setup_greenNDStext (element) {
+    document.getElementById('greenNDStext_x').value = Math.round(element.offsetLeft)
+    document.getElementById('greenNDStext_y').value = Math.round(element.offsetTop)
+    document.getElementById('greenNDStext_size').value = element.style.fontSize.replace('px', '')
+    document.getElementById('greenNDStext_size_number').value = element.style.fontSize.replace('px', '')
+    document.getElementById('greenNDStext_style').value = element.dataset.style || 'sand/tanne'
   }
 
   setup_textnrw (element) {

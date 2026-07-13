@@ -27,6 +27,7 @@ class UI {
       if (firstElement !== null) {
         document.querySelector('.selected')?.classList.remove('selected')
         firstElement.classList.add('selected')
+
         this.showTab(tab, firstElement)
         return
       }

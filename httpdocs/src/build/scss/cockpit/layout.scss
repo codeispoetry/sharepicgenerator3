@@ -162,7 +162,7 @@
     }
 }
 
-.bavaria-only, .hessen-only, .bw-only{
+.bavaria-only, .hessen-only, .bw-only, .nds-only{
     display: none;
 }
 
@@ -179,6 +179,12 @@ body[data-template="hessen"]{
 
 body[data-template="bw"]{
     .bw-only{
+        display: block;
+    }
+}
+
+body[data-template="nds"]{
+    .nds-only{
         display: block;
     }
 }

@@ -201,6 +201,35 @@
             <img src="assets/tenants/bw/claim.svg" alt="Logo" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 140, position: 'bottom_right'})" style="background: #6ab08eff;padding: 0 8px;">            
         </div>
     </section>
+
+    <section id="frontelements" class="nds-only" style="">
+        <h3><?php  echo _('Elements');?></h3>
+        <div class="frontelements"> 
+        <img src="assets/tenants/nds/themenplakat.png" alt="Hintergrund Themenplakat" onClick="  document.getElementById('background').style.backgroundImage = `url('assets/tenants/nds/themenplakat.png')`
+        document.getElementById('background').style.filter = '';ndsClaim.setBgColor('#005538');" style="padding: 0 8px;">
+        <img src="assets/tenants/nds/hg_kopf.jpg" alt="Hintergrund Kopfplakat" onClick="  document.getElementById('background').style.backgroundImage = `url('assets/tenants/nds/hg_kopf.jpg')`
+        document.getElementById('background').style.filter = '';" style="padding: 0 8px;">
+
+
+            
+         <img src="assets/tenants/nds/cross.svg" alt="Störer" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'stoerer'})" style="padding: 0 8px;">
+        <img src="assets/tenants/nds/vote.svg" alt="Störer" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left', delete_all_with_name: 'stoerer'})" style="padding: 0 8px;">
+
+         <img src="assets/tenants/nds/zitat.svg" alt="Störer" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left'})" style="padding: 0 8px;">
+
+         <img src="assets/tenants/nds/claim.svg" alt="Störer" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left'})" style="padding: 0 8px;">
+
+            <?php
+            $piktograms = glob('assets/tenants/nds/illustrations/*.svg');
+            foreach($piktograms as $piktogram){
+                $name = basename($piktogram, '.svg');
+
+                if( in_array( $name, [ 'gj-logo', 'claim' ] ) ) continue;
+        
+                echo '<img src="' . $piktogram . '" alt="Verkehr" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 200, position: \'bottom_right\'})" style="background: #a4a3a3ff;padding: 0 8px;">'."\n";
+            }
+        ?>
+    </section>
 </section>
 
 <script>
