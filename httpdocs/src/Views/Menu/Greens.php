@@ -114,7 +114,7 @@
 <?php } ?>
 
     <?php 
-    if( $this->env->user->get_subtenant() === 'nds' ) { ?>
+    if( true ) { ?>
     <div class="dropdown" id="nds" style="">
         <span>Niedersachsen Kommunalwahl 2026</span>
         <div class="dropdown-content">
