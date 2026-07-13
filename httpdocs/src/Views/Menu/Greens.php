@@ -113,6 +113,19 @@
     </div>
 <?php } ?>
 
+ <?php
+    if( $this->env->user->has_subtenant('lsa') ) { ?>
+    <div class="dropdown" id="lsa" style="">
+        <span>Sachsen-Anhalt</span>
+        <div class="dropdown-content">
+            <button onClick="api.load('templates/lsa/start.html')">
+                <?php  echo _('Create your own');?>
+            </button>
+    
+        </div>
+    </div>
+<?php } ?>
+
     <?php 
     if( true ) { ?>
     <div class="dropdown" id="nds" style="">

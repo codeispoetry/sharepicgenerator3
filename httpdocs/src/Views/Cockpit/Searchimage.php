@@ -232,9 +232,11 @@
     </section>
 
     <section id="frontelements" class="lsa-only" style="">
-        <h3><?php  echo _('Elements');?>LSA</h3>
+        <h3><?php  echo _('Elements');?></h3>
         <div class="frontelements"> 
-        <img src="assets/tenants/lsa/nmg.png" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, hide_aptext:true, size: 90, position: 'bottom_left'})" style="padding: 0 8px;">           
+        <img src="assets/tenants/lsa/nmg.png" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, delete_all_with_name: 'nmg', hide_aptext:true, size: 90, position: 'bottom_left'})" style="padding: 0 8px;">
+        
+          <img src="assets/tenants/lsa/logo.png" alt="Claim" onClick="ui.setAddPictureByUrl(event, {prevent_change:true, delete_all_with_name: 'lsalogo', hide_aptext:true, size: 90, position: 'bottom_right'})" style="padding: 0 8px;">    
     </section>
 </section>
 

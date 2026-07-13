@@ -27,6 +27,9 @@
 
                 <option class="no-lsa" value="grastanne"><?php echo _('gras/tanne'); ?></option>
                 <option class="no-lsa" value="tannegras"><?php echo _('tanne/gras'); ?></option>
+
+                <option class="lsa-only" value="pinkweiss"><?php echo _('pink/weiss'); ?></option>
+                <option class="lsa-only" value="weisspink"><?php echo _('weiss/pink'); ?></option>
             </select>
             <select class="linesize no-lsa" onChange="greenclassictext.setLineSize(this, <?php echo $i; ?>)">
                 <option value="s"><?php echo _('S'); ?></option>
@@ -66,7 +69,7 @@
         setLineColorset(input, lineNr) {  
             const line = document.querySelector('#greentext > div:nth-child(' + lineNr + ')' );
             if( line == null ) return
-            line.classList.remove('tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras')
+            line.classList.remove('tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras','pinkweiss','weisspink')
             line.classList.add(input.value)
         }
     }

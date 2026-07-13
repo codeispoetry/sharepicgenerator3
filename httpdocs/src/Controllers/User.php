@@ -195,6 +195,25 @@ class User {
 	}
 
 	/**
+	 * Check if user has a subtenant.
+	 *
+	 * @param string $tenant The tenant to check.
+	 * @return bool True if user has the subtenant.
+	 */
+	public function has_subtenant( $tenant ) {
+		$subtenants = $this->config->get( 'Subtenants' );
+
+		if ( empty( $subtenants ) ) {
+			return false;
+		}
+
+		if ( in_array( $tenant, array_keys( $subtenants ) ) && in_array( $this->username, explode( ',', $subtenants[ $tenant ] ) ) ) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Get the savings.
 	 *
 	 * @return array
