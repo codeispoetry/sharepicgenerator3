@@ -189,6 +189,12 @@ body[data-template="nds"]{
     }
 }
 
+body[data-template="lsa"]{
+    .lsa-only{
+        display: block;
+    }
+}
+
 .rangeandnumber{
     display: flex;
     gap: 10px;
