@@ -53,18 +53,39 @@
 
     </div>
 
-    <div data-cockpit="addpicture" onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="align-items: center; position: absolute; left: 306px; top: 270px; padding: 20px; z-index: 3; opacity: 1;" id="addpicture_716094" class="addpicture draggable selectable selected" data-prevent_change="true" data-name="nmg">
+    <div data-cockpit="addpicture" onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="align-items: center; position: absolute; left: 306px; top: 270px; padding: 20px; z-index: 3; opacity: 1;" id="addpicture_716094" class="addpicture draggable selectable" data-prevent_change="true" data-name="nmg">
         <div class="ap_image" data-aspect-ratio="0.8333333333333334" style="background-image: url(&quot;assets/tenants/lsa/nmg.png&quot;); background-size: cover; width: 203px; height: 243.6px; border-radius: 0px;"></div>
         <div class="ap_text" contenteditable="true" ontouchend="this.focus()" style="display: none; justify-content: center; color: rgb(255, 255, 255); font-size: 20.3px;"></div>
     </div>
 
-    <div data-cockpit="addpicture" onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="align-items: center; position: absolute; left: 9px; top: 457px; padding: 20px; z-index: 4; opacity: 1;" id="addpicture_753564" class="addpicture draggable selectable selected" data-prevent_change="true" data-name="lsalogo">
+    <div data-cockpit="addpicture" onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="align-items: center; position: absolute; left: 9px; top: 457px; padding: 20px; z-index: 4; opacity: 1;" id="addpicture_753564" class="addpicture draggable selectable" data-prevent_change="true" data-name="lsalogo">
         <div class="ap_image" data-aspect-ratio="1.3236245954692558" style="background-image: url(&quot;assets/tenants/lsa/logo.png&quot;); background-size: cover; width: 162px; height: 122.391px; border-radius: 0px;"></div>
         <div class="ap_text" contenteditable="true" ontouchend="this.focus()" style="display: none; justify-content: center; color: rgb(255, 255, 255); font-size: 18px;"></div>
     </div>
 
    
     <div id="patterns">
+
+         <div data-id="greenclassictext" data-class="greenclassictext draggable lsa-text selectable" data-cockpit="greenclassictext"
+        data-max="10" spellcheck="false"
+        contenteditable="true"
+        onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" 
+        ontouchend="this.focus()"
+        style="
+                    z-index:2; 
+                    left: 5px; top: 5px; 
+                    font-size: 20px; 
+                    color: #000000; 
+                    font-family: 'Barlow';
+                    font-weight: 700;
+                    line-height: 1em;
+                    padding: 10px;
+                "
+        >
+            <div>
+                Tippe hier Deinen Text
+            </div>
+        </div>
 
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 
             ontouchend="this.focus()"
@@ -254,6 +275,7 @@
         });
 
         document.querySelector('body').dataset.template = 'lsa';
+        cockpit.setup_greentext(document.getElementById('greentext'))
 
     </script>
 </div>

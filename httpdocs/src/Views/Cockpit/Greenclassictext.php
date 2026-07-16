@@ -1,5 +1,8 @@
 <section class="mainsection" id="cockpit_greenclassictext">
-    <h2>Text Classic</h2>
+    <h2><?php echo _('Text'); ?></h2>
+    <section class="lsa-only">
+        <button onClick="component.add('greenclassictext')"><?php  echo _('Add text');?></button>
+    </section>
     <section>
         <h3><?php echo _('Total size'); ?></h3>
         <label>

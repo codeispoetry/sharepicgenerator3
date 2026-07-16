@@ -1,5 +1,5 @@
 <section class="mainsection" id="cockpit_greenNDStext">
-    <h2><?php echo _( 'Text'); ?> NDS</h2>
+    <h2><?php echo _( 'Text'); ?></h2>
     <section>
         <button onClick="component.add('greenNDStext')"><?php  echo _('Add text');?></button>
     </section>
