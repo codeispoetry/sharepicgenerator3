@@ -27,31 +27,7 @@
                 border: 0 !important;
             ">
     </div>
-
-    <div 
-        class="draggable selectable" 
-        data-cockpit="greenclassictext"  
-        onmousedown="component.startDrag(event)"
-        ontouchstart="component.startDrag(event)"
-        ontouchend="this.focus()"
-        oninput="cockpit.setup_greentext(this)"
-        onfocus="cockpit.setup_greentext(this)"
-        id="greentext"
-        spellcheck="false"
-        contenteditable="true"
-        style="
-            left: 120px;
-            top: 100px;
-            transform: scale(0.8);
-            padding: 30px;
-            z-index: 2;
-        "
-    >
-        <div class="m pinkweiss">LAND </div>
-        <div class="m weisspink">SACHSEN</div>
-        <div class="m pinkweiss"style="">ANHALT</div>
-
-    </div>
+    
 
     <div data-cockpit="addpicture" onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" style="align-items: center; position: absolute; left: 306px; top: 270px; padding: 20px; z-index: 3; opacity: 1;" id="addpicture_716094" class="addpicture draggable selectable" data-prevent_change="true" data-name="nmg">
         <div class="ap_image" data-aspect-ratio="0.8333333333333334" style="background-image: url(&quot;assets/tenants/lsa/nmg.png&quot;); background-size: cover; width: 203px; height: 243.6px; border-radius: 0px;"></div>
@@ -66,25 +42,24 @@
    
     <div id="patterns">
 
-         <div data-id="greenclassictext" data-class="greenclassictext draggable lsa-text selectable" data-cockpit="greenclassictext"
+     <div data-id="greenclassictext" data-class="greenclassictext draggable lsa-text selectable" data-cockpit="greenclassictext"
         data-max="10" spellcheck="false"
         contenteditable="true"
         onmousedown="component.startDrag(event)" ontouchstart="component.startDrag(event)" 
         ontouchend="this.focus()"
+        oninput="cockpit.setup_greenclassictext(this)"
+        onfocus="cockpit.setup_greenclassictext(this)"
         style="
-                    z-index:2; 
-                    left: 5px; top: 5px; 
-                    font-size: 20px; 
-                    color: #000000; 
-                    font-family: 'Barlow';
-                    font-weight: 700;
-                    line-height: 1em;
-                    padding: 10px;
+                 left: 220px;
+                top: 100px;
+                transform: scale(0.8);
+                padding: 30px;
+                z-index: 2;
                 "
         >
-            <div>
-                Tippe hier Deinen Text
-            </div>
+            <div class="m pinkweiss">ÄNDERE DEINEN </div>
+             <div class="m weisspink">TEXT</div>
+            <div class="m pinkweiss"style="">HIER</div>
         </div>
 
         <div data-id="copyright" data-class="selectable copyright" data-cockpit="copyright" 
@@ -236,11 +211,16 @@
         config.palette = ['#fff17a', '#005437', '#008939', '#8abd24', '#f5f1e9', '#0ba1dd']
         config.logo_palette = ["#ffffff","#fff17a"]
 
+                document.querySelector('body').dataset.template = 'lsa';
+        component.add('greenclassictext');
+        cockpit.setup_greenclassictext(document.getElementById('greentext'))
+
+
 
         /*
         *  Remove empty lines
         */
-        document.getElementById('greentext').onkeydown = function(event){
+        document.querySelector('.greenclassictext').onkeydown = function(event){
             const lineCount = event.target.childElementCount;
             if (lineCount >= 10 && event.key === 'Enter') {
                 alert(lang['Max number of lines reached'])
@@ -274,8 +254,6 @@
             selection.addRange(range);
         });
 
-        document.querySelector('body').dataset.template = 'lsa';
-        cockpit.setup_greentext(document.getElementById('greentext'))
 
     </script>
 </div>
@@ -289,12 +267,19 @@
         line-height: 1em;
     }
 
-    #greentext{
+    #greentext,
+    .greenclassictext {
         transform-origin: top left !important;
         text-transform: uppercase;
         font-family: 'GrueneTypeNeue';
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
         div{
+            position: relative;
+            white-space: nowrap;
+
             &::before{
                 transform: none;
             }
@@ -323,6 +308,8 @@
                 background-color: #ff00ff;
             }
         }
+
+        transform-origin: top left !important;
     }
 
       body[data-template=lsa] .no-lsa {

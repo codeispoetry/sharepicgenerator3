@@ -1,6 +1,6 @@
 <section class="mainsection" id="cockpit_greenclassictext">
     <h2><?php echo _('Text'); ?></h2>
-    <section class="lsa-only">
+    <section class="">
         <button onClick="component.add('greenclassictext')"><?php  echo _('Add text');?></button>
     </section>
     <section>
@@ -45,7 +45,7 @@
         </div>
         <?php } ?>
     </section>
-    <?php $nodelete = true; require ("./src/Views/Components/ToFrontAndBack.php"); ?>
+    <?php require ("./src/Views/Components/ToFrontAndBack.php"); ?>
 
 </section>
 
@@ -70,7 +70,7 @@
         }
 
         setLineColorset(input, lineNr) {  
-            const line = document.querySelector('#greentext > div:nth-child(' + lineNr + ')' );
+            const line = document.querySelector('#' + cockpit.target.id + ' > div:nth-child(' + lineNr + ')' );
             if( line == null ) return
             line.classList.remove('tannesand', 'sandtanne', 'kleesand', 'sandklee', 'grastanne', 'tannegras','pinkweiss','weisspink')
             line.classList.add(input.value)

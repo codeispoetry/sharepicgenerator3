@@ -22,12 +22,11 @@ class Cockpit {
     // document.getElementById('frame_thickness').value = borderWidth
   }
 
-  setup_greentext (element) {
+  setup_greenclassictext (element) {
     document.querySelectorAll('.cockpit_greentext').forEach((div) => {
       div.style.display = 'none'
     })
-
-    document.querySelectorAll('#greentext > div').forEach((div, i) => {
+    element?.querySelectorAll('div').forEach((div, i) => {
       const cockpitLine = document.querySelectorAll('.cockpit_greentext')[i]
       if (!cockpitLine) {
         return
@@ -48,6 +47,9 @@ class Cockpit {
 
       cockpitLine.querySelector('.lineindent').value = div.style.marginLeft.replace('px', '')
     })
+
+    const size = element?.style?.transform?.replace('scale(', '').replace(')', '')
+    document.querySelector('#greentext_size').value = size || 1
   }
 
   setup_greenNDStext (element) {
