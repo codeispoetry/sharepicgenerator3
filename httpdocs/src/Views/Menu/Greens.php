@@ -261,4 +261,7 @@
     </div>     
 
     </span>
+
+     <span class="info-in-menu" id="info-in-menu"></span>
+
 </nav>
